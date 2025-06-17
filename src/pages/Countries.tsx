@@ -1,5 +1,4 @@
-
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award, Flag, Home } from "lucide-react";
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Flag, Home } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
@@ -145,7 +144,7 @@ const Countries = () => {
                   Countries
                 </NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <div className="w-[800px] p-6 bg-white shadow-lg max-h-[600px] overflow-y-auto">
+                  <div className="w-80 p-6 bg-white shadow-lg">
                     {/* Quick Actions */}
                     <div className="flex gap-2 mb-6">
                       <Link
@@ -164,46 +163,19 @@ const Countries = () => {
                       </Link>
                     </div>
                     
-                    {/* Top Countries */}
-                    <div className="mb-6 pb-4 border-b border-gray-100">
-                      <h4 className="text-lg font-semibold mb-3 text-gray-900">Top Countries</h4>
-                      <div className="grid grid-cols-3 gap-2">
-                        {topCountries.map((country) => (
-                          <Link
-                            key={country}
-                            to={`/countries#${country.toLowerCase()}`}
-                            className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group text-sm"
-                          >
-                            <Flag className="h-3 w-3 text-orange-600 mr-2 group-hover:text-orange-700" />
-                            <span className="text-gray-700 group-hover:text-orange-700">
-                              {country}
-                            </span>
-                          </Link>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* All Countries by Region */}
-                    <div className="space-y-4">
-                      <h4 className="text-lg font-semibold text-gray-900 mb-4">All 156 Countries & Territories</h4>
-                      {Object.entries(allCountriesByRegion).map(([region, countries]) => (
-                        <div key={region} className="bg-gray-50 rounded-lg p-3">
-                          <h5 className="font-semibold text-gray-800 mb-2 text-sm flex items-center">
-                            <Flag className="h-3 w-3 mr-2 text-orange-600" />
-                            {region} ({countries.length})
-                          </h5>
-                          <div className="grid grid-cols-4 gap-1">
-                            {countries.map((country) => (
-                              <div
-                                key={country}
-                                className="text-xs text-gray-600 hover:text-orange-600 cursor-pointer p-1 rounded hover:bg-white transition-colors truncate"
-                                title={country}
-                              >
-                                {country}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
+                    <h4 className="text-lg font-semibold mb-4 text-gray-900 border-t border-gray-100 pt-4">Top Countries</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {topCountries.map((country) => (
+                        <Link
+                          key={country}
+                          to={`/countries#${country.toLowerCase()}`}
+                          className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group"
+                        >
+                          <Flag className="h-4 w-4 text-orange-600 mr-2 group-hover:text-orange-700" />
+                          <span className="text-sm text-gray-700 group-hover:text-orange-700">
+                            {country}
+                          </span>
+                        </Link>
                       ))}
                     </div>
                   </div>
