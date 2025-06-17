@@ -73,6 +73,7 @@ const Index = () => {
           </div>
           <nav className="hidden md:flex items-center space-x-8">
             <a href="#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</a>
+            <a href="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</a>
             <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
             <a href="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</a>
             <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
