@@ -1,5 +1,3 @@
-
-
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -97,7 +95,6 @@ const Countries = () => {
           </Link>
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
-            <Link to="/#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
             <Link to="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</Link>
             <DropdownMenu>
               <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
@@ -249,4 +246,3 @@ const Countries = () => {
 };
 
 export default Countries;
-
