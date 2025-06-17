@@ -1,4 +1,3 @@
-
 import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +13,7 @@ const Italy = () => {
           name: "🍝 Mama Eat – Gluten-Free Italian Restaurant",
           locations: "Trastevere, Monti",
           address: "Via di San Cosimato 7/9, Trastevere, Rome, Italy",
-          hours: "Mon–Sun: 12:00PM – 11:00PM",
+          hours: "Mon–Sun: 12:00AM – 11:00PM",
           phone: "+39 06 5806222",
           website: "www.mamaeat.it",
           specialty: "Fried appetizers, GF pizza/pasta",
