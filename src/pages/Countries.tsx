@@ -1,10 +1,16 @@
-
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Countries = () => {
   const countries = [
@@ -70,6 +76,11 @@ const Countries = () => {
     }
   ];
 
+  const topCountries = [
+    "Italy", "Spain", "USA", "Canada", "Australia", 
+    "UK", "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
@@ -81,15 +92,42 @@ const Countries = () => {
               GlutenFree World
             </span>
           </Link>
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
-            <Link to="/countries" className="text-orange-600 font-medium">Countries</Link>
-            <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
-            <Link to="/#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-              Sign In
-            </Button>
-          </nav>
+          <NavigationMenu>
+            <NavigationMenuList className="hidden md:flex items-center space-x-8">
+              <Link to="/#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
+              
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent hover:bg-orange-50 text-orange-600 font-medium data-[active]:bg-orange-50 data-[state=open]:bg-orange-50">
+                  Countries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-80 p-6 bg-white shadow-lg">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-900">Top Countries</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {topCountries.map((country) => (
+                        <Link
+                          key={country}
+                          to={`/countries#${country.toLowerCase()}`}
+                          className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group"
+                        >
+                          <Flag className="h-4 w-4 text-orange-600 mr-2 group-hover:text-orange-700" />
+                          <span className="text-sm text-gray-700 group-hover:text-orange-700">
+                            {country}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+              <Link to="/#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
+              <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
+                Sign In
+              </Button>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </header>
 

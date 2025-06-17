@@ -1,62 +1,98 @@
-
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Shield, Heart } from "lucide-react";
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
 
 const Index = () => {
-  const featuredPlaces = [
+  const topCountries = [
+    "Italy", "Spain", "USA", "Canada", "Australia", 
+    "UK", "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
+  ];
+
+  const destinations = [
     {
       id: 1,
-      name: "Bella Vista Ristorante",
-      location: "Rome, Italy",
-      rating: 4.9,
-      reviews: 324,
-      image: "photo-1618160702438-9b02ab6515c9",
-      specialty: "Authentic Italian",
-      verified: true
+      name: "Rome, Italy",
+      image: "photo-1515542622106-78bda8ba0e5b",
+      places: 142,
+      rating: 4.8,
+      description: "Ancient city with amazing gluten-free pasta and pizza options"
     },
     {
       id: 2,
-      name: "Golden Grain Bakery",
-      location: "Paris, France",
-      rating: 4.8,
-      reviews: 256,
-      image: "photo-1465146344425-f00d5f5c8f07",
-      specialty: "Artisan Breads",
-      verified: true
+      name: "Barcelona, Spain", 
+      image: "photo-1539037116277-4db20889f2d4",
+      places: 98,
+      rating: 4.7,
+      description: "Vibrant culture with excellent gluten-free tapas and paella"
     },
     {
       id: 3,
-      name: "Coastal Kitchen",
-      location: "Sydney, Australia",
+      name: "New York, USA",
+      image: "photo-1496442226666-8d4d0e62e6e9",
+      places: 234,
+      rating: 4.6,
+      description: "The city that never sleeps offers endless gluten-free dining"
+    },
+    {
+      id: 4,
+      name: "Sydney, Australia",
+      image: "photo-1506905925346-21bda4d32df4",
+      places: 87,
       rating: 4.9,
-      reviews: 189,
-      image: "photo-1506744038136-46273834b3fb",
-      specialty: "Fresh Seafood",
-      verified: true
+      description: "Harbor city with fantastic gluten-free cafes and restaurants"
+    },
+    {
+      id: 5,
+      name: "London, UK",
+      image: "photo-1513635269975-59663e0ac1ad",
+      places: 156,
+      rating: 4.5,
+      description: "Historic city embracing the gluten-free revolution"
+    },
+    {
+      id: 6,
+      name: "Tokyo, Japan",
+      image: "photo-1540959733332-eab4deabeeaf",
+      places: 73,
+      rating: 4.4,
+      description: "Discover amazing gluten-free ramen and traditional dishes"
     }
   ];
 
-  const testimonials = [
+  const reviews = [
     {
-      name: "Sarah Chen",
-      location: "Toronto, Canada",
-      text: "Finally found a platform I can trust! Every restaurant recommendation has been absolutely perfect for my celiac needs.",
-      avatar: "S"
+      id: 1,
+      name: "Sarah Johnson",
+      location: "New York, USA",
+      rating: 5,
+      comment: "This platform saved my European vacation! Found amazing gluten-free restaurants in every city I visited.",
+      avatar: "photo-1494790108755-2616b612b786"
     },
     {
-      name: "Marco Silva",
-      location: "São Paulo, Brazil",
-      text: "Traveling with celiac disease used to be stressful. Now I can explore the world confidently, knowing I'll find safe, delicious food.",
-      avatar: "M"
+      id: 2,
+      name: "Marco Rodriguez",
+      location: "Barcelona, Spain", 
+      rating: 5,
+      comment: "As someone with celiac disease, I never thought I could enjoy traveling. This changed everything!",
+      avatar: "photo-1507003211169-0a1dd7228f2d"
     },
     {
-      name: "Emma Thompson",
-      location: "London, UK",
-      text: "The verified reviews from fellow gluten-free travelers give me peace of mind. This platform has revolutionized how I travel!",
-      avatar: "E"
+      id: 3,
+      name: "Emma Chen",
+      location: "Sydney, Australia",
+      rating: 5,
+      comment: "The reviews are so detailed and helpful. I felt confident trying new places for the first time in years.",
+      avatar: "photo-1438761681033-6461ffad8d80"
     }
   ];
 
@@ -65,21 +101,48 @@ const Index = () => {
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center space-x-2">
+          <Link to="/" className="flex items-center space-x-2">
             <Globe className="h-8 w-8 text-orange-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
               GlutenFree World
             </span>
-          </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</a>
-            <a href="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</a>
-            <a href="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</a>
-            <a href="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</a>
-            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-              Sign In
-            </Button>
-          </nav>
+          </Link>
+          <NavigationMenu>
+            <NavigationMenuList className="hidden md:flex items-center space-x-8">
+              <Link to="#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
+              
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="bg-transparent hover:bg-orange-50 text-gray-700 hover:text-orange-600 data-[active]:bg-orange-50 data-[state=open]:bg-orange-50 data-[state=open]:text-orange-600">
+                  Countries
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <div className="w-80 p-6 bg-white shadow-lg">
+                    <h4 className="text-lg font-semibold mb-4 text-gray-900">Top Countries</h4>
+                    <div className="grid grid-cols-2 gap-3">
+                      {topCountries.map((country) => (
+                        <Link
+                          key={country}
+                          to={`/countries#${country.toLowerCase()}`}
+                          className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group"
+                        >
+                          <Flag className="h-4 w-4 text-orange-600 mr-2 group-hover:text-orange-700" />
+                          <span className="text-sm text-gray-700 group-hover:text-orange-700">
+                            {country}
+                          </span>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+
+              <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+              <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
+              <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
+                Sign In
+              </Button>
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
       </header>
 
@@ -87,98 +150,87 @@ const Index = () => {
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-blue-600/10" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto animate-fade-in">
+          <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
-              🌟 Trusted by 50,000+ Gluten-Free Travelers
+              <Utensils className="h-4 w-4 mr-2" />
+              Trusted by 50,000+ Travelers
             </Badge>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
-              Discover Safe Haven
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
+              Discover Amazing
               <br />
-              Gluten-Free Dining
+              Gluten-Free Places
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed">
-              Explore verified gluten-free restaurants, cafes, and bakeries around the world. 
-              <br className="hidden md:block" />
-              Travel with confidence, eat with joy.
+            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
+              Find safe, delicious gluten-free restaurants and cafes around the world. 
+              Travel with confidence and never worry about your next meal again.
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto mb-8">
-              <div className="relative flex bg-white rounded-full shadow-2xl border border-orange-100 p-2">
+            <div className="max-w-xl mx-auto mb-8">
+              <div className="relative flex bg-white rounded-full shadow-xl border border-orange-100 p-2">
                 <div className="flex-1 flex items-center px-4">
-                  <MapPin className="h-5 w-5 text-gray-400 mr-3" />
+                  <Search className="h-5 w-5 text-gray-400 mr-3" />
                   <Input 
-                    placeholder="Search destinations, cities, or restaurants..." 
-                    className="border-0 focus-visible:ring-0 text-lg"
+                    placeholder="Search destinations..." 
+                    className="border-0 focus-visible:ring-0"
                   />
                 </div>
-                <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-8">
-                  <Search className="h-5 w-5 mr-2" />
-                  Explore
+                <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6">
+                  Search
                 </Button>
               </div>
             </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-lg mx-auto">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-orange-600">2,500+</div>
-                <div className="text-gray-600">Verified Places</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">127</div>
-                <div className="text-gray-600">Countries</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-green-600">50k+</div>
-                <div className="text-gray-600">Happy Travelers</div>
-              </div>
+            
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+              <span className="flex items-center"><MapPin className="h-4 w-4 mr-1" />2,847 Places</span>
+              <span className="flex items-center"><Users className="h-4 w-4 mr-1" />127 Countries</span>
+              <span className="flex items-center"><Star className="h-4 w-4 mr-1 text-yellow-500" />4.8 Average Rating</span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Featured Places */}
-      <section id="destinations" className="py-20 bg-white/50">
+      {/* Featured Destinations */}
+      <section id="destinations" className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Featured Gluten-Free Destinations</h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Handpicked restaurants and eateries that have earned the trust of our gluten-free community
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+              <Globe className="h-4 w-4 mr-2" />
+              Featured Destinations
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Popular Gluten-Free Destinations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore the world's most gluten-free friendly cities with verified restaurants and local insights
             </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {featuredPlaces.map((place, index) => (
-              <Card key={place.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {destinations.map((destination, index) => (
+              <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={`https://images.unsplash.com/${place.image}?auto=format&fit=crop&w=600&q=80`}
-                    alt={place.name}
+                    src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=600&q=80`}
+                    alt={destination.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  {place.verified && (
-                    <Badge className="absolute top-4 left-4 bg-green-500 text-white border-0">
-                      <Shield className="h-3 w-3 mr-1" />
-                      Verified
-                    </Badge>
-                  )}
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                    <span className="font-semibold text-sm">{place.rating}</span>
+                    <span className="font-semibold text-sm">{destination.rating}</span>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <h3 className="text-xl font-bold mb-2 text-gray-900">{place.name}</h3>
-                  <p className="text-gray-600 mb-3 flex items-center">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    {place.location}
-                  </p>
-                  <p className="text-orange-600 font-medium mb-4">{place.specialty}</p>
+                  <h3 className="text-xl font-bold mb-2 text-gray-900">{destination.name}</h3>
+                  <p className="text-gray-600 mb-4">{destination.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">{place.reviews} reviews</span>
-                    <Button variant="ghost" className="text-orange-600 hover:text-orange-700 hover:bg-orange-50 p-0">
-                      View Details <ArrowRight className="h-4 w-4 ml-1" />
+                    <div className="flex items-center text-orange-600">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span className="font-semibold">{destination.places} places</span>
+                    </div>
+                    <Button size="sm" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                      Explore
+                      <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
                   </div>
                 </CardContent>
@@ -188,69 +240,85 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-orange-50">
+      {/* Trust Section */}
+      <section id="about" className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Why Trust GlutenFree World?</h2>
-            <p className="text-xl text-gray-600">Your safety and satisfaction are our top priorities</p>
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <Shield className="h-4 w-4 mr-2" />
+              Why Trust Us
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Safe Travels, Guaranteed
+            </h2>
+            <p className="text-xl opacity-90 max-w-2xl mx-auto">
+              We understand the challenges of gluten-free travel. Every place is verified by our community.
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Shield className="h-8 w-8 text-white" />
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Users className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Verified Reviews</h3>
-              <p className="text-gray-600">Every review is from verified gluten-free diners who've actually visited these places</p>
+              <h3 className="text-xl font-bold mb-2">Community Verified</h3>
+              <p className="opacity-90">Every restaurant is reviewed by real travelers with gluten sensitivities</p>
             </div>
-
-            <div className="text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Users className="h-8 w-8 text-white" />
+            <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Shield className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Community Driven</h3>
-              <p className="text-gray-600">Built by and for the gluten-free community, with insights you can trust</p>
+              <h3 className="text-xl font-bold mb-2">Safety First</h3>
+              <p className="opacity-90">Detailed cross-contamination information and staff training ratings</p>
             </div>
-
-            <div className="text-center p-6 group">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform">
-                <Heart className="h-8 w-8 text-white" />
+            <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                <Award className="h-8 w-8" />
               </div>
-              <h3 className="text-xl font-bold mb-3 text-gray-900">Passion for Travel</h3>
-              <p className="text-gray-600">We believe everyone deserves to explore the world safely and deliciously</p>
+              <h3 className="text-xl font-bold mb-2">Quality Assured</h3>
+              <p className="opacity-90">Only the best gluten-free experiences make it to our platform</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="reviews" className="py-20 bg-white">
+      {/* Reviews Section */}
+      <section id="reviews" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900">Loved by Travelers Worldwide</h2>
-            <p className="text-xl text-gray-600">Hear from fellow gluten-free adventurers</p>
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+              <Star className="h-4 w-4 mr-2" />
+              Traveler Stories
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              What Our Community Says
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Join thousands of travelers who've discovered amazing gluten-free experiences around the world
+            </p>
           </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <Card key={index} className={`p-6 border-0 shadow-lg hover:shadow-xl transition-shadow animate-fade-in`} style={{animationDelay: `${index * 0.2}s`}}>
-                <CardContent className="p-0">
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {reviews.map((review, index) => (
+              <Card key={review.id} className={`border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+                <CardContent className="p-6">
                   <div className="flex items-center mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-r from-orange-400 to-red-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                      {testimonial.avatar}
-                    </div>
-                    <div className="ml-4">
-                      <h4 className="font-semibold text-gray-900">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-500">{testimonial.location}</p>
+                    <img 
+                      src={`https://images.unsplash.com/${review.avatar}?auto=format&fit=crop&w=100&q=80`}
+                      alt={review.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <h4 className="font-semibold text-gray-900">{review.name}</h4>
+                      <p className="text-sm text-gray-600">{review.location}</p>
                     </div>
                   </div>
-                  <p className="text-gray-700 italic">"{testimonial.text}"</p>
-                  <div className="flex mt-4">
-                    {[...Array(5)].map((_, i) => (
+                  <div className="flex items-center mb-3">
+                    {[...Array(review.rating)].map((_, i) => (
                       <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                     ))}
                   </div>
+                  <p className="text-gray-700 italic">"{review.comment}"</p>
                 </CardContent>
               </Card>
             ))}
@@ -259,65 +327,20 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-4">Ready to Explore Safely?</h2>
-          <p className="text-xl mb-8 opacity-90">Join thousands of gluten-free travelers discovering amazing places worldwide</p>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Explore?</h2>
+          <p className="text-xl mb-8 opacity-90">Join our community and start discovering amazing gluten-free places today</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100 text-lg px-8">
-              Start Exploring
+            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
+              Get Started Free
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600 text-lg px-8">
-              Add Your Place
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+              Learn More
             </Button>
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Globe className="h-6 w-6 text-orange-400" />
-                <span className="text-xl font-bold">GlutenFree World</span>
-              </div>
-              <p className="text-gray-400">Making gluten-free travel safe, delicious, and unforgettable.</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Explore</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Restaurants</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Bakeries</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Hotels</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Markets</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Community</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Write a Review</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Join Forum</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Travel Tips</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Success Stories</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Support</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="#" className="hover:text-white transition-colors">Help Center</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 GlutenFree World. Made with ❤️ for the gluten-free community.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };
