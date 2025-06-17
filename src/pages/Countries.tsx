@@ -1,16 +1,10 @@
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Flag, Home } from "lucide-react";
+
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Flag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const Countries = () => {
   const featuredCountries = [
@@ -76,54 +70,6 @@ const Countries = () => {
     }
   ];
 
-  const topCountries = [
-    "Italy", "Spain", "USA", "Canada", "Australia", 
-    "UK", "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
-  ];
-
-  const allCountriesByRegion = {
-    "Europe": [
-      "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", 
-      "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Faroe Islands", 
-      "Finland", "France", "Germany", "Gibraltar", "Greece", "Greenland", "Guernsey", 
-      "Hungary", "Iceland", "Ireland", "Isle of Man", "Italy", "Jersey", "Kosovo", 
-      "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Moldova", "Monaco", 
-      "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", 
-      "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", 
-      "Svalbard and Jan Mayen", "Sweden", "Switzerland", "The United Kingdom", "Ukraine", 
-      "Åland Islands"
-    ],
-    "Americas": [
-      "Canada", "The United States", "Belize", "Costa Rica", "El Salvador", "Guatemala", 
-      "Honduras", "Mexico", "Nicaragua", "Panama", "Antigua and Barbuda", "Aruba", 
-      "Bahrain", "Barbados", "Bermuda", "Bonaire, Sint Eustatius and Saba", 
-      "British Virgin Islands", "Cayman Islands", "Cuba", "Curaçao", "Dominican Republic", 
-      "Grenada", "Guadeloupe", "Jamaica", "Saint Barthélemy", "Saint Lucia", "Saint Martin", 
-      "Sint Maarten", "St Kitts & Nevis", "Suriname", "The Bahamas", "Trinidad and Tobago", 
-      "Turks and Caicos Islands", "US Virgin Islands", "Argentina", "Bolivia", "Brazil", 
-      "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"
-    ],
-    "Asia": [
-      "China", "Hong Kong", "Japan", "Mongolia", "South Korea", "Taiwan", "Cambodia", 
-      "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam", 
-      "India", "Nepal", "Pakistan", "Sri Lanka", "Armenia", "Azerbaijan", "Georgia", 
-      "Kazakhstan", "Turkmenistan", "Uzbekistan", "Turkey"
-    ],
-    "Middle East & North Africa": [
-      "Bahrain", "Egypt", "Israel", "Jordan", "Lebanon", "Morocco", "Oman", "Qatar", 
-      "Saudi Arabia", "Tunisia", "United Arab Emirates"
-    ],
-    "Africa": [
-      "Ethiopia", "Kenya", "Madagascar", "Namibia", "Nigeria", "Rwanda", "Senegal", 
-      "South Africa", "Tanzania", "The Gambia", "Zimbabwe"
-    ],
-    "Oceania & Pacific Islands": [
-      "Australia", "New Zealand", "Papua New Guinea", "Cook Islands", "Fiji", 
-      "French Polynesia", "Guam", "Maldives", "Mauritius", "Norfolk Island", "Samoa", 
-      "Saint Helena, Ascension and Tristan da Cunha"
-    ]
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
@@ -135,60 +81,15 @@ const Countries = () => {
               GlutenFree World
             </span>
           </Link>
-          <NavigationMenu>
-            <NavigationMenuList className="hidden md:flex items-center space-x-8">
-              <Link to="/#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
-              
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-orange-50 text-orange-600 font-medium data-[active]:bg-orange-50 data-[state=open]:bg-orange-50">
-                  Countries
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-80 p-6 bg-white shadow-lg">
-                    {/* Quick Actions */}
-                    <div className="flex gap-2 mb-6">
-                      <Link
-                        to="/"
-                        className="flex items-center justify-center px-4 py-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-100 transition-colors flex-1 group"
-                      >
-                        <Home className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                        <span className="font-medium">Home</span>
-                      </Link>
-                      <Link
-                        to="/countries"
-                        className="flex items-center justify-center px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors flex-1 group"
-                      >
-                        <Globe className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                        <span className="font-medium">All Countries</span>
-                      </Link>
-                    </div>
-                    
-                    <h4 className="text-lg font-semibold mb-4 text-gray-900 border-t border-gray-100 pt-4">Top Countries</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      {topCountries.map((country) => (
-                        <Link
-                          key={country}
-                          to={`/countries#${country.toLowerCase()}`}
-                          className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group"
-                        >
-                          <Flag className="h-4 w-4 text-orange-600 mr-2 group-hover:text-orange-700" />
-                          <span className="text-sm text-gray-700 group-hover:text-orange-700">
-                            {country}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
-              <Link to="/#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-              <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-                Sign In
-              </Button>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
+            <Link to="/#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
+            <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+            <Link to="/#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
+            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
+              Sign In
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -199,15 +100,15 @@ const Countries = () => {
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
               <Flag className="h-4 w-4 mr-2" />
-              156 Countries & Territories
+              Top Rated Countries
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
-              Gluten-Free Destinations
+              Featured Gluten-Free
               <br />
-              Around the World
+              Destinations
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Discover gluten-free friendly destinations across 156 countries and territories worldwide
+              Discover the world's most gluten-free friendly countries with verified restaurants and local insights
             </p>
             
             {/* Search Bar */}
@@ -233,8 +134,8 @@ const Countries = () => {
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">Featured Destinations</h2>
-            <p className="text-xl text-gray-600">Top-rated countries for gluten-free dining</p>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Top-Rated Countries</h2>
+            <p className="text-xl text-gray-600">Countries with the best gluten-free dining experiences</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {featuredCountries.map((country, index) => (
@@ -290,83 +191,21 @@ const Countries = () => {
         </div>
       </section>
 
-      {/* All Countries by Region */}
-      <section className="py-16 bg-gradient-to-br from-blue-50 to-orange-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">All 156 Countries & Territories</h2>
-            <p className="text-xl text-gray-600 mb-8">Complete list of destinations with documented gluten-free restaurants</p>
-            
-            {/* Region Statistics */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-12">
-              {Object.entries(allCountriesByRegion).map(([region, countries]) => (
-                <div key={region} className="bg-white rounded-lg p-4 shadow-md">
-                  <div className="text-2xl font-bold text-orange-600 mb-1">{countries.length}</div>
-                  <div className="text-sm text-gray-600">{region}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Countries by Region */}
-          <div className="space-y-12">
-            {Object.entries(allCountriesByRegion).map(([region, countries]) => (
-              <div key={region} className="bg-white rounded-xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center">
-                  <Flag className="h-6 w-6 mr-3 text-orange-600" />
-                  {region} ({countries.length})
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {countries.map((country) => (
-                    <div
-                      key={country}
-                      className="bg-gray-50 hover:bg-orange-50 rounded-lg px-4 py-3 text-sm text-gray-700 hover:text-orange-700 transition-colors cursor-pointer border border-gray-200 hover:border-orange-200"
-                    >
-                      {country}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Market Tiers */}
-          <div className="mt-16 bg-white rounded-xl p-8 shadow-lg">
-            <h3 className="text-2xl font-bold mb-6 text-gray-900">Market Development Tiers</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="border-l-4 border-green-500 pl-4">
-                <h4 className="font-semibold text-green-700 mb-2">Tier 1 - Mature Markets</h4>
-                <p className="text-sm text-gray-600 mb-2">Established gluten-free infrastructure</p>
-                <div className="text-sm text-gray-700">USA, Canada, UK, Ireland, Italy, Spain, France, Germany, Australia, New Zealand</div>
-              </div>
-              <div className="border-l-4 border-blue-500 pl-4">
-                <h4 className="font-semibold text-blue-700 mb-2">Tier 2 - Developing Markets</h4>
-                <p className="text-sm text-gray-600 mb-2">Growing awareness and options</p>
-                <div className="text-sm text-gray-700">Japan, South Korea, Singapore, Israel, UAE, South Africa, Brazil, Argentina</div>
-              </div>
-              <div className="border-l-4 border-yellow-500 pl-4">
-                <h4 className="font-semibold text-yellow-700 mb-2">Tier 3 - Emerging Markets</h4>
-                <p className="text-sm text-gray-600 mb-2">Limited but growing options</p>
-                <div className="text-sm text-gray-700">Most remaining countries with developing gluten-free scenes</div>
-              </div>
-              <div className="border-l-4 border-gray-500 pl-4">
-                <h4 className="font-semibold text-gray-700 mb-2">Tier 4 - Minimal Presence</h4>
-                <p className="text-sm text-gray-600 mb-2">Very few documented establishments</p>
-                <div className="text-sm text-gray-700">Smaller nations and developing countries</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Don't See Your Country?</h2>
-          <p className="text-xl mb-8 opacity-90">Help us expand our global coverage by adding places from your region</p>
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
-            Add a Place
-          </Button>
+          <h2 className="text-3xl font-bold mb-4">Want to See All Countries?</h2>
+          <p className="text-xl mb-8 opacity-90">Explore our complete list of 156 countries and territories worldwide</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/all-countries">
+              <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
+                View All 156 Countries
+              </Button>
+            </Link>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+              Add a Place
+            </Button>
+          </div>
         </div>
       </section>
     </div>

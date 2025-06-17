@@ -1,23 +1,12 @@
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award, Flag, Home } from "lucide-react";
+
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 
 const Index = () => {
-  const topCountries = [
-    "Italy", "Spain", "USA", "Canada", "Australia", 
-    "UK", "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
-  ];
-
   const destinations = [
     {
       id: 1,
@@ -107,60 +96,14 @@ const Index = () => {
               GlutenFree World
             </span>
           </Link>
-          <NavigationMenu>
-            <NavigationMenuList className="hidden md:flex items-center space-x-8">
-              <Link to="#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
-              
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="bg-transparent hover:bg-orange-50 text-gray-700 hover:text-orange-600 data-[active]:bg-orange-50 data-[state=open]:bg-orange-50 data-[state=open]:text-orange-600">
-                  Countries
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="w-80 p-6 bg-white shadow-lg">
-                    {/* Quick Actions */}
-                    <div className="flex gap-2 mb-6">
-                      <Link
-                        to="/"
-                        className="flex items-center justify-center px-4 py-2 bg-orange-50 text-orange-600 rounded-lg hover:bg-orange-100 transition-colors flex-1 group"
-                      >
-                        <Home className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                        <span className="font-medium">Home</span>
-                      </Link>
-                      <Link
-                        to="/countries"
-                        className="flex items-center justify-center px-4 py-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors flex-1 group"
-                      >
-                        <Globe className="h-4 w-4 mr-2 group-hover:scale-110 transition-transform" />
-                        <span className="font-medium">All Countries</span>
-                      </Link>
-                    </div>
-                    
-                    <h4 className="text-lg font-semibold mb-4 text-gray-900 border-t border-gray-100 pt-4">Top Countries</h4>
-                    <div className="grid grid-cols-2 gap-3">
-                      {topCountries.map((country) => (
-                        <Link
-                          key={country}
-                          to={`/countries#${country.toLowerCase()}`}
-                          className="flex items-center p-2 rounded-md hover:bg-orange-50 transition-colors group"
-                        >
-                          <Flag className="h-4 w-4 text-orange-600 mr-2 group-hover:text-orange-700" />
-                          <span className="text-sm text-gray-700 group-hover:text-orange-700">
-                            {country}
-                          </span>
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
-              <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-              <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-                Sign In
-              </Button>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="#destinations" className="text-gray-700 hover:text-orange-600 transition-colors">Destinations</Link>
+            <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
+            <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
+            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
+              Sign In
+            </Button>
+          </div>
         </div>
       </header>
 
@@ -201,7 +144,7 @@ const Index = () => {
             
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
               <span className="flex items-center"><MapPin className="h-4 w-4 mr-1" />2,847 Places</span>
-              <span className="flex items-center"><Users className="h-4 w-4 mr-1" />127 Countries</span>
+              <span className="flex items-center"><Users className="h-4 w-4 mr-1" />156 Countries</span>
               <span className="flex items-center"><Star className="h-4 w-4 mr-1 text-yellow-500" />4.8 Average Rating</span>
             </div>
           </div>
@@ -353,9 +296,11 @@ const Index = () => {
             <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
               Get Started Free
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
-              Learn More
-            </Button>
+            <Link to="/all-countries">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+                View All Countries
+              </Button>
+            </Link>
           </div>
         </div>
       </section>
