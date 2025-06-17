@@ -1,4 +1,4 @@
-import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle } from "lucide-react";
+import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -16,6 +16,7 @@ const Italy = () => {
           hours: "Mon–Sun: 12:00AM – 11:00PM",
           phone: "+39 06 5806222",
           website: "www.mamaeat.it",
+          directionsUrl: "https://www.google.com/maps/dir/Mama+Eat+-+Roma+Ponte+Milvio,+Viale+di+Tor+di+Quinto,+Rome,+Metropolitan+City+of+Rome+Capital,+Italy/Viale+di+Tor+di+Quinto,+21,+00191+Roma+RM,+Italy/@41.9373667,12.3850578,12z/data=!3m2!4b1!5s0x132f60c5c53c6fb7:0xfec33f20476913f8!4m13!4m12!1m5!1m1!1s0x132f610ea8adee35:0x209f26eec7eff5ba!2m2!1d12.4673918!2d41.9372626!1m5!1m1!1s0x132f610ea8adee35:0x209f26eec7eff5ba!2m2!1d12.4673918!2d41.9372626?entry=ttu&g_ep=EgoyMDI1MDYxNS4wIKXMDSoASAFQAw%3D%3D",
           specialty: "Fried appetizers, GF pizza/pasta",
           overview: "Mama Eat in Rome is a certified gluten-free restaurant offering a full Italian menu that's safe for celiacs. Known for its gluten-free lasagna, pizza, tiramisu, and even gluten-free beer, it has become a top choice for locals and travelers with dietary restrictions. The restaurant provides separate preparation areas to avoid cross-contamination and proudly displays its celiac-safe certification.",
           menuHighlights: [
@@ -274,6 +275,20 @@ const Italy = () => {
                                 <span className="text-sm text-green-600">{restaurant.phone}</span>
                               </div>
                             </div>
+                            
+                            {/* Directions Button */}
+                            {restaurant.directionsUrl && (
+                              <div className="pt-2">
+                                <Button 
+                                  onClick={() => window.open(restaurant.directionsUrl, '_blank')}
+                                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                                  size="sm"
+                                >
+                                  <Navigation className="h-4 w-4 mr-2" />
+                                  Get Directions
+                                </Button>
+                              </div>
+                            )}
                             
                             {/* Overview */}
                             <div className="bg-green-50 p-4 rounded-lg">
