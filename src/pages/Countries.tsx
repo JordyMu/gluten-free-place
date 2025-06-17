@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 
 const Countries = () => {
-  const countries = [
+  const featuredCountries = [
     {
       id: 1,
       name: "Italy",
@@ -80,6 +80,49 @@ const Countries = () => {
     "Italy", "Spain", "USA", "Canada", "Australia", 
     "UK", "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
   ];
+
+  const allCountriesByRegion = {
+    "Europe": [
+      "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", 
+      "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Faroe Islands", 
+      "Finland", "France", "Germany", "Gibraltar", "Greece", "Greenland", "Guernsey", 
+      "Hungary", "Iceland", "Ireland", "Isle of Man", "Italy", "Jersey", "Kosovo", 
+      "Latvia", "Liechtenstein", "Lithuania", "Luxembourg", "Malta", "Moldova", "Monaco", 
+      "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", 
+      "Romania", "Russia", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", 
+      "Svalbard and Jan Mayen", "Sweden", "Switzerland", "The United Kingdom", "Ukraine", 
+      "Åland Islands"
+    ],
+    "Americas": [
+      "Canada", "The United States", "Belize", "Costa Rica", "El Salvador", "Guatemala", 
+      "Honduras", "Mexico", "Nicaragua", "Panama", "Antigua and Barbuda", "Aruba", 
+      "Bahrain", "Barbados", "Bermuda", "Bonaire, Sint Eustatius and Saba", 
+      "British Virgin Islands", "Cayman Islands", "Cuba", "Curaçao", "Dominican Republic", 
+      "Grenada", "Guadeloupe", "Jamaica", "Saint Barthélemy", "Saint Lucia", "Saint Martin", 
+      "Sint Maarten", "St Kitts & Nevis", "Suriname", "The Bahamas", "Trinidad and Tobago", 
+      "Turks and Caicos Islands", "US Virgin Islands", "Argentina", "Bolivia", "Brazil", 
+      "Chile", "Colombia", "Ecuador", "Paraguay", "Peru", "Uruguay", "Venezuela"
+    ],
+    "Asia": [
+      "China", "Hong Kong", "Japan", "Mongolia", "South Korea", "Taiwan", "Cambodia", 
+      "Indonesia", "Laos", "Malaysia", "Philippines", "Singapore", "Thailand", "Vietnam", 
+      "India", "Nepal", "Pakistan", "Sri Lanka", "Armenia", "Azerbaijan", "Georgia", 
+      "Kazakhstan", "Turkmenistan", "Uzbekistan", "Turkey"
+    ],
+    "Middle East & North Africa": [
+      "Bahrain", "Egypt", "Israel", "Jordan", "Lebanon", "Morocco", "Oman", "Qatar", 
+      "Saudi Arabia", "Tunisia", "United Arab Emirates"
+    ],
+    "Africa": [
+      "Ethiopia", "Kenya", "Madagascar", "Namibia", "Nigeria", "Rwanda", "Senegal", 
+      "South Africa", "Tanzania", "The Gambia", "Zimbabwe"
+    ],
+    "Oceania & Pacific Islands": [
+      "Australia", "New Zealand", "Papua New Guinea", "Cook Islands", "Fiji", 
+      "French Polynesia", "Guam", "Maldives", "Mauritius", "Norfolk Island", "Samoa", 
+      "Saint Helena, Ascension and Tristan da Cunha"
+    ]
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
@@ -156,7 +199,7 @@ const Countries = () => {
           <div className="max-w-4xl mx-auto">
             <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
               <Flag className="h-4 w-4 mr-2" />
-              127 Countries & Growing
+              156 Countries & Territories
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
               Gluten-Free Destinations
@@ -164,7 +207,7 @@ const Countries = () => {
               Around the World
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Discover the best gluten-free friendly countries and plan your next safe culinary adventure
+              Discover gluten-free friendly destinations across 156 countries and territories worldwide
             </p>
             
             {/* Search Bar */}
@@ -186,11 +229,15 @@ const Countries = () => {
         </div>
       </section>
 
-      {/* Countries Grid */}
+      {/* Featured Countries Grid */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">Featured Destinations</h2>
+            <p className="text-xl text-gray-600">Top-rated countries for gluten-free dining</p>
+          </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {countries.map((country, index) => (
+            {featuredCountries.map((country, index) => (
               <Card key={country.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
@@ -239,6 +286,75 @@ const Countries = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* All Countries by Region */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">All 156 Countries & Territories</h2>
+            <p className="text-xl text-gray-600 mb-8">Complete list of destinations with documented gluten-free restaurants</p>
+            
+            {/* Region Statistics */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-4xl mx-auto mb-12">
+              {Object.entries(allCountriesByRegion).map(([region, countries]) => (
+                <div key={region} className="bg-white rounded-lg p-4 shadow-md">
+                  <div className="text-2xl font-bold text-orange-600 mb-1">{countries.length}</div>
+                  <div className="text-sm text-gray-600">{region}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Countries by Region */}
+          <div className="space-y-12">
+            {Object.entries(allCountriesByRegion).map(([region, countries]) => (
+              <div key={region} className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold mb-6 text-gray-900 flex items-center">
+                  <Flag className="h-6 w-6 mr-3 text-orange-600" />
+                  {region} ({countries.length})
+                </h3>
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
+                  {countries.map((country) => (
+                    <div
+                      key={country}
+                      className="bg-gray-50 hover:bg-orange-50 rounded-lg px-4 py-3 text-sm text-gray-700 hover:text-orange-700 transition-colors cursor-pointer border border-gray-200 hover:border-orange-200"
+                    >
+                      {country}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Market Tiers */}
+          <div className="mt-16 bg-white rounded-xl p-8 shadow-lg">
+            <h3 className="text-2xl font-bold mb-6 text-gray-900">Market Development Tiers</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="border-l-4 border-green-500 pl-4">
+                <h4 className="font-semibold text-green-700 mb-2">Tier 1 - Mature Markets</h4>
+                <p className="text-sm text-gray-600 mb-2">Established gluten-free infrastructure</p>
+                <div className="text-sm text-gray-700">USA, Canada, UK, Ireland, Italy, Spain, France, Germany, Australia, New Zealand</div>
+              </div>
+              <div className="border-l-4 border-blue-500 pl-4">
+                <h4 className="font-semibold text-blue-700 mb-2">Tier 2 - Developing Markets</h4>
+                <p className="text-sm text-gray-600 mb-2">Growing awareness and options</p>
+                <div className="text-sm text-gray-700">Japan, South Korea, Singapore, Israel, UAE, South Africa, Brazil, Argentina</div>
+              </div>
+              <div className="border-l-4 border-yellow-500 pl-4">
+                <h4 className="font-semibold text-yellow-700 mb-2">Tier 3 - Emerging Markets</h4>
+                <p className="text-sm text-gray-600 mb-2">Limited but growing options</p>
+                <div className="text-sm text-gray-700">Most remaining countries with developing gluten-free scenes</div>
+              </div>
+              <div className="border-l-4 border-gray-500 pl-4">
+                <h4 className="font-semibold text-gray-700 mb-2">Tier 4 - Minimal Presence</h4>
+                <p className="text-sm text-gray-600 mb-2">Very few documented establishments</p>
+                <div className="text-sm text-gray-700">Smaller nations and developing countries</div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
