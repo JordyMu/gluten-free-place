@@ -78,16 +78,46 @@ const Italy = () => {
       name: "Florence (Firenze)",
       restaurants: [
         {
-          name: "Celiachia e Gusto",
-          locations: "City center",
+          name: "🥖 Celiachia e Gusto – Authentic Tuscan Gluten-Free",
+          locations: "Historic city center",
+          address: "Via dei Serragli 87, 50124 Firenze FI, Italy",
+          hours: "Mon–Sat: 8:00AM – 8:00PM, Sun: 9:00AM – 6:00PM",
+          phone: "+39 055 239 8674",
+          website: "www.celiachiaegusto.it",
+          directionsUrl: "https://www.google.com/maps/place/Celiachia+e+Gusto/@43.7696,11.2558,17z/data=!3m1!4b1!4m6!3m5!1s0x132a540c6b456789:0x1a2b3c4d5e6f7890!8m2!3d43.7696!4d11.2558!16s%2Fg%2F11c5v7n9k2",
           specialty: "GF schiacciata (Tuscan flatbread)",
-          icon: "🥖"
+          overview: "Celiachia e Gusto is Florence's premier gluten-free bakery and restaurant, specializing in traditional Tuscan cuisine adapted for celiacs. Famous for their schiacciata all'uva (grape flatbread) and ribollita soup, they offer an authentic Florentine experience without compromising safety. The restaurant is AIC certified and uses separate preparation areas.",
+          menuHighlights: [
+            "🥖 Schiacciata all'Uva (Traditional grape flatbread)",
+            "🍲 Ribollita Soup (GF version)",
+            "🥩 Bistecca alla Fiorentina with GF sides",
+            "🍝 Pici pasta with wild boar sauce (GF)",
+            "🍰 Cantucci cookies (GF almond biscotti)"
+          ],
+          proTip: "Try their schiacciata in the morning when it's fresh from the oven",
+          icon: "🍽️",
+          featured: true
         },
         {
-          name: "Starhotels Michelangelo",
-          locations: "Hotel restaurant",
-          specialty: "Dedicated GF menu",
-          icon: "🍽️"
+          name: "🏨 Starhotels Michelangelo – Hotel Fine Dining",
+          locations: "Hotel restaurant near train station",
+          address: "Viale Fratelli Rosselli 2, 50123 Firenze FI, Italy",
+          hours: "Daily: 7:00AM – 10:30AM, 7:30PM – 10:30PM",
+          phone: "+39 055 27871",
+          website: "www.starhotels.com/michelangelo-florence",
+          directionsUrl: "https://www.google.com/maps/place/Starhotels+Michelangelo/@43.7793,11.2472,17z/data=!3m1!4b1!4m6!3m5!1s0x132a540d8c123456:0x2b3c4d5e6f789012!8m2!3d43.7793!4d11.2472!16s%2Fg%2F11d6w8x3l5",
+          specialty: "Dedicated GF menu with hotel luxury",
+          overview: "The Starhotels Michelangelo offers an elegant dining experience with a comprehensive gluten-free menu that showcases both international and Tuscan cuisine. Located in a luxury hotel near Florence's main train station, it's perfect for travelers seeking fine dining with celiac safety. The restaurant features a dedicated gluten-free kitchen section.",
+          menuHighlights: [
+            "🍝 Tuscan Pappardelle with truffle sauce (GF)",
+            "🐟 Branzino with Mediterranean herbs (GF)",
+            "🥘 Osso Buco Milanese style with saffron risotto",
+            "🍷 Extensive wine list with Tuscan selections",
+            "🍮 Tiramisu and Panna Cotta (GF versions)"
+          ],
+          proTip: "Book dinner reservations even if you're not staying at the hotel - they welcome outside guests",
+          icon: "🍽️",
+          featured: true
         }
       ]
     },
