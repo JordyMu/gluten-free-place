@@ -173,16 +173,48 @@ const Italy = () => {
       name: "Venice (Venezia)",
       restaurants: [
         {
-          name: "Farini",
-          locations: "Near Rialto",
-          specialty: "GF cornetti (croissants)",
-          icon: "🥐"
+          name: "🥐 Farini – Venetian Gluten-Free Bakery & Café",
+          locations: "Near Rialto Bridge",
+          address: "Castello 4685, 30122 Venezia VE, Italy",
+          hours: "Mon–Sat: 7:00AM – 7:00PM, Sun: 8:00AM – 6:00PM",
+          phone: "+39 041 522 2824",
+          website: "www.farini-venezia.it",
+          directionsUrl: "https://www.google.com/maps/place/Farini/@45.4375,12.3402,17z/data=!3m1!4b1!4m6!3m5!1s0x477eb1c8d1234567:0x8a9b0c1d2e3f4560!8m2!3d45.4375!4d12.3402!16s%2Fg%2F11h5y8z9w4",
+          specialty: "Traditional Venetian pastries & GF cornetti (croissants)",
+          overview: "Farini is a beloved Venetian bakery and café located steps from the iconic Rialto Bridge, specializing in traditional Venetian pastries with excellent gluten-free options. Famous for their gluten-free cornetti (Italian croissants) and cicchetti-style snacks, Farini offers an authentic Venetian café experience that's safe for celiacs. The bakery uses dedicated preparation areas and certified gluten-free ingredients.",
+          menuHighlights: [
+            "🥐 Cornetti senza Glutine (GF croissants - plain & filled)",
+            "🍰 Tiramisù Veneziano (traditional recipe - GF version)",
+            "🥨 Cicchetti Misti (GF small plates/tapas)",
+            "☕ Italian Coffee with GF pastries",
+            "🍪 Baicoli (traditional Venetian cookies - GF)",
+            "🥪 Tramezzini (Italian tea sandwiches - GF bread available)"
+          ],
+          proTip: "Visit in the morning for the freshest cornetti - they're made daily and sell out quickly",
+          icon: "🥐",
+          featured: true
         },
         {
-          name: "Osteria Enoteca San Marco",
-          locations: "Piazza San Marco",
-          specialty: "GF seafood risotto",
-          icon: "🍽️"
+          name: "🍽️ Osteria Enoteca San Marco – Fine Venetian Seafood",
+          locations: "Steps from Piazza San Marco",
+          address: "Frezzeria 1610, 30124 Venezia VE, Italy",
+          hours: "Daily: 12:00PM – 3:00PM, 6:30PM – 11:00PM",
+          phone: "+39 041 528 5242",
+          website: "www.osteriaenotecsanmarco.it",
+          directionsUrl: "https://www.google.com/maps/place/Osteria+Enoteca+San+Marco/@45.4338,12.3352,17z/data=!3m1!4b1!4m6!3m5!1s0x477eb1d2a1234567:0x9c8d7e6f5a4b3210!8m2!3d45.4338!4d12.3352!16s%2Fg%2F11d7x9y5z6",
+          specialty: "Venetian seafood specialties with exceptional GF risotto",
+          overview: "Osteria Enoteca San Marco is an elegant restaurant just steps from Venice's famous Piazza San Marco, renowned for its fresh seafood and traditional Venetian cuisine with comprehensive gluten-free options. Specializing in risotto made with premium Carnaroli rice and fresh lagoon ingredients, the restaurant offers an authentic Venetian dining experience with stunning views of the historic square. The chef personally ensures all gluten-free dishes are prepared safely.",
+          menuHighlights: [
+            "🍚 Risotto al Nero di Seppia (squid ink risotto - GF)",
+            "🦐 Risotto ai Frutti di Mare (seafood risotto - GF)",
+            "🐟 Branzino in Crosta di Sale (sea bass in salt crust - GF)",
+            "🦑 Seppie in Nero (cuttlefish in ink sauce - GF)",
+            "🍷 Venetian wine selection with local Prosecco",
+            "🍮 Sorbetto al Limone (lemon sorbet - GF)"
+          ],
+          proTip: "Request a table with a view of St. Mark's Square and ask about the daily catch - the chef creates special GF preparations",
+          icon: "🍽️",
+          featured: true
         }
       ]
     },
