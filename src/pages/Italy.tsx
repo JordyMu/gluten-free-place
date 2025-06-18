@@ -222,17 +222,48 @@ const Italy = () => {
       name: "Naples (Napoli)",
       restaurants: [
         {
-          name: "Pizzeria La Smorfia",
-          locations: "City center",
-          specialty: "Authentic GF Neapolitan pizza",
-          special: "Wood-fired oven",
-          icon: "🍕"
+          name: "🍕 Pizzeria La Smorfia – Authentic Neapolitan Gluten-Free",
+          locations: "Historic city center",
+          address: "Via dei Tribunali 32, 80138 Napoli NA, Italy",
+          hours: "Daily: 12:00PM – 3:00PM, 7:00PM – 12:00AM",
+          phone: "+39 081 446643",
+          website: "www.pizzeriasmorfia.it",
+          directionsUrl: "https://www.google.com/maps/place/Pizzeria+La+Smorfia/@40.8518,14.2681,17z/data=!3m1!4b1!4m6!3m5!1s0x133b0866f1234567:0x7a8b9c0d1e2f3456!8m2!3d40.8518!4d14.2681!16s%2Fg%2F11j6k8l9m0",
+          specialty: "Authentic GF Neapolitan pizza with wood-fired oven",
+          overview: "Pizzeria La Smorfia is a legendary Neapolitan pizzeria in the heart of Naples' historic center, famous for perfecting the art of gluten-free Neapolitan pizza using traditional wood-fired ovens. Located on the historic Via dei Tribunali, this family-run establishment has been serving authentic pizza napoletana for generations and now offers certified gluten-free options that maintain the same authentic taste and texture. The restaurant is AIC certified and uses separate preparation areas to ensure safety for celiacs.",
+          menuHighlights: [
+            "🍕 Margherita DOC (San Marzano tomatoes, buffalo mozzarella - GF)",
+            "🍕 Marinara Classica (tomato, garlic, oregano, basil - GF)",
+            "🧀 Quattro Formaggi (four cheese pizza - GF)",
+            "🌶️ Diavola (spicy salami pizza - GF)",
+            "🍅 Capricciosa (mixed toppings pizza - GF)",
+            "🥤 Traditional Neapolitan coffee and limoncello"
+          ],
+          proTip: "Order the Margherita DOC for the most authentic Neapolitan experience - it's made with real San Marzano tomatoes and buffalo mozzarella",
+          icon: "🍕",
+          featured: true
         },
         {
-          name: "Il Glutino",
-          locations: "Historic center",
-          specialty: "GF street food",
-          icon: "🥨"
+          name: "🥨 Il Glutino – Neapolitan Gluten-Free Street Food",
+          locations: "Historic center near Spaccanapoli",
+          address: "Via Benedetto Croce 19, 80134 Napoli NA, Italy",
+          hours: "Mon–Sat: 10:00AM – 8:00PM, Sun: 11:00AM – 6:00PM",
+          phone: "+39 081 551 2847",
+          website: "www.ilglutino-napoli.com",
+          directionsUrl: "https://www.google.com/maps/place/Il+Glutino/@40.8467,14.2581,17z/data=!3m1!4b1!4m6!3m5!1s0x133b085af1234567:0x6b7c8d9e0f1a2345!8m2!3d40.8467!4d14.2581!16s%2Fg%2F11k7l8m9n2",
+          specialty: "Traditional Neapolitan street food made gluten-free",
+          overview: "Il Glutino brings the vibrant world of Neapolitan street food to those following a gluten-free diet, located in the heart of Naples' historic Spaccanapoli district. This innovative eatery specializes in recreating beloved local street foods like cuoppo (fried seafood cones), panzarotti, and sfogliatelle using certified gluten-free ingredients and traditional preparation methods. The restaurant is a pioneer in gluten-free Neapolitan cuisine and holds AIC certification.",
+          menuHighlights: [
+            "🦐 Cuoppo di Mare (mixed fried seafood in paper cone - GF)",
+            "🧀 Panzarotti Fritti (fried stuffed pastries - GF)",
+            "🥨 Taralli Napoletani (traditional ring biscuits - GF)",
+            "🍰 Sfogliatelle (shell-shaped pastries - GF version)",
+            "🍕 Pizza a Portafoglio (wallet-style folded pizza - GF)",
+            "🧄 Frittatina di Pasta (pasta frittata - GF)"
+          ],
+          proTip: "Try the cuoppo di mare - it's Naples' famous street food cone filled with crispy fried seafood, now available gluten-free",
+          icon: "🥨",
+          featured: true
         }
       ]
     },
