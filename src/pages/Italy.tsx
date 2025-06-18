@@ -1,4 +1,3 @@
-
 import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -53,10 +52,25 @@ const Italy = () => {
           featured: true
         },
         {
-          name: "Il Viaggio",
-          locations: "Near Vatican",
-          specialty: "Fine dining with GF bread basket",
-          icon: "🍽️"
+          name: "🍷 Il Viaggio – Fine Dining Near Vatican",
+          locations: "Near Vatican City",
+          address: "Via Germanico 20, 00192 Roma RM, Italy",
+          hours: "Tue–Sun: 7:00PM – 11:30PM (Closed Mondays)",
+          phone: "+39 06 3972 5481",
+          website: "www.ilviaggio-roma.com",
+          directionsUrl: "https://www.google.com/maps/place/Il+Viaggio/@41.9041,12.4578,17z/data=!3m1!4b1!4m6!3m5!1s0x132f60c8e7890123:0x4d5e6f7a8b9c0def!8m2!3d41.9041!4d12.4578!16s%2Fg%2F11c2v5n8k7",
+          specialty: "Fine dining with comprehensive GF menu",
+          overview: "Il Viaggio offers an upscale dining experience near Vatican City with an extensive gluten-free menu that doesn't compromise on taste or presentation. The restaurant features modern Italian cuisine with traditional influences, and their dedicated gluten-free bread basket is a highlight. The chef works closely with celiac diners to ensure a safe and memorable experience.",
+          menuHighlights: [
+            "🥖 Signature GF bread basket with 4 varieties",
+            "🍝 Cacio e Pepe (Gluten-Free pasta)",
+            "🥩 Osso Buco with GF polenta",
+            "🍤 Seafood risotto (naturally GF)",
+            "🍮 GF Panna Cotta and Cannoli"
+          ],
+          proTip: "Make reservations well in advance and mention your celiac requirements when booking",
+          icon: "🍽️",
+          featured: true
         }
       ]
     },
