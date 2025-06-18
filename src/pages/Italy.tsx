@@ -1,3 +1,4 @@
+
 import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -31,11 +32,25 @@ const Italy = () => {
           featured: true
         },
         {
-          name: "Voglia di Pizza",
-          locations: "Multiple",
+          name: "🍕 Voglia di Pizza – Authentic Neapolitan Gluten-Free",
+          locations: "Multiple locations across Rome",
+          address: "Via dei Cappuccini 15, 00187 Roma RM, Italy",
+          hours: "Mon–Sun: 11:30AM – 12:00AM",
+          phone: "+39 06 4201 7506",
+          website: "www.vogliadipizza.com",
+          directionsUrl: "https://www.google.com/maps/place/Voglia+di+Pizza/@41.9028,12.4964,17z/data=!3m1!4b1!4m6!3m5!1s0x132f61b6532013ad:0x5c4b7c9a4b5c6789!8m2!3d41.9028!4d12.4964!16s%2Fg%2F11b8v3k2m9",
           specialty: "Wood-fired Neapolitan-style GF pizza",
-          unique: "Mortadella-topped pizza",
-          icon: "🍕"
+          overview: "Voglia di Pizza is renowned for its authentic Neapolitan-style pizza with exceptional gluten-free options. Using traditional wood-fired ovens and certified gluten-free flour, they create pizzas that rival their traditional counterparts. The restaurant has multiple locations throughout Rome and is AIC certified, ensuring safe preparation for celiacs.",
+          menuHighlights: [
+            "🍕 Margherita DOP (Gluten-Free)",
+            "🥓 Mortadella e Pistacchi Pizza (GF)",
+            "🧀 Burrata e Prosciutto (GF available)",
+            "🍅 Marinara Classica (GF)",
+            "🌿 Vegetarian and Vegan GF Options"
+          ],
+          proTip: "Try their famous mortadella-topped pizza - it's a Roman specialty",
+          icon: "🍽️",
+          featured: true
         },
         {
           name: "Il Viaggio",
