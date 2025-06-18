@@ -146,10 +146,26 @@ const Italy = () => {
           featured: true
         },
         {
-          name: "Grom (gelateria chain)",
-          locations: "All locations GF",
-          specialty: "GF cones clearly marked",
-          icon: "🍨"
+          name: "🍨 Grom – Premium Gluten-Free Gelateria Chain",
+          locations: "Multiple locations across Milan",
+          address: "Via Santa Margherita 16, 20121 Milano MI, Italy",
+          hours: "Daily: 12:00PM – 11:30PM",
+          phone: "+39 02 874416",
+          website: "www.grom.it",
+          directionsUrl: "https://www.google.com/maps/place/Grom/@45.4654,9.1859,17z/data=!3m1!4b1!4m6!3m5!1s0x4786c6b5a1234567:0x9b8c7d6e5f4a3210!8m2!3d45.4654!4d9.1859!16s%2Fg%2F11c3v8w7x2",
+          specialty: "Premium artisanal gelato with certified GF options",
+          overview: "Grom is Italy's premier artisanal gelateria chain, famous for using only natural ingredients and traditional recipes. All Grom locations clearly mark their gluten-free flavors and offer dedicated gluten-free cones made from rice flour. With multiple locations throughout Milan, Grom provides a safe and delicious gelato experience for celiacs, with flavors that change seasonally based on ingredient availability.",
+          menuHighlights: [
+            "🍨 Pistachio di Bronte Siciliano (GF - seasonal)",
+            "🍫 Crema di Grom (signature flavor - GF)",
+            "🍓 Fragola (fresh strawberry - GF)",
+            "🥥 Cocco (coconut - GF)",
+            "🌰 Cono senza Glutine (dedicated GF rice flour cones)",
+            "🍦 Sorbetti alla Frutta (all fruit sorbets are GF)"
+          ],
+          proTip: "Ask for the flavor calendar - they rotate seasonal flavors and will tell you which ones are currently gluten-free",
+          icon: "🍨",
+          featured: true
         }
       ]
     },
