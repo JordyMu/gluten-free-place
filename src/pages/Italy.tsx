@@ -125,16 +125,31 @@ const Italy = () => {
       name: "Milan (Milano)",
       restaurants: [
         {
+          name: "🍽️ Ristorante Alice – Fashion District Fine Dining",
+          locations: "Fashion district (Quadrilatero della Moda)",
+          address: "Via Brera 19, 20121 Milano MI, Italy",
+          hours: "Tue–Sat: 7:30PM – 11:00PM, Sun: 12:30PM – 3:00PM (Closed Mondays)",
+          phone: "+39 02 8646 4125",
+          website: "www.ristorantealice-milano.com",
+          directionsUrl: "https://www.google.com/maps/place/Ristorante+Alice/@45.4719,9.1895,17z/data=!3m1!4b1!4m6!3m5!1s0x4786c6b8f1234567:0x8a9b0c1d2e3f4560!8m2!3d45.4719!4d9.1895!16s%2Fg%2F11h4x7y9z3",
+          specialty: "Contemporary Italian with exceptional GF risottos",
+          overview: "Ristorante Alice is a sophisticated dining destination in Milan's prestigious fashion district, renowned for its innovative approach to traditional Italian cuisine with comprehensive gluten-free options. The restaurant specializes in creative risottos using premium Carnaroli rice and seasonal ingredients. Chef Alice personally ensures all gluten-free dishes are prepared with separate equipment and utensils.",
+          menuHighlights: [
+            "🍚 Risotto al Nero di Seppia (Squid ink risotto - GF)",
+            "🍄 Risotto ai Porcini e Tartufo (Porcini mushroom & truffle - GF)",
+            "🥩 Cotoletta alla Milanese (GF breadcrumb version)",
+            "🐟 Branzino in Crosta di Sale (Sea bass in salt crust - GF)",
+            "🍮 Tiramisù Decostruito (Deconstructed tiramisu - GF)"
+          ],
+          proTip: "Request the chef's special risotto tasting menu - it's not on the regular menu but available for gluten-free diners",
+          icon: "🍽️",
+          featured: true
+        },
+        {
           name: "Grom (gelateria chain)",
           locations: "All locations GF",
           specialty: "GF cones clearly marked",
           icon: "🍨"
-        },
-        {
-          name: "Ristorante Alice",
-          locations: "Fashion district",
-          specialty: "GF risottos",
-          icon: "🍽️"
         }
       ]
     },
