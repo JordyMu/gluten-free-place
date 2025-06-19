@@ -545,7 +545,7 @@ const Italy = () => {
                                 <CheckCircle className="h-4 w-4 mr-2" />
                                 Overview
                               </h4>
-                              <p className="text-sm text-green-700">{restaurant.overview}</p>
+                              <p className="text-sm text-black">{restaurant.overview}</p>
                             </div>
                             
                             {/* Menu Highlights */}
@@ -583,20 +583,6 @@ const Italy = () => {
                               <div className="bg-blue-50 p-3 rounded-lg">
                                 <p className="text-sm text-blue-700">
                                   <strong>💡 Pro Tip:</strong> {restaurant.proTip}
-                                </p>
-                              </div>
-                            )}
-                            {restaurant.unique && (
-                              <div className="bg-purple-50 p-3 rounded-lg">
-                                <p className="text-sm text-purple-700">
-                                  <strong>🌟 Unique:</strong> {restaurant.unique}
-                                </p>
-                              </div>
-                            )}
-                            {restaurant.special && (
-                              <div className="bg-red-50 p-3 rounded-lg">
-                                <p className="text-sm text-red-700">
-                                  <strong>🔥 Special:</strong> {restaurant.special}
                                 </p>
                               </div>
                             )}
