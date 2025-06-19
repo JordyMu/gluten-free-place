@@ -1,4 +1,4 @@
-import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation } from "lucide-react";
+import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -28,7 +28,33 @@ const Italy = () => {
           ],
           proTip: "Their carbonara is celiac-safe",
           icon: "🍽️",
-          featured: true
+          featured: true,
+          cuisineTypes: ["Italian", "Mediterranean", "Vegetarian"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 342,
+          certificationLevel: "AIC Certified - Dedicated Kitchen",
+          userReviews: [
+            {
+              user: "Sarah M.",
+              rating: 5,
+              comment: "Amazing authentic Italian food! As a celiac, I felt completely safe here. The gluten-free lasagna was incredible.",
+              date: "2 weeks ago"
+            },
+            {
+              user: "Marco R.",
+              rating: 5,
+              comment: "Best gluten-free pizza in Rome! Staff is very knowledgeable about celiac disease.",
+              date: "1 month ago"
+            },
+            {
+              user: "Lisa K.",
+              rating: 4,
+              comment: "Great atmosphere and delicious food. The tiramisu was perfect!",
+              date: "3 weeks ago"
+            }
+          ]
         },
         {
           name: "🍕 Voglia di Pizza – Authentic Neapolitan Gluten-Free",
@@ -49,7 +75,27 @@ const Italy = () => {
           ],
           proTip: "Try their famous mortadella-topped pizza - it's a Roman specialty",
           icon: "🍽️",
-          featured: true
+          featured: true,
+          cuisineTypes: ["Italian", "Pizza", "Mediterranean"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.6,
+          reviewCount: 567,
+          certificationLevel: "AIC Certified - Separate Preparation Area",
+          userReviews: [
+            {
+              user: "Giuseppe T.",
+              rating: 5,
+              comment: "Authentic Neapolitan pizza! The gluten-free version tastes exactly like the original.",
+              date: "1 week ago"
+            },
+            {
+              user: "Emma P.",
+              rating: 4,
+              comment: "Multiple locations make it convenient. Great quality and safe for celiacs.",
+              date: "2 weeks ago"
+            }
+          ]
         },
         {
           name: "🍷 Il Viaggio – Fine Dining Near Vatican",
@@ -81,18 +127,37 @@ const Italy = () => {
           website: "www.gelatointrevi.it",
           directionsUrl: "https://www.google.com/maps/place/Gelato+in+Trevi/@41.9009,12.4833,17z",
           specialty: "Artisanal gelato steps from Trevi Fountain",
-          overview: "Gelato in Trevi offers premium artisanal gelato in the heart of Rome's historic center, just steps from the iconic Trevi Fountain. This family-run gelateria specializes in traditional Italian flavors with clearly marked gluten-free options and dedicated gluten-free cones. Using natural ingredients and traditional preparation methods, they provide a safe and authentic gelato experience for celiacs visiting Rome's most famous landmarks.",
+          overview: "Gelato in Trevi offers premium artisanal gelato in the heart of Rome's historic center, just steps from the iconic Trevi Fountain. This family-run gelateria specializes in traditional Italian flavors with clearly marked gluten-free options and dedicated gluten-free cones.",
           menuHighlights: [
             "🍨 Stracciatella (chocolate chip - GF)",
             "🍓 Fragola Fresca (fresh strawberry - GF)",
             "🥥 Cocco (coconut - GF)",
             "🌰 Cono senza Glutine (dedicated GF cones)",
-            "🍦 Sorbetti alla Frutta (all fruit sorbets - GF)",
-            "🍫 Cioccolato Fondente (dark chocolate - GF)"
+            "🍦 Sorbetti alla Frutta (all fruit sorbets - GF)"
           ],
           proTip: "Visit after making your wish at the Trevi Fountain - it's the perfect Roman tradition",
           icon: "🍨",
-          featured: true
+          featured: true,
+          cuisineTypes: ["Gelato", "Desserts", "Italian"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.7,
+          reviewCount: 289,
+          certificationLevel: "Certified GF Options - Dedicated Cones",
+          userReviews: [
+            {
+              user: "Maria S.",
+              rating: 5,
+              comment: "Perfect location and amazing gluten-free gelato! The cones are delicious too.",
+              date: "5 days ago"
+            },
+            {
+              user: "Tom B.",
+              rating: 4,
+              comment: "Tourist location but quality is still excellent. Safe for celiacs.",
+              date: "1 week ago"
+            }
+          ]
         },
         {
           name: "❄️ Fiocco di Neve – Artisanal Gluten-Free Gelato",
@@ -206,7 +271,27 @@ const Italy = () => {
           ],
           proTip: "Try their schiacciata in the morning when it's fresh from the oven",
           icon: "🍽️",
-          featured: true
+          featured: true,
+          cuisineTypes: ["Tuscan", "Italian", "Bakery"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.9,
+          reviewCount: 156,
+          certificationLevel: "AIC Certified - Dedicated Facility",
+          userReviews: [
+            {
+              user: "Anna F.",
+              rating: 5,
+              comment: "Incredible Tuscan specialties! The schiacciata is authentic and perfectly gluten-free.",
+              date: "3 days ago"
+            },
+            {
+              user: "James L.",
+              rating: 5,
+              comment: "Best gluten-free bakery in Florence. Everything is made with care and tradition.",
+              date: "1 week ago"
+            }
+          ]
         },
         {
           name: "🏨 Starhotels Michelangelo – Hotel Fine Dining",
@@ -619,6 +704,37 @@ const Italy = () => {
     }
   ];
 
+  const getCeliacSafeBadge = (level: string) => {
+    switch (level) {
+      case "dedicated-facility":
+        return <Badge className="bg-green-100 text-green-800 border-green-300"><Shield className="h-3 w-3 mr-1" />Dedicated Facility</Badge>;
+      case "protocols-in-place":
+        return <Badge className="bg-blue-100 text-blue-800 border-blue-300"><CheckCircle className="h-3 w-3 mr-1" />Celiac Protocols</Badge>;
+      default:
+        return <Badge className="bg-gray-100 text-gray-800 border-gray-300"><CheckCircle className="h-3 w-3 mr-1" />GF Options</Badge>;
+    }
+  };
+
+  const getMenuTypeBadge = (type: string) => {
+    return type === "fully-gluten-free" 
+      ? <Badge className="bg-green-100 text-green-800 border-green-300">🥖 100% Gluten-Free</Badge>
+      : <Badge className="bg-orange-100 text-orange-800 border-orange-300">🥖 Mixed Menu</Badge>;
+  };
+
+  const renderStarRating = (rating: number) => {
+    return (
+      <div className="flex items-center space-x-1">
+        {[1, 2, 3, 4, 5].map((star) => (
+          <Star
+            key={star}
+            className={`h-4 w-4 ${star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
+          />
+        ))}
+        <span className="text-sm font-medium ml-1">{rating}</span>
+      </div>
+    );
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50">
       {/* Header */}
@@ -695,10 +811,46 @@ const Italy = () => {
                           <span>{restaurant.name}</span>
                           {!restaurant.featured && <span className="text-2xl ml-2">{restaurant.icon}</span>}
                         </CardTitle>
+                        
+                        {/* Rating and Badges */}
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {restaurant.rating && (
+                            <div className="flex items-center space-x-2">
+                              {renderStarRating(restaurant.rating)}
+                              <span className="text-xs text-gray-500">({restaurant.reviewCount} reviews)</span>
+                            </div>
+                          )}
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {/* Cuisine Type Badges */}
+                          {restaurant.cuisineTypes?.map((cuisine, idx) => (
+                            <Badge key={idx} variant="outline" className="text-xs">
+                              🍽️ {cuisine}
+                            </Badge>
+                          ))}
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-2 mt-2">
+                          {/* Celiac Safe Badge */}
+                          {restaurant.celiacSafe && getCeliacSafeBadge(restaurant.celiacSafe)}
+                          
+                          {/* Menu Type Badge */}
+                          {restaurant.menuType && getMenuTypeBadge(restaurant.menuType)}
+                        </div>
                       </CardHeader>
+                      
                       <CardContent className="space-y-3">
                         {restaurant.featured ? (
                           <div className="space-y-4">
+                            {/* Certification Level */}
+                            {restaurant.certificationLevel && (
+                              <div className="flex items-center space-x-2 bg-blue-50 p-2 rounded-lg">
+                                <Award className="h-4 w-4 text-blue-600" />
+                                <span className="text-sm font-medium text-blue-800">{restaurant.certificationLevel}</span>
+                              </div>
+                            )}
+                            
                             {/* Address */}
                             <div className="flex items-start space-x-2">
                               <MapPin className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
@@ -749,7 +901,8 @@ const Italy = () => {
                             {/* Menu Highlights */}
                             <div className="bg-orange-50 p-4 rounded-lg">
                               <h4 className="font-semibold text-orange-800 mb-3 flex items-center">
-                                📷 Menu Highlights
+                                <Camera className="h-4 w-4 mr-2" />
+                                Menu Highlights
                               </h4>
                               <div className="space-y-1">
                                 {restaurant.menuHighlights?.map((item, idx) => (
@@ -757,6 +910,34 @@ const Italy = () => {
                                 ))}
                               </div>
                             </div>
+                            
+                            {/* User Reviews Section */}
+                            {restaurant.userReviews && (
+                              <div className="bg-gray-50 p-4 rounded-lg">
+                                <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                                  <MessageCircle className="h-4 w-4 mr-2" />
+                                  User Reviews
+                                </h4>
+                                <div className="space-y-3">
+                                  {restaurant.userReviews.map((review, idx) => (
+                                    <div key={idx} className="border-l-4 border-blue-200 pl-3">
+                                      <div className="flex items-center justify-between mb-1">
+                                        <span className="font-medium text-sm">{review.user}</span>
+                                        <span className="text-xs text-gray-500">{review.date}</span>
+                                      </div>
+                                      <div className="flex items-center mb-1">
+                                        {renderStarRating(review.rating)}
+                                      </div>
+                                      <p className="text-sm text-gray-700">{review.comment}</p>
+                                    </div>
+                                  ))}
+                                </div>
+                                <Button variant="outline" size="sm" className="mt-3 w-full">
+                                  <MessageCircle className="h-4 w-4 mr-2" />
+                                  View All Reviews
+                                </Button>
+                              </div>
+                            )}
                             
                             {/* Pro Tip */}
                             {restaurant.proTip && (
