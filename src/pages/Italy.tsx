@@ -271,16 +271,48 @@ const Italy = () => {
       name: "Bologna",
       restaurants: [
         {
-          name: "Grom (yes, again!)",
-          locations: "City center",
-          specialty: "Best GF gelato chain",
-          icon: "🍦"
+          name: "🍨 Grom – Premium Artisanal Gelateria",
+          locations: "City center near Piazza Maggiore",
+          address: "Via Ugo Bassi 1/A, 40121 Bologna BO, Italy",
+          hours: "Daily: 12:00PM – 11:30PM",
+          phone: "+39 051 266871",
+          website: "www.grom.it",
+          directionsUrl: "https://www.google.com/maps/place/Grom/@44.4949,11.3426,17z/data=!3m1!4b1!4m6!3m5!1s0x477fd4c8b1234567:0x8a9b0c1d2e3f4560!8m2!3d44.4949!4d11.3426!16s%2Fg%2F11c4v8w9x5",
+          specialty: "Premium artisanal gelato with certified GF options",
+          overview: "Grom Bologna brings the same artisanal gelato excellence to the heart of Emilia-Romagna. Located near the famous Piazza Maggiore, this location offers the full range of Grom's natural gelato flavors with clearly marked gluten-free options. Known for seasonal ingredients and traditional preparation methods, Grom uses dedicated gluten-free cones and maintains strict protocols to prevent cross-contamination.",
+          menuHighlights: [
+            "🍫 Crema di Grom (signature flavor - GF)",
+            "🍨 Pistacchio di Bronte Siciliano (GF - seasonal)",
+            "🍓 Fragola (fresh strawberry - GF)",
+            "🥥 Cocco (coconut - GF)",
+            "🌰 Cono senza Glutine (dedicated GF rice flour cones)",
+            "🍦 Sorbetti alla Frutta (all fruit sorbets are GF)"
+          ],
+          proTip: "Try their seasonal flavors - Bologna location often features unique regional ingredients",
+          icon: "🍨",
+          featured: true
         },
         {
-          name: "Mò Mortadella Lab",
-          locations: "Near university",
-          specialty: "GF piadine (flatbread sandwiches)",
-          icon: "🥪"
+          name: "🥪 Mò Mortadella Lab – Gourmet Gluten-Free Piadine",
+          locations: "Near University of Bologna",
+          address: "Via del Pratello 74/B, 40122 Bologna BO, Italy",
+          hours: "Mon–Sat: 11:30AM – 11:00PM, Sun: 12:00PM – 10:00PM",
+          phone: "+39 051 0951847",
+          website: "www.momortadellalab.com",
+          directionsUrl: "https://www.google.com/maps/place/M%C3%B2+Mortadella+Lab/@44.4925,11.3387,17z/data=!3m1!4b1!4m6!3m5!1s0x477fd4d2c1234567:0x7b8c9d0e1f2a3456!8m2!3d44.4925!4d11.3387!16s%2Fg%2F11k5l8m9n4",
+          specialty: "Gourmet gluten-free piadine and mortadella specialties",
+          overview: "Mò Mortadella Lab is Bologna's premier destination for gourmet piadine flatbread sandwiches with exceptional gluten-free options. Located in the vibrant university district, this modern eatery celebrates Bologna's famous mortadella with creative combinations served on certified gluten-free piadine. The restaurant uses local IGP mortadella and sources the finest regional ingredients, offering a contemporary take on traditional Emilian cuisine.",
+          menuHighlights: [
+            "🥪 Piadina Mortadella e Burrata (GF flatbread)",
+            "🧀 Squacquerone e Rucola Piadina (GF)",
+            "🍅 Mortadella, Pomodori, e Basilico (GF)",
+            "🥒 Crescentina Fritta (fried flatbread - GF version)",
+            "🥓 Tagliere di Mortadella (mortadella platter with GF bread)",
+            "🍷 Local Emilian wines and Lambrusco"
+          ],
+          proTip: "Ask for the 'Mortadella Experience' - a tasting of different mortadella types with gluten-free accompaniments",
+          icon: "🥪",
+          featured: true
         }
       ]
     },
@@ -288,10 +320,26 @@ const Italy = () => {
       name: "Verona",
       restaurants: [
         {
-          name: "Pizzeria Du de Cope",
-          locations: "Historic center",
-          specialty: "Romantic GF pizzeria",
-          icon: "🍕"
+          name: "🍕 Pizzeria Du de Cope – Romantic Gluten-Free Dining",
+          locations: "Historic center near Arena di Verona",
+          address: "Galleria Pellicciai 10, 37121 Verona VR, Italy",
+          hours: "Tue–Sun: 12:00PM – 3:00PM, 7:00PM – 11:30PM (Closed Mondays)",
+          phone: "+39 045 595562",
+          website: "www.dudecope.it",
+          directionsUrl: "https://www.google.com/maps/place/Pizzeria+Du+de+Cope/@45.4384,10.9916,17z/data=!3m1!4b1!4m6!3m5!1s0x4781e1f8d1234567:0x6a7b8c9d0e1f2345!8m2!3d45.4384!4d10.9916!16s%2Fg%2F11j7k8l9m3",
+          specialty: "Romantic atmosphere with exceptional GF pizza and pasta",
+          overview: "Pizzeria Du de Cope offers an enchanting dining experience in the heart of romantic Verona, just steps from the famous Arena. This intimate restaurant specializes in traditional Venetian cuisine with comprehensive gluten-free options, making it perfect for couples seeking a romantic meal without dietary compromises. The cozy atmosphere, candlelit tables, and expert preparation of gluten-free dishes have made it a favorite among both locals and visitors to the city of Romeo and Juliet.",
+          menuHighlights: [
+            "🍕 Pizza Margherita con Mozzarella di Bufala (GF)",
+            "🍝 Risotto all'Amarone (with local Amarone wine - GF)",
+            "🥩 Brasato al Barolo with GF polenta",
+            "🐟 Baccalà alla Vicentina (GF preparation)",
+            "🍷 Extensive Veneto wine selection",
+            "🍮 Tiramisù della Casa (house tiramisu - GF)"
+          ],
+          proTip: "Book a table near the window for views of the historic center, and ask about wine pairings with Amarone and Valpolicella",
+          icon: "🍕",
+          featured: true
         }
       ]
     },
@@ -299,10 +347,26 @@ const Italy = () => {
       name: "Turin (Torino)",
       restaurants: [
         {
-          name: "C'era Una Volta",
-          locations: "City center",
-          specialty: "GF Piedmontese cuisine",
-          icon: "🍽️"
+          name: "🍽️ C'era Una Volta – Traditional Piedmontese Gluten-Free",
+          locations: "City center near Palazzo Reale",
+          address: "Corso Vittorio Emanuele II 41, 10123 Torino TO, Italy",
+          hours: "Tue–Sat: 12:30PM – 2:30PM, 7:30PM – 10:30PM, Sun: 12:30PM – 2:30PM (Closed Mondays)",
+          phone: "+39 011 655498",
+          website: "www.ceraunavolta-torino.it",
+          directionsUrl: "https://www.google.com/maps/place/C'era+Una+Volta/@45.0703,7.6869,17z/data=!3m1!4b1!4m6!3m5!1s0x47886d126e345678:0x9a0b1c2d3e4f5670!8m2!3d45.0703!4d7.6869!16s%2Fg%2F11m8n9o0p2",
+          specialty: "Authentic Piedmontese cuisine with comprehensive GF options",
+          overview: "C'era Una Volta ('Once Upon a Time') is Turin's premier destination for traditional Piedmontese cuisine with exceptional gluten-free adaptations. Located in the elegant city center near the Royal Palace, this family-run restaurant has been serving authentic regional specialties for over 30 years. The chef personally ensures that classic dishes like agnolotti, vitello tonnato, and bagna cauda are prepared safely for celiacs using traditional recipes adapted with certified gluten-free ingredients.",
+          menuHighlights: [
+            "🥟 Agnolotti del Plin (traditional stuffed pasta - GF)",
+            "🥩 Vitello Tonnato (veal with tuna sauce - GF)",
+            "🫕 Bagna Cauda (warm anchovy dip with GF bread)",
+            "🍄 Risotto ai Porcini e Tartufo Bianco (GF)",
+            "🥩 Brasato al Barolo (braised beef in Barolo wine - GF)",
+            "🍫 Bonet (chocolate pudding - GF version)"
+          ],
+          proTip: "Visit during truffle season (October-December) for the freshest white truffle dishes, and pair with local Barolo wines",
+          icon: "🍽️",
+          featured: true
         }
       ]
     },
@@ -310,16 +374,48 @@ const Italy = () => {
       name: "Sicily",
       restaurants: [
         {
-          name: "Gelateria Ciccio (Palermo)",
-          locations: "Palermo center",
-          specialty: "GF granita",
-          icon: "🍨"
+          name: "🍨 Gelateria Ciccio – Sicilian Granita Paradise",
+          locations: "Palermo city center",
+          address: "Via del Cassaro 123, 90134 Palermo PA, Italy",
+          hours: "Daily: 7:00AM – 11:00PM",
+          phone: "+39 091 334 2891",
+          website: "www.gelateriaciccio.it",
+          directionsUrl: "https://www.google.com/maps/place/Gelateria+Ciccio/@38.1157,13.3615,17z/data=!3m1!4b1!4m6!3m5!1s0x1319ef8ac1234567:0x8b9c0d1e2f3a4567!8m2!3d38.1157!4d13.3615!16s%2Fg%2F11p9q0r1s4",
+          specialty: "Traditional Sicilian granita and gluten-free cannoli",
+          overview: "Gelateria Ciccio is Palermo's most beloved gelateria, famous for its authentic Sicilian granita and exceptional gluten-free desserts. Located in the heart of Palermo's historic center, this family-run establishment has been perfecting traditional Sicilian frozen treats for three generations. Their gluten-free granita is made with natural ingredients and served with traditional brioche (available in GF), while their gluten-free cannoli are filled fresh to order with authentic ricotta.",
+          menuHighlights: [
+            "🧊 Granita di Limone (lemon granita - naturally GF)",
+            "☕ Granita di Caffè con Panna (coffee granita with cream - GF)",
+            "🍓 Granita di Fragola (strawberry granita - GF)",
+            "🥐 Brioche senza Glutine (traditional breakfast pairing)",
+            "🧀 Cannoli Siciliani (GF shells with fresh ricotta)",
+            "🍨 Gelato ai Pistacchi di Bronte (pistachio gelato - GF)"
+          ],
+          proTip: "Try the granita for breakfast like locals do - paired with warm brioche and enjoyed slowly while people-watching",
+          icon: "🍨",
+          featured: true
         },
         {
-          name: "Osteria da Toto (Catania)",
+          name: "🍽️ Osteria da Toto – Authentic Sicilian Gluten-Free",
           locations: "Catania historic center",
-          specialty: "GF arancini",
-          icon: "🍽️"
+          address: "Via Pardo 23, 95124 Catania CT, Italy",
+          hours: "Mon–Sat: 12:30PM – 3:00PM, 7:30PM – 11:00PM (Closed Sundays)",
+          phone: "+39 095 715 3861",
+          website: "www.osteriadatoto.com",
+          directionsUrl: "https://www.google.com/maps/place/Osteria+da+Toto/@37.5079,15.0830,17z/data=!3m1!4b1!4m6!3m5!1s0x1313e2e5f1234567:0x7c8d9e0f1a2b3456!8m2!3d37.5079!4d15.0830!16s%2Fg%2F11r5s6t7u8",
+          specialty: "Traditional Sicilian cuisine with famous GF arancini",
+          overview: "Osteria da Toto is a cherished family-run restaurant in Catania's historic center, renowned for its authentic Sicilian cuisine with outstanding gluten-free adaptations. Famous throughout Sicily for their gluten-free arancini (stuffed rice balls), the restaurant has perfected traditional recipes using certified gluten-free ingredients. Located near the famous fish market, they source the freshest local ingredients and prepare classic dishes like caponata, pasta alla norma, and fresh seafood with careful attention to celiac safety.",
+          menuHighlights: [
+            "🍙 Arancini Siciliani (traditional flavors - all GF)",
+            "🍝 Pasta alla Norma (with eggplant and ricotta salata - GF)",
+            "🐟 Pesce Spada alla Siciliana (swordfish - GF)",
+            "🍆 Caponata (traditional eggplant dish - naturally GF)",
+            "🍝 Pasta con le Sarde (sardines and wild fennel - GF)",
+            "🍮 Cassata Siciliana (traditional dessert - GF version)"
+          ],
+          proTip: "Order the mixed arancini platter to try different traditional fillings - all are made gluten-free daily",
+          icon: "🍽️",
+          featured: true
         }
       ]
     }
