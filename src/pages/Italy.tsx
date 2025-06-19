@@ -71,6 +71,116 @@ const Italy = () => {
           proTip: "Make reservations well in advance and mention your celiac requirements when booking",
           icon: "🍽️",
           featured: true
+        },
+        {
+          name: "🍨 Gelato in Trevi – Historic Center Gelateria",
+          locations: "Near Trevi Fountain",
+          address: "Via del Lavatore 84, 00187 Roma RM, Italy",
+          hours: "Daily: 10:00AM – 11:00PM",
+          phone: "+39 06 679 2660",
+          website: "www.gelatointrevi.it",
+          directionsUrl: "https://www.google.com/maps/place/Gelato+in+Trevi/@41.9009,12.4833,17z",
+          specialty: "Artisanal gelato steps from Trevi Fountain",
+          overview: "Gelato in Trevi offers premium artisanal gelato in the heart of Rome's historic center, just steps from the iconic Trevi Fountain. This family-run gelateria specializes in traditional Italian flavors with clearly marked gluten-free options and dedicated gluten-free cones. Using natural ingredients and traditional preparation methods, they provide a safe and authentic gelato experience for celiacs visiting Rome's most famous landmarks.",
+          menuHighlights: [
+            "🍨 Stracciatella (chocolate chip - GF)",
+            "🍓 Fragola Fresca (fresh strawberry - GF)",
+            "🥥 Cocco (coconut - GF)",
+            "🌰 Cono senza Glutine (dedicated GF cones)",
+            "🍦 Sorbetti alla Frutta (all fruit sorbets - GF)",
+            "🍫 Cioccolato Fondente (dark chocolate - GF)"
+          ],
+          proTip: "Visit after making your wish at the Trevi Fountain - it's the perfect Roman tradition",
+          icon: "🍨",
+          featured: true
+        },
+        {
+          name: "❄️ Fiocco di Neve – Artisanal Gluten-Free Gelato",
+          locations: "Prati district",
+          address: "Via Marcantonio Colonna 34, 00193 Roma RM, Italy",
+          hours: "Daily: 12:00PM – 11:30PM",
+          phone: "+39 06 324 3025",
+          website: "www.fioccodineve-roma.it",
+          directionsUrl: "https://www.google.com/maps/place/Fiocco+di+Neve/@41.9076,12.4595,17z",
+          specialty: "Premium gelato with extensive GF selection",
+          overview: "Fiocco di Neve ('Snowflake') is a beloved Roman gelateria in the elegant Prati district, famous for its extensive selection of gluten-free gelato flavors and artisanal preparation methods. This award-winning gelateria uses only the finest natural ingredients and offers dedicated gluten-free cones and utensils. The shop is particularly known for its seasonal flavors and creative combinations that maintain authentic Italian gelato traditions while being safe for celiacs.",
+          menuHighlights: [
+            "🍨 Crema Fiocco di Neve (signature flavor - GF)",
+            "🍫 Gianduia (hazelnut chocolate - GF)",
+            "🍋 Limone Siciliano (Sicilian lemon - GF)",
+            "🌰 Coni Artigianali GF (artisanal GF cones)",
+            "🥜 Pistacchio di Bronte (seasonal - GF)",
+            "🍦 Gelato Vegano (vegan options - GF)"
+          ],
+          proTip: "Try their seasonal flavors - they rotate weekly and often feature unique Italian ingredients",
+          icon: "❄️",
+          featured: true
+        },
+        {
+          name: "🌾 Le Altre Farine Del Mulino – Gluten-Free Bakery",
+          locations: "Testaccio district",
+          address: "Via Ostiense 54/56, 00154 Roma RM, Italy",
+          hours: "Mon–Sat: 7:30AM – 8:00PM, Sun: 8:00AM – 2:00PM",
+          phone: "+39 06 574 6394",
+          website: "www.lealtefarine.com",
+          directionsUrl: "https://www.google.com/maps/place/Le+Altre+Farine/@41.8756,12.4816,17z",
+          specialty: "Artisanal GF breads and traditional Roman pastries",
+          overview: "Le Altre Farine Del Mulino is Rome's premier gluten-free bakery, specializing in traditional Roman baked goods made with alternative flours. Located in the trendy Testaccio district, this artisanal bakery recreates classic Italian breads, pastries, and desserts using certified gluten-free ingredients. The bakery is AIC certified and maintains strict protocols to prevent cross-contamination while preserving authentic flavors and textures.",
+          menuHighlights: [
+            "🥖 Pane Romano Tradizionale (traditional Roman bread - GF)",
+            "🥐 Cornetti della Mattina (morning croissants - GF)",
+            "🍰 Maritozzo Romano (traditional cream bun - GF)",
+            "🍪 Biscotti della Nonna (grandmother's cookies - GF)",
+            "🎂 Torte su Ordinazione (custom cakes - GF)",
+            "🥨 Pizza al Taglio (Roman-style pizza by the slice - GF)"
+          ],
+          proTip: "Order their maritozzo in the morning - it's a traditional Roman breakfast pastry filled with fresh whipped cream",
+          icon: "🌾",
+          featured: true
+        },
+        {
+          name: "🍽️ New Food Gluten Free – Ponte Sisto",
+          locations: "Near Ponte Sisto bridge",
+          address: "Via dei Pettinari 44, 00186 Roma RM, Italy",
+          hours: "Daily: 11:00AM – 11:00PM",
+          phone: "+39 06 6880 6427",
+          website: "www.newfoodglutenfree.it",
+          directionsUrl: "https://www.google.com/maps/place/New+Food+Gluten+Free/@41.8931,12.4693,17z",
+          specialty: "Modern Italian cuisine completely gluten-free",
+          overview: "New Food Gluten Free near Ponte Sisto is a revolutionary restaurant concept where everything on the menu is completely gluten-free. This modern establishment reimagines classic Italian dishes using innovative techniques and certified gluten-free ingredients. Located in the heart of historic Rome, the restaurant offers a worry-free dining experience for celiacs with contemporary Italian cuisine that doesn't compromise on taste or presentation.",
+          menuHighlights: [
+            "🍝 Cacio e Pepe Moderno (modern take on classic - GF)",
+            "🍕 Pizza Gourmet Selections (all GF)",
+            "🥩 Saltimbocca alla Romana (Roman-style veal - GF)",
+            "🍤 Risotto ai Frutti di Mare (seafood risotto - GF)",
+            "🍮 Tiramisù Decostruito (deconstructed tiramisu - GF)",
+            "🍷 Extensive Italian wine selection"
+          ],
+          proTip: "Book dinner reservations to secure a table - it's very popular with both locals and tourists",
+          icon: "🍽️",
+          featured: true
+        },
+        {
+          name: "🌾 Sgrano – Dedicated Gluten-Free Trattoria",
+          locations: "Monti district",
+          address: "Via del Boschetto 114, 00184 Roma RM, Italy",
+          hours: "Tue–Sun: 12:30PM – 3:00PM, 7:30PM – 11:00PM (Closed Mondays)",
+          phone: "+39 06 489 1435",
+          website: "www.sgrano-roma.com",
+          directionsUrl: "https://www.google.com/maps/place/Sgrano/@41.8958,12.4924,17z",
+          specialty: "Traditional Roman trattoria cuisine, all GF",
+          overview: "Sgrano is a pioneering gluten-free trattoria in Rome's charming Monti district, where traditional Roman cuisine meets modern dietary needs. This cozy restaurant recreates authentic Roman dishes using only gluten-free ingredients, from handmade pasta to traditional desserts. The intimate atmosphere and family-run service make it feel like dining in a Roman home, while the AIC certification ensures complete safety for celiacs.",
+          menuHighlights: [
+            "🍝 Carbonara Tradizionale (classic recipe - GF pasta)",
+            "🍅 Amatriciana della Casa (house amatriciana - GF)",
+            "🥩 Coda alla Vaccinara (oxtail stew - GF)",
+            "🧀 Supplì al Telefono (rice croquettes - GF)",
+            "🍰 Crostata della Nonna (grandmother's tart - GF)",
+            "🍷 Selection of natural Roman wines"
+          ],
+          proTip: "Try their supplì - these Roman rice croquettes are perfectly recreated gluten-free and stretch like telephone wires when you bite them",
+          icon: "🌾",
+          featured: true
         }
       ]
     },
@@ -117,6 +227,50 @@ const Italy = () => {
           ],
           proTip: "Book dinner reservations even if you're not staying at the hotel - they welcome outside guests",
           icon: "🍽️",
+          featured: true
+        },
+        {
+          name: "🍨 Antica Gelateria Fiorentina – Historic Gelato",
+          locations: "Near Duomo",
+          address: "Via Faenza 2/R, 50123 Firenze FI, Italy",
+          hours: "Daily: 10:00AM – 11:00PM",
+          phone: "+39 055 239 8969",
+          website: "www.anticagelateriafiorentina.it",
+          directionsUrl: "https://www.google.com/maps/place/Antica+Gelateria+Fiorentina/@43.7756,11.2549,17z",
+          specialty: "Historic Florentine gelato with GF options",
+          overview: "Antica Gelateria Fiorentina has been serving authentic Florentine gelato since 1929, maintaining traditional recipes while offering excellent gluten-free options. Located steps from the Duomo, this historic gelateria uses only natural ingredients and offers dedicated gluten-free cones. Their commitment to quality and tradition makes them a favorite among locals and a must-visit for tourists seeking authentic Florentine gelato safely.",
+          menuHighlights: [
+            "🍨 Crema Fiorentina (signature flavor - GF)",
+            "🍫 Cioccolato all'Arancia (chocolate orange - GF)",
+            "🍓 Fragola del Chianti (Chianti strawberry - GF)",
+            "🌰 Coni Tradizionali GF (traditional GF cones)",
+            "🥜 Nocciola Piemontese (Piedmont hazelnut - GF)",
+            "🍦 Sorbetti ai Frutti Toscani (Tuscan fruit sorbets - GF)"
+          ],
+          proTip: "Try their seasonal flavors featuring local Tuscan ingredients like Chianti wine or local honey",
+          icon: "🍨",
+          featured: true
+        },
+        {
+          name: "☕ Leopoldo Cafebar – Senza Glutine",
+          locations: "Oltrarno district",
+          address: "Via Santo Spirito 18/R, 50125 Firenze FI, Italy",
+          hours: "Mon–Sat: 7:00AM – 8:00PM, Sun: 8:00AM – 6:00PM",
+          phone: "+39 055 218 427",
+          website: "www.leopoldocafebar.com",
+          directionsUrl: "https://www.google.com/maps/place/Leopoldo+Cafebar/@43.7665,11.2484,17z",
+          specialty: "Florentine café culture with complete GF menu",
+          overview: "Leopoldo Cafebar in the artistic Oltrarno district offers an authentic Florentine café experience with a completely gluten-free menu. This charming café combines traditional Italian coffee culture with modern dietary needs, offering everything from morning cornetti to afternoon aperitivo snacks. The café is AIC certified and popular with locals, making it perfect for experiencing authentic Florentine daily life while maintaining a gluten-free diet.",
+          menuHighlights: [
+            "☕ Cappuccino con Cornetto GF (morning tradition)",
+            "🥐 Cornetti Dolci e Salati (sweet & savory croissants - GF)",
+            "🍕 Pizza al Taglio (Florentine-style pizza - GF)",
+            "🥪 Panini Toscani (Tuscan sandwiches - GF bread)",
+            "🍰 Dolci della Casa (house desserts - GF)",
+            "🍷 Aperitivo Toscano with GF snacks"
+          ],
+          proTip: "Visit for aperitivo hour (6-8 PM) to experience true Florentine social culture with complimentary GF appetizers",
+          icon: "☕",
           featured: true
         }
       ]
@@ -165,6 +319,28 @@ const Italy = () => {
           ],
           proTip: "Ask for the flavor calendar - they rotate seasonal flavors and will tell you which ones are currently gluten-free",
           icon: "🍨",
+          featured: true
+        },
+        {
+          name: "🍚 Risotteria Melotti – Risotto Specialists",
+          locations: "Multiple locations in Milan",
+          address: "Via Solferino 19, 20121 Milano MI, Italy",
+          hours: "Daily: 12:00PM – 11:00PM",
+          phone: "+39 02 659 5498",
+          website: "www.risotteriamelotti.it",
+          directionsUrl: "https://www.google.com/maps/place/Risotteria+Melotti/@45.4722,9.1889,17z",
+          specialty: "Authentic Italian risotto, naturally gluten-free",
+          overview: "Risotteria Melotti is Milan's premier destination for authentic Italian risotto, where every dish is naturally gluten-free. This specialized restaurant focuses exclusively on risotto preparations using premium Carnaroli rice and seasonal ingredients. With multiple locations throughout Milan, Risotteria Melotti offers a safe dining experience for celiacs while showcasing the true art of risotto preparation in its birthplace.",
+          menuHighlights: [
+            "🍚 Risotto alla Milanese (saffron risotto - classic)",
+            "🍄 Risotto ai Funghi Porcini (porcini mushroom)",
+            "🦐 Risotto ai Gamberetti (shrimp risotto)",
+            "🧀 Risotto al Gorgonzola e Noci (gorgonzola and walnut)",
+            "🍷 Risotto al Barolo (Barolo wine risotto)",
+            "🥬 Risotto agli Spinaci (spinach risotto)"
+          ],
+          proTip: "Try the classic Risotto alla Milanese - you're in the city where it was invented",
+          icon: "🍚",
           featured: true
         }
       ]
@@ -312,6 +488,28 @@ const Italy = () => {
           ],
           proTip: "Ask for the 'Mortadella Experience' - a tasting of different mortadella types with gluten-free accompaniments",
           icon: "🥪",
+          featured: true
+        },
+        {
+          name: "🍽️ Trattoria Vecchio Mercato Bologna – Traditional Emilian",
+          locations: "Historic market district",
+          address: "Via Pescherie Vecchie 3/E, 40124 Bologna BO, Italy",
+          hours: "Tue–Sun: 12:00PM – 3:00PM, 7:00PM – 11:00PM (Closed Mondays)",
+          phone: "+39 051 232 956",
+          website: "www.trattoriavecchiomercato.it",
+          directionsUrl: "https://www.google.com/maps/place/Trattoria+Vecchio+Mercato/@44.4938,11.3434,17z",
+          specialty: "Traditional Emilian cuisine with comprehensive GF options",
+          overview: "Trattoria Vecchio Mercato Bologna is a beloved traditional restaurant in Bologna's historic market district, specializing in authentic Emilian cuisine with excellent gluten-free adaptations. Located near the famous Quadrilatero market area, this family-run trattoria has been serving classic regional dishes for decades and now offers certified gluten-free versions of traditional specialties like tagliatelle al ragù and tortellini in brodo.",
+          menuHighlights: [
+            "🍝 Tagliatelle al Ragù Bolognese (GF pasta)",
+            "🥟 Tortellini in Brodo (GF version available)",
+            "🥩 Cotoletta alla Bolognese (GF breadcrumbs)",
+            "🧀 Tortelloni di Ricotta e Spinaci (GF)",
+            "🍷 Traditional Sangiovese and Lambrusco wines",
+            "🍮 Zuppa Inglese (traditional trifle - GF)"
+          ],
+          proTip: "Ask for the GF tagliatelle al ragù - it's the most authentic Bologna experience available gluten-free",
+          icon: "🍽️",
           featured: true
         }
       ]
