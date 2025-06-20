@@ -97,6 +97,17 @@ const Index = () => {
     "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
   ];
 
+  const topCities = [
+    { name: "Rome", country: "Italy", path: "/italy" },
+    { name: "Milan", country: "Italy", path: "/italy" },
+    { name: "Florence", country: "Italy", path: "/italy" },
+    { name: "Venice", country: "Italy", path: "/italy" },
+    { name: "Barcelona", country: "Spain", path: "/spain" },
+    { name: "Madrid", country: "Spain", path: "/spain" },
+    { name: "New York", country: "USA", path: "/usa" },
+    { name: "Los Angeles", country: "USA", path: "/usa" }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
@@ -180,6 +191,36 @@ const Index = () => {
               <span className="flex items-center"><Users className="h-4 w-4 mr-1" />156 Countries</span>
               <span className="flex items-center"><Star className="h-4 w-4 mr-1 text-yellow-500" />4.8 Average Rating</span>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Cities Section */}
+      <section className="py-12 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Top Cities
+            </Badge>
+            <h2 className="text-3xl font-bold mb-4 text-gray-900">
+              Most Popular Destinations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Discover the most gluten-free friendly cities around the world
+            </p>
+          </div>
+          
+          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+            {topCities.map((city) => (
+              <Link 
+                key={city.name} 
+                to={city.path}
+                className="px-6 py-3 bg-white border border-gray-200 rounded-lg hover:bg-orange-50 hover:border-orange-200 transition-all duration-200 shadow-sm hover:shadow-md"
+              >
+                <span className="text-gray-800 font-medium">{city.name}</span>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
