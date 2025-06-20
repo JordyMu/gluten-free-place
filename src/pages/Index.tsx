@@ -1,3 +1,4 @@
+
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -195,37 +196,58 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Top Cities Section */}
+      {/* Italy Featured Section */}
       <section className="py-12 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">
-              <MapPin className="h-4 w-4 mr-2" />
-              Top Cities
-            </Badge>
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">
-              Most Popular Destinations
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Discover the most gluten-free friendly cities around the world
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
-            {topCities.slice(0, 4).map((city) => (
-              <Link 
-                key={city.name} 
-                to={city.path}
-                className="text-center"
-              >
-                <Button 
-                  variant="outline" 
-                  className="w-full h-12 border-gray-300 hover:bg-orange-50 hover:border-orange-300 transition-all duration-200"
-                >
-                  {city.name}
-                </Button>
-              </Link>
-            ))}
+          <div className="max-w-md mx-auto">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg">
+              <div className="relative overflow-hidden rounded-t-lg">
+                <img 
+                  src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?auto=format&fit=crop&w=600&q=80"
+                  alt="Italy"
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                  <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                  <span className="font-semibold text-sm">4.8</span>
+                </div>
+                <Badge className="absolute top-4 left-4 bg-blue-500 text-white border-0">
+                  IT
+                </Badge>
+              </div>
+              <CardContent className="p-6">
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">Italy</h3>
+                <p className="text-gray-600 mb-4">Home to naturally gluten-free cuisine with amazing risottos and polenta dishes</p>
+                
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center text-orange-600">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    <span className="font-semibold">342 places</span>
+                  </div>
+                  <div className="flex items-center text-blue-600">
+                    <Users className="h-4 w-4 mr-1" />
+                    <span className="text-sm">Verified reviews</span>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <p className="text-sm text-gray-500 mb-2">Top Cities:</p>
+                  <div className="flex flex-wrap gap-1">
+                    <Badge variant="secondary" className="text-xs">Rome</Badge>
+                    <Badge variant="secondary" className="text-xs">Milan</Badge>
+                    <Badge variant="secondary" className="text-xs">Florence</Badge>
+                    <Badge variant="secondary" className="text-xs">Venice</Badge>
+                  </div>
+                </div>
+
+                <Link to="/italy">
+                  <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                    Explore Italy
+                    <ArrowRight className="h-4 w-4 ml-2" />
+                  </Button>
+                </Link>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
