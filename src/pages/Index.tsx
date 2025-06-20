@@ -211,14 +211,19 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
-            {topCities.map((city) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto">
+            {topCities.slice(0, 4).map((city) => (
               <Link 
                 key={city.name} 
                 to={city.path}
-                className="px-6 py-3 bg-white border border-gray-200 rounded-lg hover:bg-orange-50 hover:border-orange-200 transition-all duration-200 shadow-sm hover:shadow-md"
+                className="text-center"
               >
-                <span className="text-gray-800 font-medium">{city.name}</span>
+                <Button 
+                  variant="outline" 
+                  className="w-full h-12 border-gray-300 hover:bg-orange-50 hover:border-orange-300 transition-all duration-200"
+                >
+                  {city.name}
+                </Button>
               </Link>
             ))}
           </div>
