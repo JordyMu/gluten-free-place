@@ -1,4 +1,5 @@
 
+
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -22,7 +23,8 @@ const Index = () => {
       image: "photo-1515542622106-78bda8ba0e5b",
       places: 142,
       rating: 4.8,
-      description: "Ancient city with amazing gluten-free pasta and pizza options"
+      description: "Ancient city with amazing gluten-free pasta and pizza options",
+      topCities: ["Rome", "Milan", "Florence", "Venice"]
     },
     {
       id: 2,
@@ -285,16 +287,34 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold mb-2 text-gray-900">{destination.name}</h3>
                   <p className="text-gray-600 mb-4">{destination.description}</p>
-                  <div className="flex items-center justify-between">
+                  <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center text-orange-600">
                       <MapPin className="h-4 w-4 mr-1" />
                       <span className="font-semibold">{destination.places} places</span>
                     </div>
-                    <Button size="sm" className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                      Explore
-                      <ArrowRight className="h-4 w-4 ml-1" />
-                    </Button>
+                    <div className="flex items-center text-blue-600">
+                      <Users className="h-4 w-4 mr-1" />
+                      <span className="text-sm">Verified reviews</span>
+                    </div>
                   </div>
+
+                  {destination.topCities && (
+                    <div className="mb-4">
+                      <p className="text-sm text-gray-500 mb-2">Top Cities:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {destination.topCities.map((city) => (
+                          <Badge key={city} variant="secondary" className="text-xs">
+                            {city}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <Button size="sm" className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                    Explore
+                    <ArrowRight className="h-4 w-4 ml-1" />
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -410,3 +430,4 @@ const Index = () => {
 };
 
 export default Index;
+
