@@ -30,7 +30,8 @@ const Index = () => {
       image: "photo-1539037116277-4db20889f2d4",
       places: 98,
       rating: 4.7,
-      description: "Vibrant culture with excellent gluten-free tapas and paella"
+      description: "Vibrant culture with excellent gluten-free tapas and paella",
+      topCities: ["Barcelona", "Madrid", "Seville", "Valencia"]
     },
     {
       id: 3,
@@ -38,7 +39,8 @@ const Index = () => {
       image: "photo-1496442226666-8d4d0e62e6e9",
       places: 234,
       rating: 4.6,
-      description: "The city that never sleeps offers endless gluten-free dining"
+      description: "The city that never sleeps offers endless gluten-free dining",
+      topCities: ["New York", "Los Angeles", "Chicago", "Miami"]
     },
     {
       id: 4,
@@ -46,7 +48,8 @@ const Index = () => {
       image: "photo-1506905925346-21bda4d32df4",
       places: 87,
       rating: 4.9,
-      description: "Harbor city with fantastic gluten-free cafes and restaurants"
+      description: "Harbor city with fantastic gluten-free cafes and restaurants",
+      topCities: ["Sydney", "Melbourne", "Brisbane", "Perth"]
     },
     {
       id: 5,
@@ -54,7 +57,8 @@ const Index = () => {
       image: "photo-1513635269975-59663e0ac1ad",
       places: 156,
       rating: 4.5,
-      description: "Historic city embracing the gluten-free revolution"
+      description: "Historic city embracing the gluten-free revolution",
+      topCities: ["London", "Manchester", "Edinburgh", "Birmingham"]
     },
     {
       id: 6,
@@ -62,7 +66,8 @@ const Index = () => {
       image: "photo-1540959733332-eab4deabeeaf",
       places: 73,
       rating: 4.4,
-      description: "Discover amazing gluten-free ramen and traditional dishes"
+      description: "Discover amazing gluten-free ramen and traditional dishes",
+      topCities: ["Tokyo", "Osaka", "Kyoto", "Hiroshima"]
     }
   ];
 
