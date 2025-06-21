@@ -27,6 +27,16 @@ const Countries = () => {
     },
     {
       id: 2,
+      name: "Spain",
+      code: "ES", 
+      image: "photo-1539037116277-4db20889f2d4",
+      places: 298,
+      rating: 4.7,
+      description: "Vibrant culture with excellent gluten-free tapas and paella restaurants",
+      topCities: ["Barcelona", "Madrid", "Seville", "Valencia"]
+    },
+    {
+      id: 3,
       name: "France",
       code: "FR", 
       image: "photo-1502602898536-47ad22581b52",
@@ -36,7 +46,7 @@ const Countries = () => {
       topCities: ["Paris", "Lyon", "Nice", "Bordeaux"]
     },
     {
-      id: 3,
+      id: 4,
       name: "United States",
       code: "US",
       image: "photo-1485738422979-f5c462d49f74",
@@ -46,7 +56,7 @@ const Countries = () => {
       topCities: ["New York", "Los Angeles", "San Francisco", "Chicago"]
     },
     {
-      id: 4,
+      id: 5,
       name: "Australia",
       code: "AU",
       image: "photo-1506905925346-21bda4d32df4",
@@ -56,7 +66,7 @@ const Countries = () => {
       topCities: ["Sydney", "Melbourne", "Brisbane", "Perth"]
     },
     {
-      id: 5,
+      id: 6,
       name: "United Kingdom",
       code: "UK",
       image: "photo-1513635269975-59663e0ac1ad",
@@ -66,7 +76,7 @@ const Countries = () => {
       topCities: ["London", "Edinburgh", "Manchester", "Bristol"]
     },
     {
-      id: 6,
+      id: 7,
       name: "Germany",
       code: "DE",
       image: "photo-1467269204594-9661b134dd2b",
