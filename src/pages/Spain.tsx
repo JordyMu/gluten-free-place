@@ -223,28 +223,28 @@ const Spain = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-yellow-50">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50">
       {/* Header */}
-      <header className="bg-white/80 backdrop-blur-md border-b border-red-100 sticky top-0 z-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <Globe className="h-8 w-8 text-red-600" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-yellow-600 bg-clip-text text-transparent">
+            <Globe className="h-8 w-8 text-green-600" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-red-600 bg-clip-text text-transparent">
               GlutenFree World
             </span>
           </Link>
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors">Home</Link>
-            <Link to="/countries" className="text-gray-700 hover:text-red-600 transition-colors">Countries</Link>
+            <Link to="/" className="text-gray-700 hover:text-green-600 transition-colors">Home</Link>
+            <Link to="/countries" className="text-gray-700 hover:text-green-600 transition-colors">Countries</Link>
             <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-red-600 transition-colors cursor-pointer">
+              <DropdownMenuTrigger className="text-gray-700 hover:text-green-600 transition-colors cursor-pointer">
                 Browse
               </DropdownMenuTrigger>
               <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
-                <DropdownMenuLabel className="text-red-600 font-semibold">Top Countries</DropdownMenuLabel>
+                <DropdownMenuLabel className="text-green-600 font-semibold">Top Countries</DropdownMenuLabel>
                 <div className="grid grid-cols-2 gap-1 p-2">
                   {topCountries.map((country) => (
-                    <DropdownMenuItem key={country} className="cursor-pointer hover:bg-red-50 text-sm">
+                    <DropdownMenuItem key={country} className="cursor-pointer hover:bg-green-50 text-sm">
                       {country}
                     </DropdownMenuItem>
                   ))}
@@ -257,9 +257,9 @@ const Spain = () => {
                 </Link>
               </DropdownMenuContent>
             </DropdownMenu>
-            <Link to="/#about" className="text-gray-700 hover:text-red-600 transition-colors">About</Link>
-            <Link to="/#reviews" className="text-gray-700 hover:text-red-600 transition-colors">Reviews</Link>
-            <Button variant="outline" className="border-red-200 text-red-600 hover:bg-red-50">
+            <Link to="/#about" className="text-gray-700 hover:text-green-600 transition-colors">About</Link>
+            <Link to="/#reviews" className="text-gray-700 hover:text-green-600 transition-colors">Reviews</Link>
+            <Button variant="outline" className="border-green-200 text-green-600 hover:bg-green-50">
               Sign In
             </Button>
           </div>
@@ -268,14 +268,14 @@ const Spain = () => {
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-yellow-600/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-green-600/10 to-red-600/10" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-red-100 text-red-800 border-red-200">
+            <Badge className="mb-6 bg-green-100 text-green-800 border-green-200">
               <MapPin className="h-4 w-4 mr-2" />
               Spain - Gluten Free Guide
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-600 via-yellow-500 to-red-600 bg-clip-text text-transparent">
               ¡Bienvenidos a España!
               <br />
               Gluten-Free Paradise
@@ -287,27 +287,27 @@ const Spain = () => {
             
             {/* Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-              <div className="bg-white/80 rounded-lg p-4 border border-red-100">
-                <div className="text-2xl font-bold text-red-600">{stats.totalRestaurants}+</div>
+              <div className="bg-white/80 rounded-lg p-4 border border-green-100">
+                <div className="text-2xl font-bold text-green-600">{stats.totalRestaurants}+</div>
                 <div className="text-sm text-gray-600">Restaurants</div>
               </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-red-100">
-                <div className="text-2xl font-bold text-red-600">{stats.avgRating}</div>
+              <div className="bg-white/80 rounded-lg p-4 border border-green-100">
+                <div className="text-2xl font-bold text-green-600">{stats.avgRating}</div>
                 <div className="text-sm text-gray-600">Avg Rating</div>
               </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-red-100">
-                <div className="text-2xl font-bold text-red-600">{stats.cities}</div>
+              <div className="bg-white/80 rounded-lg p-4 border border-green-100">
+                <div className="text-2xl font-bold text-green-600">{stats.cities}</div>
                 <div className="text-sm text-gray-600">Cities</div>
               </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-red-100">
-                <div className="text-2xl font-bold text-red-600">{stats.dedicatedGF}</div>
+              <div className="bg-white/80 rounded-lg p-4 border border-green-100">
+                <div className="text-2xl font-bold text-green-600">{stats.dedicatedGF}</div>
                 <div className="text-sm text-gray-600">100% GF Places</div>
               </div>
             </div>
             
             {/* Search Bar */}
             <div className="max-w-xl mx-auto">
-              <div className="relative flex bg-white rounded-full shadow-xl border border-red-100 p-2">
+              <div className="relative flex bg-white rounded-full shadow-xl border border-green-100 p-2">
                 <div className="flex-1 flex items-center px-4">
                   <Search className="h-5 w-5 text-gray-400 mr-3" />
                   <Input 
@@ -315,7 +315,7 @@ const Spain = () => {
                     className="border-0 focus-visible:ring-0"
                   />
                 </div>
-                <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 rounded-full px-6">
+                <Button className="bg-gradient-to-r from-green-500 to-red-500 hover:from-green-600 hover:to-red-600 rounded-full px-6">
                   Buscar
                 </Button>
               </div>
@@ -332,7 +332,7 @@ const Spain = () => {
               <h2 className="text-3xl font-bold mb-2 text-gray-900">Top Gluten-Free Restaurants in Spain</h2>
               <p className="text-lg text-gray-600">Verified restaurants with trained staff and celiac knowledge</p>
             </div>
-            <Button variant="outline" className="border-red-200 text-red-600 hover:bg-red-50">
+            <Button variant="outline" className="border-green-200 text-green-600 hover:bg-green-50">
               <Filter className="h-4 w-4 mr-2" />
               Filter
             </Button>
@@ -351,7 +351,7 @@ const Spain = () => {
                     <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
                     <span className="font-semibold text-sm">{restaurant.rating}</span>
                   </div>
-                  <Badge className="absolute top-4 left-4 bg-red-500 text-white border-0">
+                  <Badge className="absolute top-4 left-4 bg-green-500 text-white border-0">
                     {restaurant.priceRange}
                   </Badge>
                   <div className="absolute bottom-4 right-4">
@@ -419,7 +419,7 @@ const Spain = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                  <Button className="w-full bg-gradient-to-r from-green-500 to-red-500 hover:from-green-600 hover:to-red-600">
                     View Details
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -429,7 +429,7 @@ const Spain = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Button size="lg" variant="outline" className="border-red-200 text-red-600 hover:bg-red-50">
+            <Button size="lg" variant="outline" className="border-green-200 text-green-600 hover:bg-green-50">
               Load More Restaurants
             </Button>
           </div>
@@ -437,20 +437,20 @@ const Spain = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-red-600 to-orange-600 text-white">
+      <section className="py-16 bg-gradient-to-r from-green-600 to-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Planning Your Spanish Adventure?</h2>
           <p className="text-xl mb-8 opacity-90">Join thousands of travelers discovering amazing gluten-free experiences across Spain</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-red-600 hover:bg-gray-100">
+            <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100">
               Download Spain Guide
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-red-600">
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-green-600">
               Add Your Restaurant
             </Button>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 };
