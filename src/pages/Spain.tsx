@@ -450,7 +450,7 @@ const Spain = () => {
             </Button>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 };
