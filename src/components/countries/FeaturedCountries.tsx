@@ -54,6 +54,16 @@ const featuredCountries = [
   },
   {
     id: 6,
+    name: "Ireland",
+    code: "IE",
+    image: "photo-1590736969955-71cc94901144",
+    places: 30,
+    rating: 4.6,
+    description: "Traditional Irish cuisine with growing gluten-free awareness and options",
+    topCities: ["Dublin", "Cork", "Galway", "Limerick"]
+  },
+  {
+    id: 7,
     name: "United States",
     code: "US",
     image: "photo-1485738422979-f5c462d49f74",
@@ -63,7 +73,7 @@ const featuredCountries = [
     topCities: ["New York", "Los Angeles", "San Francisco", "Chicago"]
   },
   {
-    id: 7,
+    id: 8,
     name: "United Kingdom",
     code: "UK",
     image: "photo-1513635269975-59663e0ac1ad",
@@ -73,7 +83,7 @@ const featuredCountries = [
     topCities: ["London", "Edinburgh", "Manchester", "Bristol"]
   },
   {
-    id: 8,
+    id: 9,
     name: "Germany",
     code: "DE",
     image: "photo-1467269204594-9661b134dd2b",
