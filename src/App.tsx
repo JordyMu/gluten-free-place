@@ -11,6 +11,7 @@ import Italy from "./pages/Italy";
 import Spain from "./pages/Spain";
 import France from "./pages/France";
 import Australia from "./pages/Australia";
+import UnitedKingdom from "./pages/UnitedKingdom";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/spain" element={<Spain />} />
           <Route path="/france" element={<France />} />
           <Route path="/australia" element={<Australia />} />
+          <Route path="/united-kingdom" element={<UnitedKingdom />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
