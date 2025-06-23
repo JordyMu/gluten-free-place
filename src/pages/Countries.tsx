@@ -57,6 +57,16 @@ const Countries = () => {
     },
     {
       id: 5,
+      name: "Canada",
+      code: "CA",
+      image: "photo-1503614472-8c93d56e92ce",
+      places: 255,
+      rating: 4.7,
+      description: "Coast-to-coast gluten-free dining with amazing bakeries and diverse cuisine",
+      topCities: ["Toronto", "Vancouver", "Montreal", "Calgary"]
+    },
+    {
+      id: 6,
       name: "United States",
       code: "US",
       image: "photo-1485738422979-f5c462d49f74",
@@ -66,7 +76,7 @@ const Countries = () => {
       topCities: ["New York", "Los Angeles", "San Francisco", "Chicago"]
     },
     {
-      id: 6,
+      id: 7,
       name: "United Kingdom",
       code: "UK",
       image: "photo-1513635269975-59663e0ac1ad",
@@ -76,7 +86,7 @@ const Countries = () => {
       topCities: ["London", "Edinburgh", "Manchester", "Bristol"]
     },
     {
-      id: 7,
+      id: 8,
       name: "Germany",
       code: "DE",
       image: "photo-1467269204594-9661b134dd2b",
@@ -246,6 +256,13 @@ const Countries = () => {
                     </Link>
                   ) : country.name === "Australia" ? (
                     <Link to="/australia">
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                        Explore {country.name}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : country.name === "Canada" ? (
+                    <Link to="/canada">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
                         Explore {country.name}
                         <ArrowRight className="h-4 w-4 ml-2" />
