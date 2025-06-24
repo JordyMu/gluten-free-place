@@ -91,6 +91,16 @@ const featuredCountries = [
     rating: 4.6,
     description: "Strong gluten-free movement with dedicated stores and restaurants",
     topCities: ["Berlin", "Munich", "Hamburg", "Cologne"]
+  },
+  {
+    id: 10,
+    name: "New Zealand",
+    code: "NZ",
+    image: "photo-1506905925346-21bda4d32df4",
+    places: 50,
+    rating: 4.6,
+    description: "Incredible gluten-free dining from Auckland to Queenstown with fresh, local ingredients",
+    topCities: ["Auckland", "Wellington", "Christchurch", "Queenstown"]
   }
 ];
 
