@@ -29,6 +29,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
       case "Canada": return "/canada";
       case "United Kingdom": return "/united-kingdom";
       case "Ireland": return "/ireland";
+      case "Germany": return "/germany";
       default: return "#";
     }
   };
