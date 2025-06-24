@@ -16,6 +16,7 @@ import Canada from "./pages/Canada";
 import Ireland from "./pages/Ireland";
 import Germany from "./pages/Germany";
 import NewZealand from "./pages/NewZealand";
+import Sweden from "./pages/Sweden";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -39,6 +40,7 @@ const App = () => (
           <Route path="/ireland" element={<Ireland />} />
           <Route path="/germany" element={<Germany />} />
           <Route path="/new-zealand" element={<NewZealand />} />
+          <Route path="/sweden" element={<Sweden />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

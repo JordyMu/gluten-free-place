@@ -101,6 +101,16 @@ const featuredCountries = [
     rating: 4.6,
     description: "Incredible gluten-free dining from Auckland to Queenstown with fresh, local ingredients",
     topCities: ["Auckland", "Wellington", "Christchurch", "Queenstown"]
+  },
+  {
+    id: 11,
+    name: "Sweden",
+    code: "SE",
+    image: "photo-1509356843151-3e7d96241e11",
+    places: 48,
+    rating: 4.6,
+    description: "Exceptional fika culture with dedicated gluten-free bakeries and innovative restaurants",
+    topCities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"]
   }
 ];
 
