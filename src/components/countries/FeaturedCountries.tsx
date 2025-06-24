@@ -121,6 +121,16 @@ const featuredCountries = [
     rating: 4.7,
     description: "Amazing gluten-free Thai cuisine from street food to fine dining with trained staff",
     topCities: ["Bangkok", "Chiang Mai", "Phuket", "Koh Samui"]
+  },
+  {
+    id: 13,
+    name: "Argentina",
+    code: "AR",
+    image: "photo-1589909202802-8947b4aa970e",
+    places: 50,
+    rating: 4.7,
+    description: "Exceptional gluten-free dining from Buenos Aires to Patagonia with celiac-aware restaurants",
+    topCities: ["Buenos Aires", "Mendoza", "Bariloche", "Cordoba"]
   }
 ];
 
