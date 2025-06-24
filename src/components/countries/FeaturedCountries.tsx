@@ -111,6 +111,16 @@ const featuredCountries = [
     rating: 4.6,
     description: "Exceptional fika culture with dedicated gluten-free bakeries and innovative restaurants",
     topCities: ["Stockholm", "Gothenburg", "Malmö", "Uppsala"]
+  },
+  {
+    id: 12,
+    name: "Thailand",
+    code: "TH",
+    image: "photo-1552465011-b4e21bf6e79a",
+    places: 50,
+    rating: 4.7,
+    description: "Amazing gluten-free Thai cuisine from street food to fine dining with trained staff",
+    topCities: ["Bangkok", "Chiang Mai", "Phuket", "Koh Samui"]
   }
 ];
 
