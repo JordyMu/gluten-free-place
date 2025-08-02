@@ -23,6 +23,7 @@ import JansanaGlutenFreeBakery from "./pages/JansanaGlutenFreeBakery";
 import ChokSagastaPasteleria from "./pages/ChokSagastaPasteleria";
 import ChokChocolateBar from "./pages/ChokChocolateBar";
 import MessieSinGlutenMuntaner from "./pages/MessieSinGlutenMuntaner";
+import LaNonnaCarmela from "./pages/LaNonnaCarmela";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -53,6 +54,7 @@ const App = () => (
           <Route path="/spain/chok-sagasta-pasteleria" element={<ChokSagastaPasteleria />} />
           <Route path="/spain/chok-chocolate-bar" element={<ChokChocolateBar />} />
           <Route path="/spain/messie-sin-gluten-muntaner" element={<MessieSinGlutenMuntaner />} />
+          <Route path="/spain/la-nonna-carmela" element={<LaNonnaCarmela />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
