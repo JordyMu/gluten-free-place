@@ -58,19 +58,21 @@ const MessieSinGlutenMuntaner = () => {
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="space-y-4 mb-6">
                 <div className="flex items-center space-x-2">
                   <Badge className="bg-green-100 text-green-800 border-green-200">
                     <Check className="h-3 w-3 mr-1" />
                     Dedicated Facility
                   </Badge>
+                </div>
+                <div className="space-y-2">
                   <Badge className="bg-blue-100 text-blue-800 border-blue-200">
                     ✨ 100% Gluten-Free
                   </Badge>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Award className="h-4 w-4 text-purple-600" />
-                  <span className="text-sm text-purple-600 font-medium">AIC Certified - Dedicated Kitchen</span>
+                  <div className="flex items-center space-x-2">
+                    <Award className="h-4 w-4 text-purple-600" />
+                    <span className="text-sm text-purple-600 font-medium">AIC Certified - Dedicated Kitchen</span>
+                  </div>
                 </div>
               </div>
 
