@@ -74,7 +74,7 @@ const GrossoNapoletanoSenzaGlutine = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600">
+              <div className="grid grid-cols-1 gap-4 text-sm text-gray-600">
                 <div className="flex items-center">
                   <MapPin className="h-4 w-4 mr-2 text-red-500" />
                   <span>Via di San Cosimato 7/9, Barcelona, Spain</span>
