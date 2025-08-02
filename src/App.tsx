@@ -27,6 +27,10 @@ import LaNonnaCarmela from "./pages/LaNonnaCarmela";
 import Aruku from "./pages/Aruku";
 import GrossoNapoletanoSenzaGlutine from "./pages/GrossoNapoletanoSenzaGlutine";
 import YummyHeladeria from "./pages/YummyHeladeria";
+import Coliaki from "./pages/Coliaki";
+import LaPapitaDeLecheTakeAway from "./pages/LaPapitaDeLecheTakeAway";
+import RestauranteEnVille from "./pages/RestauranteEnVille";
+import MessiePizzaGlutenFreeGracia from "./pages/MessiePizzaGlutenFreeGracia";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -61,6 +65,10 @@ const App = () => (
           <Route path="/spain/aruku" element={<Aruku />} />
           <Route path="/spain/grosso-napoletano-senza-glutine" element={<GrossoNapoletanoSenzaGlutine />} />
           <Route path="/spain/yummy-heladeria" element={<YummyHeladeria />} />
+          <Route path="/spain/coliaki" element={<Coliaki />} />
+          <Route path="/spain/la-papita-de-leche-take-away" element={<LaPapitaDeLecheTakeAway />} />
+          <Route path="/spain/restaurante-en-ville" element={<RestauranteEnVille />} />
+          <Route path="/spain/messie-pizza-gluten-free-gracia" element={<MessiePizzaGlutenFreeGracia />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -509,6 +509,34 @@ const Spain = () => {
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
+                  ) : restaurant.name === "Cøliaki" ? (
+                    <Link to="/spain/coliaki">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "La Papita de Leche Take Away" ? (
+                    <Link to="/spain/la-papita-de-leche-take-away">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "Restaurante En Ville" ? (
+                    <Link to="/spain/restaurante-en-ville">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "Messié Pizza Gluten Free Gràcia" ? (
+                    <Link to="/spain/messie-pizza-gluten-free-gracia">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
                   ) : (
                     <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
                       View Details
