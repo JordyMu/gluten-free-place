@@ -76,18 +76,16 @@ const YummyHeladeria = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
-                <div className="space-y-2">
-                  <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-red-500" />
-                    <span>Via di San Cosimato 7/9, Valencia, Spain</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2 text-blue-500" />
-                    <span>Mon-Sun: 11:00 AM - 11:00 PM</span>
-                  </div>
+              <div className="space-y-2 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-2 text-red-500" />
+                  <span>Via di San Cosimato 7/9, Valencia, Spain</span>
                 </div>
-                <div className="space-y-2">
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-2 text-blue-500" />
+                  <span>Mon-Sun: 11:00 AM - 11:00 PM</span>
+                </div>
+                <div className="flex items-center space-x-4">
                   <div className="flex items-center">
                     <Globe className="h-4 w-4 mr-2 text-purple-500" />
                     <span>www.yummyheladeria.es</span>
