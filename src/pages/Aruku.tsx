@@ -59,18 +59,20 @@ const Aruku = () => {
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                <div className="flex items-center space-x-2">
-                  <Badge className="bg-green-100 text-green-800 border-green-200">
-                    <Check className="h-3 w-3 mr-1" />
-                    Careful Handling
-                  </Badge>
-                  <Badge className="bg-blue-100 text-blue-800 border-blue-200">
-                    ✨ Many GF Options
-                  </Badge>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <Award className="h-4 w-4 text-purple-600" />
-                  <span className="text-sm text-purple-600 font-medium">AIC Certified - Dedicated Kitchen</span>
+                <div className="flex flex-col space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Badge className="bg-green-100 text-green-800 border-green-200">
+                      <Check className="h-3 w-3 mr-1" />
+                      Careful Handling
+                    </Badge>
+                    <Badge className="bg-blue-100 text-blue-800 border-blue-200">
+                      ✨ Many GF Options
+                    </Badge>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Award className="h-4 w-4 text-purple-600" />
+                    <span className="text-sm text-purple-600 font-medium">AIC Certified - Dedicated Kitchen</span>
+                  </div>
                 </div>
               </div>
 
@@ -83,13 +85,15 @@ const Aruku = () => {
                   <Clock className="h-4 w-4 mr-2 text-blue-500" />
                   <span>Mon-Sun: 7:00 PM - 12:00 AM</span>
                 </div>
-                <div className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-green-500" />
-                  <span>+34 932 678 901</span>
-                </div>
-                <div className="flex items-center">
-                  <Globe className="h-4 w-4 mr-2 text-purple-500" />
-                  <span>www.aruku.es</span>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center">
+                    <Globe className="h-4 w-4 mr-2 text-purple-500" />
+                    <span>www.aruku.es</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Phone className="h-4 w-4 mr-2 text-green-500" />
+                    <span>+34 932 678 901</span>
+                  </div>
                 </div>
               </div>
 
