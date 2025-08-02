@@ -474,6 +474,41 @@ const Spain = () => {
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
+                  ) : restaurant.name === "Messie Sin Gluten Muntaner" ? (
+                    <Link to="/spain/messie-sin-gluten-muntaner">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "La Nonna Carmela" ? (
+                    <Link to="/spain/la-nonna-carmela">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "ARUKU" ? (
+                    <Link to="/spain/aruku">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "Grosso Napoletano Senza Glutine" ? (
+                    <Link to="/spain/grosso-napoletano-senza-glutine">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : restaurant.name === "YUMMY heladería" ? (
+                    <Link to="/spain/yummy-heladeria">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
                   ) : (
                     <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
                       View Details
