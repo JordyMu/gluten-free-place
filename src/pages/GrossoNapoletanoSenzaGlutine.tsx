@@ -83,13 +83,15 @@ const GrossoNapoletanoSenzaGlutine = () => {
                   <Clock className="h-4 w-4 mr-2 text-blue-500" />
                   <span>Mon-Sun: 12:00 PM - 12:00 AM</span>
                 </div>
-                <div className="flex items-center">
-                  <Phone className="h-4 w-4 mr-2 text-green-500" />
-                  <span>+34 933 789 012</span>
-                </div>
-                <div className="flex items-center">
-                  <Globe className="h-4 w-4 mr-2 text-purple-500" />
-                  <span>www.grossonapoletano.es</span>
+                <div className="flex items-center space-x-4">
+                  <div className="flex items-center">
+                    <Phone className="h-4 w-4 mr-2 text-green-500" />
+                    <span>+34 933 789 012</span>
+                  </div>
+                  <div className="flex items-center">
+                    <Globe className="h-4 w-4 mr-2 text-purple-500" />
+                    <span>www.grossonapoletano.es</span>
+                  </div>
                 </div>
               </div>
 
