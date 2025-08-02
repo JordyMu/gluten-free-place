@@ -88,12 +88,12 @@ const LaNonnaCarmela = () => {
                   </div>
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center">
-                      <Phone className="h-4 w-4 mr-2 text-green-500" />
-                      <span>+34 914 567 890</span>
-                    </div>
-                    <div className="flex items-center">
                       <Globe className="h-4 w-4 mr-2 text-purple-500" />
                       <span>www.lanonnacarmela.es</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="h-4 w-4 mr-2 text-green-500" />
+                      <span>+34 914 567 890</span>
                     </div>
                   </div>
                 </div>
