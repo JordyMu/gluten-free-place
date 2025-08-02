@@ -86,15 +86,15 @@ const MessieSinGlutenMuntaner = () => {
                     <Clock className="h-4 w-4 mr-2 text-blue-500" />
                     <span>Mon-Sun: 12:00 PM - 11:00 PM</span>
                   </div>
+                  <div className="flex items-center">
+                    <Globe className="h-4 w-4 mr-2 text-purple-500" />
+                    <span>www.messiesingluten.com</span>
+                  </div>
                 </div>
                 <div className="space-y-2">
                   <div className="flex items-center">
                     <Phone className="h-4 w-4 mr-2 text-green-500" />
                     <span>+34 933 456 789</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Globe className="h-4 w-4 mr-2 text-purple-500" />
-                    <span>www.messiesingluten.com</span>
                   </div>
                 </div>
               </div>
