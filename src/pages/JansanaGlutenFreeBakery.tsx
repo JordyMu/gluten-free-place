@@ -30,11 +30,11 @@ const JansanaGlutenFreeBakery = () => {
   ];
 
   const menuHighlights = [
-    "Gluten-Free Ensaimadas",
-    "Spanish Magdalenas (GF available)",
-    "Gluten-Free Churros",
-    "Traditional Spanish Bread (GF Version)",
-    "Vegetarian, Vegan, and Dairy-Free Options available"
+    { icon: "🥨", name: "Gluten-Free Ensaimadas" },
+    { icon: "🧁", name: "Spanish Magdalenas (GF available)" },
+    { icon: "🍩", name: "Gluten-Free Churros" },
+    { icon: "🍞", name: "Traditional Spanish Bread (GF Version)" },
+    { icon: "🌱", name: "Vegetarian, Vegan, and Dairy-Free Options available" }
   ];
 
   return (
@@ -178,8 +178,8 @@ const JansanaGlutenFreeBakery = () => {
               <div className="space-y-2">
                 {menuHighlights.map((item, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <span className="text-orange-500">🥖</span>
-                    <span className="text-gray-700">{item}</span>
+                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-gray-700">{item.name}</span>
                   </div>
                 ))}
               </div>
