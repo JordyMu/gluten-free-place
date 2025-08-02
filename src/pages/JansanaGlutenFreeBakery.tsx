@@ -153,7 +153,7 @@ const JansanaGlutenFreeBakery = () => {
         </div>
       </section>
 
-      {/* Restaurant Details */}
+      {/* Overview and Menu */}
       <section className="pb-8">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-lg shadow-sm border border-gray-200">
