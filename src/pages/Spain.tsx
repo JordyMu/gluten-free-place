@@ -425,10 +425,19 @@ const Spain = () => {
                     </div>
                   </div>
 
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
-                    View Details
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
+                  {restaurant.name === "Jansana Gluten Free Bakery" ? (
+                    <Link to="/spain/jansana-gluten-free-bakery">
+                      <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                        View Details
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button className="w-full bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                      View Details
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
