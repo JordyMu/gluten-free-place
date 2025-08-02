@@ -96,10 +96,16 @@ const GrossoNapoletanoSenzaGlutine = () => {
               </div>
 
               <div className="mt-6">
-                <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white">
-                  <MapPin className="h-4 w-4 mr-2" />
-                  Get Directions
-                </Button>
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Via+di+San+Cosimato+7%2F9%2C+Barcelona%2C+Spain"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white">
+                    <MapPin className="h-4 w-4 mr-2" />
+                    Get Directions
+                  </Button>
+                </a>
               </div>
             </CardContent>
           </Card>
