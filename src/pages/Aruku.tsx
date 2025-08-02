@@ -76,16 +76,14 @@ const Aruku = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
-                <div className="flex flex-col space-y-2">
-                  <div className="flex items-center">
-                    <MapPin className="h-4 w-4 mr-2 text-red-500" />
-                    <span>Via di San Cosimato 7/9, Barcelona, Spain</span>
-                  </div>
-                  <div className="flex items-center">
-                    <Clock className="h-4 w-4 mr-2 text-blue-500" />
-                    <span>Mon-Sun: 7:00 PM - 12:00 AM</span>
-                  </div>
+              <div className="grid grid-cols-1 gap-4 text-sm text-gray-600">
+                <div className="flex items-center">
+                  <MapPin className="h-4 w-4 mr-2 text-red-500" />
+                  <span>Via di San Cosimato 7/9, Barcelona, Spain</span>
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-2 text-blue-500" />
+                  <span>Mon-Sun: 7:00 PM - 12:00 AM</span>
                 </div>
                 <div className="flex items-center space-x-4">
                   <div className="flex items-center">
