@@ -97,7 +97,7 @@ const GrossoNapoletanoSenzaGlutine = () => {
 
               <div className="mt-6">
                 <a 
-                  href="https://www.google.com/maps/search/?api=1&query=Via+di+San+Cosimato+7%2F9%2C+Barcelona%2C+Spain"
+                  href="https://www.google.com/maps/search/?api=1&query=Via+di+San+Cosimato+7/9,+Barcelona,+Spain"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
