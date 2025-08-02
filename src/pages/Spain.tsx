@@ -360,7 +360,13 @@ const Spain = () => {
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-900 line-clamp-2">{restaurant.name}</h3>
+                    {restaurant.name === "Jansana Gluten Free Bakery" ? (
+                      <Link to="/spain/jansana-gluten-free-bakery">
+                        <h3 className="text-xl font-bold text-gray-900 line-clamp-2 hover:text-red-600 transition-colors cursor-pointer">{restaurant.name}</h3>
+                      </Link>
+                    ) : (
+                      <h3 className="text-xl font-bold text-gray-900 line-clamp-2">{restaurant.name}</h3>
+                    )}
                   </div>
                   
                   <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
