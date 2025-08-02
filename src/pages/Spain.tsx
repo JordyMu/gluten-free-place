@@ -380,6 +380,10 @@ const Spain = () => {
                       <Link to="/spain/la-nonna-carmela">
                         <h3 className="text-xl font-bold text-gray-900 line-clamp-2 hover:text-red-600 transition-colors cursor-pointer">{restaurant.name}</h3>
                       </Link>
+                    ) : restaurant.name === "ARUKU" ? (
+                      <Link to="/spain/aruku">
+                        <h3 className="text-xl font-bold text-gray-900 line-clamp-2 hover:text-red-600 transition-colors cursor-pointer">{restaurant.name}</h3>
+                      </Link>
                     ) : (
                       <h3 className="text-xl font-bold text-gray-900 line-clamp-2">{restaurant.name}</h3>
                     )}
