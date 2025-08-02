@@ -136,7 +136,10 @@ const JansanaGlutenFreeBakery = () => {
                     </div>
 
                     <div className="flex flex-col items-end space-y-2 ml-4">
-                      <Button className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600">
+                      <Button 
+                        className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                        onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=Carrer+de+Jansana+7%2F9%2C+Gràcia%2C+Barcelona%2C+Spain', '_blank')}
+                      >
                         <MapPin className="h-4 w-4 mr-2" />
                         Get Directions
                       </Button>
