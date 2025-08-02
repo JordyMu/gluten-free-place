@@ -21,6 +21,7 @@ import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
 import JansanaGlutenFreeBakery from "./pages/JansanaGlutenFreeBakery";
 import ChokSagastaPasteleria from "./pages/ChokSagastaPasteleria";
+import ChokChocolateBar from "./pages/ChokChocolateBar";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/argentina" element={<Argentina />} />
           <Route path="/spain/jansana-gluten-free-bakery" element={<JansanaGlutenFreeBakery />} />
           <Route path="/spain/chok-sagasta-pasteleria" element={<ChokSagastaPasteleria />} />
+          <Route path="/spain/chok-chocolate-bar" element={<ChokChocolateBar />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
