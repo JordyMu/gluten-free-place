@@ -36,7 +36,7 @@ export const Header = () => {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
               <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
-              <div className="grid grid-cols-4 gap-1 p-4">
+              <div className="grid grid-cols-2 gap-1 p-2">
                 {topCountries.map((country) => (
                   <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-sm">
                     {country}
