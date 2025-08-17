@@ -34,11 +34,11 @@ export const Header = () => {
             <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
               Browse
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-80 bg-white border border-gray-200 shadow-lg z-50">
+            <DropdownMenuContent className="w-[680px] bg-white border border-gray-200 shadow-lg z-50">
               <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
-              <div className="grid grid-cols-4 gap-2 p-3">
+              <div className="grid grid-cols-4 gap-4 p-4">
                 {topCountries.map((country) => (
-                  <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-xs px-2 py-1 text-center">
+                  <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-base px-4 py-3 text-center min-w-[150px] h-12 flex items-center justify-center">
                     {country}
                   </DropdownMenuItem>
                 ))}
