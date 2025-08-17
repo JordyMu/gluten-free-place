@@ -13,7 +13,8 @@ import { Link } from "react-router-dom";
 
 const topCountries = [
   "Italy", "Spain", "USA", "Canada", "Australia", "UK", 
-  "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
+  "Sweden", "Ireland", "Argentina", "Thailand", "Germany",
+  "Brazil", "Mexico", "France", "New Zealand", "Netherlands", "South Africa"
 ];
 
 export const Header = () => {
