@@ -38,9 +38,11 @@ export const Header = () => {
               <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
               <div className="grid grid-cols-4 gap-4 p-4">
                 {topCountries.map((country) => (
-                  <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-base px-4 py-3 text-center min-w-[150px] h-12 flex items-center justify-center">
-                    {country}
-                  </DropdownMenuItem>
+                  <Link key={country} to={`/${country.toLowerCase().replace(/\s+/g, '-')}`}>
+                    <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-base px-4 py-3 text-center min-w-[150px] h-12 flex items-center justify-center">
+                      {country}
+                    </DropdownMenuItem>
+                  </Link>
                 ))}
               </div>
               <DropdownMenuSeparator />
