@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Header } from "@/components/countries/Header";
 import { HeroSection } from "@/components/countries/HeroSection";
-import { CTASection } from "@/components/countries/CTASection";
 
 const USA = () => {
   const cities = [
@@ -409,7 +408,23 @@ const USA = () => {
         </section>
       ))}
 
-      <CTASection />
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-red-600 text-white">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-4">Planning Your American Adventure?</h2>
+          <p className="text-xl mb-8 opacity-90">Explore more gluten-free destinations around the world</p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/countries">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+                Explore More Countries
+              </Button>
+            </Link>
+            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+              Add a Restaurant
+            </Button>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
