@@ -493,58 +493,58 @@ const Australia = () => {
                             
                             {/* Website & Phone */}
                             <div className="flex flex-wrap gap-4">
-                              <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="flex items-center text-sm text-blue-600 hover:underline">
-                                <Globe className="h-4 w-4 mr-1" />
-                                {restaurant.website}
-                              </a>
-                              <a href={`tel:${restaurant.phone}`} className="flex items-center text-sm text-gray-600 hover:text-blue-600">
-                                <Phone className="h-4 w-4 mr-1" />
-                                {restaurant.phone}
-                              </a>
+                              <div className="flex items-center space-x-2">
+                                <Globe className="h-4 w-4 text-blue-500" />
+                                <span className="text-sm text-blue-600">{restaurant.website}</span>
+                              </div>
+                              <div className="flex items-center space-x-2">
+                                <Phone className="h-4 w-4 text-green-500" />
+                                <span className="text-sm text-green-600">{restaurant.phone}</span>
+                              </div>
                             </div>
                             
+                            {/* Directions Button */}
+                            {restaurant.directionsUrl && (
+                              <div className="pt-2">
+                                <Button 
+                                  onClick={() => window.open(restaurant.directionsUrl, '_blank')}
+                                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                                  size="sm"
+                                >
+                                  <Navigation className="h-4 w-4 mr-2" />
+                                  Get Directions
+                                </Button>
+                              </div>
+                            )}
+                            
                             {/* Overview */}
-                            <div className="border-t pt-3">
-                              <p className="text-sm text-gray-700 leading-relaxed">{restaurant.overview}</p>
+                            <div className="bg-green-50 p-4 rounded-lg">
+                              <h4 className="font-semibold text-green-800 mb-2 flex items-center">
+                                <CheckCircle className="h-4 w-4 mr-2" />
+                                Overview
+                              </h4>
+                              <p className="text-sm text-black">{restaurant.overview}</p>
                             </div>
                             
                             {/* Menu Highlights */}
-                            {restaurant.menuHighlights && (
-                              <div>
-                                <h4 className="font-semibold text-sm mb-2 flex items-center">
-                                  <Utensils className="h-4 w-4 mr-2 text-orange-600" />
-                                  Menu Highlights
-                                </h4>
-                                <ul className="grid grid-cols-1 md:grid-cols-2 gap-2">
-                                  {restaurant.menuHighlights.map((item, i) => (
-                                    <li key={i} className="text-sm text-gray-600 flex items-start">
-                                      <span className="mr-2">•</span>
-                                      <span>{item}</span>
-                                    </li>
-                                  ))}
-                                </ul>
+                            <div className="bg-orange-50 p-4 rounded-lg">
+                              <h4 className="font-semibold text-orange-800 mb-3 flex items-center">
+                                <Camera className="h-4 w-4 mr-2" />
+                                Menu Highlights
+                              </h4>
+                              <div className="space-y-1">
+                                {restaurant.menuHighlights?.map((item, idx) => (
+                                  <div key={idx} className="text-sm text-orange-700">{item}</div>
+                                ))}
                               </div>
-                            )}
+                            </div>
                             
-                            {/* Pro Tip */}
-                            {restaurant.proTip && (
-                              <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
-                                <div className="flex items-start space-x-2">
-                                  <Star className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                                  <div>
-                                    <p className="text-xs font-semibold text-blue-800 mb-1">Pro Tip</p>
-                                    <p className="text-sm text-blue-700">{restaurant.proTip}</p>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
-                            
-                            {/* User Reviews */}
+                            {/* User Reviews Section */}
                             {restaurant.userReviews && (
-                              <div>
-                                <h4 className="font-semibold text-sm mb-3 flex items-center">
-                                  <MessageCircle className="h-4 w-4 mr-2 text-purple-600" />
-                                  Recent Reviews
+                              <div className="bg-gray-50 p-4 rounded-lg">
+                                <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
+                                  <MessageCircle className="h-4 w-4 mr-2" />
+                                  User Reviews
                                 </h4>
                                 <div className="space-y-3">
                                   {restaurant.userReviews.map((review, idx) => (
@@ -560,54 +560,40 @@ const Australia = () => {
                                     </div>
                                   ))}
                                 </div>
+                                <Button variant="outline" size="sm" className="mt-3 w-full">
+                                  <MessageCircle className="h-4 w-4 mr-2" />
+                                  View All Reviews
+                                </Button>
                               </div>
                             )}
                             
-                            {/* Get Directions Button */}
-                            <Button className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700">
-                              <Navigation className="h-4 w-4 mr-2" />
-                              Get Directions
-                            </Button>
-                          </div>
-                        ) : (
-                          <div className="space-y-3">
-                            {/* Non-featured restaurant compact view */}
-                            <p className="text-sm text-gray-700">{restaurant.overview}</p>
-                            
-                            <div className="space-y-1 text-xs text-gray-600">
-                              {restaurant.locations && (
-                                <div className="flex items-start">
-                                  <MapPin className="h-3 w-3 mr-1 mt-0.5 flex-shrink-0" />
-                                  <span>{restaurant.locations}</span>
-                                </div>
-                              )}
-                              {restaurant.hours && (
-                                <div className="flex items-start">
-                                  <Clock className="h-3 w-3 mr-1 mt-0.5 flex-shrink-0" />
-                                  <span>{restaurant.hours}</span>
-                                </div>
-                              )}
-                            </div>
-                            
-                            {restaurant.menuHighlights && (
-                              <div>
-                                <p className="text-xs font-semibold text-gray-700 mb-1">Highlights:</p>
-                                <ul className="text-xs text-gray-600 space-y-0.5">
-                                  {restaurant.menuHighlights.slice(0, 3).map((item, i) => (
-                                    <li key={i}>• {item}</li>
-                                  ))}
-                                </ul>
-                              </div>
-                            )}
-                            
+                            {/* Pro Tip */}
                             {restaurant.proTip && (
-                              <div className="bg-blue-50 rounded p-2 border border-blue-100">
-                                <p className="text-xs text-blue-800">
-                                  <strong>Tip:</strong> {restaurant.proTip}
+                              <div className="bg-blue-50 p-3 rounded-lg">
+                                <p className="text-sm text-blue-700">
+                                  <strong>💡 Pro Tip:</strong> {restaurant.proTip}
                                 </p>
                               </div>
                             )}
                           </div>
+                        ) : (
+                          <>
+                            <div className="flex items-start space-x-2">
+                              <MapPin className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-sm text-gray-600">{restaurant.locations}</span>
+                            </div>
+                            <div className="flex items-start space-x-2">
+                              <Utensils className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
+                              <span className="text-sm">{restaurant.specialty}</span>
+                            </div>
+                            {restaurant.proTip && (
+                              <div className="bg-blue-50 p-3 rounded-lg">
+                                <p className="text-sm text-blue-700">
+                                  <strong>💡 Pro Tip:</strong> {restaurant.proTip}
+                                </p>
+                              </div>
+                            )}
+                          </>
                         )}
                       </CardContent>
                     </Card>
