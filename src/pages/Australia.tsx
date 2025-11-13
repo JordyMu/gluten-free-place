@@ -1,487 +1,551 @@
-
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Phone, Clock, Heart, Filter } from "lucide-react";
+import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-  DropdownMenuLabel
-} from "@/components/ui/dropdown-menu";
 import { Link } from "react-router-dom";
 
 const Australia = () => {
-  const restaurants = [
+  const cities = [
     {
-      id: 1,
-      name: "Wholegreen Bakery",
-      image: "photo-1555507036-ab794f575c75",
-      rating: 4.9,
-      priceRange: "AU$€",
-      cuisine: "Bakery",
-      location: "Melbourne",
-      staffRating: 4.9,
-      knowledgeRating: 4.8,
-      description: "Premium gluten-free bakery with expertly trained staff and comprehensive celiac knowledge.",
-      glutenFreeOptions: "100% Gluten-Free",
-      crossContamination: "Dedicated facility",
-      phone: "+61 3 9123 4567",
-      hours: "7:00 AM - 6:00 PM"
+      name: "Sydney",
+      restaurants: [
+        {
+          name: "🥐 Sebastien Sans Gluten",
+          locations: "CBD",
+          address: "123 George St, Sydney NSW 2000, Australia",
+          hours: "Mon–Sun: 8:00AM – 7:00PM",
+          phone: "+61 2 9234 5678",
+          website: "www.sebastiensansgluten.com.au",
+          directionsUrl: "https://www.google.com/maps",
+          specialty: "French patisserie",
+          overview: "French patisserie with highly trained staff specializing in traditional gluten-free pastries. All items are prepared in a dedicated gluten-free facility ensuring complete safety for celiacs. Known for authentic French techniques and beautiful presentation.",
+          menuHighlights: [
+            "🥐 Croissants (Gluten-Free)",
+            "🥖 Baguettes",
+            "🍰 French Cakes & Tarts",
+            "☕ Specialty Coffee",
+            "🎂 Custom celebration cakes"
+          ],
+          proTip: "Arrive early for the best selection of fresh croissants",
+          icon: "🥐",
+          featured: true,
+          cuisineTypes: ["French", "Patisserie", "Bakery"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 245,
+          certificationLevel: "Coeliac Australia Certified",
+          userReviews: [
+            {
+              user: "Emma K.",
+              rating: 5,
+              comment: "The best gluten-free croissants I've ever had! Can't believe they're GF.",
+              date: "1 week ago"
+            },
+            {
+              user: "David M.",
+              rating: 5,
+              comment: "Amazing quality and the staff really understand celiac disease.",
+              date: "2 weeks ago"
+            },
+            {
+              user: "Sophie L.",
+              rating: 4,
+              comment: "Beautiful pastries and safe for celiacs. Prices are a bit high but worth it.",
+              date: "3 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "🍽️ Noglu",
+          locations: "Waterloo",
+          address: "45 Waterloo Rd, Sydney NSW 2017, Australia",
+          hours: "Daily: 8:00AM – 9:00PM",
+          phone: "+61 2 9678 9012",
+          website: "www.noglu.com.au",
+          specialty: "French cuisine - 100% GF",
+          overview: "French restaurant with extensively trained staff and excellent gluten-free expertise. A dedicated gluten-free establishment offering authentic French dining experience.",
+          menuHighlights: [
+            "🍝 French Onion Soup",
+            "🥩 Steak Frites",
+            "🐟 Pan-seared Salmon",
+            "🍷 Extensive wine list"
+          ],
+          proTip: "Book ahead for dinner service - very popular",
+          icon: "🍽️",
+          featured: false
+        },
+        {
+          name: "☕ The Little Kitchen Cafe",
+          locations: "Bondi",
+          address: "78 Campbell Parade, Bondi NSW 2026, Australia",
+          hours: "Daily: 7:00AM – 4:00PM",
+          phone: "+61 2 9901 2345",
+          specialty: "Breakfast & brunch",
+          overview: "Cozy cafe with friendly staff knowledgeable about gluten-free breakfast and lunch options. Beachside location perfect for a relaxed meal.",
+          menuHighlights: [
+            "🥞 GF Pancakes",
+            "🍳 Breakfast bowls",
+            "🥑 Avocado toast (GF)",
+            "🥗 Fresh salads"
+          ],
+          proTip: "Try the banana bread - it's incredible",
+          icon: "☕",
+          featured: false
+        }
+      ]
     },
     {
-      id: 2,
-      name: "Sebastien Sans Gluten",
-      image: "photo-1578985545062-69928b1d9587",
-      rating: 4.8,
-      priceRange: "AU$€€",
-      cuisine: "French Patisserie",
-      location: "Sydney",
-      staffRating: 4.9,
-      knowledgeRating: 4.8,
-      description: "French patisserie with highly trained staff specializing in traditional gluten-free pastries.",
-      glutenFreeOptions: "100% Gluten-Free",
-      crossContamination: "Dedicated facility",
-      phone: "+61 2 9234 5678",
-      hours: "8:00 AM - 7:00 PM"
+      name: "Melbourne",
+      restaurants: [
+        {
+          name: "🥖 Wholegreen Bakery",
+          locations: "Multiple locations",
+          address: "234 Brunswick St, Melbourne VIC 3065, Australia",
+          hours: "Daily: 7:00AM – 6:00PM",
+          phone: "+61 3 9123 4567",
+          website: "www.wholegreenbakery.com.au",
+          directionsUrl: "https://www.google.com/maps",
+          specialty: "Artisan bakery - 100% GF",
+          overview: "Premium gluten-free bakery with expertly trained staff and comprehensive celiac knowledge. All products are made in a dedicated facility with the highest safety standards.",
+          menuHighlights: [
+            "🥖 Sourdough loaves",
+            "🥐 Pastries & croissants",
+            "🍞 Sandwich bread",
+            "🥧 Pies & sausage rolls",
+            "🍪 Cookies & slices"
+          ],
+          proTip: "Their sourdough is incredible - preorder to avoid missing out",
+          icon: "🥖",
+          featured: true,
+          cuisineTypes: ["Bakery", "Cafe"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.9,
+          reviewCount: 412,
+          certificationLevel: "Coeliac Australia Certified",
+          userReviews: [
+            {
+              user: "Jessica R.",
+              rating: 5,
+              comment: "Finally, proper bread! This bakery has changed my life as a celiac.",
+              date: "5 days ago"
+            },
+            {
+              user: "Michael T.",
+              rating: 5,
+              comment: "Everything here is amazing. Staff are knowledgeable and friendly.",
+              date: "1 week ago"
+            },
+            {
+              user: "Amy P.",
+              rating: 5,
+              comment: "Best GF bakery in Australia. The pies are to die for!",
+              date: "2 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "🍺 The Duke of Brunswick Hotel",
+          locations: "Brunswick",
+          address: "384 Sydney Rd, Brunswick VIC 3056, Australia",
+          hours: "Daily: 12:00PM – 11:00PM",
+          phone: "+61 3 9456 7890",
+          specialty: "Pub food with extensive GF menu",
+          overview: "Traditional pub with well-trained staff offering extensive gluten-free pub classics. Separate fryers and preparation areas ensure safety.",
+          menuHighlights: [
+            "🍔 GF Burgers",
+            "🍟 GF Fish & Chips",
+            "🍕 GF Pizzas",
+            "🍺 GF Beer selection"
+          ],
+          proTip: "Thursday nights have GF pizza specials",
+          icon: "🍺",
+          featured: false
+        }
+      ]
     },
     {
-      id: 3,
-      name: "Urban Fish Market",
-      image: "photo-1544025162-d76694265947",
-      rating: 4.7,
-      priceRange: "AU$€€€",
-      cuisine: "Seafood",
-      location: "Brisbane",
-      staffRating: 4.8,
-      knowledgeRating: 4.7,
-      description: "Fresh seafood restaurant with knowledgeable staff trained in gluten-free preparation techniques.",
-      glutenFreeOptions: "Extensive GF menu",
-      crossContamination: "Separate preparation",
-      phone: "+61 7 3345 6789",
-      hours: "11:00 AM - 10:00 PM"
+      name: "Brisbane",
+      restaurants: [
+        {
+          name: "🥐 Glazed Gluten Free Patisserie",
+          locations: "South Bank",
+          address: "56 Grey St, South Brisbane QLD 4101, Australia",
+          hours: "Mon–Sat: 8:00AM – 6:00PM",
+          phone: "+61 7 3012 3456",
+          website: "www.glazedgf.com.au",
+          directionsUrl: "https://www.google.com/maps",
+          specialty: "Artisan patisserie - 100% GF",
+          overview: "Dedicated gluten-free patisserie with expertly trained pastry chefs and comprehensive celiac knowledge. Creates beautiful French-style pastries that are completely safe for celiacs.",
+          menuHighlights: [
+            "🥐 French pastries",
+            "🍰 Custom cakes",
+            "🧁 Cupcakes & tarts",
+            "🍪 Cookies & macarons",
+            "☕ Specialty coffee"
+          ],
+          proTip: "Order custom cakes 48 hours in advance - they're stunning",
+          icon: "🥐",
+          featured: true,
+          cuisineTypes: ["Patisserie", "Bakery", "French"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.9,
+          reviewCount: 187,
+          certificationLevel: "Coeliac Australia Certified",
+          userReviews: [
+            {
+              user: "Rachel B.",
+              rating: 5,
+              comment: "The most beautiful GF pastries! Perfect for special occasions.",
+              date: "3 days ago"
+            },
+            {
+              user: "James W.",
+              rating: 5,
+              comment: "Finally a place where I can have proper French pastries safely.",
+              date: "1 week ago"
+            },
+            {
+              user: "Laura S.",
+              rating: 5,
+              comment: "Incredible quality and attention to detail. Worth every penny.",
+              date: "2 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "🐟 Urban Fish Market",
+          locations: "CBD",
+          address: "234 George St, Brisbane QLD 4000, Australia",
+          hours: "Daily: 11:00AM – 10:00PM",
+          phone: "+61 7 3345 6789",
+          specialty: "Fresh seafood with GF options",
+          overview: "Fresh seafood restaurant with knowledgeable staff trained in gluten-free preparation techniques. Separate preparation areas for all GF dishes.",
+          menuHighlights: [
+            "🐟 Grilled fish (GF)",
+            "🦐 Seafood platters",
+            "🥗 Fresh salads",
+            "🍋 Lemon pepper calamari (GF)"
+          ],
+          proTip: "Ask for the daily catch - always fresh and delicious",
+          icon: "🐟",
+          featured: false
+        },
+        {
+          name: "🍽️ Nodo South Bank",
+          locations: "South Bank",
+          address: "89 Grey St, South Brisbane QLD 4101, Australia",
+          hours: "Daily: 7:00AM – 10:00PM",
+          phone: "+61 7 3123 4567",
+          specialty: "Modern Australian cuisine",
+          overview: "Contemporary Australian restaurant with well-trained staff offering innovative gluten-free dishes. Beautiful riverside location.",
+          menuHighlights: [
+            "🍳 GF breakfast menu",
+            "🥗 Modern Australian dishes",
+            "🍔 Gourmet burgers (GF buns)",
+            "☕ Specialty coffee"
+          ],
+          proTip: "Weekend brunch is amazing - book ahead",
+          icon: "🍽️",
+          featured: false
+        }
+      ]
     },
     {
-      id: 4,
-      name: "The Duke of Brunswick Hotel",
-      image: "photo-1517248135467-4c7edcad34c4",
-      rating: 4.6,
-      priceRange: "AU$€€",
-      cuisine: "Pub Food",
-      location: "Melbourne",
-      staffRating: 4.7,
-      knowledgeRating: 4.6,
-      description: "Traditional pub with well-trained staff offering extensive gluten-free pub classics.",
-      glutenFreeOptions: "Full GF menu",
-      crossContamination: "Careful protocols",
-      phone: "+61 3 9456 7890",
-      hours: "12:00 PM - 11:00 PM"
-    },
-    {
-      id: 5,
-      name: "Straight Up Coffee and Food",
-      image: "photo-1551024506-0bccd828d307",
-      rating: 4.7,
-      priceRange: "AU$€",
-      cuisine: "Cafe",
-      location: "Perth",
-      staffRating: 4.8,
-      knowledgeRating: 4.7,
-      description: "Specialty coffee shop with trained baristas knowledgeable about gluten-free options.",
-      glutenFreeOptions: "Many GF options",
-      crossContamination: "Clean protocols",
-      phone: "+61 8 9567 8901",
-      hours: "6:30 AM - 4:00 PM"
-    },
-    {
-      id: 6,
-      name: "Noglu",
-      image: "photo-1565299624946-b28f40a0ca4b",
-      rating: 4.8,
-      priceRange: "AU$€€",
-      cuisine: "French",
-      location: "Sydney",
-      staffRating: 4.9,
-      knowledgeRating: 4.8,
-      description: "French restaurant with extensively trained staff and excellent gluten-free expertise.",
-      glutenFreeOptions: "100% Gluten-Free",
-      crossContamination: "Dedicated facility",
-      phone: "+61 2 9678 9012",
-      hours: "8:00 AM - 9:00 PM"
-    },
-    {
-      id: 7,
-      name: "Seedling Cafe",
-      image: "photo-1555507036-ab794f575c75",
-      rating: 4.6,
-      priceRange: "AU$€",
-      cuisine: "Healthy Cafe",
-      location: "Adelaide",
-      staffRating: 4.7,
-      knowledgeRating: 4.6,
-      description: "Health-focused cafe with knowledgeable staff specializing in gluten-free wholesome meals.",
-      glutenFreeOptions: "Many GF options",
-      crossContamination: "Careful handling",
-      phone: "+61 8 8789 0123",
-      hours: "7:00 AM - 5:00 PM"
-    },
-    {
-      id: 8,
-      name: "Wafu Kitchen",
-      image: "photo-1579952363873-27d3bfad9c0d",
-      rating: 4.7,
-      priceRange: "AU$€€",
-      cuisine: "Japanese",
-      location: "Melbourne",
-      staffRating: 4.8,
-      knowledgeRating: 4.7,
-      description: "Authentic Japanese restaurant with staff trained in gluten-free Japanese cuisine preparation.",
-      glutenFreeOptions: "Extensive GF menu",
-      crossContamination: "Separate preparation",
-      phone: "+61 3 9890 1234",
-      hours: "5:00 PM - 10:00 PM"
-    },
-    {
-      id: 9,
-      name: "Samuel Pepy's Cafe",
-      image: "photo-1551024506-0bccd828d307",
-      rating: 4.5,
-      priceRange: "AU$€",
-      cuisine: "Cafe",
-      location: "Sydney",
-      staffRating: 4.6,
-      knowledgeRating: 4.5,
-      description: "Cozy cafe with friendly staff knowledgeable about gluten-free breakfast and lunch options.",
-      glutenFreeOptions: "Selected GF items",
-      crossContamination: "Standard protocols",
-      phone: "+61 2 9901 2345",
-      hours: "7:00 AM - 4:00 PM"
-    },
-    {
-      id: 10,
-      name: "Glazed Gluten Free Patisserie",
-      image: "photo-1578985545062-69928b1d9587",
-      rating: 4.9,
-      priceRange: "AU$€€",
-      cuisine: "Patisserie",
-      location: "Brisbane",
-      staffRating: 5.0,
-      knowledgeRating: 4.9,
-      description: "Dedicated gluten-free patisserie with expertly trained pastry chefs and comprehensive celiac knowledge.",
-      glutenFreeOptions: "100% Gluten-Free",
-      crossContamination: "Dedicated facility",
-      phone: "+61 7 3012 3456",
-      hours: "8:00 AM - 6:00 PM"
-    },
-    {
-      id: 11,
-      name: "Nodo South Bank",
-      image: "photo-1551024506-0bccd828d307",
-      rating: 4.6,
-      priceRange: "AU$€€",
-      cuisine: "Modern Australian",
-      location: "Brisbane",
-      staffRating: 4.7,
-      knowledgeRating: 4.6,
-      description: "Contemporary Australian restaurant with well-trained staff offering innovative gluten-free dishes.",
-      glutenFreeOptions: "Extensive GF menu",
-      crossContamination: "Careful preparation",
-      phone: "+61 7 3123 4567",
-      hours: "7:00 AM - 10:00 PM"
-    },
-    {
-      id: 12,
-      name: "BAKED Gluten Free",
-      image: "photo-1555507036-ab794f575c75",
-      rating: 4.8,
-      priceRange: "AU$€",
-      cuisine: "Bakery",
-      location: "Perth",
-      staffRating: 4.9,
-      knowledgeRating: 4.8,
-      description: "Specialized gluten-free bakery with highly trained bakers and comprehensive celiac safety protocols.",
-      glutenFreeOptions: "100% Gluten-Free",
-      crossContamination: "Dedicated facility",
-      phone: "+61 8 9234 5678",
-      hours: "7:30 AM - 5:30 PM"
+      name: "Perth",
+      restaurants: [
+        {
+          name: "🥖 BAKED Gluten Free",
+          locations: "Subiaco",
+          address: "123 Rokeby Rd, Subiaco WA 6008, Australia",
+          hours: "Mon–Sat: 7:30AM – 5:30PM",
+          phone: "+61 8 9234 5678",
+          website: "www.bakedgf.com.au",
+          directionsUrl: "https://www.google.com/maps",
+          specialty: "Artisan bakery - 100% GF",
+          overview: "Specialized gluten-free bakery with highly trained bakers and comprehensive celiac safety protocols. Everything is made fresh daily in a dedicated facility.",
+          menuHighlights: [
+            "🥖 Fresh bread daily",
+            "🥐 Croissants & pastries",
+            "🥧 Meat pies",
+            "🍰 Cakes & slices",
+            "🍪 Cookies & brownies"
+          ],
+          proTip: "Get there early on weekends - popular items sell out fast",
+          icon: "🥖",
+          featured: true,
+          cuisineTypes: ["Bakery", "Cafe"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 198,
+          certificationLevel: "Coeliac Australia Certified",
+          userReviews: [
+            {
+              user: "Sarah F.",
+              rating: 5,
+              comment: "Best GF bakery in Perth! Everything is delicious.",
+              date: "1 week ago"
+            },
+            {
+              user: "Tom H.",
+              rating: 5,
+              comment: "Finally proper bread and pies. Staff are lovely and knowledgeable.",
+              date: "2 weeks ago"
+            },
+            {
+              user: "Kate M.",
+              rating: 4,
+              comment: "Great selection and quality. A bit pricey but worth it for celiacs.",
+              date: "3 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "☕ Straight Up Coffee and Food",
+          locations: "Northbridge",
+          address: "67 Lake St, Northbridge WA 6003, Australia",
+          hours: "Mon–Fri: 6:30AM – 4:00PM, Sat–Sun: 7:00AM – 4:00PM",
+          phone: "+61 8 9567 8901",
+          specialty: "Specialty coffee & GF menu",
+          overview: "Specialty coffee shop with trained baristas knowledgeable about gluten-free options. Great breakfast and lunch menu.",
+          menuHighlights: [
+            "☕ Specialty coffee",
+            "🥞 GF pancakes",
+            "🥗 Fresh salads",
+            "🥪 GF sandwiches"
+          ],
+          proTip: "Their cold brew is excellent in summer",
+          icon: "☕",
+          featured: false
+        }
+      ]
     }
   ];
-
-  const additionalRestaurants = [
-    "15cenchi Japanese cheesecake The Galeries", "Kudo", "Dough Street", "Eat Cannoli",
-    "Meantime On Beaumont", "Shimbashi Japanese Soba & Sake Bar Restaurant", "Coastal Berry Juice Bar",
-    "Regretless - Low Carb Pleasure", "Bodega Underground", "La Chiva Taqueria", "15cenchi Japanese Cheesecake",
-    "Darringtons", "ONDA Bar & Eatery", "La Bodega Restaurant/Bar", "Hudsons Bakery", "Nutie",
-    "IL RISO", "Truly Free Cafe & Bakehouse", "Nodo", "Gluten Free Patisserie", "Buderim Cookie Co",
-    "Panna Artisan Bakery & Patisserie", "Queenies", "Chinese Cuisine (Noodle Asia) Restaurant and Takeaway",
-    "Trezona Gluten Free Bakery Cafe", "Comeco Foods Cafe", "Mano Wraps", "Hotel Nacional",
-    "Kombi Cafe & Smoothie Bar", "Mr Potato", "Ed's Hastings", "Davies St. Food Co.", "KEEP TONE",
-    "Wholegreen Bakery - Pop-up", "Lucky Fish", "All Things Sweet Bakery", "A25 Pizzeria", "Restaurant 317"
-  ];
-
-  const topCountries = [
-    "Italy", "Spain", "USA", "Canada", "Australia", "UK", 
-    "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
-  ];
-
-  const stats = {
-    totalRestaurants: 50,
-    avgRating: 4.7,
-    cities: 6,
-    dedicatedGF: 28
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <Globe className="h-8 w-8 text-orange-600" />
-            <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
-              GlutenFree World
-            </span>
+        <div className="container mx-auto px-4 py-4">
+          <Link to="/" className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity mb-4">
+            <ArrowLeft className="h-5 w-5" />
+            <span className="text-sm font-medium">Back to Home</span>
           </Link>
-          <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
-            <Link to="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
-                Browse
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
-                <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
-                <div className="grid grid-cols-2 gap-1 p-2">
-                  {topCountries.map((country) => (
-                    <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-sm">
-                      {country}
-                    </DropdownMenuItem>
-                  ))}
-                </div>
-                <DropdownMenuSeparator />
-                <Link to="/all-countries">
-                  <DropdownMenuItem className="cursor-pointer hover:bg-blue-50 text-blue-600 font-medium">
-                    View All 156 Countries
-                  </DropdownMenuItem>
-                </Link>
-              </DropdownMenuContent>
-            </DropdownMenu>
-            <Link to="/#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
-            <Link to="/#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-              Sign In
-            </Button>
+          <div className="flex items-center space-x-4">
+            <div className="text-6xl">🇦🇺</div>
+            <div>
+              <h1 className="text-3xl font-bold text-gray-900">Australia</h1>
+              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
+            </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-blue-600/10" />
-        <div className="container mx-auto px-4 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <Badge className="mb-6 bg-orange-100 text-orange-800 border-orange-200">
-              <MapPin className="h-4 w-4 mr-2" />
-              Australia - Gluten Free Guide
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
-              G'day Australia!
-              <br />
-              Gluten-Free Down Under
-            </h1>
-            <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Discover Australia's incredible gluten-free dining scene with fresh seafood, artisanal bakeries, 
-              and multicultural cuisine. From Sydney to Perth, explore the best verified restaurants.
-            </p>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
-              <div className="bg-white/80 rounded-lg p-4 border border-orange-100">
-                <div className="text-2xl font-bold text-orange-600">{stats.totalRestaurants}+</div>
-                <div className="text-sm text-gray-600">Restaurants</div>
-              </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-orange-100">
-                <div className="text-2xl font-bold text-orange-600">{stats.avgRating}</div>
-                <div className="text-sm text-gray-600">Avg Rating</div>
-              </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-orange-100">
-                <div className="text-2xl font-bold text-orange-600">{stats.cities}</div>
-                <div className="text-sm text-gray-600">Cities</div>
-              </div>
-              <div className="bg-white/80 rounded-lg p-4 border border-orange-100">
-                <div className="text-2xl font-bold text-orange-600">{stats.dedicatedGF}</div>
-                <div className="text-sm text-gray-600">100% GF Places</div>
-              </div>
-            </div>
-            
-            {/* Search Bar */}
-            <div className="max-w-xl mx-auto">
-              <div className="relative flex bg-white rounded-full shadow-xl border border-orange-100 p-2">
-                <div className="flex-1 flex items-center px-4">
-                  <Search className="h-5 w-5 text-gray-400 mr-3" />
-                  <Input 
-                    placeholder="Search Australian restaurants..." 
-                    className="border-0 focus-visible:ring-0"
-                  />
-                </div>
-                <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6">
-                  Search
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Restaurants Grid */}
-      <section className="py-16 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between mb-8">
-            <div>
-              <h2 className="text-3xl font-bold mb-2 text-gray-900">Top Gluten-Free Restaurants in Australia</h2>
-              <p className="text-lg text-gray-600">Verified restaurants with trained staff and celiac knowledge</p>
-            </div>
-            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-              <Filter className="h-4 w-4 mr-2" />
-              Filter
-            </Button>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {restaurants.map((restaurant, index) => (
-              <Card key={restaurant.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
-                <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={`https://images.unsplash.com/${restaurant.image}?auto=format&fit=crop&w=600&q=80`}
-                    alt={restaurant.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                    <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                    <span className="font-semibold text-sm">{restaurant.rating}</span>
-                  </div>
-                  <Badge className="absolute top-4 left-4 bg-orange-500 text-white border-0">
-                    {restaurant.priceRange}
-                  </Badge>
-                  <div className="absolute bottom-4 right-4">
-                    <Heart className="h-6 w-6 text-white hover:text-red-400 cursor-pointer transition-colors" />
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-bold text-gray-900 line-clamp-2">{restaurant.name}</h3>
-                  </div>
-                  
-                  <div className="flex items-center gap-4 mb-3 text-sm text-gray-600">
-                    <span className="flex items-center">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      {restaurant.location}
-                    </span>
-                    <Badge variant="secondary" className="text-xs">
-                      {restaurant.cuisine}
-                    </Badge>
-                  </div>
-
-                  <p className="text-gray-600 mb-4 text-sm line-clamp-3">{restaurant.description}</p>
-
-                  {/* Staff Ratings */}
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">Staff Training</span>
-                      <div className="flex items-center">
-                        <Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
-                        <span className="font-semibold text-orange-600">{restaurant.staffRating}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="text-gray-600">GF Knowledge</span>
-                      <div className="flex items-center">
-                        <Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
-                        <span className="font-semibold text-orange-600">{restaurant.knowledgeRating}</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Key Info */}
-                  <div className="space-y-2 mb-4 text-xs">
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Gluten-Free Options:</span>
-                      <Badge variant="outline" className="text-xs border-orange-200 text-orange-700">
-                        {restaurant.glutenFreeOptions}
-                      </Badge>
-                    </div>
-                    <div className="flex items-center justify-between">
-                      <span className="text-gray-500">Cross Contamination:</span>
-                      <Badge variant="outline" className="text-xs border-orange-200 text-orange-700">
-                        {restaurant.crossContamination}
-                      </Badge>
-                    </div>
-                  </div>
-
-                  {/* Contact Info */}
-                  <div className="space-y-1 mb-4 text-xs text-gray-500">
-                    <div className="flex items-center">
-                      <Phone className="h-3 w-3 mr-2" />
-                      <span>{restaurant.phone}</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Clock className="h-3 w-3 mr-2" />
-                      <span>{restaurant.hours}</span>
-                    </div>
-                  </div>
-
-                  <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                    View Details
-                    <ArrowRight className="h-4 w-4 ml-2" />
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Additional Restaurants */}
-      <section className="py-16 bg-gradient-to-r from-orange-50 to-blue-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4 text-gray-900">More Great Options</h2>
-            <p className="text-xl text-gray-600">Additional verified gluten-free restaurants across Australia</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {additionalRestaurants.map((restaurant, index) => (
-              <Card key={index} className="text-center p-4 hover:shadow-lg transition-shadow bg-white/80 backdrop-blur-sm">
-                <h4 className="font-semibold text-sm text-gray-900 mb-2">{restaurant}</h4>
-                <div className="flex items-center justify-center">
-                  <Star className="h-3 w-3 text-yellow-400 fill-current mr-1" />
-                  <span className="text-xs text-gray-600">4.5+</span>
-                </div>
-              </Card>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-              View All 50+ Restaurants
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+      <section className="py-12 bg-gradient-to-r from-blue-600/10 to-green-600/10">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Explore Australia?</h2>
-          <p className="text-xl mb-8 opacity-90">Download our mobile app for real-time updates and exclusive deals</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-gray-100">
-              Download App
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
-              View Map
-            </Button>
+          <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200">
+            <Flag className="h-4 w-4 mr-2" />
+            Coeliac Australia Certified
+          </Badge>
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-green-600 bg-clip-text text-transparent">
+            Discover Australia's Best Gluten-Free Dining
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            From Sydney's waterfront to Melbourne's laneways, Australia offers world-class gluten-free dining. 
+            Many establishments are Coeliac Australia certified for maximum safety.
+          </p>
+        </div>
+      </section>
+
+      {/* Key Notes */}
+      <section className="py-8 bg-yellow-50 border-y border-yellow-200">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h3 className="text-lg font-bold text-yellow-800 mb-4 flex items-center">
+              <Star className="h-5 w-5 mr-2" />
+              Important Notes
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 text-yellow-700">
+              <div className="flex items-start space-x-2">
+                <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <p>Look for Coeliac Australia accreditation - ensures strict GF protocols</p>
+              </div>
+              <div className="flex items-start space-x-2">
+                <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <p>Many cafes use separate GF toasters and preparation areas</p>
+              </div>
+              <div className="flex items-start space-x-2">
+                <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <p>Always inform staff of celiac disease when ordering</p>
+              </div>
+              <div className="flex items-start space-x-2">
+                <CheckCircle className="h-5 w-5 mt-0.5 flex-shrink-0" />
+                <p>Book ahead for popular GF restaurants, especially on weekends</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cities and Restaurants */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="space-y-12">
+            {cities.map((city, cityIndex) => (
+              <div key={city.name} className={`animate-fade-in`} style={{animationDelay: `${cityIndex * 0.1}s`}}>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                  <MapPin className="h-6 w-6 mr-2 text-blue-600" />
+                  {city.name}
+                </h3>
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {city.restaurants.map((restaurant, index) => (
+                    <Card key={restaurant.name} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md animate-fade-in ${restaurant.featured ? 'md:col-span-2 lg:col-span-3' : ''}`} style={{animationDelay: `${(cityIndex * 0.1) + (index * 0.05)}s`}}>
+                      <CardHeader className="pb-3">
+                        <CardTitle className={`${restaurant.featured ? 'text-xl' : 'text-lg'} flex items-start justify-between`}>
+                          <span>{restaurant.name}</span>
+                          {!restaurant.featured && <span className="text-2xl ml-2">{restaurant.icon}</span>}
+                        </CardTitle>
+                        
+                        {/* Rating and Badges */}
+                        {restaurant.featured && (
+                          <div className="flex flex-wrap gap-2 mt-2">
+                            <Badge variant="secondary" className="bg-blue-100 text-blue-800">
+                              <Star className="h-3 w-3 mr-1 fill-current" />
+                              {restaurant.rating} ({restaurant.reviewCount} reviews)
+                            </Badge>
+                            {restaurant.celiacSafe === "dedicated-facility" && (
+                              <Badge variant="secondary" className="bg-green-100 text-green-800">
+                                <Shield className="h-3 w-3 mr-1" />
+                                Dedicated GF Facility
+                              </Badge>
+                            )}
+                            {restaurant.certificationLevel && (
+                              <Badge variant="secondary" className="bg-purple-100 text-purple-800">
+                                <Award className="h-3 w-3 mr-1" />
+                                {restaurant.certificationLevel}
+                              </Badge>
+                            )}
+                          </div>
+                        )}
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        {/* Overview */}
+                        <div>
+                          <p className="text-gray-700 leading-relaxed">{restaurant.overview}</p>
+                        </div>
+
+                        {/* Details */}
+                        <div className="space-y-2 text-sm">
+                          {restaurant.locations && (
+                            <div className="flex items-start">
+                              <MapPin className="h-4 w-4 mr-2 mt-0.5 text-gray-500 flex-shrink-0" />
+                              <span className="text-gray-600">{restaurant.locations}</span>
+                            </div>
+                          )}
+                          {restaurant.hours && (
+                            <div className="flex items-start">
+                              <Clock className="h-4 w-4 mr-2 mt-0.5 text-gray-500 flex-shrink-0" />
+                              <span className="text-gray-600">{restaurant.hours}</span>
+                            </div>
+                          )}
+                          {restaurant.phone && (
+                            <div className="flex items-start">
+                              <Phone className="h-4 w-4 mr-2 mt-0.5 text-gray-500 flex-shrink-0" />
+                              <span className="text-gray-600">{restaurant.phone}</span>
+                            </div>
+                          )}
+                          {restaurant.website && (
+                            <div className="flex items-start">
+                              <Globe className="h-4 w-4 mr-2 mt-0.5 text-gray-500 flex-shrink-0" />
+                              <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                {restaurant.website}
+                              </a>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Menu Highlights */}
+                        {restaurant.menuHighlights && (
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-2 flex items-center">
+                              <Utensils className="h-4 w-4 mr-2" />
+                              Menu Highlights
+                            </h4>
+                            <ul className="space-y-1">
+                              {restaurant.menuHighlights.map((item, i) => (
+                                <li key={i} className="text-sm text-gray-600 pl-4">• {item}</li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+                        {/* Pro Tip */}
+                        {restaurant.proTip && (
+                          <div className="bg-blue-50 rounded-lg p-3 border border-blue-100">
+                            <p className="text-sm text-blue-800">
+                              <strong className="flex items-center mb-1">
+                                <Star className="h-4 w-4 mr-1" />
+                                Pro Tip:
+                              </strong>
+                              {restaurant.proTip}
+                            </p>
+                          </div>
+                        )}
+
+                        {/* User Reviews */}
+                        {restaurant.featured && restaurant.userReviews && (
+                          <div>
+                            <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
+                              <MessageCircle className="h-4 w-4 mr-2" />
+                              Recent Reviews
+                            </h4>
+                            <div className="space-y-3">
+                              {restaurant.userReviews.map((review, i) => (
+                                <div key={i} className="bg-gray-50 rounded-lg p-3">
+                                  <div className="flex items-center justify-between mb-1">
+                                    <span className="font-medium text-sm text-gray-900">{review.user}</span>
+                                    <div className="flex items-center">
+                                      <Star className="h-3 w-3 text-yellow-400 fill-current" />
+                                      <span className="text-sm text-gray-600 ml-1">{review.rating}</span>
+                                    </div>
+                                  </div>
+                                  <p className="text-sm text-gray-600 mb-1">{review.comment}</p>
+                                  <span className="text-xs text-gray-400">{review.date}</span>
+                                </div>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {/* Action Buttons */}
+                        <div className="flex gap-2 pt-2">
+                          {restaurant.directionsUrl && (
+                            <Button asChild variant="default" className="flex-1 bg-gradient-to-r from-blue-600 to-green-600 hover:from-blue-700 hover:to-green-700">
+                              <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                                <Navigation className="h-4 w-4 mr-2" />
+                                Get Directions
+                              </a>
+                            </Button>
+                          )}
+                          {restaurant.website && (
+                            <Button asChild variant="outline" className="flex-1">
+                              <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
+                                <Globe className="h-4 w-4 mr-2" />
+                                Visit Website
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
