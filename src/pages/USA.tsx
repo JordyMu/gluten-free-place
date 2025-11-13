@@ -1,50 +1,51 @@
-import { MapPin, Phone, Clock, Star, Award, ChefHat, Coffee, Utensils, ShieldCheck, Link as LinkIcon } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { Card } from "@/components/ui/card";
+import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { Header } from "@/components/countries/Header";
-import { HeroSection } from "@/components/countries/HeroSection";
 
 const USA = () => {
   const cities = [
     {
       name: "New York City",
-      description: "The Big Apple leads America's gluten-free revolution",
       restaurants: [
         {
-          name: "Risotteria Melotti",
-          image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-          rating: 4.8,
-          reviewCount: 892,
-          cuisine: "Italian Gluten-Free",
+          name: "🍝 Risotteria Melotti - 100% Gluten-Free Italian",
+          locations: "Greenwich Village, Manhattan",
           address: "270 Bleecker St, New York, NY 10014",
+          hours: "Mon–Sun: 11:30AM – 10:00PM",
           phone: "+1 212-924-6664",
-          hours: "11:30 AM - 10:00 PM",
-          celiacSafe: "100% Gluten-Free",
-          menuType: "Dedicated GF Facility",
-          priceRange: "$$",
-          specialties: ["Risotto", "Pasta", "Pizza", "Desserts"],
+          website: "www.risotteria.com",
+          directionsUrl: "https://maps.google.com/?q=Risotteria+Melotti",
+          specialty: "Risotto, GF Pizza, Homemade Pasta",
           overview: "NYC's first 100% gluten-free restaurant, Risotteria has been a pioneer since 2005. Located in Greenwich Village, this certified facility offers authentic Italian cuisine without compromise.",
           menuHighlights: [
-            "Truffle Mushroom Risotto - Creamy arborio rice with wild mushrooms",
-            "GF Pizza Margherita - Made with their famous rice-flour crust",
-            "Homemade Tiramisu - Classic Italian dessert, completely gluten-free",
-            "Fresh Pasta Dishes - Daily rotating specials"
+            "🍝 Truffle Mushroom Risotto",
+            "🍕 GF Pizza Margherita",
+            "🍰 Homemade Tiramisu",
+            "🥖 Fresh Pasta Dishes"
           ],
-          certifications: ["AIC Certified", "100% Gluten-Free Facility"],
-          reviews: [
+          proTip: "Their pizza crust is legendary among NYC celiacs",
+          icon: "🍽️",
+          featured: true,
+          cuisineTypes: ["Italian", "Gluten-Free", "Vegetarian"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 892,
+          certificationLevel: "100% Gluten-Free Facility - Certified Safe",
+          userReviews: [
             {
-              author: "Jessica M.",
+              user: "Jessica M.",
               rating: 5,
-              date: "2 weeks ago",
-              text: "As someone with celiac disease, finding Risotteria was life-changing! Everything is safe to eat, and the food is absolutely delicious. The risotto is the best I've had outside of Italy."
+              comment: "As someone with celiac disease, finding Risotteria was life-changing! Everything is safe to eat, and the food is absolutely delicious.",
+              date: "2 weeks ago"
             },
             {
-              author: "David K.",
+              user: "David K.",
               rating: 5,
-              date: "1 month ago",
-              text: "The pizza here is incredible - you'd never know it's gluten-free. Staff is knowledgeable about celiac and cross-contamination. A must-visit in NYC!"
+              comment: "The pizza here is incredible - you'd never know it's gluten-free. Staff is knowledgeable about celiac and cross-contamination.",
+              date: "1 month ago"
             }
           ]
         },
