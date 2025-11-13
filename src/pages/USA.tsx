@@ -339,22 +339,24 @@ const USA = () => {
                     </div>
 
                     {/* Specialties */}
-                    <div className="mb-4">
-                      <h4 className="font-semibold mb-2 flex items-center gap-2">
-                        <ChefHat className="h-4 w-4 text-orange-600" />
-                        Specialties
-                      </h4>
-                      <div className="flex flex-wrap gap-2">
-                        {restaurant.specialties.map((specialty, i) => (
-                          <Badge key={i} variant="secondary" className="bg-orange-100 text-orange-800">
-                            {specialty}
-                          </Badge>
-                        ))}
+                    {restaurant.specialties && restaurant.specialties.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-semibold mb-2 flex items-center gap-2">
+                          <ChefHat className="h-4 w-4 text-orange-600" />
+                          Specialties
+                        </h4>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.specialties.map((specialty, i) => (
+                            <Badge key={i} variant="secondary" className="bg-orange-100 text-orange-800">
+                              {specialty}
+                            </Badge>
+                          ))}
+                        </div>
                       </div>
-                    </div>
+                    )}
 
                     {/* Menu Highlights */}
-                    {restaurant.menuHighlights && (
+                    {restaurant.menuHighlights && restaurant.menuHighlights.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-semibold mb-2">Menu Highlights</h4>
                         <ul className="space-y-1 text-sm text-gray-700">
@@ -366,7 +368,7 @@ const USA = () => {
                     )}
 
                     {/* Certifications */}
-                    {restaurant.certifications && (
+                    {restaurant.certifications && restaurant.certifications.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-semibold mb-2 flex items-center gap-2">
                           <Award className="h-4 w-4 text-purple-600" />
