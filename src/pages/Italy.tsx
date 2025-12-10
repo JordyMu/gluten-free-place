@@ -2,9 +2,11 @@ import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCirc
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 const Italy = () => {
+  const [searchParams] = useSearchParams();
+  const cityFilter = searchParams.get("city");
   const cities = [
     {
       name: "Rome (Roma)",
@@ -797,7 +799,14 @@ const Italy = () => {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="space-y-12">
-            {cities.map((city, cityIndex) => (
+            {cities
+              .filter((city) => {
+                if (!cityFilter) return true;
+                const cityName = city.name.toLowerCase();
+                const filter = cityFilter.toLowerCase();
+                return cityName.includes(filter) || filter.includes(cityName.split(" ")[0].toLowerCase());
+              })
+              .map((city, cityIndex) => (
               <div key={city.name} className={`animate-fade-in`} style={{animationDelay: `${cityIndex * 0.1}s`}}>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                   <MapPin className="h-6 w-6 mr-2 text-green-600" />
