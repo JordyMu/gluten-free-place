@@ -251,11 +251,24 @@ const Index = () => {
                     <div className="mb-4">
                       <p className="text-sm text-gray-500 mb-2">Top Cities:</p>
                       <div className="flex flex-wrap gap-1">
-                        {destination.topCities.map((city) => (
-                          <Badge key={city} variant="secondary" className="text-xs">
-                            {city}
-                          </Badge>
-                        ))}
+                        {destination.topCities.map((city) => {
+                          const countryPath = destination.name.includes("Italy") ? "/italy" :
+                            destination.name.includes("Spain") ? "/spain" :
+                            destination.name.includes("USA") ? "/usa" :
+                            destination.name.includes("Australia") ? "/australia" :
+                            destination.name.includes("UK") ? "/united-kingdom" :
+                            destination.name.includes("Japan") ? "/japan" : "#";
+                          return (
+                            <Link key={city} to={countryPath}>
+                              <Badge 
+                                variant="secondary" 
+                                className="text-xs cursor-pointer hover:bg-orange-100 hover:text-orange-700 transition-colors"
+                              >
+                                {city}
+                              </Badge>
+                            </Link>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
