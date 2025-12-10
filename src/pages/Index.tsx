@@ -258,8 +258,9 @@ const Index = () => {
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
                             destination.name.includes("Japan") ? "/japan" : "#";
+                          const cityParam = countryPath !== "#" ? `${countryPath}?city=${encodeURIComponent(city)}` : "#";
                           return (
-                            <Link key={city} to={countryPath}>
+                            <Link key={city} to={cityParam}>
                               <Badge 
                                 variant="secondary" 
                                 className="text-xs cursor-pointer hover:bg-orange-100 hover:text-orange-700 transition-colors"
