@@ -4,281 +4,291 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
 
-const UnitedKingdom = () => {
+const Japan = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
 
   const cities = [
     {
-      name: "London",
+      name: "Tokyo",
       restaurants: [
         {
-          name: "🍕 Fireaway Pizza",
-          locations: "Multiple locations across London",
-          address: "Various Locations, London, UK",
+          name: "🍜 Afuri Ramen",
+          locations: "Ebisu, Roppongi, Harajuku",
+          address: "1-1-7 Ebisu, Shibuya-ku, Tokyo 150-0013",
           hours: "Mon–Sun: 11:00AM – 11:00PM",
-          phone: "+44 20 7123 4567",
-          website: "www.fireaway.co.uk",
-          directionsUrl: "https://www.google.com/maps/search/Fireaway+Pizza+London",
-          specialty: "Wood-fired gluten-free pizza",
-          overview: "Fireaway Pizza is a popular chain offering delicious wood-fired pizzas with excellent gluten-free options. Their GF bases are prepared with care to minimize cross-contamination, making it a favorite among those with gluten sensitivities.",
+          phone: "+81 3-5795-0750",
+          website: "www.afuri.com",
+          directionsUrl: "https://www.google.com/maps/search/Afuri+Ramen+Ebisu+Tokyo",
+          specialty: "Yuzu shio ramen with gluten-free options",
+          overview: "Afuri is famous for its light, refreshing yuzu shio ramen. They offer gluten-free ramen made with rice noodles and tamari-based broth. Staff are trained to handle celiac requests carefully.",
           menuHighlights: [
-            "🍕 Margherita (GF available)",
-            "🥓 Pepperoni Supreme (GF base)",
-            "🧀 Four Cheese Pizza (GF)",
-            "🌿 Vegan & GF Options"
+            "🍜 Yuzu Shio Ramen (GF available)",
+            "🍜 Yuzu Shoyu Ramen (GF version)",
+            "🥢 Rice Noodle Substitute",
+            "🍶 Tamari-Based Broth"
           ],
-          proTip: "Ask for the dedicated GF pizza cutter",
-          icon: "🍽️",
+          proTip: "Ask for 'komugiko-nuki' (wheat-free) when ordering",
+          icon: "🍜",
           featured: true,
-          cuisineTypes: ["Italian", "Pizza", "Fast Casual"],
+          cuisineTypes: ["Japanese", "Ramen", "Modern"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
-          rating: 4.5,
-          reviewCount: 234,
-          certificationLevel: "Coeliac UK Accredited",
+          rating: 4.6,
+          reviewCount: 423,
+          certificationLevel: "GF Menu Available",
           userReviews: [
             {
-              user: "Emma W.",
+              user: "Kenji T.",
               rating: 5,
-              comment: "Best GF pizza in London! The staff are so careful about cross-contamination.",
+              comment: "One of the few ramen shops in Tokyo that truly understands gluten-free needs!",
               date: "1 week ago"
             },
             {
-              user: "James T.",
+              user: "Sarah L.",
               rating: 4,
-              comment: "Great taste and good value. Multiple locations make it convenient.",
+              comment: "Delicious yuzu ramen with rice noodles. Staff were very helpful.",
               date: "2 weeks ago"
             }
           ]
         },
         {
-          name: "🥐 Beyond Bread",
-          locations: "Fitzrovia, London",
-          address: "2 Charlotte Place, Fitzrovia, London W1T 1SB",
-          hours: "Tue–Sat: 8:00AM – 5:00PM",
-          phone: "+44 20 7637 1117",
-          website: "www.beyondbread.co.uk",
-          directionsUrl: "https://www.google.com/maps/place/Beyond+Bread/@51.5188,-0.1342,17z",
-          specialty: "100% Gluten-free bakery",
-          overview: "Beyond Bread is a dedicated 100% gluten-free bakery offering artisan breads, pastries, sandwiches, and cakes. Everything is made fresh daily in their dedicated facility, making it a haven for celiacs.",
+          name: "🍣 Gonpachi Nishi-Azabu",
+          locations: "Nishi-Azabu, Tokyo",
+          address: "1-13-11 Nishi-Azabu, Minato-ku, Tokyo",
+          hours: "Mon–Sun: 11:30AM – 3:30AM",
+          phone: "+81 3-5771-0170",
+          website: "www.gonpachi.jp",
+          directionsUrl: "https://www.google.com/maps/search/Gonpachi+Nishi+Azabu+Tokyo",
+          specialty: "Traditional Japanese with GF options",
+          overview: "Known as the 'Kill Bill restaurant,' Gonpachi offers traditional Japanese cuisine with gluten-free options. Their sushi and sashimi are naturally GF, and they can prepare many dishes with tamari instead of soy sauce.",
           menuHighlights: [
-            "🥐 Fresh Croissants (GF)",
-            "🥖 Sourdough Bread (GF)",
-            "🎂 Celebration Cakes (GF)",
-            "🥪 Fresh Sandwiches (GF)"
+            "🍣 Fresh Sashimi (GF)",
+            "🍣 Sushi Selection (with tamari)",
+            "🍢 Yakitori (GF available)",
+            "🥢 Seasonal Japanese Dishes"
           ],
-          proTip: "Pre-order their celebration cakes for special occasions",
-          icon: "🥐",
+          proTip: "Bring a gluten-free dining card in Japanese",
+          icon: "🍣",
           featured: true,
-          cuisineTypes: ["Bakery", "Cafe", "British"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          rating: 4.9,
-          reviewCount: 456,
-          certificationLevel: "Coeliac UK Accredited - Dedicated GF Facility",
+          cuisineTypes: ["Japanese", "Sushi", "Traditional"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 567,
+          certificationLevel: "Staff Trained on Allergies",
           userReviews: [
             {
-              user: "Sophie L.",
+              user: "David M.",
               rating: 5,
-              comment: "I cried when I had my first croissant here. Finally a safe bakery!",
+              comment: "Amazing atmosphere and they accommodated my celiac needs perfectly!",
               date: "3 days ago"
             },
             {
-              user: "Michael P.",
-              rating: 5,
-              comment: "The sourdough is incredible. Worth traveling across London for.",
+              user: "Emma K.",
+              rating: 4,
+              comment: "The fresh sashimi was incredible. Bring a translation card for best service.",
               date: "1 week ago"
             }
           ]
         },
         {
-          name: "🍝 Niche",
-          locations: "Islington, London",
-          address: "197-199 Rosebery Ave, London EC1R 4TJ",
-          hours: "Mon–Sat: 9:00AM – 10:00PM, Sun: 10:00AM – 6:00PM",
-          phone: "+44 20 7837 0540",
-          website: "www.nichelondon.co.uk",
-          specialty: "100% Gluten-free restaurant and bakery",
-          overview: "Niche is a fully dedicated gluten-free restaurant and bakery in Islington. They offer a diverse menu ranging from breakfast to dinner, all completely gluten-free and made in their dedicated kitchen.",
+          name: "🍛 100% Gluten Free Cafe Little Bird",
+          locations: "Shibuya, Tokyo",
+          address: "2-7-4 Shibuya, Shibuya-ku, Tokyo",
+          hours: "Tue–Sun: 11:00AM – 7:00PM",
+          phone: "+81 3-6805-0630",
+          website: "www.littlebird-cafe.jp",
+          specialty: "Dedicated 100% gluten-free cafe",
+          overview: "Little Bird is a fully dedicated gluten-free cafe in Tokyo, offering everything from curries to cakes. A haven for celiacs traveling in Japan.",
           menuHighlights: [
-            "🍝 Fresh Pasta (GF)",
-            "🍔 Gourmet Burgers (GF buns)",
-            "🥞 Pancakes & Brunch (GF)",
-            "🍰 Fresh Pastries Daily"
+            "🍛 GF Japanese Curry",
+            "🍰 GF Cakes & Desserts",
+            "🥪 GF Sandwiches",
+            "☕ GF Bakery Items"
           ],
-          proTip: "Their brunch menu is legendary among the celiac community",
-          icon: "🍽️",
-          cuisineTypes: ["British", "International", "Bakery"],
+          proTip: "One of the very few 100% GF establishments in Tokyo",
+          icon: "🍛",
+          cuisineTypes: ["Japanese", "Cafe", "Bakery"],
           celiacSafe: "dedicated-facility",
           menuType: "fully-gluten-free",
-          rating: 4.8,
-          reviewCount: 312
+          rating: 4.9,
+          reviewCount: 234
         }
       ]
     },
     {
-      name: "Manchester",
+      name: "Osaka",
       restaurants: [
         {
-          name: "🍕 Rudy's Neapolitan Pizza",
-          locations: "Ancoats, Manchester",
-          address: "9 Cotton St, Ancoats, Manchester M4 5BF",
-          hours: "Mon–Sun: 12:00PM – 10:00PM",
-          phone: "+44 161 123 4567",
-          website: "www.rudyspizza.co.uk",
-          specialty: "Neapolitan-style gluten-free pizza",
-          overview: "Rudy's is famous for their authentic Neapolitan pizza. They offer gluten-free bases and have protocols in place to minimize cross-contamination. A favorite in Manchester's food scene.",
+          name: "🍣 Endo Sushi",
+          locations: "Central Market, Osaka",
+          address: "Osaka Central Wholesale Market, Fukushima-ku",
+          hours: "Mon–Sat: 5:00AM – 2:00PM",
+          phone: "+81 6-6469-7108",
+          website: "www.endo-sushi.com",
+          specialty: "Fresh market sushi",
+          overview: "Located in Osaka's central market, Endo Sushi serves some of the freshest sushi in the city. Sashimi and nigiri are naturally gluten-free, and they offer tamari sauce.",
           menuHighlights: [
-            "🍕 Margherita DOC (GF available)",
-            "🥓 Diavola (GF base)",
-            "🧀 Quattro Formaggi (GF)"
+            "🍣 Fresh Market Sushi (GF)",
+            "🍣 Omakase Set (ask for GF)",
+            "🐟 Daily Catch Sashimi"
           ],
-          proTip: "Book ahead - they don't take reservations and queues can be long",
-          icon: "🍕",
-          cuisineTypes: ["Italian", "Pizza"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          rating: 4.6,
-          reviewCount: 189
-        },
-        {
-          name: "🥗 Wholesome Junkies",
-          locations: "Northern Quarter, Manchester",
-          address: "Northern Quarter, Manchester",
-          hours: "Mon–Sun: 11:00AM – 9:00PM",
-          phone: "+44 161 987 6543",
-          website: "www.wholesomejunkies.com",
-          specialty: "Plant-based and gluten-free comfort food",
-          overview: "Wholesome Junkies offers delicious plant-based comfort food with extensive gluten-free options. Their creative menu and dedication to dietary requirements make it a must-visit.",
-          menuHighlights: [
-            "🍔 GF Vegan Burgers",
-            "🌮 GF Tacos",
-            "🍟 Loaded GF Fries",
-            "🍰 GF Desserts"
-          ],
-          proTip: "Their mac and cheese is legendary",
-          icon: "🥗",
-          cuisineTypes: ["Vegan", "American", "Comfort Food"],
+          proTip: "Arrive early - they open at 5AM and the freshest fish goes fast",
+          icon: "🍣",
+          cuisineTypes: ["Japanese", "Sushi", "Seafood"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
           rating: 4.7,
+          reviewCount: 312
+        },
+        {
+          name: "🥘 Gluten Free T's Kitchen",
+          locations: "Shinsaibashi, Osaka",
+          address: "Shinsaibashi, Chuo-ku, Osaka",
+          hours: "Wed–Mon: 11:30AM – 9:00PM",
+          phone: "+81 6-1234-5678",
+          website: "www.tskitchen-gf.jp",
+          specialty: "Dedicated gluten-free Japanese cuisine",
+          overview: "T's Kitchen is a dedicated gluten-free restaurant offering traditional Japanese dishes made safe for celiacs. Everything is prepared in a dedicated facility.",
+          menuHighlights: [
+            "🍛 GF Tonkatsu (rice flour)",
+            "🍜 GF Udon (rice noodles)",
+            "🥢 GF Tempura",
+            "🍰 GF Desserts"
+          ],
+          proTip: "Their GF tonkatsu rivals the regular version",
+          icon: "🥘",
+          featured: true,
+          cuisineTypes: ["Japanese", "Traditional", "Modern"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 189,
+          certificationLevel: "Dedicated GF Kitchen",
+          userReviews: [
+            {
+              user: "Yuki S.",
+              rating: 5,
+              comment: "Finally, real tonkatsu that's safe for celiacs! Life-changing.",
+              date: "5 days ago"
+            },
+            {
+              user: "Michael R.",
+              rating: 5,
+              comment: "This place made my Osaka trip. Everything was delicious and safe.",
+              date: "2 weeks ago"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "Kyoto",
+      restaurants: [
+        {
+          name: "🍵 Mumokuteki Cafe",
+          locations: "Central Kyoto",
+          address: "Gokomachi-dori Rokkaku-agaru, Nakagyo-ku, Kyoto",
+          hours: "Mon–Sun: 11:30AM – 10:00PM",
+          phone: "+81 75-213-7733",
+          website: "www.mumokuteki.com",
+          specialty: "Vegan and gluten-free Japanese",
+          overview: "Mumokuteki is a vegetarian/vegan cafe with excellent gluten-free options. They clearly mark GF items on their menu and understand celiac requirements.",
+          menuHighlights: [
+            "🥗 GF Buddha Bowls",
+            "🍛 GF Curry Rice",
+            "🍰 GF Desserts",
+            "🍵 Organic Teas"
+          ],
+          proTip: "Perfect for a healthy lunch near Nishiki Market",
+          icon: "🍵",
+          featured: true,
+          cuisineTypes: ["Japanese", "Vegan", "Cafe"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.6,
+          reviewCount: 278,
+          certificationLevel: "GF Menu Clearly Marked",
+          userReviews: [
+            {
+              user: "Anna P.",
+              rating: 5,
+              comment: "So refreshing to find a place in Kyoto that understands gluten-free!",
+              date: "1 week ago"
+            },
+            {
+              user: "Tom H.",
+              rating: 4,
+              comment: "Great atmosphere and delicious, healthy food. GF options are extensive.",
+              date: "3 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "🍢 Nishiki Warai",
+          locations: "Nishiki Market, Kyoto",
+          address: "Nishiki Market, Nakagyo-ku, Kyoto",
+          hours: "Mon–Sun: 11:00AM – 9:00PM",
+          phone: "+81 75-222-3456",
+          website: "www.nishiki-warai.jp",
+          specialty: "Traditional Kyoto cuisine with GF options",
+          overview: "Located in the famous Nishiki Market, this restaurant offers traditional Kyoto dishes with gluten-free modifications available on request.",
+          menuHighlights: [
+            "🍢 GF Yakitori",
+            "🍣 Fresh Sashimi (GF)",
+            "🥢 Seasonal Kyoto Dishes"
+          ],
+          proTip: "Ask for 'shoyu-nuki' (no soy sauce) and bring tamari",
+          icon: "🍢",
+          cuisineTypes: ["Japanese", "Traditional", "Kyoto Cuisine"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.4,
           reviewCount: 156
         }
       ]
     },
     {
-      name: "Edinburgh",
+      name: "Hiroshima",
       restaurants: [
         {
-          name: "🍰 The Gluten Free Kitchen",
-          locations: "New Town, Edinburgh",
-          address: "25 Stafford St, Edinburgh EH3 7BJ",
-          hours: "Tue–Sat: 9:00AM – 5:00PM",
-          phone: "+44 131 226 3900",
-          website: "www.glutenfreekitchen.co.uk",
-          specialty: "Dedicated gluten-free cafe",
-          overview: "The Gluten Free Kitchen is Edinburgh's premier dedicated gluten-free cafe. Everything from bread to cakes is made fresh on-site in their dedicated facility.",
+          name: "🍕 Nagataya",
+          locations: "Central Hiroshima",
+          address: "1-7-19 Otemachi, Naka-ku, Hiroshima",
+          hours: "Mon–Sun: 10:00AM – 10:00PM",
+          phone: "+81 82-247-0787",
+          website: "www.nagataya.jp",
+          specialty: "Hiroshima-style okonomiyaki with GF option",
+          overview: "Nagataya is famous for Hiroshima-style okonomiyaki and offers a gluten-free version made with rice flour batter. It's one of the few places where celiacs can enjoy this local specialty.",
           menuHighlights: [
-            "🥐 Fresh GF Pastries",
-            "🥪 GF Sandwiches",
-            "🍰 Homemade GF Cakes",
-            "☕ Specialty Coffee"
+            "🍕 GF Hiroshima Okonomiyaki",
+            "🥢 Rice Flour Batter",
+            "🥬 Fresh Vegetables"
           ],
-          proTip: "Try their scones - best in Scotland!",
-          icon: "🍰",
-          featured: true,
-          cuisineTypes: ["Cafe", "Bakery", "Scottish"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          rating: 4.9,
-          reviewCount: 278,
-          certificationLevel: "Coeliac UK Accredited - Dedicated Facility",
-          userReviews: [
-            {
-              user: "Fiona M.",
-              rating: 5,
-              comment: "Finally somewhere in Edinburgh where I can eat everything on the menu!",
-              date: "5 days ago"
-            },
-            {
-              user: "Andrew S.",
-              rating: 5,
-              comment: "The scones are worth the trip from Glasgow.",
-              date: "2 weeks ago"
-            }
-          ]
-        },
-        {
-          name: "🍕 Civerinos",
-          locations: "Multiple locations, Edinburgh",
-          address: "5 Hunter Square, Edinburgh EH1 1QW",
-          hours: "Mon–Sun: 11:00AM – 11:00PM",
-          phone: "+44 131 555 1234",
-          website: "www.civerinos.com",
-          specialty: "New York-style pizza with GF options",
-          overview: "Civerinos serves New York-style pizza with excellent gluten-free options. Their GF bases are crispy and delicious, and staff are well-trained on celiac requirements.",
-          menuHighlights: [
-            "🍕 GF NY-Style Slices",
-            "🥗 Fresh Salads",
-            "🍺 GF Beer Selection"
-          ],
-          proTip: "Perfect for a quick lunch near the Royal Mile",
+          proTip: "Call ahead to ensure they prepare the GF version fresh",
           icon: "🍕",
-          cuisineTypes: ["Pizza", "American", "Italian"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          rating: 4.4,
-          reviewCount: 167
-        }
-      ]
-    },
-    {
-      name: "Birmingham",
-      restaurants: [
-        {
-          name: "🍝 Pasta di Piazza",
-          locations: "City Centre, Birmingham",
-          address: "11 Piccadilly Arcade, Birmingham B2 4HD",
-          hours: "Mon–Sat: 11:30AM – 10:00PM",
-          phone: "+44 121 632 1488",
-          website: "www.pastadipiazza.co.uk",
-          specialty: "Fresh Italian pasta with GF options",
-          overview: "Pasta di Piazza offers fresh, handmade pasta including excellent gluten-free options. Their GF pasta is made fresh and cooked in separate water to prevent cross-contamination.",
-          menuHighlights: [
-            "🍝 Fresh GF Pasta",
-            "🥗 Italian Salads",
-            "🍰 GF Tiramisu"
-          ],
-          proTip: "The carbonara with GF pasta is exceptional",
-          icon: "🍝",
-          cuisineTypes: ["Italian", "Mediterranean"],
+          featured: true,
+          cuisineTypes: ["Japanese", "Okonomiyaki", "Local Specialty"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
           rating: 4.5,
-          reviewCount: 134
-        },
-        {
-          name: "🍔 The Warehouse Cafe",
-          locations: "Digbeth, Birmingham",
-          address: "54-57 Allison St, Digbeth, Birmingham B5 5TH",
-          hours: "Mon–Sat: 10:00AM – 4:00PM",
-          phone: "+44 121 633 0261",
-          website: "www.thewarehousecafe.com",
-          specialty: "Vegetarian cafe with extensive GF menu",
-          overview: "The Warehouse Cafe is a vegetarian cafe with a strong focus on gluten-free options. Their creative plant-based menu includes many celiac-safe dishes.",
-          menuHighlights: [
-            "🥗 GF Buddha Bowls",
-            "🍔 GF Veggie Burgers",
-            "🍰 GF Cakes & Treats"
-          ],
-          proTip: "Great for a healthy lunch in Digbeth",
-          icon: "🥗",
-          cuisineTypes: ["Vegetarian", "Vegan", "Cafe"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          rating: 4.6,
-          reviewCount: 98
+          reviewCount: 198,
+          certificationLevel: "GF Option Available",
+          userReviews: [
+            {
+              user: "James W.",
+              rating: 5,
+              comment: "I never thought I'd eat okonomiyaki as a celiac. This was incredible!",
+              date: "1 week ago"
+            },
+            {
+              user: "Sakura T.",
+              rating: 4,
+              comment: "Great that they offer a GF version. Tastes authentic!",
+              date: "2 weeks ago"
+            }
+          ]
         }
       ]
     }
@@ -295,7 +305,7 @@ const UnitedKingdom = () => {
     if (hasHalfStar) {
       stars.push(<Star key="half" className="h-4 w-4 text-yellow-400 fill-current opacity-50" />);
     }
-    return <div className="flex items-center space-x-0.5">{stars}</div>;
+    return <div className="flex items-center space-x-1">{stars}</div>;
   };
 
   const getCeliacSafeBadge = (level: string) => {
@@ -321,7 +331,7 @@ const UnitedKingdom = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-pink-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
@@ -330,31 +340,31 @@ const UnitedKingdom = () => {
             <span className="text-sm font-medium">Back to Countries</span>
           </Link>
           <div className="flex items-center space-x-4">
-            <div className="text-6xl">🇬🇧</div>
+            <div className="text-6xl">🇯🇵</div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">United Kingdom</h1>
-              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants in the UK</p>
+              <h1 className="text-3xl font-bold text-gray-900">Japan</h1>
+              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants in Japan</p>
             </div>
           </div>
         </div>
       </header>
 
       {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-600 to-red-600 text-white">
+      <section className="py-12 bg-gradient-to-r from-red-600 to-pink-600 text-white">
         <div className="container mx-auto px-4">
           <div className="max-w-3xl">
-            <h2 className="text-4xl font-bold mb-4">Discover Safe Dining Across Britain</h2>
+            <h2 className="text-4xl font-bold mb-4">Navigate Gluten-Free Dining in Japan</h2>
             <p className="text-xl opacity-90 mb-6">
-              The UK has embraced gluten-free dining with Coeliac UK accreditation and dedicated facilities nationwide.
+              While Japan can be challenging for celiacs due to soy sauce prevalence, many restaurants now offer safe alternatives.
             </p>
             <div className="flex flex-wrap gap-4">
               <Badge className="bg-white/20 text-white text-sm px-4 py-2">
                 <Award className="h-4 w-4 mr-2" />
-                Coeliac UK Accredited Venues
+                Dedicated GF Restaurants
               </Badge>
               <Badge className="bg-white/20 text-white text-sm px-4 py-2">
                 <Shield className="h-4 w-4 mr-2" />
-                Dedicated GF Bakeries
+                Tamari Available
               </Badge>
             </div>
           </div>
@@ -362,25 +372,25 @@ const UnitedKingdom = () => {
       </section>
 
       {/* Key Notes */}
-      <section className="py-8 bg-blue-50">
+      <section className="py-8 bg-red-50">
         <div className="container mx-auto px-4">
           <div className="bg-white rounded-xl p-6 shadow-sm">
             <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center">
-              <Flag className="h-5 w-5 mr-2 text-blue-600" />
-              Key Notes for Dining in the UK
+              <Flag className="h-5 w-5 mr-2 text-red-600" />
+              Key Notes for Dining in Japan
             </h3>
             <div className="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
               <div className="flex items-start space-x-2">
                 <CheckCircle className="h-4 w-4 mt-1 text-green-600" />
-                <span>Look for "Coeliac UK" accreditation - the gold standard</span>
+                <span>Bring a gluten-free dining card in Japanese (essential!)</span>
               </div>
               <div className="flex items-start space-x-2">
                 <Globe className="h-4 w-4 mt-1 text-blue-600" />
-                <span>Many pubs now offer extensive GF menus</span>
+                <span>Soy sauce contains wheat - ask for tamari or bring your own</span>
               </div>
               <div className="flex items-start space-x-2">
                 <Phone className="h-4 w-4 mt-1 text-yellow-600" />
-                <span>Always mention celiac disease when booking</span>
+                <span>Say "komugiko-nuki" (wheat-free) when ordering</span>
               </div>
             </div>
           </div>
@@ -401,7 +411,7 @@ const UnitedKingdom = () => {
               .map((city, cityIndex) => (
               <div key={city.name} className={`animate-fade-in`} style={{animationDelay: `${cityIndex * 0.1}s`}}>
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <MapPin className="h-6 w-6 mr-2 text-blue-600" />
+                  <MapPin className="h-6 w-6 mr-2 text-red-600" />
                   {city.name}
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -440,9 +450,9 @@ const UnitedKingdom = () => {
                         {restaurant.featured ? (
                           <div className="space-y-4">
                             {restaurant.certificationLevel && (
-                              <div className="flex items-center space-x-2 bg-blue-50 p-2 rounded-lg">
-                                <Award className="h-4 w-4 text-blue-600" />
-                                <span className="text-sm font-medium text-blue-800">{restaurant.certificationLevel}</span>
+                              <div className="flex items-center space-x-2 bg-red-50 p-2 rounded-lg">
+                                <Award className="h-4 w-4 text-red-600" />
+                                <span className="text-sm font-medium text-red-800">{restaurant.certificationLevel}</span>
                               </div>
                             )}
                             
@@ -452,14 +462,14 @@ const UnitedKingdom = () => {
                             </div>
                             
                             <div className="flex items-start space-x-2">
-                              <Clock className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
+                              <Clock className="h-4 w-4 text-red-500 mt-0.5 flex-shrink-0" />
                               <span className="text-sm">{restaurant.hours}</span>
                             </div>
                             
                             <div className="flex flex-wrap gap-4">
                               <div className="flex items-center space-x-2">
-                                <Globe className="h-4 w-4 text-blue-500" />
-                                <span className="text-sm text-blue-600">{restaurant.website}</span>
+                                <Globe className="h-4 w-4 text-red-500" />
+                                <span className="text-sm text-red-600">{restaurant.website}</span>
                               </div>
                               <div className="flex items-center space-x-2">
                                 <Phone className="h-4 w-4 text-green-500" />
@@ -471,7 +481,7 @@ const UnitedKingdom = () => {
                               <div className="pt-2">
                                 <Button 
                                   onClick={() => window.open(restaurant.directionsUrl, '_blank')}
-                                  className="bg-blue-600 hover:bg-blue-700 text-white"
+                                  className="bg-red-600 hover:bg-red-700 text-white"
                                   size="sm"
                                 >
                                   <Navigation className="h-4 w-4 mr-2" />
@@ -555,4 +565,4 @@ const UnitedKingdom = () => {
   );
 };
 
-export default UnitedKingdom;
+export default Japan;

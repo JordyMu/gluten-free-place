@@ -20,6 +20,7 @@ import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
 import USA from "./pages/USA";
+import Japan from "./pages/Japan";
 import JansanaGlutenFreeBakery from "./pages/JansanaGlutenFreeBakery";
 import ChokSagastaPasteleria from "./pages/ChokSagastaPasteleria";
 import ChokChocolateBar from "./pages/ChokChocolateBar";
@@ -59,6 +60,7 @@ const App = () => (
           <Route path="/thailand" element={<Thailand />} />
           <Route path="/argentina" element={<Argentina />} />
           <Route path="/usa" element={<USA />} />
+          <Route path="/japan" element={<Japan />} />
           <Route path="/spain/jansana-gluten-free-bakery" element={<JansanaGlutenFreeBakery />} />
           <Route path="/spain/chok-sagasta-pasteleria" element={<ChokSagastaPasteleria />} />
           <Route path="/spain/chok-chocolate-bar" element={<ChokChocolateBar />} />
