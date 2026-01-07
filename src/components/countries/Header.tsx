@@ -12,9 +12,20 @@ import {
 import { Link } from "react-router-dom";
 
 const topCountries = [
-  "Italy", "Spain", "USA", "Canada", "Australia", "UK", 
-  "Sweden", "Ireland", "Argentina", "Thailand", "Germany",
-  "Brazil", "Mexico", "France", "New Zealand", "Netherlands", "South Africa"
+  { name: "Italy", route: "/italy" },
+  { name: "Spain", route: "/spain" },
+  { name: "USA", route: "/usa" },
+  { name: "Canada", route: "/canada" },
+  { name: "Australia", route: "/australia" },
+  { name: "UK", route: "/united-kingdom" },
+  { name: "Sweden", route: "/sweden" },
+  { name: "Ireland", route: "/ireland" },
+  { name: "Argentina", route: "/argentina" },
+  { name: "Thailand", route: "/thailand" },
+  { name: "Germany", route: "/germany" },
+  { name: "France", route: "/france" },
+  { name: "Japan", route: "/japan" },
+  { name: "New Zealand", route: "/new-zealand" },
 ];
 
 export const Header = () => {
@@ -38,9 +49,9 @@ export const Header = () => {
               <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
               <div className="grid grid-cols-4 gap-3 p-4">
                 {topCountries.map((country) => (
-                  <Link key={country} to={`/${country.toLowerCase().replace(/\s+/g, '-')}`}>
+                  <Link key={country.name} to={country.route}>
                     <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-base px-4 py-3 text-center min-w-[150px] h-12 flex items-center justify-center">
-                      {country}
+                      {country.name}
                     </DropdownMenuItem>
                   </Link>
                 ))}
