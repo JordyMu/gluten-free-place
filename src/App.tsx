@@ -16,6 +16,7 @@ import Canada from "./pages/Canada";
 import Ireland from "./pages/Ireland";
 import Germany from "./pages/Germany";
 import NewZealand from "./pages/NewZealand";
+import SouthAfrica from "./pages/SouthAfrica";
 import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
@@ -56,6 +57,7 @@ const App = () => (
           <Route path="/ireland" element={<Ireland />} />
           <Route path="/germany" element={<Germany />} />
           <Route path="/new-zealand" element={<NewZealand />} />
+          <Route path="/south-africa" element={<SouthAfrica />} />
           <Route path="/sweden" element={<Sweden />} />
           <Route path="/thailand" element={<Thailand />} />
           <Route path="/argentina" element={<Argentina />} />
