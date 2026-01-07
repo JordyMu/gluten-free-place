@@ -99,8 +99,20 @@ const Index = () => {
   ];
 
   const topCountries = [
-    "Italy", "Spain", "USA", "Canada", "Australia", "UK", 
-    "Sweden", "Ireland", "Argentina", "Thailand", "Germany"
+    { name: "Italy", route: "/italy" },
+    { name: "Spain", route: "/spain" },
+    { name: "USA", route: "/usa" },
+    { name: "Canada", route: "/canada" },
+    { name: "Australia", route: "/australia" },
+    { name: "UK", route: "/united-kingdom" },
+    { name: "Sweden", route: "/sweden" },
+    { name: "Ireland", route: "/ireland" },
+    { name: "Argentina", route: "/argentina" },
+    { name: "Thailand", route: "/thailand" },
+    { name: "Germany", route: "/germany" },
+    { name: "France", route: "/france" },
+    { name: "Japan", route: "/japan" },
+    { name: "New Zealand", route: "/new-zealand" },
   ];
 
   const topCities = [
@@ -135,9 +147,11 @@ const Index = () => {
                 <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
                 <div className="grid grid-cols-2 gap-1 p-2">
                   {topCountries.map((country) => (
-                    <DropdownMenuItem key={country} className="cursor-pointer hover:bg-orange-50 text-sm">
-                      {country}
-                    </DropdownMenuItem>
+                    <Link key={country.name} to={country.route}>
+                      <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-sm">
+                        {country.name}
+                      </DropdownMenuItem>
+                    </Link>
                   ))}
                 </div>
                 <DropdownMenuSeparator />
