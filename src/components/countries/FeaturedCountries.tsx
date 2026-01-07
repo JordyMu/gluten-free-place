@@ -131,6 +131,16 @@ const featuredCountries = [
     rating: 4.7,
     description: "Exceptional gluten-free dining from Buenos Aires to Patagonia with celiac-aware restaurants",
     topCities: ["Buenos Aires", "Mendoza", "Bariloche", "Cordoba"]
+  },
+  {
+    id: 14,
+    name: "South Africa",
+    code: "ZA",
+    image: "photo-1516026672322-bc52d61a55d5",
+    places: 45,
+    rating: 4.5,
+    description: "Growing gluten-free scene with excellent options in major cities and wine regions",
+    topCities: ["Cape Town", "Johannesburg", "Durban", "Pretoria"]
   }
 ];
 
