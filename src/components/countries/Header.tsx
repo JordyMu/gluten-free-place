@@ -26,6 +26,7 @@ const topCountries = [
   "France",
   "Japan",
   "New Zealand",
+  "South Africa",
 ];
 
 const getCountryName = (country: unknown) => {
