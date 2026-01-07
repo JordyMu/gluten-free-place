@@ -113,6 +113,7 @@ const Index = () => {
     { name: "France", route: "/france" },
     { name: "Japan", route: "/japan" },
     { name: "New Zealand", route: "/new-zealand" },
+    { name: "South Africa", route: "/south-africa" },
   ];
 
   const topCities = [
