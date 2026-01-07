@@ -12,21 +12,46 @@ import {
 import { Link } from "react-router-dom";
 
 const topCountries = [
-  { name: "Italy", route: "/italy" },
-  { name: "Spain", route: "/spain" },
-  { name: "USA", route: "/usa" },
-  { name: "Canada", route: "/canada" },
-  { name: "Australia", route: "/australia" },
-  { name: "UK", route: "/united-kingdom" },
-  { name: "Sweden", route: "/sweden" },
-  { name: "Ireland", route: "/ireland" },
-  { name: "Argentina", route: "/argentina" },
-  { name: "Thailand", route: "/thailand" },
-  { name: "Germany", route: "/germany" },
-  { name: "France", route: "/france" },
-  { name: "Japan", route: "/japan" },
-  { name: "New Zealand", route: "/new-zealand" },
+  "Italy",
+  "Spain",
+  "USA",
+  "Canada",
+  "Australia",
+  "UK",
+  "Sweden",
+  "Ireland",
+  "Argentina",
+  "Thailand",
+  "Germany",
+  "France",
+  "Japan",
+  "New Zealand",
 ];
+
+const getCountryName = (country: unknown) => {
+  if (typeof country === "string") return country;
+  if (country && typeof country === "object" && "name" in country) {
+    const maybeName = (country as { name?: unknown }).name;
+    if (typeof maybeName === "string") return maybeName;
+  }
+  return "";
+};
+
+const getCountryRoute = (country: unknown) => {
+  const name = getCountryName(country);
+  if (!name) return "/countries";
+
+  switch (name) {
+    case "UK":
+      return "/united-kingdom";
+    case "USA":
+      return "/usa";
+    case "New Zealand":
+      return "/new-zealand";
+    default:
+      return `/${name.toLowerCase().replace(/\s+/g, "-")}`;
+  }
+};
 
 export const Header = () => {
   return (
@@ -49,9 +74,9 @@ export const Header = () => {
               <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
               <div className="grid grid-cols-4 gap-3 p-4">
                 {topCountries.map((country) => (
-                  <Link key={country.name} to={country.route}>
+                  <Link key={country} to={getCountryRoute(country)}>
                     <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-base px-4 py-3 text-center min-w-[150px] h-12 flex items-center justify-center">
-                      {country.name}
+                      {country}
                     </DropdownMenuItem>
                   </Link>
                 ))}
