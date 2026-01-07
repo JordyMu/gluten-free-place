@@ -63,8 +63,8 @@ export const Header = () => {
             GlutenFree World
           </span>
         </Link>
-        <div className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors">Home</Link>
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors whitespace-nowrap">Home</Link>
           <Link to="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</Link>
           <DropdownMenu>
             <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
@@ -94,7 +94,7 @@ export const Header = () => {
           <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
             Sign In
           </Button>
-        </div>
+        </nav>
       </div>
     </header>
   );
