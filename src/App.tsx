@@ -19,6 +19,9 @@ import Germany from "./pages/Germany";
 import NewZealand from "./pages/NewZealand";
 import SouthAfrica from "./pages/SouthAfrica";
 import GlutenFreeCapeTown from "./pages/GlutenFreeCapeTown";
+import GlutenFreeJohannesburg from "./pages/GlutenFreeJohannesburg";
+import GlutenFreeDurban from "./pages/GlutenFreeDurban";
+import GlutenFreePretoria from "./pages/GlutenFreePretoria";
 import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
@@ -64,6 +67,9 @@ const App = () => (
             <Route path="/new-zealand" element={<NewZealand />} />
             <Route path="/south-africa" element={<SouthAfrica />} />
             <Route path="/gluten-free-cape-town" element={<GlutenFreeCapeTown />} />
+            <Route path="/gluten-free-johannesburg" element={<GlutenFreeJohannesburg />} />
+            <Route path="/gluten-free-durban" element={<GlutenFreeDurban />} />
+            <Route path="/gluten-free-pretoria" element={<GlutenFreePretoria />} />
             <Route path="/sweden" element={<Sweden />} />
             <Route path="/thailand" element={<Thailand />} />
             <Route path="/argentina" element={<Argentina />} />
