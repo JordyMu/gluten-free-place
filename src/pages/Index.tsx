@@ -12,6 +12,7 @@ import {
   DropdownMenuLabel
 } from "@/components/ui/dropdown-menu";
 import { Link } from "react-router-dom";
+import { UserMenu } from "@/components/layout/UserMenu";
 
 const Index = () => {
   const destinations = [
@@ -166,9 +167,7 @@ const Index = () => {
             </DropdownMenu>
             <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
             <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <Button variant="outline" className="border-orange-200 text-orange-600 hover:bg-orange-50">
-              Sign In
-            </Button>
+            <UserMenu />
           </div>
         </div>
       </header>

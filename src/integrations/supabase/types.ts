@@ -14,7 +14,69 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string
+          display_name: string | null
+          email: string | null
+          id: string
+          updated_at: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id: string
+          updated_at?: string
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string
+          display_name?: string | null
+          email?: string | null
+          id?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      reviews: {
+        Row: {
+          comment: string
+          created_at: string
+          id: string
+          rating: number
+          restaurant_city: string | null
+          restaurant_country: string
+          restaurant_name: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          comment: string
+          created_at?: string
+          id?: string
+          rating: number
+          restaurant_city?: string | null
+          restaurant_country: string
+          restaurant_name: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          comment?: string
+          created_at?: string
+          id?: string
+          rating?: number
+          restaurant_city?: string | null
+          restaurant_country?: string
+          restaurant_name?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
