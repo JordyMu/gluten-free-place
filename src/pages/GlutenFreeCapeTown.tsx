@@ -65,33 +65,48 @@ const GlutenFreeCapeTown = () => {
     setIsLocating(true);
     setLocationError("");
 
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setUserLocation({
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
-        });
-        setSortByDistance(true);
-        setIsLocating(false);
-      },
-      (error) => {
-        setIsLocating(false);
-        switch (error.code) {
-          case error.PERMISSION_DENIED:
-            setLocationError("Location access denied. Please enable location in your browser settings.");
-            break;
-          case error.POSITION_UNAVAILABLE:
-            setLocationError("Location information unavailable.");
-            break;
-          case error.TIMEOUT:
-            setLocationError("Location request timed out.");
-            break;
-          default:
-            setLocationError("An unknown error occurred.");
+    // Try with high accuracy first, then fallback to low accuracy
+    const tryGetLocation = (highAccuracy: boolean) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+          setSortByDistance(true);
+          setIsLocating(false);
+        },
+        (error) => {
+          // If high accuracy fails with timeout, try low accuracy
+          if (highAccuracy && error.code === error.TIMEOUT) {
+            tryGetLocation(false);
+            return;
+          }
+          
+          setIsLocating(false);
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              setLocationError("Location access denied. Please enable location in your browser settings.");
+              break;
+            case error.POSITION_UNAVAILABLE:
+              setLocationError("Location information unavailable. Try again or check your device settings.");
+              break;
+            case error.TIMEOUT:
+              setLocationError("Location request timed out. Please try again.");
+              break;
+            default:
+              setLocationError("An unknown error occurred.");
+          }
+        },
+        { 
+          enableHighAccuracy: highAccuracy, 
+          timeout: highAccuracy ? 15000 : 30000, 
+          maximumAge: 60000 // Allow cached location up to 1 minute old
         }
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
-    );
+      );
+    };
+
+    tryGetLocation(true);
   };
 
   const restaurants: Restaurant[] = [
