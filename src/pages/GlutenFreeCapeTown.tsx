@@ -31,6 +31,7 @@ interface Restaurant {
   lat: number;
   lng: number;
   venueType: "bakery" | "restaurant" | "cafe";
+  distance?: number;
 }
 
 const GlutenFreeCapeTown = () => {
@@ -38,6 +39,60 @@ const GlutenFreeCapeTown = () => {
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationError, setLocationError] = useState<string>("");
+  const [sortByDistance, setSortByDistance] = useState(false);
+
+  const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
+    const R = 6371; // Earth's radius in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const handleFindNearMe = () => {
+    if (!navigator.geolocation) {
+      setLocationError("Geolocation is not supported by your browser");
+      return;
+    }
+
+    setIsLocating(true);
+    setLocationError("");
+
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        setUserLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        });
+        setSortByDistance(true);
+        setIsLocating(false);
+      },
+      (error) => {
+        setIsLocating(false);
+        switch (error.code) {
+          case error.PERMISSION_DENIED:
+            setLocationError("Location access denied. Please enable location in your browser settings.");
+            break;
+          case error.POSITION_UNAVAILABLE:
+            setLocationError("Location information unavailable.");
+            break;
+          case error.TIMEOUT:
+            setLocationError("Location request timed out.");
+            break;
+          default:
+            setLocationError("An unknown error occurred.");
+        }
+      },
+      { enableHighAccuracy: true, timeout: 10000, maximumAge: 0 }
+    );
+  };
 
   const restaurants: Restaurant[] = [
     {
@@ -326,7 +381,7 @@ const GlutenFreeCapeTown = () => {
   };
 
   const filteredRestaurants = useMemo(() => {
-    return restaurants.filter(restaurant => {
+    let filtered = restaurants.filter(restaurant => {
       const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
       const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
       const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
@@ -336,7 +391,17 @@ const GlutenFreeCapeTown = () => {
       
       return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
     });
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery]);
+
+    // Sort by distance if user location is available and sorting is enabled
+    if (sortByDistance && userLocation) {
+      filtered = filtered.map(restaurant => ({
+        ...restaurant,
+        distance: calculateDistance(userLocation.lat, userLocation.lng, restaurant.lat, restaurant.lng)
+      })).sort((a, b) => (a.distance || 0) - (b.distance || 0));
+    }
+
+    return filtered;
+  }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
@@ -361,15 +426,46 @@ const GlutenFreeCapeTown = () => {
             Real reviews from gluten-free diners. Verified listings. Zero guesswork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
-              <Search className="w-5 h-5 mr-2" />
-              Find Gluten-Free Food Near Me
+            <Button 
+              size="lg" 
+              className="bg-white text-orange-600 hover:bg-orange-50"
+              onClick={handleFindNearMe}
+              disabled={isLocating}
+            >
+              {isLocating ? (
+                <>
+                  <div className="w-5 h-5 mr-2 border-2 border-orange-600 border-t-transparent rounded-full animate-spin" />
+                  Locating...
+                </>
+              ) : sortByDistance ? (
+                <>
+                  <Navigation className="w-5 h-5 mr-2" />
+                  Sorted by Distance
+                </>
+              ) : (
+                <>
+                  <Search className="w-5 h-5 mr-2" />
+                  Find Gluten-Free Food Near Me
+                </>
+              )}
             </Button>
             <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
               <Plus className="w-5 h-5 mr-2" />
               Add a Restaurant
             </Button>
           </div>
+          {locationError && (
+            <p className="text-orange-100 mt-4 text-sm">{locationError}</p>
+          )}
+          {sortByDistance && userLocation && (
+            <Button 
+              variant="link" 
+              className="text-white/80 hover:text-white mt-2"
+              onClick={() => setSortByDistance(false)}
+            >
+              Clear distance sorting
+            </Button>
+          )}
         </div>
       </section>
 
@@ -493,9 +589,18 @@ const GlutenFreeCapeTown = () => {
                             )}
                             <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
                           </div>
-                          <div className="flex items-center gap-2 mb-2">
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
                             <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                            {restaurant.distance !== undefined && (
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                                <Navigation className="w-3 h-3 mr-1" />
+                                {restaurant.distance < 1 
+                                  ? `${Math.round(restaurant.distance * 1000)}m away`
+                                  : `${restaurant.distance.toFixed(1)}km away`
+                                }
+                              </Badge>
+                            )}
                           </div>
                         </div>
                         <Button variant="ghost" size="sm">
