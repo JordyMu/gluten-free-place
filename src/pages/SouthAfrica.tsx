@@ -14,7 +14,7 @@ const SouthAfrica = () => {
       places: 18,
       rating: 4.7,
       description: "Mother City with dedicated GF bakeries and stunning waterfront dining",
-      route: "/gluten-free-cape-town",
+      route: "/gluten-free/south-africa/cape-town",
       highlights: ["Off the Gluten Path", "Tashas", "GOLD Restaurant"]
     },
     {
@@ -23,7 +23,7 @@ const SouthAfrica = () => {
       places: 24,
       rating: 4.5,
       description: "South Africa's largest city with diverse gluten-free options",
-      route: "/gluten-free-johannesburg",
+      route: "/gluten-free/south-africa/johannesburg",
       highlights: ["The Whippet", "Salvation Café", "Yamitsuki"]
     },
     {
@@ -32,7 +32,7 @@ const SouthAfrica = () => {
       places: 12,
       rating: 4.4,
       description: "Administrative capital with cozy cafés and family restaurants",
-      route: "/gluten-free-pretoria",
+      route: "/gluten-free/south-africa/pretoria",
       highlights: ["Cafe 41", "Ground Coffee", "Coobs"]
     },
     {
@@ -41,7 +41,7 @@ const SouthAfrica = () => {
       places: 15,
       rating: 4.6,
       description: "Coastal city famous for Indian cuisine with natural GF options",
-      route: "/gluten-free-durban",
+      route: "/gluten-free/south-africa/durban",
       highlights: ["Unity Brasserie", "Casa Bella", "Café 1999"]
     }
   ];
