@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 
 const SouthAfrica = () => {
   const [searchParams] = useSearchParams();
@@ -1443,6 +1444,15 @@ const SouthAfrica = () => {
                               </a>
                             </Button>
                           )}
+                        </div>
+
+                        {/* Community Reviews */}
+                        <div className="mt-6 pt-6 border-t">
+                          <RestaurantReviews
+                            restaurantName={restaurant.name}
+                            restaurantCountry="South Africa"
+                            restaurantCity={city.name}
+                          />
                         </div>
                       </div>
                     </div>
