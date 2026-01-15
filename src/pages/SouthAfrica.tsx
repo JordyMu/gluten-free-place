@@ -1348,6 +1348,13 @@ const SouthAfrica = () => {
               <MapPin className="w-5 h-5 text-orange-600" />
               <h2 className="text-2xl font-bold text-gray-900">{city.name}</h2>
               <Badge variant="secondary">{city.restaurants.length} restaurants</Badge>
+              {city.name === "Cape Town" && (
+                <Link to="/gluten-free-cape-town">
+                  <Button variant="outline" size="sm" className="ml-2">
+                    View Full City Guide →
+                  </Button>
+                </Link>
+              )}
             </div>
 
             <div className="grid gap-6">

@@ -18,6 +18,7 @@ import Ireland from "./pages/Ireland";
 import Germany from "./pages/Germany";
 import NewZealand from "./pages/NewZealand";
 import SouthAfrica from "./pages/SouthAfrica";
+import GlutenFreeCapeTown from "./pages/GlutenFreeCapeTown";
 import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
@@ -62,6 +63,7 @@ const App = () => (
             <Route path="/germany" element={<Germany />} />
             <Route path="/new-zealand" element={<NewZealand />} />
             <Route path="/south-africa" element={<SouthAfrica />} />
+            <Route path="/gluten-free-cape-town" element={<GlutenFreeCapeTown />} />
             <Route path="/sweden" element={<Sweden />} />
             <Route path="/thailand" element={<Thailand />} />
             <Route path="/argentina" element={<Argentina />} />
