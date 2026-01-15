@@ -299,7 +299,7 @@ const GlutenFreeDurban = () => {
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
-          <Link to="/south-africa" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4">
+          <Link to="/gluten-free/south-africa" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to South Africa
           </Link>

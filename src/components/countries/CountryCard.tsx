@@ -44,7 +44,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
       case "Thailand":
         return "/thailand";
       case "South Africa":
-        return "/south-africa";
+        return "/gluten-free/south-africa";
       case "Argentina":
         return "/argentina";
       default:
