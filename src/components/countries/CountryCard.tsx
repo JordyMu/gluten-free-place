@@ -111,9 +111,18 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
           <div className="flex flex-wrap gap-1">
             {country.topCities.map((city) => {
               const countryLink = getCountryLink(country.name);
-              const cityParam = countryLink !== "#" ? `${countryLink}?city=${encodeURIComponent(city)}` : "#";
+              let cityLink = "#";
+              
+              // South Africa has nested city routes
+              if (country.name === "South Africa") {
+                const citySlug = city.toLowerCase().replace(/\s+/g, '-');
+                cityLink = `/gluten-free/south-africa/${citySlug}`;
+              } else if (countryLink !== "#") {
+                cityLink = `${countryLink}?city=${encodeURIComponent(city)}`;
+              }
+              
               return (
-                <Link key={city} to={cityParam}>
+                <Link key={city} to={cityLink}>
                   <Badge
                     variant="secondary"
                     className="text-xs cursor-pointer hover:bg-orange-100 hover:text-orange-700 transition-colors"
