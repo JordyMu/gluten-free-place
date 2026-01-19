@@ -332,6 +332,256 @@ const GlutenFreeCapeTown = () => {
     }
   ];
 
+  // Stellenbosch Wine Region Restaurants
+  const stellenboschRestaurants: Restaurant[] = [
+    {
+      name: "Delaire Graff Restaurant",
+      address: "Helshoogte Pass, R310, Stellenbosch, 7600",
+      hours: "Daily: 12:00PM – 3:00PM, 6:30PM – 9:30PM",
+      phone: "+27 21 885 8160",
+      website: "www.delaire.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Delaire+Graff+Restaurant+Stellenbosch",
+      specialty: "Fine Dining with GF Options",
+      overview: "Delaire Graff is one of Stellenbosch's most prestigious wine estates, offering fine dining with breathtaking views. They accommodate gluten-free diets with advance notice.",
+      menuHighlights: ["🥩 Prime Beef & Game (GF)", "🦐 Fresh Seafood (GF)", "🥗 Seasonal Salads (GF)", "🍷 Estate Wine Pairing"],
+      proTip: "Call ahead to request the gluten-free menu - their chef is very accommodating!",
+      icon: "🍷",
+      featured: true,
+      cuisineTypes: ["Fine Dining", "French", "Contemporary"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.8,
+      reviewCount: 312,
+      lat: -33.9042,
+      lng: 18.9232,
+      venueType: "restaurant"
+    },
+    {
+      name: "Overture at Hidden Valley",
+      address: "Annandale Rd, Stellenbosch, 7600",
+      hours: "Wed–Sun: 12:00PM – 3:00PM",
+      phone: "+27 21 880 2646",
+      website: "www.dineratoverture.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Overture+at+Hidden+Valley+Stellenbosch",
+      specialty: "Award-Winning Fine Dining",
+      overview: "Chef Bertus Basson's acclaimed restaurant offers creative South African cuisine with excellent gluten-free modifications available.",
+      menuHighlights: ["🍽️ Tasting Menu (GF available)", "🥬 Farm-to-Table Ingredients", "🍷 Curated Wine Pairing", "🧀 Artisan Cheese Selection"],
+      proTip: "Book well in advance and specify GF requirements when reserving!",
+      icon: "🏆",
+      featured: true,
+      cuisineTypes: ["Fine Dining", "South African", "Contemporary"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.9,
+      reviewCount: 189,
+      lat: -33.9156,
+      lng: 18.8789,
+      venueType: "restaurant"
+    },
+    {
+      name: "Tokara Restaurant",
+      address: "Helshoogte Pass, R310, Stellenbosch, 7600",
+      hours: "Tue–Sun: 12:00PM – 3:00PM",
+      phone: "+27 21 808 5959",
+      website: "www.tokara.com",
+      directionsUrl: "https://www.google.com/maps/search/Tokara+Restaurant+Stellenbosch",
+      specialty: "Modern South African Cuisine",
+      overview: "Tokara offers stunning vineyard views and modern South African cuisine. Their kitchen is well-versed in gluten-free preparations.",
+      menuHighlights: ["🥗 Seasonal Starters (GF)", "🍖 Grilled Meats (GF)", "🐟 Fresh Fish (GF)", "🍮 GF Desserts Available"],
+      proTip: "Their olive oil is made on-site and naturally gluten-free!",
+      icon: "🍷",
+      featured: true,
+      cuisineTypes: ["South African", "Mediterranean", "Wine Estate"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.6,
+      reviewCount: 267,
+      lat: -33.9012,
+      lng: 18.9198,
+      venueType: "restaurant"
+    },
+    {
+      name: "The Kitchen at Maison",
+      address: "Cnr Main & Andringa St, Stellenbosch, 7600",
+      hours: "Mon–Sat: 7:30AM – 4:00PM",
+      phone: "+27 21 883 3512",
+      website: "www.maisonestate.co.za",
+      directionsUrl: "https://www.google.com/maps/search/The+Kitchen+at+Maison+Stellenbosch",
+      specialty: "Artisan Café with GF Options",
+      overview: "The Kitchen at Maison is a charming café in the heart of Stellenbosch offering homestyle cooking with gluten-free bread and pastry options.",
+      menuHighlights: ["🥐 GF Pastries Available", "🥗 Fresh Salads (GF)", "🍳 All-Day Breakfast (GF options)", "☕ Specialty Coffee"],
+      proTip: "Ask about their daily GF bakes - they're freshly made!",
+      icon: "☕",
+      featured: false,
+      cuisineTypes: ["Café", "Bakery", "Healthy"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.5,
+      reviewCount: 145,
+      lat: -33.9368,
+      lng: 18.8614,
+      venueType: "cafe"
+    },
+    {
+      name: "Helena's Restaurant",
+      address: "Church St, Stellenbosch, 7600",
+      hours: "Mon–Sat: 12:00PM – 9:00PM",
+      phone: "+27 21 883 8356",
+      website: "www.helenasrestaurant.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Helenas+Restaurant+Stellenbosch",
+      specialty: "Contemporary South African",
+      overview: "Helena's offers contemporary South African cuisine in a historic Cape Dutch building. They're known for accommodating dietary requirements.",
+      menuHighlights: ["🍲 Traditional Potjie (GF)", "🥩 Local Meats (GF)", "🥬 Seasonal Vegetables (GF)", "🍮 Malva Pudding (ask for GF)"],
+      proTip: "Their bobotie can be made gluten-free on request!",
+      icon: "🍽️",
+      featured: false,
+      cuisineTypes: ["South African", "Contemporary", "Traditional"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.4,
+      reviewCount: 178,
+      lat: -33.9345,
+      lng: 18.8601,
+      venueType: "restaurant"
+    }
+  ];
+
+  // Franschhoek Wine Region Restaurants
+  const franschhoekRestaurants: Restaurant[] = [
+    {
+      name: "La Petite Colombe",
+      address: "Leeu Estates, Dassenberg Rd, Franschhoek, 7690",
+      hours: "Wed–Sun: 12:00PM – 2:30PM",
+      phone: "+27 21 876 8800",
+      website: "www.lapetitecolombe.com",
+      directionsUrl: "https://www.google.com/maps/search/La+Petite+Colombe+Franschhoek",
+      specialty: "World-Class Fine Dining",
+      overview: "La Petite Colombe is consistently rated among Africa's best restaurants. They offer exquisite tasting menus with excellent gluten-free adaptations.",
+      menuHighlights: ["🍽️ 8-Course Tasting Menu (GF available)", "🦞 Langoustine & Seafood (GF)", "🥩 Aged Beef (GF)", "🍫 Chocolate Desserts (GF options)"],
+      proTip: "Book weeks in advance and mention celiac requirements - they'll create a special GF menu!",
+      icon: "⭐",
+      featured: true,
+      cuisineTypes: ["Fine Dining", "French", "Contemporary"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.9,
+      reviewCount: 423,
+      lat: -33.8956,
+      lng: 19.1123,
+      venueType: "restaurant"
+    },
+    {
+      name: "Epice Restaurant",
+      address: "Huguenot Rd, Franschhoek, 7690",
+      hours: "Daily: 12:00PM – 3:00PM, 6:30PM – 9:00PM",
+      phone: "+27 21 876 2017",
+      website: "www.lecoinfrancais.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Epice+Restaurant+Franschhoek",
+      specialty: "French-Asian Fusion",
+      overview: "Epice offers creative French-Asian fusion cuisine with many naturally gluten-free options. Their rice and seafood dishes are celiac-friendly.",
+      menuHighlights: ["🍛 Thai Curry (GF)", "🦐 Tempura (ask for GF)", "🐟 Fresh Linefish (GF)", "🥢 Asian-Inspired Starters (GF options)"],
+      proTip: "Their coconut-based curries are naturally gluten-free and delicious!",
+      icon: "🥢",
+      featured: true,
+      cuisineTypes: ["French", "Asian", "Fusion"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.6,
+      reviewCount: 234,
+      lat: -33.9123,
+      lng: 19.1156,
+      venueType: "restaurant"
+    },
+    {
+      name: "Ryan's Kitchen",
+      address: "Place Vendome, Main Rd, Franschhoek, 7690",
+      hours: "Wed–Mon: 12:00PM – 3:00PM, 6:30PM – 9:30PM",
+      phone: "+27 21 876 4598",
+      website: "www.ryanskitchen.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Ryans+Kitchen+Franschhoek",
+      specialty: "Modern South African Bistro",
+      overview: "Ryan's Kitchen is a beloved local bistro known for its approachable fine dining and accommodating service for dietary requirements.",
+      menuHighlights: ["🥩 Karoo Lamb (GF)", "🐟 Catch of the Day (GF)", "🥗 Seasonal Salads (GF)", "🧀 Local Cheese Selection (GF)"],
+      proTip: "Chef Ryan is very hands-on - speak to staff about your needs!",
+      icon: "🍳",
+      featured: true,
+      cuisineTypes: ["Bistro", "South African", "Contemporary"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.7,
+      reviewCount: 198,
+      lat: -33.9089,
+      lng: 19.1201,
+      venueType: "restaurant"
+    },
+    {
+      name: "Bread & Wine Vineyard Restaurant",
+      address: "Moreson Wine Farm, Happy Valley Rd, Franschhoek, 7690",
+      hours: "Tue–Sun: 12:00PM – 4:00PM",
+      phone: "+27 21 876 3692",
+      website: "www.moreson.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Bread+Wine+Vineyard+Restaurant+Franschhoek",
+      specialty: "Farm-to-Table Dining",
+      overview: "Despite its name, Bread & Wine offers excellent gluten-free options! Their farm-to-table approach means fresh, simple ingredients that are naturally GF.",
+      menuHighlights: ["🥗 Garden Salads (GF)", "🍖 Smoked Meats & Charcuterie (check for GF)", "🐟 Fresh Fish (GF)", "🍷 Estate Wine Pairing"],
+      proTip: "Skip the bread and ask for their GF alternatives - they're happy to help!",
+      icon: "🌿",
+      featured: false,
+      cuisineTypes: ["Farm-to-Table", "South African", "Mediterranean"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.5,
+      reviewCount: 167,
+      lat: -33.8734,
+      lng: 19.0989,
+      venueType: "restaurant"
+    },
+    {
+      name: "Tasting Room at Le Quartier Français",
+      address: "16 Huguenot Rd, Franschhoek, 7690",
+      hours: "Wed–Sun: 7:00PM – 9:30PM",
+      phone: "+27 21 876 2151",
+      website: "www.lequartier.co.za",
+      directionsUrl: "https://www.google.com/maps/search/Tasting+Room+Le+Quartier+Francais+Franschhoek",
+      specialty: "Fine Dining Experience",
+      overview: "The Tasting Room offers an intimate fine dining experience with innovative cuisine. They excel at accommodating gluten-free guests with advance notice.",
+      menuHighlights: ["🍽️ Tasting Menu (GF available)", "🦆 Duck & Game Birds (GF)", "🥬 Foraged Ingredients (GF)", "🍮 Creative Desserts (GF options)"],
+      proTip: "Email ahead with your dietary needs for the best experience!",
+      icon: "✨",
+      featured: true,
+      cuisineTypes: ["Fine Dining", "Contemporary", "Innovative"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.8,
+      reviewCount: 289,
+      lat: -33.9098,
+      lng: 19.1178,
+      venueType: "restaurant"
+    },
+    {
+      name: "The French Connection Bistro",
+      address: "48 Huguenot Rd, Franschhoek, 7690",
+      hours: "Daily: 9:00AM – 10:00PM",
+      phone: "+27 21 876 4056",
+      website: "www.frenchconnectionbistro.com",
+      directionsUrl: "https://www.google.com/maps/search/French+Connection+Bistro+Franschhoek",
+      specialty: "Classic French Bistro",
+      overview: "A charming French bistro offering classic dishes with modern touches. Many dishes can be adapted for gluten-free diners.",
+      menuHighlights: ["🥗 Niçoise Salad (GF)", "🐓 Coq au Vin (GF base)", "🐟 Pan-Fried Fish (GF)", "🍨 Crème Brûlée (GF)"],
+      proTip: "Their crème brûlée is naturally gluten-free and divine!",
+      icon: "🇫🇷",
+      featured: false,
+      cuisineTypes: ["French", "Bistro", "European"],
+      celiacSafe: "protocols-in-place",
+      menuType: "mixed-menu",
+      rating: 4.4,
+      reviewCount: 145,
+      lat: -33.9112,
+      lng: 19.1189,
+      venueType: "restaurant"
+    }
+  ];
+
   const faqItems = [
     {
       question: "Is Cape Town a good destination for gluten-free travelers?",
@@ -691,6 +941,260 @@ const GlutenFreeCapeTown = () => {
                           restaurantName={restaurant.name}
                           restaurantCountry="South Africa"
                           restaurantCity="Cape Town"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Stellenbosch Wine Region Section */}
+        <section className="mb-12">
+          <Card className="bg-gradient-to-r from-purple-50 to-pink-50 border-purple-200 mb-6">
+            <CardContent className="p-6">
+              <div className="flex items-start gap-4">
+                <span className="text-4xl">🍇</span>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Stellenbosch Wine Region</h2>
+                  <p className="text-gray-700">
+                    Just 50 minutes from Cape Town, Stellenbosch is South Africa's culinary capital. 
+                    This historic university town is surrounded by world-class wine estates, many offering 
+                    exceptional gluten-free dining experiences. From award-winning fine dining restaurants 
+                    to charming cafés, Stellenbosch caters beautifully to celiac travelers seeking gourmet experiences.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span>🍷</span>
+            Gluten-Free Restaurants in Stellenbosch
+          </h3>
+          <div className="grid gap-6">
+            {stellenboschRestaurants.map((restaurant, index) => (
+              <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-purple-300' : ''}`}>
+                <CardContent className="p-6">
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            {restaurant.featured && (
+                              <Badge className="bg-purple-100 text-purple-800 border-purple-300">
+                                <Award className="w-3 h-3 mr-1" />Featured
+                              </Badge>
+                            )}
+                            <h4 className="text-xl font-bold text-gray-900">{restaurant.name}</h4>
+                          </div>
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
+                            {renderStarRating(restaurant.rating)}
+                            <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                          </div>
+                        </div>
+                        <Button variant="ghost" size="sm">
+                          <Heart className="w-4 h-4" />
+                        </Button>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {restaurant.cuisineTypes.map((cuisine, i) => (
+                          <Badge key={i} variant="outline">{cuisine}</Badge>
+                        ))}
+                        {getCeliacSafeBadge(restaurant.celiacSafe)}
+                        {getMenuTypeBadge(restaurant.menuType)}
+                      </div>
+
+                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.address}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.hours}</span>
+                        </div>
+                        {restaurant.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-gray-400" />
+                            <a href={`tel:${restaurant.phone}`} className="hover:text-purple-600">{restaurant.phone}</a>
+                          </div>
+                        )}
+                      </div>
+
+                      <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                      <div className="mb-4">
+                        <h5 className="font-semibold text-gray-900 mb-2">Menu Highlights</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.menuHighlights.map((item, i) => (
+                            <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {restaurant.proTip && (
+                        <div className="bg-purple-50 border border-purple-200 rounded-lg p-3 mb-4">
+                          <div className="flex items-center gap-2">
+                            <MessageCircle className="w-4 h-4 text-purple-600" />
+                            <span className="font-medium text-purple-800">Pro Tip:</span>
+                            <span className="text-purple-700">{restaurant.proTip}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex gap-3">
+                        <Button asChild className="bg-purple-600 hover:bg-purple-700">
+                          <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                            <Navigation className="w-4 h-4 mr-2" />
+                            Get Directions
+                          </a>
+                        </Button>
+                        {restaurant.website && (
+                          <Button variant="outline" asChild>
+                            <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
+                              <Globe className="w-4 h-4 mr-2" />
+                              Website
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+
+                      <div className="mt-6 pt-6 border-t">
+                        <RestaurantReviews
+                          restaurantName={restaurant.name}
+                          restaurantCountry="South Africa"
+                          restaurantCity="Stellenbosch"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        {/* Franschhoek Wine Region Section */}
+        <section className="mb-12">
+          <Card className="bg-gradient-to-r from-rose-50 to-amber-50 border-rose-200 mb-6">
+            <CardContent className="p-6">
+              <div className="flex items-start gap-4">
+                <span className="text-4xl">🏔️</span>
+                <div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-2">Franschhoek Wine Valley</h2>
+                  <p className="text-gray-700">
+                    Known as the "French Corner" of South Africa, Franschhoek is a foodie paradise nestled 
+                    in a beautiful valley surrounded by mountains. This charming village is home to some of 
+                    Africa's top-rated restaurants, many of which excel at creating memorable gluten-free 
+                    dining experiences. The French Huguenot heritage shines through in the refined cuisine.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+          
+          <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <span>🍾</span>
+            Gluten-Free Restaurants in Franschhoek
+          </h3>
+          <div className="grid gap-6">
+            {franschhoekRestaurants.map((restaurant, index) => (
+              <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-rose-300' : ''}`}>
+                <CardContent className="p-6">
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            {restaurant.featured && (
+                              <Badge className="bg-rose-100 text-rose-800 border-rose-300">
+                                <Award className="w-3 h-3 mr-1" />Featured
+                              </Badge>
+                            )}
+                            <h4 className="text-xl font-bold text-gray-900">{restaurant.name}</h4>
+                          </div>
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
+                            {renderStarRating(restaurant.rating)}
+                            <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                          </div>
+                        </div>
+                        <Button variant="ghost" size="sm">
+                          <Heart className="w-4 h-4" />
+                        </Button>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {restaurant.cuisineTypes.map((cuisine, i) => (
+                          <Badge key={i} variant="outline">{cuisine}</Badge>
+                        ))}
+                        {getCeliacSafeBadge(restaurant.celiacSafe)}
+                        {getMenuTypeBadge(restaurant.menuType)}
+                      </div>
+
+                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.address}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.hours}</span>
+                        </div>
+                        {restaurant.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-gray-400" />
+                            <a href={`tel:${restaurant.phone}`} className="hover:text-rose-600">{restaurant.phone}</a>
+                          </div>
+                        )}
+                      </div>
+
+                      <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                      <div className="mb-4">
+                        <h5 className="font-semibold text-gray-900 mb-2">Menu Highlights</h5>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.menuHighlights.map((item, i) => (
+                            <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {restaurant.proTip && (
+                        <div className="bg-rose-50 border border-rose-200 rounded-lg p-3 mb-4">
+                          <div className="flex items-center gap-2">
+                            <MessageCircle className="w-4 h-4 text-rose-600" />
+                            <span className="font-medium text-rose-800">Pro Tip:</span>
+                            <span className="text-rose-700">{restaurant.proTip}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex gap-3">
+                        <Button asChild className="bg-rose-600 hover:bg-rose-700">
+                          <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                            <Navigation className="w-4 h-4 mr-2" />
+                            Get Directions
+                          </a>
+                        </Button>
+                        {restaurant.website && (
+                          <Button variant="outline" asChild>
+                            <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
+                              <Globe className="w-4 h-4 mr-2" />
+                              Website
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+
+                      <div className="mt-6 pt-6 border-t">
+                        <RestaurantReviews
+                          restaurantName={restaurant.name}
+                          restaurantCountry="South Africa"
+                          restaurantCity="Franschhoek"
                         />
                       </div>
                     </div>
