@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -33,6 +33,8 @@ interface RestaurantDetailPageProps {
     venueType: "bakery" | "restaurant" | "cafe";
     photos: string[];
     menuNotes?: string[];
+    menuPhotos?: string[];
+    staffKnowledgeScore?: number;
   };
   backLink: string;
   backLabel: string;
@@ -75,6 +77,35 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
         ))}
         <span className="ml-2 text-2xl font-bold">{rating}</span>
         <span className="text-gray-500 ml-1">({restaurant.reviewCount} reviews)</span>
+      </div>
+    );
+  };
+
+  const renderStaffKnowledgeScore = (score: number) => {
+    const getScoreLabel = (s: number) => {
+      if (s >= 5) return "Excellent";
+      if (s >= 4) return "Very Good";
+      if (s >= 3) return "Good";
+      if (s >= 2) return "Fair";
+      return "Limited";
+    };
+    
+    const getScoreColor = (s: number) => {
+      if (s >= 5) return "text-green-600";
+      if (s >= 4) return "text-emerald-600";
+      if (s >= 3) return "text-amber-600";
+      return "text-orange-600";
+    };
+
+    return (
+      <div className="flex items-center gap-2">
+        {[...Array(5)].map((_, i) => (
+          <div
+            key={i}
+            className={`w-3 h-3 rounded-full ${i < score ? 'bg-green-500' : 'bg-gray-200'}`}
+          />
+        ))}
+        <span className={`font-semibold ${getScoreColor(score)}`}>{getScoreLabel(score)}</span>
       </div>
     );
   };
@@ -270,6 +301,65 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               </CardContent>
             </Card>
           </div>
+
+          {/* Staff Knowledge & Menu Photos */}
+          {(restaurant.staffKnowledgeScore || (restaurant.menuPhotos && restaurant.menuPhotos.length > 0)) && (
+            <div className="grid md:grid-cols-2 gap-8 mb-8">
+              {/* Staff Knowledge Score */}
+              {restaurant.staffKnowledgeScore && (
+                <Card className="border-l-4 border-l-blue-500">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Users className="w-5 h-5 text-blue-600" />
+                      Staff Knowledge Score
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {renderStaffKnowledgeScore(restaurant.staffKnowledgeScore)}
+                      <p className="text-gray-600 text-sm">
+                        This score reflects how well-trained the staff are in handling celiac-safe food preparation, 
+                        understanding cross-contamination risks, and accommodating gluten-free dietary needs.
+                      </p>
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-3">
+                        <p className="text-blue-800 text-sm">
+                          <strong>What this means:</strong> A score of 5 indicates staff have excellent knowledge of celiac disease and follow strict protocols.
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+
+              {/* Menu Photo Proof */}
+              {restaurant.menuPhotos && restaurant.menuPhotos.length > 0 && (
+                <Card className="border-l-4 border-l-teal-500">
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <FileImage className="w-5 h-5 text-teal-600" />
+                      Photo Proof of GF Menu
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 text-sm mb-4">
+                      Verified photos of the gluten-free menu options available at this restaurant.
+                    </p>
+                    <div className="grid grid-cols-2 gap-3">
+                      {restaurant.menuPhotos.map((photo, index) => (
+                        <div key={index} className="aspect-[4/3] rounded-lg overflow-hidden bg-gray-100 border border-gray-200">
+                          <img 
+                            src={photo} 
+                            alt={`GF menu proof ${index + 1}`}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
 
           {/* AI Summary */}
           <Card className="mb-8 border-l-4 border-l-purple-500">
