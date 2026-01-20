@@ -26,6 +26,7 @@ export interface Restaurant {
   menuNotes?: string[];
   menuPhotos?: string[];
   staffKnowledgeScore?: number;
+  celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
 }
 
 export const capeTownRestaurants: Restaurant[] = [
@@ -68,7 +69,8 @@ export const capeTownRestaurants: Restaurant[] = [
       "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800",
       "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800"
     ],
-    staffKnowledgeScore: 5
+    staffKnowledgeScore: 5,
+    celiacSafetyScore: 10
   },
   {
     name: "Off the Gluten Path - Woodstock",
@@ -106,7 +108,8 @@ export const capeTownRestaurants: Restaurant[] = [
     menuPhotos: [
       "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800"
     ],
-    staffKnowledgeScore: 5
+    staffKnowledgeScore: 5,
+    celiacSafetyScore: 10
   },
   {
     name: "Tashas Waterfront",
