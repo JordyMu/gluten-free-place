@@ -30,7 +30,7 @@ interface Restaurant {
   reviewCount: number;
   lat: number;
   lng: number;
-  venueType: "bakery" | "restaurant" | "cafe";
+  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
   distance?: number;
 }
 
@@ -830,6 +830,10 @@ const GlutenFreeCapeTown = () => {
                       <SelectItem value="bakery">🥐 Bakery</SelectItem>
                       <SelectItem value="restaurant">🍽️ Restaurant</SelectItem>
                       <SelectItem value="cafe">☕ Café</SelectItem>
+                      <SelectItem value="supermarket">🛒 Supermarket</SelectItem>
+                      <SelectItem value="street-food">🍢 Street Food</SelectItem>
+                      <SelectItem value="home-baker">🏠 Home Baker</SelectItem>
+                      <SelectItem value="gf-products">🛍️ GF Products</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>

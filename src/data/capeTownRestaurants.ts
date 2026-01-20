@@ -21,7 +21,7 @@ export interface Restaurant {
   reviewCount: number;
   lat: number;
   lng: number;
-  venueType: "bakery" | "restaurant" | "cafe";
+  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
   photos: string[];
   menuNotes?: string[];
   menuPhotos?: string[];
