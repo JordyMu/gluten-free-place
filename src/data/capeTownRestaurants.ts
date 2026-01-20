@@ -24,6 +24,8 @@ export interface Restaurant {
   venueType: "bakery" | "restaurant" | "cafe";
   photos: string[];
   menuNotes?: string[];
+  menuPhotos?: string[];
+  staffKnowledgeScore?: number;
 }
 
 export const capeTownRestaurants: Restaurant[] = [
@@ -61,7 +63,12 @@ export const capeTownRestaurants: Restaurant[] = [
       "Uses certified gluten-free flour blends",
       "Fresh bakes available daily from 8am",
       "Pre-orders recommended for special cakes"
-    ]
+    ],
+    menuPhotos: [
+      "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800",
+      "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800"
+    ],
+    staffKnowledgeScore: 5
   },
   {
     name: "Off the Gluten Path - Woodstock",
@@ -95,7 +102,11 @@ export const capeTownRestaurants: Restaurant[] = [
       "Same menu as Sea Point location",
       "Dedicated gluten-free facility",
       "Weekly bread subscriptions available"
-    ]
+    ],
+    menuPhotos: [
+      "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800"
+    ],
+    staffKnowledgeScore: 5
   },
   {
     name: "Tashas Waterfront",
