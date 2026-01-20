@@ -766,30 +766,28 @@ const GlutenFreeCapeTown = () => {
             Don't miss the beautiful Cape Winelands! Stellenbosch and Franschhoek are just a short drive from Cape Town and offer exceptional gluten-free dining experiences.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-shadow border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50"
-              onClick={() => document.getElementById('stellenbosch')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <CardContent className="p-6 flex items-center gap-4">
-                <span className="text-4xl">🍇</span>
-                <div>
-                  <h3 className="text-xl font-bold text-purple-900">Stellenbosch</h3>
-                  <p className="text-purple-700 text-sm">Historic wine town • 5 GF restaurants</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card 
-              className="cursor-pointer hover:shadow-lg transition-shadow border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50"
-              onClick={() => document.getElementById('franschhoek')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <CardContent className="p-6 flex items-center gap-4">
-                <span className="text-4xl">🥂</span>
-                <div>
-                  <h3 className="text-xl font-bold text-amber-900">Franschhoek</h3>
-                  <p className="text-amber-700 text-sm">Gourmet capital • 6 GF restaurants</p>
-                </div>
-              </CardContent>
-            </Card>
+            <Link to="/gluten-free/south-africa/stellenbosch">
+              <Card className="cursor-pointer hover:shadow-lg transition-shadow border-2 border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
+                <CardContent className="p-6 flex items-center gap-4">
+                  <span className="text-4xl">🍇</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-purple-900">Stellenbosch</h3>
+                    <p className="text-purple-700 text-sm">Historic wine town • 5 GF restaurants</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/gluten-free/south-africa/franschhoek">
+              <Card className="cursor-pointer hover:shadow-lg transition-shadow border-2 border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+                <CardContent className="p-6 flex items-center gap-4">
+                  <span className="text-4xl">🥂</span>
+                  <div>
+                    <h3 className="text-xl font-bold text-amber-900">Franschhoek</h3>
+                    <p className="text-amber-700 text-sm">Gourmet capital • 6 GF restaurants</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </section>
 
