@@ -138,18 +138,6 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
 
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
-          {/* Photo Gallery - Owner Uploaded Photos */}
-          <Card className="mb-8">
-            <CardContent className="pt-6">
-              <RestaurantPhotoGallery
-                restaurantName={restaurant.name}
-                restaurantSlug={restaurant.slug}
-                restaurantCity={restaurant.city}
-                restaurantCountry={restaurant.country}
-              />
-            </CardContent>
-          </Card>
-
           {/* Static Photos from data */}
           {restaurant.photos && restaurant.photos.length > 0 && (
             <Card className="mb-8">
@@ -300,6 +288,18 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               ) : (
                 <p className="text-gray-700 italic text-lg">"{aiSummary}"</p>
               )}
+            </CardContent>
+          </Card>
+
+          {/* Photo Gallery - Owner Uploaded Photos */}
+          <Card className="mb-8">
+            <CardContent className="pt-6">
+              <RestaurantPhotoGallery
+                restaurantName={restaurant.name}
+                restaurantSlug={restaurant.slug}
+                restaurantCity={restaurant.city}
+                restaurantCountry={restaurant.country}
+              />
             </CardContent>
           </Card>
 
