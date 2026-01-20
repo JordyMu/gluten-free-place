@@ -1,0 +1,386 @@
+export interface Restaurant {
+  name: string;
+  slug: string;
+  address: string;
+  city: string;
+  country: string;
+  hours: string;
+  phone: string;
+  website: string;
+  directionsUrl: string;
+  specialty: string;
+  overview: string;
+  menuHighlights: string[];
+  proTip: string;
+  icon: string;
+  featured: boolean;
+  cuisineTypes: string[];
+  celiacSafe: "dedicated-facility" | "protocols-in-place";
+  menuType: "fully-gluten-free" | "mixed-menu";
+  rating: number;
+  reviewCount: number;
+  lat: number;
+  lng: number;
+  venueType: "bakery" | "restaurant" | "cafe";
+  photos: string[];
+  menuNotes?: string[];
+}
+
+export const capeTownRestaurants: Restaurant[] = [
+  {
+    name: "Off the Gluten Path - Sea Point",
+    slug: "off-the-gluten-path-sea-point",
+    address: "277 Main Rd, Sea Point, Cape Town, 8060",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Mon–Sat: 8:00AM – 5:00PM",
+    phone: "+27 21 434 0015",
+    website: "www.offtheglutenpath.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Off+the+Gluten+Path+277+Main+Rd+Sea+Point+Cape+Town",
+    specialty: "100% Gluten-Free Bakery & Café",
+    overview: "Off the Gluten Path is Cape Town's premier dedicated gluten-free bakery and café. Everything on the menu is completely gluten-free, making it a safe haven for celiacs. The bakery uses a dedicated facility with zero cross-contamination risk, and all ingredients are carefully sourced to ensure safety for those with celiac disease.",
+    menuHighlights: ["🥐 Fresh Croissants & Pastries (GF)", "🥖 Artisan Breads (GF)", "🍰 Cakes & Desserts (GF)", "🥗 Light Meals & Sandwiches (GF)"],
+    proTip: "Their croissants are legendary - get there early!",
+    icon: "🥐",
+    featured: true,
+    cuisineTypes: ["Bakery", "Café", "Gluten-Free"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    rating: 4.9,
+    reviewCount: 245,
+    lat: -33.9175,
+    lng: 18.3856,
+    venueType: "bakery",
+    photos: [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800",
+      "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"
+    ],
+    menuNotes: [
+      "All products made in a dedicated gluten-free facility",
+      "Uses certified gluten-free flour blends",
+      "Fresh bakes available daily from 8am",
+      "Pre-orders recommended for special cakes"
+    ]
+  },
+  {
+    name: "Off the Gluten Path - Woodstock",
+    slug: "off-the-gluten-path-woodstock",
+    address: "7 Ravenscraig Road, Woodstock, Cape Town, 8060",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Mon–Sat: 8:00AM – 5:00PM",
+    phone: "+27 21 447 7741",
+    website: "www.offtheglutenpath.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Off+the+Gluten+Path+Woodstock+Cape+Town",
+    specialty: "100% Gluten-Free Bakery",
+    overview: "The Woodstock branch of Off the Gluten Path offers the same exceptional quality and 100% gluten-free experience as the Sea Point location. Located in the trendy Woodstock area, this bakery is perfect for picking up fresh bread and treats.",
+    menuHighlights: ["🥐 Fresh Pastries (GF)", "🥖 Breads (GF)", "🍰 Cakes (GF)", "🥗 Light Meals (GF)"],
+    proTip: "Great for picking up bread for the week!",
+    icon: "🥐",
+    featured: false,
+    cuisineTypes: ["Bakery", "Café"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    rating: 4.8,
+    reviewCount: 156,
+    lat: -33.9269,
+    lng: 18.4439,
+    venueType: "bakery",
+    photos: [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+      "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800"
+    ],
+    menuNotes: [
+      "Same menu as Sea Point location",
+      "Dedicated gluten-free facility",
+      "Weekly bread subscriptions available"
+    ]
+  },
+  {
+    name: "Tashas Waterfront",
+    slug: "tashas-waterfront",
+    address: "Shop 7117, Victoria & Alfred Waterfront, Cape Town, 8001",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 7:00AM – 10:00PM",
+    phone: "+27 21 419 0011",
+    website: "www.tashas.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Tashas+Waterfront+Cape+Town",
+    specialty: "Upscale Café with GF Options",
+    overview: "Tashas is an upscale café chain known for its stylish ambiance and extensive menu with clearly marked gluten-free options. The staff are well-trained in handling celiac requirements and can guide you through safe choices.",
+    menuHighlights: ["🥗 Salads with GF Options", "🍳 All-Day Breakfast (GF options)", "🥩 Grilled Proteins (GF)", "🍰 GF Desserts Available"],
+    proTip: "Ask for the gluten-free menu - staff are well-trained!",
+    icon: "🍽️",
+    featured: true,
+    cuisineTypes: ["Café", "International", "Healthy"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.5,
+    reviewCount: 312,
+    lat: -33.9036,
+    lng: 18.4214,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+      "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800",
+      "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800"
+    ],
+    menuNotes: [
+      "Dedicated GF menu available on request",
+      "Kitchen uses separate prep areas for GF orders",
+      "Staff trained on cross-contamination prevention",
+      "Gluten-free bread available as substitution"
+    ]
+  },
+  {
+    name: "Hacienda Coastal Mexican",
+    slug: "hacienda-coastal-mexican",
+    address: "92 Bree St, Cape Town City Centre, Cape Town, 8000",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 12:00PM – 10:00PM",
+    phone: "+27 21 422 2266",
+    website: "www.hacienda.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Hacienda+Coastal+Mexican+92+Bree+St+Cape+Town",
+    specialty: "Mexican Cuisine with GF Options",
+    overview: "Hacienda offers authentic Mexican coastal cuisine with many naturally gluten-free options. Their corn-based dishes and fresh ingredients make it a great choice for celiacs who love Mexican flavors.",
+    menuHighlights: ["🌮 Corn Tortilla Tacos (GF)", "🥑 Fresh Guacamole (GF)", "🍲 Mexican Rice Bowls (GF)", "🌶️ Fresh Salsas (GF)"],
+    proTip: "Corn tortillas are naturally gluten-free - perfect for tacos!",
+    icon: "🌮",
+    featured: true,
+    cuisineTypes: ["Mexican", "Coastal", "Latin"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.4,
+    reviewCount: 189,
+    lat: -33.9208,
+    lng: 18.4172,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+      "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800",
+      "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=800"
+    ],
+    menuNotes: [
+      "Corn tortillas used for all GF tacos",
+      "Specify celiac when ordering",
+      "Many naturally GF options available",
+      "Be careful with marinated meats - ask about flour"
+    ]
+  },
+  {
+    name: "GOLD Restaurant",
+    slug: "gold-restaurant",
+    address: "15 Bennett St, Green Point, Cape Town, 8005",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Mon–Sat: 7:00PM – 11:00PM",
+    phone: "+27 21 421 4653",
+    website: "www.goldrestaurant.co.za",
+    directionsUrl: "https://www.google.com/maps/search/GOLD+Restaurant+15+Bennett+St+Green+Point+Cape+Town",
+    specialty: "African Dining Experience",
+    overview: "GOLD Restaurant offers a unique African dining experience with a 14-course taste safari. They accommodate dietary requirements including gluten-free with advance notice, creating a special experience for celiacs.",
+    menuHighlights: ["🍛 African Tasting Menu", "🍲 Traditional Stews (GF options)", "🎵 Live African Entertainment", "🌍 Pan-African Cuisine"],
+    proTip: "Book in advance and mention gluten-free requirements!",
+    icon: "🌍",
+    featured: true,
+    cuisineTypes: ["African", "Fine Dining", "Cultural"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.6,
+    reviewCount: 267,
+    lat: -33.9101,
+    lng: 18.4077,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800",
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"
+    ],
+    menuNotes: [
+      "Call ahead to arrange GF menu",
+      "Many traditional African dishes are naturally GF",
+      "Includes live entertainment and cultural experience",
+      "Modified tasting menu available for celiacs"
+    ]
+  },
+  {
+    name: "Wildsprout - Constantia",
+    slug: "wildsprout-constantia",
+    address: "Shop 1, Constantia Village Courtyard, Constantia, Cape Town, 7708",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Mon–Fri: 7:00AM – 4:00PM, Sat–Sun: 8:00AM – 3:00PM",
+    phone: "+27 21 794 7217",
+    website: "www.wildsprout.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Wildsprout+Constantia+Village+Cape+Town",
+    specialty: "Health-Focused Café",
+    overview: "Wildsprout is a health-focused café offering organic, wholesome food with extensive gluten-free options. Perfect for health-conscious diners looking for clean, nutritious meals.",
+    menuHighlights: ["🥗 Super Salads (GF)", "🥤 Fresh Smoothies & Juices", "🍳 Healthy Breakfasts (GF options)", "🥙 GF Wraps & Bowls"],
+    proTip: "Their acai bowls are a must-try!",
+    icon: "🥗",
+    featured: true,
+    cuisineTypes: ["Healthy", "Organic", "Café"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.7,
+    reviewCount: 198,
+    lat: -34.0191,
+    lng: 18.4321,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800",
+      "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800"
+    ],
+    menuNotes: [
+      "Many menu items naturally GF",
+      "GF bread available for sandwiches",
+      "Organic ingredients prioritized",
+      "Clear allergen labeling on menu"
+    ]
+  },
+  {
+    name: "Zenzero",
+    slug: "zenzero",
+    address: "Shop 2A, The Promenade, Victoria Rd, Camps Bay, Cape Town, 8040",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 12:00PM – 10:00PM",
+    phone: "+27 21 438 0983",
+    website: "www.zenzero.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Zenzero+Camps+Bay+Cape+Town",
+    specialty: "Italian Restaurant with GF Options",
+    overview: "Zenzero in Camps Bay offers Italian cuisine with stunning ocean views. They offer gluten-free pasta and pizza options for those who love Italian food but need to avoid gluten.",
+    menuHighlights: ["🍝 GF Pasta Options", "🍕 GF Pizza Available", "🥗 Fresh Salads", "🍰 GF Desserts"],
+    proTip: "Request GF pasta when ordering!",
+    icon: "🍝",
+    featured: true,
+    cuisineTypes: ["Italian", "Mediterranean"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.3,
+    reviewCount: 234,
+    lat: -33.9506,
+    lng: 18.3778,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1481931098730-318b6f776db0?w=800",
+      "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800"
+    ],
+    menuNotes: [
+      "GF pasta and pizza crusts available",
+      "Inform server about celiac disease",
+      "Beautiful ocean views from terrace",
+      "Shared kitchen - discuss cross-contamination"
+    ]
+  },
+  {
+    name: "Codfather Seafood & Sushi",
+    slug: "codfather-seafood-sushi",
+    address: "37 The Dr, Camps Bay, Cape Town, 8040",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 12:00PM – 10:30PM",
+    phone: "+27 21 438 0782",
+    website: "www.codfather.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Codfather+Seafood+Sushi+Camps+Bay+Cape+Town",
+    specialty: "Fresh Seafood & Sushi",
+    overview: "Codfather is famous for its unique concept where you choose your fresh seafood from the market display. Many options are naturally gluten-free, making it a great choice for seafood lovers with celiac.",
+    menuHighlights: ["🦐 Fresh Seafood (GF)", "🍣 Sushi (ask for GF soy sauce)", "🦞 Lobster & Prawns (GF)", "🐟 Grilled Fish (GF)"],
+    proTip: "Choose your own fish and they'll cook it to your preference!",
+    icon: "🦐",
+    featured: true,
+    cuisineTypes: ["Seafood", "Sushi", "Japanese"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.6,
+    reviewCount: 345,
+    lat: -33.9499,
+    lng: 18.3773,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1579631542720-3a87824fff86?w=800",
+      "https://images.unsplash.com/photo-1534604973900-c43ab4c2e0ab?w=800"
+    ],
+    menuNotes: [
+      "Fresh seafood is naturally GF",
+      "Bring your own GF soy sauce for sushi",
+      "Grilled options are safest",
+      "Avoid battered/fried items"
+    ]
+  },
+  {
+    name: "Time Out Market",
+    slug: "time-out-market",
+    address: "The Old Power Station, Dock Rd, Victoria & Alfred Waterfront, Cape Town, 7806",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 9:00AM – 11:00PM",
+    phone: "+27 21 418 8685",
+    website: "www.timeoutmarket.com/capetown",
+    directionsUrl: "https://www.google.com/maps/search/Time+Out+Market+Cape+Town+Waterfront",
+    specialty: "Food Hall with Multiple Vendors",
+    overview: "Time Out Market features multiple vendors, many offering gluten-free options. Great for groups with different dietary needs as everyone can find something they like.",
+    menuHighlights: ["🍔 Multiple Cuisine Options", "🌮 Various GF-Friendly Stalls", "🍰 Desserts (some GF)", "🍷 Wine & Drinks"],
+    proTip: "Check with each vendor for GF options!",
+    icon: "🏪",
+    featured: true,
+    cuisineTypes: ["Food Hall", "Various"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.4,
+    reviewCount: 456,
+    lat: -33.9051,
+    lng: 18.4206,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800"
+    ],
+    menuNotes: [
+      "Multiple vendors - check each for GF options",
+      "Dedicated GF stalls available",
+      "Great for groups with mixed dietary needs",
+      "Cross-contamination risk varies by vendor"
+    ]
+  },
+  {
+    name: "Kanéla Café",
+    slug: "kanela-cafe",
+    address: "78 Regent Rd, Sea Point, Cape Town, 8001",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Daily: 7:00AM – 4:00PM",
+    phone: "+27 21 434 1128",
+    website: "www.kanela.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Kanela+Cafe+78+Regent+Rd+Sea+Point+Cape+Town",
+    specialty: "Greek-Mediterranean Café",
+    overview: "Kanéla offers Greek-Mediterranean cuisine with many naturally gluten-free options in a relaxed seaside setting. Their mezze platters and grilled dishes are excellent choices for celiacs.",
+    menuHighlights: ["🥗 Greek Salads (GF)", "🍳 Mediterranean Breakfast (GF options)", "🍖 Grilled Meats (GF)", "🧀 Feta & Mezze Platters (GF)"],
+    proTip: "Their mezze platter is perfect for sharing!",
+    icon: "🥗",
+    featured: false,
+    cuisineTypes: ["Greek", "Mediterranean", "Café"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.4,
+    reviewCount: 156,
+    lat: -33.9188,
+    lng: 18.3862,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
+      "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=800"
+    ],
+    menuNotes: [
+      "Greek cuisine naturally has many GF options",
+      "Avoid pita bread and pastries",
+      "Grilled meats and seafood are safe",
+      "Ask about dressings and marinades"
+    ]
+  }
+];
+
+export const getRestaurantBySlug = (slug: string): Restaurant | undefined => {
+  return capeTownRestaurants.find(r => r.slug === slug);
+};

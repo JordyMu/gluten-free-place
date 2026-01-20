@@ -886,7 +886,12 @@ const GlutenFreeCapeTown = () => {
                                 <Award className="w-3 h-3 mr-1" />Featured
                               </Badge>
                             )}
-                            <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
+                            <Link 
+                              to={`/gluten-free/south-africa/cape-town/${restaurant.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                              className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors"
+                            >
+                              {restaurant.name}
+                            </Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
