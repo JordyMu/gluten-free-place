@@ -41,6 +41,75 @@ export type Database = {
         }
         Relationships: []
       }
+      restaurant_claims: {
+        Row: {
+          created_at: string
+          id: string
+          restaurant_city: string
+          restaurant_country: string
+          restaurant_name: string
+          restaurant_slug: string
+          user_id: string
+          verification_code: string
+          verified: boolean
+          verified_at: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          restaurant_city: string
+          restaurant_country: string
+          restaurant_name: string
+          restaurant_slug: string
+          user_id: string
+          verification_code: string
+          verified?: boolean
+          verified_at?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          restaurant_city?: string
+          restaurant_country?: string
+          restaurant_name?: string
+          restaurant_slug?: string
+          user_id?: string
+          verification_code?: string
+          verified?: boolean
+          verified_at?: string | null
+        }
+        Relationships: []
+      }
+      restaurant_photos: {
+        Row: {
+          created_at: string
+          id: string
+          photo_url: string
+          restaurant_city: string
+          restaurant_country: string
+          restaurant_slug: string
+          uploaded_by: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          photo_url: string
+          restaurant_city: string
+          restaurant_country: string
+          restaurant_slug: string
+          uploaded_by: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          photo_url?: string
+          restaurant_city?: string
+          restaurant_country?: string
+          restaurant_slug?: string
+          uploaded_by?: string
+        }
+        Relationships: []
+      }
       reviews: {
         Row: {
           comment: string
@@ -82,7 +151,15 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      is_restaurant_owner: {
+        Args: {
+          _restaurant_city: string
+          _restaurant_country: string
+          _restaurant_slug: string
+          _user_id: string
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
