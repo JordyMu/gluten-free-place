@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -35,6 +35,7 @@ interface RestaurantDetailPageProps {
     menuNotes?: string[];
     menuPhotos?: string[];
     staffKnowledgeScore?: number;
+    celiacSafetyScore?: number;
   };
   backLink: string;
   backLabel: string;
@@ -106,6 +107,69 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           />
         ))}
         <span className={`font-semibold ${getScoreColor(score)}`}>{getScoreLabel(score)}</span>
+      </div>
+    );
+  };
+
+  const renderCeliacSafetyScore = (score: number) => {
+    const getScoreLabel = (s: number) => {
+      if (s >= 9) return "Extremely Safe";
+      if (s >= 7) return "Very Safe";
+      if (s >= 5) return "Moderately Safe";
+      if (s >= 3) return "Use Caution";
+      return "High Risk";
+    };
+    
+    const getScoreColor = (s: number) => {
+      if (s >= 9) return "bg-green-500";
+      if (s >= 7) return "bg-emerald-500";
+      if (s >= 5) return "bg-amber-500";
+      if (s >= 3) return "bg-orange-500";
+      return "bg-red-500";
+    };
+
+    const getTextColor = (s: number) => {
+      if (s >= 9) return "text-green-600";
+      if (s >= 7) return "text-emerald-600";
+      if (s >= 5) return "text-amber-600";
+      if (s >= 3) return "text-orange-600";
+      return "text-red-600";
+    };
+
+    return (
+      <div className="space-y-3">
+        <div className="flex items-center gap-4">
+          <div className="relative w-20 h-20">
+            <svg className="w-20 h-20 transform -rotate-90">
+              <circle
+                cx="40"
+                cy="40"
+                r="35"
+                stroke="currentColor"
+                strokeWidth="6"
+                fill="transparent"
+                className="text-gray-200"
+              />
+              <circle
+                cx="40"
+                cy="40"
+                r="35"
+                stroke="currentColor"
+                strokeWidth="6"
+                fill="transparent"
+                strokeDasharray={`${(score / 10) * 220} 220`}
+                className={getScoreColor(score).replace('bg-', 'text-')}
+              />
+            </svg>
+            <span className={`absolute inset-0 flex items-center justify-center text-2xl font-bold ${getTextColor(score)}`}>
+              {score}
+            </span>
+          </div>
+          <div>
+            <p className={`font-bold text-lg ${getTextColor(score)}`}>{getScoreLabel(score)}</p>
+            <p className="text-gray-500 text-sm">out of 10</p>
+          </div>
+        </div>
       </div>
     );
   };
@@ -302,6 +366,35 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
             </Card>
           </div>
 
+          {/* Celiac Safety Score */}
+          {restaurant.celiacSafetyScore && (
+            <Card className="mb-8 border-l-4 border-l-green-500">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-green-600" />
+                  Is This Place Safe for Celiac?
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {renderCeliacSafetyScore(restaurant.celiacSafetyScore)}
+                  <div className="space-y-3">
+                    <p className="text-gray-600 text-sm">
+                      This score is calculated based on facility type, cross-contamination protocols, 
+                      staff training, and real user feedback from people with celiac disease.
+                    </p>
+                    <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                      <p className="text-green-800 text-sm">
+                        <strong>Scoring criteria:</strong> Dedicated GF facilities score highest, followed by 
+                        strict protocol adherence and verified staff training.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
           {/* Staff Knowledge & Menu Photos */}
           {(restaurant.staffKnowledgeScore || (restaurant.menuPhotos && restaurant.menuPhotos.length > 0)) && (
             <div className="grid md:grid-cols-2 gap-8 mb-8">
@@ -360,6 +453,31 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               )}
             </div>
           )}
+
+          {/* Menu Scanner - Coming Soon */}
+          <Card className="mb-8 border-l-4 border-l-indigo-500 bg-gradient-to-r from-indigo-50 to-white">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <ScanLine className="w-5 h-5 text-indigo-600" />
+                Menu Scanner
+                <Badge className="ml-2 bg-indigo-100 text-indigo-700 border-indigo-300">Coming Soon</Badge>
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-4">
+                <div className="bg-indigo-100 rounded-full p-4">
+                  <ScanLine className="w-8 h-8 text-indigo-600" />
+                </div>
+                <div>
+                  <p className="text-gray-700 font-medium">Scan any menu to identify gluten-free options instantly</p>
+                  <p className="text-gray-500 text-sm mt-1">
+                    Upload a photo of a menu and our AI will highlight safe dishes, flag potential risks, 
+                    and help you order with confidence.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
 
           {/* AI Summary */}
           <Card className="mb-8 border-l-4 border-l-purple-500">
