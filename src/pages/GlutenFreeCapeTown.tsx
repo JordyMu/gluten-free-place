@@ -439,7 +439,7 @@ const GlutenFreeCapeTown = () => {
       <section 
         className="relative text-white py-16"
         style={{
-          backgroundImage: `linear-gradient(to right, rgba(234, 88, 12, 0.85), rgba(245, 158, 11, 0.8)), url(${tableMountainBg})`,
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url(${tableMountainBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
