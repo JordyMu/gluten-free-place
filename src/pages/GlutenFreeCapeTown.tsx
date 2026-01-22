@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import CapeTownMap from "@/components/maps/CapeTownMap";
+import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 
 interface Restaurant {
   name: string;
@@ -435,8 +436,15 @@ const GlutenFreeCapeTown = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-amber-500 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
+      <section 
+        className="relative text-white py-16"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(234, 88, 12, 0.85), rgba(245, 158, 11, 0.8)), url(${tableMountainBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇿🇦</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Find Safe Gluten-Free Restaurants in Cape Town
