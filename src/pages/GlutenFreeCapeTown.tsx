@@ -553,6 +553,51 @@ const GlutenFreeCapeTown = () => {
           </div>
         </section>
 
+        {/* Category Quick Navigation */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            🍽️ Browse by Category
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Find exactly what you're looking for with our curated category pages.
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <Link to="/gluten-free/south-africa/cape-town/street-food">
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🍢</span>
+                  <div>
+                    <h3 className="text-sm font-medium text-orange-900">Street Food</h3>
+                    <p className="text-orange-700 text-[11px]">Markets & food trucks</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/gluten-free/south-africa/cape-town/bakeries">
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🥐</span>
+                  <div>
+                    <h3 className="text-sm font-medium text-amber-900">Bakeries</h3>
+                    <p className="text-amber-700 text-[11px]">Fresh bread & pastries</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/gluten-free/south-africa/cape-town/grocery-stores">
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🛒</span>
+                  <div>
+                    <h3 className="text-sm font-medium text-green-900">Grocery Stores</h3>
+                    <p className="text-green-700 text-[11px]">Supermarkets & shops</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+          </div>
+        </section>
+
         {/* Map Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
