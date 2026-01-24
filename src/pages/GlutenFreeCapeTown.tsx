@@ -528,7 +528,7 @@ const GlutenFreeCapeTown = () => {
             Don't miss the beautiful Cape Winelands! Stellenbosch and Franschhoek are just a short drive from Cape Town and offer exceptional gluten-free dining experiences.
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Link to="/gluten-free/south-africa/stellenbosch">
+            <Link to="/gluten-free/south-africa/cape-town/stellenbosch">
               <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
                 <CardContent className="p-2 flex items-center gap-2">
                   <span className="text-lg">🍇</span>
