@@ -527,25 +527,25 @@ const GlutenFreeCapeTown = () => {
           <p className="text-gray-600 mb-4">
             Don't miss the beautiful Cape Winelands! Stellenbosch and Franschhoek are just a short drive from Cape Town and offer exceptional gluten-free dining experiences.
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             <Link to="/gluten-free/south-africa/stellenbosch">
-              <Card className="cursor-pointer hover:shadow-md transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
-                <CardContent className="p-3 flex items-center gap-3">
-                  <span className="text-2xl">🍇</span>
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🍇</span>
                   <div>
-                    <h3 className="text-base font-semibold text-purple-900">Stellenbosch</h3>
-                    <p className="text-purple-700 text-xs">Historic wine town • 5 GF restaurants</p>
+                    <h3 className="text-sm font-medium text-purple-900">Stellenbosch</h3>
+                    <p className="text-purple-700 text-[11px]">Historic wine town • 5 GF</p>
                   </div>
                 </CardContent>
               </Card>
             </Link>
             <Link to="/gluten-free/south-africa/franschhoek">
-              <Card className="cursor-pointer hover:shadow-md transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
-                <CardContent className="p-3 flex items-center gap-3">
-                  <span className="text-2xl">🥂</span>
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🥂</span>
                   <div>
-                    <h3 className="text-base font-semibold text-amber-900">Franschhoek</h3>
-                    <p className="text-amber-700 text-xs">Gourmet capital • 6 GF restaurants</p>
+                    <h3 className="text-sm font-medium text-amber-900">Franschhoek</h3>
+                    <p className="text-amber-700 text-[11px]">Gourmet capital • 6 GF</p>
                   </div>
                 </CardContent>
               </Card>
