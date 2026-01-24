@@ -25,6 +25,9 @@ import GlutenFreePretoria from "./pages/GlutenFreePretoria";
 import GlutenFreeStellenbosch from "./pages/GlutenFreeStellenbosch";
 import GlutenFreeFranschhoek from "./pages/GlutenFreeFranschhoek";
 import CapeTownRestaurantPage from "./pages/cape-town/CapeTownRestaurantPage";
+import CapeTownStreetFood from "./pages/cape-town/CapeTownStreetFood";
+import CapeTownBakeries from "./pages/cape-town/CapeTownBakeries";
+import CapeTownGroceryStores from "./pages/cape-town/CapeTownGroceryStores";
 import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
@@ -76,6 +79,9 @@ const App = () => (
             <Route path="/gluten-free/south-africa/pretoria" element={<GlutenFreePretoria />} />
             <Route path="/gluten-free/south-africa/cape-town/stellenbosch" element={<GlutenFreeStellenbosch />} />
             <Route path="/gluten-free/south-africa/cape-town/franschhoek" element={<GlutenFreeFranschhoek />} />
+            <Route path="/gluten-free/south-africa/cape-town/street-food" element={<CapeTownStreetFood />} />
+            <Route path="/gluten-free/south-africa/cape-town/bakeries" element={<CapeTownBakeries />} />
+            <Route path="/gluten-free/south-africa/cape-town/grocery-stores" element={<CapeTownGroceryStores />} />
             <Route path="/sweden" element={<Sweden />} />
             <Route path="/thailand" element={<Thailand />} />
             <Route path="/argentina" element={<Argentina />} />
