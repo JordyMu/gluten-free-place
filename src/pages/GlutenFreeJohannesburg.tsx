@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Award, Shield, Search, Plus, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import JohannesburgMap from "@/components/maps/JohannesburgMap";
+import johannesburgBg from "@/assets/johannesburg-skyline.jpg";
 
 interface Restaurant {
   name: string;
@@ -30,7 +31,8 @@ interface Restaurant {
   reviewCount: number;
   lat: number;
   lng: number;
-  venueType: "bakery" | "restaurant" | "cafe";
+  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
+  distance?: number;
 }
 
 const GlutenFreeJohannesburg = () => {
@@ -38,6 +40,73 @@ const GlutenFreeJohannesburg = () => {
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationError, setLocationError] = useState<string>("");
+  const [sortByDistance, setSortByDistance] = useState(false);
+
+  const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
+    const R = 6371; // Earth's radius in km
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLng = (lng2 - lng1) * Math.PI / 180;
+    const a = 
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const handleFindNearMe = () => {
+    if (!navigator.geolocation) {
+      setLocationError("Geolocation is not supported by your browser");
+      return;
+    }
+
+    setIsLocating(true);
+    setLocationError("");
+
+    const tryGetLocation = (highAccuracy: boolean) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          setUserLocation({
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          });
+          setSortByDistance(true);
+          setIsLocating(false);
+        },
+        (error) => {
+          if (highAccuracy && error.code === error.TIMEOUT) {
+            tryGetLocation(false);
+            return;
+          }
+          
+          setIsLocating(false);
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              setLocationError("Location access denied. Please enable location in your browser settings.");
+              break;
+            case error.POSITION_UNAVAILABLE:
+              setLocationError("Location information unavailable. Try again or check your device settings.");
+              break;
+            case error.TIMEOUT:
+              setLocationError("Location request timed out. Please try again.");
+              break;
+            default:
+              setLocationError("An unknown error occurred.");
+          }
+        },
+        { 
+          enableHighAccuracy: highAccuracy, 
+          timeout: highAccuracy ? 15000 : 30000, 
+          maximumAge: 60000
+        }
+      );
+    };
+
+    tryGetLocation(true);
+  };
 
   const restaurants: Restaurant[] = [
     {
@@ -282,7 +351,7 @@ const GlutenFreeJohannesburg = () => {
   };
 
   const filteredRestaurants = useMemo(() => {
-    return restaurants.filter(restaurant => {
+    let filtered = restaurants.filter(restaurant => {
       const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
       const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
       const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
@@ -292,7 +361,16 @@ const GlutenFreeJohannesburg = () => {
       
       return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
     });
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery]);
+
+    if (sortByDistance && userLocation) {
+      filtered = filtered.map(restaurant => ({
+        ...restaurant,
+        distance: calculateDistance(userLocation.lat, userLocation.lng, restaurant.lat, restaurant.lng)
+      })).sort((a, b) => (a.distance || 0) - (b.distance || 0));
+    }
+
+    return filtered;
+  }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
@@ -307,8 +385,15 @@ const GlutenFreeJohannesburg = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-amber-500 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
+      <section 
+        className="relative text-white py-16"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url(${johannesburgBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇿🇦</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Find Safe Gluten-Free Restaurants in Johannesburg
@@ -317,15 +402,46 @@ const GlutenFreeJohannesburg = () => {
             Real reviews from gluten-free diners. Verified listings. Zero guesswork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50">
-              <Search className="w-5 h-5 mr-2" />
-              Find Gluten-Free Food Near Me
+            <Button 
+              size="lg" 
+              className="bg-white text-orange-600 hover:bg-orange-50"
+              onClick={handleFindNearMe}
+              disabled={isLocating}
+            >
+              {isLocating ? (
+                <>
+                  <div className="w-5 h-5 mr-2 border-2 border-orange-600 border-t-transparent rounded-full animate-spin" />
+                  Locating...
+                </>
+              ) : sortByDistance ? (
+                <>
+                  <Navigation className="w-5 h-5 mr-2" />
+                  Sorted by Distance
+                </>
+              ) : (
+                <>
+                  <Search className="w-5 h-5 mr-2" />
+                  Find Gluten-Free Food Near Me
+                </>
+              )}
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button size="lg" variant="outline" className="border-white !text-white hover:bg-white/10 hover:text-white">
               <Plus className="w-5 h-5 mr-2" />
               Add a Restaurant
             </Button>
           </div>
+          {locationError && (
+            <p className="text-orange-100 mt-4 text-sm">{locationError}</p>
+          )}
+          {sortByDistance && userLocation && (
+            <Button 
+              variant="link" 
+              className="text-white/80 hover:text-white mt-2"
+              onClick={() => setSortByDistance(false)}
+            >
+              Clear distance sorting
+            </Button>
+          )}
         </div>
       </section>
 
@@ -347,6 +463,111 @@ const GlutenFreeJohannesburg = () => {
               </div>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Neighborhoods Quick Navigation */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            🏙️ Explore Popular Neighborhoods
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Johannesburg's best gluten-free dining is concentrated in these vibrant neighborhoods.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">🏢</span>
+                <div>
+                  <h3 className="text-sm font-medium text-purple-900">Sandton</h3>
+                  <p className="text-purple-700 text-[11px]">Upscale dining hub</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">🎨</span>
+                <div>
+                  <h3 className="text-sm font-medium text-amber-900">Rosebank</h3>
+                  <p className="text-amber-700 text-[11px]">Arts & fine dining</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">🌿</span>
+                <div>
+                  <h3 className="text-sm font-medium text-green-900">Parkhurst</h3>
+                  <p className="text-green-700 text-[11px]">Trendy café strip</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50">
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">✨</span>
+                <div>
+                  <h3 className="text-sm font-medium text-blue-900">Melrose Arch</h3>
+                  <p className="text-blue-700 text-[11px]">Modern precinct</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Category Quick Navigation */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            🍽️ Browse by Category
+          </h2>
+          <p className="text-gray-600 mb-4">
+            Find exactly what you're looking for with our curated category pages.
+          </p>
+          <div className="grid grid-cols-3 gap-2">
+            <Card 
+              className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
+              onClick={() => setVenueFilter("restaurant")}
+            >
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">🍽️</span>
+                <div>
+                  <h3 className="text-sm font-medium text-orange-900">Restaurants</h3>
+                  <p className="text-orange-700 text-[11px]">Fine dining & casual</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card 
+              className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50"
+              onClick={() => setVenueFilter("bakery")}
+            >
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">🥐</span>
+                <div>
+                  <h3 className="text-sm font-medium text-amber-900">Bakeries</h3>
+                  <p className="text-amber-700 text-[11px]">Fresh bread & pastries</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card 
+              className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
+              onClick={() => setVenueFilter("cafe")}
+            >
+              <CardContent className="p-2 flex items-center gap-2">
+                <span className="text-lg">☕</span>
+                <div>
+                  <h3 className="text-sm font-medium text-green-900">Cafés</h3>
+                  <p className="text-green-700 text-[11px]">Coffee & light meals</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+          {venueFilter !== "all" && (
+            <Button 
+              variant="ghost" 
+              className="mt-2 text-orange-600"
+              onClick={() => setVenueFilter("all")}
+            >
+              Clear filter
+            </Button>
+          )}
         </section>
 
         {/* Map Section */}
@@ -399,6 +620,8 @@ const GlutenFreeJohannesburg = () => {
                       <SelectItem value="bakery">Bakery</SelectItem>
                       <SelectItem value="restaurant">Restaurant</SelectItem>
                       <SelectItem value="cafe">Café</SelectItem>
+                      <SelectItem value="supermarket">Supermarket</SelectItem>
+                      <SelectItem value="street-food">Street Food</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -440,6 +663,11 @@ const GlutenFreeJohannesburg = () => {
                         <p className="text-sm text-gray-600">{restaurant.specialty}</p>
                       </div>
                     </div>
+                    {restaurant.distance !== undefined && (
+                      <Badge variant="outline" className="text-blue-600 border-blue-300">
+                        {restaurant.distance.toFixed(1)} km
+                      </Badge>
+                    )}
                   </div>
                 </CardHeader>
                 <CardContent>
