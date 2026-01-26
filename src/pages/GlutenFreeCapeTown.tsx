@@ -477,7 +477,7 @@ const GlutenFreeCapeTown = () => {
                 </>
               )}
             </Button>
-            <Button size="lg" variant="outline" className="border-white !text-white hover:bg-white/10 hover:text-white">
+            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10">
               <Plus className="w-5 h-5 mr-2" />
               Add a Restaurant
             </Button>
