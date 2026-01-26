@@ -25,7 +25,7 @@ export const HeroSection = () => {
           
           {/* Search Bar */}
           <div className="max-w-xl mx-auto mb-8">
-            <div className="relative flex bg-white rounded-full shadow-xl border border-orange-100 p-2">
+            <div className="relative flex bg-transparent rounded-full shadow-xl border border-orange-100 p-2">
               <div className="flex-1 flex items-center px-4">
                 <Search className="h-5 w-5 text-gray-400 mr-3" />
                 <Input 
