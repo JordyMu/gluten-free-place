@@ -28,6 +28,7 @@ import CapeTownRestaurantPage from "./pages/cape-town/CapeTownRestaurantPage";
 import CapeTownStreetFood from "./pages/cape-town/CapeTownStreetFood";
 import CapeTownBakeries from "./pages/cape-town/CapeTownBakeries";
 import CapeTownGroceryStores from "./pages/cape-town/CapeTownGroceryStores";
+import JohannesburgRestaurantPage from "./pages/johannesburg/JohannesburgRestaurantPage";
 import Sweden from "./pages/Sweden";
 import Thailand from "./pages/Thailand";
 import Argentina from "./pages/Argentina";
@@ -75,6 +76,7 @@ const App = () => (
             <Route path="/gluten-free/south-africa/cape-town" element={<GlutenFreeCapeTown />} />
             <Route path="/gluten-free/south-africa/cape-town/:slug" element={<CapeTownRestaurantPage />} />
             <Route path="/gluten-free/south-africa/johannesburg" element={<GlutenFreeJohannesburg />} />
+            <Route path="/gluten-free/south-africa/johannesburg/:slug" element={<JohannesburgRestaurantPage />} />
             <Route path="/gluten-free/south-africa/durban" element={<GlutenFreeDurban />} />
             <Route path="/gluten-free/south-africa/pretoria" element={<GlutenFreePretoria />} />
             <Route path="/gluten-free/south-africa/cape-town/stellenbosch" element={<GlutenFreeStellenbosch />} />

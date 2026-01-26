@@ -10,28 +10,10 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import JohannesburgMap from "@/components/maps/JohannesburgMap";
 import johannesburgBg from "@/assets/johannesburg-skyline.jpg";
+import { johannesburgRestaurants } from "@/data/johannesburgRestaurants";
+import { Restaurant } from "@/data/capeTownRestaurants";
 
-interface Restaurant {
-  name: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  icon: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
+interface RestaurantWithDistance extends Restaurant {
   distance?: number;
 }
 
@@ -108,184 +90,6 @@ const GlutenFreeJohannesburg = () => {
     tryGetLocation(true);
   };
 
-  const restaurants: Restaurant[] = [
-    {
-      name: "Crumble Gluten Free Bakery",
-      address: "Cedar Rd, Broadacres AH, Chartwell, 2055",
-      hours: "Tue–Fri: 8:00AM – 4:00PM, Sat: 8:00AM – 2:00PM",
-      phone: "+27 11 465 0404",
-      website: "www.crumble.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Crumble+Gluten+Free+Bakery+Chartwell+Johannesburg",
-      specialty: "100% Gluten-Free Bakery",
-      overview: "Crumble is Johannesburg's premier dedicated gluten-free bakery offering a wide range of breads, pastries, and baked goods. Everything is made in a 100% gluten-free facility.",
-      menuHighlights: ["🥖 Fresh Breads (GF)", "🥐 Pastries & Croissants (GF)", "🍰 Cakes & Cupcakes (GF)", "🍪 Cookies & Treats (GF)"],
-      proTip: "Call ahead to order specialty items!",
-      icon: "🥐",
-      featured: true,
-      cuisineTypes: ["Bakery", "Gluten-Free"],
-      celiacSafe: "dedicated-facility",
-      menuType: "fully-gluten-free",
-      rating: 4.8,
-      reviewCount: 178,
-      lat: -26.0285,
-      lng: 28.0176,
-      venueType: "bakery"
-    },
-    {
-      name: "Tashas Sandton",
-      address: "Shop U32A, Sandton City, Sandton, 2196",
-      hours: "Daily: 7:00AM – 9:00PM",
-      phone: "+27 11 783 8686",
-      website: "www.tashas.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Tashas+Sandton+City",
-      specialty: "Upscale Café with GF Options",
-      overview: "Tashas is an upscale café chain known for its stylish ambiance and extensive menu with clearly marked gluten-free options.",
-      menuHighlights: ["🥗 Salads with GF Options", "🍳 All-Day Breakfast (GF options)", "🥩 Grilled Proteins (GF)", "🍰 GF Desserts Available"],
-      proTip: "Ask for the gluten-free menu - staff are well-trained!",
-      icon: "🍽️",
-      featured: true,
-      cuisineTypes: ["Café", "International", "Healthy"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.5,
-      reviewCount: 287,
-      lat: -26.1076,
-      lng: 28.0567,
-      venueType: "cafe"
-    },
-    {
-      name: "Vovo Telo Melrose Arch",
-      address: "Shop 54, The High Street, Melrose Arch, 2196",
-      hours: "Daily: 6:30AM – 6:00PM",
-      phone: "+27 11 684 1656",
-      website: "www.vovotelo.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Vovo+Telo+Melrose+Arch",
-      specialty: "Artisan Bakery Café",
-      overview: "Vovo Telo offers artisan baked goods with gluten-free bread options available. Their café serves breakfast and lunch with GF accommodations.",
-      menuHighlights: ["🥖 GF Bread Available", "🥗 Salads (GF)", "🍳 Breakfast (GF options)", "☕ Specialty Coffee"],
-      proTip: "Ask for GF bread for sandwiches!",
-      icon: "🥖",
-      featured: false,
-      cuisineTypes: ["Bakery", "Café"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.3,
-      reviewCount: 156,
-      lat: -26.1320,
-      lng: 28.0697,
-      venueType: "cafe"
-    },
-    {
-      name: "Marble Restaurant",
-      address: "Trumpet on Keyes, Keyes Ave, Rosebank, 2196",
-      hours: "Mon–Sat: 12:00PM – 10:00PM",
-      phone: "+27 10 594 5550",
-      website: "www.marble.restaurant",
-      directionsUrl: "https://www.google.com/maps/search/Marble+Restaurant+Rosebank+Johannesburg",
-      specialty: "Fine Dining with Open Fire",
-      overview: "Marble is an award-winning restaurant known for its open-fire cooking. Many dishes are naturally gluten-free with excellent dietary accommodations.",
-      menuHighlights: ["🥩 Open-Fire Grilled Meats (GF)", "🥗 Fresh Salads (GF)", "🍷 Premium Wine Selection", "🍰 GF Desserts"],
-      proTip: "Mention dietary requirements when booking!",
-      icon: "🥩",
-      featured: true,
-      cuisineTypes: ["Fine Dining", "Grill", "South African"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.7,
-      reviewCount: 312,
-      lat: -26.1469,
-      lng: 28.0417,
-      venueType: "restaurant"
-    },
-    {
-      name: "The Grillhouse Rosebank",
-      address: "The Firs, Cnr Oxford Rd & Biermann Ave, Rosebank, 2196",
-      hours: "Mon–Sun: 12:00PM – 10:00PM",
-      phone: "+27 11 880 3945",
-      website: "www.thegrillhouse.co.za",
-      directionsUrl: "https://www.google.com/maps/search/The+Grillhouse+Rosebank",
-      specialty: "Premium Steakhouse",
-      overview: "The Grillhouse offers premium steaks and grilled meats with gluten-free accommodations for sauces and sides.",
-      menuHighlights: ["🥩 Premium Steaks (GF)", "🥗 Fresh Sides (GF)", "🍷 Extensive Wine List", "🍰 GF Dessert Options"],
-      proTip: "Ask about GF sauce options!",
-      icon: "🥩",
-      featured: true,
-      cuisineTypes: ["Steakhouse", "Grill"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.6,
-      reviewCount: 267,
-      lat: -26.1461,
-      lng: 28.0444,
-      venueType: "restaurant"
-    },
-    {
-      name: "Greenside Café",
-      address: "Greenway, 24 Gleneagles Rd, Greenside, 2193",
-      hours: "Daily: 7:00AM – 5:00PM",
-      phone: "+27 11 646 7222",
-      website: "www.greensidecafe.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Greenside+Cafe+Johannesburg",
-      specialty: "Health-Focused Café",
-      overview: "Greenside Café offers healthy, wholesome food with extensive gluten-free options in a relaxed neighborhood setting.",
-      menuHighlights: ["🥗 Healthy Salads (GF)", "🍳 Breakfast (GF options)", "🥤 Fresh Juices", "🍰 GF Baked Goods"],
-      proTip: "Great for a healthy brunch!",
-      icon: "🥗",
-      featured: false,
-      cuisineTypes: ["Café", "Healthy"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.4,
-      reviewCount: 145,
-      lat: -26.1611,
-      lng: 28.0081,
-      venueType: "cafe"
-    },
-    {
-      name: "Yamato Sushi",
-      address: "Nelson Mandela Square, Sandton, 2196",
-      hours: "Daily: 11:30AM – 10:00PM",
-      phone: "+27 11 784 8181",
-      website: "www.yamatosushi.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Yamato+Sushi+Nelson+Mandela+Square",
-      specialty: "Japanese Cuisine",
-      overview: "Yamato offers authentic Japanese cuisine with sashimi and rice-based dishes that are naturally gluten-free. GF soy sauce available.",
-      menuHighlights: ["🍣 Sashimi (GF)", "🍚 Rice Bowls (GF)", "🥢 GF Soy Sauce Available", "🍱 Japanese Set Meals"],
-      proTip: "Request tamari instead of regular soy sauce!",
-      icon: "🍣",
-      featured: false,
-      cuisineTypes: ["Japanese", "Sushi"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.4,
-      reviewCount: 198,
-      lat: -26.1074,
-      lng: 28.0534,
-      venueType: "restaurant"
-    },
-    {
-      name: "Wok Box Parkhurst",
-      address: "4th Ave, Parkhurst, 2193",
-      hours: "Daily: 11:00AM – 9:00PM",
-      phone: "+27 11 447 7771",
-      website: "www.wokbox.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Wok+Box+Parkhurst+Johannesburg",
-      specialty: "Asian Stir-Fry",
-      overview: "Wok Box offers customizable stir-fry dishes with rice noodle and rice options that can be made gluten-free.",
-      menuHighlights: ["🍜 Rice Noodles (GF)", "🍚 Rice Base (GF)", "🥡 Custom Stir-Fry", "🌶️ Asian Flavors"],
-      proTip: "Choose rice or rice noodles for GF!",
-      icon: "🥡",
-      featured: false,
-      cuisineTypes: ["Asian", "Stir-Fry"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.2,
-      reviewCount: 134,
-      lat: -26.1389,
-      lng: 28.0139,
-      venueType: "restaurant"
-    }
-  ];
 
   const faqItems = [
     {
@@ -350,8 +154,8 @@ const GlutenFreeJohannesburg = () => {
     );
   };
 
-  const filteredRestaurants = useMemo(() => {
-    let filtered = restaurants.filter(restaurant => {
+  const filteredRestaurants = useMemo((): RestaurantWithDistance[] => {
+    let filtered = johannesburgRestaurants.filter(restaurant => {
       const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
       const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
       const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
@@ -363,7 +167,7 @@ const GlutenFreeJohannesburg = () => {
     });
 
     if (sortByDistance && userLocation) {
-      filtered = filtered.map(restaurant => ({
+      return filtered.map(restaurant => ({
         ...restaurant,
         distance: calculateDistance(userLocation.lat, userLocation.lng, restaurant.lat, restaurant.lng)
       })).sort((a, b) => (a.distance || 0) - (b.distance || 0));
@@ -651,7 +455,7 @@ const GlutenFreeJohannesburg = () => {
           </h2>
           <div className="grid gap-6">
             {filteredRestaurants.map((restaurant, index) => (
-              <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
+              <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex-1">
@@ -663,9 +467,12 @@ const GlutenFreeJohannesburg = () => {
                                 <Award className="w-3 h-3 mr-1" />Featured
                               </Badge>
                             )}
-                            <span className="text-xl font-bold text-gray-900">
+                            <Link 
+                              to={`/gluten-free/south-africa/johannesburg/${restaurant.slug}`}
+                              className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors"
+                            >
                               {restaurant.name}
-                            </span>
+                            </Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
@@ -732,8 +539,13 @@ const GlutenFreeJohannesburg = () => {
                         </div>
                       )}
 
-                      <div className="flex gap-3">
-                        <Button asChild className="bg-orange-600 hover:bg-orange-700">
+                      <div className="flex flex-wrap gap-3">
+                        <Link to={`/gluten-free/south-africa/johannesburg/${restaurant.slug}`}>
+                          <Button className="bg-orange-600 hover:bg-orange-700">
+                            View Details
+                          </Button>
+                        </Link>
+                        <Button asChild variant="outline">
                           <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                             <Navigation className="w-4 h-4 mr-2" />
                             Get Directions
