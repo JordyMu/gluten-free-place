@@ -422,7 +422,7 @@ const USA = () => {
                 Explore More Countries
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600">
+            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:text-blue-600">
               Add a Restaurant
             </Button>
           </div>

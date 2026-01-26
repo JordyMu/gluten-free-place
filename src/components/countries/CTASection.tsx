@@ -14,7 +14,7 @@ export const CTASection = () => {
               View All 156 Countries
             </Button>
           </Link>
-          <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+          <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:text-orange-600">
             Add a Place
           </Button>
         </div>
