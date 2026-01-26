@@ -349,7 +349,7 @@ const SouthAfrica = () => {
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 px-8">
+            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10 px-8">
               <Plus className="w-5 h-5 mr-2" />
               Contribute a Restaurant
             </Button>

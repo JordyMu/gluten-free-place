@@ -440,7 +440,7 @@ const Index = () => {
               Get Started Free
             </Button>
             <Link to="/all-countries">
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-orange-600">
+              <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:text-orange-600">
                 View All Countries
               </Button>
             </Link>
