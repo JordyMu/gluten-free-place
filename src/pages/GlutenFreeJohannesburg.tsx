@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Award, Shield, Search, Plus, Filter } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -646,85 +646,115 @@ const GlutenFreeJohannesburg = () => {
         {/* Restaurant Cards */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            🍽️ Gluten-Free Restaurants ({filteredRestaurants.length})
+            Verified Gluten-Free Restaurants
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid gap-6">
             {filteredRestaurants.map((restaurant, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-shadow ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl">{restaurant.icon}</span>
-                      <div>
-                        <CardTitle className="text-lg flex items-center gap-2">
-                          {restaurant.name}
-                          {restaurant.featured && <Badge className="bg-orange-100 text-orange-800">Featured</Badge>}
-                        </CardTitle>
-                        <p className="text-sm text-gray-600">{restaurant.specialty}</p>
+              <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
+                <CardContent className="p-6">
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                            {restaurant.featured && (
+                              <Badge className="bg-orange-100 text-orange-800 border-orange-300">
+                                <Award className="w-3 h-3 mr-1" />Featured
+                              </Badge>
+                            )}
+                            <span className="text-xl font-bold text-gray-900">
+                              {restaurant.name}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 mb-2 flex-wrap">
+                            {renderStarRating(restaurant.rating)}
+                            <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                            {restaurant.distance !== undefined && (
+                              <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                                <Navigation className="w-3 h-3 mr-1" />
+                                {restaurant.distance < 1 
+                                  ? `${Math.round(restaurant.distance * 1000)}m away`
+                                  : `${restaurant.distance.toFixed(1)}km away`
+                                }
+                              </Badge>
+                            )}
+                          </div>
+                        </div>
+                        <Button variant="ghost" size="sm">
+                          <Heart className="w-4 h-4" />
+                        </Button>
                       </div>
-                    </div>
-                    {restaurant.distance !== undefined && (
-                      <Badge variant="outline" className="text-blue-600 border-blue-300">
-                        {restaurant.distance.toFixed(1)} km
-                      </Badge>
-                    )}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {getCeliacSafeBadge(restaurant.celiacSafe)}
-                      {getMenuTypeBadge(restaurant.menuType)}
-                    </div>
-                    
-                    <div className="flex items-center gap-2">
-                      {renderStarRating(restaurant.rating)}
-                      <span className="text-sm text-gray-500">({restaurant.reviewCount} reviews)</span>
-                    </div>
 
-                    <p className="text-gray-700 text-sm">{restaurant.overview}</p>
-
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 text-gray-600">
-                        <MapPin className="w-4 h-4" />
-                        <span>{restaurant.address}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-600">
-                        <Clock className="w-4 h-4" />
-                        <span>{restaurant.hours}</span>
-                      </div>
-                      <div className="flex items-center gap-2 text-gray-600">
-                        <Phone className="w-4 h-4" />
-                        <span>{restaurant.phone}</span>
-                      </div>
-                    </div>
-
-                    <div>
-                      <p className="text-sm font-medium text-gray-800 mb-2">Menu Highlights:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {restaurant.menuHighlights.map((item, i) => (
-                          <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">{item}</span>
+                      <div className="flex flex-wrap gap-2 mb-3">
+                        {restaurant.cuisineTypes.map((cuisine, i) => (
+                          <Badge key={i} variant="outline">{cuisine}</Badge>
                         ))}
+                        {getCeliacSafeBadge(restaurant.celiacSafe)}
+                        {getMenuTypeBadge(restaurant.menuType)}
                       </div>
-                    </div>
 
-                    <div className="bg-amber-50 p-3 rounded-lg">
-                      <p className="text-sm"><span className="font-medium">💡 Pro Tip:</span> {restaurant.proTip}</p>
-                    </div>
+                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.address}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.hours}</span>
+                        </div>
+                        {restaurant.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-gray-400" />
+                            <a href={`tel:${restaurant.phone}`} className="hover:text-orange-600">{restaurant.phone}</a>
+                          </div>
+                        )}
+                      </div>
 
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
-                          <Navigation className="w-4 h-4 mr-1" />
-                          Directions
-                        </a>
-                      </Button>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
-                          <Globe className="w-4 h-4 mr-1" />
-                          Website
-                        </a>
-                      </Button>
+                      <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.menuHighlights.map((item, i) => (
+                            <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      {restaurant.proTip && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                          <div className="flex items-center gap-2">
+                            <MessageCircle className="w-4 h-4 text-amber-600" />
+                            <span className="font-medium text-amber-800">Pro Tip:</span>
+                            <span className="text-amber-700">{restaurant.proTip}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="flex gap-3">
+                        <Button asChild className="bg-orange-600 hover:bg-orange-700">
+                          <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                            <Navigation className="w-4 h-4 mr-2" />
+                            Get Directions
+                          </a>
+                        </Button>
+                        {restaurant.website && (
+                          <Button variant="outline" asChild>
+                            <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
+                              <Globe className="w-4 h-4 mr-2" />
+                              Website
+                            </a>
+                          </Button>
+                        )}
+                      </div>
+
+                      <div className="mt-6 pt-6 border-t">
+                        <RestaurantReviews
+                          restaurantName={restaurant.name}
+                          restaurantCountry="South Africa"
+                          restaurantCity="Johannesburg"
+                        />
+                      </div>
                     </div>
                   </div>
                 </CardContent>
@@ -754,14 +784,6 @@ const GlutenFreeJohannesburg = () => {
           </Card>
         </section>
 
-        {/* Reviews Section */}
-        <section>
-          <RestaurantReviews 
-            restaurantName="Johannesburg Gluten-Free Restaurants" 
-            restaurantCountry="South Africa"
-            restaurantCity="Johannesburg"
-          />
-        </section>
       </main>
 
       {/* Footer */}
