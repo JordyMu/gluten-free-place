@@ -1,0 +1,280 @@
+import { Restaurant } from "./capeTownRestaurants";
+
+export const johannesburgRestaurants: Restaurant[] = [
+  {
+    name: "Crumble Gluten Free Bakery",
+    slug: "crumble-gluten-free-bakery",
+    address: "Cedar Rd, Broadacres AH, Chartwell, 2055",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Tue–Fri: 8:00AM – 4:00PM, Sat: 8:00AM – 2:00PM",
+    phone: "+27 11 465 0404",
+    website: "www.crumble.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Crumble+Gluten+Free+Bakery+Chartwell+Johannesburg",
+    specialty: "100% Gluten-Free Bakery",
+    overview: "Crumble is Johannesburg's premier dedicated gluten-free bakery offering a wide range of breads, pastries, and baked goods. Everything is made in a 100% gluten-free facility.",
+    menuHighlights: ["🥖 Fresh Breads (GF)", "🥐 Pastries & Croissants (GF)", "🍰 Cakes & Cupcakes (GF)", "🍪 Cookies & Treats (GF)"],
+    proTip: "Call ahead to order specialty items!",
+    icon: "🥐",
+    featured: true,
+    cuisineTypes: ["Bakery", "Gluten-Free"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    rating: 4.8,
+    reviewCount: 178,
+    lat: -26.0285,
+    lng: 28.0176,
+    venueType: "bakery",
+    photos: [
+      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+      "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800"
+    ],
+    menuNotes: [
+      "All products made in a dedicated gluten-free facility",
+      "Uses certified gluten-free flour blends",
+      "Fresh bakes available daily"
+    ],
+    staffKnowledgeScore: 5,
+    celiacSafetyScore: 10
+  },
+  {
+    name: "Tashas Sandton",
+    slug: "tashas-sandton",
+    address: "Shop U32A, Sandton City, Sandton, 2196",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Daily: 7:00AM – 9:00PM",
+    phone: "+27 11 783 8686",
+    website: "www.tashas.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Tashas+Sandton+City",
+    specialty: "Upscale Café with GF Options",
+    overview: "Tashas is an upscale café chain known for its stylish ambiance and extensive menu with clearly marked gluten-free options.",
+    menuHighlights: ["🥗 Salads with GF Options", "🍳 All-Day Breakfast (GF options)", "🥩 Grilled Proteins (GF)", "🍰 GF Desserts Available"],
+    proTip: "Ask for the gluten-free menu - staff are well-trained!",
+    icon: "🍽️",
+    featured: true,
+    cuisineTypes: ["Café", "International", "Healthy"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.5,
+    reviewCount: 287,
+    lat: -26.1076,
+    lng: 28.0567,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800",
+      "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800"
+    ],
+    menuNotes: [
+      "Separate GF menu available on request",
+      "Staff trained on cross-contamination"
+    ],
+    staffKnowledgeScore: 4,
+    celiacSafetyScore: 7
+  },
+  {
+    name: "Vovo Telo Melrose Arch",
+    slug: "vovo-telo-melrose-arch",
+    address: "Shop 54, The High Street, Melrose Arch, 2196",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Daily: 6:30AM – 6:00PM",
+    phone: "+27 11 684 1656",
+    website: "www.vovotelo.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Vovo+Telo+Melrose+Arch",
+    specialty: "Artisan Bakery Café",
+    overview: "Vovo Telo offers artisan baked goods with gluten-free bread options available. Their café serves breakfast and lunch with GF accommodations.",
+    menuHighlights: ["🥖 GF Bread Available", "🥗 Salads (GF)", "🍳 Breakfast (GF options)", "☕ Specialty Coffee"],
+    proTip: "Ask for GF bread for sandwiches!",
+    icon: "🥖",
+    featured: false,
+    cuisineTypes: ["Bakery", "Café"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.3,
+    reviewCount: 156,
+    lat: -26.1320,
+    lng: 28.0697,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800"
+    ],
+    menuNotes: [
+      "GF bread available on request",
+      "Inform staff of celiac needs"
+    ],
+    staffKnowledgeScore: 3,
+    celiacSafetyScore: 6
+  },
+  {
+    name: "Marble Restaurant",
+    slug: "marble-restaurant",
+    address: "Trumpet on Keyes, Keyes Ave, Rosebank, 2196",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Mon–Sat: 12:00PM – 10:00PM",
+    phone: "+27 10 594 5550",
+    website: "www.marble.restaurant",
+    directionsUrl: "https://www.google.com/maps/search/Marble+Restaurant+Rosebank+Johannesburg",
+    specialty: "Fine Dining with Open Fire",
+    overview: "Marble is an award-winning restaurant known for its open-fire cooking. Many dishes are naturally gluten-free with excellent dietary accommodations.",
+    menuHighlights: ["🥩 Open-Fire Grilled Meats (GF)", "🥗 Fresh Salads (GF)", "🍷 Premium Wine Selection", "🍰 GF Desserts"],
+    proTip: "Mention dietary requirements when booking!",
+    icon: "🥩",
+    featured: true,
+    cuisineTypes: ["Fine Dining", "Grill", "South African"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.7,
+    reviewCount: 312,
+    lat: -26.1469,
+    lng: 28.0417,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
+      "https://images.unsplash.com/photo-1558030006-450675393462?w=800"
+    ],
+    menuNotes: [
+      "Chef can accommodate celiac needs with advance notice",
+      "Many naturally GF dishes on menu"
+    ],
+    staffKnowledgeScore: 4,
+    celiacSafetyScore: 7
+  },
+  {
+    name: "The Grillhouse Rosebank",
+    slug: "the-grillhouse-rosebank",
+    address: "The Firs, Cnr Oxford Rd & Biermann Ave, Rosebank, 2196",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Mon–Sun: 12:00PM – 10:00PM",
+    phone: "+27 11 880 3945",
+    website: "www.thegrillhouse.co.za",
+    directionsUrl: "https://www.google.com/maps/search/The+Grillhouse+Rosebank",
+    specialty: "Premium Steakhouse",
+    overview: "The Grillhouse offers premium steaks and grilled meats with gluten-free accommodations for sauces and sides.",
+    menuHighlights: ["🥩 Premium Steaks (GF)", "🥗 Fresh Sides (GF)", "🍷 Extensive Wine List", "🍰 GF Dessert Options"],
+    proTip: "Ask about GF sauce options!",
+    icon: "🥩",
+    featured: true,
+    cuisineTypes: ["Steakhouse", "Grill"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.6,
+    reviewCount: 267,
+    lat: -26.1461,
+    lng: 28.0444,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1546833998-877b37c2e5c6?w=800"
+    ],
+    menuNotes: [
+      "Steaks are naturally GF",
+      "Ask about sauce ingredients"
+    ],
+    staffKnowledgeScore: 4,
+    celiacSafetyScore: 7
+  },
+  {
+    name: "Greenside Café",
+    slug: "greenside-cafe",
+    address: "Greenway, 24 Gleneagles Rd, Greenside, 2193",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Daily: 7:00AM – 5:00PM",
+    phone: "+27 11 646 7222",
+    website: "www.greensidecafe.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Greenside+Cafe+Johannesburg",
+    specialty: "Health-Focused Café",
+    overview: "Greenside Café offers healthy, wholesome food with extensive gluten-free options in a relaxed neighborhood setting.",
+    menuHighlights: ["🥗 Healthy Salads (GF)", "🍳 Breakfast (GF options)", "🥤 Fresh Juices", "🍰 GF Baked Goods"],
+    proTip: "Great for a healthy brunch!",
+    icon: "🥗",
+    featured: false,
+    cuisineTypes: ["Café", "Healthy"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.4,
+    reviewCount: 145,
+    lat: -26.1611,
+    lng: 28.0081,
+    venueType: "cafe",
+    photos: [
+      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800"
+    ],
+    staffKnowledgeScore: 3,
+    celiacSafetyScore: 6
+  },
+  {
+    name: "Yamato Sushi",
+    slug: "yamato-sushi",
+    address: "Nelson Mandela Square, Sandton, 2196",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Daily: 11:30AM – 10:00PM",
+    phone: "+27 11 784 8181",
+    website: "www.yamatosushi.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Yamato+Sushi+Nelson+Mandela+Square",
+    specialty: "Japanese Cuisine",
+    overview: "Yamato offers authentic Japanese cuisine with sashimi and rice-based dishes that are naturally gluten-free. GF soy sauce available.",
+    menuHighlights: ["🍣 Sashimi (GF)", "🍚 Rice Bowls (GF)", "🥢 GF Soy Sauce Available", "🍱 Japanese Set Meals"],
+    proTip: "Request tamari instead of regular soy sauce!",
+    icon: "🍣",
+    featured: false,
+    cuisineTypes: ["Japanese", "Sushi"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.4,
+    reviewCount: 198,
+    lat: -26.1074,
+    lng: 28.0534,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800"
+    ],
+    menuNotes: [
+      "Sashimi is naturally GF",
+      "Tamari (GF soy sauce) available on request"
+    ],
+    staffKnowledgeScore: 3,
+    celiacSafetyScore: 6
+  },
+  {
+    name: "Wok Box Parkhurst",
+    slug: "wok-box-parkhurst",
+    address: "4th Ave, Parkhurst, 2193",
+    city: "Johannesburg",
+    country: "South Africa",
+    hours: "Daily: 11:00AM – 9:00PM",
+    phone: "+27 11 447 7771",
+    website: "www.wokbox.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Wok+Box+Parkhurst+Johannesburg",
+    specialty: "Asian Stir-Fry",
+    overview: "Wok Box offers customizable stir-fry dishes with rice noodle and rice options that can be made gluten-free.",
+    menuHighlights: ["🍜 Rice Noodles (GF)", "🍚 Rice Base (GF)", "🥡 Custom Stir-Fry", "🌶️ Asian Flavors"],
+    proTip: "Choose rice or rice noodles for GF!",
+    icon: "🥡",
+    featured: false,
+    cuisineTypes: ["Asian", "Stir-Fry"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    rating: 4.2,
+    reviewCount: 134,
+    lat: -26.1389,
+    lng: 28.0139,
+    venueType: "restaurant",
+    photos: [
+      "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800"
+    ],
+    menuNotes: [
+      "Rice and rice noodles are GF",
+      "Specify GF when ordering to avoid cross-contamination"
+    ],
+    staffKnowledgeScore: 3,
+    celiacSafetyScore: 5
+  }
+];
+
+export const getJohannesburgRestaurantBySlug = (slug: string): Restaurant | undefined => {
+  return johannesburgRestaurants.find(r => r.slug === slug);
+};
