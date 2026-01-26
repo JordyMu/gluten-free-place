@@ -404,13 +404,14 @@ const GlutenFreeJohannesburg = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
               size="lg" 
-              className="bg-white text-orange-600 hover:bg-orange-50"
+              variant="outline"
+              className="border-white bg-transparent !text-white hover:bg-white/10"
               onClick={handleFindNearMe}
               disabled={isLocating}
             >
               {isLocating ? (
                 <>
-                  <div className="w-5 h-5 mr-2 border-2 border-orange-600 border-t-transparent rounded-full animate-spin" />
+                  <div className="w-5 h-5 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   Locating...
                 </>
               ) : sortByDistance ? (
@@ -425,7 +426,7 @@ const GlutenFreeJohannesburg = () => {
                 </>
               )}
             </Button>
-            <Button size="lg" variant="outline" className="border-white !text-white hover:bg-white/10 hover:text-white">
+            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10">
               <Plus className="w-5 h-5 mr-2" />
               Add a Restaurant
             </Button>
