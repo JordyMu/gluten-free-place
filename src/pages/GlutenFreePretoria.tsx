@@ -9,28 +9,11 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import PretoriaMap from "@/components/maps/PretoriaMap";
+import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
+import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
 
-interface Restaurant {
-  name: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  icon: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe";
+interface RestaurantWithDistance extends Restaurant {
+  distance?: number;
 }
 
 const GlutenFreePretoria = () => {
@@ -38,185 +21,9 @@ const GlutenFreePretoria = () => {
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-
-  const restaurants: Restaurant[] = [
-    {
-      name: "Leafy Greens Café",
-      address: "Shop 2, Menlyn Maine, Pretoria, 0181",
-      hours: "Daily: 7:00AM – 9:00PM",
-      phone: "+27 12 348 1234",
-      website: "www.leafygreens.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Leafy+Greens+Cafe+Menlyn+Maine+Pretoria",
-      specialty: "Health-Focused Café",
-      overview: "Leafy Greens is a popular health café offering a wide range of gluten-free options. Their menu is clearly marked and staff are well-trained in dietary requirements.",
-      menuHighlights: ["🥗 GF Salads & Bowls", "🍳 Breakfast (GF options)", "🥤 Fresh Juices", "🍰 GF Baked Goods"],
-      proTip: "Try their signature GF Buddha bowl!",
-      icon: "🥗",
-      featured: true,
-      cuisineTypes: ["Healthy", "Café", "Vegetarian"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.6,
-      reviewCount: 198,
-      lat: -25.7864,
-      lng: 28.2774,
-      venueType: "cafe"
-    },
-    {
-      name: "Kream Restaurant",
-      address: "481 Rodericks Rd, Lynnwood, Pretoria, 0081",
-      hours: "Tue–Sat: 12:00PM – 10:00PM, Sun: 12:00PM – 4:00PM",
-      phone: "+27 12 361 1797",
-      website: "www.kream.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Kream+Restaurant+Lynnwood+Pretoria",
-      specialty: "Fine Dining",
-      overview: "Award-winning fine dining restaurant offering creative cuisine with excellent gluten-free accommodations. Chef-driven menu changes seasonally.",
-      menuHighlights: ["🍽️ Tasting Menu (GF options)", "🥩 Quality Proteins (GF)", "🍰 GF Desserts", "🍷 Wine Pairing"],
-      proTip: "Mention GF requirements when booking!",
-      icon: "🍽️",
-      featured: true,
-      cuisineTypes: ["Fine Dining", "Contemporary"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.8,
-      reviewCount: 234,
-      lat: -25.7633,
-      lng: 28.2847,
-      venueType: "restaurant"
-    },
-    {
-      name: "Pachas",
-      address: "Shop 2, Hazelwood, 245 Hazelwood Rd, Pretoria, 0081",
-      hours: "Daily: 7:00AM – 5:00PM",
-      phone: "+27 12 460 4367",
-      website: "www.pachas.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Pachas+Hazelwood+Pretoria",
-      specialty: "Mediterranean Café",
-      overview: "Popular Mediterranean-inspired café with an extensive menu including many gluten-free breakfast and lunch options.",
-      menuHighlights: ["🍳 All-Day Breakfast (GF options)", "🥗 Mediterranean Salads (GF)", "🍔 GF Bread Options", "☕ Quality Coffee"],
-      proTip: "Their GF pancakes are excellent!",
-      icon: "☕",
-      featured: true,
-      cuisineTypes: ["Mediterranean", "Café"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.5,
-      reviewCount: 289,
-      lat: -25.7589,
-      lng: 28.2692,
-      venueType: "cafe"
-    },
-    {
-      name: "Ritrovo Ristorante",
-      address: "Essex Square, 265 West Ave, Centurion, 0157",
-      hours: "Mon–Sat: 12:00PM – 10:00PM",
-      phone: "+27 12 663 6820",
-      website: "www.ritrovo.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Ritrovo+Ristorante+Centurion",
-      specialty: "Italian Cuisine",
-      overview: "Authentic Italian restaurant offering gluten-free pasta and pizza options. Known for accommodating dietary requirements with care.",
-      menuHighlights: ["🍝 GF Pasta Options", "🍕 GF Pizza Bases", "🥗 Italian Salads (GF)", "🍰 GF Tiramisu"],
-      proTip: "Their GF pasta is made in-house!",
-      icon: "🍝",
-      featured: true,
-      cuisineTypes: ["Italian", "Pizza"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.4,
-      reviewCount: 267,
-      lat: -25.8601,
-      lng: 28.1889,
-      venueType: "restaurant"
-    },
-    {
-      name: "Afro-Boer Restaurant",
-      address: "Cnr Festival & Lenchen Sts, Centurion, 0157",
-      hours: "Daily: 11:00AM – 10:00PM",
-      phone: "+27 12 663 1753",
-      website: "www.afroboer.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Afro+Boer+Restaurant+Centurion",
-      specialty: "South African Cuisine",
-      overview: "Traditional South African restaurant specializing in braai and local dishes. Many meat options are naturally gluten-free with GF sides available.",
-      menuHighlights: ["🥩 Braai Meats (GF)", "🍖 Traditional Potjie (ask GF)", "🥗 Fresh Sides (GF)", "🍺 Local Drinks"],
-      proTip: "Ask about GF marinade options!",
-      icon: "🥩",
-      featured: false,
-      cuisineTypes: ["South African", "Braai", "Traditional"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.3,
-      reviewCount: 312,
-      lat: -25.8594,
-      lng: 28.1893,
-      venueType: "restaurant"
-    },
-    {
-      name: "Tasha's Menlyn Maine",
-      address: "Shop 45, Menlyn Maine, Pretoria, 0181",
-      hours: "Daily: 7:00AM – 9:00PM",
-      phone: "+27 12 348 9999",
-      website: "www.tashas.co.za",
-      directionsUrl: "https://www.google.com/maps/search/Tashas+Menlyn+Maine+Pretoria",
-      specialty: "Upscale Café",
-      overview: "Part of the renowned Tashas chain, offering stylish dining with a comprehensive gluten-free menu clearly marked.",
-      menuHighlights: ["🥗 Salads with GF Options", "🍳 Breakfast (GF)", "🥩 Grilled Proteins (GF)", "🍰 GF Desserts"],
-      proTip: "Ask for their separate GF menu!",
-      icon: "🍽️",
-      featured: true,
-      cuisineTypes: ["Café", "International"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.5,
-      reviewCount: 234,
-      lat: -25.7867,
-      lng: 28.2777,
-      venueType: "cafe"
-    },
-    {
-      name: "Ocean Basket Brooklyn",
-      address: "Brooklyn Mall, 380 Bronkhorst St, Pretoria, 0181",
-      hours: "Daily: 11:00AM – 9:00PM",
-      phone: "+27 12 346 4767",
-      website: "www.oceanbasket.com",
-      directionsUrl: "https://www.google.com/maps/search/Ocean+Basket+Brooklyn+Mall+Pretoria",
-      specialty: "Seafood",
-      overview: "Popular seafood chain offering fresh fish and shellfish. Many dishes are naturally gluten-free with GF sauce options available.",
-      menuHighlights: ["🦐 Grilled Seafood (GF)", "🐟 Fresh Fish (GF)", "🥗 Seafood Salads (GF)", "🍚 Rice Sides (GF)"],
-      proTip: "Ask about GF crumbed options!",
-      icon: "🦐",
-      featured: false,
-      cuisineTypes: ["Seafood", "Mediterranean"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.2,
-      reviewCount: 345,
-      lat: -25.7721,
-      lng: 28.2378,
-      venueType: "restaurant"
-    },
-    {
-      name: "The Farmhouse",
-      address: "Plot 62, Silver Lakes Rd, Silver Lakes, Pretoria, 0054",
-      hours: "Tue–Sun: 8:00AM – 5:00PM",
-      phone: "+27 12 809 0568",
-      website: "www.thefarmhouse.co.za",
-      directionsUrl: "https://www.google.com/maps/search/The+Farmhouse+Silver+Lakes+Pretoria",
-      specialty: "Farm-to-Table",
-      overview: "Charming farm-style restaurant offering fresh, locally-sourced dishes with excellent gluten-free options in a beautiful setting.",
-      menuHighlights: ["🍳 Farm Breakfast (GF options)", "🥗 Fresh Salads (GF)", "🥩 Grilled Meats (GF)", "🍰 Homestyle Desserts (GF available)"],
-      proTip: "Beautiful venue for special occasions!",
-      icon: "🏡",
-      featured: false,
-      cuisineTypes: ["Farm-to-Table", "South African"],
-      celiacSafe: "protocols-in-place",
-      menuType: "mixed-menu",
-      rating: 4.4,
-      reviewCount: 189,
-      lat: -25.7234,
-      lng: 28.3567,
-      venueType: "restaurant"
-    }
-  ];
+  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationError, setLocationError] = useState<string | null>(null);
 
   const faqItems = [
     {
@@ -244,6 +51,54 @@ const GlutenFreePretoria = () => {
       answer: "Yes! Major malls like Menlyn Park and Brooklyn Mall have multiple restaurants with GF options. Woolworths and health stores in these malls also stock excellent GF products."
     }
   ];
+
+  const neighborhoods = [
+    { name: "Menlyn Maine", count: 3, icon: "🏢" },
+    { name: "Brooklyn", count: 2, icon: "🏘️" },
+    { name: "Lynnwood", count: 2, icon: "🌳" },
+    { name: "Centurion", count: 3, icon: "🏛️" }
+  ];
+
+  const calculateDistance = (lat1: number, lon1: number, lat2: number, lon2: number): number => {
+    const R = 6371;
+    const dLat = (lat2 - lat1) * Math.PI / 180;
+    const dLon = (lon2 - lon1) * Math.PI / 180;
+    const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+      Math.sin(dLon / 2) * Math.sin(dLon / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c;
+  };
+
+  const handleFindNearMe = () => {
+    setIsLocating(true);
+    setLocationError(null);
+    
+    const tryGeolocation = (highAccuracy: boolean, timeout: number) => {
+      return new Promise<GeolocationPosition>((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject, {
+          enableHighAccuracy: highAccuracy,
+          timeout: timeout,
+          maximumAge: 300000
+        });
+      });
+    };
+    
+    tryGeolocation(true, 15000)
+      .catch(() => tryGeolocation(false, 30000))
+      .then((position) => {
+        setUserLocation({
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        });
+        setIsLocating(false);
+      })
+      .catch((error) => {
+        console.error("Geolocation error:", error);
+        setLocationError("Could not get your location. Please check your browser settings.");
+        setIsLocating(false);
+      });
+  };
 
   const getCeliacSafeBadge = (level: string) => {
     switch (level) {
@@ -282,7 +137,17 @@ const GlutenFreePretoria = () => {
   };
 
   const filteredRestaurants = useMemo(() => {
-    return restaurants.filter(restaurant => {
+    let results: RestaurantWithDistance[] = pretoriaRestaurants.map(r => ({ ...r }));
+
+    if (userLocation) {
+      results = results.map(restaurant => ({
+        ...restaurant,
+        distance: calculateDistance(userLocation.lat, userLocation.lng, restaurant.lat, restaurant.lng)
+      }));
+      results.sort((a, b) => (a.distance || 0) - (b.distance || 0));
+    }
+
+    return results.filter(restaurant => {
       const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
       const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
       const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
@@ -292,7 +157,7 @@ const GlutenFreePretoria = () => {
       
       return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
     });
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery]);
+  }, [safetyFilter, venueFilter, menuFilter, searchQuery, userLocation]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
@@ -307,8 +172,15 @@ const GlutenFreePretoria = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-purple-600 to-indigo-500 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
+      <section 
+        className="relative text-white py-16"
+        style={{
+          backgroundImage: `linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.4)), url(${pretoriaUnionBuildingsBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🏛️</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Find Safe Gluten-Free Restaurants in Pretoria
@@ -317,15 +189,24 @@ const GlutenFreePretoria = () => {
             Real reviews from gluten-free diners. Verified listings. Zero guesswork.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-purple-600 hover:bg-purple-50">
+            <Button 
+              size="lg" 
+              className="border-white bg-transparent !text-white hover:bg-white/10"
+              variant="outline"
+              onClick={handleFindNearMe}
+              disabled={isLocating}
+            >
               <Search className="w-5 h-5 mr-2" />
-              Find Gluten-Free Food Near Me
+              {isLocating ? "Finding..." : "Find Gluten-Free Food Near Me"}
             </Button>
             <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10">
               <Plus className="w-5 h-5 mr-2" />
               Add a Restaurant
             </Button>
           </div>
+          {locationError && (
+            <p className="text-red-300 mt-4 text-sm">{locationError}</p>
+          )}
         </div>
       </section>
 
@@ -347,6 +228,22 @@ const GlutenFreePretoria = () => {
               </div>
             </CardContent>
           </Card>
+        </section>
+
+        {/* Neighborhood Navigation */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">📍 Browse by Neighborhood</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {neighborhoods.map((neighborhood) => (
+              <Card key={neighborhood.name} className="hover:shadow-lg transition-shadow cursor-pointer">
+                <CardContent className="p-4 text-center">
+                  <span className="text-3xl mb-2 block">{neighborhood.icon}</span>
+                  <h3 className="font-semibold text-sm">{neighborhood.name}</h3>
+                  <p className="text-xs text-gray-500">{neighborhood.count} places</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {/* Map Section */}
@@ -396,9 +293,9 @@ const GlutenFreePretoria = () => {
                     </SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Venues</SelectItem>
-                      <SelectItem value="bakery">Bakery</SelectItem>
-                      <SelectItem value="restaurant">Restaurant</SelectItem>
-                      <SelectItem value="cafe">Café</SelectItem>
+                      <SelectItem value="restaurant">Restaurants</SelectItem>
+                      <SelectItem value="cafe">Cafés</SelectItem>
+                      <SelectItem value="bakery">Bakeries</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -411,7 +308,7 @@ const GlutenFreePretoria = () => {
                     <SelectContent>
                       <SelectItem value="all">All Menu Types</SelectItem>
                       <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options</SelectItem>
+                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
@@ -420,83 +317,118 @@ const GlutenFreePretoria = () => {
           </Card>
         </section>
 
-        {/* Restaurant Cards */}
+        {/* Restaurant Listings */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">
             🍽️ Gluten-Free Restaurants ({filteredRestaurants.length})
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {filteredRestaurants.map((restaurant, index) => (
-              <Card key={index} className={`hover:shadow-lg transition-shadow ${restaurant.featured ? 'ring-2 ring-purple-300' : ''}`}>
-                <CardHeader>
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl">{restaurant.icon}</span>
-                      <div>
-                        <CardTitle className="text-lg flex items-center gap-2">
-                          {restaurant.name}
-                          {restaurant.featured && <Badge className="bg-purple-100 text-purple-800">Featured</Badge>}
-                        </CardTitle>
-                        <p className="text-sm text-gray-600">{restaurant.specialty}</p>
+          
+          <div className="space-y-6">
+            {filteredRestaurants.map((restaurant) => (
+              <Card key={restaurant.slug} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
+                  <div className="flex flex-col gap-4">
+                    {/* Header Row */}
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-start gap-4">
+                        <span className="text-4xl">{restaurant.icon}</span>
+                        <div>
+                          <div className="flex items-center gap-2 mb-1">
+                            {getCeliacSafeBadge(restaurant.celiacSafe)}
+                            {restaurant.distance && (
+                              <Badge variant="outline" className="text-purple-600 border-purple-300">
+                                <Navigation className="w-3 h-3 mr-1" />
+                                {restaurant.distance.toFixed(1)} km
+                              </Badge>
+                            )}
+                          </div>
+                          <Link to={`/gluten-free/south-africa/pretoria/${restaurant.slug}`}>
+                            <h3 className="text-xl font-bold text-gray-900 hover:text-purple-600 transition-colors">{restaurant.name}</h3>
+                          </Link>
+                          <div className="flex items-center gap-2 mt-1">
+                            {renderStarRating(restaurant.rating)}
+                            <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-4">
-                    <div className="flex flex-wrap gap-2">
-                      {getCeliacSafeBadge(restaurant.celiacSafe)}
-                      {getMenuTypeBadge(restaurant.menuType)}
+                      <Button variant="ghost" size="icon" className="text-gray-400 hover:text-red-500">
+                        <Heart className="w-5 h-5" />
+                      </Button>
                     </div>
                     
-                    <div className="flex items-center gap-2">
-                      {renderStarRating(restaurant.rating)}
-                      <span className="text-sm text-gray-500">({restaurant.reviewCount} reviews)</span>
+                    {/* Tags Row */}
+                    <div className="flex flex-wrap gap-2">
+                      {getMenuTypeBadge(restaurant.menuType)}
+                      {restaurant.cuisineTypes.map((cuisine) => (
+                        <Badge key={cuisine} variant="secondary" className="text-xs">
+                          {cuisine}
+                        </Badge>
+                      ))}
                     </div>
-
-                    <p className="text-gray-700 text-sm">{restaurant.overview}</p>
-
-                    <div className="space-y-2 text-sm">
-                      <div className="flex items-center gap-2 text-gray-600">
+                    
+                    {/* Overview */}
+                    <p className="text-gray-700">{restaurant.overview}</p>
+                    
+                    {/* Menu Highlights */}
+                    <div className="flex flex-wrap gap-2">
+                      {restaurant.menuHighlights.map((item, idx) => (
+                        <span key={idx} className="text-sm bg-purple-50 px-3 py-1 rounded-full">
+                          {item}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    {/* Pro Tip */}
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                      <p className="text-amber-800 text-sm">
+                        <strong>💡 Pro Tip:</strong> {restaurant.proTip}
+                      </p>
+                    </div>
+                    
+                    {/* Contact Info */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-gray-600 border-t pt-4">
+                      <div className="flex items-center gap-2">
                         <MapPin className="w-4 h-4" />
                         <span>{restaurant.address}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2">
                         <Clock className="w-4 h-4" />
                         <span>{restaurant.hours}</span>
                       </div>
-                      <div className="flex items-center gap-2 text-gray-600">
+                      <div className="flex items-center gap-2">
                         <Phone className="w-4 h-4" />
                         <span>{restaurant.phone}</span>
                       </div>
                     </div>
-
-                    <div>
-                      <p className="text-sm font-medium text-gray-800 mb-2">Menu Highlights:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {restaurant.menuHighlights.map((item, i) => (
-                          <span key={i} className="text-xs bg-gray-100 px-2 py-1 rounded">{item}</span>
-                        ))}
-                      </div>
-                    </div>
-
-                    <div className="bg-purple-50 p-3 rounded-lg">
-                      <p className="text-sm"><span className="font-medium">💡 Pro Tip:</span> {restaurant.proTip}</p>
-                    </div>
-
-                    <div className="flex gap-2">
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
-                          <Navigation className="w-4 h-4 mr-1" />
-                          Directions
-                        </a>
-                      </Button>
-                      <Button size="sm" variant="outline" asChild>
-                        <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
-                          <Globe className="w-4 h-4 mr-1" />
+                    
+                    {/* Action Buttons */}
+                    <div className="flex flex-wrap gap-3 pt-2">
+                      <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm">
+                          <Navigation className="w-4 h-4 mr-2" />
+                          Get Directions
+                        </Button>
+                      </a>
+                      <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
+                        <Button variant="outline" size="sm">
+                          <Globe className="w-4 h-4 mr-2" />
                           Website
-                        </a>
-                      </Button>
+                        </Button>
+                      </a>
+                      <Link to={`/gluten-free/south-africa/pretoria/${restaurant.slug}`}>
+                        <Button size="sm" className="bg-purple-600 hover:bg-purple-700">
+                          View Details
+                        </Button>
+                      </Link>
+                    </div>
+
+                    {/* Reviews Section */}
+                    <div className="border-t pt-4 mt-2">
+                      <RestaurantReviews
+                        restaurantName={restaurant.name}
+                        restaurantCountry="south-africa"
+                        restaurantCity="pretoria"
+                      />
                     </div>
                   </div>
                 </CardContent>
@@ -511,13 +443,13 @@ const GlutenFreePretoria = () => {
           <Card>
             <CardContent className="p-6">
               <Accordion type="single" collapsible className="w-full">
-                {faqItems.map((faq, index) => (
+                {faqItems.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left font-medium">
-                      {faq.question}
+                    <AccordionTrigger className="text-left">
+                      {item.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-gray-700">
-                      {faq.answer}
+                    <AccordionContent className="text-gray-600">
+                      {item.answer}
                     </AccordionContent>
                   </AccordionItem>
                 ))}
@@ -525,25 +457,7 @@ const GlutenFreePretoria = () => {
             </CardContent>
           </Card>
         </section>
-
-        {/* Reviews Section */}
-        <section>
-          <RestaurantReviews 
-            restaurantName="Pretoria Gluten-Free Restaurants" 
-            restaurantCountry="South Africa"
-            restaurantCity="Pretoria"
-          />
-        </section>
       </main>
-
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 mt-12">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-gray-400">
-            Helping celiacs find safe dining in Pretoria 🏛️
-          </p>
-        </div>
-      </footer>
     </div>
   );
 };
