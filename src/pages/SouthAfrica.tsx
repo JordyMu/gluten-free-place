@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight, Search, Plus } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -7,6 +8,24 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 
 const SouthAfrica = () => {
+  useEffect(() => {
+    document.title = "Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide 2026";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more. Real reviews from GF travelers.");
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide");
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants across South Africa. Browse by city, read real reviews, and find safe dining throughout the Rainbow Nation.");
+    }
+  }, []);
   const cities = [
     {
       name: "Cape Town",
