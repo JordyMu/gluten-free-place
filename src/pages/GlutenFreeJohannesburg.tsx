@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,6 +19,25 @@ interface RestaurantWithDistance extends Restaurant {
 
 const GlutenFreeJohannesburg = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
+
+  useEffect(() => {
+    document.title = "Gluten-Free Restaurants in Johannesburg | Celiac-Safe Dining Guide 2026";
+    
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Johannesburg, South Africa. Verified celiac-safe dining options in Sandton, Rosebank, Parkhurst & more. Real reviews from GF travelers.");
+    }
+
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Gluten-Free Restaurants in Johannesburg | Celiac-Safe Dining Guide");
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Johannesburg. Browse by neighborhood, read real reviews, and find safe dining in South Africa's largest city.");
+    }
+  }, []);
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
