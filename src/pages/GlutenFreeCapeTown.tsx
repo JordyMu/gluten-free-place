@@ -8,7 +8,7 @@ import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-
+import CapeTownMap from "@/components/maps/CapeTownMap";
 import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 
 interface Restaurant {
@@ -688,6 +688,14 @@ const GlutenFreeCapeTown = () => {
           </div>
         </section>
 
+        {/* Map Section */}
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+            <MapPin className="w-6 h-6 text-orange-600" />
+            Restaurant Map
+          </h2>
+          <CapeTownMap restaurants={filteredRestaurants} />
+        </section>
 
         {/* Filters */}
         <section className="mb-8">
