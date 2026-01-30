@@ -36,6 +36,68 @@ const GlutenFreeDurban = () => {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Durban. Browse by neighborhood, read real reviews, and find safe dining on KZN's Golden Mile.");
     }
+
+    // Add JSON-LD structured data for SEO
+    const existingSchema = document.querySelector('script[data-schema="durban-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'durban-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Durban",
+      "description": "Find the best gluten-free restaurants in Durban, South Africa. Verified celiac-safe dining options.",
+      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
+          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" },
+          { "@type": "ListItem", "position": 3, "name": "Durban", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    // Add FAQ Schema
+    const existingFaqSchema = document.querySelector('script[data-schema="durban-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'durban-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Durban a good destination for gluten-free travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Durban's rich Indian cuisine offers many naturally gluten-free options. Areas like Umhlanga and Morningside have excellent restaurants catering to dietary requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Durban unique for gluten-free dining?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Durban is famous for its Indian cuisine, which features many naturally gluten-free dishes using rice, lentils, and fresh spices. Bunny chow can be made GF with rice instead of bread."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      const schemaToRemove = document.querySelector('script[data-schema="durban-gf"]');
+      if (schemaToRemove) schemaToRemove.remove();
+      const faqSchemaToRemove = document.querySelector('script[data-schema="durban-faq"]');
+      if (faqSchemaToRemove) faqSchemaToRemove.remove();
+    };
   }, []);
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");

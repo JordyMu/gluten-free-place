@@ -36,6 +36,68 @@ const GlutenFreePretoria = () => {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Pretoria. Browse by neighborhood, read real reviews, and find safe dining in South Africa's capital.");
     }
+
+    // Add JSON-LD structured data for SEO
+    const existingSchema = document.querySelector('script[data-schema="pretoria-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'pretoria-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Pretoria",
+      "description": "Find the best gluten-free restaurants in Pretoria, South Africa. Verified celiac-safe dining options.",
+      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/pretoria",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
+          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" },
+          { "@type": "ListItem", "position": 3, "name": "Pretoria", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/pretoria" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    // Add FAQ Schema
+    const existingFaqSchema = document.querySelector('script[data-schema="pretoria-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'pretoria-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Pretoria a good destination for gluten-free travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Pretoria (Tshwane) offers a growing selection of GF-friendly restaurants, especially in areas like Menlyn, Brooklyn, and Lynnwood. Many upscale restaurants accommodate dietary requirements well."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which areas in Pretoria have the most GF-friendly restaurants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Menlyn Maine, Brooklyn, Lynnwood, and Hazelwood have the highest concentration of restaurants catering to gluten-free diets. Centurion also offers good options."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      const schemaToRemove = document.querySelector('script[data-schema="pretoria-gf"]');
+      if (schemaToRemove) schemaToRemove.remove();
+      const faqSchemaToRemove = document.querySelector('script[data-schema="pretoria-faq"]');
+      if (faqSchemaToRemove) faqSchemaToRemove.remove();
+    };
   }, []);
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");

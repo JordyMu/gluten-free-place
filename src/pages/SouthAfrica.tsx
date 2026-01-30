@@ -25,6 +25,116 @@ const SouthAfrica = () => {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants across South Africa. Browse by city, read real reviews, and find safe dining throughout the Rainbow Nation.");
     }
+
+    // Add JSON-LD structured data for SEO
+    const existingSchema = document.querySelector('script[data-schema="south-africa-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'south-africa-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in South Africa",
+      "description": "Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more.",
+      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Top Gluten-Free Cities in South Africa",
+        "numberOfItems": 4,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Cape Town",
+            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/cape-town"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Johannesburg",
+            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/johannesburg"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Pretoria",
+            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/pretoria"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Durban",
+            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban"
+          }
+        ]
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
+          { "@type": "ListItem", "position": 2, "name": "Countries", "item": "https://glutenfreeglobetrotters.com/countries" },
+          { "@type": "ListItem", "position": 3, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    // Add FAQ Schema
+    const existingFaqSchema = document.querySelector('script[data-schema="south-africa-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'south-africa-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is South Africa a good destination for gluten-free travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely! South Africa is becoming increasingly celiac-friendly, especially in major cities like Cape Town and Johannesburg. You'll find dedicated gluten-free bakeries, health-conscious cafés, and many restaurants that cater to dietary requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What traditional South African foods are naturally gluten-free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Many traditional dishes are naturally GF including braai (BBQ meats), pap (maize porridge), chakalaka, boerewors (ask about fillers), and fresh seafood. Indian cuisine in Durban offers rice-based dishes that are often naturally gluten-free."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there dedicated gluten-free bakeries in South Africa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Off the Gluten Path in Cape Town (with two locations) is a 100% dedicated gluten-free bakery. Several health food stores and specialty bakeries across the country also offer GF products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which South African city is most celiac-friendly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cape Town leads the way with dedicated GF bakeries and health-conscious cafés. Johannesburg offers the most diversity, while Durban's Indian cuisine provides many naturally GF options."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
+
+    // Cleanup on unmount
+    return () => {
+      const schemaToRemove = document.querySelector('script[data-schema="south-africa-gf"]');
+      if (schemaToRemove) schemaToRemove.remove();
+      const faqSchemaToRemove = document.querySelector('script[data-schema="south-africa-faq"]');
+      if (faqSchemaToRemove) faqSchemaToRemove.remove();
+    };
   }, []);
   const cities = [
     {
