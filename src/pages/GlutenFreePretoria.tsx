@@ -8,7 +8,7 @@ import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import PretoriaMap from "@/components/maps/PretoriaMap";
+
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
 import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
 
@@ -327,11 +327,6 @@ const GlutenFreePretoria = () => {
           </div>
         </section>
 
-        {/* Map Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">📍 Restaurant Map</h2>
-          <PretoriaMap restaurants={filteredRestaurants} />
-        </section>
 
         {/* Filters */}
         <section className="mb-8">
