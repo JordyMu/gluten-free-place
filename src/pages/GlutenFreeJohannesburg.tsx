@@ -37,6 +37,68 @@ const GlutenFreeJohannesburg = () => {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Johannesburg. Browse by neighborhood, read real reviews, and find safe dining in South Africa's largest city.");
     }
+
+    // Add JSON-LD structured data for SEO
+    const existingSchema = document.querySelector('script[data-schema="johannesburg-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'johannesburg-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Johannesburg",
+      "description": "Find the best gluten-free restaurants in Johannesburg, South Africa. Verified celiac-safe dining options.",
+      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/johannesburg",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
+          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" },
+          { "@type": "ListItem", "position": 3, "name": "Johannesburg", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/johannesburg" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    // Add FAQ Schema
+    const existingFaqSchema = document.querySelector('script[data-schema="johannesburg-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'johannesburg-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Johannesburg a good destination for gluten-free travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Johannesburg offers the most diverse gluten-free dining options in South Africa. Areas like Sandton, Rosebank, and Parkhurst have many restaurants that cater to celiac needs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Johannesburg neighborhoods have the most GF-friendly restaurants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sandton, Rosebank, Parkhurst, and Melrose Arch have the highest concentration of celiac-friendly restaurants. These upscale areas feature many health-conscious cafés and international cuisine."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      const schemaToRemove = document.querySelector('script[data-schema="johannesburg-gf"]');
+      if (schemaToRemove) schemaToRemove.remove();
+      const faqSchemaToRemove = document.querySelector('script[data-schema="johannesburg-faq"]');
+      if (faqSchemaToRemove) faqSchemaToRemove.remove();
+    };
   }, []);
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");

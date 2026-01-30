@@ -55,6 +55,76 @@ const GlutenFreeCapeTown = () => {
     if (ogDescription) {
       ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Cape Town. Browse by neighborhood, read real reviews, and find safe dining at the Mother City.");
     }
+
+    // Add JSON-LD structured data for SEO
+    const existingSchema = document.querySelector('script[data-schema="cape-town-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'cape-town-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Cape Town",
+      "description": "Find the best gluten-free restaurants in Cape Town, South Africa. Verified celiac-safe dining options.",
+      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/cape-town",
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
+          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" },
+          { "@type": "ListItem", "position": 3, "name": "Cape Town", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/cape-town" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    // Add FAQ Schema
+    const existingFaqSchema = document.querySelector('script[data-schema="cape-town-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'cape-town-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is Cape Town a good destination for gluten-free travelers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes! Cape Town is one of the most celiac-friendly cities in South Africa. With dedicated gluten-free bakeries like Off the Gluten Path and many restaurants offering GF menus, you'll find plenty of safe dining options."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are there any 100% gluten-free restaurants in Cape Town?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Off the Gluten Path has two locations (Sea Point and Woodstock) that are completely dedicated gluten-free facilities with zero cross-contamination risk."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which Cape Town neighborhoods have the most GF-friendly restaurants?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sea Point, the V&A Waterfront, Camps Bay, and Green Point have the highest concentration of celiac-friendly restaurants. Constantia is great for health-focused cafés."
+          }
+        }
+      ]
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      const schemaToRemove = document.querySelector('script[data-schema="cape-town-gf"]');
+      if (schemaToRemove) schemaToRemove.remove();
+      const faqSchemaToRemove = document.querySelector('script[data-schema="cape-town-faq"]');
+      if (faqSchemaToRemove) faqSchemaToRemove.remove();
+    };
   }, []);
   const [venueFilter, setVenueFilter] = useState<string>("all");
   const [menuFilter, setMenuFilter] = useState<string>("all");
