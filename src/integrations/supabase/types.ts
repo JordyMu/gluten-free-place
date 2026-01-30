@@ -110,6 +110,72 @@ export type Database = {
         }
         Relationships: []
       }
+      restaurant_submissions: {
+        Row: {
+          address: string
+          celiac_safe: string
+          city: string
+          country: string
+          created_at: string
+          cuisine_types: string[] | null
+          hours: string | null
+          id: string
+          menu_type: string
+          overview: string | null
+          phone: string | null
+          pro_tip: string | null
+          restaurant_name: string
+          specialty: string | null
+          status: string
+          updated_at: string
+          user_id: string
+          venue_type: string
+          website: string | null
+        }
+        Insert: {
+          address: string
+          celiac_safe?: string
+          city: string
+          country?: string
+          created_at?: string
+          cuisine_types?: string[] | null
+          hours?: string | null
+          id?: string
+          menu_type?: string
+          overview?: string | null
+          phone?: string | null
+          pro_tip?: string | null
+          restaurant_name: string
+          specialty?: string | null
+          status?: string
+          updated_at?: string
+          user_id: string
+          venue_type?: string
+          website?: string | null
+        }
+        Update: {
+          address?: string
+          celiac_safe?: string
+          city?: string
+          country?: string
+          created_at?: string
+          cuisine_types?: string[] | null
+          hours?: string | null
+          id?: string
+          menu_type?: string
+          overview?: string | null
+          phone?: string | null
+          pro_tip?: string | null
+          restaurant_name?: string
+          specialty?: string | null
+          status?: string
+          updated_at?: string
+          user_id?: string
+          venue_type?: string
+          website?: string | null
+        }
+        Relationships: []
+      }
       reviews: {
         Row: {
           comment: string

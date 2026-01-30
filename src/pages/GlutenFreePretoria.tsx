@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -8,6 +8,7 @@ import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
 import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
@@ -280,10 +281,10 @@ const GlutenFreePretoria = () => {
               <Search className="w-5 h-5 mr-2" />
               {isLocating ? "Finding..." : "Find Gluten-Free Food Near Me"}
             </Button>
-            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10">
-              <Plus className="w-5 h-5 mr-2" />
-              Add a Restaurant
-            </Button>
+            <AddRestaurantDialog 
+              city="pretoria" 
+              triggerClassName="border-white bg-transparent !text-white hover:bg-white/10"
+            />
           </div>
           {locationError && (
             <p className="text-red-300 mt-4 text-sm">{locationError}</p>
