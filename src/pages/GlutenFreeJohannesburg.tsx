@@ -8,7 +8,7 @@ import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import JohannesburgMap from "@/components/maps/JohannesburgMap";
+
 import johannesburgBg from "@/assets/johannesburg-skyline.jpg";
 import { johannesburgRestaurants } from "@/data/johannesburgRestaurants";
 import { Restaurant } from "@/data/capeTownRestaurants";
@@ -456,11 +456,6 @@ const GlutenFreeJohannesburg = () => {
           )}
         </section>
 
-        {/* Map Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">📍 Restaurant Map</h2>
-          <JohannesburgMap restaurants={filteredRestaurants} />
-        </section>
 
         {/* Filters */}
         <section className="mb-8">
