@@ -351,53 +351,6 @@ const GlutenFreeJohannesburg = () => {
           </Card>
         </section>
 
-        {/* Neighborhoods Quick Navigation */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            🏙️ Explore Popular Neighborhoods
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Johannesburg's best gluten-free dining is concentrated in these vibrant neighborhoods.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🏢</span>
-                <div>
-                  <h3 className="text-sm font-medium text-purple-900">Sandton</h3>
-                  <p className="text-purple-700 text-[11px]">Upscale dining hub</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🎨</span>
-                <div>
-                  <h3 className="text-sm font-medium text-amber-900">Rosebank</h3>
-                  <p className="text-amber-700 text-[11px]">Arts & fine dining</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🌿</span>
-                <div>
-                  <h3 className="text-sm font-medium text-green-900">Parkhurst</h3>
-                  <p className="text-green-700 text-[11px]">Trendy café strip</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">✨</span>
-                <div>
-                  <h3 className="text-sm font-medium text-blue-900">Melrose Arch</h3>
-                  <p className="text-blue-700 text-[11px]">Modern precinct</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
         {/* Category Quick Navigation */}
         <section className="mb-12">
