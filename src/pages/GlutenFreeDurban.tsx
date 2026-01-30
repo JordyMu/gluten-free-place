@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 import { durbanRestaurants, Restaurant } from "@/data/durbanRestaurants";
 import durbanBeachfrontBg from "@/assets/durban-beachfront.jpg";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
 interface RestaurantWithDistance extends Restaurant {
   distance?: number;
@@ -309,10 +310,7 @@ const GlutenFreeDurban = () => {
                 </>
               )}
             </Button>
-            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10">
-              <Plus className="w-5 h-5 mr-2" />
-              Add a Restaurant
-            </Button>
+            <AddRestaurantDialog city="Durban" triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" />
           </div>
           {locationError && (
             <p className="text-blue-100 mt-4 text-sm">{locationError}</p>
