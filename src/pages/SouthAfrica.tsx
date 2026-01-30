@@ -1,11 +1,12 @@
 import { useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight, Search, Plus } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
 const SouthAfrica = () => {
   useEffect(() => {
@@ -246,14 +247,16 @@ const SouthAfrica = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-700 hover:bg-green-50">
-                <Search className="w-5 h-5 mr-2" />
-                Find Gluten-Free Food Near Me
-              </Button>
-              <Button size="lg" variant="outline" className="border-white/70 bg-transparent !text-white hover:bg-white/10">
-                <Plus className="w-5 h-5 mr-2" />
-                Add a Restaurant
-              </Button>
+              <Link to="/gluten-free/south-africa/cape-town">
+                <Button size="lg" className="bg-white text-green-700 hover:bg-green-50">
+                  Start with Cape Town
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <AddRestaurantDialog 
+                city="South Africa" 
+                triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10" 
+              />
             </div>
           </div>
         </div>
@@ -478,10 +481,10 @@ const SouthAfrica = () => {
                 <ArrowRight className="h-5 w-5 ml-2" />
               </Button>
             </Link>
-            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10 px-8">
-              <Plus className="w-5 h-5 mr-2" />
-              Contribute a Restaurant
-            </Button>
+            <AddRestaurantDialog 
+              city="South Africa" 
+              triggerClassName="border-white bg-transparent !text-white hover:bg-white/10 px-8" 
+            />
           </div>
         </div>
       </section>
