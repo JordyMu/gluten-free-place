@@ -350,48 +350,36 @@ const GlutenFreeDurban = () => {
           </Card>
         </section>
 
-        {/* Neighborhood Navigation */}
+        {/* Browse by Category */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            🏖️ Popular Neighborhoods
+            🍽️ Browse by Category
           </h2>
           <p className="text-gray-600 mb-4">
-            Explore gluten-free dining in Durban's most popular areas.
+            Find exactly what you're looking for with our curated category pages.
           </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-blue-200 bg-gradient-to-r from-blue-50 to-cyan-50">
+          <div className="grid grid-cols-2 gap-2">
+            <Card 
+              className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
+              onClick={() => setVenueFilter("supermarket")}
+            >
               <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🌴</span>
+                <span className="text-lg">🛒</span>
                 <div>
-                  <h3 className="text-sm font-medium text-blue-900">Umhlanga</h3>
-                  <p className="text-blue-700 text-[11px]">Beachfront dining</p>
+                  <h3 className="text-sm font-medium text-green-900">Grocery Stores</h3>
+                  <p className="text-green-700 text-[11px]">GF products & supplies</p>
                 </div>
               </CardContent>
             </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+            <Card 
+              className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
+              onClick={() => setVenueFilter("street-food")}
+            >
               <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🏡</span>
+                <span className="text-lg">🌮</span>
                 <div>
-                  <h3 className="text-sm font-medium text-amber-900">Morningside</h3>
-                  <p className="text-amber-700 text-[11px]">Fine dining hub</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🌳</span>
-                <div>
-                  <h3 className="text-sm font-medium text-green-900">Glenwood</h3>
-                  <p className="text-green-700 text-[11px]">Cafés & bakeries</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-purple-200 bg-gradient-to-r from-purple-50 to-pink-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🛍️</span>
-                <div>
-                  <h3 className="text-sm font-medium text-purple-900">Gateway</h3>
-                  <p className="text-purple-700 text-[11px]">Mall dining</p>
+                  <h3 className="text-sm font-medium text-orange-900">Street Food</h3>
+                  <p className="text-orange-700 text-[11px]">Quick bites & markets</p>
                 </div>
               </CardContent>
             </Card>
