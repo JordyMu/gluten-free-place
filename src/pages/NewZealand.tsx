@@ -3,10 +3,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const NewZealand = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
+  
+  useCountrySEO({
+    countryName: "New Zealand",
+    countrySlug: "new-zealand",
+    description: "Find the best gluten-free restaurants in New Zealand. Dedicated bakeries, cafes & restaurants in Auckland, Wellington, Christchurch, Queenstown.",
+    ogDescription: "Discover gluten-free Kiwi dining. Browse dedicated GF bakeries, cafes, and restaurants across New Zealand.",
+    cities: [
+      { name: "Auckland" },
+      { name: "Wellington" },
+      { name: "Christchurch" },
+      { name: "Queenstown" }
+    ],
+    faqs: [
+      { question: "Is New Zealand good for gluten-free travelers?", answer: "Yes! New Zealand has excellent celiac awareness with many dedicated GF bakeries and restaurants across both islands." },
+      { question: "Are there dedicated GF bakeries in NZ?", answer: "Yes! The GF Depot and Gluten Free 4U offer 100% dedicated GF facilities with amazing baked goods." },
+      { question: "Can I find GF fish & chips in NZ?", answer: "Absolutely! Several fish and chip shops offer dedicated GF batter and fryers." }
+    ],
+    schemaId: "new-zealand"
+  });
   
   const cities = [
     {

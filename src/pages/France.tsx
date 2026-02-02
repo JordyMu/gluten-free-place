@@ -3,10 +3,31 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const France = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
+  
+  useCountrySEO({
+    countryName: "France",
+    countrySlug: "france",
+    description: "Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities.",
+    ogDescription: "Discover gluten-free French cuisine. Browse dedicated bakeries, restaurants, and patisseries offering safe croissants, bread, and pastries.",
+    cities: [
+      { name: "Paris" },
+      { name: "Lyon" },
+      { name: "Nice" },
+      { name: "Bordeaux" },
+      { name: "Marseille" }
+    ],
+    faqs: [
+      { question: "Can I find gluten-free croissants in France?", answer: "Yes! Several dedicated GF bakeries in Paris and other cities make authentic gluten-free croissants, bread, and pastries." },
+      { question: "Is France celiac-friendly?", answer: "France has improved significantly with many dedicated GF bakeries and restaurants. Paris especially has excellent options." },
+      { question: "What GF bakeries should I visit in Paris?", answer: "Top options include Chambelland, Noglu, and Copains - all 100% dedicated gluten-free facilities with amazing French pastries." }
+    ],
+    schemaId: "france"
+  });
 
   const cities = [
     {

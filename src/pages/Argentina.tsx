@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const cities = [
   {
@@ -61,6 +62,24 @@ const renderStarRating = (rating: number) => {
 };
 
 const Argentina = () => {
+  useCountrySEO({
+    countryName: "Argentina",
+    countrySlug: "argentina",
+    description: "Find the best gluten-free restaurants in Argentina. Celiac-safe steaks, empanadas & traditional cuisine in Buenos Aires, Mendoza, Córdoba & more.",
+    ogDescription: "Discover gluten-free Argentine dining. Browse restaurants offering safe steaks, empanadas, and traditional Argentine dishes.",
+    cities: [
+      { name: "Buenos Aires" },
+      { name: "Mendoza" },
+      { name: "Córdoba" }
+    ],
+    faqs: [
+      { question: "Is Argentina good for gluten-free travelers?", answer: "Yes! Argentina has excellent celiac awareness with Law 26.588 requiring GF options. Many traditional dishes like grilled meats are naturally GF." },
+      { question: "Can I find GF empanadas in Argentina?", answer: "Absolutely! Many bakeries offer certified gluten-free empanadas that taste just like traditional ones." },
+      { question: "What is Sin TACC in Argentina?", answer: "Sin TACC means 'without TACC' (wheat, oats, barley, rye) - it's the Argentine labeling for gluten-free products." }
+    ],
+    schemaId: "argentina"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-yellow-50">
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
