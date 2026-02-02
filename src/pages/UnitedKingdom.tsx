@@ -3,10 +3,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const UnitedKingdom = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
+  
+  useCountrySEO({
+    countryName: "United Kingdom",
+    countrySlug: "united-kingdom",
+    description: "Find the best gluten-free restaurants in the UK. Coeliac UK accredited pubs, bakeries & restaurants in London, Manchester, Edinburgh, Birmingham.",
+    ogDescription: "Discover verified gluten-free British dining. Browse Coeliac UK accredited restaurants, dedicated bakeries, and gastropubs across Britain.",
+    cities: [
+      { name: "London" },
+      { name: "Manchester" },
+      { name: "Edinburgh" },
+      { name: "Birmingham" }
+    ],
+    faqs: [
+      { question: "Is the UK good for gluten-free dining?", answer: "Yes! The UK has embraced gluten-free dining with Coeliac UK accreditation, dedicated bakeries, and widespread pub menu options." },
+      { question: "What is Coeliac UK accreditation?", answer: "Coeliac UK accredits venues that meet high standards for gluten-free food preparation and staff training." },
+      { question: "Can I find GF options in British pubs?", answer: "Absolutely! Many UK pubs now offer extensive gluten-free menus including fish & chips, pies, and traditional dishes." }
+    ],
+    schemaId: "united-kingdom"
+  });
 
   const cities = [
     {

@@ -3,8 +3,27 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const Australia = () => {
+  useCountrySEO({
+    countryName: "Australia",
+    countrySlug: "australia",
+    description: "Find the best gluten-free restaurants in Australia. Coeliac Australia certified cafes, bakeries & restaurants in Sydney, Melbourne, Brisbane, Perth.",
+    ogDescription: "Discover verified gluten-free dining across Australia. Browse Coeliac Australia certified restaurants and dedicated GF establishments.",
+    cities: [
+      { name: "Sydney" },
+      { name: "Melbourne" },
+      { name: "Brisbane" },
+      { name: "Perth" }
+    ],
+    faqs: [
+      { question: "Is Australia good for gluten-free travelers?", answer: "Yes! Australia has excellent celiac awareness with Coeliac Australia certification and many dedicated gluten-free bakeries and cafes." },
+      { question: "What is Coeliac Australia certification?", answer: "Coeliac Australia certifies restaurants that meet strict standards for safe gluten-free food preparation and cross-contamination prevention." },
+      { question: "Can I find GF options in Australian cafes?", answer: "Absolutely! Most Australian cafes offer gluten-free bread, cakes, and meals, with many having dedicated GF menus." }
+    ],
+    schemaId: "australia"
+  });
   const cities = [
     {
       name: "Sydney",

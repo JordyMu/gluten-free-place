@@ -1,7 +1,27 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const Germany = () => {
+  useCountrySEO({
+    countryName: "Germany",
+    countrySlug: "germany",
+    description: "Find the best gluten-free restaurants in Germany. Certified GF bakeries, restaurants & cafes in Berlin, Munich, Hamburg, Frankfurt & more cities.",
+    ogDescription: "Discover gluten-free German dining. Browse DZG-certified restaurants, bakeries, and traditional German cuisine made safe for celiacs.",
+    cities: [
+      { name: "Berlin" },
+      { name: "Munich" },
+      { name: "Hamburg" },
+      { name: "Frankfurt" }
+    ],
+    faqs: [
+      { question: "Is Germany good for gluten-free travelers?", answer: "Yes! Germany has strong celiac awareness with DZG (Deutsche Zöliakie Gesellschaft) certification and many dedicated GF options." },
+      { question: "What is DZG certification?", answer: "DZG (German Celiac Society) certifies products and restaurants that meet strict gluten-free standards in Germany." },
+      { question: "Can I find GF German bread?", answer: "Absolutely! Many German bakeries offer gluten-free versions of traditional breads and pretzels." }
+    ],
+    schemaId: "germany"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-yellow-50 via-white to-red-50">
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">

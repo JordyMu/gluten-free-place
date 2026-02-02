@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const cities = [
   {
@@ -61,6 +62,24 @@ const renderStarRating = (rating: number) => {
 };
 
 const Ireland = () => {
+  useCountrySEO({
+    countryName: "Ireland",
+    countrySlug: "ireland",
+    description: "Find the best gluten-free restaurants in Ireland. Traditional Irish cuisine safely prepared for celiacs in Dublin, Cork, Galway & more cities.",
+    ogDescription: "Discover gluten-free Irish dining. Browse restaurants offering safe Irish stew, soda bread, and traditional Irish cuisine.",
+    cities: [
+      { name: "Dublin" },
+      { name: "Cork" },
+      { name: "Galway" }
+    ],
+    faqs: [
+      { question: "Is Ireland good for gluten-free travelers?", answer: "Yes! Ireland has strong celiac awareness with the Coeliac Society of Ireland and many dedicated GF restaurants." },
+      { question: "Can I find GF Irish soda bread?", answer: "Absolutely! Many Irish bakeries and restaurants offer gluten-free soda bread that tastes just like the traditional version." },
+      { question: "Are there GF options in Irish pubs?", answer: "Many Irish pubs now offer gluten-free menus including fish & chips, Irish stew, and traditional dishes." }
+    ],
+    schemaId: "ireland"
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">

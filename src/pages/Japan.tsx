@@ -3,10 +3,30 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const Japan = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
+  
+  useCountrySEO({
+    countryName: "Japan",
+    countrySlug: "japan",
+    description: "Navigate gluten-free dining in Japan. Find restaurants with tamari, rice-based dishes & dedicated GF options in Tokyo, Osaka, Kyoto, Hiroshima.",
+    ogDescription: "Discover how to eat gluten-free in Japan. Browse restaurants offering tamari, GF ramen, and celiac-safe Japanese cuisine.",
+    cities: [
+      { name: "Tokyo" },
+      { name: "Osaka" },
+      { name: "Kyoto" },
+      { name: "Hiroshima" }
+    ],
+    faqs: [
+      { question: "Is Japan difficult for gluten-free travelers?", answer: "Japan can be challenging due to soy sauce (which contains wheat), but many restaurants now offer tamari and dedicated GF options." },
+      { question: "What should I know about eating GF in Japan?", answer: "Bring a gluten-free dining card in Japanese, ask for 'komugiko-nuki' (wheat-free), and bring your own tamari sauce." },
+      { question: "Are there dedicated GF restaurants in Japan?", answer: "Yes! While limited, there are 100% gluten-free cafes and restaurants in major cities like Tokyo and Osaka." }
+    ],
+    schemaId: "japan"
+  });
 
   const cities = [
     {

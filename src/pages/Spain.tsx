@@ -3,8 +3,27 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const Spain = () => {
+  useCountrySEO({
+    countryName: "Spain",
+    countrySlug: "spain",
+    description: "Find the best gluten-free restaurants in Spain. FACE-certified tapas, paella & bakeries in Barcelona, Madrid, Valencia, Seville & more cities.",
+    ogDescription: "Discover verified gluten-free Spanish restaurants. Browse certified tapas bars, bakeries, and traditional cuisine across Spain.",
+    cities: [
+      { name: "Barcelona" },
+      { name: "Madrid" },
+      { name: "Valencia" },
+      { name: "Seville" }
+    ],
+    faqs: [
+      { question: "Is Spain celiac-friendly?", answer: "Yes! Spain has strong celiac awareness with FACE certification for restaurants. Many tapas bars and bakeries offer dedicated gluten-free options." },
+      { question: "Can I find gluten-free tapas in Spain?", answer: "Absolutely! Many Spanish restaurants offer gluten-free tapas, and naturally GF dishes like patatas bravas and jamón are widely available." },
+      { question: "What is FACE certification?", answer: "FACE (Federación de Asociaciones de Celíacos de España) certifies restaurants that follow strict protocols for safe gluten-free food preparation." }
+    ],
+    schemaId: "spain"
+  });
   const cities = [
     {
       name: "Barcelona",

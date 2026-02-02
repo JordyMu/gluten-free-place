@@ -3,8 +3,27 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { useCountrySEO } from "@/hooks/useCountrySEO";
 
 const Canada = () => {
+  useCountrySEO({
+    countryName: "Canada",
+    countrySlug: "canada",
+    description: "Find the best gluten-free restaurants in Canada. Dedicated bakeries, cafes & restaurants in Toronto, Vancouver, Montreal, Calgary & more.",
+    ogDescription: "Discover gluten-free dining across Canada. Browse certified restaurants and dedicated GF bakeries from coast to coast.",
+    cities: [
+      { name: "Toronto" },
+      { name: "Vancouver" },
+      { name: "Montreal" },
+      { name: "Calgary" }
+    ],
+    faqs: [
+      { question: "Is Canada good for gluten-free dining?", answer: "Yes! Canada has excellent celiac awareness with many dedicated GF bakeries and restaurants, especially in major cities." },
+      { question: "What GF bakeries are in Toronto?", answer: "Bunner's Bakeshop is Toronto's premier 100% gluten-free bakery offering amazing pastries, cakes, and fresh bread." },
+      { question: "Are there GF options in Canadian chains?", answer: "Many Canadian restaurant chains offer gluten-free menus with clear allergen information." }
+    ],
+    schemaId: "canada"
+  });
   const cities = [
     {
       name: "Toronto",
