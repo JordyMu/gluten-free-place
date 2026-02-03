@@ -126,7 +126,7 @@ const featuredCountries = [
     id: 13,
     name: "Argentina",
     code: "AR",
-    image: "photo-1589909202802-8947b4aa970e",
+    image: "photo-1612294037637-ec328d0e075e",
     places: 50,
     rating: 4.7,
     description: "Exceptional gluten-free dining from Buenos Aires to Patagonia with celiac-aware restaurants",
