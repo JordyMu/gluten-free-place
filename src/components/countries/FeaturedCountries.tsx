@@ -26,7 +26,7 @@ const featuredCountries = [
     id: 3,
     name: "France",
     code: "FR", 
-    image: "photo-1502602898536-47ad22581b52",
+    image: "photo-1499856871958-5b9627545d1a",
     places: 298,
     rating: 4.7,
     description: "Excellent gluten-free bakeries and restaurants in major cities",
