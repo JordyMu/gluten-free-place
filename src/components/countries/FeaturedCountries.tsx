@@ -56,7 +56,7 @@ const featuredCountries = [
     id: 6,
     name: "Ireland",
     code: "IE",
-    image: "photo-1590736969955-71cc94901144",
+    image: "photo-1590089415225-401ed6f9db8e",
     places: 30,
     rating: 4.6,
     description: "Traditional Irish cuisine with growing gluten-free awareness and options",
