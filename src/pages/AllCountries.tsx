@@ -5,8 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const AllCountries = () => {
+  usePageSEO({
+    title: "All 156 Countries with Gluten-Free Restaurants | GlutenSafe",
+    description: "Complete directory of gluten-free restaurants in 156 countries. Find celiac-safe dining options across Europe, Americas, Asia, Africa & Oceania.",
+    canonicalPath: "/all-countries",
+  });
   const allCountriesByRegion = {
     "Europe": [
       "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", 

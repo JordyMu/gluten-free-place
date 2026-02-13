@@ -3,8 +3,15 @@ import { Header } from "@/components/countries/Header";
 import { HeroSection } from "@/components/countries/HeroSection";
 import { FeaturedCountries } from "@/components/countries/FeaturedCountries";
 import { CTASection } from "@/components/countries/CTASection";
+import { usePageSEO } from "@/hooks/usePageSEO";
 
 const Countries = () => {
+  usePageSEO({
+    title: "Browse Gluten-Free Countries | GlutenSafe",
+    description: "Explore gluten-free restaurants across 150+ countries. Find celiac-safe dining guides for every destination worldwide.",
+    canonicalPath: "/countries",
+  });
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       <Header />
