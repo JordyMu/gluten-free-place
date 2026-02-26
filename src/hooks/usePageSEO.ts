@@ -60,7 +60,7 @@ export const usePageSEO = ({
 
     return () => {
       // Reset to defaults on unmount
-      document.title = "GlutenSafe | Find Celiac-Safe Restaurants Worldwide";
+      document.title = "GlutenSafe | Find Gluten-Free Restaurants Near You";
       const defaultDesc = "Discover the best gluten-free restaurants worldwide. Find verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.";
       if (metaDesc) metaDesc.setAttribute("content", defaultDesc);
       if (canonical) canonical.setAttribute("href", baseUrl);
