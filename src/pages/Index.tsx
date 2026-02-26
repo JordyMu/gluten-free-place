@@ -18,7 +18,7 @@ import { usePageSEO } from "@/hooks/usePageSEO";
 const Index = () => {
   usePageSEO({
     title: "GlutenSafe | Find Celiac-Safe Restaurants Worldwide",
-    description: "Discover the best gluten-free restaurants worldwide. Find verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
+    description: "Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
     canonicalPath: "/",
     keywords: "gluten-free restaurants, celiac safe dining, gluten-free travel, GF restaurants, celiac disease, gluten-free food",
   });
