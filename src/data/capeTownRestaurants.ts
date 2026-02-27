@@ -600,6 +600,40 @@ export const capeTownRestaurants: Restaurant[] = [
     lng: 18.3856,
     venueType: "supermarket",
     photos: ["https://images.unsplash.com/photo-1542838132-92c53300491e?w=800"]
+  },
+  {
+    name: "Pasta Regalo",
+    slug: "pasta-regalo",
+    address: "Unit A7, Hyde Park, Ottery, Cape Town, South Africa",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Mon–Fri: 8:00AM – 5:00PM",
+    phone: "+27 21 703 7304",
+    website: "www.pastaregalo.co.za",
+    directionsUrl: "https://www.google.com/maps/search/Pasta+Regalo+Hyde+Park+Ottery+Cape+Town",
+    specialty: "Gluten-Free Pasta Products",
+    overview: "Pasta Regalo produces a range of gluten-free pasta made from maize — egg-free, wheat-free, and GMO-free. Their products contain no preservatives or artificial flavours. Based in Ottery, Cape Town, they offer varieties like Beetroot Fettuccine, Spinach Tagliatelle, and classic pasta shapes, all certified gluten-free.",
+    menuHighlights: ["🍝 GF Beetroot Fettuccine", "🍝 GF Spinach Tagliatelle", "🍝 Classic GF Pasta Shapes", "🌽 Maize-Based, Egg-Free"],
+    proTip: "Cook for 8–12 minutes in salted boiling water until al dente. 120g dry pasta = one serving.",
+    icon: "🍝",
+    featured: true,
+    cuisineTypes: ["Pasta", "Gluten-Free Products"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    rating: 4.7,
+    reviewCount: 42,
+    lat: -34.0048,
+    lng: 18.5125,
+    venueType: "gf-products",
+    photos: [],
+    menuNotes: [
+      "All pasta made from maize — no wheat, no egg",
+      "GMO-free ingredients",
+      "No preservatives or artificial flavours",
+      "Allergens: None listed on packaging"
+    ],
+    staffKnowledgeScore: 5,
+    celiacSafetyScore: 10
   }
 ];
 
