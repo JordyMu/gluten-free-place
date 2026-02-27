@@ -1,3 +1,6 @@
+import pastaRegaloPhoto from "@/assets/pasta-regalo-beetroot-fettuccine.webp";
+import sirEatALotPhoto from "@/assets/sir-eat-a-lot-gf-bread.jpg";
+
 export interface Restaurant {
   name: string;
   slug: string;
@@ -625,7 +628,7 @@ export const capeTownRestaurants: Restaurant[] = [
     lat: -34.0048,
     lng: 18.5125,
     venueType: "gf-products",
-    photos: [],
+    photos: [pastaRegaloPhoto],
     menuNotes: [
       "All pasta made from maize — no wheat, no egg",
       "GMO-free ingredients",
@@ -659,7 +662,7 @@ export const capeTownRestaurants: Restaurant[] = [
     lat: -34.0000,
     lng: 18.4800,
     venueType: "gf-products",
-    photos: [],
+    photos: [sirEatALotPhoto],
     menuNotes: [
       "Handcrafted in a dedicated gluten-free facility",
       "Certified gluten-free",
