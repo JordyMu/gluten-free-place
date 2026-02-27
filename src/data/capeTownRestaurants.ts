@@ -634,6 +634,41 @@ export const capeTownRestaurants: Restaurant[] = [
     ],
     staffKnowledgeScore: 5,
     celiacSafetyScore: 10
+  },
+  {
+    name: "Sir Eat-A-Lot",
+    slug: "sir-eat-a-lot",
+    address: "Cape Town, South Africa",
+    city: "Cape Town",
+    country: "South Africa",
+    hours: "Contact for hours",
+    phone: "",
+    website: "",
+    directionsUrl: "https://www.google.com/maps/search/Sir+Eat+A+Lot+Gluten+Free+Cape+Town",
+    specialty: "Gluten-Free Bread & Baked Goods",
+    overview: "Sir Eat-A-Lot is a dedicated gluten-free bakery handcrafting certified gluten-free bread in Cape Town. Their white bread is dairy-free, trans-fat free, cholesterol-free, and suitable for vegetarians. Free from wheat, soya, and dairy — a safe choice for celiacs.",
+    menuHighlights: ["🍞 GF White Bread", "🍞 GF Brown Bread", "🥖 Certified Gluten-Free", "🌱 Dairy-Free & Vegetarian"],
+    proTip: "Their bread is a source of energy and dietary fibre — great as a daily staple!",
+    icon: "🍞",
+    featured: true,
+    cuisineTypes: ["Bakery", "Bread", "Gluten-Free Products"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    rating: 4.6,
+    reviewCount: 35,
+    lat: -34.0000,
+    lng: 18.4800,
+    venueType: "gf-products",
+    photos: [],
+    menuNotes: [
+      "Handcrafted in a dedicated gluten-free facility",
+      "Certified gluten-free",
+      "Free from wheat, soya, and dairy",
+      "Dairy-free, trans-fat free, cholesterol-free",
+      "Suitable for vegetarians"
+    ],
+    staffKnowledgeScore: 5,
+    celiacSafetyScore: 10
   }
 ];
 
