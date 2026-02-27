@@ -247,15 +247,6 @@ const CapeTownGFProducts = () => {
           </Card>
         </section>
 
-        {/* Map Section */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <MapPin className="w-6 h-6 text-violet-600" />
-            Store Map
-          </h2>
-          <CapeTownMap restaurants={filteredStores} />
-        </section>
-
         {/* Search Filter */}
         <section className="mb-8">
           <Card>
