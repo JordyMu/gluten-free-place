@@ -292,6 +292,15 @@ const CapeTownGFProducts = () => {
                 <Card key={index} className={`overflow-hidden ${store.featured ? 'ring-2 ring-violet-300' : ''}`}>
                   <CardContent className="p-6">
                     <div className="flex flex-col lg:flex-row gap-6">
+                      {store.photos && store.photos.length > 0 && (
+                        <div className="w-full lg:w-48 flex-shrink-0">
+                          <img 
+                            src={store.photos[0]} 
+                            alt={store.name} 
+                            className="w-full h-48 lg:h-full object-cover rounded-lg"
+                          />
+                        </div>
+                      )}
                       <div className="flex-1">
                         <div className="flex items-start justify-between mb-3">
                           <div>
