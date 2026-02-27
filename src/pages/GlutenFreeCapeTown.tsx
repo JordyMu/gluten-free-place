@@ -649,7 +649,7 @@ const GlutenFreeCapeTown = () => {
           <p className="text-gray-600 mb-4">
             Find exactly what you're looking for with our curated category pages.
           </p>
-          <div className="grid grid-cols-3 gap-2">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
             <Link to="/gluten-free/south-africa/cape-town/street-food">
               <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
                 <CardContent className="p-2 flex items-center gap-2">
@@ -679,6 +679,17 @@ const GlutenFreeCapeTown = () => {
                   <div>
                     <h3 className="text-sm font-medium text-green-900">Grocery Stores</h3>
                     <p className="text-green-700 text-[11px]">Supermarkets & shops</p>
+                  </div>
+                </CardContent>
+              </Card>
+            </Link>
+            <Link to="/gluten-free/south-africa/cape-town/gluten-free-products">
+              <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50">
+                <CardContent className="p-2 flex items-center gap-2">
+                  <span className="text-lg">🛍️</span>
+                  <div>
+                    <h3 className="text-sm font-medium text-violet-900">GF Products</h3>
+                    <p className="text-violet-700 text-[11px]">Specialty GF items</p>
                   </div>
                 </CardContent>
               </Card>
