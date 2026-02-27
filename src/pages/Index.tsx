@@ -143,7 +143,7 @@ const Index = () => {
           <Link to="/" className="flex items-center space-x-2">
             <Globe className="h-8 w-8 text-orange-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-blue-600 bg-clip-text text-transparent">
-              GlutenFree World
+              Gluten-Free Places
             </span>
           </Link>
           <div className="hidden md:flex items-center space-x-8">
