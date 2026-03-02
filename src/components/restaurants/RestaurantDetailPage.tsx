@@ -251,17 +251,15 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
 
                     if (caption) {
                       return (
-                        <div key={index} className="flex flex-col md:flex-row gap-4 bg-muted/30 rounded-lg p-3">
-                          <div className="md:w-1/2 aspect-square rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                        <div key={index} className="bg-muted/30 rounded-lg p-3 space-y-2">
+                          <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
                             <img 
                               src={photoUrl} 
                               alt={`${restaurant.name} photo ${index + 1}`}
                               className="w-full h-full object-cover"
                             />
                           </div>
-                          <div className="md:w-1/2 flex items-center">
-                            <p className="text-sm text-muted-foreground leading-relaxed">{caption}</p>
-                          </div>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{caption}</p>
                         </div>
                       );
                     }
