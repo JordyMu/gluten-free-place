@@ -31,7 +31,7 @@ interface RestaurantDetailPageProps {
     lat: number;
     lng: number;
     venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-    photos: string[];
+    photos: (string | { url: string; caption?: string })[];
     menuNotes?: string[];
     menuPhotos?: string[];
     staffKnowledgeScore?: number;
@@ -243,16 +243,47 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {restaurant.photos.map((photo, index) => (
-                    <div key={index} className="aspect-square rounded-lg overflow-hidden bg-gray-100">
-                      <img 
-                        src={photo} 
-                        alt={`${restaurant.name} photo ${index + 1}`}
-                        className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                      />
-                    </div>
-                  ))}
+                <div className="space-y-4">
+                  {restaurant.photos.map((photo, index) => {
+                    const isObject = typeof photo === 'object';
+                    const photoUrl = isObject ? photo.url : photo;
+                    const caption = isObject ? photo.caption : undefined;
+
+                    if (caption) {
+                      return (
+                        <div key={index} className="flex flex-col md:flex-row gap-4 bg-muted/30 rounded-lg p-3">
+                          <div className="md:w-1/2 aspect-square rounded-lg overflow-hidden bg-gray-100 shrink-0">
+                            <img 
+                              src={photoUrl} 
+                              alt={`${restaurant.name} photo ${index + 1}`}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <div className="md:w-1/2 flex items-center">
+                            <p className="text-sm text-muted-foreground leading-relaxed">{caption}</p>
+                          </div>
+                        </div>
+                      );
+                    }
+
+                    return null;
+                  })}
+                  <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    {restaurant.photos.map((photo, index) => {
+                      const isObject = typeof photo === 'object';
+                      if (isObject && photo.caption) return null;
+                      const photoUrl = isObject ? photo.url : photo;
+                      return (
+                        <div key={index} className="aspect-square rounded-lg overflow-hidden bg-gray-100">
+                          <img 
+                            src={photoUrl} 
+                            alt={`${restaurant.name} photo ${index + 1}`}
+                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                          />
+                        </div>
+                      );
+                    })}
+                  </div>
                 </div>
               </CardContent>
             </Card>
