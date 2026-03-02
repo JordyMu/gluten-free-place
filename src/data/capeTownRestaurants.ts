@@ -1,5 +1,6 @@
 import pastaRegaloPhoto from "@/assets/pasta-regalo-beetroot-fettuccine.webp";
 import sirEatALotPhoto from "@/assets/sir-eat-a-lot-gf-bread.jpg";
+import offGlutenPathPizzaBases from "@/assets/off-gluten-path-pizza-bases.jpg";
 
 export interface Restaurant {
   name: string;
@@ -58,6 +59,7 @@ export const capeTownRestaurants: Restaurant[] = [
     lng: 18.3856,
     venueType: "bakery",
     photos: [
+      offGlutenPathPizzaBases,
       "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
       "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800",
       "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"
@@ -66,7 +68,8 @@ export const capeTownRestaurants: Restaurant[] = [
       "All products made in a dedicated gluten-free facility",
       "Uses certified gluten-free flour blends",
       "Fresh bakes available daily from 8am",
-      "Pre-orders recommended for special cakes"
+      "Pre-orders recommended for special cakes",
+      "Pizza Bases Ingredients: Brown Rice Flour, Tapioca Starch, GF Oat Flour, Castor Sugar, Psyllium Husk, Water, Yeast, Salt, Olive Oil, Apple Cider Vinegar"
     ],
     menuPhotos: [
       "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800",
