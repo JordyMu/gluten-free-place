@@ -26,7 +26,7 @@ export interface Restaurant {
   lat: number;
   lng: number;
   venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  photos: string[];
+  photos: (string | { url: string; caption?: string })[];
   menuNotes?: string[];
   menuPhotos?: string[];
   staffKnowledgeScore?: number;
@@ -59,7 +59,7 @@ export const capeTownRestaurants: Restaurant[] = [
     lng: 18.3856,
     venueType: "bakery",
     photos: [
-      offGlutenPathPizzaBases,
+      { url: offGlutenPathPizzaBases, caption: "Pizza Bases (2 Pack) — Ingredients: Brown Rice Flour, Tapioca Starch, GF Oat Flour, Castor Sugar, Psyllium Husk, Water, Yeast, Salt, Olive Oil, Apple Cider Vinegar" },
       "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
       "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800",
       "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"
@@ -69,7 +69,7 @@ export const capeTownRestaurants: Restaurant[] = [
       "Uses certified gluten-free flour blends",
       "Fresh bakes available daily from 8am",
       "Pre-orders recommended for special cakes",
-      "Pizza Bases Ingredients: Brown Rice Flour, Tapioca Starch, GF Oat Flour, Castor Sugar, Psyllium Husk, Water, Yeast, Salt, Olive Oil, Apple Cider Vinegar"
+      "Pizza Bases available in 2-packs — see photo for full ingredients"
     ],
     menuPhotos: [
       "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800",

@@ -22,7 +22,7 @@ export interface Restaurant {
   lat: number;
   lng: number;
   venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  photos: string[];
+  photos: (string | { url: string; caption?: string })[];
   menuNotes?: string[];
   menuPhotos?: string[];
   staffKnowledgeScore?: number;
