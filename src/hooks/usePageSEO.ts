@@ -20,7 +20,7 @@ export const usePageSEO = ({
   keywords,
 }: PageSEOProps) => {
   useEffect(() => {
-    const baseUrl = "https://glutensafe.com";
+    const baseUrl = "https://glutenfreeplace.org";
     const defaultOgImage = "https://lovable.dev/opengraph-image-p98pqg.png";
 
     // Set document title
@@ -60,7 +60,7 @@ export const usePageSEO = ({
 
     return () => {
       // Reset to defaults on unmount
-      document.title = "GlutenSafe | Find Gluten-Free Restaurants Near You";
+      document.title = "GlutenFreePlace | Find Gluten-Free Restaurants Near You";
       const defaultDesc = "Discover the best gluten-free restaurants worldwide. Find verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.";
       if (metaDesc) metaDesc.setAttribute("content", defaultDesc);
       if (canonical) canonical.setAttribute("href", baseUrl);

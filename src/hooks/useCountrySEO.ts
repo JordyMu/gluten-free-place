@@ -54,7 +54,7 @@ export const useCountrySEO = ({
     const existingSchema = document.querySelector(`script[data-schema="${schemaId}-gf"]`);
     if (existingSchema) existingSchema.remove();
 
-    const baseUrl = "https://glutensafe.com";
+    const baseUrl = "https://glutenfreeplace.org";
 
     const schema = document.createElement('script');
     schema.type = 'application/ld+json';

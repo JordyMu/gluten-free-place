@@ -17,7 +17,7 @@ import { usePageSEO } from "@/hooks/usePageSEO";
 
 const Index = () => {
   usePageSEO({
-    title: "GlutenSafe | Find Gluten-Free Restaurants Near You",
+    title: "GlutenFreePlace | Find Gluten-Free Restaurants Near You",
     description: "Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
     canonicalPath: "/",
     keywords: "gluten-free restaurants, celiac safe dining, gluten-free travel, GF restaurants, celiac disease, gluten-free food",
