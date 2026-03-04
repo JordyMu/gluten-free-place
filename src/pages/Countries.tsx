@@ -7,7 +7,7 @@ import { usePageSEO } from "@/hooks/usePageSEO";
 
 const Countries = () => {
   usePageSEO({
-    title: "Browse Gluten-Free Countries | GlutenSafe",
+    title: "Browse Gluten-Free Countries | GlutenFreePlace",
     description: "Explore gluten-free restaurants across 150+ countries. Find celiac-safe dining guides for every destination worldwide.",
     canonicalPath: "/countries",
   });
