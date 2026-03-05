@@ -39,7 +39,7 @@ const SouthAfrica = () => {
       "@type": "CollectionPage",
       "name": "Gluten-Free Restaurants in South Africa",
       "description": "Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more.",
-      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa",
+      "url": "https://glutenfreeplace.org/gluten-free/south-africa",
       "mainEntity": {
         "@type": "ItemList",
         "name": "Top Gluten-Free Cities in South Africa",
@@ -49,34 +49,34 @@ const SouthAfrica = () => {
             "@type": "ListItem",
             "position": 1,
             "name": "Cape Town",
-            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/cape-town"
+            "url": "https://glutenfreeplace.org/gluten-free/south-africa/cape-town"
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Johannesburg",
-            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/johannesburg"
+            "url": "https://glutenfreeplace.org/gluten-free/south-africa/johannesburg"
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": "Pretoria",
-            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/pretoria"
+            "url": "https://glutenfreeplace.org/gluten-free/south-africa/pretoria"
           },
           {
             "@type": "ListItem",
             "position": 4,
             "name": "Durban",
-            "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban"
+            "url": "https://glutenfreeplace.org/gluten-free/south-africa/durban"
           }
         ]
       },
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
-          { "@type": "ListItem", "position": 2, "name": "Countries", "item": "https://glutenfreeglobetrotters.com/countries" },
-          { "@type": "ListItem", "position": 3, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+          { "@type": "ListItem", "position": 2, "name": "Countries", "item": "https://glutenfreeplace.org/countries" },
+          { "@type": "ListItem", "position": 3, "name": "South Africa", "item": "https://glutenfreeplace.org/gluten-free/south-africa" }
         ]
       }
     });
