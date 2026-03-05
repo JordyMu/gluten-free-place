@@ -50,13 +50,13 @@ const GlutenFreeDurban = () => {
       "@type": "CollectionPage",
       "name": "Gluten-Free Restaurants in Durban",
       "description": "Find the best gluten-free restaurants in Durban, South Africa. Verified celiac-safe dining options.",
-      "url": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban",
+      "url": "https://glutenfreeplace.org/gluten-free/south-africa/durban",
       "breadcrumb": {
         "@type": "BreadcrumbList",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeglobetrotters.com" },
-          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa" },
-          { "@type": "ListItem", "position": 3, "name": "Durban", "item": "https://glutenfreeglobetrotters.com/gluten-free/south-africa/durban" }
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+          { "@type": "ListItem", "position": 2, "name": "South Africa", "item": "https://glutenfreeplace.org/gluten-free/south-africa" },
+          { "@type": "ListItem", "position": 3, "name": "Durban", "item": "https://glutenfreeplace.org/gluten-free/south-africa/durban" }
         ]
       }
     });
