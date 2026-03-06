@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -11,11 +12,68 @@ import {
   DropdownMenuSeparator,
   DropdownMenuLabel
 } from "@/components/ui/dropdown-menu";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { usePageSEO } from "@/hooks/usePageSEO";
 
+const searchableDestinations = [
+  { name: "Italy", route: "/italy" },
+  { name: "Spain", route: "/spain" },
+  { name: "USA", route: "/usa" },
+  { name: "Canada", route: "/canada" },
+  { name: "Australia", route: "/australia" },
+  { name: "United Kingdom", route: "/united-kingdom" },
+  { name: "UK", route: "/united-kingdom" },
+  { name: "Sweden", route: "/sweden" },
+  { name: "Ireland", route: "/ireland" },
+  { name: "Argentina", route: "/argentina" },
+  { name: "Thailand", route: "/thailand" },
+  { name: "Germany", route: "/germany" },
+  { name: "France", route: "/france" },
+  { name: "Japan", route: "/japan" },
+  { name: "New Zealand", route: "/new-zealand" },
+  { name: "South Africa", route: "/gluten-free/south-africa" },
+  { name: "Cape Town", route: "/gluten-free-cape-town" },
+  { name: "Johannesburg", route: "/gluten-free-johannesburg" },
+  { name: "Durban", route: "/gluten-free-durban" },
+  { name: "Pretoria", route: "/gluten-free-pretoria" },
+  { name: "Stellenbosch", route: "/gluten-free-stellenbosch" },
+  { name: "Franschhoek", route: "/gluten-free-franschhoek" },
+];
+
 const Index = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [showResults, setShowResults] = useState(false);
+  const searchRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+
+  const filteredResults = searchQuery.length > 0
+    ? searchableDestinations.filter(d =>
+        d.name.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
+
+  const handleSearch = () => {
+    if (filteredResults.length > 0) {
+      navigate(filteredResults[0].route);
+      setSearchQuery("");
+      setShowResults(false);
+    }
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") handleSearch();
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setShowResults(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
   usePageSEO({
     title: "GlutenFreePlace | Find Gluten-Free Restaurants Near You",
     description: "Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
@@ -199,19 +257,49 @@ const Index = () => {
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-xl mx-auto mb-8">
+            <div className="max-w-xl mx-auto mb-8 relative" ref={searchRef}>
               <div className="relative flex bg-white rounded-full shadow-xl border border-orange-100 p-2">
                 <div className="flex-1 flex items-center px-4">
                   <Search className="h-5 w-5 text-gray-400 mr-3" />
                   <Input 
-                    placeholder="Search destinations..." 
+                    placeholder="Search countries or cities..." 
                     className="border-0 focus-visible:ring-0"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowResults(true);
+                    }}
+                    onFocus={() => setShowResults(true)}
+                    onKeyDown={handleKeyDown}
                   />
                 </div>
-                <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6">
+                <Button 
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6"
+                  onClick={handleSearch}
+                >
                   Search
                 </Button>
               </div>
+              {showResults && filteredResults.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-orange-100 overflow-hidden z-50">
+                  {filteredResults.map((result) => (
+                    <Link
+                      key={result.name}
+                      to={result.route}
+                      className="flex items-center px-5 py-3 hover:bg-orange-50 transition-colors"
+                      onClick={() => { setSearchQuery(""); setShowResults(false); }}
+                    >
+                      <MapPin className="h-4 w-4 text-orange-500 mr-3" />
+                      <span className="text-gray-800">{result.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {showResults && searchQuery.length > 0 && filteredResults.length === 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-orange-100 p-4 text-gray-500 text-sm z-50">
+                  No destinations found for "{searchQuery}"
+                </div>
+              )}
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
