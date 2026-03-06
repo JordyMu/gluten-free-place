@@ -21,7 +21,7 @@ export const usePageSEO = ({
 }: PageSEOProps) => {
   useEffect(() => {
     const baseUrl = "https://glutenfreeplace.org";
-    const defaultOgImage = "https://lovable.dev/opengraph-image-p98pqg.png";
+    const defaultOgImage = "https://glutenfreeplace.org/banner.jpg";
 
     // Set document title
     document.title = title;
