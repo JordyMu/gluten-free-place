@@ -332,9 +332,10 @@ const Index = () => {
             </p>
           </div>
           
+          <Suspense fallback={<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">{[1,2,3,4,5,6].map(i => <div key={i} className="h-96 bg-gray-100 rounded-lg animate-pulse" />)}</div>}>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {destinations.map((destination, index) => (
-              <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg`}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
@@ -445,6 +446,7 @@ const Index = () => {
               </Card>
             ))}
           </div>
+          </Suspense>
         </div>
       </section>
 
