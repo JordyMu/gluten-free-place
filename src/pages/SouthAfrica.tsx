@@ -262,33 +262,6 @@ const SouthAfrica = () => {
         </div>
       </section>
 
-      {/* Intro Section */}
-      <section className="py-16 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <Card className="bg-gradient-to-r from-green-50 to-yellow-50 border-green-200">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-6">
-                  <Award className="w-12 h-12 text-green-600 flex-shrink-0" />
-                  <div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Gluten-Free Dining in South Africa</h2>
-                    <p className="text-gray-700 leading-relaxed mb-4">
-                      South Africa is a fantastic destination for gluten-free travelers! The country's major cities offer an impressive variety of dining options, 
-                      from dedicated gluten-free bakeries to restaurants with careful cross-contamination protocols.
-                    </p>
-                    <p className="text-gray-700 leading-relaxed">
-                      Cape Town leads the way with 100% gluten-free establishments like Off the Gluten Path, while Johannesburg offers the most diverse options. 
-                      Durban's rich Indian cuisine provides many naturally gluten-free dishes, and traditional South African braai (BBQ) culture means plenty of 
-                      naturally safe grilled meats and sides made from maize.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
       {/* City Cards Section */}
       <section id="cities" className="py-16">
         <div className="container mx-auto px-4">
@@ -356,6 +329,33 @@ const SouthAfrica = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Intro Section */}
+      <section className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Card className="bg-gradient-to-r from-green-50 to-yellow-50 border-green-200">
+              <CardContent className="p-8">
+                <div className="flex items-start gap-6">
+                  <Award className="w-12 h-12 text-green-600 flex-shrink-0" />
+                  <div>
+                    <h2 className="text-2xl font-bold text-gray-900 mb-4">Gluten-Free Dining in South Africa</h2>
+                    <p className="text-gray-700 leading-relaxed mb-4">
+                      South Africa is a fantastic destination for gluten-free travelers! The country's major cities offer an impressive variety of dining options, 
+                      from dedicated gluten-free bakeries to restaurants with careful cross-contamination protocols.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed">
+                      Cape Town leads the way with 100% gluten-free establishments like Off the Gluten Path, while Johannesburg offers the most diverse options. 
+                      Durban's rich Indian cuisine provides many naturally gluten-free dishes, and traditional South African braai (BBQ) culture means plenty of 
+                      naturally safe grilled meats and sides made from maize.
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
