@@ -225,23 +225,23 @@ const SouthAfrica = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-r from-green-600 to-orange-500">
+      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-green-600 to-orange-500">
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-4 text-center relative z-10">
-          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-6 transition-colors">
+          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Back to All Countries
           </Link>
           <div className="max-w-4xl mx-auto">
-            <span className="text-7xl mb-6 block">🇿🇦</span>
-            <Badge className="mb-6 bg-white/20 text-white border-white/30">
+            <span className="text-5xl mb-4 block">🇿🇦</span>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
               <MapPin className="h-4 w-4 mr-2" />
               69+ Gluten-Free Places
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
               Gluten-Free South Africa
             </h1>
-            <p className="text-xl text-white/90 mb-10 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
               Discover safe, delicious gluten-free dining across the Rainbow Nation. 
               From Cape Town's dedicated bakeries to Durban's natural GF cuisine.
             </p>
