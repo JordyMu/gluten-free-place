@@ -417,7 +417,6 @@ const Index = () => {
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-lg mr-4">
                       {review.name.split(' ').map(n => n[0]).join('')}
                     </div>
-                    />
                     <div>
                       <h4 className="font-semibold text-gray-900">{review.name}</h4>
                       <p className="text-sm text-gray-600">{review.location}</p>
