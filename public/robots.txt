@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://glutensafe.com/sitemap.xml
+Sitemap: https://glutenfreeplace.org/sitemap.xml
