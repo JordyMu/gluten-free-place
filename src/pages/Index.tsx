@@ -1,20 +1,21 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-  DropdownMenuLabel
-} from "@/components/ui/dropdown-menu";
 import { Link, useNavigate } from "react-router-dom";
-import { UserMenu } from "@/components/layout/UserMenu";
 import { usePageSEO } from "@/hooks/usePageSEO";
+
+// Lazy load heavy components not needed for initial paint
+const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
+const CardContent = lazy(() => import("@/components/ui/card").then(m => ({ default: m.CardContent })));
+const UserMenu = lazy(() => import("@/components/layout/UserMenu").then(m => ({ default: m.UserMenu })));
+const DropdownMenu = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenu })));
+const DropdownMenuContent = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuContent })));
+const DropdownMenuItem = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuItem })));
+const DropdownMenuTrigger = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuTrigger })));
+const DropdownMenuSeparator = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuSeparator })));
+const DropdownMenuLabel = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuLabel })));
 
 const searchableDestinations = [
   { name: "Italy", route: "/italy" },
@@ -207,32 +208,36 @@ const Index = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors whitespace-nowrap">Home</Link>
             <Link to="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
-                Browse
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
-                <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
-                <div className="grid grid-cols-2 gap-1 p-2">
-                  {topCountries.map((country) => (
-                    <Link key={country.name} to={country.route}>
-                      <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-sm">
-                        {country.name}
-                      </DropdownMenuItem>
-                    </Link>
-                  ))}
-                </div>
-                <DropdownMenuSeparator />
-                <Link to="/all-countries">
-                  <DropdownMenuItem className="cursor-pointer hover:bg-blue-50 text-blue-600 font-medium">
-                    View All 156 Countries
-                  </DropdownMenuItem>
-                </Link>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Suspense fallback={<span className="text-gray-700">Browse</span>}>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
+                  Browse
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
+                  <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
+                  <div className="grid grid-cols-2 gap-1 p-2">
+                    {topCountries.map((country) => (
+                      <Link key={country.name} to={country.route}>
+                        <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-sm">
+                          {country.name}
+                        </DropdownMenuItem>
+                      </Link>
+                    ))}
+                  </div>
+                  <DropdownMenuSeparator />
+                  <Link to="/all-countries">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-blue-50 text-blue-600 font-medium">
+                      View All 156 Countries
+                    </DropdownMenuItem>
+                  </Link>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </Suspense>
             <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
             <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <UserMenu />
+            <Suspense fallback={null}>
+              <UserMenu />
+            </Suspense>
           </div>
         </div>
       </header>
@@ -327,9 +332,10 @@ const Index = () => {
             </p>
           </div>
           
+          <Suspense fallback={<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">{[1,2,3,4,5,6].map(i => <div key={i} className="h-96 bg-gray-100 rounded-lg animate-pulse" />)}</div>}>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {destinations.map((destination, index) => (
-              <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg`}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
                     src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
@@ -440,6 +446,7 @@ const Index = () => {
               </Card>
             ))}
           </div>
+          </Suspense>
         </div>
       </section>
 
@@ -460,21 +467,21 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Community Verified</h3>
               <p className="opacity-90">Every restaurant is reviewed by real travelers with gluten sensitivities</p>
             </div>
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Safety First</h3>
               <p className="opacity-90">Detailed cross-contamination information and staff training ratings</p>
             </div>
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8" />
               </div>
@@ -503,7 +510,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((review, index) => (
-              <Card key={review.id} className={`border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={review.id} className={`border-0 shadow-lg`}>
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-lg mr-4">
