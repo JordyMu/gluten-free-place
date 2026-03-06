@@ -211,7 +211,7 @@ const SouthAfrica = () => {
           <Link to="/" className="flex items-center space-x-2">
             <Globe className="h-8 w-8 text-orange-600" />
             <span className="text-2xl font-bold bg-gradient-to-r from-orange-600 to-green-600 bg-clip-text text-transparent">
-              GlutenFree World
+              Gluten-Free Places
             </span>
           </Link>
           <div className="hidden md:flex items-center space-x-8">
@@ -494,7 +494,7 @@ const SouthAfrica = () => {
         <div className="container mx-auto px-4 text-center">
           <Link to="/" className="flex items-center justify-center space-x-2 mb-4">
             <Globe className="h-6 w-6 text-orange-500" />
-            <span className="text-xl font-bold text-white">GlutenFree World</span>
+            <span className="text-xl font-bold text-white">Gluten-Free Places</span>
           </Link>
           <p className="mb-4">Your trusted guide to gluten-free dining worldwide</p>
           <div className="flex justify-center space-x-6 text-sm">
@@ -503,7 +503,7 @@ const SouthAfrica = () => {
             <Link to="#" className="hover:text-white transition-colors">About</Link>
             <Link to="#" className="hover:text-white transition-colors">Contact</Link>
           </div>
-          <p className="mt-8 text-xs">© 2025 GlutenFree World. All rights reserved.</p>
+          <p className="mt-8 text-xs">© 2025 Gluten-Free Places. All rights reserved.</p>
         </div>
       </footer>
     </div>
