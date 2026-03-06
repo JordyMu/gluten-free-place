@@ -1,20 +1,21 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, lazy, Suspense } from "react";
 import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { 
-  DropdownMenu, 
-  DropdownMenuContent, 
-  DropdownMenuItem, 
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-  DropdownMenuLabel
-} from "@/components/ui/dropdown-menu";
 import { Link, useNavigate } from "react-router-dom";
-import { UserMenu } from "@/components/layout/UserMenu";
 import { usePageSEO } from "@/hooks/usePageSEO";
+
+// Lazy load heavy components not needed for initial paint
+const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
+const CardContent = lazy(() => import("@/components/ui/card").then(m => ({ default: m.CardContent })));
+const UserMenu = lazy(() => import("@/components/layout/UserMenu").then(m => ({ default: m.UserMenu })));
+const DropdownMenu = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenu })));
+const DropdownMenuContent = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuContent })));
+const DropdownMenuItem = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuItem })));
+const DropdownMenuTrigger = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuTrigger })));
+const DropdownMenuSeparator = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuSeparator })));
+const DropdownMenuLabel = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuLabel })));
 
 const searchableDestinations = [
   { name: "Italy", route: "/italy" },
