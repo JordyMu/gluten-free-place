@@ -2,203 +2,203 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Core Pages -->
   <url>
-    <loc>https://glutensafe.com/</loc>
+    <loc>https://glutenfreeplace.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/countries</loc>
+    <loc>https://glutenfreeplace.org/countries</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/all-countries</loc>
+    <loc>https://glutenfreeplace.org/all-countries</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- Country Pages -->
   <url>
-    <loc>https://glutensafe.com/italy</loc>
+    <loc>https://glutenfreeplace.org/italy</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain</loc>
+    <loc>https://glutenfreeplace.org/spain</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/france</loc>
+    <loc>https://glutenfreeplace.org/france</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/australia</loc>
+    <loc>https://glutenfreeplace.org/australia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/united-kingdom</loc>
+    <loc>https://glutenfreeplace.org/united-kingdom</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/canada</loc>
+    <loc>https://glutenfreeplace.org/canada</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/ireland</loc>
+    <loc>https://glutenfreeplace.org/ireland</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/germany</loc>
+    <loc>https://glutenfreeplace.org/germany</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/new-zealand</loc>
+    <loc>https://glutenfreeplace.org/new-zealand</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/sweden</loc>
+    <loc>https://glutenfreeplace.org/sweden</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/thailand</loc>
+    <loc>https://glutenfreeplace.org/thailand</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/argentina</loc>
+    <loc>https://glutenfreeplace.org/argentina</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/usa</loc>
+    <loc>https://glutenfreeplace.org/usa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/japan</loc>
+    <loc>https://glutenfreeplace.org/japan</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- South Africa Regional Pages -->
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/johannesburg</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/johannesburg</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/durban</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/durban</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/pretoria</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/pretoria</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town/stellenbosch</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/stellenbosch</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town/franschhoek</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/franschhoek</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town/street-food</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/street-food</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town/bakeries</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/bakeries</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/gluten-free/south-africa/cape-town/grocery-stores</loc>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/grocery-stores</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- Spain Restaurant Pages -->
   <url>
-    <loc>https://glutensafe.com/spain/jansana-gluten-free-bakery</loc>
+    <loc>https://glutenfreeplace.org/spain/jansana-gluten-free-bakery</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/chok-sagasta-pasteleria</loc>
+    <loc>https://glutenfreeplace.org/spain/chok-sagasta-pasteleria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/chok-chocolate-bar</loc>
+    <loc>https://glutenfreeplace.org/spain/chok-chocolate-bar</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/messie-sin-gluten-muntaner</loc>
+    <loc>https://glutenfreeplace.org/spain/messie-sin-gluten-muntaner</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/la-nonna-carmela</loc>
+    <loc>https://glutenfreeplace.org/spain/la-nonna-carmela</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/aruku</loc>
+    <loc>https://glutenfreeplace.org/spain/aruku</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/grosso-napoletano-senza-glutine</loc>
+    <loc>https://glutenfreeplace.org/spain/grosso-napoletano-senza-glutine</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/yummy-heladeria</loc>
+    <loc>https://glutenfreeplace.org/spain/yummy-heladeria</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/coliaki</loc>
+    <loc>https://glutenfreeplace.org/spain/coliaki</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/la-papita-de-leche-take-away</loc>
+    <loc>https://glutenfreeplace.org/spain/la-papita-de-leche-take-away</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/restaurante-en-ville</loc>
+    <loc>https://glutenfreeplace.org/spain/restaurante-en-ville</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://glutensafe.com/spain/messie-pizza-gluten-free-gracia</loc>
+    <loc>https://glutenfreeplace.org/spain/messie-pizza-gluten-free-gracia</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
