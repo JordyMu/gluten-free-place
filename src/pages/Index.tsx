@@ -257,19 +257,49 @@ const Index = () => {
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-xl mx-auto mb-8">
+            <div className="max-w-xl mx-auto mb-8 relative" ref={searchRef}>
               <div className="relative flex bg-white rounded-full shadow-xl border border-orange-100 p-2">
                 <div className="flex-1 flex items-center px-4">
                   <Search className="h-5 w-5 text-gray-400 mr-3" />
                   <Input 
-                    placeholder="Search destinations..." 
+                    placeholder="Search countries or cities..." 
                     className="border-0 focus-visible:ring-0"
+                    value={searchQuery}
+                    onChange={(e) => {
+                      setSearchQuery(e.target.value);
+                      setShowResults(true);
+                    }}
+                    onFocus={() => setShowResults(true)}
+                    onKeyDown={handleKeyDown}
                   />
                 </div>
-                <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6">
+                <Button 
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6"
+                  onClick={handleSearch}
+                >
                   Search
                 </Button>
               </div>
+              {showResults && filteredResults.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-orange-100 overflow-hidden z-50">
+                  {filteredResults.map((result) => (
+                    <Link
+                      key={result.name}
+                      to={result.route}
+                      className="flex items-center px-5 py-3 hover:bg-orange-50 transition-colors"
+                      onClick={() => { setSearchQuery(""); setShowResults(false); }}
+                    >
+                      <MapPin className="h-4 w-4 text-orange-500 mr-3" />
+                      <span className="text-gray-800">{result.name}</span>
+                    </Link>
+                  ))}
+                </div>
+              )}
+              {showResults && searchQuery.length > 0 && filteredResults.length === 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-orange-100 p-4 text-gray-500 text-sm z-50">
+                  No destinations found for "{searchQuery}"
+                </div>
+              )}
             </div>
             
             <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
