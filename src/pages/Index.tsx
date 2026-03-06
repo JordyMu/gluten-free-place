@@ -208,32 +208,36 @@ const Index = () => {
           <div className="hidden md:flex items-center space-x-8">
             <Link to="/" className="text-gray-700 hover:text-orange-600 transition-colors whitespace-nowrap">Home</Link>
             <Link to="/countries" className="text-gray-700 hover:text-orange-600 transition-colors">Countries</Link>
-            <DropdownMenu>
-              <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
-                Browse
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
-                <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
-                <div className="grid grid-cols-2 gap-1 p-2">
-                  {topCountries.map((country) => (
-                    <Link key={country.name} to={country.route}>
-                      <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-sm">
-                        {country.name}
-                      </DropdownMenuItem>
-                    </Link>
-                  ))}
-                </div>
-                <DropdownMenuSeparator />
-                <Link to="/all-countries">
-                  <DropdownMenuItem className="cursor-pointer hover:bg-blue-50 text-blue-600 font-medium">
-                    View All 156 Countries
-                  </DropdownMenuItem>
-                </Link>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <Suspense fallback={<span className="text-gray-700">Browse</span>}>
+              <DropdownMenu>
+                <DropdownMenuTrigger className="text-gray-700 hover:text-orange-600 transition-colors cursor-pointer">
+                  Browse
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56 bg-white border border-gray-200 shadow-lg z-50">
+                  <DropdownMenuLabel className="text-orange-600 font-semibold">Top Countries</DropdownMenuLabel>
+                  <div className="grid grid-cols-2 gap-1 p-2">
+                    {topCountries.map((country) => (
+                      <Link key={country.name} to={country.route}>
+                        <DropdownMenuItem className="cursor-pointer hover:bg-orange-50 text-sm">
+                          {country.name}
+                        </DropdownMenuItem>
+                      </Link>
+                    ))}
+                  </div>
+                  <DropdownMenuSeparator />
+                  <Link to="/all-countries">
+                    <DropdownMenuItem className="cursor-pointer hover:bg-blue-50 text-blue-600 font-medium">
+                      View All 156 Countries
+                    </DropdownMenuItem>
+                  </Link>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </Suspense>
             <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
             <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <UserMenu />
+            <Suspense fallback={null}>
+              <UserMenu />
+            </Suspense>
           </div>
         </div>
       </header>
