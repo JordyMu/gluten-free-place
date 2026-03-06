@@ -467,21 +467,21 @@ const Index = () => {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.1s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Community Verified</h3>
               <p className="opacity-90">Every restaurant is reviewed by real travelers with gluten sensitivities</p>
             </div>
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.2s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Safety First</h3>
               <p className="opacity-90">Detailed cross-contamination information and staff training ratings</p>
             </div>
-            <div className="text-center animate-fade-in" style={{animationDelay: '0.3s'}}>
+            <div className="text-center">
               <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8" />
               </div>
@@ -510,7 +510,7 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             {reviews.map((review, index) => (
-              <Card key={review.id} className={`border-0 shadow-lg animate-fade-in`} style={{animationDelay: `${index * 0.1}s`}}>
+              <Card key={review.id} className={`border-0 shadow-lg`}>
                 <CardContent className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="w-12 h-12 rounded-full bg-gradient-to-br from-orange-400 to-red-500 flex items-center justify-center text-white font-bold text-lg mr-4">
