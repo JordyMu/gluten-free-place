@@ -43,6 +43,7 @@ const Nigeria = lazy(() => import("./pages/Nigeria"));
 const Morocco = lazy(() => import("./pages/Morocco"));
 const USA = lazy(() => import("./pages/USA"));
 const Japan = lazy(() => import("./pages/Japan"));
+const Egypt = lazy(() => import("./pages/Egypt"));
 const Auth = lazy(() => import("./pages/Auth"));
 const JansanaGlutenFreeBakery = lazy(() => import("./pages/JansanaGlutenFreeBakery"));
 const ChokSagastaPasteleria = lazy(() => import("./pages/ChokSagastaPasteleria"));
