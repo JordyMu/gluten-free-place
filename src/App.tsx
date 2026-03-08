@@ -39,6 +39,7 @@ const Sweden = lazy(() => import("./pages/Sweden"));
 const Thailand = lazy(() => import("./pages/Thailand"));
 const Argentina = lazy(() => import("./pages/Argentina"));
 const Kenya = lazy(() => import("./pages/Kenya"));
+const Nigeria = lazy(() => import("./pages/Nigeria"));
 const USA = lazy(() => import("./pages/USA"));
 const Japan = lazy(() => import("./pages/Japan"));
 const Auth = lazy(() => import("./pages/Auth"));
@@ -105,6 +106,7 @@ const App = () => (
               <Route path="/thailand" element={<Thailand />} />
               <Route path="/argentina" element={<Argentina />} />
               <Route path="/gluten-free/kenya" element={<Kenya />} />
+              <Route path="/gluten-free/nigeria" element={<Nigeria />} />
               <Route path="/usa" element={<USA />} />
               <Route path="/japan" element={<Japan />} />
               <Route path="/spain/jansana-gluten-free-bakery" element={<JansanaGlutenFreeBakery />} />
