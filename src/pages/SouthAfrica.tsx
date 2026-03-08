@@ -173,6 +173,42 @@ const SouthAfrica = () => {
       description: "Coastal city famous for Indian cuisine with natural GF options",
       route: "/gluten-free/south-africa/durban",
       highlights: ["Unity Brasserie", "Casa Bella", "Café 1999"]
+    },
+    {
+      name: "Stellenbosch",
+      image: "photo-1591373032196-47bae63b7baf",
+      places: 8,
+      rating: 4.5,
+      description: "Winelands gem with farm-to-table dining and celiac-aware restaurants",
+      route: "/gluten-free/south-africa/cape-town/stellenbosch",
+      highlights: ["Winelands Bistro", "Harvest Table", "Farm Kitchen"]
+    },
+    {
+      name: "Port Elizabeth",
+      image: "photo-1580060839134-75a5edca2e99",
+      places: 6,
+      rating: 4.3,
+      description: "Friendly city on the Sunshine Coast with emerging GF dining options",
+      route: "#",
+      highlights: ["Coming Soon"]
+    },
+    {
+      name: "Bloemfontein",
+      image: "photo-1577948000111-9c970dfe3743",
+      places: 5,
+      rating: 4.2,
+      description: "The City of Roses with growing gluten-free awareness",
+      route: "#",
+      highlights: ["Coming Soon"]
+    },
+    {
+      name: "George",
+      image: "photo-1506905925346-21bda4d32df4",
+      places: 4,
+      rating: 4.3,
+      description: "Garden Route hub with charming cafés and health-conscious eateries",
+      route: "#",
+      highlights: ["Coming Soon"]
     }
   ];
 
