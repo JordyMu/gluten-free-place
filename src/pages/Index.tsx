@@ -40,6 +40,12 @@ const searchableDestinations = [
   { name: "Pretoria", route: "/gluten-free-pretoria" },
   { name: "Stellenbosch", route: "/gluten-free-stellenbosch" },
   { name: "Franschhoek", route: "/gluten-free-franschhoek" },
+  { name: "Nigeria", route: "/nigeria" },
+  { name: "Kenya", route: "/kenya" },
+  { name: "Morocco", route: "/morocco" },
+  { name: "Egypt", route: "/gluten-free/egypt" },
+  { name: "Mauritius", route: "/gluten-free/mauritius" },
+  { name: "Botswana", route: "/gluten-free/botswana" },
 ];
 
 const Index = () => {
