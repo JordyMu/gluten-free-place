@@ -356,12 +356,18 @@ const SouthAfrica = () => {
                       ))}
                     </div>
                   </div>
-                  <Link to={city.route}>
-                    <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
-                      Explore {city.name}
-                      <ArrowRight className="h-4 w-4 ml-2" />
+                  {city.route !== "#" ? (
+                    <Link to={city.route}>
+                      <Button className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700">
+                        Explore {city.name}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button disabled className="w-full opacity-60">
+                      Coming Soon
                     </Button>
-                  </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}
