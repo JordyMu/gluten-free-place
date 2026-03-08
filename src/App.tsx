@@ -40,6 +40,7 @@ const Thailand = lazy(() => import("./pages/Thailand"));
 const Argentina = lazy(() => import("./pages/Argentina"));
 const Kenya = lazy(() => import("./pages/Kenya"));
 const Nigeria = lazy(() => import("./pages/Nigeria"));
+const Morocco = lazy(() => import("./pages/Morocco"));
 const USA = lazy(() => import("./pages/USA"));
 const Japan = lazy(() => import("./pages/Japan"));
 const Auth = lazy(() => import("./pages/Auth"));
