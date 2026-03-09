@@ -34,8 +34,8 @@ const cities = [
     places: 10,
     rating: 4.4,
     description: "West coast beach resort area with diverse dining options and sunset views",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/flic-en-flac",
+    highlights: ["Salt & Lemon", "Ocean Vagabond", "La Flamme Kreol", "Il Padrino"]
   },
   {
     name: "Curepipe",
