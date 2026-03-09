@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import mahebourgHero from "@/assets/mahebourg-mauritius.jpg";
+import { mahebourgRestaurants } from "@/data/mahebourgRestaurants";
 
 interface Restaurant {
   name: string;

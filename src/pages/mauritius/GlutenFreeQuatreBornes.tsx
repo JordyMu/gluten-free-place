@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
+import { quatreBornesRestaurants } from "@/data/quatreBornesRestaurants";
 
 interface Restaurant {
   name: string;
