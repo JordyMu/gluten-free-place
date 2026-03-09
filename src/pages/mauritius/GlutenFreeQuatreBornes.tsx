@@ -12,28 +12,6 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
 import { quatreBornesRestaurants } from "@/data/quatreBornesRestaurants";
 
-interface Restaurant {
-  name: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  distance?: number;
-}
 
 const GlutenFreeQuatreBornes = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
