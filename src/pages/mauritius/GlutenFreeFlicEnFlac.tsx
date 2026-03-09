@@ -327,7 +327,7 @@ const GlutenFreeFlicEnFlac = () => {
                             {restaurant.featured && (
                               <Badge className="bg-teal-100 text-teal-800 border-teal-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>
                             )}
-                            <span className="text-xl font-bold text-gray-900">{restaurant.name}</span>
+                            <Link to={`/gluten-free/mauritius/flic-en-flac/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-teal-600 transition-colors">{restaurant.name}</Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
