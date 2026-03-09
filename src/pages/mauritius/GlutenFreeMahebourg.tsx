@@ -251,7 +251,7 @@ const GlutenFreeMahebourg = () => {
                       <div>
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {restaurant.featured && (<Badge className="bg-cyan-100 text-cyan-800 border-cyan-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>)}
-                          <Link to={`/gluten-free/mauritius/mahebourg/${restaurant.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} className="text-xl font-bold text-gray-900 hover:text-cyan-600 transition-colors">{restaurant.name}</Link>
+                          <Link to={`/gluten-free/mauritius/mahebourg/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-cyan-600 transition-colors">{restaurant.name}</Link>
                         </div>
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           {renderStarRating(restaurant.rating)}
