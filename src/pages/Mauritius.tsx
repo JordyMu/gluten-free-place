@@ -1,4 +1,5 @@
 import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from "lucide-react";
+import mauritiusHero from "@/assets/mauritius-aerial.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -133,8 +134,11 @@ const Mauritius = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-blue-700 to-teal-600">
-        <div className="absolute inset-0 bg-black/20" />
+      <section className="relative py-12 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={mauritiusHero} alt="Aerial view of Mauritius" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
