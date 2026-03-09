@@ -1,5 +1,6 @@
 import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from "lucide-react";
 import mauritiusHero from "@/assets/mauritius-aerial.jpg";
+import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +14,8 @@ import { MauritiusRestaurantList } from "@/components/mauritius/MauritiusRestaur
 const cities = [
   {
     name: "Port Louis",
-    image: "photo-1580889272625-b66a0e4c25c4",
+    image: portLouisImage,
+    isLocal: true,
     places: 7,
     rating: 4.6,
     description: "The vibrant capital city with a multicultural food scene and waterfront dining",
@@ -199,7 +201,7 @@ const Mauritius = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={(city as any).isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}, Mauritius`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
