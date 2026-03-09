@@ -46,7 +46,8 @@ const cities = [
   },
   {
     name: "Curepipe",
-    image: "photo-1501785888041-af3ef285b470",
+    image: curepipeImage,
+    isLocal: true,
     places: 7,
     rating: 4.3,
     description: "Highland town known for its cool climate, colonial charm, and local eateries",
