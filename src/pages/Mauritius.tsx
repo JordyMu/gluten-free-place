@@ -1,6 +1,7 @@
 import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from "lucide-react";
 import mauritiusHero from "@/assets/mauritius-aerial.jpg";
 import portLouisImage from "@/assets/port-louis-mauritius.jpg";
+import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -24,7 +25,8 @@ const cities = [
   },
   {
     name: "Grand Baie",
-    image: "photo-1544551763-46a013bb70d5",
+    image: grandBaieImage,
+    isLocal: true,
     places: 7,
     rating: 4.5,
     description: "Popular coastal town with beachfront restaurants and international cuisine",

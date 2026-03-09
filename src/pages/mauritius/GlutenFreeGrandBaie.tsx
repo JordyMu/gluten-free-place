@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import grandBaieHero from "@/assets/grand-baie-mauritius.jpg";
 
 interface Restaurant {
   name: string;
@@ -403,13 +404,11 @@ const GlutenFreeGrandBaie = () => {
       </header>
 
       {/* Hero Section */}
-      <section
-        className="relative text-white py-16"
-        style={{
-          background: 'linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.4)), linear-gradient(135deg, #0077b6, #00b4d8, #0096c7)',
-          backgroundSize: 'cover',
-        }}
-      >
+      <section className="relative text-white py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={grandBaieHero} alt="Grand Baie, Mauritius coastline" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇲🇺</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
