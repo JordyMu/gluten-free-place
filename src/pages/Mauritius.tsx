@@ -14,7 +14,8 @@ import { MauritiusRestaurantList } from "@/components/mauritius/MauritiusRestaur
 const cities = [
   {
     name: "Port Louis",
-    image: "photo-1580889272625-b66a0e4c25c4",
+    image: portLouisImage,
+    isLocal: true,
     places: 7,
     rating: 4.6,
     description: "The vibrant capital city with a multicultural food scene and waterfront dining",
