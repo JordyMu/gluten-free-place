@@ -2,6 +2,7 @@ import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from
 import mauritiusHero from "@/assets/mauritius-aerial.jpg";
 import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
+import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -35,8 +36,8 @@ const cities = [
   },
   {
     name: "Flic en Flac",
-    image: "photo-1507525428034-b723cf961d3e",
-    places: 10,
+    image: flicEnFlacImage,
+    isLocal: true,
     rating: 4.4,
     description: "West coast beach resort area with diverse dining options and sunset views",
     route: "/gluten-free/mauritius/flic-en-flac",

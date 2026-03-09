@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 
 interface Restaurant {
   name: string;
@@ -444,13 +445,11 @@ const GlutenFreeFlicEnFlac = () => {
         </div>
       </header>
 
-      <section
-        className="relative text-white py-16"
-        style={{
-          background: 'linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.4)), linear-gradient(135deg, #0d9488, #14b8a6, #2dd4bf)',
-          backgroundSize: 'cover',
-        }}
-      >
+      <section className="relative text-white py-16 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={flicEnFlacHero} alt="Flic en Flac, Mauritius beachfront" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇲🇺</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
