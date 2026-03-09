@@ -5,6 +5,7 @@ import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
 import curepipeImage from "@/assets/curepipe-mauritius.jpg";
 import quatreBornesImage from "@/assets/quatre-bornes-mauritius.jpg";
+import mahebourgImage from "@/assets/mahebourg-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -67,7 +68,8 @@ const cities = [
   },
   {
     name: "Mahebourg",
-    image: "photo-1519046904884-53103b34b206",
+    image: mahebourgImage,
+    isLocal: true,
     places: 6,
     rating: 4.1,
     description: "Historic fishing village on the southeast coast with fresh seafood and Creole flavors",
