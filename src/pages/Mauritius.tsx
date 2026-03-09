@@ -22,11 +22,11 @@ const cities = [
   {
     name: "Grand Baie",
     image: "photo-1544551763-46a013bb70d5",
-    places: 14,
+    places: 7,
     rating: 4.5,
     description: "Popular coastal town with beachfront restaurants and international cuisine",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/grand-baie",
+    highlights: ["Luigi's Italian", "Wang Thai", "LUX*", "Fynbos"]
   },
   {
     name: "Flic en Flac",
