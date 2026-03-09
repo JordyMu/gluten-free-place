@@ -11,30 +11,9 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
-interface Restaurant {
-  name: string;
-  slug: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  icon: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  distance?: number;
-}
+import { portLouisRestaurants, MauritiusCityRestaurant } from "@/data/portLouisRestaurants";
+
+type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreePortLouis = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");

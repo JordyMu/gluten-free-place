@@ -11,30 +11,9 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 
-interface Restaurant {
-  name: string;
-  slug: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  icon: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  distance?: number;
-}
+import { flicEnFlacRestaurants, MauritiusCityRestaurant } from "@/data/flicEnFlacRestaurants";
+
+type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeFlicEnFlac = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
