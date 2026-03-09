@@ -39,6 +39,10 @@ const GlutenFreeFlicEnFlac = lazy(() => import("./pages/mauritius/GlutenFreeFlic
 const GlutenFreeCurepipe = lazy(() => import("./pages/mauritius/GlutenFreeCurepipe"));
 const GlutenFreeQuatreBornes = lazy(() => import("./pages/mauritius/GlutenFreeQuatreBornes"));
 const GlutenFreeMahebourg = lazy(() => import("./pages/mauritius/GlutenFreeMahebourg"));
+const GrandBaieRestaurantPage = lazy(() => import("./pages/mauritius/GrandBaieRestaurantPage"));
+const PortLouisRestaurantPage = lazy(() => import("./pages/mauritius/PortLouisRestaurantPage"));
+const FlicEnFlacRestaurantPage = lazy(() => import("./pages/mauritius/FlicEnFlacRestaurantPage"));
+const CurepipeRestaurantPage = lazy(() => import("./pages/mauritius/CurepipeRestaurantPage"));
 const JohannesburgRestaurantPage = lazy(() => import("./pages/johannesburg/JohannesburgRestaurantPage"));
 const DurbanRestaurantPage = lazy(() => import("./pages/durban/DurbanRestaurantPage"));
 const PretoriaRestaurantPage = lazy(() => import("./pages/pretoria/PretoriaRestaurantPage"));
@@ -125,9 +129,13 @@ const App = () => (
               <Route path="/gluten-free/egypt" element={<Egypt />} />
               <Route path="/gluten-free/mauritius" element={<Mauritius />} />
               <Route path="/gluten-free/mauritius/grand-baie" element={<GlutenFreeGrandBaie />} />
+              <Route path="/gluten-free/mauritius/grand-baie/:slug" element={<GrandBaieRestaurantPage />} />
               <Route path="/gluten-free/mauritius/port-louis" element={<GlutenFreePortLouis />} />
+              <Route path="/gluten-free/mauritius/port-louis/:slug" element={<PortLouisRestaurantPage />} />
               <Route path="/gluten-free/mauritius/flic-en-flac" element={<GlutenFreeFlicEnFlac />} />
+              <Route path="/gluten-free/mauritius/flic-en-flac/:slug" element={<FlicEnFlacRestaurantPage />} />
               <Route path="/gluten-free/mauritius/curepipe" element={<GlutenFreeCurepipe />} />
+              <Route path="/gluten-free/mauritius/curepipe/:slug" element={<CurepipeRestaurantPage />} />
               <Route path="/gluten-free/mauritius/quatre-bornes" element={<GlutenFreeQuatreBornes />} />
               <Route path="/gluten-free/mauritius/mahebourg" element={<GlutenFreeMahebourg />} />
               <Route path="/gluten-free/botswana" element={<Botswana />} />
