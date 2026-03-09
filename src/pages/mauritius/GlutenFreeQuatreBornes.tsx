@@ -9,6 +9,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
 
 interface Restaurant {
   name: string;
@@ -273,7 +274,11 @@ const GlutenFreeQuatreBornes = () => {
         </div>
       </header>
 
-      <section className="relative text-white py-16" style={{ background: 'linear-gradient(to right, rgba(0,0,0,0.5), rgba(0,0,0,0.4)), linear-gradient(135deg, #e11d48, #f43f5e, #fb7185)' }}>
+      <section className="relative text-white py-16">
+        <div className="absolute inset-0">
+          <img src={quatreBornesHero} alt="Quatre Bornes, Mauritius" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/50" />
+        </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇲🇺</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Find Safe Gluten-Free Restaurants in Quatre Bornes</h1>

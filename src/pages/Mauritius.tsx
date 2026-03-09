@@ -4,6 +4,7 @@ import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
 import curepipeImage from "@/assets/curepipe-mauritius.jpg";
+import quatreBornesImage from "@/assets/quatre-bornes-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,7 +57,8 @@ const cities = [
   },
   {
     name: "Quatre Bornes",
-    image: "photo-1504674900247-0877df9cc836",
+    image: quatreBornesImage,
+    isLocal: true,
     places: 6,
     rating: 4.2,
     description: "Bustling market town with street food and authentic Mauritian home cooking",
