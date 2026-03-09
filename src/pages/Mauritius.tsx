@@ -25,7 +25,8 @@ const cities = [
   },
   {
     name: "Grand Baie",
-    image: "photo-1544551763-46a013bb70d5",
+    image: grandBaieImage,
+    isLocal: true,
     places: 7,
     rating: 4.5,
     description: "Popular coastal town with beachfront restaurants and international cuisine",
