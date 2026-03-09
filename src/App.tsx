@@ -129,9 +129,13 @@ const App = () => (
               <Route path="/gluten-free/egypt" element={<Egypt />} />
               <Route path="/gluten-free/mauritius" element={<Mauritius />} />
               <Route path="/gluten-free/mauritius/grand-baie" element={<GlutenFreeGrandBaie />} />
+              <Route path="/gluten-free/mauritius/grand-baie/:slug" element={<GrandBaieRestaurantPage />} />
               <Route path="/gluten-free/mauritius/port-louis" element={<GlutenFreePortLouis />} />
+              <Route path="/gluten-free/mauritius/port-louis/:slug" element={<PortLouisRestaurantPage />} />
               <Route path="/gluten-free/mauritius/flic-en-flac" element={<GlutenFreeFlicEnFlac />} />
+              <Route path="/gluten-free/mauritius/flic-en-flac/:slug" element={<FlicEnFlacRestaurantPage />} />
               <Route path="/gluten-free/mauritius/curepipe" element={<GlutenFreeCurepipe />} />
+              <Route path="/gluten-free/mauritius/curepipe/:slug" element={<CurepipeRestaurantPage />} />
               <Route path="/gluten-free/mauritius/quatre-bornes" element={<GlutenFreeQuatreBornes />} />
               <Route path="/gluten-free/mauritius/mahebourg" element={<GlutenFreeMahebourg />} />
               <Route path="/gluten-free/botswana" element={<Botswana />} />
