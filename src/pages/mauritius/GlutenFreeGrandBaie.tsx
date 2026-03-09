@@ -384,9 +384,9 @@ const GlutenFreeGrandBaie = () => {
                                 <Award className="w-3 h-3 mr-1" />Featured
                               </Badge>
                             )}
-                            <span className="text-xl font-bold text-gray-900">
+                            <Link to={`/gluten-free/mauritius/grand-baie/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors">
                               {restaurant.name}
-                            </span>
+                            </Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
