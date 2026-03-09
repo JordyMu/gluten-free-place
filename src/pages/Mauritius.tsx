@@ -57,7 +57,8 @@ const cities = [
   },
   {
     name: "Quatre Bornes",
-    image: "photo-1504674900247-0877df9cc836",
+    image: quatreBornesImage,
+    isLocal: true,
     places: 6,
     rating: 4.2,
     description: "Bustling market town with street food and authentic Mauritian home cooking",
