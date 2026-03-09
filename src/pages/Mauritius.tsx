@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { useCountrySEO } from "@/hooks/useCountrySEO";
+import { MauritiusRestaurantList } from "@/components/mauritius/MauritiusRestaurantList";
 
 const cities = [
   {
@@ -234,6 +235,9 @@ const Mauritius = () => {
           </div>
         </div>
       </section>
+
+      {/* Restaurant Directory */}
+      <MauritiusRestaurantList />
 
       {/* Intro Section */}
       <section className="py-16 bg-white/50">
