@@ -226,9 +226,13 @@ const Mauritius = () => {
                       ))}
                     </div>
                   </div>
-                  <Button disabled className="w-full opacity-60">
-                    Coming Soon
-                  </Button>
+                  {city.route === "#" ? (
+                    <Button disabled className="w-full opacity-60">Coming Soon</Button>
+                  ) : (
+                    <Link to={city.route} className="w-full">
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700">Explore {city.name}</Button>
+                    </Link>
+                  )}
                 </CardContent>
               </Card>
             ))}
