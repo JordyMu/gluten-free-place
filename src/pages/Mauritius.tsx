@@ -43,8 +43,8 @@ const cities = [
     places: 7,
     rating: 4.3,
     description: "Highland town known for its cool climate, colonial charm, and local eateries",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/curepipe",
+    highlights: ["Yellow Chilli", "Escale Créole", "ZAYTOON", "Island Babe"]
   },
   {
     name: "Quatre Bornes",
