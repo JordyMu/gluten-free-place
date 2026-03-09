@@ -39,6 +39,8 @@ const GlutenFreeFlicEnFlac = lazy(() => import("./pages/mauritius/GlutenFreeFlic
 const GlutenFreeCurepipe = lazy(() => import("./pages/mauritius/GlutenFreeCurepipe"));
 const GlutenFreeQuatreBornes = lazy(() => import("./pages/mauritius/GlutenFreeQuatreBornes"));
 const GlutenFreeMahebourg = lazy(() => import("./pages/mauritius/GlutenFreeMahebourg"));
+const QuatreBornesRestaurantPage = lazy(() => import("./pages/mauritius/QuatreBornesRestaurantPage"));
+const MahebourgRestaurantPage = lazy(() => import("./pages/mauritius/MahebourgRestaurantPage"));
 const GrandBaieRestaurantPage = lazy(() => import("./pages/mauritius/GrandBaieRestaurantPage"));
 const PortLouisRestaurantPage = lazy(() => import("./pages/mauritius/PortLouisRestaurantPage"));
 const FlicEnFlacRestaurantPage = lazy(() => import("./pages/mauritius/FlicEnFlacRestaurantPage"));
@@ -137,7 +139,9 @@ const App = () => (
               <Route path="/gluten-free/mauritius/curepipe" element={<GlutenFreeCurepipe />} />
               <Route path="/gluten-free/mauritius/curepipe/:slug" element={<CurepipeRestaurantPage />} />
               <Route path="/gluten-free/mauritius/quatre-bornes" element={<GlutenFreeQuatreBornes />} />
+              <Route path="/gluten-free/mauritius/quatre-bornes/:slug" element={<QuatreBornesRestaurantPage />} />
               <Route path="/gluten-free/mauritius/mahebourg" element={<GlutenFreeMahebourg />} />
+              <Route path="/gluten-free/mauritius/mahebourg/:slug" element={<MahebourgRestaurantPage />} />
               <Route path="/gluten-free/botswana" element={<Botswana />} />
               <Route path="/spain/jansana-gluten-free-bakery" element={<JansanaGlutenFreeBakery />} />
               <Route path="/spain/chok-sagasta-pasteleria" element={<ChokSagastaPasteleria />} />

@@ -10,29 +10,8 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
+import { quatreBornesRestaurants } from "@/data/quatreBornesRestaurants";
 
-interface Restaurant {
-  name: string;
-  address: string;
-  hours: string;
-  phone: string;
-  website: string;
-  directionsUrl: string;
-  specialty: string;
-  overview: string;
-  menuHighlights: string[];
-  proTip: string;
-  featured: boolean;
-  cuisineTypes: string[];
-  celiacSafe: "dedicated-facility" | "protocols-in-place";
-  menuType: "fully-gluten-free" | "mixed-menu";
-  rating: number;
-  reviewCount: number;
-  lat: number;
-  lng: number;
-  venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
-  distance?: number;
-}
 
 const GlutenFreeQuatreBornes = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
@@ -135,98 +114,7 @@ const GlutenFreeQuatreBornes = () => {
     tryGetLocation(true);
   };
 
-  const restaurants: Restaurant[] = [
-    {
-      name: "ZAYTOON",
-      address: "Quatre Bornes, Mauritius",
-      hours: "Daily: 11:00AM – 10:00PM",
-      phone: "", website: "",
-      directionsUrl: "https://www.google.com/maps/search/ZAYTOON+Quatre+Bornes+Mauritius",
-      specialty: "Middle Eastern Cuisine",
-      overview: "A Middle Eastern restaurant offering many naturally gluten-free dishes. Grilled meats, rice platters, hummus, and fresh salads are safe choices for celiac diners.",
-      menuHighlights: ["🥙 Grilled Meat Platters (GF)", "🧆 Hummus & Baba Ganoush (GF)", "🍚 Rice Dishes (GF)", "🥗 Fattoush (without bread, GF)"],
-      proTip: "Ask for grilled meats with rice and hummus — skip the pita bread for a delicious GF meal.",
-      featured: true,
-      cuisineTypes: ["Middle Eastern", "Lebanese", "Mediterranean"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.2, reviewCount: 134, lat: -20.2631, lng: 57.4781, venueType: "restaurant"
-    },
-    {
-      name: "The Yellow Chilli",
-      address: "Tribeca Food Hall, Trianon, Mauritius",
-      hours: "Daily: 11:00AM – 10:00PM",
-      phone: "", website: "",
-      directionsUrl: "https://www.google.com/maps/search/The+Yellow+Chilli+Trianon+Mauritius",
-      specialty: "Indian Fine Dining with GF Options",
-      overview: "An upscale Indian restaurant in nearby Tribeca Food Hall offering a wide range of naturally gluten-free curries, tandoori meats, and rice dishes.",
-      menuHighlights: ["🍛 Tandoori Chicken (GF)", "🍚 Biryani (GF)", "🥘 Dal Makhani (GF)", "🍢 Seekh Kebabs (ask GF)"],
-      proTip: "Most curries and tandoori items are naturally GF — just confirm no flour-based thickeners are used.",
-      featured: true,
-      cuisineTypes: ["Indian", "Fine Dining"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.3, reviewCount: 145, lat: -20.2500, lng: 57.5000, venueType: "restaurant"
-    },
-    {
-      name: "Smokey Joe",
-      address: "Tribeca Mall, Trianon 72261, Mauritius",
-      hours: "Daily: 10:00AM – 10:00PM",
-      phone: "", website: "",
-      directionsUrl: "https://www.google.com/maps/search/Smokey+Joe+Trianon+Mauritius",
-      specialty: "Grilled & BBQ with GF Options",
-      overview: "A popular grill restaurant in nearby Tribeca Mall. Grilled meats, burgers (without buns), and fresh sides offer good gluten-free options.",
-      menuHighlights: ["🥩 Grilled Steaks (GF)", "🍗 BBQ Chicken (GF)", "🥗 Fresh Salads (GF)", "🍟 Fries (ask about shared fryer)"],
-      proTip: "Order grilled meat without the bun or sauce for a safe GF meal.",
-      featured: false,
-      cuisineTypes: ["Grill", "BBQ", "American"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.1, reviewCount: 98, lat: -20.2505, lng: 57.4998, venueType: "restaurant"
-    },
-    {
-      name: "Café LUX* Riserva",
-      address: "Tribeca Mall, Trianon 72261, Mauritius",
-      hours: "Daily: 8:00AM – 6:00PM",
-      phone: "", website: "www.luxresorts.com",
-      directionsUrl: "https://www.google.com/maps/search/Cafe+LUX+Riserva+Trianon+Mauritius",
-      specialty: "Specialty Coffee & Light Bites",
-      overview: "Part of the LUX* brand, this specialty café offers artisan coffee and light bites. Several items can be prepared gluten-free upon request.",
-      menuHighlights: ["☕ Specialty Coffee", "🥗 GF Salads", "🍰 Select GF Treats", "🥤 Fresh Juices"],
-      proTip: "Ask about their daily GF options — availability varies but staff are knowledgeable.",
-      featured: false,
-      cuisineTypes: ["Café", "Coffee", "Light Bites"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.4, reviewCount: 76, lat: -20.2503, lng: 57.5001, venueType: "cafe"
-    },
-    {
-      name: "Nando's Phoenix",
-      address: "Phoenix Commercial Centre, Independance St, Vacoas-Phœnix 73417, Mauritius",
-      hours: "Daily: 10:00AM – 10:00PM",
-      phone: "", website: "www.nandos.com",
-      directionsUrl: "https://www.google.com/maps/search/Nandos+Phoenix+Mauritius",
-      specialty: "Flame-Grilled Peri-Peri Chicken",
-      overview: "The well-known peri-peri chicken chain with naturally gluten-free grilled chicken. A reliable and familiar choice for celiacs.",
-      menuHighlights: ["🍗 Peri-Peri Chicken (GF)", "🌽 Corn on the Cob (GF)", "🥗 Side Salads (GF)", "🍚 Rice (GF)"],
-      proTip: "Stick to grilled chicken, rice, corn, and salads — reliably GF. Avoid wraps and rolls.",
-      featured: false,
-      cuisineTypes: ["Chicken", "Peri-Peri", "Fast Casual"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.0, reviewCount: 210, lat: -20.2653, lng: 57.4964, venueType: "restaurant"
-    },
-    {
-      name: "Island Babe Healthy Food",
-      address: "Nigel Street, Les Flamants Roads, Mauritius",
-      hours: "Mon–Sat: 8:00AM – 4:00PM",
-      phone: "", website: "",
-      directionsUrl: "https://www.google.com/maps/search/Island+Babe+Healthy+Food+Mauritius",
-      specialty: "Health-Focused Café",
-      overview: "A health-focused eatery offering fresh, nutrient-rich meals with many naturally gluten-free options. Perfect for health-conscious celiac travelers.",
-      menuHighlights: ["🥗 Buddha Bowls (GF)", "🥤 Green Smoothies", "🍳 GF Breakfast Bowls", "🥑 Fresh Wraps (GF lettuce wrap)"],
-      proTip: "Most of their menu is naturally GF — a rare gem for health-conscious celiacs!",
-      featured: true,
-      cuisineTypes: ["Healthy", "Organic", "Café"],
-      celiacSafe: "protocols-in-place", menuType: "mixed-menu",
-      rating: 4.6, reviewCount: 65, lat: -20.2300, lng: 57.4900, venueType: "cafe"
-    },
-  ];
+  const restaurants = quatreBornesRestaurants;
 
   const getCeliacSafeBadge = (level: string) => {
     switch (level) {
@@ -340,7 +228,7 @@ const GlutenFreeQuatreBornes = () => {
                       <div>
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {restaurant.featured && (<Badge className="bg-rose-100 text-rose-800 border-rose-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>)}
-                          <span className="text-xl font-bold text-gray-900">{restaurant.name}</span>
+                          <Link to={`/gluten-free/mauritius/quatre-bornes/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-rose-600 transition-colors">{restaurant.name}</Link>
                         </div>
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           {renderStarRating(restaurant.rating)}
