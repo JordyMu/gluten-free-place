@@ -11,8 +11,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 
-import { flicEnFlacRestaurants, MauritiusCityRestaurant } from "@/data/flicEnFlacRestaurants";
-
+import { flicEnFlacRestaurants } from "@/data/flicEnFlacRestaurants";
+import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeFlicEnFlac = () => {

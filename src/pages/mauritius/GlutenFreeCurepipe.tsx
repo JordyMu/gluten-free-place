@@ -11,8 +11,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import curepipeHero from "@/assets/curepipe-mauritius.jpg";
 
-import { curepipeRestaurants, MauritiusCityRestaurant } from "@/data/curepipeRestaurants";
-
+import { curepipeRestaurants } from "@/data/curepipeRestaurants";
+import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeCurepipe = () => {

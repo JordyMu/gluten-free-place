@@ -11,8 +11,8 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
-import { portLouisRestaurants, MauritiusCityRestaurant } from "@/data/portLouisRestaurants";
-
+import { portLouisRestaurants } from "@/data/portLouisRestaurants";
+import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreePortLouis = () => {
