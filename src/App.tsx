@@ -39,6 +39,8 @@ const GlutenFreeFlicEnFlac = lazy(() => import("./pages/mauritius/GlutenFreeFlic
 const GlutenFreeCurepipe = lazy(() => import("./pages/mauritius/GlutenFreeCurepipe"));
 const GlutenFreeQuatreBornes = lazy(() => import("./pages/mauritius/GlutenFreeQuatreBornes"));
 const GlutenFreeMahebourg = lazy(() => import("./pages/mauritius/GlutenFreeMahebourg"));
+const QuatreBornesRestaurantPage = lazy(() => import("./pages/mauritius/QuatreBornesRestaurantPage"));
+const MahebourgRestaurantPage = lazy(() => import("./pages/mauritius/MahebourgRestaurantPage"));
 const GrandBaieRestaurantPage = lazy(() => import("./pages/mauritius/GrandBaieRestaurantPage"));
 const PortLouisRestaurantPage = lazy(() => import("./pages/mauritius/PortLouisRestaurantPage"));
 const FlicEnFlacRestaurantPage = lazy(() => import("./pages/mauritius/FlicEnFlacRestaurantPage"));
