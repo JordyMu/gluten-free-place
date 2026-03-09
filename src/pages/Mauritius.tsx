@@ -68,7 +68,8 @@ const cities = [
   },
   {
     name: "Mahebourg",
-    image: "photo-1519046904884-53103b34b206",
+    image: mahebourgImage,
+    isLocal: true,
     places: 6,
     rating: 4.1,
     description: "Historic fishing village on the southeast coast with fresh seafood and Creole flavors",
