@@ -58,11 +58,11 @@ const cities = [
   {
     name: "Mahebourg",
     image: "photo-1519046904884-53103b34b206",
-    places: 5,
+    places: 6,
     rating: 4.1,
     description: "Historic fishing village on the southeast coast with fresh seafood and Creole flavors",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/mahebourg",
+    highlights: ["Taste of Freedom", "Tamassa Resort", "Green Island", "L'Escale"]
   }
 ];
 
