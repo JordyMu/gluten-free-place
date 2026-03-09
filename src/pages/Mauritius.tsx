@@ -155,10 +155,12 @@ const Mauritius = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50" disabled>
-                Start with Port Louis
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+              <Link to="/gluten-free/mauritius/port-louis">
+                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+                  Start with Port Louis
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
               <AddRestaurantDialog
                 city="Mauritius"
                 triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
