@@ -215,10 +215,10 @@ const featuredCountries = [
 ];
 
 interface FeaturedCountriesProps {
-  searchQuery: string;
+  searchQuery?: string;
 }
 
-export const FeaturedCountries = ({ searchQuery }: FeaturedCountriesProps) => {
+export const FeaturedCountries = ({ searchQuery = "" }: FeaturedCountriesProps) => {
   const filteredCountries = featuredCountries.filter((country) => {
     if (!searchQuery.trim()) return true;
     const q = searchQuery.toLowerCase();
