@@ -34,6 +34,7 @@ const CapeTownBakeries = lazy(() => import("./pages/cape-town/CapeTownBakeries")
 const CapeTownGroceryStores = lazy(() => import("./pages/cape-town/CapeTownGroceryStores"));
 const CapeTownGFProducts = lazy(() => import("./pages/cape-town/CapeTownGFProducts"));
 const GlutenFreeGrandBaie = lazy(() => import("./pages/mauritius/GlutenFreeGrandBaie"));
+const GlutenFreePortLouis = lazy(() => import("./pages/mauritius/GlutenFreePortLouis"));
 const JohannesburgRestaurantPage = lazy(() => import("./pages/johannesburg/JohannesburgRestaurantPage"));
 const DurbanRestaurantPage = lazy(() => import("./pages/durban/DurbanRestaurantPage"));
 const PretoriaRestaurantPage = lazy(() => import("./pages/pretoria/PretoriaRestaurantPage"));
