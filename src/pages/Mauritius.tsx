@@ -36,8 +36,8 @@ const cities = [
   },
   {
     name: "Flic en Flac",
-    image: "photo-1507525428034-b723cf961d3e",
-    places: 10,
+    image: flicEnFlacImage,
+    isLocal: true,
     rating: 4.4,
     description: "West coast beach resort area with diverse dining options and sunset views",
     route: "/gluten-free/mauritius/flic-en-flac",
