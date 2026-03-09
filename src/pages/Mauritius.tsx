@@ -13,11 +13,11 @@ const cities = [
   {
     name: "Port Louis",
     image: "photo-1580889272625-b66a0e4c25c4",
-    places: 18,
+    places: 7,
     rating: 4.6,
     description: "The vibrant capital city with a multicultural food scene and waterfront dining",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/port-louis",
+    highlights: ["Escale Créole", "Yellow Chilli", "ZAYTOON", "Island Babe"]
   },
   {
     name: "Grand Baie",
