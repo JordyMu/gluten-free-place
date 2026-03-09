@@ -47,6 +47,22 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
         return "/gluten-free/south-africa";
       case "Argentina":
         return "/argentina";
+      case "United States":
+        return "/usa";
+      case "Japan":
+        return "/japan";
+      case "Mauritius":
+        return "/gluten-free/mauritius";
+      case "Kenya":
+        return "/gluten-free/kenya";
+      case "Nigeria":
+        return "/gluten-free/nigeria";
+      case "Morocco":
+        return "/morocco";
+      case "Egypt":
+        return "/gluten-free/egypt";
+      case "Botswana":
+        return "/gluten-free/botswana";
       default:
         return "#";
     }

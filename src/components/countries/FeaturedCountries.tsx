@@ -141,10 +141,94 @@ const featuredCountries = [
     rating: 4.5,
     description: "Growing gluten-free scene with excellent options in major cities and wine regions",
     topCities: ["Cape Town", "Johannesburg", "Durban", "Pretoria"]
+  },
+  {
+    id: 15,
+    name: "Mauritius",
+    code: "MU",
+    image: "photo-1544551763-46a013bb70d5",
+    places: 60,
+    rating: 4.6,
+    description: "Indian Ocean paradise with naturally gluten-free Creole, Indian, and French-inspired cuisine",
+    topCities: ["Port Louis", "Grand Baie", "Flic en Flac", "Curepipe"]
+  },
+  {
+    id: 16,
+    name: "Kenya",
+    code: "KE",
+    image: "photo-1489392191049-fc10c97e64b6",
+    places: 35,
+    rating: 4.4,
+    description: "East African flavors with naturally gluten-free staples like ugali and nyama choma",
+    topCities: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"]
+  },
+  {
+    id: 17,
+    name: "Nigeria",
+    code: "NG",
+    image: "photo-1504674900247-0877df9cc836",
+    places: 30,
+    rating: 4.3,
+    description: "West African cuisine rich in naturally gluten-free dishes like jollof rice and suya",
+    topCities: ["Lagos", "Abuja", "Port Harcourt", "Ibadan"]
+  },
+  {
+    id: 18,
+    name: "Morocco",
+    code: "MA",
+    image: "photo-1489749798305-4fea3ae63d43",
+    places: 40,
+    rating: 4.5,
+    description: "Tagines, couscous alternatives, and vibrant spice-rich dishes for gluten-free travelers",
+    topCities: ["Marrakech", "Casablanca", "Fes", "Chefchaouen"]
+  },
+  {
+    id: 19,
+    name: "Egypt",
+    code: "EG",
+    image: "photo-1539650116574-8efeb43e2750",
+    places: 25,
+    rating: 4.3,
+    description: "Ancient land with naturally GF staples like ful medames, grilled meats, and fresh salads",
+    topCities: ["Cairo", "Alexandria", "Luxor", "Sharm El Sheikh"]
+  },
+  {
+    id: 20,
+    name: "Botswana",
+    code: "BW",
+    image: "photo-1516426122078-c23e76319801",
+    places: 15,
+    rating: 4.2,
+    description: "Safari destination with naturally gluten-free game meats and traditional dishes",
+    topCities: ["Gaborone", "Maun", "Kasane", "Francistown"]
+  },
+  {
+    id: 21,
+    name: "Japan",
+    code: "JP",
+    image: "photo-1493976040374-85c8e12f0c0e",
+    places: 120,
+    rating: 4.7,
+    description: "Sushi, sashimi, and rice-based cuisine make Japan a great gluten-free destination",
+    topCities: ["Tokyo", "Osaka", "Kyoto", "Hiroshima"]
   }
 ];
 
-export const FeaturedCountries = () => {
+interface FeaturedCountriesProps {
+  searchQuery: string;
+}
+
+export const FeaturedCountries = ({ searchQuery }: FeaturedCountriesProps) => {
+  const filteredCountries = featuredCountries.filter((country) => {
+    if (!searchQuery.trim()) return true;
+    const q = searchQuery.toLowerCase();
+    return (
+      country.name.toLowerCase().includes(q) ||
+      country.topCities.some((city) => city.toLowerCase().includes(q)) ||
+      country.description.toLowerCase().includes(q)
+    );
+  });
+
   return (
     <section className="py-16 bg-white/50">
       <div className="container mx-auto px-4">
@@ -152,11 +236,18 @@ export const FeaturedCountries = () => {
           <h2 className="text-3xl font-bold mb-4 text-gray-900">Top-Rated Countries</h2>
           <p className="text-xl text-gray-600">Countries with the best gluten-free dining experiences</p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredCountries.map((country, index) => (
-            <CountryCard key={country.id} country={country} index={index} />
-          ))}
-        </div>
+        {filteredCountries.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredCountries.map((country, index) => (
+              <CountryCard key={country.id} country={country} index={index} />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-xl text-gray-500">No countries found matching "{searchQuery}"</p>
+            <p className="text-gray-400 mt-2">Try a different search term</p>
+          </div>
+        )}
       </div>
     </section>
   );
