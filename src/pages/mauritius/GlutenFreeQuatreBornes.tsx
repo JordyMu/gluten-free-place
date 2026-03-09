@@ -340,7 +340,7 @@ const GlutenFreeQuatreBornes = () => {
                       <div>
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {restaurant.featured && (<Badge className="bg-rose-100 text-rose-800 border-rose-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>)}
-                          <span className="text-xl font-bold text-gray-900">{restaurant.name}</span>
+                          <Link to={`/gluten-free/mauritius/quatre-bornes/${restaurant.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`} className="text-xl font-bold text-gray-900 hover:text-rose-600 transition-colors">{restaurant.name}</Link>
                         </div>
                         <div className="flex items-center gap-2 mb-2 flex-wrap">
                           {renderStarRating(restaurant.rating)}
