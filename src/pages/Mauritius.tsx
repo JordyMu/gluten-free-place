@@ -52,8 +52,8 @@ const cities = [
     places: 6,
     rating: 4.2,
     description: "Bustling market town with street food and authentic Mauritian home cooking",
-    route: "#",
-    highlights: ["Coming Soon"]
+    route: "/gluten-free/mauritius/quatre-bornes",
+    highlights: ["ZAYTOON", "Yellow Chilli", "Island Babe", "Nando's"]
   },
   {
     name: "Mahebourg",
