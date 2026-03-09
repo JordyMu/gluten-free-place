@@ -3,6 +3,7 @@ import mauritiusHero from "@/assets/mauritius-aerial.jpg";
 import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
+import curepipeImage from "@/assets/curepipe-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -45,7 +46,8 @@ const cities = [
   },
   {
     name: "Curepipe",
-    image: "photo-1501785888041-af3ef285b470",
+    image: curepipeImage,
+    isLocal: true,
     places: 7,
     rating: 4.3,
     description: "Highland town known for its cool climate, colonial charm, and local eateries",
