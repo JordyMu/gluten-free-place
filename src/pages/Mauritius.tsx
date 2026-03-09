@@ -4,6 +4,7 @@ import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
 import curepipeImage from "@/assets/curepipe-mauritius.jpg";
+import quatreBornesImage from "@/assets/quatre-bornes-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
