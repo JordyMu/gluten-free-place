@@ -13,6 +13,7 @@ import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 
 interface Restaurant {
   name: string;
+  slug: string;
   address: string;
   hours: string;
   phone: string;

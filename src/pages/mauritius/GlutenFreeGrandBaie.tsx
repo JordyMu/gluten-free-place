@@ -13,6 +13,7 @@ import grandBaieHero from "@/assets/grand-baie-mauritius.jpg";
 
 interface Restaurant {
   name: string;
+  slug: string;
   address: string;
   hours: string;
   phone: string;

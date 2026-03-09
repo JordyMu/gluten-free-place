@@ -13,6 +13,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 
 interface Restaurant {
   name: string;
+  slug: string;
   address: string;
   hours: string;
   phone: string;

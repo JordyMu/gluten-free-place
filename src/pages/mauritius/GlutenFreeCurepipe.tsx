@@ -13,6 +13,7 @@ import curepipeHero from "@/assets/curepipe-mauritius.jpg";
 
 interface Restaurant {
   name: string;
+  slug: string;
   address: string;
   hours: string;
   phone: string;
