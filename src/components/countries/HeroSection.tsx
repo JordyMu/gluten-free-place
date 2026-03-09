@@ -4,7 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 
-export const HeroSection = () => {
+interface HeroSectionProps {
+  searchQuery: string;
+  onSearchChange: (query: string) => void;
+}
+
+export const HeroSection = ({ searchQuery, onSearchChange }: HeroSectionProps) => {
   return (
     <section className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-orange-600/10 to-blue-600/10" />
@@ -31,6 +36,8 @@ export const HeroSection = () => {
                 <Input 
                   placeholder="Search countries..." 
                   className="border-0 focus-visible:ring-0"
+                  value={searchQuery}
+                  onChange={(e) => onSearchChange(e.target.value)}
                 />
               </div>
               <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 rounded-full px-6">
