@@ -93,14 +93,14 @@ export const durbanRestaurants: Restaurant[] = [
     lng: 31.0172,
     venueType: "bakery",
     photos: [
-      { url: "/src/assets/glenwood-bakery-1.webp", caption: "Artisan bread loaf with beautiful crust" },
-      { url: "/src/assets/glenwood-bakery-2.jpg", caption: "Eggs Benedict with hollandaise sauce" },
-      { url: "/src/assets/glenwood-bakery-3.jpg", caption: "Gluten-free pizza with fresh toppings" },
-      { url: "/src/assets/glenwood-bakery-4.webp", caption: "Specialty coffee with latte art" },
-      { url: "/src/assets/glenwood-bakery-5.jpg", caption: "Poached eggs with fresh greens" },
-      { url: "/src/assets/glenwood-bakery-6.jpg", caption: "Gourmet sandwich with avocado and tomatoes" },
-      { url: "/src/assets/glenwood-bakery-7.jpg", caption: "Cozy café interior seating area" },
-      { url: "/src/assets/glenwood-bakery-8.jpg", caption: "Freshly baked pastries on display" }
+      { url: "/images/glenwood-bakery-1.webp", caption: "Artisan bread loaf with beautiful crust" },
+      { url: "/images/glenwood-bakery-2.jpg", caption: "Eggs Benedict with hollandaise sauce" },
+      { url: "/images/glenwood-bakery-3.jpg", caption: "Gluten-free pizza with fresh toppings" },
+      { url: "/images/glenwood-bakery-4.webp", caption: "Specialty coffee with latte art" },
+      { url: "/images/glenwood-bakery-5.jpg", caption: "Poached eggs with fresh greens" },
+      { url: "/images/glenwood-bakery-6.jpg", caption: "Gourmet sandwich with avocado and tomatoes" },
+      { url: "/images/glenwood-bakery-7.jpg", caption: "Cozy café interior seating area" },
+      { url: "/images/glenwood-bakery-8.jpg", caption: "Freshly baked pastries on display" }
     ],
     menuNotes: [
       "GF breads available but call to confirm",
