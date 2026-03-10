@@ -1,4 +1,5 @@
 import { MapPin, Star, Clock, Globe, Phone, ShieldCheck, ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { capeTownRestaurants } from "@/data/capeTownRestaurants";
@@ -61,14 +62,19 @@ export const SouthAfricaRestaurantList = () => {
                   {/* Name & specialty */}
                   <div className="mb-3">
                     <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
-                      <span className="text-2xl">{restaurant.icon}</span>
-                      {restaurant.name}
-                      {index < 3 && (
-                        <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
-                          Top {index + 1}
-                        </Badge>
-                      )}
-                    </h3>
+                       <span className="text-2xl">{restaurant.icon}</span>
+                       <Link
+                         to={`/gluten-free/south-africa/${restaurant.city}/${restaurant.slug}`}
+                         className="hover:text-emerald-700 transition-colors"
+                       >
+                         {restaurant.name}
+                       </Link>
+                       {index < 3 && (
+                         <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
+                           Top {index + 1}
+                         </Badge>
+                       )}
+                     </h3>
                     <p className="text-sm text-gray-500 mt-0.5 ml-9">{restaurant.specialty}</p>
                   </div>
 
