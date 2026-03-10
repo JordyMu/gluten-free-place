@@ -93,8 +93,14 @@ export const durbanRestaurants: Restaurant[] = [
     lng: 31.0172,
     venueType: "bakery",
     photos: [
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
-      "https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800"
+      { url: "/src/assets/glenwood-bakery-1.webp", caption: "Artisan bread loaf with beautiful crust" },
+      { url: "/src/assets/glenwood-bakery-2.jpg", caption: "Eggs Benedict with hollandaise sauce" },
+      { url: "/src/assets/glenwood-bakery-3.jpg", caption: "Gluten-free pizza with fresh toppings" },
+      { url: "/src/assets/glenwood-bakery-4.webp", caption: "Specialty coffee with latte art" },
+      { url: "/src/assets/glenwood-bakery-5.jpg", caption: "Poached eggs with fresh greens" },
+      { url: "/src/assets/glenwood-bakery-6.jpg", caption: "Gourmet sandwich with avocado and tomatoes" },
+      { url: "/src/assets/glenwood-bakery-7.jpg", caption: "Cozy café interior seating area" },
+      { url: "/src/assets/glenwood-bakery-8.jpg", caption: "Freshly baked pastries on display" }
     ],
     menuNotes: [
       "GF breads available but call to confirm",
