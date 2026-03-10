@@ -235,38 +235,30 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
         <div className="max-w-5xl mx-auto">
           {/* Static Photos from data */}
           {restaurant.photos && restaurant.photos.length > 0 && (
-            <Card className="mb-8">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Camera className="w-5 h-5 text-orange-600" />
-                  Featured Photos
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                  {restaurant.photos.map((photo, index) => {
-                    const isObject = typeof photo === 'object';
-                    const photoUrl = isObject ? photo.url : photo;
-                    const caption = isObject ? photo.caption : undefined;
+            <div className="mb-8">
+              <h3 className="flex items-center gap-2 text-sm font-semibold text-muted-foreground mb-3">
+                <Camera className="w-4 h-4" />
+                Featured Photos
+              </h3>
+              <div className="flex gap-2 overflow-x-auto pb-2">
+                {restaurant.photos.map((photo, index) => {
+                  const isObject = typeof photo === 'object';
+                  const photoUrl = isObject ? photo.url : photo;
 
-                    return (
-                      <div key={index} className={caption ? "bg-muted/30 rounded-lg p-2 space-y-2" : ""}>
-                        <div className="aspect-square rounded-lg overflow-hidden bg-gray-100">
-                          <img 
-                            src={photoUrl} 
-                            alt={`${restaurant.name} photo ${index + 1}`}
-                            className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                          />
-                        </div>
-                        {caption && (
-                          <p className="text-sm text-muted-foreground leading-relaxed">{caption}</p>
-                        )}
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
+                  return (
+                    <div key={index} className="shrink-0 w-24 h-24 rounded-lg overflow-hidden bg-muted">
+                      <img 
+                        src={photoUrl} 
+                        alt={`${restaurant.name} photo ${index + 1}`}
+                        className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           )}
 
           {/* Location & Contact */}
