@@ -55,10 +55,10 @@ export const durbanRestaurants: Restaurant[] = [
     lng: 31.0089,
     venueType: "restaurant",
     photos: [
-      { url: "/src/assets/9th-avenue-bistro-dish.webp", caption: "Fine dining plated dish with elegant presentation" },
-      { url: "/src/assets/9th-avenue-bistro-mussels.webp", caption: "Creamy mussels with fresh herbs" },
-      { url: "/src/assets/9th-avenue-bistro-duck.webp", caption: "Duck confit with glazed carrots and jus" },
-      { url: "/src/assets/9th-avenue-bistro-dessert.jpg", caption: "Decadent dessert with ice cream" }
+      { url: "/images/9th-avenue-bistro-dish.webp", caption: "Fine dining plated dish with elegant presentation" },
+      { url: "/images/9th-avenue-bistro-mussels.webp", caption: "Creamy mussels with fresh herbs" },
+      { url: "/images/9th-avenue-bistro-duck.webp", caption: "Duck confit with glazed carrots and jus" },
+      { url: "/images/9th-avenue-bistro-dessert.jpg", caption: "Decadent dessert with ice cream" }
     ],
     menuNotes: [
       "Call ahead to discuss GF menu options",
