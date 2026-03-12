@@ -10,6 +10,7 @@ interface CountryCardProps {
     name: string;
     code: string;
     image: string;
+    isLocal?: boolean;
     places: number;
     rating: number;
     description: string;
