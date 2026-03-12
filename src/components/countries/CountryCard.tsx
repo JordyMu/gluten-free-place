@@ -98,7 +98,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
     >
       <div className="relative overflow-hidden rounded-t-lg">
         <img
-          src={`https://images.unsplash.com/${country.image}?auto=format&fit=crop&w=600&q=80`}
+          src={country.isLocal ? country.image : `https://images.unsplash.com/${country.image}?auto=format&fit=crop&w=600&q=80`}
           alt={country.name}
           className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
         />
