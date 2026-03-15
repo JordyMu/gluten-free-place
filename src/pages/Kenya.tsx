@@ -201,9 +201,11 @@ const Kenya = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-700 hover:bg-green-50" disabled>
-                Start with Nairobi
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Button asChild size="lg" className="bg-white text-green-700 hover:bg-green-50">
+                <Link to="/gluten-free/kenya/nairobi">
+                  Start with Nairobi
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
               <AddRestaurantDialog
                 city="Kenya"
