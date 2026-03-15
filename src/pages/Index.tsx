@@ -136,12 +136,12 @@ const Index = () => {
     },
     {
       id: 6,
-      name: "Tokyo, Japan",
-      image: "photo-1540959733332-eab4deabeeaf",
-      places: 73,
-      rating: 4.4,
-      description: "Discover amazing gluten-free ramen and traditional dishes",
-      topCities: ["Tokyo", "Osaka", "Kyoto", "Hiroshima"]
+      name: "Nairobi, Kenya",
+      image: "photo-1611348524140-53c9a25263d6",
+      places: 47,
+      rating: 4.6,
+      description: "Discover celiac-safe dining with naturally gluten-free Kenyan cuisine",
+      topCities: ["Nairobi", "Mombasa", "Kisumu", "Nakuru"]
     }
   ];
 
