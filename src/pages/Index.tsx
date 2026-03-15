@@ -380,7 +380,7 @@ const Index = () => {
                         {destination.topCities.map((city) => {
                           const countryPath = destination.name.includes("Italy") ? "/italy" :
                             destination.name.includes("Spain") ? "/spain" :
-                            destination.name.includes("USA") ? "/usa" :
+                            destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
                             destination.name.includes("Japan") ? "/japan" : "#";
@@ -414,10 +414,10 @@ const Index = () => {
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
-                  ) : destination.name === "New York, USA" ? (
-                    <Link to="/usa">
+                  ) : destination.name === "Cape Town, South Africa" ? (
+                    <Link to="/gluten-free/south-africa">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                        Explore USA
+                        Explore South Africa
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
