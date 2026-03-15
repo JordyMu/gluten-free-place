@@ -8,6 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { KenyaRestaurantList } from "@/components/kenya/KenyaRestaurantList";
+import { nairobiRestaurants } from "@/data/nairobiRestaurants";
+import { mombasaRestaurants } from "@/data/mombasaRestaurants";
+import { kisumuRestaurants } from "@/data/kisumuRestaurants";
+import { nakuruRestaurants } from "@/data/nakuruRestaurants";
 
 const Kenya = () => {
   useEffect(() => {
