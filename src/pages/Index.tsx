@@ -379,7 +379,7 @@ const Index = () => {
                       <div className="flex flex-wrap gap-1">
                         {destination.topCities.map((city) => {
                           const countryPath = destination.name.includes("Italy") ? "/italy" :
-                            destination.name.includes("Spain") ? "/spain" :
+                            destination.name.includes("Mauritius") ? "/gluten-free/mauritius" :
                             destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
