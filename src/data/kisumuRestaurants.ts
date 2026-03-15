@@ -164,3 +164,6 @@ export const kisumuRestaurants: Restaurant[] = [
     photos: [],
   },
 ];
+
+export const getKisumuRestaurantBySlug = (slug: string) =>
+  kisumuRestaurants.find((r) => r.slug === slug);

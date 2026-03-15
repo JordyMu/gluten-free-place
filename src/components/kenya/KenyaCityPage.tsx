@@ -250,7 +250,9 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
                   <div className="mb-3">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <span className="text-2xl">{restaurant.icon}</span>
-                      <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
+                      <Link to={`/gluten-free/kenya/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-green-700 transition-colors">
+                        {restaurant.name}
+                      </Link>
                       {restaurant.featured && (
                         <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
                       )}

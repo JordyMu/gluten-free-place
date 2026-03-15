@@ -782,3 +782,6 @@ export const nairobiRestaurants: Restaurant[] = [
     photos: [],
   },
 ];
+
+export const getNairobiRestaurantBySlug = (slug: string) =>
+  nairobiRestaurants.find((r) => r.slug === slug);

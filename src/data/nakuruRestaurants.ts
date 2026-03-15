@@ -80,3 +80,6 @@ export const nakuruRestaurants: Restaurant[] = [
     photos: [],
   },
 ];
+
+export const getNakuruRestaurantBySlug = (slug: string) =>
+  nakuruRestaurants.find((r) => r.slug === slug);

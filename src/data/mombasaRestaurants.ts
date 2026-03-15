@@ -236,3 +236,6 @@ export const mombasaRestaurants: Restaurant[] = [
     photos: [],
   },
 ];
+
+export const getMombasaRestaurantBySlug = (slug: string) =>
+  mombasaRestaurants.find((r) => r.slug === slug);
