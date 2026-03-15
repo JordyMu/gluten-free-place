@@ -155,10 +155,10 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Marco Rodriguez",
-      location: "Barcelona, Spain", 
+      name: "Sophie Martin",
+      location: "Grand Baie, Mauritius",
       rating: 5,
-      comment: "As someone with celiac disease, I never thought I could enjoy traveling. This changed everything!",
+      comment: "Found incredible gluten-free options in Mauritius! The Creole cuisine is naturally celiac-friendly and delicious.",
       avatar: "photo-1507003211169-0a1dd7228f2d"
     },
     {
