@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { EgyptRestaurantList } from "@/components/egypt/EgyptRestaurantList";
 
 const Egypt = () => {
   useEffect(() => {
@@ -313,6 +314,9 @@ const Egypt = () => {
           </div>
         </div>
       </section>
+
+      {/* Restaurant Directory */}
+      <EgyptRestaurantList />
 
       {/* Intro Section */}
       <section className="py-16 bg-white/50">
