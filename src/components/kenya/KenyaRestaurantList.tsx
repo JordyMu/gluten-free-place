@@ -3,6 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { nairobiRestaurants } from "@/data/nairobiRestaurants";
 import { mombasaRestaurants } from "@/data/mombasaRestaurants";
+import { kisumuRestaurants } from "@/data/kisumuRestaurants";
 import { nakuruRestaurants } from "@/data/nakuruRestaurants";
 import { kenyaSafariRestaurants } from "@/data/kenyaSafariRestaurants";
 import type { Restaurant } from "@/data/capeTownRestaurants";
