@@ -7,6 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { useCountrySEO } from "@/hooks/useCountrySEO";
+import { KenyaRestaurantList } from "@/components/kenya/KenyaRestaurantList";
 
 const cities = [
   {
