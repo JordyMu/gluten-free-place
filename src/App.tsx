@@ -26,6 +26,14 @@ const EdinburghRestaurantPage = lazy(() => import("./pages/uk/EdinburghRestauran
 const ManchesterRestaurantPage = lazy(() => import("./pages/uk/ManchesterRestaurantPage"));
 const BirminghamRestaurantPage = lazy(() => import("./pages/uk/BirminghamRestaurantPage"));
 const Canada = lazy(() => import("./pages/Canada"));
+const GlutenFreeToronto = lazy(() => import("./pages/canada/GlutenFreeToronto"));
+const GlutenFreeVancouver = lazy(() => import("./pages/canada/GlutenFreeVancouver"));
+const GlutenFreeMontreal = lazy(() => import("./pages/canada/GlutenFreeMontreal"));
+const GlutenFreeCalgary = lazy(() => import("./pages/canada/GlutenFreeCalgary"));
+const TorontoRestaurantPage = lazy(() => import("./pages/canada/TorontoRestaurantPage"));
+const VancouverRestaurantPage = lazy(() => import("./pages/canada/VancouverRestaurantPage"));
+const MontrealRestaurantPage = lazy(() => import("./pages/canada/MontrealRestaurantPage"));
+const CalgaryRestaurantPage = lazy(() => import("./pages/canada/CalgaryRestaurantPage"));
 const Ireland = lazy(() => import("./pages/Ireland"));
 const Germany = lazy(() => import("./pages/Germany"));
 const NewZealand = lazy(() => import("./pages/NewZealand"));
