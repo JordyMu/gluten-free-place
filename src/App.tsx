@@ -145,10 +145,13 @@ const App = () => (
               <Route path="/argentina" element={<Argentina />} />
               <Route path="/gluten-free/kenya" element={<Kenya />} />
               <Route path="/gluten-free/kenya/nairobi" element={<GlutenFreeNairobi />} />
+              <Route path="/gluten-free/kenya/nairobi/:slug" element={<NairobiRestaurantPage />} />
               <Route path="/gluten-free/kenya/mombasa" element={<GlutenFreeMombasa />} />
+              <Route path="/gluten-free/kenya/mombasa/:slug" element={<MombasaRestaurantPage />} />
               <Route path="/gluten-free/kenya/kisumu" element={<GlutenFreeKisumu />} />
+              <Route path="/gluten-free/kenya/kisumu/:slug" element={<KisumuRestaurantPage />} />
               <Route path="/gluten-free/kenya/nakuru" element={<GlutenFreeNakuru />} />
-              <Route path="/gluten-free/nigeria" element={<Nigeria />} />
+              <Route path="/gluten-free/kenya/nakuru/:slug" element={<NakuruRestaurantPage />} />
               <Route path="/gluten-free/morocco" element={<Morocco />} />
               <Route path="/usa" element={<USA />} />
               <Route path="/japan" element={<Japan />} />
