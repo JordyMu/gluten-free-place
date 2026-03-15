@@ -10,18 +10,24 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { cairoRestaurants } from "@/data/egyptRestaurants";
-import type { EgyptRestaurant } from "@/data/egyptRestaurants";
 
-const menuTypeBadge = (type: string) => {
+const getCeliacSafeBadge = (level: string) => {
+  switch (level) {
+    case "dedicated-facility":
+      return <Badge className="bg-green-100 text-green-800 border-green-300"><Shield className="w-3 h-3 mr-1" />Dedicated GF Facility</Badge>;
+    case "protocols-in-place":
+      return <Badge className="bg-blue-100 text-blue-800 border-blue-300"><CheckCircle className="w-3 h-3 mr-1" />Careful Handling</Badge>;
+    default: return null;
+  }
+};
+
+const getMenuTypeBadge = (type: string) => {
   switch (type) {
-    case "Fully GF":
+    case "fully-gluten-free":
       return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% Gluten-Free</Badge>;
-    case "Mixed Menu":
-      return <Badge className="bg-violet-100 text-violet-800 border-violet-300">Mixed Menu</Badge>;
-    case "GF Options":
+    case "mixed-menu":
       return <Badge className="bg-amber-100 text-amber-800 border-amber-300">GF Options Available</Badge>;
-    default:
-      return null;
+    default: return null;
   }
 };
 
@@ -37,28 +43,12 @@ const renderStarRating = (rating: number) => (
 const GlutenFreeCairo = () => {
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
-  const [isLocating, setIsLocating] = useState(false);
-  const [locationError, setLocationError] = useState("");
-  const [sortByDistance, setSortByDistance] = useState(false);
 
   useEffect(() => {
     document.title = "Gluten-Free Restaurants in Cairo | Celiac-Safe Dining Guide 2026";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Cairo, Egypt. Verified celiac-safe dining options in Zamalek, Nasr City, Maadi & more.");
-    }
+    const meta = document.querySelector('meta[name="description"]');
+    if (meta) meta.setAttribute("content", "Find the best gluten-free restaurants in Cairo, Egypt. Verified celiac-safe dining options in Zamalek, Nasr City, Maadi & more.");
   }, []);
-
-  const handleFindNearMe = () => {
-    if (!navigator.geolocation) { setLocationError("Geolocation not supported"); return; }
-    setIsLocating(true); setLocationError("");
-    navigator.geolocation.getCurrentPosition(
-      (pos) => { setUserLocation({ lat: pos.coords.latitude, lng: pos.coords.longitude }); setSortByDistance(true); setIsLocating(false); },
-      () => { setIsLocating(false); setLocationError("Could not get location."); },
-      { enableHighAccuracy: true, timeout: 15000 }
-    );
-  };
 
   const filteredRestaurants = useMemo(() => {
     return cairoRestaurants.filter(r => {
@@ -91,16 +81,10 @@ const GlutenFreeCairo = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🏛️</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Gluten-Free Restaurants in Cairo</h1>
-          <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">
-            Discover celiac-safe dining in Egypt's capital — from Zamalek to Nasr City.
-          </p>
+          <p className="text-xl text-amber-100 mb-8 max-w-3xl mx-auto">Discover celiac-safe dining in Egypt's capital — from Zamalek to Nasr City.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white/10" onClick={handleFindNearMe} disabled={isLocating}>
-              {isLocating ? "Locating..." : sortByDistance ? (<><Navigation className="w-5 h-5 mr-2" />Sorted by Distance</>) : (<><Search className="w-5 h-5 mr-2" />Find Near Me</>)}
-            </Button>
             <AddRestaurantDialog city="Cairo" triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" />
           </div>
-          {locationError && <p className="text-amber-100 mt-4 text-sm">{locationError}</p>}
         </div>
       </section>
 
@@ -112,9 +96,7 @@ const GlutenFreeCairo = () => {
                 <Award className="w-8 h-8 text-amber-600 flex-shrink-0" />
                 <div>
                   <h2 className="text-xl font-semibold text-gray-900 mb-2">Gluten-Free Dining in Cairo</h2>
-                  <p className="text-gray-700">
-                    Cairo's diverse food scene includes dedicated GF restaurants, health-conscious cafés, and luxury hotel dining with celiac-safe options. The Gluten Free House and Keto Rockets offer fully GF menus, while international hotels in Zamalek provide excellent GF accommodation.
-                  </p>
+                  <p className="text-gray-700">Cairo's diverse food scene includes dedicated GF restaurants, health-conscious cafés, and luxury hotel dining with celiac-safe options.</p>
                 </div>
               </div>
             </CardContent>
@@ -126,22 +108,17 @@ const GlutenFreeCairo = () => {
             <CardHeader><CardTitle className="flex items-center gap-2"><Filter className="w-5 h-5" />Filter Restaurants</CardTitle></CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
-                  <Input placeholder="Search restaurants..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
+                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                  <Input placeholder="Search restaurants..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} /></div>
+                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
                   <Select value={menuFilter} onValueChange={setMenuFilter}>
                     <SelectTrigger className="bg-white"><SelectValue placeholder="All menu types" /></SelectTrigger>
                     <SelectContent className="bg-white z-50">
                       <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="Fully GF">100% Gluten-Free</SelectItem>
-                      <SelectItem value="Mixed Menu">Mixed Menu</SelectItem>
-                      <SelectItem value="GF Options">GF Options Available</SelectItem>
+                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
+                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
                     </SelectContent>
-                  </Select>
-                </div>
+                  </Select></div>
               </div>
               <div className="mt-4 text-sm text-gray-600">Showing {filteredRestaurants.length} of {cairoRestaurants.length} restaurants</div>
             </CardContent>
@@ -151,67 +128,67 @@ const GlutenFreeCairo = () => {
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants</h2>
           <div className="grid gap-6">
-            {filteredRestaurants.map((restaurant, index) => (
-              <Card key={index} className="overflow-hidden">
+            {filteredRestaurants.map((restaurant) => (
+              <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-amber-300' : ''}`}>
                 <CardContent className="p-6">
-                  <div className="flex-1">
-                    <div className="flex items-start justify-between mb-3">
-                      <div>
-                        <div className="flex items-center gap-2 mb-1 flex-wrap">
-                          <span className="text-2xl">{restaurant.emoji}</span>
-                          <span className="text-xl font-bold text-gray-900">{restaurant.name}</span>
-                        </div>
-                        <p className="text-sm text-gray-500 ml-9">{restaurant.subtitle}</p>
-                        <div className="flex items-center gap-2 mt-2 ml-9 flex-wrap">
-                          {renderStarRating(restaurant.rating)}
-                          <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
-                        </div>
+                  <div className="flex items-start justify-between mb-3">
+                    <div>
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        {restaurant.featured && <Badge className="bg-amber-100 text-amber-800 border-amber-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>}
+                        <Link to={`/gluten-free/egypt/cairo/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-amber-600 transition-colors">{restaurant.name}</Link>
                       </div>
-                      <Button variant="ghost" size="sm"><Heart className="w-4 h-4" /></Button>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-3 ml-9">
-                      {restaurant.cuisineTypes.map((cuisine, i) => (
-                        <Badge key={i} variant="outline">{cuisine}</Badge>
-                      ))}
-                      {menuTypeBadge(restaurant.menuType)}
-                    </div>
-
-                    {restaurant.certification && (
-                      <div className="bg-emerald-50 border border-emerald-100 rounded-lg px-4 py-2 mb-3 ml-9 flex items-center gap-2">
-                        <Shield className="h-4 w-4 text-emerald-600 shrink-0" />
-                        <span className="text-sm text-emerald-800">{restaurant.certification}</span>
+                      <div className="flex items-center gap-2 mb-2 flex-wrap">
+                        {renderStarRating(restaurant.rating)}
+                        <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
                       </div>
-                    )}
-
-                    <div className="bg-blue-50 border border-blue-100 rounded-lg px-4 py-2 mb-4 ml-9 flex items-center gap-2">
-                      <CheckCircle className="h-4 w-4 text-blue-600 shrink-0" />
-                      <span className="text-sm text-blue-800">{restaurant.celiacInfo}</span>
                     </div>
+                    <Button variant="ghost" size="sm"><Heart className="w-4 h-4" /></Button>
+                  </div>
 
-                    <div className="space-y-2 text-sm text-gray-600 mb-4 ml-9">
-                      <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-gray-400" /><span>{restaurant.address}, Egypt</span></div>
-                      {restaurant.hours && <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-gray-400" /><span>{restaurant.hours}</span></div>}
-                      {restaurant.phone && <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-gray-400" /><a href={`tel:${restaurant.phone}`} className="hover:text-amber-600">{restaurant.phone}</a></div>}
-                      {restaurant.website && (
-                        <div className="flex items-center gap-2">
-                          <Globe className="w-4 h-4 text-gray-400" />
-                          <a href={restaurant.website.startsWith("http") ? restaurant.website : `https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:text-blue-800">
-                            {restaurant.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
-                          </a>
-                        </div>
-                      )}
+                  <div className="flex flex-wrap gap-2 mb-3">
+                    {restaurant.cuisineTypes.map((cuisine, i) => <Badge key={i} variant="outline">{cuisine}</Badge>)}
+                    {getCeliacSafeBadge(restaurant.celiacSafe)}
+                    {getMenuTypeBadge(restaurant.menuType)}
+                  </div>
+
+                  <div className="space-y-2 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-gray-400" /><span>{restaurant.address}</span></div>
+                    <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-gray-400" /><span>{restaurant.hours}</span></div>
+                    {restaurant.phone && <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-gray-400" /><a href={`tel:${restaurant.phone}`} className="hover:text-amber-600">{restaurant.phone}</a></div>}
+                  </div>
+
+                  <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                  <div className="mb-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {restaurant.menuHighlights.map((item, i) => <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>)}
                     </div>
+                  </div>
 
-                    <div className="flex gap-3 ml-9">
-                      <Button asChild className="bg-amber-600 hover:bg-amber-700">
-                        <a href={restaurant.mapUrl} target="_blank" rel="noopener noreferrer"><Navigation className="w-4 h-4 mr-2" />Get Directions</a>
+                  {restaurant.proTip && (
+                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                      <div className="flex items-center gap-2">
+                        <MessageCircle className="w-4 h-4 text-amber-600" />
+                        <span className="font-medium text-amber-800">Pro Tip:</span>
+                        <span className="text-amber-700">{restaurant.proTip}</span>
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="flex gap-3">
+                    <Button asChild className="bg-amber-600 hover:bg-amber-700">
+                      <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer"><Navigation className="w-4 h-4 mr-2" />Get Directions</a>
+                    </Button>
+                    {restaurant.website && (
+                      <Button variant="outline" asChild>
+                        <a href={restaurant.website.startsWith("http") ? restaurant.website : `https://${restaurant.website}`} target="_blank" rel="noopener noreferrer"><Globe className="w-4 h-4 mr-2" />Website</a>
                       </Button>
-                    </div>
+                    )}
+                  </div>
 
-                    <div className="mt-6 pt-6 border-t ml-9">
-                      <RestaurantReviews restaurantName={restaurant.name} restaurantCountry="Egypt" restaurantCity="Cairo" />
-                    </div>
+                  <div className="mt-6 pt-6 border-t">
+                    <RestaurantReviews restaurantName={restaurant.name} restaurantCountry="Egypt" restaurantCity="Cairo" />
                   </div>
                 </CardContent>
               </Card>
@@ -221,10 +198,7 @@ const GlutenFreeCairo = () => {
 
         <section className="mb-12">
           <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
-              <p className="text-gray-600">Gluten-free dining in Cairo</p>
-            </CardHeader>
+            <CardHeader><CardTitle className="text-2xl">Frequently Asked Questions</CardTitle><p className="text-gray-600">Gluten-free dining in Cairo</p></CardHeader>
             <CardContent>
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((faq, index) => (
