@@ -240,6 +240,9 @@ const Kenya = () => {
         </div>
       </section>
 
+      {/* Top 25 Restaurants */}
+      <KenyaRestaurantList />
+
       {/* Trust Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
