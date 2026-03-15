@@ -307,9 +307,11 @@ const Egypt = () => {
                       ))}
                     </div>
                   </div>
-                  <Button disabled className="w-full opacity-60">
-                    Coming Soon
-                  </Button>
+                  <Link to={city.route}>
+                    <Button className="w-full">
+                      Explore {city.name}
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
