@@ -110,56 +110,56 @@ const Egypt = () => {
     {
       name: "Cairo",
       image: "photo-1572252009286-268acec5ca0a",
-      places: 28,
+      places: 13,
       rating: 4.5,
       description: "Egypt's bustling capital with diverse international dining and growing GF awareness",
-      route: "#",
-      highlights: ["Sequoia", "Kazoku", "Andrea El Mariouteya"]
+      route: "/gluten-free/egypt/cairo",
+      highlights: ["The Gluten Free House", "Keto Rockets", "Birdcage"]
     },
     {
       name: "Alexandria",
       image: "photo-1568322503122-d1d246827de2",
-      places: 14,
-      rating: 4.3,
+      places: 3,
+      rating: 4.4,
       description: "Mediterranean coastal city with fresh seafood and naturally GF Greek-influenced cuisine",
-      route: "#",
-      highlights: ["Byblos", "Fish Market", "Samakmak"]
+      route: "/gluten-free/egypt/alexandria",
+      highlights: ["Mohamed Ahmed", "Délices Patisserie", "Royal Jewel"]
     },
     {
       name: "Giza",
       image: "photo-1539650116574-8efeb43e2750",
-      places: 10,
-      rating: 4.2,
+      places: 5,
+      rating: 4.4,
       description: "Home of the Pyramids with tourist-friendly restaurants offering GF options",
-      route: "#",
-      highlights: ["Mena House", "Pyramids Lounge", "Khan El Khalili"]
+      route: "/gluten-free/egypt/giza",
+      highlights: ["The Moghul Room", "Dolato Gelateria", "Gourmet"]
     },
     {
       name: "Sharm El Sheikh",
       image: "photo-1548690590-d0b752fcf418",
-      places: 18,
-      rating: 4.6,
+      places: 7,
+      rating: 4.3,
       description: "Premier Red Sea resort with all-inclusive hotels offering excellent GF buffets",
-      route: "#",
-      highlights: ["Four Seasons", "Reef Oasis", "Camel Bar"]
+      route: "/gluten-free/egypt/sharm-el-sheikh",
+      highlights: ["Hard Rock Cafe", "Akuna Matata", "Xperience Kiroseiz"]
     },
     {
       name: "Hurghada",
       image: "photo-1580674684081-7617fbf3d745",
-      places: 15,
+      places: 12,
       rating: 4.4,
       description: "Popular beach destination where resort dining caters to gluten-free guests",
-      route: "#",
-      highlights: ["Steigenberger", "Bella Vista", "The Lodge"]
+      route: "/gluten-free/egypt/hurghada",
+      highlights: ["Nicole's Greenhouse", "Jaz Aquamarine", "German Bakery"]
     },
     {
       name: "Luxor",
       image: "photo-1568322503122-d1d246827de2",
-      places: 9,
+      places: 7,
       rating: 4.3,
       description: "Ancient city on the Nile with traditional eateries and hotel restaurants with GF menus",
-      route: "#",
-      highlights: ["Sofitel Winter Palace", "Al Moudira", "Snobs"]
+      route: "/gluten-free/egypt/luxor",
+      highlights: ["Steigenberger Resort", "Snobs Restaurant", "Café Maratonga"]
     }
   ];
 
