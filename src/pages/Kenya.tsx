@@ -8,6 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { KenyaRestaurantList } from "@/components/kenya/KenyaRestaurantList";
+import { nairobiRestaurants } from "@/data/nairobiRestaurants";
+import { mombasaRestaurants } from "@/data/mombasaRestaurants";
+import { kisumuRestaurants } from "@/data/kisumuRestaurants";
+import { nakuruRestaurants } from "@/data/nakuruRestaurants";
 
 const Kenya = () => {
   useEffect(() => {
@@ -91,39 +95,39 @@ const Kenya = () => {
     {
       name: "Nairobi",
       image: "photo-1611348524140-53c9a25263d6",
-      places: 30,
+      places: nairobiRestaurants.length,
       rating: 4.6,
       description: "Kenya's capital with a growing health-food scene and diverse international dining",
-      route: "#",
-      highlights: ["About Thyme", "Talisman", "Hemingways"]
+      route: "/gluten-free/kenya/nairobi",
+      highlights: ["About Thyme", "Talisman", "Hemingways"],
     },
     {
       name: "Mombasa",
       image: "photo-1590523741831-ab7e8b8f9c7f",
-      places: 9,
+      places: mombasaRestaurants.length,
       rating: 4.5,
       description: "Coastal city with fresh seafood and Swahili cuisine offering natural GF options",
-      route: "#",
-      highlights: ["Salty Squid", "Tribearth", "Kilifi Boatyard"]
+      route: "/gluten-free/kenya/mombasa",
+      highlights: ["Salty Squid", "Tribearth", "Kilifi Boatyard"],
     },
     {
       name: "Kisumu",
       image: "photo-1489392191049-fc10c97e64b6",
-      places: 0,
+      places: kisumuRestaurants.length,
       rating: 4.2,
       description: "Lakeside city on Lake Victoria with fresh fish and traditional Luo dishes",
-      route: "#",
-      highlights: ["Coming Soon"]
+      route: "/gluten-free/kenya/kisumu",
+      highlights: ["Dunga Hill Camp", "Acacia Premier", "Kisumu Yacht Club"],
     },
     {
       name: "Nakuru",
       image: "photo-1516426122078-c23e76801",
-      places: 8,
+      places: nakuruRestaurants.length,
       rating: 4.3,
       description: "Rift Valley hub near flamingo lakes with charming local eateries and safari lodges",
-      route: "#",
-      highlights: ["Camp Carnelley's", "Lake Nakuru Lodge", "Loisaba"]
-    }
+      route: "/gluten-free/kenya/nakuru",
+      highlights: ["Camp Carnelley's", "Lake Nakuru Lodge", "Kerio View"],
+    },
   ];
 
   const faqItems = [
@@ -197,9 +201,11 @@ const Kenya = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-green-700 hover:bg-green-50" disabled>
-                Start with Nairobi
-                <ArrowRight className="w-5 h-5 ml-2" />
+              <Button asChild size="lg" className="bg-white text-green-700 hover:bg-green-50">
+                <Link to="/gluten-free/kenya/nairobi">
+                  Start with Nairobi
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
               <AddRestaurantDialog
                 city="Kenya"
