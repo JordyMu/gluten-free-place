@@ -148,9 +148,9 @@ const Index = () => {
     {
       id: 1,
       name: "Sarah Johnson",
-      location: "New York, USA",
+      location: "Cape Town, South Africa",
       rating: 5,
-      comment: "This platform saved my European vacation! Found amazing gluten-free restaurants in every city I visited.",
+      comment: "This platform saved my African safari! Found amazing gluten-free restaurants in Cape Town and Johannesburg.",
       avatar: "photo-1494790108755-2616b612b786"
     },
     {
