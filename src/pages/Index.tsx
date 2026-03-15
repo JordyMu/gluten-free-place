@@ -100,7 +100,8 @@ const Index = () => {
     {
       id: 2,
       name: "Port Louis, Mauritius",
-      image: "photo-1580060839134-75a5edca2e99",
+      image: "/images/mauritius-aerial.jpg",
+      isLocal: true,
       places: 60,
       rating: 4.6,
       description: "Indian Ocean paradise with naturally gluten-free Creole and Indian cuisine",
@@ -344,7 +345,7 @@ const Index = () => {
               <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg`}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
+                    src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
                     alt={destination.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
