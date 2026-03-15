@@ -99,12 +99,12 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Barcelona, Spain", 
-      image: "photo-1539037116277-4db20889f2d4",
-      places: 98,
-      rating: 4.7,
-      description: "Vibrant culture with excellent gluten-free tapas and paella",
-      topCities: ["Barcelona", "Madrid", "Seville", "Valencia"]
+      name: "Port Louis, Mauritius",
+      image: "photo-1580060839134-75a5edca2e99",
+      places: 60,
+      rating: 4.6,
+      description: "Indian Ocean paradise with naturally gluten-free Creole and Indian cuisine",
+      topCities: ["Port Louis", "Grand Baie", "Flic en Flac", "Curepipe"]
     },
     {
       id: 3,
