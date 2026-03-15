@@ -384,7 +384,7 @@ const Index = () => {
                             destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
-                            destination.name.includes("Japan") ? "/japan" : "#";
+                            destination.name.includes("Kenya") ? "/gluten-free/kenya" : "#";
                           const cityParam = countryPath !== "#" ? `${countryPath}?city=${encodeURIComponent(city)}` : "#";
                           return (
                             <Link key={city} to={cityParam}>
@@ -443,10 +443,10 @@ const Index = () => {
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
-                  ) : destination.name === "Tokyo, Japan" ? (
-                    <Link to="/japan">
+                  ) : destination.name === "Nairobi, Kenya" ? (
+                    <Link to="/gluten-free/kenya">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                        Explore Japan
+                        Explore Kenya
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
