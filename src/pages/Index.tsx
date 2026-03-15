@@ -90,12 +90,12 @@ const Index = () => {
   const destinations = [
     {
       id: 1,
-      name: "Rome, Italy",
-      image: "photo-1515542622106-78bda8ba0e5b",
-      places: 142,
-      rating: 4.8,
-      description: "Ancient city with amazing gluten-free pasta and pizza options",
-      topCities: ["Rome", "Milan", "Florence", "Venice"]
+      name: "Toronto, Canada",
+      image: "photo-1517935706615-2717063c2225",
+      places: 89,
+      rating: 4.7,
+      description: "Vibrant city with dedicated gluten-free bakeries and diverse cuisine",
+      topCities: ["Toronto", "Vancouver", "Montreal", "Calgary"]
     },
     {
       id: 2,
