@@ -315,6 +315,9 @@ const Egypt = () => {
         </div>
       </section>
 
+      {/* Restaurant Directory */}
+      <EgyptRestaurantList />
+
       {/* Intro Section */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
