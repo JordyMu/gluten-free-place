@@ -401,10 +401,10 @@ const Index = () => {
                     </div>
                   )}
 
-                  {destination.name === "Rome, Italy" ? (
-                    <Link to="/italy">
+                  {destination.name === "Toronto, Canada" ? (
+                    <Link to="/canada">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                        Explore Italy
+                        Explore Canada
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
