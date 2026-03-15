@@ -109,7 +109,7 @@ const Index = () => {
     {
       id: 3,
       name: "Cape Town, South Africa",
-      image: "src/assets/cape-town-table-mountain.jpg",
+      image: "photo-1580060839134-75a5edca2e99",
       places: 45,
       rating: 4.8,
       description: "Stunning city with dedicated gluten-free bakeries and restaurants",
