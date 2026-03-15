@@ -345,7 +345,7 @@ const Index = () => {
               <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg`}>
                 <div className="relative overflow-hidden rounded-t-lg">
                   <img 
-                    src={`https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
+                    src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
                     alt={destination.name}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
