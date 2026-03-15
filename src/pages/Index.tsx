@@ -90,12 +90,12 @@ const Index = () => {
   const destinations = [
     {
       id: 1,
-      name: "Rome, Italy",
-      image: "photo-1515542622106-78bda8ba0e5b",
-      places: 142,
-      rating: 4.8,
-      description: "Ancient city with amazing gluten-free pasta and pizza options",
-      topCities: ["Rome", "Milan", "Florence", "Venice"]
+      name: "Toronto, Canada",
+      image: "photo-1517935706615-2717063c2225",
+      places: 89,
+      rating: 4.7,
+      description: "Vibrant city with dedicated gluten-free bakeries and diverse cuisine",
+      topCities: ["Toronto", "Vancouver", "Montreal", "Calgary"]
     },
     {
       id: 2,
@@ -379,7 +379,7 @@ const Index = () => {
                       <p className="text-sm text-gray-500 mb-2">Top Cities:</p>
                       <div className="flex flex-wrap gap-1">
                         {destination.topCities.map((city) => {
-                          const countryPath = destination.name.includes("Italy") ? "/italy" :
+                          const countryPath = destination.name.includes("Canada") ? "/canada" :
                             destination.name.includes("Mauritius") ? "/gluten-free/mauritius" :
                             destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
@@ -401,10 +401,10 @@ const Index = () => {
                     </div>
                   )}
 
-                  {destination.name === "Rome, Italy" ? (
-                    <Link to="/italy">
+                  {destination.name === "Toronto, Canada" ? (
+                    <Link to="/canada">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                        Explore Italy
+                        Explore Canada
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
