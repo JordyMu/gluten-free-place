@@ -380,7 +380,7 @@ const Index = () => {
                         {destination.topCities.map((city) => {
                           const countryPath = destination.name.includes("Italy") ? "/italy" :
                             destination.name.includes("Spain") ? "/spain" :
-                            destination.name.includes("USA") ? "/usa" :
+                            destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
                             destination.name.includes("Japan") ? "/japan" : "#";
