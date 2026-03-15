@@ -27,6 +27,7 @@ const celiacLabel = (type: string) => {
 const allRestaurants: Restaurant[] = [
   ...nairobiRestaurants,
   ...mombasaRestaurants,
+  ...kisumuRestaurants,
   ...nakuruRestaurants,
   ...kenyaSafariRestaurants,
 ]
