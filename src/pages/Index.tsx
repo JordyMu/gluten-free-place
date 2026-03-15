@@ -384,7 +384,7 @@ const Index = () => {
                             destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
-                            destination.name.includes("Japan") ? "/japan" : "#";
+                            destination.name.includes("Kenya") ? "/gluten-free/kenya" : "#";
                           const cityParam = countryPath !== "#" ? `${countryPath}?city=${encodeURIComponent(city)}` : "#";
                           return (
                             <Link key={city} to={cityParam}>
