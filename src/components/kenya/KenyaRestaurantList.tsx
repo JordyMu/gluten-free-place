@@ -24,6 +24,13 @@ const celiacLabel = (type: string) => {
   return "Celiac Protocols in Place";
 };
 
+const citySlugMap: Record<string, string> = {
+  Nairobi: "nairobi",
+  Mombasa: "mombasa",
+  Kisumu: "kisumu",
+  Nakuru: "nakuru",
+};
+
 // Combine all restaurants, sort by rating desc, take top 25
 const allRestaurants: Restaurant[] = [
   ...nairobiRestaurants,
