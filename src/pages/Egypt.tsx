@@ -234,9 +234,11 @@ const Egypt = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-amber-700 hover:bg-amber-50" disabled>
-                Start with Cairo — Coming Soon
-                <ArrowRight className="w-5 h-5 ml-2" />
+            <Button size="lg" className="bg-white text-amber-700 hover:bg-amber-50" asChild>
+                <Link to="/gluten-free/egypt/cairo">
+                  Start with Cairo
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
               </Button>
               <AddRestaurantDialog
                 city="Egypt"
