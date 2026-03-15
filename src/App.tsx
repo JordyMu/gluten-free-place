@@ -17,6 +17,14 @@ const Spain = lazy(() => import("./pages/Spain"));
 const France = lazy(() => import("./pages/France"));
 const Australia = lazy(() => import("./pages/Australia"));
 const UnitedKingdom = lazy(() => import("./pages/UnitedKingdom"));
+const GlutenFreeLondon = lazy(() => import("./pages/uk/GlutenFreeLondon"));
+const GlutenFreeEdinburgh = lazy(() => import("./pages/uk/GlutenFreeEdinburgh"));
+const GlutenFreeManchester = lazy(() => import("./pages/uk/GlutenFreeManchester"));
+const GlutenFreeBirmingham = lazy(() => import("./pages/uk/GlutenFreeBirmingham"));
+const LondonRestaurantPage = lazy(() => import("./pages/uk/LondonRestaurantPage"));
+const EdinburghRestaurantPage = lazy(() => import("./pages/uk/EdinburghRestaurantPage"));
+const ManchesterRestaurantPage = lazy(() => import("./pages/uk/ManchesterRestaurantPage"));
+const BirminghamRestaurantPage = lazy(() => import("./pages/uk/BirminghamRestaurantPage"));
 const Canada = lazy(() => import("./pages/Canada"));
 const Ireland = lazy(() => import("./pages/Ireland"));
 const Germany = lazy(() => import("./pages/Germany"));
@@ -120,7 +128,16 @@ const App = () => (
               <Route path="/spain" element={<Spain />} />
               <Route path="/france" element={<France />} />
               <Route path="/australia" element={<Australia />} />
+              <Route path="/gluten-free/united-kingdom" element={<UnitedKingdom />} />
               <Route path="/united-kingdom" element={<UnitedKingdom />} />
+              <Route path="/gluten-free/united-kingdom/london" element={<GlutenFreeLondon />} />
+              <Route path="/gluten-free/united-kingdom/london/:slug" element={<LondonRestaurantPage />} />
+              <Route path="/gluten-free/united-kingdom/edinburgh" element={<GlutenFreeEdinburgh />} />
+              <Route path="/gluten-free/united-kingdom/edinburgh/:slug" element={<EdinburghRestaurantPage />} />
+              <Route path="/gluten-free/united-kingdom/manchester" element={<GlutenFreeManchester />} />
+              <Route path="/gluten-free/united-kingdom/manchester/:slug" element={<ManchesterRestaurantPage />} />
+              <Route path="/gluten-free/united-kingdom/birmingham" element={<GlutenFreeBirmingham />} />
+              <Route path="/gluten-free/united-kingdom/birmingham/:slug" element={<BirminghamRestaurantPage />} />
               <Route path="/canada" element={<Canada />} />
               <Route path="/ireland" element={<Ireland />} />
               <Route path="/germany" element={<Germany />} />
