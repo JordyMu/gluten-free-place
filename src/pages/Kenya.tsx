@@ -13,25 +13,25 @@ const cities = [
   {
     name: "Nairobi",
     image: "photo-1611348524140-53c9a25263d6",
-    places: 14,
-    rating: 4.5,
+    places: 30,
+    rating: 4.6,
     description: "Kenya's capital with a growing health-food scene and diverse international dining",
     route: "#",
-    highlights: ["Coming Soon"]
+    highlights: ["About Thyme", "Talisman", "Hemingways"]
   },
   {
     name: "Mombasa",
     image: "photo-1590523741831-ab7e8b8f9c7f",
-    places: 8,
-    rating: 4.4,
+    places: 9,
+    rating: 4.5,
     description: "Coastal city with fresh seafood and Swahili cuisine offering natural GF options",
     route: "#",
-    highlights: ["Coming Soon"]
+    highlights: ["Salty Squid", "Tribearth", "Kilifi Boatyard"]
   },
   {
     name: "Kisumu",
     image: "photo-1489392191049-fc10c97e64b6",
-    places: 5,
+    places: 0,
     rating: 4.2,
     description: "Lakeside city on Lake Victoria with fresh fish and traditional Luo dishes",
     route: "#",
@@ -39,12 +39,12 @@ const cities = [
   },
   {
     name: "Nakuru",
-    image: "photo-1516426122078-c23e76319801",
-    places: 4,
-    rating: 4.1,
-    description: "Rift Valley hub near flamingo lakes with charming local eateries",
+    image: "photo-1516426122078-c23e76801",
+    places: 8,
+    rating: 4.3,
+    description: "Rift Valley hub near flamingo lakes with charming local eateries and safari lodges",
     route: "#",
-    highlights: ["Coming Soon"]
+    highlights: ["Camp Carnelley's", "Lake Nakuru Lodge", "Loisaba"]
   }
 ];
 
