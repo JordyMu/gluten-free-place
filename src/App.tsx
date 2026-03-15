@@ -63,6 +63,12 @@ const GlutenFreeGiza = lazy(() => import("./pages/egypt/GlutenFreeGiza"));
 const GlutenFreeSharmElSheikh = lazy(() => import("./pages/egypt/GlutenFreeSharmElSheikh"));
 const GlutenFreeHurghada = lazy(() => import("./pages/egypt/GlutenFreeHurghada"));
 const GlutenFreeLuxor = lazy(() => import("./pages/egypt/GlutenFreeLuxor"));
+const CairoRestaurantPage = lazy(() => import("./pages/egypt/CairoRestaurantPage"));
+const AlexandriaRestaurantPage = lazy(() => import("./pages/egypt/AlexandriaRestaurantPage"));
+const GizaRestaurantPage = lazy(() => import("./pages/egypt/GizaRestaurantPage"));
+const SharmRestaurantPage = lazy(() => import("./pages/egypt/SharmRestaurantPage"));
+const HurghadaRestaurantPage = lazy(() => import("./pages/egypt/HurghadaRestaurantPage"));
+const LuxorRestaurantPage = lazy(() => import("./pages/egypt/LuxorRestaurantPage"));
 const Mauritius = lazy(() => import("./pages/Mauritius"));
 const Botswana = lazy(() => import("./pages/Botswana"));
 const Auth = lazy(() => import("./pages/Auth"));
@@ -141,6 +147,12 @@ const App = () => (
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
               <Route path="/gluten-free/egypt/hurghada" element={<GlutenFreeHurghada />} />
               <Route path="/gluten-free/egypt/luxor" element={<GlutenFreeLuxor />} />
+              <Route path="/gluten-free/egypt/cairo/:slug" element={<CairoRestaurantPage />} />
+              <Route path="/gluten-free/egypt/alexandria/:slug" element={<AlexandriaRestaurantPage />} />
+              <Route path="/gluten-free/egypt/giza/:slug" element={<GizaRestaurantPage />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/:slug" element={<SharmRestaurantPage />} />
+              <Route path="/gluten-free/egypt/hurghada/:slug" element={<HurghadaRestaurantPage />} />
+              <Route path="/gluten-free/egypt/luxor/:slug" element={<LuxorRestaurantPage />} />
               <Route path="/gluten-free/mauritius" element={<Mauritius />} />
               <Route path="/gluten-free/mauritius/grand-baie" element={<GlutenFreeGrandBaie />} />
               <Route path="/gluten-free/mauritius/grand-baie/:slug" element={<GrandBaieRestaurantPage />} />
