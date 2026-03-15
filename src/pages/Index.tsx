@@ -108,12 +108,12 @@ const Index = () => {
     },
     {
       id: 3,
-      name: "New York, USA",
-      image: "photo-1496442226666-8d4d0e62e6e9",
-      places: 234,
-      rating: 4.6,
-      description: "The city that never sleeps offers endless gluten-free dining",
-      topCities: ["New York", "Los Angeles", "Chicago", "Miami"]
+      name: "Cape Town, South Africa",
+      image: "src/assets/cape-town-table-mountain.jpg",
+      places: 45,
+      rating: 4.8,
+      description: "Stunning city with dedicated gluten-free bakeries and restaurants",
+      topCities: ["Cape Town", "Johannesburg", "Durban", "Pretoria"]
     },
     {
       id: 4,
