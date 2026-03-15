@@ -100,7 +100,8 @@ const Index = () => {
     {
       id: 2,
       name: "Port Louis, Mauritius",
-      image: "photo-1580060839134-75a5edca2e99",
+      image: "/images/mauritius-aerial.jpg",
+      isLocal: true,
       places: 60,
       rating: 4.6,
       description: "Indian Ocean paradise with naturally gluten-free Creole and Indian cuisine",
