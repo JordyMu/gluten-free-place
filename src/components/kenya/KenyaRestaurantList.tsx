@@ -62,6 +62,7 @@ export const KenyaRestaurantList = () => {
         <div className="max-w-3xl mx-auto space-y-5">
           {allRestaurants.map((restaurant, index) => {
             const label = menuTypeLabel(restaurant.menuType);
+            const citySlug = citySlugMap[restaurant.city] || "";
             return (
               <Card
                 key={restaurant.slug}
@@ -72,7 +73,16 @@ export const KenyaRestaurantList = () => {
                   <div className="mb-3">
                     <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
                        <span className="text-2xl">{restaurant.icon}</span>
-                       <span>{restaurant.name}</span>
+                       {citySlug ? (
+                         <Link
+                           to={`/gluten-free/kenya/${citySlug}/${restaurant.slug}`}
+                           className="hover:text-green-700 transition-colors"
+                         >
+                           {restaurant.name}
+                         </Link>
+                       ) : (
+                         <span>{restaurant.name}</span>
+                       )}
                        {index < 3 && (
                          <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
                            Top {index + 1}
