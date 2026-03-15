@@ -99,12 +99,12 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Barcelona, Spain", 
-      image: "photo-1539037116277-4db20889f2d4",
-      places: 98,
-      rating: 4.7,
-      description: "Vibrant culture with excellent gluten-free tapas and paella",
-      topCities: ["Barcelona", "Madrid", "Seville", "Valencia"]
+      name: "Port Louis, Mauritius",
+      image: "photo-1580060839134-75a5edca2e99",
+      places: 60,
+      rating: 4.6,
+      description: "Indian Ocean paradise with naturally gluten-free Creole and Indian cuisine",
+      topCities: ["Port Louis", "Grand Baie", "Flic en Flac", "Curepipe"]
     },
     {
       id: 3,
@@ -155,10 +155,10 @@ const Index = () => {
     },
     {
       id: 2,
-      name: "Marco Rodriguez",
-      location: "Barcelona, Spain", 
+      name: "Sophie Martin",
+      location: "Grand Baie, Mauritius",
       rating: 5,
-      comment: "As someone with celiac disease, I never thought I could enjoy traveling. This changed everything!",
+      comment: "Found incredible gluten-free options in Mauritius! The Creole cuisine is naturally celiac-friendly and delicious.",
       avatar: "photo-1507003211169-0a1dd7228f2d"
     },
     {
@@ -379,7 +379,7 @@ const Index = () => {
                       <div className="flex flex-wrap gap-1">
                         {destination.topCities.map((city) => {
                           const countryPath = destination.name.includes("Italy") ? "/italy" :
-                            destination.name.includes("Spain") ? "/spain" :
+                            destination.name.includes("Mauritius") ? "/gluten-free/mauritius" :
                             destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
                             destination.name.includes("Australia") ? "/australia" :
                             destination.name.includes("UK") ? "/united-kingdom" :
@@ -418,6 +418,13 @@ const Index = () => {
                     <Link to="/gluten-free/south-africa">
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
                         Explore South Africa
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : destination.name === "Port Louis, Mauritius" ? (
+                    <Link to="/gluten-free/mauritius">
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
+                        Explore Mauritius
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
                     </Link>
