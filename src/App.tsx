@@ -124,7 +124,6 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
           <Suspense fallback={<PageLoader />}>
             <GoogleAnalytics />
             <Routes>
