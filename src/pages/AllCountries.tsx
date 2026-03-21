@@ -52,6 +52,12 @@ const AllCountries = () => {
   };
 
   return (
+    <>
+    <SEOHead
+      title="All 156 Countries with Gluten-Free Restaurants | GlutenFreePlace"
+      description="Complete directory of gluten-free restaurants in 156 countries. Find celiac-safe dining options across Europe, Americas, Asia, Africa & Oceania."
+      canonical="/all-countries"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
