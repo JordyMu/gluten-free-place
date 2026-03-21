@@ -12,6 +12,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
 import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
+import { SEOHead } from "@/components/SEOHead";
 
 interface RestaurantWithDistance extends Restaurant {
   distance?: number;
@@ -19,16 +20,7 @@ interface RestaurantWithDistance extends Restaurant {
 
 const GlutenFreePretoria = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Pretoria | Celiac-Safe Dining Guide 2026";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Pretoria, South Africa. Verified celiac-safe dining options in Menlyn, Brooklyn, Lynnwood & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Pretoria | Celiac-Safe Dining Guide");
     }
@@ -206,6 +198,12 @@ const GlutenFreePretoria = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in Pretoria | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants in Pretoria, South Africa. Verified celiac-safe dining options in Menlyn, Brooklyn, Lynnwood & more. Real reviews from GF travelers."
+        canonical="/gluten-free/south-africa/pretoria"
+      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -556,6 +554,8 @@ const GlutenFreePretoria = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

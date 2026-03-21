@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
 import { quatreBornesRestaurants } from "@/data/quatreBornesRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 
 const GlutenFreeQuatreBornes = () => {
@@ -45,27 +46,7 @@ const GlutenFreeQuatreBornes = () => {
       answer: "Quatre Bornes is centrally located and easily accessible from both the east and west coasts. It's about 20 minutes from Flic en Flac and 30 minutes from Grand Baie by car."
     }
   ];
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Quatre Bornes, Mauritius | Celiac-Safe Dining Guide 2026";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Quatre Bornes, Mauritius. Verified celiac-safe dining with Indian, Creole, and Middle Eastern options.");
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in Quatre Bornes | Celiac-Safe Dining Guide");
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", "Discover verified gluten-free restaurants in Quatre Bornes, Mauritius. Browse listings and find safe dining in this bustling market town.");
-
-    const existingSchema = document.querySelector('script[data-schema="quatre-bornes-gf"]');
-    if (existingSchema) existingSchema.remove();
-    const schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.setAttribute('data-schema', 'quatre-bornes-gf');
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org", "@type": "CollectionPage",
-      "name": "Gluten-Free Restaurants in Quatre Bornes, Mauritius",
-      "url": "https://glutenfreeplace.org/gluten-free/mauritius/quatre-bornes",
-      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+,
         { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
         { "@type": "ListItem", "position": 3, "name": "Quatre Bornes", "item": "https://glutenfreeplace.org/gluten-free/mauritius/quatre-bornes" }
       ]}
@@ -153,6 +134,12 @@ const GlutenFreeQuatreBornes = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Quatre Bornes, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Quatre Bornes, Mauritius. Verified celiac-safe dining with Indian, Creole, and Middle Eastern options."
+      canonical="/gluten-free/mauritius/quatre-bornes"
+    />
     <div className="min-h-screen bg-gradient-to-b from-rose-50 to-white">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
@@ -285,6 +272,8 @@ const GlutenFreeQuatreBornes = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

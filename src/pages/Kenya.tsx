@@ -12,17 +12,10 @@ import { nairobiRestaurants } from "@/data/nairobiRestaurants";
 import { mombasaRestaurants } from "@/data/mombasaRestaurants";
 import { kisumuRestaurants } from "@/data/kisumuRestaurants";
 import { nakuruRestaurants } from "@/data/nakuruRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const Kenya = () => {
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Kenya | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants across Kenya. Verified celiac-safe dining in Nairobi, Mombasa, Nakuru & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Kenya | Celiac-Safe Dining Guide");
     }
@@ -158,6 +151,12 @@ const Kenya = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Kenya | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across Kenya. Verified celiac-safe dining in Nairobi, Mombasa, Nakuru & more. Real reviews from GF travelers."
+      canonical="/gluten-free/kenya"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
@@ -470,6 +469,8 @@ const Kenya = () => {
         </div>
       </footer>
     </div>
+
+    </>
   );
 };
 
