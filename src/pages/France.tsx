@@ -1158,12 +1158,6 @@ const France = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in France | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities."
-        canonical="/france"
-      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star key={star} className={`h-4 w-4 ${star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
