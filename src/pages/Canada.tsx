@@ -8,17 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { CanadaRestaurantList } from "@/components/canada/CanadaRestaurantList";
+import { SEOHead } from "@/components/SEOHead";
 
 const Canada = () => {
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Canada | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants across Canada. Verified celiac-safe dining in Toronto, Vancouver, Montreal, Calgary & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Canada | Celiac-Safe Dining Guide");
     }
@@ -188,6 +181,12 @@ const Canada = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Canada | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across Canada. Verified celiac-safe dining in Toronto, Vancouver, Montreal, Calgary & more. Real reviews from GF travelers."
+      canonical="/gluten-free/canada"
+    />
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
       <header className="bg-white/80 backdrop-blur-md border-b border-red-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -415,6 +414,8 @@ const Canada = () => {
         </div>
       </section>
     </div>
+
+    </>
   );
 };
 

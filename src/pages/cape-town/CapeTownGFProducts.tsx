@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import CapeTownMap from "@/components/maps/CapeTownMap";
 import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { capeTownRestaurants, Restaurant } from "@/data/capeTownRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const CapeTownGFProducts = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -121,6 +122,12 @@ const CapeTownGFProducts = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Products in Cape Town | GlutenFreePlace"
+        description="Discover where to buy gluten-free products in Cape Town, South Africa."
+        canonical="/gluten-free/south-africa/cape-town/gluten-free-products"
+      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -465,6 +472,8 @@ const CapeTownGFProducts = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import mahebourgHero from "@/assets/mahebourg-mauritius.jpg";
 import { mahebourgRestaurants } from "@/data/mahebourgRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 
 const GlutenFreeMahebourg = () => {
@@ -45,27 +46,7 @@ const GlutenFreeMahebourg = () => {
       answer: "French and Creole are predominantly spoken in Mahebourg, with some English. Say 'sans gluten' in French or 'pa met la farine' in Creole. Local restaurants may be less familiar with celiac disease, so explain clearly."
     }
   ];
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Mahebourg, Mauritius | Celiac-Safe Dining Guide 2026";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Find the best gluten-free restaurants in Mahebourg, Mauritius. Verified celiac-safe dining on the southeast coast. Fresh seafood and Creole cuisine.");
-    const ogT = document.querySelector('meta[property="og:title"]');
-    if (ogT) ogT.setAttribute("content", "Gluten-Free Restaurants in Mahebourg | Celiac-Safe Dining Guide");
-    const ogD = document.querySelector('meta[property="og:description"]');
-    if (ogD) ogD.setAttribute("content", "Discover verified gluten-free restaurants in Mahebourg, Mauritius. Browse listings and find safe dining on the historic southeast coast.");
-
-    const prev = document.querySelector('script[data-schema="mahebourg-gf"]');
-    if (prev) prev.remove();
-    const schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.setAttribute('data-schema', 'mahebourg-gf');
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org", "@type": "CollectionPage",
-      "name": "Gluten-Free Restaurants in Mahebourg, Mauritius",
-      "url": "https://glutenfreeplace.org/gluten-free/mauritius/mahebourg",
-      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+,
         { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
         { "@type": "ListItem", "position": 3, "name": "Mahebourg", "item": "https://glutenfreeplace.org/gluten-free/mauritius/mahebourg" }
       ]}
@@ -153,6 +134,12 @@ const GlutenFreeMahebourg = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Mahebourg, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Mahebourg, Mauritius. Verified celiac-safe dining on the southeast coast. Fresh seafood and Creole cuisine."
+      canonical="/gluten-free/mauritius/mahebourg"
+    />
     <div className="min-h-screen bg-gradient-to-b from-cyan-50 to-white">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
@@ -286,6 +273,8 @@ const GlutenFreeMahebourg = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

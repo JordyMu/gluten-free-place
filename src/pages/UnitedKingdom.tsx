@@ -8,34 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { UKRestaurantList } from "@/components/uk/UKRestaurantList";
+import { SEOHead } from "@/components/SEOHead";
 
 const UnitedKingdom = () => {
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in the UK | Celiac-Safe Dining Guide 2026";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) metaDescription.setAttribute("content", "Find the best gluten-free restaurants across the UK. Coeliac UK accredited pubs, bakeries & restaurants in London, Manchester, Edinburgh, Birmingham.");
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in the UK | Celiac-Safe Dining Guide");
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) ogDescription.setAttribute("content", "Discover verified gluten-free British dining. Browse Coeliac UK accredited restaurants, dedicated bakeries, and gastropubs across Britain.");
-
-    const existingSchema = document.querySelector('script[data-schema="uk-gf"]');
-    if (existingSchema) existingSchema.remove();
-    const schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.setAttribute('data-schema', 'uk-gf');
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Gluten-Free Restaurants in the United Kingdom",
-      "description": "Find the best gluten-free restaurants across the UK.",
-      "url": "https://glutenfreeplace.org/gluten-free/united-kingdom",
-      "mainEntity": {
-        "@type": "ItemList",
-        "name": "Top Gluten-Free Cities in the UK",
-        "numberOfItems": 4,
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "London", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/london" },
+,
           { "@type": "ListItem", "position": 2, "name": "Edinburgh", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/edinburgh" },
           { "@type": "ListItem", "position": 3, "name": "Manchester", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/manchester" },
           { "@type": "ListItem", "position": 4, "name": "Birmingham", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/birmingham" },
@@ -70,6 +46,12 @@ const UnitedKingdom = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in the UK | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across the UK. Coeliac UK accredited pubs, bakeries & restaurants in London, Manchester, Edinburgh, Birmingham."
+      canonical="/gluten-free/united-kingdom"
+    />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
       <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex items-center justify-between">
@@ -287,6 +269,8 @@ const UnitedKingdom = () => {
         </div>
       </footer>
     </div>
+
+    </>
   );
 };
 

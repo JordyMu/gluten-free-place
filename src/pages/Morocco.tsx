@@ -4,8 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const cities = [
   {
     name: "Marrakesh",
@@ -81,17 +80,15 @@ const faqs = [
 ];
 
 const Morocco = () => {
-  useCountrySEO({
-    countryName: "Morocco",
-    countrySlug: "gluten-free/morocco",
-    description: "Discover the best gluten-free restaurants, riads, and celiac-safe dining options across Morocco. From Marrakesh tagines to Casablanca's modern eateries — your complete guide to gluten-free travel in Morocco.",
-    ogDescription: "Your complete guide to gluten-free dining in Morocco. Find celiac-safe restaurants in Marrakesh, Casablanca, Rabat, Fes, Agadir & Tangier.",
-    cities: cities.map((c) => ({ name: c.name })),
-    faqs,
-    schemaId: "morocco",
-  });
+  
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Morocco | Celiac-Safe Dining Guide 2026"
+      description="Discover the best gluten-free restaurants, riads, and celiac-safe dining options across Morocco. From Marrakesh tagines to Casablanca's modern eateries — your complete guide to gluten-free travel in Morocco."
+      canonical="/gluten-free/morocco"
+    />
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="relative py-12 overflow-hidden">
@@ -246,6 +243,7 @@ const Morocco = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

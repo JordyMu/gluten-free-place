@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { capeTownRestaurants } from "@/data/capeTownRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const CapeTownStreetFood = () => {
   const streetFoodVenues = capeTownRestaurants.filter(
@@ -11,6 +12,12 @@ const CapeTownStreetFood = () => {
   );
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Street Food in Cape Town | GlutenFreePlace"
+      description="Discover gluten-free street food vendors in Cape Town. Safe celiac-friendly options for food lovers."
+      canonical="/gluten-free/south-africa/cape-town/street-food"
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
@@ -109,6 +116,8 @@ const CapeTownStreetFood = () => {
         )}
       </main>
     </div>
+
+    </>
   );
 };
 

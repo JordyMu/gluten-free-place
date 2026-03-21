@@ -10,6 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { cairoRestaurants } from "@/data/egyptRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const getCeliacSafeBadge = (level: string) => {
   switch (level) {
@@ -43,12 +44,7 @@ const renderStarRating = (rating: number) => (
 const GlutenFreeCairo = () => {
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Cairo | Celiac-Safe Dining Guide 2026";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) meta.setAttribute("content", "Find the best gluten-free restaurants in Cairo, Egypt. Verified celiac-safe dining options in Zamalek, Nasr City, Maadi & more.");
-  }, []);
+, []);
 
   const filteredRestaurants = useMemo(() => {
     return cairoRestaurants.filter(r => {
@@ -67,6 +63,12 @@ const GlutenFreeCairo = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Cairo, Egypt | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Cairo, Egypt. Verified celiac-safe dining options. Real reviews from GF travelers."
+      canonical="/gluten-free/egypt/cairo"
+    />
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
@@ -223,6 +225,8 @@ const GlutenFreeCairo = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

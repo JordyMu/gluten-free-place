@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { capeTownRestaurants } from "@/data/capeTownRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const CapeTownBakeries = () => {
   const bakeryVenues = capeTownRestaurants.filter(
@@ -11,6 +12,12 @@ const CapeTownBakeries = () => {
   );
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Bakeries in Cape Town | GlutenFreePlace"
+      description="Find dedicated gluten-free bakeries in Cape Town. Fresh bread, pastries, and cakes safe for celiacs."
+      canonical="/gluten-free/south-africa/cape-town/bakeries"
+    />
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
@@ -109,6 +116,8 @@ const CapeTownBakeries = () => {
         )}
       </main>
     </div>
+
+    </>
   );
 };
 

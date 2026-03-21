@@ -12,20 +12,12 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import grandBaieHero from "@/assets/grand-baie-mauritius.jpg";
 
 import { grandBaieRestaurants, MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 type Restaurant = MauritiusCityRestaurant;
 const GlutenFreeGrandBaie = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Grand Baie, Mauritius | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Grand Baie, Mauritius. Verified celiac-safe dining options from Italian to Thai cuisine. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Grand Baie | Celiac-Safe Dining Guide");
     }
@@ -216,6 +208,12 @@ const GlutenFreeGrandBaie = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Grand Baie, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Grand Baie, Mauritius. Verified celiac-safe dining options from Italian to Thai cuisine. Real reviews from GF travelers."
+      canonical="/gluten-free/mauritius/grand-baie"
+    />
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
@@ -521,6 +519,8 @@ const GlutenFreeGrandBaie = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

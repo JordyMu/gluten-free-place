@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 
 import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { SEOHead } from "@/components/SEOHead";
 
 interface Restaurant {
   name: string;
@@ -38,16 +39,7 @@ interface Restaurant {
 
 const GlutenFreeCapeTown = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining Guide 2026";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Cape Town, South Africa. Verified celiac-safe dining options in the CBD, Waterfront, Camps Bay & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining Guide");
     }
@@ -478,6 +470,12 @@ const GlutenFreeCapeTown = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants in Cape Town, South Africa. Verified celiac-safe dining options in the CBD, Waterfront, Camps Bay & more. Real reviews from GF travelers."
+        canonical="/gluten-free/south-africa/cape-town"
+      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -934,6 +932,8 @@ const GlutenFreeCapeTown = () => {
 
       </main>
     </div>
+
+    </>
   );
 };
 

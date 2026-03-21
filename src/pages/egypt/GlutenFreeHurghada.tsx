@@ -11,6 +11,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { hurghadaRestaurants } from "@/data/egyptRestaurants";
 import type { EgyptRestaurant } from "@/data/egyptRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const getCeliacSafeBadge = (level: string) => { switch (level) { case "dedicated-facility": return <Badge className="bg-green-100 text-green-800 border-green-300"><Shield className="w-3 h-3 mr-1" />Dedicated GF</Badge>; case "protocols-in-place": return <Badge className="bg-blue-100 text-blue-800 border-blue-300"><CheckCircle className="w-3 h-3 mr-1" />Careful Handling</Badge>; default: return null; }};
 const getMenuTypeBadge = (type: string) => { switch (type) { case "fully-gluten-free": return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% GF</Badge>; case "mixed-menu": return <Badge className="bg-amber-100 text-amber-800 border-amber-300">GF Options</Badge>; default: return null; }};
@@ -37,13 +38,19 @@ const renderCard = (r: EgyptRestaurant) => (
 const GlutenFreeHurghada = () => {
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-  useEffect(() => { document.title = "Gluten-Free Restaurants in Hurghada | Red Sea Celiac-Safe Dining 2026"; }, []);
+, []);
   const filtered = useMemo(() => hurghadaRestaurants.filter(r => { const mm = menuFilter === "all" || r.menuType === menuFilter; const ms = searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase())); return mm && ms; }), [menuFilter, searchQuery]);
   const faqItems = [
     { question: "Is Hurghada celiac-friendly?", answer: "Very much so! Nicole's Greenhouse is especially recommended, and resorts like Jaz Aquamarine have dedicated GF buffet stations." },
     { question: "What about El Gouna?", answer: "El Gouna has excellent options including German Bakery (GF bread), Sheraton Miramar, and Cook's Club." },
   ];
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Hurghada, Egypt | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Hurghada, Egypt. Verified celiac-safe dining in the Red Sea resort area."
+      canonical="/gluten-free/egypt/hurghada"
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       <header className="bg-white shadow-sm border-b"><div className="container mx-auto px-4 py-4"><Link to="/gluten-free/egypt" className="inline-flex items-center text-orange-600 hover:text-orange-700"><ArrowLeft className="w-4 h-4 mr-2" /> Back to Egypt</Link></div></header>
       <section className="relative text-white py-16 bg-gradient-to-r from-orange-600 to-red-500"><div className="absolute inset-0 bg-black/20" /><div className="container mx-auto px-4 text-center relative z-10"><span className="text-6xl mb-4 block">🤿</span><h1 className="text-4xl md:text-5xl font-bold mb-4">Gluten-Free in Hurghada & El Gouna</h1><p className="text-xl text-orange-100 mb-8 max-w-3xl mx-auto">Beach resort dining with dedicated GF stations.</p><AddRestaurantDialog city="Hurghada" triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" /></div></section>
@@ -57,6 +64,8 @@ const GlutenFreeHurghada = () => {
         <section><Card className="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0"><CardContent className="p-8 text-center"><h2 className="text-2xl font-bold mb-4">Know a Great GF Spot in Hurghada?</h2><p className="text-orange-100 mb-6">Help fellow celiacs.</p><Button size="lg" className="bg-white text-orange-600 hover:bg-orange-50"><Plus className="w-5 h-5 mr-2" />Add a Restaurant</Button></CardContent></Card></section>
       </main>
     </div>
+
+    </>
   );
 };
 export default GlutenFreeHurghada;

@@ -13,8 +13,8 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
 import { MauritiusRestaurantList } from "@/components/mauritius/MauritiusRestaurantList";
+import { SEOHead } from "@/components/SEOHead";
 
 const cities = [
   {
@@ -106,24 +106,15 @@ const faqItems = [
 ];
 
 const Mauritius = () => {
-  useCountrySEO({
-    countryName: "Mauritius",
-    countrySlug: "gluten-free/mauritius",
-    description: "Find the best gluten-free restaurants in Mauritius. Celiac-safe dining in Port Louis, Grand Baie, Flic en Flac & more. Discover naturally GF Mauritian cuisine.",
-    ogDescription: "Discover verified gluten-free and celiac-safe restaurants across Mauritius. Browse by city, read real reviews, and find safe dining on this Indian Ocean paradise.",
-    cities: [
-      { name: "Port Louis" },
-      { name: "Grand Baie" },
-      { name: "Flic en Flac" },
-      { name: "Curepipe" },
-      { name: "Quatre Bornes" },
-      { name: "Mahebourg" }
-    ],
-    faqs: faqItems,
-    schemaId: "mauritius"
-  });
+  
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Mauritius. Celiac-safe dining in Port Louis, Grand Baie, Flic en Flac & more. Discover naturally GF Mauritian cuisine."
+      canonical="/gluten-free/mauritius"
+    />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-teal-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
@@ -363,6 +354,7 @@ const Mauritius = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

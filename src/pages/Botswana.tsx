@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const cities = [
   {
     name: "Gaborone",
@@ -93,24 +92,15 @@ const faqItems = [
 ];
 
 const Botswana = () => {
-  useCountrySEO({
-    countryName: "Botswana",
-    countrySlug: "gluten-free/botswana",
-    description: "Find the best gluten-free restaurants in Botswana. Celiac-safe dining in Gaborone, Maun, Kasane & more. Discover naturally GF Tswana cuisine and safari lodge dining.",
-    ogDescription: "Discover verified gluten-free and celiac-safe restaurants across Botswana. Browse by city, read real reviews, and find safe dining from Gaborone to the Okavango Delta.",
-    cities: [
-      { name: "Gaborone" },
-      { name: "Francistown" },
-      { name: "Maun" },
-      { name: "Kasane" },
-      { name: "Palapye" },
-      { name: "Serowe" }
-    ],
-    faqs: faqItems,
-    schemaId: "botswana"
-  });
+  
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Botswana | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Botswana. Celiac-safe dining in Gaborone, Maun, Kasane & more. Discover naturally GF Tswana cuisine and safari lodge dining."
+      canonical="/gluten-free/botswana"
+    />
     <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-amber-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-sky-100 sticky top-0 z-50">
@@ -337,6 +327,7 @@ const Botswana = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Link, useNavigate } from "react-router-dom";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { SEOHead } from "@/components/SEOHead";
 
 // Lazy load heavy components not needed for initial paint
 const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
@@ -81,12 +81,7 @@ const Index = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  usePageSEO({
-    title: "GlutenFreePlace | Find Gluten-Free Restaurants Near You",
-    description: "Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
-    canonicalPath: "/",
-    keywords: "gluten-free restaurants, celiac safe dining, gluten-free travel, GF restaurants, celiac disease, gluten-free food",
-  });
+  
   const destinations = [
     {
       id: 1,
@@ -202,6 +197,12 @@ const Index = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="GlutenFreePlace | Find Gluten-Free Restaurants Near You"
+      description="Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers."
+      canonical="/"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
@@ -566,6 +567,7 @@ const Index = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ import curepipeHero from "@/assets/curepipe-mauritius.jpg";
 
 import { curepipeRestaurants } from "@/data/curepipeRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeCurepipe = () => {
@@ -47,35 +48,7 @@ const GlutenFreeCurepipe = () => {
       answer: "French and Creole are most commonly spoken in Curepipe, though English is understood. Say 'sans gluten' in French or 'pa met la farine' in Creole (don't add flour)."
     }
   ];
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Curepipe, Mauritius | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Curepipe, Mauritius. Verified celiac-safe dining in the highlands. Real reviews from GF travelers.");
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in Curepipe | Celiac-Safe Dining Guide");
-
-    const ogDesc = document.querySelector('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants in Curepipe, Mauritius. Browse listings, read real reviews, and find safe dining in the highlands.");
-
-    const existingSchema = document.querySelector('script[data-schema="curepipe-gf"]');
-    if (existingSchema) existingSchema.remove();
-
-    const schema = document.createElement('script');
-    schema.type = 'application/ld+json';
-    schema.setAttribute('data-schema', 'curepipe-gf');
-    schema.textContent = JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Gluten-Free Restaurants in Curepipe, Mauritius",
-      "description": "Find the best gluten-free restaurants in Curepipe, Mauritius.",
-      "url": "https://glutenfreeplace.org/gluten-free/mauritius/curepipe",
-      "breadcrumb": {
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+,
           { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
           { "@type": "ListItem", "position": 3, "name": "Curepipe", "item": "https://glutenfreeplace.org/gluten-free/mauritius/curepipe" }
         ]
@@ -177,6 +150,12 @@ const GlutenFreeCurepipe = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Curepipe, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Curepipe, Mauritius. Verified celiac-safe dining in the highlands. Real reviews from GF travelers."
+      canonical="/gluten-free/mauritius/curepipe"
+    />
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
@@ -334,6 +313,8 @@ const GlutenFreeCurepipe = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

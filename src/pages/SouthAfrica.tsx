@@ -8,17 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SouthAfricaRestaurantList } from "@/components/south-africa/SouthAfricaRestaurantList";
+import { SEOHead } from "@/components/SEOHead";
 
 const SouthAfrica = () => {
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide 2026";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide");
     }
@@ -241,6 +234,12 @@ const SouthAfrica = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more. Real reviews from GF travelers."
+      canonical="/gluten-free/south-africa"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
@@ -553,6 +552,8 @@ const SouthAfrica = () => {
         </div>
       </footer>
     </div>
+
+    </>
   );
 };
 

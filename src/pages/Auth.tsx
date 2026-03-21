@@ -11,6 +11,7 @@ import { useToast } from "@/hooks/use-toast";
 import { z } from "zod";
 import { lovable } from "@/integrations/lovable/index";
 import { Separator } from "@/components/ui/separator";
+import { SEOHead } from "@/components/SEOHead";
 
 const emailSchema = z.string().email("Please enter a valid email address");
 const passwordSchema = z.string().min(6, "Password must be at least 6 characters");
@@ -132,6 +133,13 @@ const Auth = () => {
 
   if (authLoading) {
     return (
+      <>
+      <SEOHead
+        title="Sign In | GlutenFreePlace"
+        description="Sign in or create an account on GlutenFreePlace to leave reviews and claim your restaurant."
+        canonical="/auth"
+        noIndex={true}
+      />
       <div className="min-h-screen flex items-center justify-center">
         <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
       </div>
@@ -298,6 +306,8 @@ const Auth = () => {
         </Card>
       </div>
     </div>
+
+    </>
   );
 };
 

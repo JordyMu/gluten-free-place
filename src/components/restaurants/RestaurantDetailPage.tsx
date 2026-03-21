@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SEOHead } from "@/components/SEOHead";
 import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -202,6 +203,12 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
   }, [restaurant.name, restaurant.city, restaurant.country]);
 
   return (
+    <>
+    <SEOHead
+      title={`${restaurant.name} - Gluten-Free in ${restaurant.city} | GlutenFreePlace`}
+      description={restaurant.overview.substring(0, 155)}
+      canonical={`${backLink}/${restaurant.slug}`}
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-10">
@@ -530,6 +537,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
         </div>
       </div>
     </div>
+    </>
   );
 };
 

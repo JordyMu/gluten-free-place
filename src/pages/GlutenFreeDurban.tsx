@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { durbanRestaurants, Restaurant } from "@/data/durbanRestaurants";
 import durbanBeachfrontBg from "@/assets/durban-beachfront.jpg";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { SEOHead } from "@/components/SEOHead";
 
 interface RestaurantWithDistance extends Restaurant {
   distance?: number;
@@ -19,16 +20,7 @@ interface RestaurantWithDistance extends Restaurant {
 
 const GlutenFreeDurban = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Durban | Celiac-Safe Dining Guide 2026";
-    
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Durban, South Africa. Verified celiac-safe dining options in Umhlanga, Morningside, Glenwood & more. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Durban | Celiac-Safe Dining Guide");
     }
@@ -222,6 +214,12 @@ const GlutenFreeDurban = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in Durban | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants in Durban, South Africa. Verified celiac-safe dining options in Umhlanga, Morningside, Glenwood & more. Real reviews from GF travelers."
+        canonical="/gluten-free/south-africa/durban"
+      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -608,6 +606,8 @@ const GlutenFreeDurban = () => {
         </div>
       </footer>
     </div>
+
+    </>
   );
 };
 

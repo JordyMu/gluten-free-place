@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { sharmElSheikhRestaurants } from "@/data/egyptRestaurants";
 import type { EgyptRestaurant } from "@/data/egyptRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const getCeliacSafeBadge = (level: string) => { switch (level) { case "dedicated-facility": return <Badge className="bg-green-100 text-green-800 border-green-300"><Shield className="w-3 h-3 mr-1" />Dedicated GF</Badge>; case "protocols-in-place": return <Badge className="bg-blue-100 text-blue-800 border-blue-300"><CheckCircle className="w-3 h-3 mr-1" />Careful Handling</Badge>; default: return null; }};
 const getMenuTypeBadge = (type: string) => { switch (type) { case "fully-gluten-free": return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% GF</Badge>; case "mixed-menu": return <Badge className="bg-amber-100 text-amber-800 border-amber-300">GF Options</Badge>; default: return null; }};
@@ -35,13 +36,19 @@ const renderCard = (r: EgyptRestaurant) => (
 
 const GlutenFreeSharmElSheikh = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  useEffect(() => { document.title = "Gluten-Free Restaurants in Sharm El Sheikh | 2026"; }, []);
+, []);
   const filtered = useMemo(() => sharmElSheikhRestaurants.filter(r => searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()))), [searchQuery]);
   const faqItems = [
     { question: "Is Sharm El Sheikh good for celiac travelers?", answer: "Excellent! Most hotels understand GF needs. Hard Rock Cafe offers a dedicated GF menu, and resorts have GF buffet stations." },
     { question: "Do all-inclusive resorts cater to celiacs?", answer: "Most international resorts do. Xperience Kiroseiz and Coral Sea Aqua Club label GF items at buffets." },
   ];
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Sharm El Sheikh, Egypt | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Sharm El Sheikh, Egypt. Verified celiac-safe dining in the Red Sea resort area."
+      canonical="/gluten-free/egypt/sharm-el-sheikh"
+    />
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
       <header className="bg-white shadow-sm border-b"><div className="container mx-auto px-4 py-4"><Link to="/gluten-free/egypt" className="inline-flex items-center text-teal-600 hover:text-teal-700"><ArrowLeft className="w-4 h-4 mr-2" /> Back to Egypt</Link></div></header>
       <section className="relative text-white py-16 bg-gradient-to-r from-teal-600 to-blue-500"><div className="absolute inset-0 bg-black/20" /><div className="container mx-auto px-4 text-center relative z-10"><span className="text-6xl mb-4 block">🏖️</span><h1 className="text-4xl md:text-5xl font-bold mb-4">Gluten-Free in Sharm El Sheikh</h1><p className="text-xl text-teal-100 mb-8 max-w-3xl mx-auto">Red Sea resort dining with celiac-safe options.</p><AddRestaurantDialog city="Sharm El Sheikh" triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" /></div></section>
@@ -53,6 +60,8 @@ const GlutenFreeSharmElSheikh = () => {
         <section><Card className="bg-gradient-to-r from-teal-500 to-blue-500 text-white border-0"><CardContent className="p-8 text-center"><h2 className="text-2xl font-bold mb-4">Know a Great GF Spot in Sharm?</h2><p className="text-teal-100 mb-6">Help fellow celiacs.</p><Button size="lg" className="bg-white text-teal-600 hover:bg-teal-50"><Plus className="w-5 h-5 mr-2" />Add a Restaurant</Button></CardContent></Card></section>
       </main>
     </div>
+
+    </>
   );
 };
 export default GlutenFreeSharmElSheikh;

@@ -10,6 +10,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import CapeTownMap from "@/components/maps/CapeTownMap";
 import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { capeTownRestaurants, Restaurant } from "@/data/capeTownRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 
 const CapeTownGroceryStores = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -121,6 +122,12 @@ const CapeTownGroceryStores = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Grocery Stores in Cape Town | GlutenFreePlace"
+        description="Find grocery stores with gluten-free products in Cape Town. Stock up on GF essentials while traveling."
+        canonical="/gluten-free/south-africa/cape-town/grocery-stores"
+      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -466,6 +473,8 @@ const CapeTownGroceryStores = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

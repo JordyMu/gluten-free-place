@@ -13,6 +13,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 
 import { portLouisRestaurants } from "@/data/portLouisRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreePortLouis = () => {
@@ -24,16 +25,7 @@ const GlutenFreePortLouis = () => {
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string>("");
   const [sortByDistance, setSortByDistance] = useState(false);
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Port Louis, Mauritius | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Port Louis, Mauritius. Verified celiac-safe dining from Caudan Waterfront to Chinatown. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Port Louis | Celiac-Safe Dining Guide");
     }
@@ -216,6 +208,12 @@ const GlutenFreePortLouis = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Port Louis, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Port Louis, Mauritius. Verified celiac-safe dining from Caudan Waterfront to Chinatown. Real reviews from GF travelers."
+      canonical="/gluten-free/mauritius/port-louis"
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
@@ -481,6 +479,8 @@ const GlutenFreePortLouis = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 

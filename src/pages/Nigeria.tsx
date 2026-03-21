@@ -6,8 +6,7 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const cities = [
   {
     name: "Lagos",
@@ -89,24 +88,15 @@ const faqItems = [
 ];
 
 const Nigeria = () => {
-  useCountrySEO({
-    countryName: "Nigeria",
-    countrySlug: "gluten-free/nigeria",
-    description: "Find the best gluten-free restaurants in Nigeria. Celiac-safe dining in Lagos, Abuja, Port Harcourt & more. Discover naturally GF Nigerian cuisine.",
-    ogDescription: "Discover verified gluten-free and celiac-safe restaurants across Nigeria. Browse by city, read real reviews, and find safe dining throughout West Africa.",
-    cities: [
-      { name: "Lagos" },
-      { name: "Abuja" },
-      { name: "Port Harcourt" },
-      { name: "Ibadan" },
-      { name: "Kano" },
-      { name: "Benin City" }
-    ],
-    faqs: faqItems,
-    schemaId: "nigeria"
-  });
+  
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Nigeria | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Nigeria. Celiac-safe dining in Lagos, Abuja, Port Harcourt & more. Discover naturally GF Nigerian cuisine."
+      canonical="/gluten-free/nigeria"
+    />
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50">
@@ -332,6 +322,7 @@ const Nigeria = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

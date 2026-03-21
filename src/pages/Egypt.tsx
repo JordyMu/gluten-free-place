@@ -8,17 +8,10 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { EgyptRestaurantList } from "@/components/egypt/EgyptRestaurantList";
+import { SEOHead } from "@/components/SEOHead";
 
 const Egypt = () => {
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Egypt | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza, Sharm El Sheikh, Hurghada & Luxor. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Egypt | Celiac-Safe Dining Guide");
     }
@@ -191,6 +184,12 @@ const Egypt = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Egypt | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza, Sharm El Sheikh, Hurghada & Luxor. Real reviews from GF travelers."
+      canonical="/gluten-free/egypt"
+    />
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-amber-100 sticky top-0 z-50">
@@ -472,6 +471,8 @@ const Egypt = () => {
         </div>
       </footer>
     </div>
+
+    </>
   );
 };
 

@@ -13,6 +13,7 @@ import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 
 import { flicEnFlacRestaurants } from "@/data/flicEnFlacRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
+import { SEOHead } from "@/components/SEOHead";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeFlicEnFlac = () => {
@@ -51,16 +52,7 @@ const GlutenFreeFlicEnFlac = () => {
       answer: "English and French are widely spoken. Say 'sans gluten' in French or explain in English. Most tourist-facing restaurants understand celiac/gluten-free requests."
     }
   ];
-
-  useEffect(() => {
-    document.title = "Gluten-Free Restaurants in Flic en Flac, Mauritius | Celiac-Safe Dining Guide 2026";
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute("content", "Find the best gluten-free restaurants in Flic en Flac, Mauritius. Verified celiac-safe dining from beachfront eateries to Creole cuisine. Real reviews from GF travelers.");
-    }
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
+const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in Flic en Flac | Celiac-Safe Dining Guide");
 
     const ogDesc = document.querySelector('meta[property="og:description"]');
@@ -194,6 +186,12 @@ const GlutenFreeFlicEnFlac = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Flic en Flac, Mauritius | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Flic en Flac, Mauritius. Verified celiac-safe dining from beachfront eateries to Creole cuisine. Real reviews from GF travelers."
+      canonical="/gluten-free/mauritius/flic-en-flac"
+    />
     <div className="min-h-screen bg-gradient-to-b from-teal-50 to-white">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
@@ -434,6 +432,8 @@ const GlutenFreeFlicEnFlac = () => {
         </section>
       </main>
     </div>
+
+    </>
   );
 };
 
