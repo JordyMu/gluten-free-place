@@ -106,7 +106,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6701,
     lng: -79.3901,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800", "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800", "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=800"],
+    photos: ["/images/pho-concept-gf-riz-1.webp", "/images/pho-concept-gf-riz-2.webp", "/images/pho-concept-gf-riz-3.webp", "/images/pho-concept-gf-riz-4.webp", "/images/pho-concept-gf-riz-5.webp", "/images/pho-concept-gf-riz-6.webp", "/images/pho-concept-gf-riz-7.webp", "/images/pho-concept-gf-riz-8.webp"],
     celiacSafetyScore: 10,
   },
   {
