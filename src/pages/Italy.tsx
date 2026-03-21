@@ -726,12 +726,6 @@ const Italy = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in Italy | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in Italy. Certified AIC restaurants with celiac-safe pizza, pasta & gelato in Rome, Florence, Milan, Venice & more."
-        canonical="/italy"
-      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
