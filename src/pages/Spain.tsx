@@ -453,12 +453,6 @@ const Spain = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in Spain | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in Spain. FACE-certified tapas, paella & bakeries in Barcelona, Madrid, Valencia, Seville & more cities."
-        canonical="/spain"
-      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
