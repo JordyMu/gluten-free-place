@@ -63,43 +63,17 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
-  useEffect(() => {
-    const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, Canada. Explore celiac-safe places with reviews, menu tips, and directions.`;
-    document.title = `Gluten-Free Restaurants in ${cityName}, Canada | Celiac-Safe Guide 2026`;
-
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) metaDescription.setAttribute("content", metaDescriptionText);
-
-    const ogTitle = document.querySelector('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", `Gluten-Free Restaurants in ${cityName}, Canada`);
-
-    const ogDescription = document.querySelector('meta[property="og:description"]');
-    if (ogDescription) ogDescription.setAttribute("content", metaDescriptionText);
-
-    const schemaId = `canada-${citySlug}-gf`;
-    const existingSchema = document.querySelector(`script[data-schema="${schemaId}"]`);
-    if (existingSchema) existingSchema.remove();
-
-    const schema = document.createElement("script");
-    schema.type = "application/ld+json";
-    schema.setAttribute("data-schema", schemaId);
-    schema.textContent = JSON.stringify({
+  const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, Canada. Explore celiac-safe places with reviews, menu tips, and directions.`;
+  const pageTitle = `Gluten-Free Restaurants in ${cityName}, Canada | Celiac-Safe Guide 2026`;
+  const schemaJson = [
+    {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: `Gluten-Free Restaurants in ${cityName}, Canada`,
       description: metaDescriptionText,
       url: `https://glutenfreeplace.org/gluten-free/canada/${citySlug}`,
-    });
-    document.head.appendChild(schema);
-
-    const faqSchemaId = `canada-${citySlug}-faq`;
-    const existingFaqSchema = document.querySelector(`script[data-schema="${faqSchemaId}"]`);
-    if (existingFaqSchema) existingFaqSchema.remove();
-
-    const faqSchema = document.createElement("script");
-    faqSchema.type = "application/ld+json";
-    faqSchema.setAttribute("data-schema", faqSchemaId);
-    faqSchema.textContent = JSON.stringify({
+    },
+    {
       "@context": "https://schema.org",
       "@type": "FAQPage",
       mainEntity: faqItems.map((faq) => ({
@@ -107,14 +81,8 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         name: faq.question,
         acceptedAnswer: { "@type": "Answer", text: faq.answer },
       })),
-    });
-    document.head.appendChild(faqSchema);
-
-    return () => {
-      document.querySelector(`script[data-schema="${schemaId}"]`)?.remove();
-      document.querySelector(`script[data-schema="${faqSchemaId}"]`)?.remove();
-    };
-  }, [cityName, citySlug, faqItems]);
+    },
+  ];
 
   const filteredRestaurants = useMemo(
     () =>
