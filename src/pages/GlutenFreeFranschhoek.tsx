@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
+import { SEOHead } from "@/components/SEOHead";
 
 const GlutenFreeFranschhoek = () => {
   const franschhoekRestaurants = [
@@ -100,6 +101,12 @@ const GlutenFreeFranschhoek = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Franschhoek | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Franschhoek, South Africa. French-inspired fine dining with comprehensive GF tasting menus."
+      canonical="/gluten-free/south-africa/cape-town/franschhoek"
+    />
     <div className="min-h-screen bg-gradient-to-b from-amber-50 to-white">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-amber-100 sticky top-0 z-50">
@@ -283,6 +290,8 @@ const GlutenFreeFranschhoek = () => {
         </div>
       </div>
     </div>
+
+    </>
   );
 };
 

@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
+import { SEOHead } from "@/components/SEOHead";
 
 const GlutenFreeStellenbosch = () => {
   const stellenboschRestaurants = [
@@ -85,6 +86,12 @@ const GlutenFreeStellenbosch = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Stellenbosch | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Stellenbosch, South Africa. Fine dining and wine estate restaurants with celiac-safe options."
+      canonical="/gluten-free/south-africa/cape-town/stellenbosch"
+    />
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b border-purple-100 sticky top-0 z-50">
@@ -267,6 +274,8 @@ const GlutenFreeStellenbosch = () => {
         </div>
       </div>
     </div>
+
+    </>
   );
 };
 
