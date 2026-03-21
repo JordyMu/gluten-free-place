@@ -197,6 +197,12 @@ const Index = () => {
   ];
 
   return (
+    <>
+    <SEOHead
+      title="GlutenFreePlace | Find Gluten-Free Restaurants Near You"
+      description="Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers."
+      canonical="/"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-orange-100 sticky top-0 z-50">
