@@ -81,12 +81,7 @@ const Index = () => {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
-  usePageSEO({
-    title: "GlutenFreePlace | Find Gluten-Free Restaurants Near You",
-    description: "Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers.",
-    canonicalPath: "/",
-    keywords: "gluten-free restaurants, celiac safe dining, gluten-free travel, GF restaurants, celiac disease, gluten-free food",
-  });
+  
   const destinations = [
     {
       id: 1,
