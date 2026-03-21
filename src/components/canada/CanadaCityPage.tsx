@@ -1,4 +1,5 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
+import { SEOHead } from "@/components/SEOHead";
 import { ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
