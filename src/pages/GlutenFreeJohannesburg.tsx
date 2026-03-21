@@ -215,25 +215,17 @@ const GlutenFreeJohannesburg = () => {
     }
   };
 
-  const renderStarRating = (rating: number) => {
-    return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in Johannesburg | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in Johannesburg, South Africa. Verified celiac-safe dining options in Sandton, Rosebank, Parkhurst & more. Real reviews from GF travelers."
-        canonical="/gluten-free/south-africa/johannesburg"
-      />
-      <div className="flex items-center gap-1">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-          />
-        ))}
-        <span className="ml-1 font-semibold">{rating}</span>
-      </div>
-    );
-  };
+  const renderStarRating = (rating: number) => (
+    <div className="flex items-center gap-1">
+      {[...Array(5)].map((_, i) => (
+        <Star
+          key={i}
+          className={`w-4 h-4 ${i < Math.floor(rating) ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+        />
+      ))}
+      <span className="ml-1 font-semibold">{rating}</span>
+    </div>
+  );
 
   const filteredRestaurants = useMemo((): RestaurantWithDistance[] => {
     let filtered = johannesburgRestaurants.filter(restaurant => {
