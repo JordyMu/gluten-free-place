@@ -7,6 +7,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://glutenfreeplace.org/auth</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://glutenfreeplace.org/countries</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -35,16 +40,6 @@
   </url>
   <url>
     <loc>https://glutenfreeplace.org/australia</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://glutenfreeplace.org/united-kingdom</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://glutenfreeplace.org/canada</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -89,7 +84,61 @@
     <priority>0.8</priority>
   </url>
 
-  <!-- South Africa Regional Pages -->
+  <!-- United Kingdom -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/united-kingdom</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/united-kingdom/london</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/united-kingdom/edinburgh</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/united-kingdom/manchester</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/united-kingdom/birmingham</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Canada -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/canada</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/canada/toronto</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/canada/vancouver</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/canada/montreal</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/canada/calgary</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- South Africa -->
   <url>
     <loc>https://glutenfreeplace.org/gluten-free/south-africa</loc>
     <changefreq>weekly</changefreq>
@@ -139,6 +188,131 @@
     <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/grocery-stores</loc>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/south-africa/cape-town/gluten-free-products</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Kenya -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/kenya</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/kenya/nairobi</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/kenya/mombasa</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/kenya/kisumu</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/kenya/nakuru</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Nigeria & Morocco -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/nigeria</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/morocco</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Egypt -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/cairo</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/alexandria</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/giza</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/sharm-el-sheikh</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/hurghada</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/egypt/luxor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Mauritius -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/grand-baie</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/port-louis</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/flic-en-flac</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/curepipe</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/quatre-bornes</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/mauritius/mahebourg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Botswana -->
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/botswana</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Spain Restaurant Pages -->
