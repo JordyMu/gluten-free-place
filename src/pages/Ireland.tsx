@@ -49,12 +49,6 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
-    <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Ireland | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Ireland. Traditional Irish cuisine safely prepared for celiacs in Dublin, Cork, Galway & more cities."
-      canonical="/ireland"
-    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
