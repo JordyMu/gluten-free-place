@@ -169,12 +169,6 @@ const USA = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in USA | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants across the USA. Dedicated GF facilities, certified restaurants in New York, Los Angeles, Chicago, Miami & more."
-        canonical="/usa"
-      />
       <div className="flex items-center gap-0.5">
         {[...Array(5)].map((_, i) => (
           <Star
