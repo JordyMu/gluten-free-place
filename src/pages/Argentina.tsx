@@ -49,12 +49,6 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
-    <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Argentina | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Argentina. Celiac-safe steaks, empanadas & traditional cuisine in Buenos Aires, Mendoza, Córdoba & more."
-      canonical="/argentina"
-    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
