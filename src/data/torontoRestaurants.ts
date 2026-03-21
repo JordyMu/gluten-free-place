@@ -52,7 +52,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6601,
     lng: -79.4201,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800", "https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800", "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800"],
+    photos: ["/images/el-pocho-1.webp", "/images/el-pocho-2.webp", "/images/el-pocho-3.webp", "/images/el-pocho-4.webp", "/images/el-pocho-5.webp", "/images/el-pocho-6.webp"],
     celiacSafetyScore: 7,
   },
   {
