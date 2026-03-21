@@ -25,7 +25,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6501,
     lng: -79.4101,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -52,7 +52,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6601,
     lng: -79.4201,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -79,7 +79,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6631,
     lng: -79.3451,
     venueType: "cafe",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -106,7 +106,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6701,
     lng: -79.3901,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -133,7 +133,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6871,
     lng: -79.4321,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -160,7 +160,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6503,
     lng: -79.3590,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -187,7 +187,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6621,
     lng: -79.4035,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -214,7 +214,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6614,
     lng: -79.4501,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -241,7 +241,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6491,
     lng: -79.3780,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -268,7 +268,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6551,
     lng: -79.3901,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 9,
   },
   {
@@ -295,7 +295,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6581,
     lng: -79.4001,
     venueType: "supermarket",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 6,
   },
   {
@@ -322,7 +322,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6551,
     lng: -79.3851,
     venueType: "street-food",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -349,7 +349,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6481,
     lng: -79.3811,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -376,7 +376,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6651,
     lng: -79.4101,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 9,
   },
   {
@@ -403,7 +403,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.7251,
     lng: -79.3991,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
   {
@@ -430,7 +430,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6051,
     lng: -79.5001,
     venueType: "cafe",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 9,
   },
   {
@@ -457,7 +457,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6541,
     lng: -79.3921,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -484,7 +484,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6471,
     lng: -79.3941,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -511,7 +511,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6521,
     lng: -79.4001,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -538,7 +538,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6481,
     lng: -79.3901,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -565,7 +565,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6601,
     lng: -79.3851,
     venueType: "bakery",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 9,
   },
   {
@@ -592,7 +592,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6511,
     lng: -79.3841,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 7,
   },
   {
@@ -619,7 +619,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6801,
     lng: -79.4251,
     venueType: "restaurant",
-    photos: [],
+    photos: ["PLACEHOLDER"],
     celiacSafetyScore: 10,
   },
 ];
