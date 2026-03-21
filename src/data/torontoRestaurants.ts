@@ -79,7 +79,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6631,
     lng: -79.3451,
     venueType: "cafe",
-    photos: ["https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800", "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800", "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800"],
+    photos: ["/images/sprouty-1.webp", "/images/sprouty-2.webp", "/images/sprouty-3.webp", "/images/sprouty-4.webp", "/images/sprouty-5.webp", "/images/sprouty-6.webp", "/images/sprouty-7.webp", "/images/sprouty-8.webp"],
     celiacSafetyScore: 7,
   },
   {
