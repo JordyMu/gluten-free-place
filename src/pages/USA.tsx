@@ -187,6 +187,12 @@ const USA = () => {
   };
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in USA | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants across the USA. Dedicated GF facilities, certified restaurants in New York, Los Angeles, Chicago, Miami & more."
+      canonical="/usa"
+    />
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
       {/* Header with Back Button */}
       <header className="border-b border-gray-200 sticky top-0 z-50 bg-white/80 backdrop-blur-md">

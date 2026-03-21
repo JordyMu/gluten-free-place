@@ -64,6 +64,12 @@ const Sweden = () => {
   
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Sweden | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Sweden. Traditional Swedish cuisine safely prepared for celiacs in Stockholm, Gothenburg, Malmö & more."
+      canonical="/sweden"
+    />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">

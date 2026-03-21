@@ -1167,6 +1167,12 @@ const France = () => {
   };
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in France | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities."
+      canonical="/france"
+    />
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">

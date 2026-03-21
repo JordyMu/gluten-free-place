@@ -1305,6 +1305,12 @@ const NewZealand = () => {
     : cities;
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in New Zealand | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in New Zealand. Dedicated bakeries, cafes & restaurants in Auckland, Wellington, Christchurch, Queenstown."
+      canonical="/new-zealand"
+    />
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">

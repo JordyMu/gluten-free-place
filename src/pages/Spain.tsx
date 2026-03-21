@@ -466,6 +466,12 @@ const Spain = () => {
   };
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Spain | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Spain. FACE-certified tapas, paella & bakeries in Barcelona, Madrid, Valencia, Seville & more cities."
+      canonical="/spain"
+    />
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-yellow-50 to-orange-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-red-100 sticky top-0 z-50">

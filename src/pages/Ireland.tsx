@@ -64,6 +64,12 @@ const Ireland = () => {
   
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Ireland | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Ireland. Traditional Irish cuisine safely prepared for celiacs in Dublin, Cork, Galway & more cities."
+      canonical="/ireland"
+    />
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
       <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
