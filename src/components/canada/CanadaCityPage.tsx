@@ -99,6 +99,8 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
   );
 
   return (
+    <>
+    <SEOHead title={pageTitle} description={metaDescriptionText} canonical={`/gluten-free/canada/${citySlug}`} schemaJson={schemaJson} />
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">

@@ -103,6 +103,8 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
   );
 
   return (
+    <>
+    <SEOHead title={pageTitle} description={metaDescriptionText} canonical={`/gluten-free/kenya/${citySlug}`} schemaJson={schemaJson} />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
