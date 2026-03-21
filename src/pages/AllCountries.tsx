@@ -8,11 +8,6 @@ import { Link } from "react-router-dom";
 import { SEOHead } from "@/components/SEOHead";
 
 const AllCountries = () => {
-  usePageSEO({
-    title: "All 156 Countries with Gluten-Free Restaurants | GlutenFreePlace",
-    description: "Complete directory of gluten-free restaurants in 156 countries. Find celiac-safe dining options across Europe, Americas, Asia, Africa & Oceania.",
-    canonicalPath: "/all-countries",
-  });
   const allCountriesByRegion = {
     "Europe": [
       "Albania", "Andorra", "Austria", "Belgium", "Bosnia and Herzegovina", "Bulgaria", 
