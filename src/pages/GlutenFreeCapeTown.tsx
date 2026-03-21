@@ -39,7 +39,8 @@ interface Restaurant {
 
 const GlutenFreeCapeTown = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining Guide");
     }

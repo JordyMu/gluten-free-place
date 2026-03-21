@@ -20,7 +20,8 @@ interface RestaurantWithDistance extends Restaurant {
 
 const GlutenFreeDurban = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Durban | Celiac-Safe Dining Guide");
     }

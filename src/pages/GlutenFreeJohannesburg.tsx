@@ -21,7 +21,8 @@ interface RestaurantWithDistance extends Restaurant {
 
 const GlutenFreeJohannesburg = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Johannesburg | Celiac-Safe Dining Guide");
     }

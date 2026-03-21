@@ -15,7 +15,8 @@ import { nakuruRestaurants } from "@/data/nakuruRestaurants";
 import { SEOHead } from "@/components/SEOHead";
 
 const Kenya = () => {
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Kenya | Celiac-Safe Dining Guide");
     }

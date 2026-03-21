@@ -11,7 +11,24 @@ import { UKRestaurantList } from "@/components/uk/UKRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
 const UnitedKingdom = () => {
-,
+  useEffect(() => {
+    const existingSchema = document.querySelector('script[data-schema="uk-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'uk-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in the United Kingdom",
+      "url": "https://glutenfreeplace.org/gluten-free/united-kingdom",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Top Gluten-Free Cities in UK",
+        "numberOfItems": 4,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "London", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/london" },
           { "@type": "ListItem", "position": 2, "name": "Edinburgh", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/edinburgh" },
           { "@type": "ListItem", "position": 3, "name": "Manchester", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/manchester" },
           { "@type": "ListItem", "position": 4, "name": "Birmingham", "url": "https://glutenfreeplace.org/gluten-free/united-kingdom/birmingham" },

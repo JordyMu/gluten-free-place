@@ -154,6 +154,12 @@ const CapeTownGroceryStores = () => {
   }, [searchQuery, sortByDistance, userLocation, groceryStores]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Grocery Stores in Cape Town | GlutenFreePlace"
+      description="Find grocery stores with gluten-free products in Cape Town. Stock up on GF essentials while traveling."
+      canonical="/gluten-free/south-africa/cape-town/grocery-stores"
+    />
     <div className="min-h-screen bg-gradient-to-b from-green-50 to-white">
       {/* SEO-Optimized Header */}
       <header className="bg-white shadow-sm border-b">
