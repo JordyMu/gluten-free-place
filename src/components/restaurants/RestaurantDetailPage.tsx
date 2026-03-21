@@ -203,6 +203,12 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
   }, [restaurant.name, restaurant.city, restaurant.country]);
 
   return (
+    <>
+    <SEOHead
+      title={`${restaurant.name} - Gluten-Free in ${restaurant.city} | GlutenFreePlace`}
+      description={restaurant.overview.substring(0, 155)}
+      canonical={`${backLink}/${restaurant.slug}`}
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b sticky top-0 z-10">
