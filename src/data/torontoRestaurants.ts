@@ -133,7 +133,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6871,
     lng: -79.4321,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800", "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800", "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"],
+    photos: ["/images/wild-blue-bakery-1.webp", "/images/wild-blue-bakery-2.webp", "/images/wild-blue-bakery-3.webp", "/images/wild-blue-bakery-4.webp", "/images/wild-blue-bakery-5.webp", "/images/wild-blue-bakery-6.webp", "/images/wild-blue-bakery-7.webp", "/images/wild-blue-bakery-8.webp"],
     celiacSafetyScore: 10,
   },
   {
