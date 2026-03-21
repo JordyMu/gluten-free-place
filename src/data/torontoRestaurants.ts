@@ -10,7 +10,7 @@ export const torontoRestaurants: Restaurant[] = [
     hours: "Tue–Sun: 9:00AM – 8:00PM",
     phone: "+1 416-792-0001",
     website: "www.almondbutterflyto.com",
-    directionsUrl: "https://www.google.com/maps/search/Almond+Butterfly+Bistro+792+Dundas+St+W+Toronto",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=792+Dundas+St+W+Toronto+ON+M6J+1V1+Canada",
     specialty: "100% gluten-free bistro & bakery",
     overview: "Almond Butterfly Bistro is a fully dedicated gluten-free restaurant and bakery in Toronto's west end. Every dish is celiac-safe, from savoury mains to decadent desserts.",
     menuHighlights: ["🥐 GF Pastries", "🍝 GF Pasta Dishes", "🥗 Fresh Salads", "🍰 GF Cakes"],
