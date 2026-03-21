@@ -296,6 +296,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         </section>
       </main>
     </div>
+    </>
   );
 };
 

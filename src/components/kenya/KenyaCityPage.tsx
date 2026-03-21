@@ -319,6 +319,7 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
         </section>
       </main>
     </div>
+    </>
   );
 };
 
