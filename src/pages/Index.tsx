@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Link, useNavigate } from "react-router-dom";
-import { usePageSEO } from "@/hooks/usePageSEO";
+import { SEOHead } from "@/components/SEOHead";
 
 // Lazy load heavy components not needed for initial paint
 const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
