@@ -160,7 +160,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6503,
     lng: -79.3590,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=800", "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800", "https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=800"],
+    photos: ["/images/tartistry-1.webp", "/images/tartistry-2.webp", "/images/tartistry-3.webp", "/images/tartistry-4.webp", "/images/tartistry-5.webp", "/images/tartistry-6.webp", "/images/tartistry-7.webp", "/images/tartistry-8.webp"],
     celiacSafetyScore: 7,
   },
   {
