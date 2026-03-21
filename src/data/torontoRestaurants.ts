@@ -64,7 +64,7 @@ export const torontoRestaurants: Restaurant[] = [
     hours: "Mon–Sat: 10:00AM – 7:00PM",
     phone: "+1 416-792-0003",
     website: "",
-    directionsUrl: "https://www.google.com/maps/search/Sprouty+1062+Gerrard+St+E+Toronto",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=1062+Gerrard+St+E+Toronto+ON+M4M+1Z7",
     specialty: "Plant-based & gluten-free meals",
     overview: "Sprouty offers nourishing plant-based meals with extensive gluten-free options. Their health-focused menu caters to multiple dietary needs.",
     menuHighlights: ["🥗 Buddha Bowls", "🥤 Smoothies", "🌯 GF Wraps", "🍰 Raw Desserts"],
