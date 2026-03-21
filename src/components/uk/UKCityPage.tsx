@@ -296,6 +296,7 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
         </section>
       </main>
     </div>
+    </>
   );
 };
 
