@@ -48,7 +48,19 @@ const GlutenFreeCurepipe = () => {
       answer: "French and Creole are most commonly spoken in Curepipe, though English is understood. Say 'sans gluten' in French or 'pa met la farine' in Creole (don't add flour)."
     }
   ];
-,
+  useEffect(() => {
+    const existingSchema = document.querySelector('script[data-schema="curepipe-gf"]');
+    if (existingSchema) existingSchema.remove();
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.setAttribute("data-schema", "curepipe-gf");
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Curepipe, Mauritius",
+      "url": "https://glutenfreeplace.org/gluten-free/mauritius/curepipe",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
           { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
           { "@type": "ListItem", "position": 3, "name": "Curepipe", "item": "https://glutenfreeplace.org/gluten-free/mauritius/curepipe" }
         ]

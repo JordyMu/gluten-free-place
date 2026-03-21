@@ -36,7 +36,6 @@ const renderCard = (r: EgyptRestaurant) => (
 
 const GlutenFreeLuxor = () => {
   const [searchQuery, setSearchQuery] = useState("");
-, []);
   const filtered = useMemo(() => luxorRestaurants.filter(r => searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()))), [searchQuery]);
   const faqItems = [
     { question: "Can I find GF food in Luxor?", answer: "Yes! Steigenberger Resort Achti, Sofitel Winter Palace, and Snobs Restaurant all offer GF options." },

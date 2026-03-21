@@ -36,7 +36,6 @@ const renderCard = (r: EgyptRestaurant, citySlug: string, cityName: string, acce
 
 const GlutenFreeGiza = () => {
   const [searchQuery, setSearchQuery] = useState("");
-, []);
   const filtered = useMemo(() => gizaRestaurants.filter(r => searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()))), [searchQuery]);
   const faqItems = [
     { question: "Can I find gluten-free food near the Pyramids?", answer: "Yes! The Moghul Room, Dolato Gelateria at the Grand Egyptian Museum, and Alfredo Restaurant all offer GF options near the Pyramids." },

@@ -148,6 +148,12 @@ const Auth = () => {
   }
 
   return (
+    <>
+    <SEOHead
+      title="Sign In | GlutenFreePlace"
+      description="Sign in or create an account on GlutenFreePlace."
+      canonical="/auth"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">

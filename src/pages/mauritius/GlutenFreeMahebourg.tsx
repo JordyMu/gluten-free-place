@@ -46,7 +46,19 @@ const GlutenFreeMahebourg = () => {
       answer: "French and Creole are predominantly spoken in Mahebourg, with some English. Say 'sans gluten' in French or 'pa met la farine' in Creole. Local restaurants may be less familiar with celiac disease, so explain clearly."
     }
   ];
-,
+  useEffect(() => {
+    const existingSchema = document.querySelector('script[data-schema="mahebourg-gf"]');
+    if (existingSchema) existingSchema.remove();
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.setAttribute("data-schema", "mahebourg-gf");
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Mahebourg, Mauritius",
+      "url": "https://glutenfreeplace.org/gluten-free/mauritius/mahebourg",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
         { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
         { "@type": "ListItem", "position": 3, "name": "Mahebourg", "item": "https://glutenfreeplace.org/gluten-free/mauritius/mahebourg" }
       ]}

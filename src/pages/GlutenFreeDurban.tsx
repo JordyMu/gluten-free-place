@@ -256,6 +256,12 @@ const GlutenFreeDurban = () => {
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Durban | Celiac-Safe Dining 2026"
+      description="Find verified gluten-free restaurants in Durban, South Africa."
+      canonical="/gluten-free/south-africa/durban"
+    />
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
       {/* Header */}
       <header className="bg-white shadow-sm border-b">
