@@ -214,6 +214,7 @@ const AllCountries = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
