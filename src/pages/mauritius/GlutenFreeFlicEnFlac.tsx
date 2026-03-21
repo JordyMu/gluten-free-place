@@ -52,7 +52,8 @@ const GlutenFreeFlicEnFlac = () => {
       answer: "English and French are widely spoken. Say 'sans gluten' in French or explain in English. Most tourist-facing restaurants understand celiac/gluten-free requests."
     }
   ];
-const ogTitle = document.querySelector('meta[property="og:title"]');
+useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in Flic en Flac | Celiac-Safe Dining Guide");
 
     const ogDesc = document.querySelector('meta[property="og:description"]');

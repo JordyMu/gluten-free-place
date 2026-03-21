@@ -11,7 +11,8 @@ import { SouthAfricaRestaurantList } from "@/components/south-africa/SouthAfrica
 import { SEOHead } from "@/components/SEOHead";
 
 const SouthAfrica = () => {
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide");
     }

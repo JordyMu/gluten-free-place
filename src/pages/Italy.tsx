@@ -726,12 +726,6 @@ const Italy = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in Italy | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in Italy. Certified AIC restaurants with celiac-safe pizza, pasta & gelato in Rome, Florence, Milan, Venice & more."
-        canonical="/italy"
-      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
@@ -745,6 +739,12 @@ const Italy = () => {
   };
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Italy | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Italy. Certified AIC restaurants with celiac-safe pizza, pasta & gelato in Rome, Florence, Milan, Venice & more."
+      canonical="/italy"
+    />
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-red-50">
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50">

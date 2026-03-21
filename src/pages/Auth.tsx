@@ -143,10 +143,17 @@ const Auth = () => {
       <div className="min-h-screen flex items-center justify-center">
         <Loader2 className="h-8 w-8 animate-spin text-orange-500" />
       </div>
+      </>
     );
   }
 
   return (
+    <>
+    <SEOHead
+      title="Sign In | GlutenFreePlace"
+      description="Sign in or create an account on GlutenFreePlace."
+      canonical="/auth"
+    />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">

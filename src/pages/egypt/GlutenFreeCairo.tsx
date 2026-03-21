@@ -44,7 +44,6 @@ const renderStarRating = (rating: number) => (
 const GlutenFreeCairo = () => {
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-, []);
 
   const filteredRestaurants = useMemo(() => {
     return cairoRestaurants.filter(r => {

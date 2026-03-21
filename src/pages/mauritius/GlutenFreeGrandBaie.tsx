@@ -17,7 +17,8 @@ import { SEOHead } from "@/components/SEOHead";
 type Restaurant = MauritiusCityRestaurant;
 const GlutenFreeGrandBaie = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-const ogTitle = document.querySelector('meta[property="og:title"]');
+useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Grand Baie | Celiac-Safe Dining Guide");
     }

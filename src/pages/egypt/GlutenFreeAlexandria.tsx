@@ -61,7 +61,6 @@ const renderRestaurantCard = (restaurant: EgyptRestaurant, citySlug: string, cit
 
 const GlutenFreeAlexandria = () => {
   const [searchQuery, setSearchQuery] = useState("");
-, []);
   const filtered = useMemo(() => alexandriaRestaurants.filter(r => searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()))), [searchQuery]);
   const faqItems = [
     { question: "Is Alexandria good for gluten-free dining?", answer: "Alexandria's Mediterranean cuisine includes naturally GF options like grilled seafood, rice, and fresh salads." },

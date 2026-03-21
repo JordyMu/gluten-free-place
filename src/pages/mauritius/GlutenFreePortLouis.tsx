@@ -25,7 +25,8 @@ const GlutenFreePortLouis = () => {
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string>("");
   const [sortByDistance, setSortByDistance] = useState(false);
-const ogTitle = document.querySelector('meta[property="og:title"]');
+useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Port Louis | Celiac-Safe Dining Guide");
     }

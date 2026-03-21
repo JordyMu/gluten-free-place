@@ -36,7 +36,6 @@ const renderCard = (r: EgyptRestaurant) => (
 
 const GlutenFreeSharmElSheikh = () => {
   const [searchQuery, setSearchQuery] = useState("");
-, []);
   const filtered = useMemo(() => sharmElSheikhRestaurants.filter(r => searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()))), [searchQuery]);
   const faqItems = [
     { question: "Is Sharm El Sheikh good for celiac travelers?", answer: "Excellent! Most hotels understand GF needs. Hard Rock Cafe offers a dedicated GF menu, and resorts have GF buffet stations." },

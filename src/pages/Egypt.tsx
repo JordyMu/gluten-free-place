@@ -11,7 +11,8 @@ import { EgyptRestaurantList } from "@/components/egypt/EgyptRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
 const Egypt = () => {
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Egypt | Celiac-Safe Dining Guide");
     }

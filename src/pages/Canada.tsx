@@ -11,7 +11,8 @@ import { CanadaRestaurantList } from "@/components/canada/CanadaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
 const Canada = () => {
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Canada | Celiac-Safe Dining Guide");
     }

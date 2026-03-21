@@ -39,7 +39,8 @@ interface Restaurant {
 
 const GlutenFreeCapeTown = () => {
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
-const ogTitle = document.querySelector('meta[property="og:title"]');
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
       ogTitle.setAttribute("content", "Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining Guide");
     }
@@ -512,6 +513,12 @@ const ogTitle = document.querySelector('meta[property="og:title"]');
   }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
 
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining 2026"
+      description="Find verified gluten-free restaurants in Cape Town, South Africa."
+      canonical="/gluten-free/south-africa/cape-town"
+    />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">
       {/* SEO-Optimized Header */}
       <header className="bg-white shadow-sm border-b">

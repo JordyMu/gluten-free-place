@@ -38,7 +38,6 @@ const renderCard = (r: EgyptRestaurant) => (
 const GlutenFreeHurghada = () => {
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
-, []);
   const filtered = useMemo(() => hurghadaRestaurants.filter(r => { const mm = menuFilter === "all" || r.menuType === menuFilter; const ms = searchQuery === "" || r.name.toLowerCase().includes(searchQuery.toLowerCase()) || r.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase())); return mm && ms; }), [menuFilter, searchQuery]);
   const faqItems = [
     { question: "Is Hurghada celiac-friendly?", answer: "Very much so! Nicole's Greenhouse is especially recommended, and resorts like Jaz Aquamarine have dedicated GF buffet stations." },

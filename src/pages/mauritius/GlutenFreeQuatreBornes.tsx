@@ -46,7 +46,19 @@ const GlutenFreeQuatreBornes = () => {
       answer: "Quatre Bornes is centrally located and easily accessible from both the east and west coasts. It's about 20 minutes from Flic en Flac and 30 minutes from Grand Baie by car."
     }
   ];
-,
+  useEffect(() => {
+    const existingSchema = document.querySelector('script[data-schema="quatre-bornes-gf"]');
+    if (existingSchema) existingSchema.remove();
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.setAttribute("data-schema", "quatre-bornes-gf");
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Quatre Bornes, Mauritius",
+      "url": "https://glutenfreeplace.org/gluten-free/mauritius/quatre-bornes",
+      "breadcrumb": { "@type": "BreadcrumbList", "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
         { "@type": "ListItem", "position": 2, "name": "Mauritius", "item": "https://glutenfreeplace.org/gluten-free/mauritius" },
         { "@type": "ListItem", "position": 3, "name": "Quatre Bornes", "item": "https://glutenfreeplace.org/gluten-free/mauritius/quatre-bornes" }
       ]}
