@@ -25,7 +25,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6501,
     lng: -79.4101,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800", "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800", "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"],
+    photos: ["/images/almond-butterfly-bistro-1.webp", "/images/almond-butterfly-bistro-2.webp", "/images/almond-butterfly-bistro-3.webp", "/images/almond-butterfly-bistro-4.webp", "/images/almond-butterfly-bistro-5.webp", "/images/almond-butterfly-bistro-6.webp", "/images/almond-butterfly-bistro-7.webp", "/images/almond-butterfly-bistro-8.webp"],
     celiacSafetyScore: 10,
   },
   {
