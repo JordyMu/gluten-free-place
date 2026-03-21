@@ -537,6 +537,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
         </div>
       </div>
     </div>
+    </>
   );
 };
 
