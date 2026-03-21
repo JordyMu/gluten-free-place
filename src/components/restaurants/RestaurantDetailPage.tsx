@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { SEOHead } from "@/components/SEOHead";
 import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
