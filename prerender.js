@@ -16,11 +16,17 @@ const routesToPrerender = fs
   })
 
 ;(async () => {
-  for (const url of routesToPrerender) {
-    const appHtml = render(url)
-    const html = template.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+  for (const routeUrl of routesToPrerender) {
+    const { html: appHtml, head } = render(routeUrl)
+    let html = template
+      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+    
+    // Inject helmet head tags before </head>
+    if (head) {
+      html = html.replace('</head>', `${head}\n</head>`)
+    }
 
-    const filePath = `dist${url === '/' ? '/index' : url}.html`
+    const filePath = `dist${routeUrl === '/' ? '/index' : routeUrl}.html`
     fs.writeFileSync(toAbsolute(filePath), html)
     console.log('pre-rendered:', filePath)
   }
