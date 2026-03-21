@@ -49,12 +49,6 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
-    <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Sweden | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Sweden. Traditional Swedish cuisine safely prepared for celiacs in Stockholm, Gothenburg, Malmö & more."
-      canonical="/sweden"
-    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
