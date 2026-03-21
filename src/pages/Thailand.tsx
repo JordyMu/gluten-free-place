@@ -49,12 +49,6 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
-    <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Thailand | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Thailand. Safe Pad Thai, curries & authentic Thai cuisine in Bangkok, Chiang Mai, Phuket & more."
-      canonical="/thailand"
-    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
