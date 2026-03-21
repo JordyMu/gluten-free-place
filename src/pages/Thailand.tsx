@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const cities = [
   {
     name: "Bangkok",
@@ -50,6 +49,12 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Thailand | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Thailand. Safe Pad Thai, curries & authentic Thai cuisine in Bangkok, Chiang Mai, Phuket & more."
+      canonical="/thailand"
+    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
@@ -62,23 +67,7 @@ const renderStarRating = (rating: number) => {
 };
 
 const Thailand = () => {
-  useCountrySEO({
-    countryName: "Thailand",
-    countrySlug: "thailand",
-    description: "Find the best gluten-free restaurants in Thailand. Safe Pad Thai, curries & authentic Thai cuisine in Bangkok, Chiang Mai, Phuket & more.",
-    ogDescription: "Discover gluten-free Thai dining. Browse restaurants with safe curry pastes, GF fish sauce, and authentic Thai dishes.",
-    cities: [
-      { name: "Bangkok" },
-      { name: "Chiang Mai" },
-      { name: "Phuket" }
-    ],
-    faqs: [
-      { question: "Is Thailand good for gluten-free travelers?", answer: "Thailand can be excellent for GF travelers as many dishes are rice-based and naturally gluten-free. However, watch out for soy sauce." },
-      { question: "Is Thai fish sauce gluten-free?", answer: "Traditional Thai fish sauce (nam pla) is gluten-free, but some restaurants use soy sauce. Always ask to confirm." },
-      { question: "Can I find GF Pad Thai in Thailand?", answer: "Yes! Many restaurants offer Pad Thai with tamari or GF soy sauce. Some dedicated GF restaurants make everything from scratch." }
-    ],
-    schemaId: "thailand"
-  });
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-blue-50">
@@ -234,6 +223,7 @@ const Thailand = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

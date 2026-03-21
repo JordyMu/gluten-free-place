@@ -3,28 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const Italy = () => {
-  useCountrySEO({
-    countryName: "Italy",
-    countrySlug: "italy",
-    description: "Find the best gluten-free restaurants in Italy. Certified AIC restaurants with celiac-safe pizza, pasta & gelato in Rome, Florence, Milan, Venice & more.",
-    ogDescription: "Discover verified gluten-free and celiac-safe Italian restaurants. Browse AIC-certified pizzerias, trattorias, and gelaterias across Italy.",
-    cities: [
-      { name: "Rome" },
-      { name: "Florence" },
-      { name: "Milan" },
-      { name: "Venice" },
-      { name: "Naples" }
-    ],
-    faqs: [
-      { question: "Is Italy a good destination for celiacs?", answer: "Yes! Italy has excellent celiac awareness with over 4,000 AIC-certified restaurants offering safe gluten-free options including pizza, pasta, and traditional dishes." },
-      { question: "What is AIC certification in Italy?", answer: "AIC (Italian Celiac Association) certifies restaurants that follow strict protocols for preparing gluten-free food safely, preventing cross-contamination." },
-      { question: "Can I find gluten-free pizza in Italy?", answer: "Absolutely! Many pizzerias across Italy offer certified gluten-free pizza made in dedicated ovens or with strict protocols." }
-    ],
-    schemaId: "italy"
-  });
+  
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
   const cities = [
@@ -745,6 +726,12 @@ const Italy = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in Italy | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants in Italy. Certified AIC restaurants with celiac-safe pizza, pasta & gelato in Rome, Florence, Milan, Venice & more."
+        canonical="/italy"
+      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
@@ -1024,6 +1011,7 @@ const Italy = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

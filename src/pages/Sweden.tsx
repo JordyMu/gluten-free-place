@@ -3,8 +3,7 @@ import { Link } from "react-router-dom";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const cities = [
   {
     name: "Stockholm",
@@ -50,6 +49,12 @@ const getMenuTypeBadge = (type: string) => {
 
 const renderStarRating = (rating: number) => {
   return (
+    <>
+    <SEOHead
+      title="Gluten-Free Restaurants in Sweden | Celiac-Safe Dining Guide 2026"
+      description="Find the best gluten-free restaurants in Sweden. Traditional Swedish cuisine safely prepared for celiacs in Stockholm, Gothenburg, Malmö & more."
+      canonical="/sweden"
+    />
     <div className="flex items-center space-x-1">
       {[...Array(5)].map((_, i) => (
         <Star
@@ -62,23 +67,7 @@ const renderStarRating = (rating: number) => {
 };
 
 const Sweden = () => {
-  useCountrySEO({
-    countryName: "Sweden",
-    countrySlug: "sweden",
-    description: "Find the best gluten-free restaurants in Sweden. Traditional Swedish cuisine safely prepared for celiacs in Stockholm, Gothenburg, Malmö & more.",
-    ogDescription: "Discover gluten-free Swedish dining. Browse restaurants offering safe Swedish meatballs, pastries, and Scandinavian cuisine.",
-    cities: [
-      { name: "Stockholm" },
-      { name: "Gothenburg" },
-      { name: "Malmö" }
-    ],
-    faqs: [
-      { question: "Is Sweden good for gluten-free travelers?", answer: "Yes! Sweden has excellent celiac awareness and many restaurants offer dedicated gluten-free Swedish cuisine." },
-      { question: "Can I find GF Swedish meatballs?", answer: "Absolutely! Many Swedish restaurants offer gluten-free versions of traditional dishes including meatballs and Princess Cake." },
-      { question: "Are there GF bakeries in Sweden?", answer: "Yes, Sweden has several dedicated gluten-free bakeries offering traditional Swedish pastries like cinnamon buns." }
-    ],
-    schemaId: "sweden"
-  });
+  
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
@@ -234,6 +223,7 @@ const Sweden = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

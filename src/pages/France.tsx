@@ -3,31 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const France = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
   
-  useCountrySEO({
-    countryName: "France",
-    countrySlug: "france",
-    description: "Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities.",
-    ogDescription: "Discover gluten-free French cuisine. Browse dedicated bakeries, restaurants, and patisseries offering safe croissants, bread, and pastries.",
-    cities: [
-      { name: "Paris" },
-      { name: "Lyon" },
-      { name: "Nice" },
-      { name: "Bordeaux" },
-      { name: "Marseille" }
-    ],
-    faqs: [
-      { question: "Can I find gluten-free croissants in France?", answer: "Yes! Several dedicated GF bakeries in Paris and other cities make authentic gluten-free croissants, bread, and pastries." },
-      { question: "Is France celiac-friendly?", answer: "France has improved significantly with many dedicated GF bakeries and restaurants. Paris especially has excellent options." },
-      { question: "What GF bakeries should I visit in Paris?", answer: "Top options include Chambelland, Noglu, and Copains - all 100% dedicated gluten-free facilities with amazing French pastries." }
-    ],
-    schemaId: "france"
-  });
+  
 
   const cities = [
     {
@@ -1177,6 +1158,12 @@ const France = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in France | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities."
+        canonical="/france"
+      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star key={star} className={`h-4 w-4 ${star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
@@ -1338,6 +1325,7 @@ const France = () => {
         ))}
       </main>
     </div>
+    </>
   );
 };
 

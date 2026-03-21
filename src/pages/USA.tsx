@@ -3,28 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { useCountrySEO } from "@/hooks/useCountrySEO";
-
+import { SEOHead } from "@/components/SEOHead";
 const USA = () => {
-  useCountrySEO({
-    countryName: "USA",
-    countrySlug: "usa",
-    description: "Find the best gluten-free restaurants across the USA. Dedicated GF facilities, certified restaurants in New York, Los Angeles, Chicago, Miami & more.",
-    ogDescription: "Discover America's top gluten-free dining destinations. Browse certified restaurants, bakeries, and dedicated GF establishments nationwide.",
-    cities: [
-      { name: "New York" },
-      { name: "Los Angeles" },
-      { name: "Chicago" },
-      { name: "Miami" },
-      { name: "San Francisco" }
-    ],
-    faqs: [
-      { question: "Is the USA good for gluten-free dining?", answer: "Yes! The USA has one of the most developed gluten-free dining scenes with many dedicated facilities, clear labeling laws, and widespread awareness." },
-      { question: "How do I find certified GF restaurants in the USA?", answer: "Look for GFCO (Gluten-Free Certification Organization) certified restaurants or those with dedicated gluten-free kitchens." },
-      { question: "Are there GF options at chain restaurants?", answer: "Many US chain restaurants now offer gluten-free menus with allergen information readily available online and in-store." }
-    ],
-    schemaId: "usa"
-  });
+  
   const cities = [
     {
       name: "New York City",
@@ -188,6 +169,12 @@ const USA = () => {
 
   const renderStarRating = (rating: number) => {
     return (
+      <>
+      <SEOHead
+        title="Gluten-Free Restaurants in USA | Celiac-Safe Dining Guide 2026"
+        description="Find the best gluten-free restaurants across the USA. Dedicated GF facilities, certified restaurants in New York, Los Angeles, Chicago, Miami & more."
+        canonical="/usa"
+      />
       <div className="flex items-center gap-0.5">
         {[...Array(5)].map((_, i) => (
           <Star
@@ -449,6 +436,7 @@ const USA = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
