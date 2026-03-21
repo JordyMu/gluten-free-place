@@ -345,12 +345,6 @@ const Australia = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Restaurants in Australia | Celiac-Safe Dining Guide 2026"
-        description="Find the best gluten-free restaurants in Australia. Coeliac Australia certified cafes, bakeries & restaurants in Sydney, Melbourne, Brisbane, Perth."
-        canonical="/australia"
-      />
       <div className="flex items-center space-x-1">
         {[1, 2, 3, 4, 5].map((star) => (
           <Star
