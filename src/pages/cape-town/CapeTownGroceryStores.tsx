@@ -122,12 +122,6 @@ const CapeTownGroceryStores = () => {
 
   const renderStarRating = (rating: number) => {
     return (
-      <>
-      <SEOHead
-        title="Gluten-Free Grocery Stores in Cape Town | GlutenFreePlace"
-        description="Find grocery stores with gluten-free products in Cape Town. Stock up on GF essentials while traveling."
-        canonical="/gluten-free/south-africa/cape-town/grocery-stores"
-      />
       <div className="flex items-center gap-1">
         {[...Array(5)].map((_, i) => (
           <Star
