@@ -252,7 +252,7 @@ export const torontoRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Tue–Sat: 9:00AM – 5:00PM",
     phone: "+1 416-537-0202",
-    website: "",
+    website: "glutenfreelartisan.com",
     directionsUrl: "https://www.google.com/maps/search/Gluten+Free+by+l'Artisan+Toronto",
     specialty: "Dedicated GF artisan baked goods",
     overview: "Gluten Free by l'Artisan creates exquisite artisan baked goods in a 100% gluten-free kitchen. French-inspired pastries and breads for the celiac community.",
