@@ -301,7 +301,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Colombian Street Food",
     slug: "colombian-street-food",
-    address: "Toronto, ON",
+    address: "1565 Dupont St, Toronto, ON M6P 3S5, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:00AM – 9:00PM",
