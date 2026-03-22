@@ -349,7 +349,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6481,
     lng: -79.3811,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800", "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800"],
+    photos: ["/images/toronto/kupfert-kim-1.webp", "/images/toronto/kupfert-kim-2.webp", "/images/toronto/kupfert-kim-3.webp", "/images/toronto/kupfert-kim-4.webp", "/images/toronto/kupfert-kim-5.webp", "/images/toronto/kupfert-kim-6.webp", "/images/toronto/kupfert-kim-7.webp", "/images/toronto/kupfert-kim-8.webp", "/images/toronto/kupfert-kim-9.webp"],
     celiacSafetyScore: 7,
   },
   {
