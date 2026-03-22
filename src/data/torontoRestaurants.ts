@@ -241,7 +241,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6491,
     lng: -79.3780,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=800", "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800", "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800"],
+    photos: ["/images/impact-kitchen-1.webp", "/images/impact-kitchen-2.webp", "/images/impact-kitchen-3.webp", "/images/impact-kitchen-4.webp", "/images/impact-kitchen-5.webp", "/images/impact-kitchen-6.webp", "/images/impact-kitchen-7.webp", "/images/impact-kitchen-8.webp"],
     celiacSafetyScore: 7,
   },
   {
