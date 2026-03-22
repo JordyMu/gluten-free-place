@@ -247,7 +247,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Gluten Free by l'Artisan",
     slug: "gluten-free-by-lartisan",
-    address: "Toronto, ON",
+    address: "835 Bloor St W, Toronto, ON M6G 1M1, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Tue–Sat: 9:00AM – 5:00PM",
