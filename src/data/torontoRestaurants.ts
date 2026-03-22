@@ -322,7 +322,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6551,
     lng: -79.3851,
     venueType: "street-food",
-    photos: ["https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?w=800", "https://images.unsplash.com/photo-1613514785940-daed07799d9b?w=800", "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800"],
+    photos: ["/images/toronto/colombian-street-food-1.webp", "/images/toronto/colombian-street-food-2.webp", "/images/toronto/colombian-street-food-3.webp", "/images/toronto/colombian-street-food-4.webp", "/images/toronto/colombian-street-food-5.webp", "/images/toronto/colombian-street-food-6.webp", "/images/toronto/colombian-street-food-7.webp", "/images/toronto/colombian-street-food-8.webp"],
     celiacSafetyScore: 7,
   },
   {
