@@ -328,7 +328,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Kupfert & Kim",
     slug: "kupfert-and-kim",
-    address: "Toronto, ON",
+    address: "First Canadian Place, Concourse Level, 100 King St W, Toronto, ON M5X 1H3, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Fri: 8:00AM – 8:00PM, Sat–Sun: 10:00AM – 6:00PM",
