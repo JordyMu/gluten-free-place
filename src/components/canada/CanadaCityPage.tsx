@@ -58,6 +58,11 @@ const renderStarRating = (rating: number) => (
   </div>
 );
 
+const openExternalLink = (url: string) => {
+  const normalizedUrl = url.startsWith("http") ? url : `https://${url}`;
+  window.open(normalizedUrl, "_blank", "noopener,noreferrer");
+};
+
 const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilter, setMenuFilter] = useState<string>("all");
@@ -255,18 +260,22 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <Button asChild className="bg-red-700 hover:bg-red-800">
-                      <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
-                        <Navigation className="w-4 h-4 mr-2" />
-                        Get Directions
-                      </a>
+                    <Button
+                      type="button"
+                      className="bg-red-700 hover:bg-red-800"
+                      onClick={() => openExternalLink(restaurant.directionsUrl)}
+                    >
+                      <Navigation className="w-4 h-4 mr-2" />
+                      Get Directions
                     </Button>
                     {restaurant.website && (
-                      <Button variant="outline" asChild>
-                        <a href={restaurant.website.startsWith("http") ? restaurant.website : `https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
-                          <Globe className="w-4 h-4 mr-2" />
-                          Website
-                        </a>
+                      <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => openExternalLink(restaurant.website)}
+                      >
+                        <Globe className="w-4 h-4 mr-2" />
+                        Website
                       </Button>
                     )}
                   </div>
