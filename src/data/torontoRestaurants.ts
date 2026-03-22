@@ -187,7 +187,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6621,
     lng: -79.4035,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800", "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800", "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"],
+    photos: ["/images/almond-butterfly-espresso-1.webp", "/images/almond-butterfly-espresso-2.webp", "/images/almond-butterfly-espresso-3.webp", "/images/almond-butterfly-espresso-4.webp", "/images/almond-butterfly-espresso-5.webp", "/images/almond-butterfly-espresso-6.webp", "/images/almond-butterfly-espresso-7.webp", "/images/almond-butterfly-espresso-8.webp"],
     celiacSafetyScore: 10,
   },
   {
