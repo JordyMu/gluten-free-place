@@ -251,7 +251,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Tue–Sat: 9:00AM – 5:00PM",
-    phone: "",
+    phone: "+1 416-537-0202",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Gluten+Free+by+l'Artisan+Toronto",
     specialty: "Dedicated GF artisan baked goods",
