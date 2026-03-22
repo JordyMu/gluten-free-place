@@ -214,7 +214,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6614,
     lng: -79.4501,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800", "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800", "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"],
+    photos: ["/images/bunners-bakeshop-1.webp", "/images/bunners-bakeshop-2.webp", "/images/bunners-bakeshop-3.webp", "/images/bunners-bakeshop-4.webp", "/images/bunners-bakeshop-5.webp", "/images/bunners-bakeshop-6.webp", "/images/bunners-bakeshop-7.webp", "/images/bunners-bakeshop-8.webp"],
     celiacSafetyScore: 10,
   },
   {
