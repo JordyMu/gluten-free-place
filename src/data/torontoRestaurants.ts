@@ -306,7 +306,7 @@ export const torontoRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Mon–Sun: 11:00AM – 9:00PM",
     phone: "+1 647-229-6243",
-    website: "",
+    website: "colombianstreetfood.square.site",
     directionsUrl: "https://www.google.com/maps/search/Colombian+Street+Food+Toronto",
     specialty: "Colombian street food with corn-based GF options",
     overview: "Colombian Street Food offers authentic empanadas and arepas made from corn flour, naturally gluten-free. A great casual dining option for celiacs.",
