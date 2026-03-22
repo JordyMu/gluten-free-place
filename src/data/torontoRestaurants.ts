@@ -332,7 +332,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Fri: 8:00AM – 8:00PM, Sat–Sun: 10:00AM – 6:00PM",
-    phone: "",
+    phone: "+1 416-504-1233",
     website: "www.kupfertandkim.com",
     directionsUrl: "https://www.google.com/maps/search/Kupfert+Kim+Toronto",
     specialty: "Plant-based fast casual with GF options",
