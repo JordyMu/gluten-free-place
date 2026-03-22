@@ -295,7 +295,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6581,
     lng: -79.4001,
     venueType: "supermarket",
-    photos: ["https://images.unsplash.com/photo-1542838132-92c53300491e?w=800", "https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=800"],
+    photos: ["/images/toronto/sunshine-wholesome-market-1.webp", "/images/toronto/sunshine-wholesome-market-2.webp", "/images/toronto/sunshine-wholesome-market-3.webp", "/images/toronto/sunshine-wholesome-market-4.webp", "/images/toronto/sunshine-wholesome-market-5.webp", "/images/toronto/sunshine-wholesome-market-6.webp", "/images/toronto/sunshine-wholesome-market-7.webp", "/images/toronto/sunshine-wholesome-market-8.webp"],
     celiacSafetyScore: 6,
   },
   {
