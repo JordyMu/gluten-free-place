@@ -305,7 +305,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:00AM – 9:00PM",
-    phone: "",
+    phone: "+1 647-229-6243",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Colombian+Street+Food+Toronto",
     specialty: "Colombian street food with corn-based GF options",
