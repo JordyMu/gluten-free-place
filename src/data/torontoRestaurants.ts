@@ -268,7 +268,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6551,
     lng: -79.3901,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800", "https://images.unsplash.com/photo-1568254183919-78a4f43a2877?w=800", "https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800"],
+    photos: ["/images/gluten-free-by-lartisan-1.webp", "/images/gluten-free-by-lartisan-2.webp", "/images/gluten-free-by-lartisan-3.webp", "/images/gluten-free-by-lartisan-4.webp", "/images/gluten-free-by-lartisan-5.webp", "/images/gluten-free-by-lartisan-6.webp", "/images/gluten-free-by-lartisan-7.webp", "/images/gluten-free-by-lartisan-8.webp"],
     celiacSafetyScore: 9,
   },
   {
