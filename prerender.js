@@ -19,7 +19,7 @@ const routesToPrerender = fs
   for (const routeUrl of routesToPrerender) {
     const { html: appHtml, head } = render(routeUrl)
     let html = template
-      .replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`)
+      .replace('<!--app-html-->', appHtml)
     
     // Inject helmet head tags before </head>
     if (head) {
