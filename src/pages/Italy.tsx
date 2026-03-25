@@ -756,7 +756,7 @@ const Italy = () => {
           <div className="flex items-center space-x-4">
             <div className="text-6xl">🇮🇹</div>
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Italy</h1>
+              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in Italy</h1>
               <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
             </div>
           </div>
