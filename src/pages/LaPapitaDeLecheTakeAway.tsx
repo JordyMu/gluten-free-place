@@ -158,7 +158,7 @@ const LaPapitaDeLecheTakeAway = () => {
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-2 text-green-700 mb-4">
                 <CheckCircle className="h-5 w-5" />
-                <span className="font-semibold">Overview</span>
+                <h2 className="font-semibold">Overview</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 La Papita de Leche Take Away is a quick service restaurant in Madrid with staff knowledgeable about gluten-free options and preparation. While not a dedicated gluten-free facility, they maintain standard protocols to minimize cross-contamination. The restaurant offers selected gluten-free items including burgers, wraps, and salads, making it a convenient option for celiacs looking for fast, affordable meals in the city center.
@@ -168,7 +168,7 @@ const LaPapitaDeLecheTakeAway = () => {
             <div className="p-6">
               <div className="flex items-center space-x-2 text-orange-600 mb-4">
                 <span className="text-lg">🍽️</span>
-                <span className="font-semibold">Menu Highlights</span>
+                <h2 className="font-semibold">Menu Highlights</h2>
               </div>
               <div className="space-y-2">
                 {menuHighlights.map((item, index) => (
@@ -189,7 +189,7 @@ const LaPapitaDeLecheTakeAway = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-2 text-gray-700 mb-6">
               <span className="text-lg">💬</span>
-              <span className="font-semibold">User Reviews</span>
+              <h2 className="font-semibold">User Reviews</h2>
             </div>
             
             <div className="space-y-6">
