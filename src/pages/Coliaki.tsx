@@ -55,8 +55,8 @@ const Coliaki = () => {
           <div className="flex items-center space-x-4 mb-4">
             <img src="https://images.unsplash.com/photo-1555507036-ab794f575c75?auto=format&fit=crop&w=100&h=100&q=80" alt="Spain flag" className="w-12 h-8 rounded object-cover" />
             <div>
-              <h1 className="text-3xl font-bold text-gray-900">Spain</h1>
-              <p className="text-gray-600">Top Gluten-Free Restaurants</p>
+              <h1 className="text-3xl font-bold text-gray-900">Coliaki</h1>
+              <p className="text-gray-600">Gluten-Free Restaurant in Spain</p>
             </div>
           </div>
         </div>

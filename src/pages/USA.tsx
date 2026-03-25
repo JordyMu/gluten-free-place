@@ -203,7 +203,7 @@ const USA = () => {
               <span className="font-medium">Back</span>
             </Link>
             <div className="text-center flex-1">
-              <h1 className="text-3xl font-bold text-gray-900">USA</h1>
+              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in the USA</h1>
               <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
             </div>
           </div>
