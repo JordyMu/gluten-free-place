@@ -376,7 +376,7 @@ const Canada = () => {
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-2 mb-3">
               <Shield className="w-6 h-6 text-red-600" />
-              <span className="text-lg font-semibold text-gray-900">Trust & Safety</span>
+              <h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2>
             </div>
             <p className="text-gray-600">
               All restaurants are verified by our community of celiac travelers. We prioritize dedicated gluten-free

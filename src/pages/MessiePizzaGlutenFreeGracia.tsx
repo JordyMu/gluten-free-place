@@ -162,7 +162,7 @@ const MessiePizzaGlutenFreeGracia = () => {
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-2 text-green-700 mb-4">
                 <CheckCircle className="h-5 w-5" />
-                <span className="font-semibold">Overview</span>
+                <h2 className="font-semibold">Overview</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Messié Pizza Gluten Free Gràcia is a dedicated gluten-free pizzeria with expertly trained staff in the heart of Barcelona's trendy Gràcia district. This 100% gluten-free facility ensures complete safety for celiacs while delivering authentic Italian pizza flavors. The restaurant features a dedicated facility with separate preparation areas and equipment, proudly displaying its celiac-safe certification. Known for its excellent pizza dough and high-quality ingredients.
@@ -172,7 +172,7 @@ const MessiePizzaGlutenFreeGracia = () => {
             <div className="p-6">
               <div className="flex items-center space-x-2 text-orange-600 mb-4">
                 <span className="text-lg">🍽️</span>
-                <span className="font-semibold">Menu Highlights</span>
+                <h2 className="font-semibold">Menu Highlights</h2>
               </div>
               <div className="space-y-2">
                 {menuHighlights.map((item, index) => (
@@ -193,7 +193,7 @@ const MessiePizzaGlutenFreeGracia = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-2 text-gray-700 mb-6">
               <span className="text-lg">💬</span>
-              <span className="font-semibold">User Reviews</span>
+              <h2 className="font-semibold">User Reviews</h2>
             </div>
             
             <div className="space-y-6">

@@ -162,7 +162,7 @@ const Coliaki = () => {
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-2 text-green-700 mb-4">
                 <CheckCircle className="h-5 w-5" />
-                <span className="font-semibold">Overview</span>
+                <h2 className="font-semibold">Overview</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Cøliaki in Seville is a specialized celiac bakery offering a 100% gluten-free environment with highly trained staff and comprehensive knowledge of celiac requirements. Known for its artisan gluten-free bread, croissants, and custom cakes, it has become a top choice for locals and travelers with dietary restrictions. The bakery provides separate preparation areas to avoid cross-contamination and proudly displays its celiac-safe certification.
@@ -172,7 +172,7 @@ const Coliaki = () => {
             <div className="p-6">
               <div className="flex items-center space-x-2 text-orange-600 mb-4">
                 <span className="text-lg">🍽️</span>
-                <span className="font-semibold">Menu Highlights</span>
+                <h2 className="font-semibold">Menu Highlights</h2>
               </div>
               <div className="space-y-2">
                 {menuHighlights.map((item, index) => (
@@ -193,7 +193,7 @@ const Coliaki = () => {
           <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
             <div className="flex items-center space-x-2 text-gray-700 mb-6">
               <span className="text-lg">💬</span>
-              <span className="font-semibold">User Reviews</span>
+              <h2 className="font-semibold">User Reviews</h2>
             </div>
             
             <div className="space-y-6">

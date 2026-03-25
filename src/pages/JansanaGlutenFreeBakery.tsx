@@ -163,7 +163,7 @@ const JansanaGlutenFreeBakery = () => {
             <div className="p-6 border-b border-gray-200">
               <div className="flex items-center space-x-2 text-green-700 mb-4">
                 <CheckCircle className="h-5 w-5" />
-                <span className="font-semibold">Overview</span>
+                <h2 className="font-semibold">Overview</h2>
               </div>
               <p className="text-gray-700 leading-relaxed">
                 Jansana Gluten Free Bakery in Barcelona is a certified gluten-free bakery offering a full Spanish menu that's safe for celiacs. Known for its 
@@ -176,7 +176,7 @@ const JansanaGlutenFreeBakery = () => {
             <div className="p-6">
               <div className="flex items-center space-x-2 text-orange-600 mb-4">
                 <span className="text-lg">🍽️</span>
-                <span className="font-semibold">Menu Highlights</span>
+                <h2 className="font-semibold">Menu Highlights</h2>
               </div>
               <div className="space-y-2">
                 {menuHighlights.map((item, index) => (
