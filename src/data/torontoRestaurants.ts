@@ -440,7 +440,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
-    phone: "",
+    phone: "+1 416-603-2742",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Aria+Sushi+Toronto",
     specialty: "Japanese sushi with GF options",
