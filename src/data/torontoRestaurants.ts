@@ -826,7 +826,7 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/pho-concept-gf-eatery-riz-5.webp", caption: "Pad Thai Noodles" },
       { url: "/images/toronto/pho-concept-gf-eatery-riz-6.webp", caption: "Cashew Fried Rice" },
       { url: "/images/toronto/pho-concept-gf-eatery-riz-7.webp", caption: "Green Curry" },
-      { url: "/images/toronto/pho-concept-gf-eatery-riz-8.webp", caption: "Mushroom Soup" },
+      { url: "/images/toronto/pho-concept-gf-eatery-riz-8.webp", caption: "GF Chicken Noodles Soup" },
     ],
     celiacSafetyScore: 10,
   },
