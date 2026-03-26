@@ -621,7 +621,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 8:00AM – 3:00PM",
-    phone: "",
+    phone: "+1 437-880-8291",
     website: "www.eatoeb.com",
     directionsUrl: "https://www.google.com/maps/search/OEB+Breakfast+Co+Toronto",
     specialty: "Brunch spot with GF pancakes & waffles",
