@@ -430,7 +430,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6051,
     lng: -79.5001,
     venueType: "cafe",
-    photos: ["https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800", "https://images.unsplash.com/photo-1495147466023-ac5c588e2e94?w=800", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800"],
+    photos: ["/images/toronto/gud-daae-gf-sandwiches-1.webp", "/images/toronto/gud-daae-gf-sandwiches-2.webp", "/images/toronto/gud-daae-gf-sandwiches-3.webp", "/images/toronto/gud-daae-gf-sandwiches-4.webp", "/images/toronto/gud-daae-gf-sandwiches-5.webp", "/images/toronto/gud-daae-gf-sandwiches-6.webp", "/images/toronto/gud-daae-gf-sandwiches-7.webp", "/images/toronto/gud-daae-gf-sandwiches-8.webp"],
     celiacSafetyScore: 9,
   },
   {
