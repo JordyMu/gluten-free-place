@@ -693,7 +693,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
-    phone: "",
+    phone: "+1 647-812-1210",
     website: "www.plantarestaurants.com",
     directionsUrl: "https://www.google.com/maps/search/Planta+Queen+Toronto",
     specialty: "Plant-based Asian with GF options",
