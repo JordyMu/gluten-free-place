@@ -457,7 +457,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6541,
     lng: -79.3921,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=800", "https://images.unsplash.com/photo-1553621042-f6e147245754?w=800", "https://images.unsplash.com/photo-1540648639573-8c848de23f0a?w=800"],
+    photos: ["/images/toronto/aria-sushi-1.webp", "/images/toronto/aria-sushi-2.webp", "/images/toronto/aria-sushi-3.webp", "/images/toronto/aria-sushi-4.webp", "/images/toronto/aria-sushi-5.webp", "/images/toronto/aria-sushi-6.webp", "/images/toronto/aria-sushi-7.webp", "/images/toronto/aria-sushi-8.webp"],
     celiacSafetyScore: 7,
   },
   {
