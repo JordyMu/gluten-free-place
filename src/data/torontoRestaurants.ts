@@ -747,7 +747,7 @@ export const torontoRestaurants: Restaurant[] = [
     lng: -79.3851,
     venueType: "bakery",
     photos: [
-      { url: "/images/toronto/the-bread-essentials-1.webp", caption: "GF Sesame Bagels" },
+      { url: "/images/toronto/the-bread-essentials-1.webp", caption: "Bagels Vegan" },
       { url: "/images/toronto/the-bread-essentials-2.webp", caption: "Sourdough Multigrain" },
       { url: "/images/toronto/the-bread-essentials-3.webp", caption: "Gluten Free Bread" },
       { url: "/images/toronto/the-bread-essentials-4.webp", caption: "Empty Pie Shell" },
