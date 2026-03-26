@@ -376,7 +376,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6651,
     lng: -79.4101,
     venueType: "bakery",
-    photos: ["https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800", "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800", "https://images.unsplash.com/photo-1517433670267-08bbd4be890f?w=800"],
+    photos: ["/images/toronto/cock-a-doodle-doo-1.webp", "/images/toronto/cock-a-doodle-doo-2.webp", "/images/toronto/cock-a-doodle-doo-3.webp", "/images/toronto/cock-a-doodle-doo-4.webp", "/images/toronto/cock-a-doodle-doo-5.webp", "/images/toronto/cock-a-doodle-doo-6.webp", "/images/toronto/cock-a-doodle-doo-7.webp", "/images/toronto/cock-a-doodle-doo-8.webp"],
     celiacSafetyScore: 9,
   },
   {
