@@ -403,7 +403,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.7251,
     lng: -79.3991,
     venueType: "restaurant",
-    photos: ["https://images.unsplash.com/photo-1582878826629-29b7ad1cdc43?w=800", "https://images.unsplash.com/photo-1503764654157-72d979d9af2f?w=800", "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=800", "https://images.unsplash.com/photo-1553621042-f6e147245754?w=800"],
+    photos: ["/images/toronto/riz-gluten-free-asian-kitchen-1.webp", "/images/toronto/riz-gluten-free-asian-kitchen-2.webp", "/images/toronto/riz-gluten-free-asian-kitchen-3.webp", "/images/toronto/riz-gluten-free-asian-kitchen-4.webp", "/images/toronto/riz-gluten-free-asian-kitchen-5.webp", "/images/toronto/riz-gluten-free-asian-kitchen-6.webp", "/images/toronto/riz-gluten-free-asian-kitchen-7.webp", "/images/toronto/riz-gluten-free-asian-kitchen-8.webp"],
     celiacSafetyScore: 10,
   },
   {
