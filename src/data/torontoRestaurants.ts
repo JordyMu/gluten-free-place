@@ -436,7 +436,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Aria Sushi",
     slug: "aria-sushi",
-    address: "Toronto, ON",
+    address: "626 Queen St W, Toronto, ON M6J 1E4, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
