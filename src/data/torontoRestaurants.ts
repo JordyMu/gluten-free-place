@@ -714,7 +714,7 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/planta-queen-1.webp", caption: "Bang Bang Broccoli" },
       { url: "/images/toronto/planta-queen-2.webp", caption: "Curry Beans & Lentils" },
       { url: "/images/toronto/planta-queen-3.webp", caption: "Kimchi Baos" },
-      { url: "/images/toronto/planta-queen-4.webp", caption: "Key Lime Cheesecake" },
+      { url: "/images/toronto/planta-queen-4.webp", caption: "Matcha Cheesecake" },
       { url: "/images/toronto/planta-queen-5.webp", caption: "Tomato Nigiri" },
       { url: "/images/toronto/planta-queen-6.webp", caption: "Dumplings" },
       { url: "/images/toronto/planta-queen-7.webp", caption: "Bang Bang Broccoli" },
