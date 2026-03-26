@@ -457,7 +457,16 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6541,
     lng: -79.3921,
     venueType: "restaurant",
-    photos: ["/images/toronto/aria-sushi-1.webp", "/images/toronto/aria-sushi-2.webp", "/images/toronto/aria-sushi-3.webp", "/images/toronto/aria-sushi-4.webp", "/images/toronto/aria-sushi-5.webp", "/images/toronto/aria-sushi-6.webp", "/images/toronto/aria-sushi-7.webp", "/images/toronto/aria-sushi-8.webp"],
+    photos: [
+      { url: "/images/toronto/aria-sushi-1.webp", caption: "Restaurant Interior" },
+      { url: "/images/toronto/aria-sushi-2.webp", caption: "Sushi Platter" },
+      { url: "/images/toronto/aria-sushi-3.webp", caption: "Salmon Nigiri" },
+      { url: "/images/toronto/aria-sushi-4.webp", caption: "California Poke Bowl" },
+      { url: "/images/toronto/aria-sushi-5.webp", caption: "Veggie Combo" },
+      { url: "/images/toronto/aria-sushi-6.webp", caption: "Dragon Roll" },
+      { url: "/images/toronto/aria-sushi-7.webp", caption: "Miso Soup" },
+      { url: "/images/toronto/aria-sushi-8.webp", caption: "Chef's Special" },
+    ],
     celiacSafetyScore: 7,
   },
   {
