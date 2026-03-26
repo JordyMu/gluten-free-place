@@ -617,7 +617,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "OEB Breakfast Co.",
     slug: "oeb-breakfast-co",
-    address: "Toronto, ON",
+    address: "20 Toronto St, Toronto, ON M5C 2B8, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 8:00AM – 3:00PM",
