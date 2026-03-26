@@ -711,7 +711,7 @@ export const torontoRestaurants: Restaurant[] = [
     lng: -79.3901,
     venueType: "restaurant",
     photos: [
-      { url: "/images/toronto/planta-queen-1.webp", caption: "Crispy Broccoli Bites" },
+      { url: "/images/toronto/planta-queen-1.webp", caption: "Bang Bang Broccoli" },
       { url: "/images/toronto/planta-queen-2.webp", caption: "Dan Dan Noodles" },
       { url: "/images/toronto/planta-queen-3.webp", caption: "Bao Buns" },
       { url: "/images/toronto/planta-queen-4.webp", caption: "Key Lime Cheesecake" },
