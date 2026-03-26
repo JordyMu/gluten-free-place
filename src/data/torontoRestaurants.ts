@@ -749,7 +749,7 @@ export const torontoRestaurants: Restaurant[] = [
     photos: [
       { url: "/images/toronto/the-bread-essentials-1.webp", caption: "GF Sesame Bagels" },
       { url: "/images/toronto/the-bread-essentials-2.webp", caption: "Artisan Sourdough Loaves" },
-      { url: "/images/toronto/the-bread-essentials-3.webp", caption: "Sliced Multigrain Bread" },
+      { url: "/images/toronto/the-bread-essentials-3.webp", caption: "Gluten Free Bread" },
       { url: "/images/toronto/the-bread-essentials-4.webp", caption: "Empty Pie Shell" },
       { url: "/images/toronto/the-bread-essentials-5.webp", caption: "Vegan Chocolate Treats" },
       { url: "/images/toronto/the-bread-essentials-6.webp", caption: "GF Muffins" },
