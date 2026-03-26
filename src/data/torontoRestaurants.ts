@@ -819,7 +819,7 @@ export const torontoRestaurants: Restaurant[] = [
     lng: -79.4251,
     venueType: "restaurant",
     photos: [
-      { url: "/images/toronto/pho-concept-gf-eatery-riz.webp", caption: "Black Pepper Chicken" },
+      { url: "/images/toronto/pho-concept-gf-eatery-riz.webp", caption: "General Tao Chicken" },
       { url: "/images/toronto/pho-concept-gf-eatery-riz-2.webp", caption: "Pad See Ew & Chow Mein" },
       { url: "/images/toronto/pho-concept-gf-eatery-riz-3.webp", caption: "Sweet Potato Fries" },
       { url: "/images/toronto/pho-concept-gf-eatery-riz-4.webp", caption: "Red Curry" },
