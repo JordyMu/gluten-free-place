@@ -38,6 +38,103 @@
 
   <body>
     <div id="root"><!--app-html--></div>
+
+    <!-- Crawler-visible content for SEO (hidden from users) -->
+    <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)">
+      <h1>GlutenFreePlace — Find Gluten-Free Restaurants Near You</h1>
+      <p>Discover verified celiac-safe restaurants, bakeries, and cafes in 156+ countries. Real reviews from gluten-free travelers worldwide.</p>
+
+      <h2>Featured Gluten-Free Destinations</h2>
+      <h3>Europe</h3>
+      <ul>
+        <li><a href="/italy">Gluten-Free Restaurants in Italy</a></li>
+        <li><a href="/spain">Gluten-Free Restaurants in Spain</a></li>
+        <li><a href="/france">Gluten-Free Restaurants in France</a></li>
+        <li><a href="/gluten-free/united-kingdom">Gluten-Free Restaurants in the United Kingdom</a></li>
+        <li><a href="/ireland">Gluten-Free Restaurants in Ireland</a></li>
+        <li><a href="/germany">Gluten-Free Restaurants in Germany</a></li>
+        <li><a href="/sweden">Gluten-Free Restaurants in Sweden</a></li>
+      </ul>
+
+      <h3>Africa</h3>
+      <ul>
+        <li><a href="/gluten-free/south-africa">Gluten-Free Restaurants in South Africa</a></li>
+        <li><a href="/gluten-free/kenya">Gluten-Free Restaurants in Kenya</a></li>
+        <li><a href="/gluten-free/nigeria">Gluten-Free Restaurants in Nigeria</a></li>
+        <li><a href="/gluten-free/morocco">Gluten-Free Restaurants in Morocco</a></li>
+        <li><a href="/gluten-free/egypt">Gluten-Free Restaurants in Egypt</a></li>
+        <li><a href="/gluten-free/mauritius">Gluten-Free Restaurants in Mauritius</a></li>
+        <li><a href="/gluten-free/botswana">Gluten-Free Restaurants in Botswana</a></li>
+      </ul>
+
+      <h3>Americas</h3>
+      <ul>
+        <li><a href="/usa">Gluten-Free Restaurants in the USA</a></li>
+        <li><a href="/gluten-free/canada">Gluten-Free Restaurants in Canada</a></li>
+        <li><a href="/argentina">Gluten-Free Restaurants in Argentina</a></li>
+      </ul>
+
+      <h3>Asia &amp; Oceania</h3>
+      <ul>
+        <li><a href="/japan">Gluten-Free Restaurants in Japan</a></li>
+        <li><a href="/thailand">Gluten-Free Restaurants in Thailand</a></li>
+        <li><a href="/australia">Gluten-Free Restaurants in Australia</a></li>
+        <li><a href="/new-zealand">Gluten-Free Restaurants in New Zealand</a></li>
+      </ul>
+
+      <h2>Popular Cities</h2>
+      <ul>
+        <li><a href="/gluten-free/united-kingdom/london">Gluten-Free London</a></li>
+        <li><a href="/gluten-free/united-kingdom/edinburgh">Gluten-Free Edinburgh</a></li>
+        <li><a href="/gluten-free/united-kingdom/manchester">Gluten-Free Manchester</a></li>
+        <li><a href="/gluten-free/canada/toronto">Gluten-Free Toronto</a></li>
+        <li><a href="/gluten-free/canada/vancouver">Gluten-Free Vancouver</a></li>
+        <li><a href="/gluten-free/canada/montreal">Gluten-Free Montreal</a></li>
+        <li><a href="/gluten-free/south-africa/cape-town">Gluten-Free Cape Town</a></li>
+        <li><a href="/gluten-free/south-africa/johannesburg">Gluten-Free Johannesburg</a></li>
+        <li><a href="/gluten-free/south-africa/durban">Gluten-Free Durban</a></li>
+        <li><a href="/gluten-free/kenya/nairobi">Gluten-Free Nairobi</a></li>
+        <li><a href="/gluten-free/kenya/mombasa">Gluten-Free Mombasa</a></li>
+        <li><a href="/gluten-free/egypt/cairo">Gluten-Free Cairo</a></li>
+        <li><a href="/gluten-free/mauritius/port-louis">Gluten-Free Port Louis</a></li>
+        <li><a href="/gluten-free/mauritius/grand-baie">Gluten-Free Grand Baie</a></li>
+      </ul>
+
+      <h2>Why GlutenFreePlace?</h2>
+      <p>Community-verified celiac-safe restaurants with real reviews. Dedicated gluten-free kitchens, AIC and FACE certified venues, and cross-contamination protocols verified by staff.</p>
+
+      <h2>Browse All Countries</h2>
+      <p><a href="/countries">Explore gluten-free dining in 156+ countries</a></p>
+      <p><a href="/all-countries">View the complete country directory</a></p>
+    </div>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "GlutenFreePlace",
+      "url": "https://glutenfreeplace.org",
+      "logo": "https://glutenfreeplace.org/favicon.png",
+      "description": "Find gluten-free restaurants, bakeries, and cafes worldwide. Verified celiac-safe dining with real reviews from gluten-free travelers.",
+      "sameAs": []
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "GlutenFreePlace",
+      "url": "https://glutenfreeplace.org",
+      "description": "Find gluten-free restaurants near you. Verified celiac-safe dining in 156+ countries.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://glutenfreeplace.org/countries?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
