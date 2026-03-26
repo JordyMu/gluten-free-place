@@ -689,7 +689,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Planta Queen",
     slug: "planta-queen",
-    address: "Toronto, ON",
+    address: "180 Queen St W, Toronto, ON M5V 3X3, Canada",
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
