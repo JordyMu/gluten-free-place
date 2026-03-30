@@ -153,7 +153,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5261,
     lng: -73.5751,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/krapow-1.webp", caption: "Pad Thai with Shrimp (GF)" },
+      { url: "/images/montreal/krapow-2.webp", caption: "Green Curry with Jasmine Rice" },
+      { url: "/images/montreal/krapow-3.webp", caption: "Mango Sticky Rice" },
+      { url: "/images/montreal/krapow-4.webp", caption: "Rice Noodle Soup" },
+    ],
     celiacSafetyScore: 7,
   },
   {
