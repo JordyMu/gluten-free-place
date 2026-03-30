@@ -245,7 +245,7 @@ export const montrealRestaurants: Restaurant[] = [
       { url: "/images/montreal/vegateau-5.webp?v=2", caption: "Vegan Chocolate Celebration Cake" },
       { url: "/images/montreal/vegateau-6.webp?v=2", caption: "Chocolate Cupcake with Vegan Ganache" },
       { url: "/images/montreal/vegateau-7.webp?v=2", caption: "Tartelette Aux Framboises Raspberry Tart" },
-      { url: "/images/montreal/vegateau-8.webp?v=2", caption: "Cupcake Trio with Lemon Meringue Tart" },
+      { url: "/images/montreal/vegateau-8.webp?v=2", caption: "Ganache Au Chocolat" },
     ],
     celiacSafetyScore: 7,
   },
