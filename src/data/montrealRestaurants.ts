@@ -473,7 +473,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5171,
     lng: -73.5741,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/commodore-1.webp", caption: "Grilled Fish with Vegetables" },
+      { url: "/images/montreal/commodore-2.webp", caption: "Beet & Goat Cheese Salad" },
+      { url: "/images/montreal/commodore-3.webp", caption: "Panna Cotta with Berries" },
+      { url: "/images/montreal/commodore-4.webp", caption: "Natural Orange Wine" },
+    ],
     celiacSafetyScore: 7,
   },
 ];
