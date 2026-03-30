@@ -284,7 +284,7 @@ export const montrealRestaurants: Restaurant[] = [
       { url: "/images/montreal/parc-sans-gluten-4.webp?v=2", caption: "GF Ham & Cream Puff Sandwiches" },
       { url: "/images/montreal/parc-sans-gluten-5.webp?v=2", caption: "GF Assorted Flatbreads & Pizzas" },
       { url: "/images/montreal/parc-sans-gluten-6.webp?v=2", caption: "GF Poppy Seed Artisan Loaf" },
-      { url: "/images/montreal/parc-sans-gluten-7.webp?v=2", caption: "GF Seeded Multigrain Bread" },
+      { url: "/images/montreal/parc-sans-gluten-7.webp?v=3", caption: "GF Spinach & Olive Pizza" },
       { url: "/images/montreal/parc-sans-gluten-8.webp?v=2", caption: "GF Croissant with Strawberry Jam & Cheese" },
     ],
     celiacSafetyScore: 10,
