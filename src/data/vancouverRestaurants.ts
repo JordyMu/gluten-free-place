@@ -25,7 +25,16 @@ export const vancouverRestaurants: Restaurant[] = [
     lat: 49.2531,
     lng: -123.0951,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/vancouver/gluten-free-epicurean-1.webp", caption: "Bakery Interior" },
+      { url: "/images/vancouver/gluten-free-epicurean-2.webp", caption: "GF Artisan Bread" },
+      { url: "/images/vancouver/gluten-free-epicurean-3.webp", caption: "GF Pastries" },
+      { url: "/images/vancouver/gluten-free-epicurean-4.webp", caption: "Sourdough Loaves" },
+      { url: "/images/vancouver/gluten-free-epicurean-5.webp", caption: "Celebration Cake" },
+      { url: "/images/vancouver/gluten-free-epicurean-6.webp", caption: "Savoury Pies" },
+      { url: "/images/vancouver/gluten-free-epicurean-7.webp", caption: "Cinnamon Buns" },
+      { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Display Counter" },
+    ],
     celiacSafetyScore: 10,
   },
   {
