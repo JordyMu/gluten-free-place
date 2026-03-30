@@ -89,7 +89,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5231,
     lng: -73.5801,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/le-marquis-sante-1.webp", caption: "GF Seed Bread Loaves" },
+      { url: "/images/montreal/le-marquis-sante-2.webp", caption: "GF Croissants & Pastries" },
+      { url: "/images/montreal/le-marquis-sante-3.webp", caption: "Grilled Chicken Meal Prep" },
+      { url: "/images/montreal/le-marquis-sante-4.webp", caption: "Latte with GF Pastry" },
+    ],
     celiacSafetyScore: 7,
   },
   {
