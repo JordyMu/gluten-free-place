@@ -316,7 +316,7 @@ export const montrealRestaurants: Restaurant[] = [
     photos: [
       { url: "/images/montreal/boulangerie-le-marquis-1.webp", caption: "GF Pistachio Opéra Cake" },
       { url: "/images/montreal/boulangerie-le-marquis-2.webp", caption: "Pastry" },
-      { url: "/images/montreal/boulangerie-le-marquis-3.webp", caption: "Blueberry Cream Éclair" },
+      { url: "/images/montreal/boulangerie-le-marquis-3.webp", caption: "Eclair" },
       { url: "/images/montreal/boulangerie-le-marquis-4.webp", caption: "Lemon Meringue Tart" },
       { url: "/images/montreal/boulangerie-le-marquis-5.webp", caption: "Almond Chocolate Croissant" },
       { url: "/images/montreal/boulangerie-le-marquis-6.webp", caption: "GF Cheese Croissant" },
