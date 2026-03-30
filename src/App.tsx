@@ -126,6 +126,7 @@ const App = () => (
         <Toaster />
         <Sonner />
           <Suspense fallback={<PageLoader />}>
+            <ScrollToTop />
             <GoogleAnalytics />
             <Routes>
               <Route path="/" element={<Index />} />
