@@ -216,7 +216,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "Vegâteau",
     slug: "vegateau",
-    address: "Montréal, QC",
+    address: "1215 Mont-Royal Ave E, Montreal, Quebec H2J 1Y2, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
