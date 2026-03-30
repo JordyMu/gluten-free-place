@@ -57,7 +57,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5121,
     lng: -73.5701,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/arepera-1.webp", caption: "Corn Arepas with Black Beans" },
+      { url: "/images/montreal/arepera-2.webp", caption: "Fresh Guacamole with Chips" },
+      { url: "/images/montreal/arepera-3.webp", caption: "Cheese Arepa" },
+      { url: "/images/montreal/arepera-4.webp", caption: "Chicken Arepa with Avocado" },
+    ],
     celiacSafetyScore: 9,
   },
   {
