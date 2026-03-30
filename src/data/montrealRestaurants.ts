@@ -25,7 +25,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5351,
     lng: -73.5901,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/cantine-panella-1.webp", caption: "GF Pasta with Tomato Sauce" },
+      { url: "/images/montreal/cantine-panella-2.webp", caption: "GF Margherita Pizza" },
+      { url: "/images/montreal/cantine-panella-3.webp", caption: "Italian Garden Salad" },
+      { url: "/images/montreal/cantine-panella-4.webp", caption: "GF Tiramisu" },
+    ],
     celiacSafetyScore: 8,
   },
   {
@@ -52,7 +57,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5121,
     lng: -73.5701,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/arepera-1.webp", caption: "Corn Arepas with Black Beans" },
+      { url: "/images/montreal/arepera-2.webp", caption: "Fresh Guacamole with Chips" },
+      { url: "/images/montreal/arepera-3.webp", caption: "Cheese Arepa" },
+      { url: "/images/montreal/arepera-4.webp", caption: "Chicken Arepa with Avocado" },
+    ],
     celiacSafetyScore: 9,
   },
   {
@@ -79,7 +89,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5231,
     lng: -73.5801,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/le-marquis-sante-1.webp", caption: "GF Seed Bread Loaves" },
+      { url: "/images/montreal/le-marquis-sante-2.webp", caption: "GF Croissants & Pastries" },
+      { url: "/images/montreal/le-marquis-sante-3.webp", caption: "Grilled Chicken Meal Prep" },
+      { url: "/images/montreal/le-marquis-sante-4.webp", caption: "Latte with GF Pastry" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -106,7 +121,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5371,
     lng: -73.6011,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/creperie-1.webp", caption: "Buckwheat Galette Complète" },
+      { url: "/images/montreal/creperie-2.webp", caption: "Gruyère Cheese Galette" },
+      { url: "/images/montreal/creperie-3.webp", caption: "Nutella & Strawberry Crêpe" },
+      { url: "/images/montreal/creperie-4.webp", caption: "Café au Lait with Galette" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -133,7 +153,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5261,
     lng: -73.5751,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/krapow-1.webp", caption: "Pad Thai with Shrimp (GF)" },
+      { url: "/images/montreal/krapow-2.webp", caption: "Green Curry with Jasmine Rice" },
+      { url: "/images/montreal/krapow-3.webp", caption: "Mango Sticky Rice" },
+      { url: "/images/montreal/krapow-4.webp", caption: "Rice Noodle Soup" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -160,7 +185,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5151,
     lng: -73.5701,
     venueType: "cafe",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/la-bolo-1.webp", caption: "GF Blueberry Muffins" },
+      { url: "/images/montreal/la-bolo-2.webp", caption: "GF Scones & Pastries" },
+      { url: "/images/montreal/la-bolo-3.webp", caption: "Specialty Latte Art" },
+      { url: "/images/montreal/la-bolo-4.webp", caption: "GF Avocado Toast Brunch" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -187,7 +217,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5211,
     lng: -73.5801,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/vegateau-1.webp", caption: "Vegan Chocolate Cake" },
+      { url: "/images/montreal/vegateau-2.webp", caption: "Vegan Cupcakes" },
+      { url: "/images/montreal/vegateau-3.webp", caption: "Mixed Berry Fruit Tart" },
+      { url: "/images/montreal/vegateau-4.webp", caption: "Vegan Chocolate Chip Cookies" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -214,7 +249,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5191,
     lng: -73.5831,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/parc-sans-gluten-1.webp", caption: "GF Baguettes" },
+      { url: "/images/montreal/parc-sans-gluten-2.webp", caption: "GF Croissants" },
+      { url: "/images/montreal/parc-sans-gluten-3.webp", caption: "GF Sandwich Bread" },
+      { url: "/images/montreal/parc-sans-gluten-4.webp", caption: "Assorted GF Treats" },
+    ],
     celiacSafetyScore: 10,
   },
   {
@@ -241,7 +281,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5341,
     lng: -73.6091,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/boulangerie-1.webp", caption: "Artisan French Bread" },
+      { url: "/images/montreal/boulangerie-2.webp", caption: "Pain au Chocolat & Croissants" },
+      { url: "/images/montreal/boulangerie-3.webp", caption: "Berry Cake with Cream" },
+      { url: "/images/montreal/boulangerie-4.webp", caption: "Cappuccino & Croissant" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -268,7 +313,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5251,
     lng: -73.5851,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/lartisan-1.webp", caption: "GF/DF Layer Cake" },
+      { url: "/images/montreal/lartisan-2.webp", caption: "GF Chocolate Cupcakes" },
+      { url: "/images/montreal/lartisan-3.webp", caption: "GF Macarons" },
+      { url: "/images/montreal/lartisan-4.webp", caption: "GF Cream Puffs" },
+    ],
     celiacSafetyScore: 9,
   },
   {
@@ -295,7 +345,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5181,
     lng: -73.5761,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/bloom-sushi-1.webp", caption: "Plant-Based Sushi Rolls" },
+      { url: "/images/montreal/bloom-sushi-2.webp", caption: "Vegan Poke Bowl" },
+      { url: "/images/montreal/bloom-sushi-3.webp", caption: "Vegetable Sashimi" },
+      { url: "/images/montreal/bloom-sushi-4.webp", caption: "Seaweed Salad with Sesame" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -322,7 +377,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5201,
     lng: -73.5821,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/sushi-momo-1.webp", caption: "Vegan Sushi Board" },
+      { url: "/images/montreal/sushi-momo-2.webp", caption: "Vegan Chirashi Bowl" },
+      { url: "/images/montreal/sushi-momo-3.webp", caption: "Mushroom Nigiri" },
+      { url: "/images/montreal/sushi-momo-4.webp", caption: "GF Miso Soup" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -349,7 +409,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5041,
     lng: -73.5571,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/le-marquis-1.webp", caption: "Pan-Seared Duck Breast" },
+      { url: "/images/montreal/le-marquis-2.webp", caption: "Salade Niçoise" },
+      { url: "/images/montreal/le-marquis-3.webp", caption: "Crème Brûlée" },
+      { url: "/images/montreal/le-marquis-4.webp", caption: "Wine & Cheese Board" },
+    ],
     celiacSafetyScore: 7,
   },
   {
@@ -376,7 +441,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5221,
     lng: -73.5781,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/cookie-stefanie-1.webp", caption: "GF Chocolate Chip Cookies" },
+      { url: "/images/montreal/cookie-stefanie-2.webp", caption: "GF Fudge Brownies" },
+      { url: "/images/montreal/cookie-stefanie-3.webp", caption: "White Chocolate Blondies" },
+      { url: "/images/montreal/cookie-stefanie-4.webp", caption: "Coffee & Cookie Tray" },
+    ],
     celiacSafetyScore: 9,
   },
   {
@@ -403,7 +473,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5171,
     lng: -73.5741,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/commodore-1.webp", caption: "Grilled Fish with Vegetables" },
+      { url: "/images/montreal/commodore-2.webp", caption: "Beet & Goat Cheese Salad" },
+      { url: "/images/montreal/commodore-3.webp", caption: "Panna Cotta with Berries" },
+      { url: "/images/montreal/commodore-4.webp", caption: "Natural Orange Wine" },
+    ],
     celiacSafetyScore: 7,
   },
 ];
