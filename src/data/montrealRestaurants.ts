@@ -345,7 +345,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5181,
     lng: -73.5761,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/bloom-sushi-1.webp", caption: "Plant-Based Sushi Rolls" },
+      { url: "/images/montreal/bloom-sushi-2.webp", caption: "Vegan Poke Bowl" },
+      { url: "/images/montreal/bloom-sushi-3.webp", caption: "Vegetable Sashimi" },
+      { url: "/images/montreal/bloom-sushi-4.webp", caption: "Seaweed Salad with Sesame" },
+    ],
     celiacSafetyScore: 7,
   },
   {
