@@ -27,7 +27,7 @@ export const vancouverRestaurants: Restaurant[] = [
     venueType: "bakery",
     photos: [
       { url: "/images/vancouver/gluten-free-epicurean-1.webp", caption: "Sourdough Pizza Dough" },
-      { url: "/images/vancouver/gluten-free-epicurean-2.webp", caption: "GF Cream Bun" },
+      { url: "/images/vancouver/gluten-free-epicurean-2.webp", caption: "Boston Donut" },
       { url: "/images/vancouver/gluten-free-epicurean-3.webp", caption: "Chocolate Heart Cake" },
       { url: "/images/vancouver/gluten-free-epicurean-4.webp", caption: "Nanaimo Bars" },
       { url: "/images/vancouver/gluten-free-epicurean-5.webp", caption: "Apricot Danish & Cinnamon Bun" },
