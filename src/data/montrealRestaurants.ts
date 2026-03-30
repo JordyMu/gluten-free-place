@@ -185,7 +185,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5151,
     lng: -73.5701,
     venueType: "cafe",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/la-bolo-1.webp", caption: "GF Blueberry Muffins" },
+      { url: "/images/montreal/la-bolo-2.webp", caption: "GF Scones & Pastries" },
+      { url: "/images/montreal/la-bolo-3.webp", caption: "Specialty Latte Art" },
+      { url: "/images/montreal/la-bolo-4.webp", caption: "GF Avocado Toast Brunch" },
+    ],
     celiacSafetyScore: 7,
   },
   {
