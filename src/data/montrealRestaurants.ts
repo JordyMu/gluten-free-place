@@ -80,7 +80,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Mon–Sat: 8:00AM – 6:00PM",
-    phone: "",
+    phone: "+1 514-543-4377",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Le+Marquis+Signature+sante+Montreal",
     specialty: "Health-focused bakery with GF options",
