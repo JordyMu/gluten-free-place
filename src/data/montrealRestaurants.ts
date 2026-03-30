@@ -25,7 +25,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5351,
     lng: -73.5901,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/cantine-panella-1.webp", caption: "GF Pasta with Tomato Sauce" },
+      { url: "/images/montreal/cantine-panella-2.webp", caption: "GF Margherita Pizza" },
+      { url: "/images/montreal/cantine-panella-3.webp", caption: "Italian Garden Salad" },
+      { url: "/images/montreal/cantine-panella-4.webp", caption: "GF Tiramisu" },
+    ],
     celiacSafetyScore: 8,
   },
   {
