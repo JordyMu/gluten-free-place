@@ -260,7 +260,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 9:00AM – 5:00PM",
-    phone: "",
+    phone: "+1 438-476-0648",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Parc+Sans+Gluten+Montreal",
     specialty: "Dedicated gluten-free bakery",
