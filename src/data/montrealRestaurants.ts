@@ -281,7 +281,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5341,
     lng: -73.6091,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/boulangerie-1.webp", caption: "Artisan French Bread" },
+      { url: "/images/montreal/boulangerie-2.webp", caption: "Pain au Chocolat & Croissants" },
+      { url: "/images/montreal/boulangerie-3.webp", caption: "Berry Cake with Cream" },
+      { url: "/images/montreal/boulangerie-4.webp", caption: "Cappuccino & Croissant" },
+    ],
     celiacSafetyScore: 7,
   },
   {
