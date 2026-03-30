@@ -221,7 +221,7 @@ export const montrealRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
     phone: "+1 438-868-0338",
-    website: "",
+    website: "https://vegateau.order-online.ai",
     directionsUrl: "https://www.google.com/maps/search/Vegateau+Montreal",
     specialty: "Vegan & GF pâtisserie",
     overview: "Vegâteau creates stunning vegan pastries and cakes with many gluten-free options. A paradise for those with multiple dietary needs.",
