@@ -409,7 +409,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5041,
     lng: -73.5571,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/le-marquis-1.webp", caption: "Pan-Seared Duck Breast" },
+      { url: "/images/montreal/le-marquis-2.webp", caption: "Salade Niçoise" },
+      { url: "/images/montreal/le-marquis-3.webp", caption: "Crème Brûlée" },
+      { url: "/images/montreal/le-marquis-4.webp", caption: "Wine & Cheese Board" },
+    ],
     celiacSafetyScore: 7,
   },
   {
