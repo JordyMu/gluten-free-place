@@ -76,7 +76,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "Le Marquis Signature santé",
     slug: "le-marquis-signature-sante",
-    address: "Montréal, QC",
+    address: "194 Rue St-Paul Ouest, Montréal, QC H2Y 1Z9, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Mon–Sat: 8:00AM – 6:00PM",
