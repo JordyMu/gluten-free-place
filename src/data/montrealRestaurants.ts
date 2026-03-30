@@ -313,7 +313,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5251,
     lng: -73.5851,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/lartisan-1.webp", caption: "GF/DF Layer Cake" },
+      { url: "/images/montreal/lartisan-2.webp", caption: "GF Chocolate Cupcakes" },
+      { url: "/images/montreal/lartisan-3.webp", caption: "GF Macarons" },
+      { url: "/images/montreal/lartisan-4.webp", caption: "GF Cream Puffs" },
+    ],
     celiacSafetyScore: 9,
   },
   {
