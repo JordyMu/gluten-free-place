@@ -33,7 +33,7 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/gluten-free-epicurean-5.webp", caption: "Peach Almond Tart Cinnamon Roll" },
       { url: "/images/vancouver/gluten-free-epicurean-6.webp", caption: "Cinnamon Doughnut" },
       { url: "/images/vancouver/gluten-free-epicurean-7.webp", caption: "Chocolate Eclair" },
-      { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cookies & Pastries Box" },
+      { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cinnamon Roll and GF Double Chocolate Cookie" },
     ],
     celiacSafetyScore: 10,
   },
