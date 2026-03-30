@@ -240,7 +240,7 @@ export const montrealRestaurants: Restaurant[] = [
     photos: [
       { url: "/images/montreal/vegateau-1.webp?v=2", caption: "Vegan Chocolate Birthday Cake with Candles" },
       { url: "/images/montreal/vegateau-2.webp?v=2", caption: "Lemon and Strawberry Macaroons" },
-      { url: "/images/montreal/vegateau-3.webp?v=2", caption: "Pistachio Paris-Brest with Pastries" },
+      { url: "/images/montreal/vegateau-3.webp?v=2", caption: "Pistachio Cream" },
       { url: "/images/montreal/vegateau-4.webp?v=2", caption: "Strawberry Cream Tart with Piped Frosting" },
       { url: "/images/montreal/vegateau-5.webp?v=2", caption: "Vegan Chocolate Celebration Cake" },
       { url: "/images/montreal/vegateau-6.webp?v=2", caption: "Chocolate Cupcake with Vegan Ganache" },
