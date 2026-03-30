@@ -256,7 +256,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "Parc Sans Gluten",
     slug: "parc-sans-gluten",
-    address: "Montréal, QC",
+    address: "4050 Av. du Parc-La Fontaine Plateaux, Montréal, QC H2L 3M8, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 9:00AM – 5:00PM",
