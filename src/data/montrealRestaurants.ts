@@ -220,7 +220,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
-    phone: "",
+    phone: "+1 438-868-0338",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Vegateau+Montreal",
     specialty: "Vegan & GF pâtisserie",
