@@ -121,7 +121,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5371,
     lng: -73.6011,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/creperie-1.webp", caption: "Buckwheat Galette Complète" },
+      { url: "/images/montreal/creperie-2.webp", caption: "Gruyère Cheese Galette" },
+      { url: "/images/montreal/creperie-3.webp", caption: "Nutella & Strawberry Crêpe" },
+      { url: "/images/montreal/creperie-4.webp", caption: "Café au Lait with Galette" },
+    ],
     celiacSafetyScore: 7,
   },
   {
