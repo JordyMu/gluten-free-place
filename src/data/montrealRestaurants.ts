@@ -217,7 +217,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5211,
     lng: -73.5801,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/vegateau-1.webp", caption: "Vegan Chocolate Cake" },
+      { url: "/images/montreal/vegateau-2.webp", caption: "Vegan Cupcakes" },
+      { url: "/images/montreal/vegateau-3.webp", caption: "Mixed Berry Fruit Tart" },
+      { url: "/images/montreal/vegateau-4.webp", caption: "Vegan Chocolate Chip Cookies" },
+    ],
     celiacSafetyScore: 7,
   },
   {
