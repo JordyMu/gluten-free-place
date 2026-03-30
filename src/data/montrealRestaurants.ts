@@ -377,7 +377,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5201,
     lng: -73.5821,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/sushi-momo-1.webp", caption: "Vegan Sushi Board" },
+      { url: "/images/montreal/sushi-momo-2.webp", caption: "Vegan Chirashi Bowl" },
+      { url: "/images/montreal/sushi-momo-3.webp", caption: "Mushroom Nigiri" },
+      { url: "/images/montreal/sushi-momo-4.webp", caption: "GF Miso Soup" },
+    ],
     celiacSafetyScore: 7,
   },
   {
