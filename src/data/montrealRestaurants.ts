@@ -249,7 +249,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5191,
     lng: -73.5831,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/parc-sans-gluten-1.webp", caption: "GF Baguettes" },
+      { url: "/images/montreal/parc-sans-gluten-2.webp", caption: "GF Croissants" },
+      { url: "/images/montreal/parc-sans-gluten-3.webp", caption: "GF Sandwich Bread" },
+      { url: "/images/montreal/parc-sans-gluten-4.webp", caption: "Assorted GF Treats" },
+    ],
     celiacSafetyScore: 10,
   },
   {
