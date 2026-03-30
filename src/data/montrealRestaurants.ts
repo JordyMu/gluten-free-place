@@ -320,7 +320,7 @@ export const montrealRestaurants: Restaurant[] = [
       { url: "/images/montreal/boulangerie-le-marquis-4.webp", caption: "Lemon Meringue Tart" },
       { url: "/images/montreal/boulangerie-le-marquis-5.webp", caption: "Almond Chocolate Croissant" },
       { url: "/images/montreal/boulangerie-le-marquis-6.webp", caption: "Croissant Au Fromage" },
-      { url: "/images/montreal/boulangerie-le-marquis-7.webp", caption: "Pistachio Cake & Espresso" },
+      { url: "/images/montreal/boulangerie-le-marquis-7.webp", caption: "Gateau Vanille-Pistache" },
       { url: "/images/montreal/boulangerie-le-marquis-8.webp", caption: "Spinach & Tomato Quiche" },
     ],
     celiacSafetyScore: 7,
