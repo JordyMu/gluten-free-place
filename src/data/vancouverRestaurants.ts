@@ -31,7 +31,7 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/gluten-free-epicurean-3.webp", caption: "Brownie IG Melceeats" },
       { url: "/images/vancouver/gluten-free-epicurean-4.webp", caption: "Vegan Nanaimo Bar" },
       { url: "/images/vancouver/gluten-free-epicurean-5.webp", caption: "Peach Almond Tart Cinnamon Roll" },
-      { url: "/images/vancouver/gluten-free-epicurean-6.webp", caption: "Sugar Donut & Cinnamon Roll" },
+      { url: "/images/vancouver/gluten-free-epicurean-6.webp", caption: "Cinnamon Doughnut" },
       { url: "/images/vancouver/gluten-free-epicurean-7.webp", caption: "GF Donuts" },
       { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cookies & Pastries Box" },
     ],
