@@ -441,7 +441,12 @@ export const montrealRestaurants: Restaurant[] = [
     lat: 45.5221,
     lng: -73.5781,
     venueType: "bakery",
-    photos: [],
+    photos: [
+      { url: "/images/montreal/cookie-stefanie-1.webp", caption: "GF Chocolate Chip Cookies" },
+      { url: "/images/montreal/cookie-stefanie-2.webp", caption: "GF Fudge Brownies" },
+      { url: "/images/montreal/cookie-stefanie-3.webp", caption: "White Chocolate Blondies" },
+      { url: "/images/montreal/cookie-stefanie-4.webp", caption: "Coffee & Cookie Tray" },
+    ],
     celiacSafetyScore: 9,
   },
   {
