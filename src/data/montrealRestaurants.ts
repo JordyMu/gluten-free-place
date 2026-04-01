@@ -475,7 +475,7 @@ export const montrealRestaurants: Restaurant[] = [
     address: "272 Saint-Jacques Ouest, Montréal, QC H2Y 1N3, Canada",
     city: "Montreal",
     country: "Canada",
-    hours: "Tue–Sat: 10:00AM – 6:00PM",
+    hours: "Tue–Sat: 7:30AM – 5:00PM",
     phone: "+1 438-380-1560",
     website: "https://cookiestefanie.com",
     directionsUrl: "https://www.google.com/maps/search/Cookie+Stefanie+Montreal",
