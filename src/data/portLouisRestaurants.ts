@@ -57,7 +57,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2500,
     lng: 57.5000,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-1.webp", caption: "Tandoori Chicken Platter" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-2.webp", caption: "Saffron Biryani" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-3.webp", caption: "Dal Makhani" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-4.webp", caption: "Seekh Kebabs" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-5.webp", caption: "Elegant Dining Interior" }
+    ]
   },
   {
     name: "Smokey Joe",
