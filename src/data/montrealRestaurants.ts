@@ -501,7 +501,7 @@ export const montrealRestaurants: Restaurant[] = [
       { url: "/images/montreal/cookie-stefanie-5.webp?v=2", caption: "Bacon and Cheese" },
       { url: "/images/montreal/cookie-stefanie-6.webp?v=2", caption: "Cookie Sweetbreads Brownie Raspberry Bar" },
       { url: "/images/montreal/cookie-stefanie-7.webp?v=2", caption: "Cake Inside" },
-      { url: "/images/montreal/cookie-stefanie-8.webp?v=2", caption: "Panini Jambon-Fromage Grillé" },
+      { url: "/images/montreal/cookie-stefanie-8.webp?v=2", caption: "Grilled Cheese with Bacon and Apple" },
     ],
     celiacSafetyScore: 9,
   },
