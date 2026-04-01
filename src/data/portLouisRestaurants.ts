@@ -26,11 +26,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.4833,
     venueType: "restaurant",
     photos: [
-      { url: "/images/port-louis/escale-creole/escale-creole-1.webp", caption: "Creole Fish Curry with Rice" },
-      { url: "/images/port-louis/escale-creole/escale-creole-2.webp", caption: "Octopus Vindaye" },
-      { url: "/images/port-louis/escale-creole/escale-creole-3.webp", caption: "Colonial-Style Restaurant Exterior" },
-      { url: "/images/port-louis/escale-creole/escale-creole-4.webp", caption: "Dal & Rice" },
-      { url: "/images/port-louis/escale-creole/escale-creole-5.webp", caption: "Fish Rougaille with Rice" }
+      { url: "/images/port-louis/escale-creole/escale-creole-1.webp?v=2", caption: "Creole Spread with Sausage Rougaille, Beef Curry & Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-2.webp?v=2", caption: "Mauritian Dessert — Napolitaine, Coconut Cake & Rum" },
+      { url: "/images/port-louis/escale-creole/escale-creole-3.webp?v=2", caption: "Creole Dessert Plate — Tart, Coco Râpé & Mango Compote" },
+      { url: "/images/port-louis/escale-creole/escale-creole-4.webp?v=2", caption: "Gâteau Patate, Coco Râpé & Fruit Preserve with Rum" },
+      { url: "/images/port-louis/escale-creole/escale-creole-5.webp?v=2", caption: "Appetizer Tray — Gâteaux Piments, Samoussas & Chutneys" },
+      { url: "/images/port-louis/escale-creole/escale-creole-6.webp?v=2", caption: "Homemade Rhum Arrangé with Citrus & Spices" },
+      { url: "/images/port-louis/escale-creole/escale-creole-7.webp?v=2", caption: "Creole Plate — Lentils, Rice, Rougaille & Chutneys" },
+      { url: "/images/port-louis/escale-creole/escale-creole-8.webp?v=2", caption: "Vegetarian Creole Plate — Dal, Rice, Chutneys & Salad" }
     ]
   },
   {
