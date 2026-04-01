@@ -477,7 +477,7 @@ export const montrealRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
     phone: "+1 438-380-1560",
-    website: "",
+    website: "https://cookiestefanie.com",
     directionsUrl: "https://www.google.com/maps/search/Cookie+Stefanie+Montreal",
     specialty: "GF cookies & baked treats",
     overview: "Cookie Stéfanie creates delicious gluten-free cookies and baked treats. A sweet spot for celiac cookie lovers in Montreal.",
