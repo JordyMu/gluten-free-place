@@ -476,7 +476,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
-    phone: "",
+    phone: "+1 438-380-1560",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Cookie+Stefanie+Montreal",
     specialty: "GF cookies & baked treats",
