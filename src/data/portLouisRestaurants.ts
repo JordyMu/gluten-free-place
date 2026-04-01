@@ -213,7 +213,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2300,
     lng: 57.4900,
     venueType: "cafe",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-1.webp", caption: "Buddha Bowl with Quinoa" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-2.webp", caption: "Green Detox Smoothie" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-3.webp", caption: "GF Breakfast Bowl" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-4.webp", caption: "Fresh Lettuce Wrap" }
+    ]
   },
 ];
 
