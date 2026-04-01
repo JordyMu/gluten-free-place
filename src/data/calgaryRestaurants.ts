@@ -25,7 +25,16 @@ export const calgaryRestaurants: Restaurant[] = [
     lat: 51.0721,
     lng: -114.0311,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/calgary/sweet-rice/sweet-rice-1.webp", caption: "Mochi Donuts Assorted Box" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-2.webp", caption: "Onigiri Rice Ball" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-3.webp", caption: "Sesame Rice Balls" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-4.webp", caption: "Popcorn Chicken with Dipping Sauce" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-5.webp", caption: "Chocolate Sprinkle Mochi Donut" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-6.webp", caption: "Glazed Donut Holes" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-7.webp", caption: "GF Poutine" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-8.webp", caption: "Hand-Cut GF Fries" },
+    ],
     celiacSafetyScore: 7,
   },
   {
