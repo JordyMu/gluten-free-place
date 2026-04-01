@@ -182,7 +182,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2631,
     lng: 57.4781,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/zaytoon/zaytoon-1.webp", caption: "Grilled Meat Platter with Rice" },
+      { url: "/images/port-louis/zaytoon/zaytoon-2.webp", caption: "Hummus & Baba Ganoush" },
+      { url: "/images/port-louis/zaytoon/zaytoon-3.webp", caption: "Saffron Rice Pilaf" },
+      { url: "/images/port-louis/zaytoon/zaytoon-4.webp", caption: "Fresh Fattoush Salad" }
+    ]
   },
   {
     name: "Island Babe Healthy Food",
