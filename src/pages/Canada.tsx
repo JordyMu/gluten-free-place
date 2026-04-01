@@ -109,7 +109,7 @@ const Canada = () => {
     },
     {
       name: "Calgary",
-      image: "photo-1570531356612-c0a2e7c52ef7",
+      image: "photo-1575408264798-b50b252663e6",
       places: 2,
       rating: 4.5,
       description: "Alberta's hub with growing gluten-free dining options",
