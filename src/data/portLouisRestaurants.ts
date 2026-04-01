@@ -120,7 +120,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2503,
     lng: 57.5001,
     venueType: "cafe",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-1.webp", caption: "Artisan Latte Art" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-2.webp", caption: "Fresh GF Salad Bowl" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-3.webp", caption: "GF Pastry Display" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-4.webp", caption: "Tropical Fresh Juices" }
+    ]
   },
   {
     name: "Nando's Phoenix",
