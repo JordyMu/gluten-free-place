@@ -441,7 +441,7 @@ export const montrealRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Mon–Sun: 8:00AM – 10:00PM",
     phone: "+1 514-555-0007",
-    website: "",
+    website: "https://boulangerielemarquis.com",
     directionsUrl: "https://www.google.com/maps/search/Le+Marquis+194+Rue+Saint-Paul+O+Montreal",
     specialty: "French-Canadian with GF options",
     overview: "Le Marquis in Old Montreal offers refined French-Canadian cuisine with thoughtful gluten-free menu options in a historic setting.",
