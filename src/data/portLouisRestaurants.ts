@@ -89,7 +89,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2505,
     lng: 57.4998,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/smokey-joe/smokey-joe-1.webp", caption: "Grilled Ribeye Steak" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-2.webp", caption: "BBQ Chicken Wings" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-3.webp", caption: "Grilled Chicken Salad" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-4.webp", caption: "Restaurant Interior" }
+    ]
   },
   {
     name: "Café LUX* Riserva",
