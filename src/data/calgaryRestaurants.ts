@@ -61,7 +61,16 @@ export const calgaryRestaurants: Restaurant[] = [
     lat: 51.0401,
     lng: -114.0731,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-1.webp", caption: "Appetizer Platter with Rice Paper Rolls & Spring Rolls" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-2.webp", caption: "Crispy Vietnamese Spring Rolls (Chả Giò)" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-3.webp", caption: "Vermicelli Bowl with Crispy Chicken" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-4.webp", caption: "Beef Pho with Fresh Herbs" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-5.webp", caption: "Vietnamese Crème Caramel with Tapioca" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-6.webp", caption: "Bánh Mì Sandwich" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-7.webp", caption: "Beef Stew Noodle Soup (Bò Kho)" },
+      { url: "/images/calgary/tre-vietnamese-kitchen/tre-vietnamese-kitchen-8.webp", caption: "Rice Noodle Salad with Shrimp" },
+    ],
     celiacSafetyScore: 7,
   },
 ];
