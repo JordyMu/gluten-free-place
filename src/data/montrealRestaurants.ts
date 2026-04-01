@@ -364,7 +364,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "Bloom Sushi",
     slug: "bloom-sushi",
-    address: "Montréal, QC",
+    address: "288 Rue Sainte-Catherine O, Montréal, QC H2X 2A1, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
