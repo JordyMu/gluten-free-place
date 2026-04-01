@@ -151,7 +151,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2653,
     lng: 57.4964,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-1.webp", caption: "Peri-Peri Half Chicken" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-2.webp", caption: "Grilled Corn on the Cob" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-3.webp", caption: "Peri-Peri Chicken Wings" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-4.webp", caption: "Rice & Grilled Chicken Bowl" }
+    ]
   },
   {
     name: "ZAYTOON",
