@@ -496,7 +496,7 @@ export const montrealRestaurants: Restaurant[] = [
     photos: [
       { url: "/images/montreal/cookie-stefanie-1.webp?v=2", caption: "Carrot Cake Gluten Free" },
       { url: "/images/montreal/cookie-stefanie-2.webp?v=2", caption: "Raspberry Square" },
-      { url: "/images/montreal/cookie-stefanie-3.webp?v=2", caption: "Assortiment Muffins & Mini-Cakes" },
+      { url: "/images/montreal/cookie-stefanie-3.webp?v=2", caption: "Apple and Cinnamon Cake" },
       { url: "/images/montreal/cookie-stefanie-4.webp?v=2", caption: "Tartine Au Poulet, Cupcake & Café Latté" },
       { url: "/images/montreal/cookie-stefanie-5.webp?v=2", caption: "Panini Bacon-Fromage Grillé" },
       { url: "/images/montreal/cookie-stefanie-6.webp?v=2", caption: "Boîte Assortiment Biscuits & Brownies" },
