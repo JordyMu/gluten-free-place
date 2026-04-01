@@ -31,7 +31,7 @@ export const calgaryRestaurants: Restaurant[] = [
       { url: "/images/calgary/sweet-rice/sweet-rice-3.webp", caption: "Cookies & Cream Bites" },
       { url: "/images/calgary/sweet-rice/sweet-rice-4.webp", caption: "Fresh Chicken Nuggets" },
       { url: "/images/calgary/sweet-rice/sweet-rice-5.webp", caption: "Chocolate Sprinkle Mochi Donut" },
-      { url: "/images/calgary/sweet-rice/sweet-rice-6.webp", caption: "Glazed Donut Holes" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-6.webp", caption: "Maple Cruller Bites DF" },
       { url: "/images/calgary/sweet-rice/sweet-rice-7.webp", caption: "GF Poutine" },
       { url: "/images/calgary/sweet-rice/sweet-rice-8.webp", caption: "Hand-Cut GF Fries" },
     ],
