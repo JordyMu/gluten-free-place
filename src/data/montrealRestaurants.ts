@@ -504,7 +504,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Wed–Sun: 5:30PM – 10:30PM",
-    phone: "",
+    phone: "+1 514-656-8632",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/COMMODORE+restaurant+355+Blvd+De+Maisonneuve+Ouest+Montreal",
     specialty: "Modern bistro with GF accommodations",
