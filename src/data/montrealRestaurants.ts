@@ -472,7 +472,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "Cookie Stéfanie",
     slug: "cookie-stefanie",
-    address: "Montréal, QC",
+    address: "272 Saint-Jacques Ouest, Montréal, QC H2Y 1N3, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Tue–Sat: 10:00AM – 6:00PM",
