@@ -332,7 +332,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Wed–Sat: 9:00AM – 5:00PM",
-    phone: "",
+    phone: "+1 514-439-8388",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/L'artisan+delices+sans+gluten+Montreal",
     specialty: "Dedicated GF & dairy-free bakery",
