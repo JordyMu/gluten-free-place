@@ -25,7 +25,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2167,
     lng: 57.4833,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/escale-creole/escale-creole-1.webp", caption: "Creole Fish Curry with Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-2.webp", caption: "Octopus Vindaye" },
+      { url: "/images/port-louis/escale-creole/escale-creole-3.webp", caption: "Colonial-Style Restaurant Exterior" },
+      { url: "/images/port-louis/escale-creole/escale-creole-4.webp", caption: "Dal & Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-5.webp", caption: "Fish Rougaille with Rice" }
+    ]
   },
   {
     name: "The Yellow Chilli",
