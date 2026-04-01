@@ -500,7 +500,7 @@ export const montrealRestaurants: Restaurant[] = [
       { url: "/images/montreal/cookie-stefanie-4.webp?v=2", caption: "Tuna Egg Sandwich" },
       { url: "/images/montreal/cookie-stefanie-5.webp?v=2", caption: "Bacon and Cheese" },
       { url: "/images/montreal/cookie-stefanie-6.webp?v=2", caption: "Cookie Sweetbreads Brownie Raspberry Bar" },
-      { url: "/images/montreal/cookie-stefanie-7.webp?v=2", caption: "Gâteau Aux Carottes Carrot Cake" },
+      { url: "/images/montreal/cookie-stefanie-7.webp?v=2", caption: "Cake Inside" },
       { url: "/images/montreal/cookie-stefanie-8.webp?v=2", caption: "Panini Jambon-Fromage Grillé" },
     ],
     celiacSafetyScore: 9,
