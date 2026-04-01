@@ -25,7 +25,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2167,
     lng: 57.4833,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/escale-creole/escale-creole-1.webp", caption: "Creole Fish Curry with Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-2.webp", caption: "Octopus Vindaye" },
+      { url: "/images/port-louis/escale-creole/escale-creole-3.webp", caption: "Colonial-Style Restaurant Exterior" },
+      { url: "/images/port-louis/escale-creole/escale-creole-4.webp", caption: "Dal & Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-5.webp", caption: "Fish Rougaille with Rice" }
+    ]
   },
   {
     name: "The Yellow Chilli",
@@ -51,7 +57,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2500,
     lng: 57.5000,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-1.webp", caption: "Tandoori Chicken Platter" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-2.webp", caption: "Saffron Biryani" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-3.webp", caption: "Dal Makhani" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-4.webp", caption: "Seekh Kebabs" },
+      { url: "/images/port-louis/the-yellow-chilli/the-yellow-chilli-5.webp", caption: "Elegant Dining Interior" }
+    ]
   },
   {
     name: "Smokey Joe",
@@ -77,7 +89,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2505,
     lng: 57.4998,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/smokey-joe/smokey-joe-1.webp", caption: "Grilled Ribeye Steak" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-2.webp", caption: "BBQ Chicken Wings" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-3.webp", caption: "Grilled Chicken Salad" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-4.webp", caption: "Restaurant Interior" }
+    ]
   },
   {
     name: "Café LUX* Riserva",
@@ -103,7 +120,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2503,
     lng: 57.5001,
     venueType: "cafe",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-1.webp", caption: "Artisan Latte Art" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-2.webp", caption: "Fresh GF Salad Bowl" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-3.webp", caption: "GF Pastry Display" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-4.webp", caption: "Tropical Fresh Juices" }
+    ]
   },
   {
     name: "Nando's Phoenix",
@@ -129,7 +151,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2653,
     lng: 57.4964,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-1.webp", caption: "Peri-Peri Half Chicken" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-2.webp", caption: "Grilled Corn on the Cob" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-3.webp", caption: "Peri-Peri Chicken Wings" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-4.webp", caption: "Rice & Grilled Chicken Bowl" }
+    ]
   },
   {
     name: "ZAYTOON",
@@ -155,7 +182,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2631,
     lng: 57.4781,
     venueType: "restaurant",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/zaytoon/zaytoon-1.webp", caption: "Grilled Meat Platter with Rice" },
+      { url: "/images/port-louis/zaytoon/zaytoon-2.webp", caption: "Hummus & Baba Ganoush" },
+      { url: "/images/port-louis/zaytoon/zaytoon-3.webp", caption: "Saffron Rice Pilaf" },
+      { url: "/images/port-louis/zaytoon/zaytoon-4.webp", caption: "Fresh Fattoush Salad" }
+    ]
   },
   {
     name: "Island Babe Healthy Food",
@@ -181,7 +213,12 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lat: -20.2300,
     lng: 57.4900,
     venueType: "cafe",
-    photos: []
+    photos: [
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-1.webp", caption: "Buddha Bowl with Quinoa" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-2.webp", caption: "Green Detox Smoothie" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-3.webp", caption: "GF Breakfast Bowl" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-4.webp", caption: "Fresh Lettuce Wrap" }
+    ]
   },
 ];
 
