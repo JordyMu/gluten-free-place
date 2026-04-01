@@ -26,7 +26,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.4833,
     venueType: "restaurant",
     photos: [
-      { url: "/images/port-louis/escale-creole/escale-creole-1.webp?v=2", caption: "Creole Spread with Sausage Rougaille, Beef Curry & Rice" },
+      { url: "/images/port-louis/escale-creole/escale-creole-1.webp?v=2", caption: "Hühnercurry, Fisch und Oktopus" },
       { url: "/images/port-louis/escale-creole/escale-creole-2.webp?v=2", caption: "Mauritian Dessert — Napolitaine, Coconut Cake & Rum" },
       { url: "/images/port-louis/escale-creole/escale-creole-3.webp?v=2", caption: "Creole Dessert Plate — Tart, Coco Râpé & Mango Compote" },
       { url: "/images/port-louis/escale-creole/escale-creole-4.webp?v=2", caption: "Gâteau Patate, Coco Râpé & Fruit Preserve with Rum" },
