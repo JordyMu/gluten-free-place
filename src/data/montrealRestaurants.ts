@@ -494,7 +494,7 @@ export const montrealRestaurants: Restaurant[] = [
     lng: -73.5781,
     venueType: "bakery",
     photos: [
-      { url: "/images/montreal/cookie-stefanie-1.webp?v=2", caption: "Carrot Cake Au Glaçage Cream Cheese" },
+      { url: "/images/montreal/cookie-stefanie-1.webp?v=2", caption: "Carrot Cake Gluten Free" },
       { url: "/images/montreal/cookie-stefanie-2.webp?v=2", caption: "Carré Aux Framboises Raspberry Crumble Bar" },
       { url: "/images/montreal/cookie-stefanie-3.webp?v=2", caption: "Assortiment Muffins & Mini-Cakes" },
       { url: "/images/montreal/cookie-stefanie-4.webp?v=2", caption: "Tartine Au Poulet, Cupcake & Café Latté" },
