@@ -26,7 +26,7 @@ export const calgaryRestaurants: Restaurant[] = [
     lng: -114.0311,
     venueType: "restaurant",
     photos: [
-      { url: "/images/calgary/sweet-rice/sweet-rice-1.webp", caption: "Mochi Donuts Assorted Box" },
+      { url: "/images/calgary/sweet-rice/sweet-rice-1.webp", caption: "Mochi Donut Cake" },
       { url: "/images/calgary/sweet-rice/sweet-rice-2.webp", caption: "Onigiri Rice Ball" },
       { url: "/images/calgary/sweet-rice/sweet-rice-3.webp", caption: "Sesame Rice Balls" },
       { url: "/images/calgary/sweet-rice/sweet-rice-4.webp", caption: "Popcorn Chicken with Dipping Sauce" },
