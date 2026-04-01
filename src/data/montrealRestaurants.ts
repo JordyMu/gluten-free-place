@@ -328,7 +328,7 @@ export const montrealRestaurants: Restaurant[] = [
   {
     name: "L'artisan délices sans gluten et sans lait",
     slug: "lartisan-delices-sans-gluten",
-    address: "Montréal, QC",
+    address: "7700 Rue St-Hubert, Montréal, QC H2R 2N8, Canada",
     city: "Montreal",
     country: "Canada",
     hours: "Wed–Sat: 9:00AM – 5:00PM",
