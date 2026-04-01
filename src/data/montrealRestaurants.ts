@@ -368,7 +368,7 @@ export const montrealRestaurants: Restaurant[] = [
     city: "Montreal",
     country: "Canada",
     hours: "Mon–Sun: 11:30AM – 10:00PM",
-    phone: "",
+    phone: "+1 438-814-4232",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/288+Rue+Sainte-Catherine+O+Montréal+QC+H2X+2A1",
     specialty: "Plant-based sushi with GF options",
