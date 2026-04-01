@@ -45,7 +45,7 @@ export const calgaryRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Mon–Sat: 11:00AM – 9:00PM",
     phone: "+1 403-555-0002",
-    website: "",
+    website: "trevietnamesekitchen.ca",
     directionsUrl: "https://www.google.com/maps/search/TRE+Vietnamese+Kitchen+1414+8+St+SW+Calgary",
     specialty: "Vietnamese with rice noodle GF options",
     overview: "TRE Vietnamese Kitchen in Calgary's Beltline offers delicious Vietnamese cuisine with rice noodle and rice-based dishes that are naturally gluten-free.",
