@@ -370,7 +370,7 @@ export const montrealRestaurants: Restaurant[] = [
     hours: "Mon–Sun: 11:30AM – 10:00PM",
     phone: "",
     website: "",
-    directionsUrl: "https://www.google.com/maps/search/Bloom+Sushi+Montreal",
+    directionsUrl: "https://www.google.com/maps/search/288+Rue+Sainte-Catherine+O+Montréal+QC+H2X+2A1",
     specialty: "Plant-based sushi with GF options",
     overview: "Bloom Sushi serves creative plant-based sushi with many naturally gluten-free rice-based options. A unique Montreal dining experience.",
     menuHighlights: ["🍣 GF Vegan Sushi", "🍚 Rice Bowls", "🥢 Sashimi Style", "🥗 Seaweed Salads"],
