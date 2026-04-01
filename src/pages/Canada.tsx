@@ -109,7 +109,8 @@ const Canada = () => {
     },
     {
       name: "Calgary",
-      image: "photo-1575408264798-b50b252663e6",
+      image: "/images/canada/calgary.webp",
+      isLocal: true,
       places: 2,
       rating: 4.5,
       description: "Alberta's hub with growing gluten-free dining options",
@@ -268,7 +269,7 @@ const Canada = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={city.isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
