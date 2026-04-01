@@ -333,7 +333,7 @@ export const montrealRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Wed–Sat: 9:00AM – 5:00PM",
     phone: "+1 514-439-8388",
-    website: "",
+    website: "lartisandelices.com",
     directionsUrl: "https://www.google.com/maps/search/L'artisan+delices+sans+gluten+Montreal",
     specialty: "Dedicated GF & dairy-free bakery",
     overview: "L'artisan délices creates beautiful gluten-free and dairy-free treats, making it perfect for those with multiple food sensitivities.",
