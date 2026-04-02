@@ -154,14 +154,44 @@ const AllCountries = () => {
                   {region} ({countries.length} countries)
                 </h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3">
-                  {countries.map((country) => (
-                    <div
-                      key={country}
-                      className="bg-gray-50 hover:bg-orange-50 rounded-lg px-4 py-3 text-sm text-gray-700 hover:text-orange-700 transition-colors cursor-pointer border border-gray-200 hover:border-orange-200"
-                    >
-                      {country}
-                    </div>
-                  ))}
+                  {countries.map((country) => {
+                    const countryLinks: Record<string, string> = {
+                      "Canada": "/canada",
+                      "The United States": "/usa",
+                      "France": "/france",
+                      "Germany": "/germany",
+                      "Ireland": "/ireland",
+                      "Italy": "/italy",
+                      "Spain": "/spain",
+                      "Sweden": "/sweden",
+                      "The United Kingdom": "/united-kingdom",
+                      "Argentina": "/argentina",
+                      "Australia": "/australia",
+                      "New Zealand": "/new-zealand",
+                      "Japan": "/japan",
+                      "Thailand": "/thailand",
+                      "South Africa": "/gluten-free/south-africa",
+                      "Mauritius": "/gluten-free/mauritius",
+                      "Kenya": "/gluten-free/kenya",
+                      "Nigeria": "/gluten-free/nigeria",
+                      "Morocco": "/morocco",
+                      "Egypt": "/gluten-free/egypt",
+                      "Botswana": "/gluten-free/botswana",
+                    };
+                    const link = countryLinks[country];
+                    const content = (
+                      <div
+                        className="bg-gray-50 hover:bg-orange-50 rounded-lg px-4 py-3 text-sm text-gray-700 hover:text-orange-700 transition-colors cursor-pointer border border-gray-200 hover:border-orange-200"
+                      >
+                        {country}
+                      </div>
+                    );
+                    return link ? (
+                      <Link key={country} to={link}>{content}</Link>
+                    ) : (
+                      <div key={country}>{content}</div>
+                    );
+                  })}
                 </div>
               </div>
             ))}
