@@ -174,7 +174,7 @@ const AllCountries = () => {
                       "Mauritius": "/gluten-free/mauritius",
                       "Kenya": "/gluten-free/kenya",
                       "Nigeria": "/gluten-free/nigeria",
-                      "Morocco": "/morocco",
+                      "Morocco": "/gluten-free/morocco",
                       "Egypt": "/gluten-free/egypt",
                       "Botswana": "/gluten-free/botswana",
                     };
