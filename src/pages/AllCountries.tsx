@@ -191,7 +191,7 @@ const AllCountries = () => {
                     ) : (
                       <div key={country}>{content}</div>
                     );
-                  ))}
+                  })}
                 </div>
               </div>
             ))}
