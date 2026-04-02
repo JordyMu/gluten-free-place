@@ -41,7 +41,7 @@ const AllCountries = () => {
       "Saudi Arabia", "Tunisia", "United Arab Emirates"
     ],
     "Africa": [
-      "Botswana", "Egypt", "Ethiopia", "Kenya", "Madagascar", "Mauritius", "Morocco",
+      "Botswana", "Ethiopia", "Kenya", "Madagascar",
       "Namibia", "Nigeria", "Rwanda", "Senegal", "South Africa", "Tanzania", "The Gambia", "Zimbabwe"
     ],
     "Oceania & Pacific Islands": [
