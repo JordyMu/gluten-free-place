@@ -59,7 +59,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
       case "Nigeria":
         return "/gluten-free/nigeria";
       case "Morocco":
-        return "/morocco";
+        return "/gluten-free/morocco";
       case "Egypt":
         return "/gluten-free/egypt";
       case "Botswana":
