@@ -233,14 +233,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.4900,
     venueType: "cafe",
     photos: [
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-1.webp", caption: "Poached Eggs on Avocado Toast with Chia Seeds" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-2.webp", caption: "Eggs Benedict with Smoked Salmon & Mixed Greens" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-3.webp", caption: "Poached Egg Buddha Bowl with Fresh Vegetables" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-4.webp", caption: "Fresh Fruit Platter with Macarons & Chocolate Dip" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-5.webp", caption: "Layered Chocolate Cake with Edible Flowers" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-6.webp", caption: "Fluffy Pancake Stack with Berries & Cream" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-7.webp", caption: "Beetroot Tartare with Fresh Garden Greens" },
-      { url: "/images/port-louis/island-babe-healthy-food/island-babe-8.webp", caption: "Crispy Potato Rösti with Bacon & Citrus" }
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-1.webp?v=2", caption: "Poached Eggs on Avocado Toast with Chia Seeds" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-2.webp?v=2", caption: "Eggs Benedict with Smoked Salmon & Mixed Greens" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-3.webp?v=2", caption: "Poached Egg Buddha Bowl with Fresh Vegetables" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-4.webp?v=2", caption: "Fresh Fruit Platter with Macarons & Chocolate Dip" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-5.webp?v=2", caption: "Layered Chocolate Cake with Edible Flowers" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-6.webp?v=2", caption: "Fluffy Pancake Stack with Berries & Cream" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-7.webp?v=2", caption: "Beetroot Tartare with Fresh Garden Greens" },
+      { url: "/images/port-louis/island-babe-healthy-food/island-babe-8.webp?v=2", caption: "Crispy Potato Rösti with Bacon & Citrus" }
     ]
   },
 ];
