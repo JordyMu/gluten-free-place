@@ -128,14 +128,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.5001,
     venueType: "cafe",
     photos: [
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-1.webp", caption: "Eggs Benedict with Smoked Salmon" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-2.webp", caption: "Grilled Calamari with Herb Dressing" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-3.webp", caption: "Tuna Poké Bowl with Fresh Vegetables" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-4.webp", caption: "Matcha Mousse Cake" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-5.webp", caption: "Pulled Pork Bun with Coleslaw" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-6.webp", caption: "Full English Breakfast Platter" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-7.webp", caption: "Red Velvet Berry Tart" },
-      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-8.webp", caption: "Chocolate Oreo Layer Cake" }
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-1.webp?v=2", caption: "Eggs Benedict with Smoked Salmon" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-2.webp?v=2", caption: "Grilled Calamari with Herb Dressing" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-3.webp?v=2", caption: "Tuna Poké Bowl with Fresh Vegetables" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-4.webp?v=2", caption: "Matcha Mousse Cake" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-5.webp?v=2", caption: "Pulled Pork Bun with Coleslaw" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-6.webp?v=2", caption: "Full English Breakfast Platter" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-7.webp?v=2", caption: "Red Velvet Berry Tart" },
+      { url: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-8.webp?v=2", caption: "Chocolate Oreo Layer Cake" }
     ]
   },
   {
