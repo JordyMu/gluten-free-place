@@ -163,14 +163,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.4964,
     venueType: "restaurant",
     photos: [
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-1.webp", caption: "Mediterranean Salad with Feta & Avocado" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-2.webp", caption: "Loaded Peri-Peri Fries" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-3.webp", caption: "Grilled Halloumi & Chickpea Bowl with Rice" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-4.webp", caption: "Butternut Soup with Bread Roll" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-5.webp", caption: "Peri-Peri Chicken with Corn & Coleslaw" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-6.webp", caption: "Peri-Peri Chicken Thighs" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-7.webp", caption: "Flame-Grilled Butterfly Chicken" },
-      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-8.webp", caption: "Quarter Chicken with Garlic Bread & Coleslaw" }
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-1.webp?v=2", caption: "Mediterranean Salad with Feta & Avocado" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-2.webp?v=2", caption: "Loaded Peri-Peri Fries" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-3.webp?v=2", caption: "Grilled Halloumi & Chickpea Bowl with Rice" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-4.webp?v=2", caption: "Butternut Soup with Bread Roll" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-5.webp?v=2", caption: "Peri-Peri Chicken with Corn & Coleslaw" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-6.webp?v=2", caption: "Peri-Peri Chicken Thighs" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-7.webp?v=2", caption: "Flame-Grilled Butterfly Chicken" },
+      { url: "/images/port-louis/nandos-phoenix/nandos-phoenix-8.webp?v=2", caption: "Quarter Chicken with Garlic Bread & Coleslaw" }
     ]
   },
   {
