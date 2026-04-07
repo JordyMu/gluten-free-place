@@ -145,7 +145,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     city: "Port Louis",
     country: "Mauritius",
     hours: "Daily: 10:00AM – 10:00PM",
-    phone: "",
+    phone: "+230 650 3630",
     website: "www.nandos.com",
     directionsUrl: "https://www.google.com/maps/search/Nandos+Phoenix+Mauritius",
     specialty: "Flame-Grilled Chicken",
