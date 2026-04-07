@@ -198,14 +198,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     lng: 57.4781,
     venueType: "restaurant",
     photos: [
-      { url: "/images/port-louis/zaytoon/zaytoon-1.webp", caption: "Chocolate Drizzled Waffles with Nuts" },
-      { url: "/images/port-louis/zaytoon/zaytoon-2.webp", caption: "Crispy Breaded Chicken Schnitzel with Fries & Coleslaw" },
-      { url: "/images/port-louis/zaytoon/zaytoon-3.webp", caption: "Grilled Chicken Boxes with Cheese & Sauce" },
-      { url: "/images/port-louis/zaytoon/zaytoon-4.webp", caption: "Grilled Chicken Shawarma Wrap with Fries" },
-      { url: "/images/port-louis/zaytoon/zaytoon-5.webp", caption: "Turkish Pide with Cheese & Olives" },
-      { url: "/images/port-louis/zaytoon/zaytoon-6.webp", caption: "Hummus with Herbs & Olive Oil" },
-      { url: "/images/port-louis/zaytoon/zaytoon-7.webp", caption: "Loaded Beef Burger with Cheese" },
-      { url: "/images/port-louis/zaytoon/zaytoon-8.webp", caption: "Turkish Pide Boats with Mixed Toppings" }
+      { url: "/images/port-louis/zaytoon/zaytoon-1.webp?v=2", caption: "Chocolate Drizzled Waffles with Nuts" },
+      { url: "/images/port-louis/zaytoon/zaytoon-2.webp?v=2", caption: "Crispy Breaded Chicken Schnitzel with Fries & Coleslaw" },
+      { url: "/images/port-louis/zaytoon/zaytoon-3.webp?v=2", caption: "Grilled Chicken Boxes with Cheese & Sauce" },
+      { url: "/images/port-louis/zaytoon/zaytoon-4.webp?v=2", caption: "Grilled Chicken Shawarma Wrap with Fries" },
+      { url: "/images/port-louis/zaytoon/zaytoon-5.webp?v=2", caption: "Turkish Pide with Cheese & Olives" },
+      { url: "/images/port-louis/zaytoon/zaytoon-6.webp?v=2", caption: "Hummus with Herbs & Olive Oil" },
+      { url: "/images/port-louis/zaytoon/zaytoon-7.webp?v=2", caption: "Loaded Beef Burger with Cheese" },
+      { url: "/images/port-louis/zaytoon/zaytoon-8.webp?v=2", caption: "Turkish Pide Boats with Mixed Toppings" }
     ]
   },
   {
