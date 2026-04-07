@@ -96,7 +96,15 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       { url: "/images/port-louis/smokey-joe/smokey-joe-1.webp", caption: "Grilled Ribeye Steak" },
       { url: "/images/port-louis/smokey-joe/smokey-joe-2.webp", caption: "BBQ Chicken Wings" },
       { url: "/images/port-louis/smokey-joe/smokey-joe-3.webp", caption: "Grilled Chicken Salad" },
-      { url: "/images/port-louis/smokey-joe/smokey-joe-4.webp", caption: "Restaurant Interior" }
+      { url: "/images/port-louis/smokey-joe/smokey-joe-4.webp", caption: "Restaurant Interior" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-5.webp", caption: "Sticky BBQ Chicken Wings" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-6.webp", caption: "Charcoal Bun Burger with Slaw" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-7.webp", caption: "BBQ Wings with Sweet Potato Fries" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-8.webp", caption: "Loaded Fries with Crispy Chicken" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-9.webp", caption: "Loaded Guacamole Fries" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-10.webp", caption: "Nachos with Cheese & Guacamole" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-11.webp", caption: "Crispy Chicken Burger" },
+      { url: "/images/port-louis/smokey-joe/smokey-joe-12.webp", caption: "Smoked Ribs Platter" }
     ]
   },
   {
