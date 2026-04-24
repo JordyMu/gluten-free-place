@@ -22,7 +22,7 @@ const France = () => {
     },
     {
       question: "Are there dedicated gluten-free bakeries in France?",
-      answer: "Absolutely! Boulangerie Chambelland, Copains (multiple locations), Noglu, and La Manufacture du Sans Gluten in Paris are all 100% dedicated. Lyon, Strasbourg, and Bordeaux also have dedicated GF spots."
+      answer: "Absolutely! Boulangerie Chambelland, Copains (multiple locations), Noglu, and La Manufacture du Sans Gluten in Paris are all 100% dedicated. Lyon and Bordeaux also have dedicated GF spots."
     },
     {
       question: "How do I communicate my celiac needs in French?",
