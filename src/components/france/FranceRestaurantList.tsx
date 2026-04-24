@@ -5,10 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { parisRestaurants } from "@/data/parisRestaurants";
 import { lyonRestaurants } from "@/data/lyonRestaurants";
 import { bordeauxRestaurants } from "@/data/bordeauxRestaurants";
-import { marseilleRestaurants } from "@/data/marseilleRestaurants";
 import { niceRestaurants } from "@/data/niceRestaurants";
-import { strasbourgRestaurants } from "@/data/strasbourgRestaurants";
-import { otherFranceRestaurants } from "@/data/otherFranceRestaurants";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 
 const menuTypeLabel = (type: string) => (type === "fully-gluten-free" ? "Fully GF" : "Mixed Menu");
@@ -25,19 +22,14 @@ const citySlugMap: Record<string, string> = {
   Paris: "paris",
   Lyon: "lyon",
   Bordeaux: "bordeaux",
-  Marseille: "marseille",
   Nice: "nice",
-  Strasbourg: "strasbourg",
 };
 
 const allRestaurants: Restaurant[] = [
   ...parisRestaurants,
   ...lyonRestaurants,
   ...bordeauxRestaurants,
-  ...marseilleRestaurants,
   ...niceRestaurants,
-  ...strasbourgRestaurants,
-  ...otherFranceRestaurants,
 ]
   .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount)
   .slice(0, 25);

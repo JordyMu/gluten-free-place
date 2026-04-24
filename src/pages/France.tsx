@@ -22,7 +22,7 @@ const France = () => {
     },
     {
       question: "Are there dedicated gluten-free bakeries in France?",
-      answer: "Absolutely! Boulangerie Chambelland, Copains (multiple locations), Noglu, and La Manufacture du Sans Gluten in Paris are all 100% dedicated. Lyon, Strasbourg, and Bordeaux also have dedicated GF spots."
+      answer: "Absolutely! Boulangerie Chambelland, Copains (multiple locations), Noglu, and La Manufacture du Sans Gluten in Paris are all 100% dedicated. Lyon and Bordeaux also have dedicated GF spots."
     },
     {
       question: "How do I communicate my celiac needs in French?",
@@ -30,7 +30,7 @@ const France = () => {
     },
     {
       question: "Which French city is most celiac-friendly?",
-      answer: "Paris leads by far with the most dedicated GF bakeries and restaurants. Lyon, Strasbourg, and Marseille also have strong GF scenes."
+      answer: "Paris leads by far with the most dedicated GF bakeries and restaurants. Lyon and Bordeaux also have excellent GF scenes."
     },
     {
       question: "Can I find gluten-free products in French supermarkets?",
@@ -53,19 +53,17 @@ const France = () => {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       name: "Gluten-Free Restaurants in France",
-      description: "Find the best gluten-free restaurants across France. Verified celiac-safe dining in Paris, Lyon, Bordeaux, Marseille & more.",
+      description: "Find the best gluten-free restaurants across France. Verified celiac-safe dining in Paris, Lyon, Bordeaux, Nice & more.",
       url: "https://glutenfreeplace.org/gluten-free/france",
       mainEntity: {
         "@type": "ItemList",
         name: "Top Gluten-Free Cities in France",
-        numberOfItems: 6,
+        numberOfItems: 4,
         itemListElement: [
           { "@type": "ListItem", position: 1, name: "Paris", url: "https://glutenfreeplace.org/gluten-free/france/paris" },
           { "@type": "ListItem", position: 2, name: "Lyon", url: "https://glutenfreeplace.org/gluten-free/france/lyon" },
-          { "@type": "ListItem", position: 3, name: "Marseille", url: "https://glutenfreeplace.org/gluten-free/france/marseille" },
-          { "@type": "ListItem", position: 4, name: "Bordeaux", url: "https://glutenfreeplace.org/gluten-free/france/bordeaux" },
-          { "@type": "ListItem", position: 5, name: "Nice", url: "https://glutenfreeplace.org/gluten-free/france/nice" },
-          { "@type": "ListItem", position: 6, name: "Strasbourg", url: "https://glutenfreeplace.org/gluten-free/france/strasbourg" }
+          { "@type": "ListItem", position: 3, name: "Bordeaux", url: "https://glutenfreeplace.org/gluten-free/france/bordeaux" },
+          { "@type": "ListItem", position: 4, name: "Nice", url: "https://glutenfreeplace.org/gluten-free/france/nice" }
         ]
       }
     });
@@ -113,15 +111,6 @@ const France = () => {
       highlights: ["Copains Lyon", "Les Gasteliers"]
     },
     {
-      name: "Marseille",
-      image: "photo-1571842030247-c12c69a51fa9",
-      places: 2,
-      rating: 4.5,
-      description: "Mediterranean port city with celiac-safe spots",
-      route: "/gluten-free/france/marseille",
-      highlights: ["La Pépite", "La Pépite Vieux-Port"]
-    },
-    {
       name: "Bordeaux",
       image: "photo-1606744824163-985d376605aa",
       places: 1,
@@ -138,33 +127,6 @@ const France = () => {
       description: "Côte d'Azur destination with vegan & GF patisseries",
       route: "/gluten-free/france/nice",
       highlights: ["Amour Patisserie Vegetale"]
-    },
-    {
-      name: "Strasbourg",
-      image: "photo-1581922814484-0b48460b7010",
-      places: 2,
-      rating: 4.6,
-      description: "Alsatian charm with dedicated GF dining",
-      route: "/gluten-free/france/strasbourg",
-      highlights: ["L'Eden Libre de Gluten", "Harmonie Bowl and Juice"]
-    },
-    {
-      name: "Montpellier",
-      image: "photo-1572883454114-1cf0031ede2a",
-      places: 2,
-      rating: 4.5,
-      description: "Southern city with creative GF spots",
-      route: "#",
-      highlights: ["Takkito", "Les Demoiselles de Montpellier"]
-    },
-    {
-      name: "Annecy",
-      image: "photo-1502602898657-3e91760cbb34",
-      places: 1,
-      rating: 4.5,
-      description: "Alpine lakeside town with GF cafés",
-      route: "#",
-      highlights: ["Liber Art"]
     }
   ];
 
