@@ -16,6 +16,18 @@ const AllCountries = lazy(() => import("./pages/AllCountries"));
 const Italy = lazy(() => import("./pages/Italy"));
 const Spain = lazy(() => import("./pages/Spain"));
 const France = lazy(() => import("./pages/France"));
+const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
+const GlutenFreeLyon = lazy(() => import("./pages/france/GlutenFreeLyon"));
+const GlutenFreeBordeaux = lazy(() => import("./pages/france/GlutenFreeBordeaux"));
+const GlutenFreeMarseille = lazy(() => import("./pages/france/GlutenFreeMarseille"));
+const GlutenFreeNice = lazy(() => import("./pages/france/GlutenFreeNice"));
+const GlutenFreeStrasbourg = lazy(() => import("./pages/france/GlutenFreeStrasbourg"));
+const ParisRestaurantPage = lazy(() => import("./pages/france/ParisRestaurantPage"));
+const LyonRestaurantPage = lazy(() => import("./pages/france/LyonRestaurantPage"));
+const BordeauxRestaurantPage = lazy(() => import("./pages/france/BordeauxRestaurantPage"));
+const MarseilleRestaurantPage = lazy(() => import("./pages/france/MarseilleRestaurantPage"));
+const NiceRestaurantPage = lazy(() => import("./pages/france/NiceRestaurantPage"));
+const StrasbourgRestaurantPage = lazy(() => import("./pages/france/StrasbourgRestaurantPage"));
 const Australia = lazy(() => import("./pages/Australia"));
 const UnitedKingdom = lazy(() => import("./pages/UnitedKingdom"));
 const GlutenFreeLondon = lazy(() => import("./pages/uk/GlutenFreeLondon"));
@@ -136,6 +148,19 @@ const App = () => (
               <Route path="/italy" element={<Italy />} />
               <Route path="/spain" element={<Spain />} />
               <Route path="/france" element={<France />} />
+              <Route path="/gluten-free/france" element={<France />} />
+              <Route path="/gluten-free/france/paris" element={<GlutenFreeParis />} />
+              <Route path="/gluten-free/france/paris/:slug" element={<ParisRestaurantPage />} />
+              <Route path="/gluten-free/france/lyon" element={<GlutenFreeLyon />} />
+              <Route path="/gluten-free/france/lyon/:slug" element={<LyonRestaurantPage />} />
+              <Route path="/gluten-free/france/bordeaux" element={<GlutenFreeBordeaux />} />
+              <Route path="/gluten-free/france/bordeaux/:slug" element={<BordeauxRestaurantPage />} />
+              <Route path="/gluten-free/france/marseille" element={<GlutenFreeMarseille />} />
+              <Route path="/gluten-free/france/marseille/:slug" element={<MarseilleRestaurantPage />} />
+              <Route path="/gluten-free/france/nice" element={<GlutenFreeNice />} />
+              <Route path="/gluten-free/france/nice/:slug" element={<NiceRestaurantPage />} />
+              <Route path="/gluten-free/france/strasbourg" element={<GlutenFreeStrasbourg />} />
+              <Route path="/gluten-free/france/strasbourg/:slug" element={<StrasbourgRestaurantPage />} />
               <Route path="/australia" element={<Australia />} />
               <Route path="/gluten-free/united-kingdom" element={<UnitedKingdom />} />
               <Route path="/united-kingdom" element={<UnitedKingdom />} />

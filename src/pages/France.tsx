@@ -1,1329 +1,382 @@
-import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, Award, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FranceRestaurantList } from "@/components/france/FranceRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
+
 const France = () => {
-  const [searchParams] = useSearchParams();
-  const cityFilter = searchParams.get("city");
-  
-  
+  const faqItems = [
+    {
+      question: "Is France a good destination for gluten-free travelers?",
+      answer: "Yes! France has embraced gluten-free dining with growing celiac awareness. Paris in particular is home to renowned 100% gluten-free bakeries like Chambelland, Copains, and Noglu."
+    },
+    {
+      question: "What French foods are naturally gluten-free?",
+      answer: "Buckwheat galettes (galettes de sarrasin) from Brittany are traditional and naturally GF. Many cheeses, charcuterie, fresh seafood, ratatouille, and sauces like hollandaise can also be naturally gluten-free."
+    },
+    {
+      question: "Are there dedicated gluten-free bakeries in France?",
+      answer: "Absolutely! Boulangerie Chambelland, Copains (multiple locations), Noglu, and La Manufacture du Sans Gluten in Paris are all 100% dedicated. Lyon, Strasbourg, and Bordeaux also have dedicated GF spots."
+    },
+    {
+      question: "How do I communicate my celiac needs in French?",
+      answer: "Say 'Je suis cœliaque' (I'm celiac) or 'sans gluten' (without gluten). Most restaurants in major cities understand. A printed allergen card in French is helpful in smaller towns."
+    },
+    {
+      question: "Which French city is most celiac-friendly?",
+      answer: "Paris leads by far with the most dedicated GF bakeries and restaurants. Lyon, Strasbourg, and Marseille also have strong GF scenes."
+    },
+    {
+      question: "Can I find gluten-free products in French supermarkets?",
+      answer: "Yes — major chains like Monoprix, Carrefour, and Naturalia stock extensive GF ranges. EU labelling laws make ingredient lists clear and reliable."
+    }
+  ];
+
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in France | Celiac-Safe Dining Guide");
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants across France. Browse by city, read real reviews, and find safe dining nationwide.");
+
+    const existingSchema = document.querySelector('script[data-schema="france-gf"]');
+    if (existingSchema) existingSchema.remove();
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'france-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Gluten-Free Restaurants in France",
+      description: "Find the best gluten-free restaurants across France. Verified celiac-safe dining in Paris, Lyon, Bordeaux, Marseille & more.",
+      url: "https://glutenfreeplace.org/gluten-free/france",
+      mainEntity: {
+        "@type": "ItemList",
+        name: "Top Gluten-Free Cities in France",
+        numberOfItems: 6,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Paris", url: "https://glutenfreeplace.org/gluten-free/france/paris" },
+          { "@type": "ListItem", position: 2, name: "Lyon", url: "https://glutenfreeplace.org/gluten-free/france/lyon" },
+          { "@type": "ListItem", position: 3, name: "Marseille", url: "https://glutenfreeplace.org/gluten-free/france/marseille" },
+          { "@type": "ListItem", position: 4, name: "Bordeaux", url: "https://glutenfreeplace.org/gluten-free/france/bordeaux" },
+          { "@type": "ListItem", position: 5, name: "Nice", url: "https://glutenfreeplace.org/gluten-free/france/nice" },
+          { "@type": "ListItem", position: 6, name: "Strasbourg", url: "https://glutenfreeplace.org/gluten-free/france/strasbourg" }
+        ]
+      }
+    });
+    document.head.appendChild(schema);
+
+    const existingFaqSchema = document.querySelector('script[data-schema="france-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'france-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems.map(faq => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer }
+      }))
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      document.querySelector('script[data-schema="france-gf"]')?.remove();
+      document.querySelector('script[data-schema="france-faq"]')?.remove();
+    };
+  }, []);
 
   const cities = [
     {
       name: "Paris",
-      restaurants: [
-        {
-          name: "Copains",
-          featured: true,
-          rating: 4.8,
-          reviewCount: 312,
-          cuisineTypes: ["French", "Bakery", "Patisserie"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "60 Rue Tiquetonne, 75002 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 10",
-          directionsUrl: "https://maps.google.com/?q=60+Rue+Tiquetonne+75002+Paris+France",
-          overview: "Beloved 100% gluten-free bakery offering artisanal French pastries, breads, and cakes. All products made in a dedicated facility ensuring complete safety for celiacs.",
-          menuHighlights: ["🥐 French croissants (GF)", "🥖 Baguettes", "🍰 Pastries & tarts", "🍞 Artisan bread"],
-          proTip: "Arrive early for the best selection - croissants sell out quickly!"
-        },
-        {
-          name: "KAPUNKA Cantine Thaï - Montorgueil",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 189,
-          cuisineTypes: ["Thai", "Asian"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "Montorgueil, Paris, France",
-          hours: "Daily: 12:00PM - 10:00PM",
-          website: "www.kapunka.fr",
-          phone: "+33 1 42 33 10 11",
-          directionsUrl: "https://maps.google.com/?q=Kapunka+Montorgueil+Paris",
-          overview: "100% gluten-free Thai restaurant with authentic flavors and dedicated kitchen.",
-          menuHighlights: ["🍜 Pad Thai (GF)", "🍛 Green Curry", "🥢 Spring Rolls (Rice Paper)"],
-          proTip: "Try the signature Pad Thai!"
-        },
-        {
-          name: "Copains Marais",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 245,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "29 Rue des Blancs Manteaux, 75004 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 12",
-          directionsUrl: "https://maps.google.com/?q=29+Rue+des+Blancs+Manteaux+75004+Paris",
-          overview: "Marais location of the popular 100% gluten-free bakery chain.",
-          menuHighlights: ["🥐 Croissants", "🥖 Fresh Bread", "🍰 Cakes"],
-          proTip: "Great location for exploring the historic Marais district!"
-        },
-        {
-          name: "La Sajerie",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 134,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "20 Rue d'Abbeville, 75009 Paris, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.lasajerie.fr",
-          phone: "+33 1 42 33 10 13",
-          directionsUrl: "https://maps.google.com/?q=20+Rue+d'Abbeville+75009+Paris",
-          overview: "Cozy café offering a variety of gluten-free options with celiac-safe protocols.",
-          menuHighlights: ["☕ Specialty Coffee", "🥗 Fresh Salads", "🍰 GF Desserts"],
-          proTip: "Ask for their daily gluten-free specials!"
-        },
-        {
-          name: "Le Pont Traversé",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 98,
-          cuisineTypes: ["French", "Bookshop Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "62 Rue de Vaugirard, 75006 Paris, France",
-          hours: "Mon-Sat: 10:00AM - 7:00PM",
-          website: "www.leponttraverse.fr",
-          phone: "+33 1 42 33 10 14",
-          directionsUrl: "https://maps.google.com/?q=62+Rue+de+Vaugirard+75006+Paris",
-          overview: "Unique bookshop café with gluten-free options in a literary atmosphere.",
-          menuHighlights: ["📚 Bookshop & Café", "☕ Coffee & Tea", "🍰 GF Pastries"],
-          proTip: "Browse books while enjoying your gluten-free treat!"
-        },
-        {
-          name: "Tasca",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 156,
-          cuisineTypes: ["Portuguese", "Mediterranean"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "46 Avenue de Suffren, 75015 Paris, France",
-          hours: "Tue-Sun: 12:00PM - 10:30PM",
-          website: "www.tasca-paris.fr",
-          phone: "+33 1 42 33 10 15",
-          directionsUrl: "https://maps.google.com/?q=46+Avenue+de+Suffren+75015+Paris",
-          overview: "Portuguese restaurant near the Eiffel Tower with excellent gluten-free options.",
-          menuHighlights: ["🐟 Grilled Fish", "🍖 Portuguese Meats", "🍷 Wine Selection"],
-          proTip: "Try the bacalhau dishes - most are naturally gluten-free!"
-        },
-        {
-          name: "Copains Beaugrenelle",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 178,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "26 Rue Linois, 75015 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 8:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 16",
-          directionsUrl: "https://maps.google.com/?q=26+Rue+Linois+75015+Paris",
-          overview: "Beaugrenelle location of the beloved 100% gluten-free bakery.",
-          menuHighlights: ["🥐 Croissants", "🥖 Baguettes", "🍞 Artisan Bread"],
-          proTip: "Located near Beaugrenelle shopping center for convenient shopping!"
-        },
-        {
-          name: "Boulangerie Chambelland",
-          featured: true,
-          rating: 4.9,
-          reviewCount: 425,
-          cuisineTypes: ["French", "Bakery", "Artisan"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "14 Rue Ternaux, 75011 Paris, France",
-          hours: "Tue-Sat: 8:00AM - 7:00PM, Sun: 8:00AM - 2:00PM",
-          website: "www.chambelland.com",
-          phone: "+33 1 43 55 07 30",
-          directionsUrl: "https://maps.google.com/?q=14+Rue+Ternaux+75011+Paris",
-          overview: "Renowned 100% gluten-free artisan bakery using their own rice and buckwheat flour. A must-visit for celiacs in Paris!",
-          menuHighlights: ["🥖 Signature Rice Bread", "🥐 Croissants", "🍰 Tarts & Cakes", "🥧 Quiches"],
-          proTip: "They mill their own gluten-free flour - truly artisanal!"
-        },
-        {
-          name: "Su Misura",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 167,
-          cuisineTypes: ["Italian", "Pizza", "Pasta"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "22 bis Av. Rapp, 75007 Paris, France",
-          hours: "Tue-Sun: 12:00PM - 2:30PM, 7:00PM - 10:30PM",
-          website: "www.sumisura.fr",
-          phone: "+33 1 42 33 10 18",
-          directionsUrl: "https://maps.google.com/?q=22+bis+Av+Rapp+75007+Paris",
-          overview: "Italian restaurant with excellent gluten-free pizza and pasta options.",
-          menuHighlights: ["🍕 GF Pizza", "🍝 GF Pasta", "🥗 Fresh Salads"],
-          proTip: "Book ahead for their popular GF pizza nights!"
-        },
-        {
-          name: "La Manufacture du Sans Gluten",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 198,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "2 Rue Androuet, 75018 Paris, France",
-          hours: "Wed-Sun: 10:00AM - 6:00PM",
-          website: "www.lamanufacturedusansgluten.fr",
-          phone: "+33 1 42 33 10 19",
-          directionsUrl: "https://maps.google.com/?q=2+Rue+Androuet+75018+Paris",
-          overview: "Dedicated gluten-free bakery in Montmartre with freshly baked goods daily.",
-          menuHighlights: ["🥐 Fresh Pastries", "🍞 Breads", "🎂 Custom Cakes"],
-          proTip: "Located in charming Montmartre - perfect for a morning stroll!"
-        },
-        {
-          name: "Cococo",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 145,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "35 Rue Coquillière, 75001 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 6:00PM",
-          website: "www.cococo.fr",
-          phone: "+33 1 42 33 10 20",
-          directionsUrl: "https://maps.google.com/?q=35+Rue+Coquilliere+75001+Paris",
-          overview: "Trendy café near Les Halles with great gluten-free breakfast options.",
-          menuHighlights: ["☕ Coffee", "🥞 GF Pancakes", "🥗 Healthy Bowls"],
-          proTip: "Great spot for brunch!"
-        },
-        {
-          name: "Café Mareva Montmartre",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 112,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "27 Rue de Clignancourt, 75018 Paris, France",
-          hours: "Tue-Sun: 9:00AM - 6:00PM",
-          website: "www.cafemareva.fr",
-          phone: "+33 1 42 33 10 21",
-          directionsUrl: "https://maps.google.com/?q=27+Rue+de+Clignancourt+75018+Paris",
-          overview: "Charming Montmartre café with gluten-free options and lovely atmosphere.",
-          menuHighlights: ["☕ Specialty Coffee", "🍰 GF Cakes", "🥗 Light Lunch"],
-          proTip: "Perfect stop after visiting Sacré-Cœur!"
-        },
-        {
-          name: "Kapunka - cantine thaï sans gluten",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 234,
-          cuisineTypes: ["Thai", "Asian"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "32 Rue Delambre, 75014 Paris, France",
-          hours: "Daily: 12:00PM - 10:30PM",
-          website: "www.kapunka.fr",
-          phone: "+33 1 42 33 10 22",
-          directionsUrl: "https://maps.google.com/?q=32+Rue+Delambre+75014+Paris",
-          overview: "100% gluten-free Thai restaurant in Montparnasse area.",
-          menuHighlights: ["🍜 Authentic Thai", "🍛 Curries", "🥢 Fresh Rolls"],
-          proTip: "All dishes are 100% gluten-free - no need to ask!"
-        },
-        {
-          name: "Judy, Cantine Qualitarienne",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 167,
-          cuisineTypes: ["Healthy", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "14 Rue Jean-Jacques Rousseau, 75001 Paris, France",
-          hours: "Mon-Fri: 8:00AM - 4:00PM",
-          website: "www.judy.paris",
-          phone: "+33 1 42 33 10 23",
-          directionsUrl: "https://maps.google.com/?q=14+Rue+Jean-Jacques+Rousseau+75001+Paris",
-          overview: "Health-focused café with many gluten-free and organic options.",
-          menuHighlights: ["🥗 Healthy Bowls", "🥤 Fresh Juices", "🍰 GF Treats"],
-          proTip: "Great for a healthy lunch near the Louvre!"
-        },
-        {
-          name: "Grom",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 289,
-          cuisineTypes: ["Italian", "Gelato"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "96 Rue Montorgueil, 75002 Paris, France",
-          hours: "Daily: 12:00PM - 11:00PM",
-          website: "www.grom.it",
-          phone: "+33 1 42 33 10 24",
-          directionsUrl: "https://maps.google.com/?q=96+Rue+Montorgueil+75002+Paris",
-          overview: "Italian gelato chain with gluten-free cone options and many GF flavors.",
-          menuHighlights: ["🍦 Artisan Gelato", "🍨 GF Cones", "☕ Italian Coffee"],
-          proTip: "Ask for the gluten-free cone - it's delicious!"
-        },
-        {
-          name: "Thaïsil",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 145,
-          cuisineTypes: ["Thai", "Asian"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "3 Rue du Nil, 75002 Paris, France",
-          hours: "Tue-Sat: 12:00PM - 2:30PM, 7:00PM - 10:30PM",
-          website: "www.thaisil.fr",
-          phone: "+33 1 42 33 10 25",
-          directionsUrl: "https://maps.google.com/?q=3+Rue+du+Nil+75002+Paris",
-          overview: "Refined Thai cuisine with excellent gluten-free adaptations.",
-          menuHighlights: ["🍜 Thai Noodles", "🍛 Curries", "🥢 Fresh Spring Rolls"],
-          proTip: "Located on trendy Rue du Nil - explore the other food shops!"
-        },
-        {
-          name: "Noglu",
-          featured: true,
-          rating: 4.8,
-          reviewCount: 378,
-          cuisineTypes: ["French", "Bakery", "Café"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "69 Rue de Grenelle, 75007 Paris, France",
-          hours: "Tue-Sat: 9:00AM - 7:00PM",
-          website: "www.noglu.fr",
-          phone: "+33 1 42 33 10 26",
-          directionsUrl: "https://maps.google.com/?q=69+Rue+de+Grenelle+75007+Paris",
-          overview: "Pioneer of gluten-free dining in Paris. 100% dedicated facility with restaurant and boutique.",
-          menuHighlights: ["🥖 Fresh Bread", "🍰 Pastries", "🍽️ Full Lunch Menu", "🛒 Boutique"],
-          proTip: "A Paris institution for celiacs - don't miss it!"
-        },
-        {
-          name: "Little Nonna",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 156,
-          cuisineTypes: ["Italian", "Pasta"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "12 Av. Niel, 75017 Paris, France",
-          hours: "Tue-Sun: 12:00PM - 2:30PM, 7:00PM - 10:30PM",
-          website: "www.littlenonna.fr",
-          phone: "+33 1 42 33 10 27",
-          directionsUrl: "https://maps.google.com/?q=12+Av+Niel+75017+Paris",
-          overview: "Cozy Italian restaurant with homemade gluten-free pasta options.",
-          menuHighlights: ["🍝 Fresh GF Pasta", "🍕 Pizza", "🥗 Antipasti"],
-          proTip: "Reserve the gluten-free pasta in advance for best selection!"
-        },
-        {
-          name: "Copains Batignolles",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 189,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "61 Rue Legendre, 75017 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 28",
-          directionsUrl: "https://maps.google.com/?q=61+Rue+Legendre+75017+Paris",
-          overview: "Batignolles location of the popular gluten-free bakery chain.",
-          menuHighlights: ["🥐 Croissants", "🥖 Fresh Bread", "🍰 Pastries"],
-          proTip: "Great neighborhood bakery in the charming Batignolles area!"
-        },
-        {
-          name: "Riz Riz",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 134,
-          cuisineTypes: ["Asian", "Rice Bowls"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "221 Rue Saint-Martin, 75003 Paris, France",
-          hours: "Daily: 11:30AM - 10:00PM",
-          website: "www.rizriz.fr",
-          phone: "+33 1 42 33 10 29",
-          directionsUrl: "https://maps.google.com/?q=221+Rue+Saint-Martin+75003+Paris",
-          overview: "Asian rice bowl restaurant - naturally gluten-free options available.",
-          menuHighlights: ["🍚 Rice Bowls", "🥢 Asian Dishes", "🥗 Fresh Toppings"],
-          proTip: "Rice-based menu makes it easy for celiacs!"
-        },
-        {
-          name: "Il Quadrifoglio",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 98,
-          cuisineTypes: ["Italian"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Tue-Sun: 12:00PM - 10:30PM",
-          website: "www.ilquadrifoglio.fr",
-          phone: "+33 1 42 33 10 30",
-          directionsUrl: "https://maps.google.com/?q=Il+Quadrifoglio+Paris",
-          overview: "Italian restaurant with gluten-free pasta and pizza options.",
-          menuHighlights: ["🍕 GF Pizza", "🍝 GF Pasta", "🥗 Salads"],
-          proTip: "Call ahead to confirm GF options!"
-        },
-        {
-          name: "Loulou",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 267,
-          cuisineTypes: ["French", "Mediterranean"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Daily: 12:00PM - 11:00PM",
-          website: "www.loulou-paris.com",
-          phone: "+33 1 42 33 10 31",
-          directionsUrl: "https://maps.google.com/?q=Loulou+Paris",
-          overview: "Elegant restaurant with Mediterranean cuisine and GF options.",
-          menuHighlights: ["🐟 Fresh Fish", "🥗 Mediterranean Salads", "🍷 Fine Wine"],
-          proTip: "Beautiful terrace in summer!"
-        },
-        {
-          name: "chez ann",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 112,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Mon-Sat: 8:00AM - 6:00PM",
-          website: "www.chezann.fr",
-          phone: "+33 1 42 33 10 32",
-          directionsUrl: "https://maps.google.com/?q=chez+ann+Paris",
-          overview: "Cozy café with homemade gluten-free options.",
-          menuHighlights: ["☕ Coffee", "🍰 GF Cakes", "🥗 Light Meals"],
-          proTip: "Warm and welcoming atmosphere!"
-        },
-        {
-          name: "La Citrouille",
-          featured: false,
-          rating: 4.3,
-          reviewCount: 87,
-          cuisineTypes: ["French", "Vegetarian"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Tue-Sat: 12:00PM - 3:00PM",
-          website: "www.lacitrouille.fr",
-          phone: "+33 1 42 33 10 33",
-          directionsUrl: "https://maps.google.com/?q=La+Citrouille+Paris",
-          overview: "Vegetarian-friendly spot with gluten-free options.",
-          menuHighlights: ["🥗 Vegetarian Dishes", "🍲 Soups", "🍰 GF Desserts"],
-          proTip: "Great for vegetarian celiacs!"
-        },
-        {
-          name: "Le Florimond",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 145,
-          cuisineTypes: ["French", "Traditional"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Tue-Sat: 12:00PM - 2:30PM, 7:00PM - 10:30PM",
-          website: "www.leflorimond.fr",
-          phone: "+33 1 42 33 10 34",
-          directionsUrl: "https://maps.google.com/?q=Le+Florimond+Paris",
-          overview: "Traditional French cuisine with accommodating staff for dietary needs.",
-          menuHighlights: ["🍖 French Classics", "🐟 Fresh Fish", "🍷 Wine Pairing"],
-          proTip: "Inform the staff about celiac needs when booking!"
-        },
-        {
-          name: "La Creperie",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 178,
-          cuisineTypes: ["French", "Crêperie"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Daily: 11:00AM - 10:00PM",
-          website: "www.lacreperie.fr",
-          phone: "+33 1 42 33 10 35",
-          directionsUrl: "https://maps.google.com/?q=La+Creperie+Paris",
-          overview: "Crêperie with buckwheat galettes - naturally gluten-free!",
-          menuHighlights: ["🥞 Buckwheat Galettes", "🧇 Sweet Crêpes", "🍷 Cider"],
-          proTip: "Buckwheat galettes are naturally gluten-free but confirm no cross-contact!"
-        },
-        {
-          name: "La Crème de Paris",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 198,
-          cuisineTypes: ["French", "Ice Cream"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Daily: 12:00PM - 10:00PM",
-          website: "www.lacremedeparis.fr",
-          phone: "+33 1 42 33 10 36",
-          directionsUrl: "https://maps.google.com/?q=La+Creme+de+Paris",
-          overview: "Artisan ice cream with many gluten-free flavors.",
-          menuHighlights: ["🍦 Artisan Ice Cream", "🍨 Sorbets", "☕ Coffee"],
-          proTip: "Ask about GF cone options!"
-        },
-        {
-          name: "Lou Cantou",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 123,
-          cuisineTypes: ["French", "Traditional"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Tue-Sat: 12:00PM - 10:00PM",
-          website: "www.loucantou.fr",
-          phone: "+33 1 42 33 10 37",
-          directionsUrl: "https://maps.google.com/?q=Lou+Cantou+Paris",
-          overview: "Regional French cuisine with gluten-free adaptations available.",
-          menuHighlights: ["🍖 Regional Specialties", "🧀 Cheese Selection", "🍷 Wine"],
-          proTip: "Traditional cooking with GF options!"
-        },
-        {
-          name: "La Crème de Paris Notre-Dame",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 156,
-          cuisineTypes: ["French", "Ice Cream"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Near Notre-Dame, Paris, France",
-          hours: "Daily: 11:00AM - 11:00PM",
-          website: "www.lacremedeparis.fr",
-          phone: "+33 1 42 33 10 38",
-          directionsUrl: "https://maps.google.com/?q=La+Creme+de+Paris+Notre+Dame",
-          overview: "Ice cream shop near Notre-Dame with gluten-free options.",
-          menuHighlights: ["🍦 Ice Cream", "🍨 Sorbets", "🧇 GF Waffles"],
-          proTip: "Perfect treat after visiting Notre-Dame!"
-        },
-        {
-          name: "Liber Art",
-          featured: false,
-          rating: 4.3,
-          reviewCount: 89,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "Paris, France",
-          hours: "Mon-Sat: 10:00AM - 7:00PM",
-          website: "www.liberart.fr",
-          phone: "+33 1 42 33 10 39",
-          directionsUrl: "https://maps.google.com/?q=Liber+Art+Paris",
-          overview: "Art café with gluten-free pastries and light meals.",
-          menuHighlights: ["☕ Coffee", "🎨 Art Gallery", "🍰 GF Pastries"],
-          proTip: "Combine culture and coffee!"
-        },
-        {
-          name: "Copains Victor Hugo",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 212,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "90 Av. Victor Hugo, 75016 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 40",
-          directionsUrl: "https://maps.google.com/?q=90+Av+Victor+Hugo+75016+Paris",
-          overview: "Victor Hugo location of the renowned gluten-free bakery.",
-          menuHighlights: ["🥐 Croissants", "🥖 Baguettes", "🍰 Cakes"],
-          proTip: "Upscale neighborhood with great shopping nearby!"
-        },
-        {
-          name: "Copains Abbesses",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 198,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "8 Rue des Abbesses, 75018 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 41",
-          directionsUrl: "https://maps.google.com/?q=8+Rue+des+Abbesses+75018+Paris",
-          overview: "Montmartre location in the charming Abbesses area.",
-          menuHighlights: ["🥐 Fresh Croissants", "🥖 Bread", "🍰 Pastries"],
-          proTip: "Perfect start to a Montmartre exploration!"
-        },
-        {
-          name: "Kapunka Saint-Sauveur",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 167,
-          cuisineTypes: ["Thai", "Asian"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "51 Rue Saint-Sauveur, 75002 Paris, France",
-          hours: "Daily: 12:00PM - 10:30PM",
-          website: "www.kapunka.fr",
-          phone: "+33 1 42 33 10 42",
-          directionsUrl: "https://maps.google.com/?q=51+Rue+Saint-Sauveur+75002+Paris",
-          overview: "Another location of the 100% gluten-free Thai restaurant.",
-          menuHighlights: ["🍜 Pad Thai", "🍛 Curries", "🥢 Fresh Rolls"],
-          proTip: "All dishes guaranteed gluten-free!"
-        },
-        {
-          name: "Noglu Bastille",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 234,
-          cuisineTypes: ["French", "Bakery", "Café"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "15 Rue Basfroi, 75011 Paris, France",
-          hours: "Tue-Sat: 9:00AM - 7:00PM",
-          website: "www.noglu.fr",
-          phone: "+33 1 42 33 10 43",
-          directionsUrl: "https://maps.google.com/?q=15+Rue+Basfroi+75011+Paris",
-          overview: "Bastille location of the famous Noglu gluten-free concept.",
-          menuHighlights: ["🥖 Fresh Bread", "🍰 Pastries", "🍽️ Lunch Menu"],
-          proTip: "Great neighborhood for exploring East Paris!"
-        },
-        {
-          name: "Boulangerie Chambelland Brochant",
-          featured: false,
-          rating: 4.8,
-          reviewCount: 289,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "43 Rue Brochant, 75017 Paris, France",
-          hours: "Tue-Sat: 8:00AM - 7:00PM, Sun: 8:00AM - 2:00PM",
-          website: "www.chambelland.com",
-          phone: "+33 1 42 33 10 44",
-          directionsUrl: "https://maps.google.com/?q=43+Rue+Brochant+75017+Paris",
-          overview: "Second Paris location of the acclaimed artisan gluten-free bakery.",
-          menuHighlights: ["🥖 Signature Bread", "🥐 Pastries", "🥧 Quiches"],
-          proTip: "Same amazing quality as the original location!"
-        },
-        {
-          name: "Copains Opéra",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 178,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "9 Av. de l'Opéra, 75001 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 8:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 45",
-          directionsUrl: "https://maps.google.com/?q=9+Av+de+l'Opera+75001+Paris",
-          overview: "Central location near the Opéra Garnier.",
-          menuHighlights: ["🥐 Croissants", "🥖 Baguettes", "🍰 French Pastries"],
-          proTip: "Perfect for a break while exploring central Paris!"
-        },
-        {
-          name: "Judy Fleurus",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 134,
-          cuisineTypes: ["Healthy", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "18 Rue de Fleurus, 75006 Paris, France",
-          hours: "Mon-Fri: 8:00AM - 4:00PM",
-          website: "www.judy.paris",
-          phone: "+33 1 42 33 10 46",
-          directionsUrl: "https://maps.google.com/?q=18+Rue+de+Fleurus+75006+Paris",
-          overview: "Second location of the health-focused café in Saint-Germain.",
-          menuHighlights: ["🥗 Healthy Bowls", "🥤 Smoothies", "🍰 GF Treats"],
-          proTip: "Near Luxembourg Gardens for a lovely stroll!"
-        },
-        {
-          name: "Copains Le Studio",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 156,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "22 Rue Yves Toudic, 75010 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 47",
-          directionsUrl: "https://maps.google.com/?q=22+Rue+Yves+Toudic+75010+Paris",
-          overview: "Trendy Canal Saint-Martin location of the GF bakery.",
-          menuHighlights: ["🥐 Croissants", "🥖 Fresh Bread", "☕ Coffee"],
-          proTip: "Enjoy by the beautiful Canal Saint-Martin!"
-        },
-        {
-          name: "Grom Saint-Germain",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 198,
-          cuisineTypes: ["Italian", "Gelato"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "81 Rue de Seine, 75006 Paris, France",
-          hours: "Daily: 12:00PM - 11:00PM",
-          website: "www.grom.it",
-          phone: "+33 1 42 33 10 48",
-          directionsUrl: "https://maps.google.com/?q=81+Rue+de+Seine+75006+Paris",
-          overview: "Saint-Germain location of the Italian gelato chain.",
-          menuHighlights: ["🍦 Artisan Gelato", "🍨 GF Cones", "☕ Coffee"],
-          proTip: "Perfect treat in the heart of Saint-Germain!"
-        },
-        {
-          name: "Copains Saints-Pères",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 167,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "68 Rue des Saints-Pères, 75007 Paris, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 49",
-          directionsUrl: "https://maps.google.com/?q=68+Rue+des+Saints-Peres+75007+Paris",
-          overview: "Left Bank location of the beloved GF bakery.",
-          menuHighlights: ["🥐 Croissants", "🥖 Baguettes", "🍰 Pastries"],
-          proTip: "Great for exploring the Left Bank galleries!"
-        },
-        {
-          name: "Copains Rosiers",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 212,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "36 Rue des Rosiers, 75004 Paris, France",
-          hours: "Sun-Thu: 8:00AM - 7:00PM, Fri: 8:00AM - 3:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 1 42 33 10 50",
-          directionsUrl: "https://maps.google.com/?q=36+Rue+des+Rosiers+75004+Paris",
-          overview: "Marais location on the famous Rue des Rosiers.",
-          menuHighlights: ["🥐 Croissants", "🥖 Fresh Bread", "🍰 Jewish-inspired pastries"],
-          proTip: "In the heart of the historic Jewish quarter!"
-        }
-      ]
-    },
-    {
-      name: "Annecy",
-      restaurants: [
-        {
-          name: "Liber Art",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 87,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "41 Rue Vaugelas, 74000 Annecy, France",
-          hours: "Tue-Sat: 10:00AM - 6:00PM",
-          website: "www.liberart-annecy.fr",
-          phone: "+33 4 50 33 10 51",
-          directionsUrl: "https://maps.google.com/?q=41+Rue+Vaugelas+74000+Annecy",
-          overview: "Art café in beautiful Annecy with gluten-free options.",
-          menuHighlights: ["☕ Coffee", "🎨 Art Gallery", "🍰 GF Pastries"],
-          proTip: "Lovely setting near Lake Annecy!"
-        }
-      ]
-    },
-    {
-      name: "Strasbourg",
-      restaurants: [
-        {
-          name: "L'Eden Libre de Gluten",
-          featured: true,
-          rating: 4.8,
-          reviewCount: 267,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "15 Pl. du Temple Neuf, 67000 Strasbourg, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.ledenlibredegluten.fr",
-          phone: "+33 3 88 33 10 52",
-          directionsUrl: "https://maps.google.com/?q=15+Pl+du+Temple+Neuf+67000+Strasbourg",
-          overview: "Dedicated gluten-free bakery and café in the heart of Strasbourg.",
-          menuHighlights: ["🥐 GF Pastries", "🥖 Fresh Bread", "🍰 Cakes", "🍽️ Light Lunch"],
-          proTip: "A must-visit for celiacs exploring Alsace!"
-        },
-        {
-          name: "Harmonie Bowl and Juice",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 134,
-          cuisineTypes: ["Healthy", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "5 Rue St Étienne, 67000 Strasbourg, France",
-          hours: "Mon-Sat: 8:00AM - 6:00PM",
-          website: "www.harmoniebowl.fr",
-          phone: "+33 3 88 33 10 53",
-          directionsUrl: "https://maps.google.com/?q=5+Rue+St+Etienne+67000+Strasbourg",
-          overview: "Health-focused café with açaí bowls and fresh juices.",
-          menuHighlights: ["🥣 Açaí Bowls", "🥤 Fresh Juices", "🥗 Healthy Options"],
-          proTip: "Most bowls are naturally gluten-free!"
-        }
-      ]
-    },
-    {
-      name: "Bordeaux",
-      restaurants: [
-        {
-          name: "BAG Bakery Art Gallery",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 145,
-          cuisineTypes: ["French", "Bakery", "Art"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "24 Rue du Mirail, 33000 Bordeaux, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.bagbordeaux.fr",
-          phone: "+33 5 56 33 10 54",
-          directionsUrl: "https://maps.google.com/?q=24+Rue+du+Mirail+33000+Bordeaux",
-          overview: "Unique bakery-gallery concept with gluten-free options.",
-          menuHighlights: ["🥐 Pastries", "🎨 Art Exhibition", "☕ Coffee"],
-          proTip: "Combines art and baking beautifully!"
-        }
-      ]
-    },
-    {
-      name: "Aix-en-Provence",
-      restaurants: [
-        {
-          name: "La Manufacture Bio",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 123,
-          cuisineTypes: ["French", "Organic", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "18 Rue Courteissade, 13100 Aix-en-Provence, France",
-          hours: "Mon-Sat: 9:00AM - 7:00PM",
-          website: "www.lamanufacturebio.fr",
-          phone: "+33 4 42 33 10 55",
-          directionsUrl: "https://maps.google.com/?q=18+Rue+Courteissade+13100+Aix-en-Provence",
-          overview: "Organic café with a good selection of gluten-free products.",
-          menuHighlights: ["🌱 Organic Products", "🥗 Fresh Salads", "🍰 GF Desserts"],
-          proTip: "Great organic market products to take home!"
-        }
-      ]
-    },
-    {
-      name: "Nîmes",
-      restaurants: [
-        {
-          name: "Les Bartavelles",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 98,
-          cuisineTypes: ["French", "Mediterranean"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "4 Rue de l'École Vieille, 30000 Nîmes, France",
-          hours: "Tue-Sat: 12:00PM - 2:00PM, 7:30PM - 10:00PM",
-          website: "www.lesbartavelles.fr",
-          phone: "+33 4 66 33 10 56",
-          directionsUrl: "https://maps.google.com/?q=4+Rue+de+l'Ecole+Vieille+30000+Nimes",
-          overview: "Mediterranean restaurant with accommodating gluten-free options.",
-          menuHighlights: ["🐟 Fresh Fish", "🥗 Salads", "🍷 Local Wines"],
-          proTip: "Near the Roman arena - perfect for sightseeing!"
-        }
-      ]
-    },
-    {
-      name: "Marseille",
-      restaurants: [
-        {
-          name: "La Pépite",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 178,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "145 Rue Sainte, 13007 Marseille, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.lapepite-marseille.fr",
-          phone: "+33 4 91 33 10 57",
-          directionsUrl: "https://maps.google.com/?q=145+Rue+Sainte+13007+Marseille",
-          overview: "Charming café with excellent gluten-free pastries.",
-          menuHighlights: ["☕ Coffee", "🍰 GF Pastries", "🥗 Light Lunch"],
-          proTip: "Try their famous gluten-free cakes!"
-        },
-        {
-          name: "La Pépite Vieux-Port",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 145,
-          cuisineTypes: ["French", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "2 Place Daviel, 13002 Marseille, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.lapepite-marseille.fr",
-          phone: "+33 4 91 33 10 58",
-          directionsUrl: "https://maps.google.com/?q=2+Place+Daviel+13002+Marseille",
-          overview: "Second location near the historic Vieux-Port.",
-          menuHighlights: ["☕ Coffee", "🍰 GF Cakes", "🥐 Pastries"],
-          proTip: "Great views of the old port!"
-        }
-      ]
-    },
-    {
-      name: "Obernai",
-      restaurants: [
-        {
-          name: "L'Eden Libre de Gluten Obernai",
-          featured: false,
-          rating: 4.7,
-          reviewCount: 112,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "2 Rue Dietrich, 67210 Obernai, France",
-          hours: "Tue-Sat: 9:00AM - 6:00PM",
-          website: "www.ledenlibredegluten.fr",
-          phone: "+33 3 88 33 10 59",
-          directionsUrl: "https://maps.google.com/?q=2+Rue+Dietrich+67210+Obernai",
-          overview: "Second location of the dedicated GF bakery in charming Obernai.",
-          menuHighlights: ["🥐 GF Pastries", "🥖 Bread", "🍰 Cakes"],
-          proTip: "Worth a trip to this beautiful Alsatian town!"
-        }
-      ]
+      image: "photo-1502602898657-3e91760cbb34",
+      places: 41,
+      rating: 4.7,
+      description: "France's capital with renowned dedicated GF bakeries and bistros",
+      route: "/gluten-free/france/paris",
+      highlights: ["Chambelland", "Copains", "Noglu"]
     },
     {
       name: "Lyon",
-      restaurants: [
-        {
-          name: "Copains Lyon",
-          featured: true,
-          rating: 4.7,
-          reviewCount: 234,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "80 Rue du Président Édouard Herriot, 69002 Lyon, France",
-          hours: "Mon-Sat: 8:00AM - 7:00PM",
-          website: "www.copainsparis.com",
-          phone: "+33 4 72 33 10 60",
-          directionsUrl: "https://maps.google.com/?q=80+Rue+du+President+Edouard+Herriot+69002+Lyon",
-          overview: "Lyon location of the beloved Parisian gluten-free bakery chain.",
-          menuHighlights: ["🥐 Croissants", "🥖 Baguettes", "🍰 French Pastries"],
-          proTip: "Bringing Paris-quality GF baking to Lyon!"
-        },
-        {
-          name: "Les Gasteliers",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 189,
-          cuisineTypes: ["French", "Bakery"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          address: "123 Rue de Sèze, 69006 Lyon, France",
-          hours: "Tue-Sat: 8:00AM - 7:00PM",
-          website: "www.lesgasteliers.fr",
-          phone: "+33 4 72 33 10 61",
-          directionsUrl: "https://maps.google.com/?q=123+Rue+de+Seze+69006+Lyon",
-          overview: "Dedicated gluten-free bakery in Lyon's 6th arrondissement.",
-          menuHighlights: ["🥖 Artisan Bread", "🥐 Pastries", "🍰 Custom Cakes"],
-          proTip: "Local Lyon favorite for gluten-free baking!"
-        }
-      ]
+      image: "photo-1524396309943-e03f5249f002",
+      places: 2,
+      rating: 4.6,
+      description: "Gastronomic capital with growing gluten-free scene",
+      route: "/gluten-free/france/lyon",
+      highlights: ["Copains Lyon", "Les Gasteliers"]
     },
     {
-      name: "Amiens",
-      restaurants: [
-        {
-          name: "Snack'in",
-          featured: false,
-          rating: 4.3,
-          reviewCount: 76,
-          cuisineTypes: ["French", "Fast Casual"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "7 Rue Henri IV, 80000 Amiens, France",
-          hours: "Mon-Sat: 11:00AM - 9:00PM",
-          website: "www.snackin-amiens.fr",
-          phone: "+33 3 22 33 10 62",
-          directionsUrl: "https://maps.google.com/?q=7+Rue+Henri+IV+80000+Amiens",
-          overview: "Fast casual spot with gluten-free options available.",
-          menuHighlights: ["🍔 Burgers (GF bun available)", "🥗 Salads", "🍟 Fries"],
-          proTip: "Ask about GF bun options!"
-        }
-      ]
+      name: "Marseille",
+      image: "photo-1571842030247-c12c69a51fa9",
+      places: 2,
+      rating: 4.5,
+      description: "Mediterranean port city with celiac-safe spots",
+      route: "/gluten-free/france/marseille",
+      highlights: ["La Pépite", "La Pépite Vieux-Port"]
     },
     {
-      name: "Antibes",
-      restaurants: [
-        {
-          name: "Choopy's Brunch & Coffee shop",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 134,
-          cuisineTypes: ["Brunch", "Café"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "16 Rue Vial, 06600 Antibes, France",
-          hours: "Daily: 8:00AM - 4:00PM",
-          website: "www.choopys.fr",
-          phone: "+33 4 93 33 10 63",
-          directionsUrl: "https://maps.google.com/?q=16+Rue+Vial+06600+Antibes",
-          overview: "Trendy brunch spot on the French Riviera with GF options.",
-          menuHighlights: ["🥞 GF Pancakes", "🥑 Avocado Toast (GF bread)", "☕ Coffee"],
-          proTip: "Popular weekend brunch spot - arrive early!"
-        }
-      ]
-    },
-    {
-      name: "Six-Fours-les-Plages",
-      restaurants: [
-        {
-          name: "Mac & Choc",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 98,
-          cuisineTypes: ["French", "Bakery", "Chocolatier"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "261 Rte des Sablettes, 83140 Six-Fours-les-Plages, France",
-          hours: "Tue-Sat: 9:00AM - 7:00PM",
-          website: "www.macandchoc.fr",
-          phone: "+33 4 94 33 10 64",
-          directionsUrl: "https://maps.google.com/?q=261+Rte+des+Sablettes+83140+Six-Fours-les-Plages",
-          overview: "Bakery and chocolatier with gluten-free options near the beach.",
-          menuHighlights: ["🍫 Artisan Chocolate", "🍰 GF Cakes", "🥐 Pastries"],
-          proTip: "Try their handmade chocolates!"
-        }
-      ]
-    },
-    {
-      name: "Montpellier",
-      restaurants: [
-        {
-          name: "Takkito Restaurant",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 145,
-          cuisineTypes: ["Mexican", "Latin"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "8 bis Rue du Bras de Fer, 34000 Montpellier, France",
-          hours: "Tue-Sun: 12:00PM - 10:30PM",
-          website: "www.takkito.fr",
-          phone: "+33 4 67 33 10 65",
-          directionsUrl: "https://maps.google.com/?q=8+bis+Rue+du+Bras+de+Fer+34000+Montpellier",
-          overview: "Mexican restaurant with corn-based dishes naturally GF.",
-          menuHighlights: ["🌮 Corn Tacos", "🌯 Burritos (corn tortilla)", "🥑 Guacamole"],
-          proTip: "Corn tortillas are naturally gluten-free!"
-        },
-        {
-          name: "Les Demoiselles de Montpellier",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 167,
-          cuisineTypes: ["French", "Patisserie"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "2 Rue de la Carbonnerie, 34000 Montpellier, France",
-          hours: "Tue-Sat: 9:00AM - 7:00PM",
-          website: "www.lesdemoisellesdemontpellier.fr",
-          phone: "+33 4 67 33 10 66",
-          directionsUrl: "https://maps.google.com/?q=2+Rue+de+la+Carbonnerie+34000+Montpellier",
-          overview: "Elegant patisserie with gluten-free cake options.",
-          menuHighlights: ["🍰 GF Cakes", "🧁 Cupcakes", "☕ Tea Service"],
-          proTip: "Beautiful presentation and delicious taste!"
-        }
-      ]
-    },
-    {
-      name: "Saint-Malo",
-      restaurants: [
-        {
-          name: "La Palabre Malouine",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 112,
-          cuisineTypes: ["French", "Crêperie"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "7 Bd Chateaubriand, 35400 Saint-Malo, France",
-          hours: "Daily: 12:00PM - 10:00PM",
-          website: "www.lapalabremalouine.fr",
-          phone: "+33 2 99 33 10 67",
-          directionsUrl: "https://maps.google.com/?q=7+Bd+Chateaubriand+35400+Saint-Malo",
-          overview: "Crêperie in the walled city with buckwheat galettes.",
-          menuHighlights: ["🥞 Buckwheat Galettes", "🧇 Sweet Crêpes", "🍷 Cider"],
-          proTip: "Buckwheat is naturally GF but confirm no cross-contact!"
-        }
-      ]
-    },
-    {
-      name: "Villeneuve-d'Ascq",
-      restaurants: [
-        {
-          name: "Og Boulangerie",
-          featured: false,
-          rating: 4.5,
-          reviewCount: 98,
-          cuisineTypes: ["French", "Bakery", "Organic"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "La Ferme Du Sens, 270 Rue des Fusillés, 59493 Villeneuve-d'Ascq, France",
-          hours: "Tue-Sat: 8:00AM - 7:00PM",
-          website: "www.ogboulangerie.fr",
-          phone: "+33 3 20 33 10 68",
-          directionsUrl: "https://maps.google.com/?q=270+Rue+des+Fusilles+59493+Villeneuve-d'Ascq",
-          overview: "Organic bakery with gluten-free options near Lille.",
-          menuHighlights: ["🌱 Organic Bread", "🥐 GF Pastries", "🍞 Specialty Loaves"],
-          proTip: "Worth the trip from Lille for organic GF products!"
-        }
-      ]
-    },
-    {
-      name: "Villeneuve-lès-Avignon",
-      restaurants: [
-        {
-          name: "Le L Crêperie",
-          featured: false,
-          rating: 4.4,
-          reviewCount: 87,
-          cuisineTypes: ["French", "Crêperie"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "3 Place Saint-Marc, 30400 Villeneuve-lès-Avignon, France",
-          hours: "Tue-Sun: 12:00PM - 9:00PM",
-          website: "www.lelcreperie.fr",
-          phone: "+33 4 90 33 10 69",
-          directionsUrl: "https://maps.google.com/?q=3+Place+Saint-Marc+30400+Villeneuve-les-Avignon",
-          overview: "Traditional crêperie with buckwheat galette options.",
-          menuHighlights: ["🥞 Buckwheat Galettes", "🧇 Sweet Crêpes", "🍷 Local Wine"],
-          proTip: "Beautiful views of the Avignon Palace!"
-        }
-      ]
+      name: "Bordeaux",
+      image: "photo-1606744824163-985d376605aa",
+      places: 1,
+      rating: 4.6,
+      description: "Wine capital with artisan GF bakery options",
+      route: "/gluten-free/france/bordeaux",
+      highlights: ["BAG Bakery Art Gallery"]
     },
     {
       name: "Nice",
-      restaurants: [
-        {
-          name: "Amour Patisserie Vegetale",
-          featured: false,
-          rating: 4.6,
-          reviewCount: 156,
-          cuisineTypes: ["Vegan", "Patisserie"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          address: "2 Rue Foncet, 06000 Nice, France",
-          hours: "Tue-Sat: 10:00AM - 6:00PM",
-          website: "www.amourpatisserie.fr",
-          phone: "+33 4 93 33 10 70",
-          directionsUrl: "https://maps.google.com/?q=2+Rue+Foncet+06000+Nice",
-          overview: "Vegan patisserie with many gluten-free options on the Riviera.",
-          menuHighlights: ["🌱 Vegan Cakes", "🍰 GF Options", "☕ Specialty Coffee"],
-          proTip: "Perfect for vegan celiacs!"
-        }
-      ]
+      image: "photo-1533614767277-ed01112a4e34",
+      places: 1,
+      rating: 4.6,
+      description: "Côte d'Azur destination with vegan & GF patisseries",
+      route: "/gluten-free/france/nice",
+      highlights: ["Amour Patisserie Vegetale"]
+    },
+    {
+      name: "Strasbourg",
+      image: "photo-1581922814484-0b48460b7010",
+      places: 2,
+      rating: 4.6,
+      description: "Alsatian charm with dedicated GF dining",
+      route: "/gluten-free/france/strasbourg",
+      highlights: ["L'Eden Libre de Gluten", "Harmonie Bowl and Juice"]
+    },
+    {
+      name: "Montpellier",
+      image: "photo-1572883454114-1cf0031ede2a",
+      places: 2,
+      rating: 4.5,
+      description: "Southern city with creative GF spots",
+      route: "#",
+      highlights: ["Takkito", "Les Demoiselles de Montpellier"]
+    },
+    {
+      name: "Annecy",
+      image: "photo-1502602898657-3e91760cbb34",
+      places: 1,
+      rating: 4.5,
+      description: "Alpine lakeside town with GF cafés",
+      route: "#",
+      highlights: ["Liber Art"]
     }
   ];
-
-  const filteredCities = cityFilter
-    ? cities.filter(city => city.name.toLowerCase().includes(cityFilter.toLowerCase()))
-    : cities;
-
-  const getCeliacSafeBadge = (level: string) => {
-    switch (level) {
-      case "dedicated-facility":
-        return <Badge className="bg-green-100 text-green-800 border-green-300"><Shield className="h-3 w-3 mr-1" />Dedicated Facility</Badge>;
-      case "protocols-in-place":
-        return <Badge className="bg-blue-100 text-blue-800 border-blue-300"><CheckCircle className="h-3 w-3 mr-1" />Celiac Protocols</Badge>;
-      default:
-        return <Badge className="bg-gray-100 text-gray-800 border-gray-300"><CheckCircle className="h-3 w-3 mr-1" />GF Options</Badge>;
-    }
-  };
-
-  const getMenuTypeBadge = (type: string) => {
-    return type === "fully-gluten-free"
-      ? <Badge className="bg-green-100 text-green-800 border-green-300">🥖 100% Gluten-Free</Badge>
-      : <Badge className="bg-orange-100 text-orange-800 border-orange-300">🥖 Many GF Options</Badge>;
-  };
-
-  const renderStarRating = (rating: number) => {
-    return (
-      <div className="flex items-center space-x-1">
-        {[1, 2, 3, 4, 5].map((star) => (
-          <Star key={star} className={`h-4 w-4 ${star <= rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`} />
-        ))}
-      </div>
-    );
-  };
 
   return (
     <>
     <SEOHead
       title="Gluten-Free Restaurants in France | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in France. Dedicated GF bakeries, patisseries & bistros in Paris, Lyon, Nice, Bordeaux & more French cities."
-      canonical="/france"
+      description="Find the best gluten-free restaurants across France. Verified celiac-safe dining in Paris, Lyon, Bordeaux, Marseille & more. Real reviews from GF travelers."
+      canonical="/gluten-free/france"
     />
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4">
-          <Link to="/countries" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Countries
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <Globe className="h-8 w-8 text-blue-700" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-700 via-gray-700 to-red-600 bg-clip-text text-transparent">
+              Gluten-Free Places
+            </span>
           </Link>
-          <div className="flex items-center gap-3">
-            <span className="text-4xl">🇫🇷</span>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Dining in France</h1>
-              <p className="text-gray-600">Discover celiac-safe restaurants across France</p>
-            </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-blue-700 transition-colors whitespace-nowrap">Home</Link>
+            <Link to="/countries" className="text-gray-700 hover:text-blue-700 transition-colors">Countries</Link>
+            <Link to="#cities" className="text-gray-700 hover:text-blue-700 transition-colors">Cities</Link>
+            <Link to="#faq" className="text-gray-700 hover:text-blue-700 transition-colors">FAQ</Link>
+            <UserMenu />
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        {/* Introduction */}
-        <Card className="mb-8 bg-gradient-to-r from-blue-50 to-red-50 border-blue-200">
-          <CardContent className="p-6">
-            <div className="flex items-start gap-4">
-              <Award className="w-8 h-8 text-blue-600 flex-shrink-0" />
-              <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">France's Gluten-Free Scene</h2>
-                <p className="text-gray-700">
-                  France has embraced gluten-free dining with exceptional bakeries and restaurants across the country. 
-                  From Paris's dedicated GF bakeries like Chambelland and Copains to regional gems in Lyon, Strasbourg, 
-                  and beyond. Look for "sans gluten" on menus and say "Je suis cœliaque" to communicate your needs. 
-                  Buckwheat galettes are a traditional naturally gluten-free option in crêperies.
-                </p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-blue-700 via-white/10 to-red-600">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to All Countries
+          </Link>
+          <div className="max-w-4xl mx-auto">
+            <span className="text-5xl mb-4 block">🇫🇷</span>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <MapPin className="h-4 w-4 mr-2" />
+              50+ Gluten-Free Places
+            </Badge>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Gluten-Free France
+            </h1>
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+              Discover safe, delicious gluten-free dining across France — from Paris's
+              dedicated bakeries to Lyon's gastronomic scene and the Côte d'Azur.
+            </p>
 
-        {/* Cities and Restaurants */}
-        {filteredCities.map((city) => (
-          <div key={city.name} className="mb-10">
-            <div className="flex items-center gap-2 mb-4">
-              <MapPin className="w-5 h-5 text-blue-600" />
-              <h2 className="text-2xl font-bold text-gray-900">{city.name}</h2>
-              <Badge variant="secondary">{city.restaurants.length} restaurants</Badge>
-            </div>
-
-            <div className="grid gap-6">
-              {city.restaurants.map((restaurant, index) => (
-                <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-blue-300' : ''}`}>
-                  <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row gap-6">
-                      {/* Restaurant Info */}
-                      <div className="flex-1">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <div className="flex items-center gap-2 mb-1">
-                              {restaurant.featured && (
-                                <Badge className="bg-blue-100 text-blue-800 border-blue-300">
-                                  <Award className="w-3 h-3 mr-1" />Featured
-                                </Badge>
-                              )}
-                              <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
-                            </div>
-                            <div className="flex items-center gap-2 mb-2">
-                              {renderStarRating(restaurant.rating)}
-                              <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
-                            </div>
-                          </div>
-                          <Button variant="ghost" size="sm">
-                            <Heart className="w-4 h-4" />
-                          </Button>
-                        </div>
-
-                        {/* Badges */}
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {restaurant.cuisineTypes?.map((cuisine, i) => (
-                            <Badge key={i} variant="outline">{cuisine}</Badge>
-                          ))}
-                          {restaurant.celiacSafe && getCeliacSafeBadge(restaurant.celiacSafe)}
-                          {restaurant.menuType && getMenuTypeBadge(restaurant.menuType)}
-                        </div>
-
-                        {/* Contact Info */}
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-gray-400" />
-                            <span>{restaurant.address}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-gray-400" />
-                            <span>{restaurant.hours}</span>
-                          </div>
-                          {restaurant.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${restaurant.phone}`} className="hover:text-blue-600">{restaurant.phone}</a>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Overview */}
-                        <p className="text-gray-700 mb-4">{restaurant.overview}</p>
-
-                        {/* Menu Highlights */}
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
-                          <div className="flex flex-wrap gap-2">
-                            {restaurant.menuHighlights.map((item, i) => (
-                              <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
-                            ))}
-                          </div>
-                        </div>
-
-                        {/* Pro Tip */}
-                        {restaurant.proTip && (
-                          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
-                            <div className="flex items-center gap-2">
-                              <MessageCircle className="w-4 h-4 text-amber-600" />
-                              <span className="font-medium text-amber-800">Pro Tip:</span>
-                              <span className="text-amber-700">{restaurant.proTip}</span>
-                            </div>
-                          </div>
-                        )}
-
-                        {/* Actions */}
-                        <div className="flex gap-3 mt-4">
-                          <Button asChild className="bg-blue-600 hover:bg-blue-700">
-                            <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
-                              <Navigation className="w-4 h-4 mr-2" />
-                              Get Directions
-                            </a>
-                          </Button>
-                          {restaurant.website && (
-                            <Button variant="outline" asChild>
-                              <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
-                                <Globe className="w-4 h-4 mr-2" />
-                                Website
-                              </a>
-                            </Button>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/gluten-free/france/paris">
+                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+                  Start with Paris
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <AddRestaurantDialog
+                city="France"
+                triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+              />
             </div>
           </div>
-        ))}
-      </main>
+        </div>
+      </section>
+
+      <section id="cities" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Explore by City
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Top Gluten-Free Cities in France
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose a city to explore verified gluten-free restaurants with detailed reviews and safety information
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cities.map((city, index) => (
+              <Card
+                key={city.name}
+                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="relative overflow-hidden h-48">
+                  <img
+                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    alt={`Gluten-free restaurants in ${city.name}`}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                    <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                    <span className="font-semibold text-sm">{city.rating}</span>
+                  </div>
+                  <div className="absolute bottom-4 left-4">
+                    <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                  </div>
+                </div>
+                <CardContent className="p-5">
+                  <p className="text-gray-600 text-sm mb-3">{city.description}</p>
+                  <div className="flex items-center text-blue-700 mb-3">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    <span className="font-semibold text-sm">{city.places} places</span>
+                  </div>
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {city.highlights.map((spot) => (
+                        <Badge
+                          key={spot}
+                          variant="secondary"
+                          className="text-xs bg-blue-50 text-blue-700"
+                        >
+                          {spot}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  {city.route !== "#" ? (
+                    <Link to={city.route}>
+                      <Button className="w-full bg-gradient-to-r from-blue-700 to-red-600 hover:from-blue-800 hover:to-red-700">
+                        Explore {city.name}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </Link>
+                  ) : (
+                    <Button disabled className="w-full opacity-60">
+                      Coming Soon
+                    </Button>
+                  )}
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <FranceRestaurantList />
+
+      <section className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                <Award className="h-4 w-4 mr-2" />
+                About
+              </Badge>
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in France</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Why France?</h3>
+                <p className="text-gray-600 mb-4">
+                  France's renowned gastronomic culture has fully embraced gluten-free dining. Paris is home
+                  to some of Europe's most acclaimed dedicated GF bakeries, and traditional dishes like
+                  buckwheat galettes are naturally celiac-safe.
+                </p>
+                <p className="text-gray-600">
+                  EU food labelling laws ensure clear allergen information, making it straightforward to dine
+                  and shop with confidence across the country.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Say "Je suis cœliaque" or look for "sans gluten" on menus</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Buckwheat galettes (Brittany) are naturally gluten-free</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>AFDIAG (French Celiac Association) certifies safe products</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Monoprix, Carrefour and Naturalia stock GF ranges</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-16 bg-blue-50/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">FAQ</Badge>
+              <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            </div>
+            <Accordion type="single" collapsible className="bg-white rounded-lg shadow-sm">
+              {faqItems.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`faq-${index}`} className="px-6">
+                  <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
     </div>
     </>
   );
