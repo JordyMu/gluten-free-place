@@ -33,7 +33,16 @@ export const bordeauxRestaurants: Restaurant[] = [
     "lat": 0,
     "lng": 0,
     "venueType": "restaurant",
-    "photos": [],
+    photos: [
+      { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
+      { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
+      { url: "/images/almond-butterfly-bistro-3.webp", caption: "Almond Croissant" },
+      { url: "/images/almond-butterfly-bistro-4.webp", caption: "Pasta Dish" },
+      { url: "/images/almond-butterfly-bistro-5.webp", caption: "Fresh Salad" },
+      { url: "/images/almond-butterfly-bistro-6.webp", caption: "GF Cake" },
+      { url: "/images/almond-butterfly-bistro-7.webp", caption: "Bakery Display" },
+      { url: "/images/almond-butterfly-bistro-8.webp", caption: "Dessert Platter" },
+    ],
     "celiacSafetyScore": 8
   }
 ];
