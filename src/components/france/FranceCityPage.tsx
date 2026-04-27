@@ -116,8 +116,24 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         </div>
       </header>
 
-      <section className="relative text-white py-14 bg-gradient-to-r from-blue-700 via-white/10 to-red-600">
-        <div className="absolute inset-0 bg-black/30" />
+      <section
+        className="relative text-white py-14 bg-cover bg-center"
+        style={{
+          backgroundImage:
+            citySlug === "paris"
+              ? "url('/images/paris-hero.webp')"
+              : undefined,
+          backgroundColor: citySlug === "paris" ? undefined : undefined,
+        }}
+      >
+        <div
+          className={`absolute inset-0 ${
+            citySlug === "paris"
+              ? "bg-black/50"
+              : "bg-gradient-to-r from-blue-700 via-white/10 to-red-600"
+          }`}
+        />
+        {citySlug !== "paris" && <div className="absolute inset-0 bg-black/30" />}
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-5xl mb-4 block">{emoji}</span>
           <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Restaurants in {cityName}</h1>
