@@ -190,7 +190,11 @@ export const parisRestaurants: Restaurant[] = [
     "menuHighlights": [
       "📚 Bookshop & Café",
       "☕ Coffee & Tea",
-      "🍰 GF Pastries"
+      "🍰 GF Pastries",
+      "🐟 Tataki de thon",
+      "🥗 Veggie Bowl",
+      "🍕 Pizza Margherita",
+      "🥧 Quiche + salade"
     ],
     "proTip": "Browse books while enjoying your gluten-free treat!",
     "icon": "🍽️",
