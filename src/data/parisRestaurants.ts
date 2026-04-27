@@ -188,7 +188,6 @@ export const parisRestaurants: Restaurant[] = [
     "specialty": "French • Bookshop Café",
     "overview": "Unique bookshop café with gluten-free options in a literary atmosphere.",
     "menuHighlights": [
-      "📚 Bookshop & Café",
       "☕ Coffee & Tea",
       "🍰 GF Pastries",
       "🐟 Tataki de thon",
