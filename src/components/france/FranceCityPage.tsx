@@ -23,6 +23,7 @@ interface FranceCityPageProps {
   intro: string;
   restaurants: Restaurant[];
   faqItems: FAQItem[];
+  extraSection?: React.ReactNode;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
@@ -63,7 +64,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: FranceCityPageProps) => {
+const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection }: FranceCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
@@ -161,6 +162,10 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
             </CardContent>
           </Card>
         </section>
+
+        {extraSection}
+
+
 
         <section className="mb-8">
           <Card>
