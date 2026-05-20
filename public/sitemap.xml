@@ -49,6 +49,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/paris/best</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://glutenfreeplace.org/gluten-free/france/lyon</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
