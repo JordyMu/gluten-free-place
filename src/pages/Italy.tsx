@@ -477,52 +477,58 @@ const Italy = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cities.map((city, index) => (
-                <Card
-                  key={city.slug}
-                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  <div className="relative overflow-hidden h-48">
-                    <img
-                      src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
-                      alt={`Gluten-free restaurants in ${city.name}, Italy`}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                      <span className="text-lg">{city.emoji}</span>
-                    </div>
-                    <div className="absolute bottom-4 left-4">
-                      <h3 className="text-2xl font-bold text-white">{city.name}</h3>
-                    </div>
-                  </div>
-                  <CardContent className="p-5">
-                    <p className="text-gray-600 text-sm mb-3">{city.description}</p>
-                    <div className="flex items-center text-green-700 mb-3">
-                      <MapPin className="h-4 w-4 mr-1" />
-                      <span className="font-semibold text-sm">{city.restaurants.length} places</span>
-                    </div>
-                    <div className="mb-4">
-                      <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
-                      <div className="flex flex-wrap gap-1">
-                        {city.highlights.map((spot) => (
-                          <Badge key={spot} variant="secondary" className="text-xs bg-green-50 text-green-700">
-                            {spot}
-                          </Badge>
-                        ))}
+              {cities.map((city, index) => {
+                const cityRating = city.restaurants.length > 0
+                  ? Number((city.restaurants.reduce((sum, r) => sum + (r.rating || 0), 0) / city.restaurants.length).toFixed(1))
+                  : 0;
+                return (
+                  <Card
+                    key={city.slug}
+                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    <div className="relative overflow-hidden h-48">
+                      <img
+                        src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                        alt={`Gluten-free restaurants in ${city.name}, Italy`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                        <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                        <span className="font-semibold text-sm">{cityRating}</span>
+                      </div>
+                      <div className="absolute bottom-4 left-4">
+                        <h3 className="text-2xl font-bold text-white">{city.name}</h3>
                       </div>
                     </div>
-                    <a href={`#city-${city.slug}`}>
-                      <Button className="w-full bg-gradient-to-r from-green-700 to-red-600 hover:from-green-800 hover:to-red-700">
-                        Explore {city.name}
-                        <ArrowRight className="h-4 w-4 ml-2" />
-                      </Button>
-                    </a>
-                  </CardContent>
-                </Card>
-              ))}
+                    <CardContent className="p-5">
+                      <p className="text-gray-600 text-sm mb-3">{city.description}</p>
+                      <div className="flex items-center text-green-700 mb-3">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span className="font-semibold text-sm">{city.restaurants.length} places</span>
+                      </div>
+                      <div className="mb-4">
+                        <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                        <div className="flex flex-wrap gap-1">
+                          {city.highlights.map((spot) => (
+                            <Badge key={spot} variant="secondary" className="text-xs bg-green-50 text-green-700">
+                              {spot}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                      <a href={`#city-${city.slug}`}>
+                        <Button className="w-full bg-gradient-to-r from-green-700 to-red-600 hover:from-green-800 hover:to-red-700">
+                          Explore {city.name}
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </a>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
