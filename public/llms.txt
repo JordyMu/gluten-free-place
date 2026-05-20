@@ -1,0 +1,51 @@
+# GlutenFreePlace
+
+> Find verified gluten-free and celiac-safe restaurants, bakeries, and cafes in 156+ countries, with real reviews from gluten-free travelers.
+
+GlutenFreePlace helps people with celiac disease and gluten intolerance discover safe places to eat worldwide. Each listing includes a celiac safety score, menu type (fully GF vs mixed kitchen), verified contact info, photos, and community reviews.
+
+## Countries
+
+- [Italy](/italy): Gluten-free restaurants across Italy (AIC certified spots highlighted).
+- [Spain](/spain): GF dining in Spain, including FACE-certified venues.
+- [France](/france): Dedicated GF bakeries and celiac-aware bistros across France.
+- [United Kingdom](/gluten-free/united-kingdom): GF restaurants in the UK.
+- [Ireland](/ireland): Celiac-safe spots across Ireland.
+- [Germany](/germany): GF dining in Germany.
+- [Sweden](/sweden): GF restaurants in Sweden.
+- [USA](/usa): Gluten-free restaurants across the United States.
+- [Canada](/gluten-free/canada): GF dining in Canada.
+- [Argentina](/argentina): Celiac-safe restaurants in Argentina.
+- [Japan](/japan): GF dining in Japan.
+- [Thailand](/thailand): Naturally GF and celiac-aware Thai dining.
+- [Australia](/australia): GF restaurants across Australia.
+- [New Zealand](/new-zealand): Celiac-safe dining in New Zealand.
+- [South Africa](/gluten-free/south-africa): GF spots across South Africa.
+- [Kenya](/gluten-free/kenya): Celiac-safe dining in Kenya.
+- [Nigeria](/gluten-free/nigeria): GF restaurants in Nigeria.
+- [Morocco](/gluten-free/morocco): GF dining in Morocco.
+- [Egypt](/gluten-free/egypt): Celiac-safe restaurants in Egypt.
+- [Mauritius](/gluten-free/mauritius): GF dining across Mauritius.
+- [Botswana](/botswana): GF restaurants in Botswana.
+
+## Featured Cities
+
+- [Gluten-Free London](/gluten-free/united-kingdom/london)
+- [Gluten-Free Edinburgh](/gluten-free/united-kingdom/edinburgh)
+- [Gluten-Free Manchester](/gluten-free/united-kingdom/manchester)
+- [Gluten-Free Paris](/gluten-free/france/paris)
+- [Gluten-Free Lyon](/gluten-free/france/lyon)
+- [Gluten-Free Toronto](/gluten-free/canada/toronto)
+- [Gluten-Free Vancouver](/gluten-free/canada/vancouver)
+- [Gluten-Free Montreal](/gluten-free/canada/montreal)
+- [Gluten-Free Cape Town](/gluten-free/south-africa/cape-town)
+- [Gluten-Free Johannesburg](/gluten-free/south-africa/johannesburg)
+- [Gluten-Free Nairobi](/gluten-free/kenya/nairobi)
+- [Gluten-Free Cairo](/gluten-free/egypt/cairo)
+- [Gluten-Free Port Louis](/gluten-free/mauritius/port-louis)
+- [Gluten-Free Grand Baie](/gluten-free/mauritius/grand-baie)
+
+## Optional
+
+- [All Countries](/all-countries): Complete directory of supported countries.
+- [Browse Countries](/countries): Searchable country index.
