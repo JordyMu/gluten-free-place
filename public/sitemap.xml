@@ -39,6 +39,41 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/paris</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/lyon</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/bordeaux</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/marseille</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/nice</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://glutenfreeplace.org/gluten-free/france/strasbourg</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://glutenfreeplace.org/australia</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
