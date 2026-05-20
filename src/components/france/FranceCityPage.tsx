@@ -163,6 +163,10 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
           </Card>
         </section>
 
+        {extraSection}
+
+
+
         <section className="mb-8">
           <Card>
             <CardHeader>
