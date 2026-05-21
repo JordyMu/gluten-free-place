@@ -7,11 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
-import { spainRestaurants, type SpainRestaurant } from "@/pages/Spain";
+import { spainRestaurants, slugifyRestaurant, type SpainRestaurant } from "@/pages/Spain";
 
-const RESTAURANT_SLUGS: Record<string, string> = {
-  "Grosso Napoletano Senza Glutine": "/spain/grosso-napoletano-senza-glutine",
-};
+const restaurantPath = (name: string) => `/spain/restaurant/${slugifyRestaurant(name)}`;
 
 const CITY_META: Record<string, { name: string; image: string; tagline: string }> = {
   barcelona: {
