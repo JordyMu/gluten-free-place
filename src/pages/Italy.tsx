@@ -29,7 +29,6 @@ type ItalyRestaurant = {
 };
 
 type ItalyCity = {
-  name: string;
   slug: string;
   emoji: string;
   description: string;
@@ -42,13 +41,6 @@ const mapsUrl = (q: string) => `https://www.google.com/maps/search/?api=1&query=
 
 const cities: ItalyCity[] = [
   {
-    name: "Rome",
-    slug: "rome",
-    emoji: "🏛️",
-    description: "Capital with dedicated GF pizzerias, trattorias, bakeries and gelaterias",
-    highlights: ["Mama Eat", "Voglia di Pizza", "Sgrano", "Fatamorgana"],
-    image: "photo-1525874684015-58379d421a52",
-    restaurants: [
       {
         name: "Mama Eat – Gluten-Free Italian Restaurant",
         address: "Via di San Cosimato 7/9, Trastevere, Rome",
@@ -466,7 +458,6 @@ const cities: ItalyCity[] = [
         phone: "+39 02 5990 4998",
         website: "www.ristorantealice.it",
         directionsUrl: "https://www.google.com/maps/place/Ristorante+Alice/@45.4570,9.2008,17z",
-        website: "www.ristorantealice.it",
         specialty: "Modern Italian fine dining with GF options",
         overview: "Refined Milanese kitchen with seasonal menu and careful celiac handling.",
         icon: "🍽️",
@@ -483,7 +474,6 @@ const cities: ItalyCity[] = [
         phone: "+39 02 7639 4496",
         website: "www.risotteriamelotti.it",
         directionsUrl: "https://www.google.com/maps/place/Risotteria+Melotti/@45.4623,9.1965,17z",
-        website: "www.risotteriamelotti.it",
         specialty: "Naturally GF Veronese rice dishes",
         overview: "Specialist risotteria — rice-based menu naturally suited to celiacs, with clearly marked GF items.",
         icon: "🍚",
@@ -600,8 +590,6 @@ const cities: ItalyCity[] = [
         phone: "+39 041 3840 066",
         website: "www.farini.it",
         directionsUrl: "https://www.google.com/maps/place/Farini+Venezia/@45.4408,12.3155,17z",
-        phone: "+39 041 3840 066",
-        website: "www.farini.it",
         specialty: "GF bakery and café",
         overview: "Popular bakery chain with a verified GF selection in central Venice.",
         icon: "🥐",
@@ -1132,24 +1120,14 @@ const faqItems = [
     answer: "Yes — Italy has one of the most advanced celiac scenes in the world. The Italian Celiac Association (AIC) certifies hundreds of restaurants, pizzerias and gelaterias, especially in Rome, Florence, Milan, Naples and Bologna.",
   },
   {
-    question: "What does AIC certification mean?",
-    answer: "AIC (Associazione Italiana Celiachia) certifies venues that follow strict protocols to safely serve celiacs. Look for the AIC 'spiga barrata' logo when choosing a restaurant.",
   },
   {
-    question: "Can I eat real Italian pizza and pasta with celiac disease?",
-    answer: "Absolutely. Many Italian pizzerias and trattorias offer certified gluten-free pasta and wood-fired GF pizza prepared in separate areas to avoid cross-contamination.",
   },
   {
-    question: "How do I say gluten-free in Italian?",
-    answer: "Say 'senza glutine' (without gluten) or 'sono celiaco/celiaca' (I am celiac). Most staff in major cities are familiar with celiac needs.",
   },
   {
-    question: "Which Italian city is most celiac-friendly?",
-    answer: "Rome leads with the highest number of dedicated GF spots, followed by Florence, Milan and Naples. Even small towns often have at least one AIC-certified venue.",
   },
   {
-    question: "Can I find gluten-free products in Italian supermarkets?",
-    answer: "Yes — Esselunga, Coop, Conad and pharmacies stock wide GF ranges. Many products are reimbursed by the Italian health system for residents with a celiac diagnosis.",
   },
 ];
 
@@ -1227,13 +1205,10 @@ const Italy = () => {
       url: "https://glutenfreeplace.org/italy",
       mainEntity: {
         "@type": "ItemList",
-        name: "Top Gluten-Free Cities in Italy",
         numberOfItems: cities.length,
         itemListElement: cities.map((c, i) => ({
           "@type": "ListItem",
           position: i + 1,
-          name: c.name,
-          url: `https://glutenfreeplace.org/italy#city-${c.slug}`,
         })),
       },
     });
@@ -1467,6 +1442,33 @@ const Italy = () => {
                         <div className="flex items-start gap-2">
                           <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
                           <span>{r.address}</span>
+                        </div>
+                        {r.hours && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-gray-400 shrink-0" />
+                            <span>{r.hours}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-4 flex-wrap">
+                          {r.website && (
+                            <button
+                              type="button"
+                              onClick={() => openExternalLink(r.website!.startsWith("http") ? r.website! : `https://${r.website}`)}
+                              className="flex items-center gap-1.5 text-blue-600 hover:text-blue-800 transition-colors"
+                            >
+                              <Globe className="h-4 w-4" />
+                              <span>{r.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</span>
+                            </button>
+                          )}
+                          {r.phone && (
+                            <a
+                              href={`tel:${r.phone}`}
+                              className="flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 transition-colors"
+                            >
+                              <Phone className="h-4 w-4" />
+                              <span>{r.phone}</span>
+                            </a>
+                          )}
                         </div>
                       </div>
 
