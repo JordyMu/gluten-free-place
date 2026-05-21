@@ -27,6 +27,17 @@ export type SpainRestaurant = {
   reviewCount: number;
 };
 
+export const slugifyRestaurant = (name: string) =>
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export const getSpainRestaurantBySlug = (slug: string) =>
+  spainRestaurants.find((r) => slugifyRestaurant(r.name) === slug);
+
 export const spainRestaurants: SpainRestaurant[] = [
   {
     name: "Grosso Napoletano Senza Glutine",

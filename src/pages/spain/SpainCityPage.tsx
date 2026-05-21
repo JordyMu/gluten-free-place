@@ -7,11 +7,9 @@ import { Badge } from "@/components/ui/badge";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
-import { spainRestaurants, type SpainRestaurant } from "@/pages/Spain";
+import { spainRestaurants, slugifyRestaurant, type SpainRestaurant } from "@/pages/Spain";
 
-const RESTAURANT_SLUGS: Record<string, string> = {
-  "Grosso Napoletano Senza Glutine": "/spain/grosso-napoletano-senza-glutine",
-};
+const restaurantPath = (name: string) => `/spain/restaurant/${slugifyRestaurant(name)}`;
 
 const CITY_META: Record<string, { name: string; image: string; tagline: string }> = {
   barcelona: {
@@ -163,13 +161,9 @@ const SpainCityPage = () => {
                       <div className="mb-3">
                         <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
                           <span className="text-2xl">{r.icon}</span>
-                          {RESTAURANT_SLUGS[r.name] ? (
-                            <Link to={RESTAURANT_SLUGS[r.name]} className="hover:text-red-600 transition-colors underline-offset-4 hover:underline">
-                              {r.name}
-                            </Link>
-                          ) : (
-                            <span>{r.name}</span>
-                          )}
+                          <Link to={restaurantPath(r.name)} className="hover:text-red-600 transition-colors underline-offset-4 hover:underline">
+                            {r.name}
+                          </Link>
                           {index < 3 && (
                             <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
                               Top {index + 1}
@@ -222,21 +216,18 @@ const SpainCityPage = () => {
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        {RESTAURANT_SLUGS[r.name] && (
-                          <Link to={RESTAURANT_SLUGS[r.name]}>
-                            <Button
-                              size="sm"
-                              className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
-                            >
-                              View Details
-                            </Button>
-                          </Link>
-                        )}
+                        <Link to={restaurantPath(r.name)}>
+                          <Button
+                            size="sm"
+                            className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                          >
+                            View Details
+                          </Button>
+                        </Link>
                         <Button
                           size="sm"
-                          variant={RESTAURANT_SLUGS[r.name] ? "outline" : "default"}
+                          variant="outline"
                           onClick={() => openExternalLink(r.directionsUrl)}
-                          className={RESTAURANT_SLUGS[r.name] ? "" : "bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"}
                         >
                           <Navigation className="w-4 h-4 mr-1" />
                           Directions
