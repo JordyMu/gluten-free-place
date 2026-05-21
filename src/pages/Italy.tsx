@@ -28,7 +28,7 @@ export type ItalyRestaurant = {
   reviewCount?: number;
 };
 
-type ItalyCity = {
+export type ItalyCity = {
   name: string;
   slug: string;
   emoji: string;
@@ -40,7 +40,7 @@ type ItalyCity = {
 
 const mapsUrl = (q: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
-const cities: ItalyCity[] = [
+export const cities: ItalyCity[] = [
   {
     name: "Rome",
     slug: "rome",
