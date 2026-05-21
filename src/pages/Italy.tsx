@@ -9,7 +9,7 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 
-type ItalyRestaurant = {
+export type ItalyRestaurant = {
   name: string;
   address: string;
   hours?: string;
