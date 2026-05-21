@@ -124,9 +124,6 @@ const cities: ItalyCity[] = [
       {
         name: "Le Altre Farine Del Mulino – Vatican Branch",
         address: "Via di Porta Cavalleggeri, 151/153, 00165 Roma",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 06 5345 869",
-        website: "www.lealtrefarinedelmulino.it",
         directionsUrl: mapsUrl("Le Altre Farine Del Mulino Via di Porta Cavalleggeri 151 Roma"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 06 5345 869",
@@ -142,9 +139,6 @@ const cities: ItalyCity[] = [
       {
         name: "Gelato in Trevi",
         address: "Via di S. Vincenzo, 31, 00187 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 5525 972",
-        website: "www.gelatointrevi.it",
         directionsUrl: mapsUrl("Gelato in Trevi Via di San Vincenzo 31 Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 5525 972",
@@ -160,9 +154,6 @@ const cities: ItalyCity[] = [
       {
         name: "Fiocco di Neve",
         address: "Via del Pantheon 51, 00186 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 2047 656",
-        website: "www.fioccodineve.it",
         directionsUrl: mapsUrl("Fiocco di Neve Via del Pantheon Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 2047 656",
@@ -178,9 +169,6 @@ const cities: ItalyCity[] = [
       {
         name: "New Food Gluten Free – Ponte Sisto",
         address: "P.za S. Vincenzo Pallotti, 208, 00186 Roma",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 06 1277 783",
-        website: "www.newfoodglutenfree.it",
         directionsUrl: mapsUrl("New Food Gluten Free Ponte Sisto Roma"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 06 1277 783",
@@ -196,9 +184,6 @@ const cities: ItalyCity[] = [
       {
         name: "Gelateria dell'Angeletto",
         address: "Via dell'Angeletto, 15, 00184 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 4857 794",
-        website: "www.gelateriadellangeletto.it",
         directionsUrl: mapsUrl("Gelateria dell'Angeletto Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 4857 794",
@@ -214,9 +199,6 @@ const cities: ItalyCity[] = [
       {
         name: "La Pasticciera",
         address: "Via Varese 43, 00185 Roma",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 06 7080 851",
-        website: "www.lapasticciera.it",
         directionsUrl: mapsUrl("La Pasticciera Via Varese Roma"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 06 7080 851",
@@ -232,9 +214,6 @@ const cities: ItalyCity[] = [
       {
         name: "Gluten Free San Pietro",
         address: "Via Bonifacio VIII, 21, 00165 Roma",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 06 7635 272",
-        website: "www.glutenfreesanpietro.it",
         directionsUrl: mapsUrl("Gluten Free San Pietro Via Bonifacio VIII Roma"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 06 7635 272",
@@ -250,9 +229,6 @@ const cities: ItalyCity[] = [
       {
         name: "New Food Experience",
         address: "Via Germanico, 190, 00192 Roma",
-        hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
-        phone: "+39 06 5309 303",
-        website: "www.newfoodexperience.it",
         directionsUrl: mapsUrl("New Food Experience Via Germanico Roma"),
         hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
         phone: "+39 06 5309 303",
@@ -268,9 +244,6 @@ const cities: ItalyCity[] = [
       {
         name: "Fatamorgana – Trastevere",
         address: "Via Roma Libera, 11, 00153 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 9597 170",
-        website: "www.fatamorgana.it",
         directionsUrl: mapsUrl("Fatamorgana Trastevere Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 9597 170",
@@ -286,9 +259,6 @@ const cities: ItalyCity[] = [
       {
         name: "Fatamorgana – Via della Croce",
         address: "Via della Croce, 46, 00187 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 8135 895",
-        website: "www.fatamorgana.it",
         directionsUrl: mapsUrl("Fatamorgana Via della Croce Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 8135 895",
@@ -304,9 +274,6 @@ const cities: ItalyCity[] = [
       {
         name: "Fatamorgana – Monti",
         address: "Via della Vetrina, 12a/b, 00186 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 1284 807",
-        website: "www.fatamorgana.it",
         directionsUrl: mapsUrl("Fatamorgana Monti Via della Vetrina Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 1284 807",
@@ -322,9 +289,6 @@ const cities: ItalyCity[] = [
       {
         name: "El Maìz – Venezuelan Street Food",
         address: "Via Tolemaide, 16, 00191 Roma",
-        hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
-        phone: "+39 06 9683 474",
-        website: "www.elmaz.it",
         directionsUrl: mapsUrl("El Maiz Venezuelan Street Food Roma"),
         hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
         phone: "+39 06 9683 474",
@@ -340,9 +304,6 @@ const cities: ItalyCity[] = [
       {
         name: "Gelato G Italiano",
         address: "Via delle Muratte, 18a/19, 00187 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 4270 803",
-        website: "www.gelatogitaliano.it",
         directionsUrl: mapsUrl("Gelato G Italiano Via delle Muratte Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 4270 803",
@@ -358,9 +319,6 @@ const cities: ItalyCity[] = [
       {
         name: "Pandalì",
         address: "Via di Torre Argentina, 3, 00186 Roma",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 06 7055 590",
-        website: "www.pandal.it",
         directionsUrl: mapsUrl("Pandali Via di Torre Argentina Roma"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 06 7055 590",
@@ -376,9 +334,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Piazza Navona",
         address: "Piazza Navona 1, angolo Via Agonale 3, 00186 Roma",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 5163 026",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Piazza Navona Roma"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 5163 026",
@@ -422,9 +377,6 @@ const cities: ItalyCity[] = [
       {
         name: "Osteria dello Sgrano",
         address: "Via dei Benci, 30r, 50122 Firenze",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 055 8122 622",
-        website: "www.osteriadellosgrano.it",
         directionsUrl: mapsUrl("Osteria dello Sgrano Via dei Benci Firenze"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 055 8122 622",
@@ -440,9 +392,6 @@ const cities: ItalyCity[] = [
       {
         name: "Sgrano – Via dei Neri",
         address: "Via dei Neri, 49r, 50122 Firenze",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 055 1695 505",
-        website: "www.sgrano.it",
         directionsUrl: mapsUrl("Sgrano Via dei Neri Firenze"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 055 1695 505",
@@ -458,9 +407,6 @@ const cities: ItalyCity[] = [
       {
         name: "Ristorante Quinoa",
         address: "Vicolo di Santa Maria Maggiore, 1, Firenze",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 055 7846 409",
-        website: "www.ristorantequinoa.it",
         directionsUrl: mapsUrl("Ristorante Quinoa Firenze"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 055 7846 409",
@@ -476,9 +422,6 @@ const cities: ItalyCity[] = [
       {
         name: "Antica Gelateria Fiorentina",
         address: "Via Faenza, 2a, 50123 Firenze",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 055 6406 632",
-        website: "www.anticagelateriafiorentin.it",
         directionsUrl: mapsUrl("Antica Gelateria Fiorentina Via Faenza Firenze"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 055 6406 632",
@@ -494,9 +437,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Florence",
         address: "Via del Campanile, 2, 50122 Firenze",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 055 1018 811",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Via del Campanile Firenze"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 055 1018 811",
@@ -556,9 +496,6 @@ const cities: ItalyCity[] = [
       {
         name: "Risotteria Melotti – Sartirana",
         address: "Via Privata Sartirana, 1, 20144 Milano",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 02 7001 666",
-        website: "www.risotteriamelotti.it",
         directionsUrl: mapsUrl("Risotteria Melotti Via Privata Sartirana Milano"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 02 7001 666",
@@ -574,9 +511,6 @@ const cities: ItalyCity[] = [
       {
         name: "GluFree Bakery",
         address: "Via Curtatone, 6, 20122 Milano",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 02 2478 588",
-        website: "www.glufreebakery.it",
         directionsUrl: mapsUrl("GluFree Bakery Milano"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 02 2478 588",
@@ -592,9 +526,6 @@ const cities: ItalyCity[] = [
       {
         name: "Officina Zero",
         address: "Viale Andrea Doria, 44, 20124 Milano",
-        hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
-        phone: "+39 02 2555 446",
-        website: "www.officinazero.it",
         directionsUrl: mapsUrl("Officina Zero Milano"),
         hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
         phone: "+39 02 2555 446",
@@ -610,9 +541,6 @@ const cities: ItalyCity[] = [
       {
         name: "Bistrò Milano",
         address: "Corso Magenta, 9, 20123 Milano",
-        hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
-        phone: "+39 02 9194 880",
-        website: "www.bistrmilano.it",
         directionsUrl: mapsUrl("Bistro Corso Magenta Milano"),
         hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
         phone: "+39 02 9194 880",
@@ -628,9 +556,6 @@ const cities: ItalyCity[] = [
       {
         name: "PanPerMe",
         address: "Viale Monte Nero, 57, 20135 Milano",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 02 6297 354",
-        website: "www.panperme.it",
         directionsUrl: mapsUrl("PanPerMe Milano"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 02 6297 354",
@@ -646,9 +571,6 @@ const cities: ItalyCity[] = [
       {
         name: "La Piadineria – Tasty & Free",
         address: "Piazza Velasca, 4, 20122 Milano",
-        hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
-        phone: "+39 02 6216 732",
-        website: "www.lapiadineria.it",
         directionsUrl: mapsUrl("La Piadineria Tasty Free Piazza Velasca Milano"),
         hours: "Tue–Sun: 12:00 – 15:00, 18:30 – 23:00",
         phone: "+39 02 6216 732",
@@ -692,9 +614,6 @@ const cities: ItalyCity[] = [
       {
         name: "MEA Libera Tutti",
         address: "C. del Paradiso, 5742, 30122 Venezia",
-        hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
-        phone: "+39 041 1045 411",
-        website: "www.mealiberatutti.it",
         directionsUrl: mapsUrl("MEA Libera Tutti Venezia"),
         hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
         phone: "+39 041 1045 411",
@@ -710,9 +629,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Santa Lucia",
         address: "Fondamenta Santa Lucia, 1, 30100 Venezia",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 041 5097 339",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Fondamenta Santa Lucia Venezia"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 041 5097 339",
@@ -728,9 +644,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – San Barnaba",
         address: "Campo San Barnaba, 2761, 30123 Venezia",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 041 2024 653",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Campo San Barnaba Venezia"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 041 2024 653",
@@ -756,9 +669,6 @@ const cities: ItalyCity[] = [
       {
         name: "Leopoldo Cafebar – Senza Glutine",
         address: "Piazza Cavour, 78/79, 80137 Napoli",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 081 7116 023",
-        website: "www.leopoldocafebar.it",
         directionsUrl: mapsUrl("Leopoldo Cafebar Senza Glutine Napoli"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 081 7116 023",
@@ -774,9 +684,6 @@ const cities: ItalyCity[] = [
       {
         name: "O' Fish Seafood Bar – Sorrento",
         address: "Corso Italia, 29, 80067 Sorrento (NA)",
-        hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
-        phone: "+39 081 7033 361",
-        website: "www.ofishseafoodbar.it",
         directionsUrl: mapsUrl("O Fish Seafood Bar Sorrento"),
         hours: "Tue–Sun: 12:30 – 14:30, 19:30 – 22:30",
         phone: "+39 081 7033 361",
@@ -802,9 +709,6 @@ const cities: ItalyCity[] = [
       {
         name: "Trattoria Vecchio Mercato",
         address: "Via Piero Gobetti, 49F, 40129 Bologna",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 051 6447 629",
-        website: "www.trattoriavecchiomercato.it",
         directionsUrl: mapsUrl("Trattoria Vecchio Mercato Bologna"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 051 6447 629",
@@ -820,9 +724,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Bologna",
         address: "Via D'Azeglio, 13, 40123 Bologna",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 051 3172 462",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Via D'Azeglio Bologna"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 051 3172 462",
@@ -848,9 +749,6 @@ const cities: ItalyCity[] = [
       {
         name: "Dolci Sogni Gluten Free",
         address: "Stradone Porta Palio, 39/a, 37122 Verona",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 045 5218 377",
-        website: "www.dolcisogniglutenfree.it",
         directionsUrl: mapsUrl("Dolci Sogni Gluten Free Verona"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 045 5218 377",
@@ -866,9 +764,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Verona",
         address: "Via Giuseppe Mazzini, 75, 37121 Verona",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 045 7165 182",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Via Mazzini Verona"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 045 7165 182",
@@ -884,9 +779,6 @@ const cities: ItalyCity[] = [
       {
         name: "ArciGelato – Garda",
         address: "Via Antiche Mura, 16, 37016 Garda (VR)",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 045 5152 786",
-        website: "www.arcigelato.it",
         directionsUrl: mapsUrl("ArciGelato Garda"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 045 5152 786",
@@ -912,9 +804,6 @@ const cities: ItalyCity[] = [
       {
         name: "Grom – Siena",
         address: "Via Banchi di Sopra, 11, Siena",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 0577 5352 259",
-        website: "www.grom.it",
         directionsUrl: mapsUrl("Grom Via Banchi di Sopra Siena"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 0577 5352 259",
@@ -940,9 +829,6 @@ const cities: ItalyCity[] = [
       {
         name: "Ristorante Grano Libero",
         address: "Via dei Mille, 7, 56126 Pisa",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 050 9436 840",
-        website: "www.ristorantegranolibero.it",
         directionsUrl: mapsUrl("Ristorante Grano Libero Pisa"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 050 9436 840",
@@ -968,9 +854,6 @@ const cities: ItalyCity[] = [
       {
         name: "Bakery 1970 Gluten Free",
         address: "Via di Ravecca, 69r, 16128 Genova",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 010 8049 724",
-        website: "www.bakery1970glutenfree.it",
         directionsUrl: mapsUrl("Bakery 1970 Gluten Free Genova"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 010 8049 724",
@@ -996,9 +879,6 @@ const cities: ItalyCity[] = [
       {
         name: "Freedom Lounge Bakery",
         address: "Via dell'Arcivescovado, 9, 10121 Torino",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 011 6137 236",
-        website: "www.freedomloungebakery.it",
         directionsUrl: mapsUrl("Freedom Lounge Bakery Torino"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 011 6137 236",
@@ -1024,9 +904,6 @@ const cities: ItalyCity[] = [
       {
         name: "Pasticceria da Ily",
         address: "Via S. Francesco D'Assisi, 22, 34133 Trieste",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 040 9062 562",
-        website: "www.pasticceriadaily.it",
         directionsUrl: mapsUrl("Pasticceria da Ily Trieste"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 040 9062 562",
@@ -1042,9 +919,6 @@ const cities: ItalyCity[] = [
       {
         name: "A World Without Gluten",
         address: "Via Antonio Pigafetta, 6, 34147 Trieste",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 040 5592 364",
-        website: "www.aworldwithoutgluten.it",
         directionsUrl: mapsUrl("A World Without Gluten Trieste"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 040 5592 364",
@@ -1070,9 +944,6 @@ const cities: ItalyCity[] = [
       {
         name: "Colibrio | Bar Pasticceria Bistrot",
         address: "Corso Vittorio Emanuele, 47, 70122 Bari",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 080 3251 707",
-        website: "www.colibriobarpasticceriabi.it",
         directionsUrl: mapsUrl("Colibrio Bar Pasticceria Bistrot Bari"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 080 3251 707",
@@ -1098,9 +969,6 @@ const cities: ItalyCity[] = [
       {
         name: "Easy",
         address: "Piazza Carlo Alberto, 15, 95131 Catania",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 095 3580 168",
-        website: "www.easy.it",
         directionsUrl: mapsUrl("Easy Piazza Carlo Alberto Catania"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 095 3580 168",
@@ -1126,9 +994,6 @@ const cities: ItalyCity[] = [
       {
         name: "Glee – Gluten Lactose Free Lab",
         address: "Via Alfredo Catalani, 200, 55100 Lucca",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 0583 7213 298",
-        website: "www.glee.it",
         directionsUrl: mapsUrl("Glee gluten lactose free lab Lucca"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 0583 7213 298",
@@ -1144,9 +1009,6 @@ const cities: ItalyCity[] = [
       {
         name: "I Gelati di Piero",
         address: "Via Roma, 25, 55100 Lucca",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 06 5698 161",
-        website: "www.igelatidipiero.it",
         directionsUrl: mapsUrl("I Gelati di Piero Lucca"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 06 5698 161",
@@ -1172,9 +1034,6 @@ const cities: ItalyCity[] = [
       {
         name: "Man.gia",
         address: "Via Ottone Bacaredda, 34, Cagliari",
-        hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
-        phone: "+39 070 9619 856",
-        website: "www.mangia.it",
         directionsUrl: mapsUrl("Man.gia Via Bacaredda Cagliari"),
         hours: "Tue–Sun: 12:00 – 15:00, 19:00 – 23:00",
         phone: "+39 070 9619 856",
@@ -1200,9 +1059,6 @@ const cities: ItalyCity[] = [
       {
         name: "Manalù – Bistrot & Bakery Lab",
         address: "Piazza Elia Benamozegh, 15, 57125 Livorno",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 0586 6696 892",
-        website: "www.manal.it",
         directionsUrl: mapsUrl("Manalu Bistrot Bakery Lab Livorno"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 0586 6696 892",
@@ -1228,9 +1084,6 @@ const cities: ItalyCity[] = [
       {
         name: "Panificio Delizie",
         address: "Via Goethe, 21, 90138 Palermo",
-        hours: "Mon–Sat: 7:30 – 19:30",
-        phone: "+39 091 9718 112",
-        website: "www.panificiodelizie.it",
         directionsUrl: mapsUrl("Panificio Delizie Via Goethe Palermo"),
         hours: "Mon–Sat: 7:30 – 19:30",
         phone: "+39 091 9718 112",
@@ -1256,9 +1109,6 @@ const cities: ItalyCity[] = [
       {
         name: "Gelateria Eccetera",
         address: "Via dei Grappoli, 23, 39100 Bolzano",
-        hours: "Daily: 11:00 – 23:30",
-        phone: "+39 0471 5484 178",
-        website: "www.gelateriaeccetera.it",
         directionsUrl: mapsUrl("Gelateria Eccetera Bolzano"),
         hours: "Daily: 11:00 – 23:30",
         phone: "+39 0471 5484 178",
