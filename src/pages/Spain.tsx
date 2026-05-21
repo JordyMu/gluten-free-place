@@ -281,42 +281,6 @@ const Spain = () => {
       route: "#",
       highlights: ["Cøliaki", "Tapas Tours", "GF Flamenco Cafés"],
     },
-    {
-      name: "Málaga",
-      image: "photo-1591801027287-f3d99f4d802f",
-      places: 4,
-      rating: 4.4,
-      description: "Costa del Sol with seafood, FACE restaurants and GF beach chiringuitos",
-      route: "#",
-      highlights: ["Coming Soon"],
-    },
-    {
-      name: "Granada",
-      image: "photo-1591291621164-2c6367723315",
-      places: 3,
-      rating: 4.5,
-      description: "Historic city at the foot of the Sierra Nevada with growing GF options",
-      route: "#",
-      highlights: ["Coming Soon"],
-    },
-    {
-      name: "Bilbao",
-      image: "photo-1543349689-9a4d426bee8e",
-      places: 3,
-      rating: 4.5,
-      description: "Basque capital with naturally GF pintxos and modern celiac cafés",
-      route: "#",
-      highlights: ["Coming Soon"],
-    },
-    {
-      name: "San Sebastián",
-      image: "photo-1574236170880-faaf3eba9f1d",
-      places: 2,
-      rating: 4.6,
-      description: "Gastronomic capital of the Basque Country with adapted pintxos bars",
-      route: "#",
-      highlights: ["Coming Soon"],
-    },
   ];
 
   const topRestaurants = useMemo(
