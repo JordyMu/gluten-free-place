@@ -248,7 +248,17 @@ const ItalyCityPage = () => {
                           <div>
                             <div className="flex items-center gap-2 mb-1 flex-wrap">
                               {r.icon && <span className="text-2xl">{r.icon}</span>}
-                              <h3 className="text-xl font-bold text-gray-900">{r.name}</h3>
+                              <Link
+                                to={`/gluten-free/italy/${city.slug}/${r.name
+                                  .toLowerCase()
+                                  .normalize("NFD")
+                                  .replace(/[\u0300-\u036f]/g, "")
+                                  .replace(/[^a-z0-9]+/g, "-")
+                                  .replace(/^-+|-+$/g, "")}`}
+                                className="text-xl font-bold text-gray-900 hover:text-orange-600"
+                              >
+                                {r.name}
+                              </Link>
                             </div>
                             {r.rating !== undefined && (
                               <div className="flex items-center gap-2 mb-2 flex-wrap">
