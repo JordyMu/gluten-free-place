@@ -27,7 +27,7 @@ export type SpainRestaurant = {
   reviewCount: number;
 };
 
-const spainRestaurants: SpainRestaurant[] = [
+export const spainRestaurants: SpainRestaurant[] = [
   {
     name: "Grosso Napoletano Senza Glutine",
     icon: "🍕",
