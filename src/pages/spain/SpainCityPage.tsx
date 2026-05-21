@@ -216,21 +216,18 @@ const SpainCityPage = () => {
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        {RESTAURANT_SLUGS[r.name] && (
-                          <Link to={RESTAURANT_SLUGS[r.name]}>
-                            <Button
-                              size="sm"
-                              className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
-                            >
-                              View Details
-                            </Button>
-                          </Link>
-                        )}
+                        <Link to={restaurantPath(r.name)}>
+                          <Button
+                            size="sm"
+                            className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                          >
+                            View Details
+                          </Button>
+                        </Link>
                         <Button
                           size="sm"
-                          variant={RESTAURANT_SLUGS[r.name] ? "outline" : "default"}
+                          variant="outline"
                           onClick={() => openExternalLink(r.directionsUrl)}
-                          className={RESTAURANT_SLUGS[r.name] ? "" : "bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"}
                         >
                           <Navigation className="w-4 h-4 mr-1" />
                           Directions
