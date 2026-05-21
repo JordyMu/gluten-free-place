@@ -1,9 +1,9 @@
-import { useEffect, useMemo } from "react";
+import { useEffect } from "react";
 import { MapPin, Star, ArrowLeft, Globe, Shield, Award, ArrowRight, Clock, Phone, Navigation, CheckCircle, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
@@ -1185,15 +1185,6 @@ const openExternalLink = (url: string) => {
 };
 
 const Italy = () => {
-  const [searchParams] = useSearchParams();
-  const cityFilter = searchParams.get("city");
-
-  const visibleCities = useMemo(() => {
-    if (!cityFilter) return cities;
-    const f = cityFilter.toLowerCase();
-    return cities.filter((c) => c.name.toLowerCase().includes(f) || c.slug.includes(f));
-  }, [cityFilter]);
-
   useEffect(() => {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) ogTitle.setAttribute("content", "Gluten-Free Restaurants in Italy | Celiac-Safe Dining Guide");
@@ -1499,132 +1490,6 @@ const Italy = () => {
           </div>
         </section>
 
-
-
-        <section className="py-16">
-          <div className="container mx-auto px-4 max-w-5xl space-y-16">
-            {visibleCities.map((city) => (
-              <div key={city.slug} id={`city-${city.slug}`} className="scroll-mt-24">
-                <div className="flex items-center gap-3 mb-6">
-                  <span className="text-3xl">{city.emoji}</span>
-                  <h2 className="text-2xl md:text-3xl font-bold text-gray-900">
-                    Gluten-Free Restaurants in {city.name}
-                  </h2>
-                </div>
-                <div className="space-y-5">
-                  {city.restaurants.map((r, index) => (
-                    <Card
-                      key={r.name}
-                      className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
-                    >
-                      <CardContent className="p-6">
-                        <div className="mb-3">
-                          <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
-                            <span className="text-2xl">{r.icon}</span>
-                            <span>{r.name}</span>
-                            {index < 3 && (
-                              <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
-                                Top {index + 1}
-                              </Badge>
-                            )}
-                          </h3>
-                          {r.specialty && (
-                            <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
-                          )}
-                        </div>
-
-                        {r.rating && (
-                          <div className="flex items-center gap-2 mb-3 ml-9">
-                            <div className="flex items-center">
-                              {Array.from({ length: 5 }).map((_, i) => (
-                                <Star
-                                  key={i}
-                                  className={`h-4 w-4 ${
-                                    i < Math.floor(r.rating!)
-                                      ? "text-amber-400 fill-amber-400"
-                                      : "text-gray-200"
-                                  }`}
-                                />
-                              ))}
-                            </div>
-                            <span className="font-semibold text-sm text-gray-900">{r.rating}</span>
-                            <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
-                          </div>
-                        )}
-
-                        {r.cuisineTypes && r.cuisineTypes.length > 0 && (
-                          <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
-                            {r.cuisineTypes.map((cuisine) => (
-                              <Badge
-                                key={cuisine}
-                                variant="outline"
-                                className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
-                              >
-                                🍴 {cuisine}
-                              </Badge>
-                            ))}
-                          </div>
-                        )}
-
-                        <div className="flex flex-wrap gap-2 mb-3 ml-9">
-                          {getCeliacSafeBadge(r.celiacSafe)}
-                          {getMenuTypeBadge(r.menuType)}
-                        </div>
-
-                        <div className="space-y-2 ml-9 text-sm text-gray-600">
-                          <div className="flex items-start gap-2">
-                            <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
-                            <span>{r.address}</span>
-                          </div>
-                          {r.hours && (
-                            <div className="flex items-center gap-2">
-                              <Clock className="h-4 w-4 text-gray-400 shrink-0" />
-                              <span>{r.hours}</span>
-                            </div>
-                          )}
-                          <div className="flex items-center gap-4 flex-wrap">
-                            {r.website && (
-                              <button
-                                type="button"
-                                onClick={() => openExternalLink(r.website!.startsWith("http") ? r.website! : `https://${r.website}`)}
-                                className="flex items-center gap-1.5 text-blue-600 hover:text-blue-800 transition-colors"
-                              >
-                                <Globe className="h-4 w-4" />
-                                <span>{r.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</span>
-                              </button>
-                            )}
-                            {r.phone && (
-                              <a
-                                href={`tel:${r.phone}`}
-                                className="flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 transition-colors"
-                              >
-                                <Phone className="h-4 w-4" />
-                                <span>{r.phone}</span>
-                              </a>
-                            )}
-                          </div>
-                        </div>
-
-                        {r.directionsUrl && (
-                          <div className="mt-4 ml-9">
-                            <button
-                              type="button"
-                              onClick={() => openExternalLink(r.directionsUrl!)}
-                              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
-                            >
-                              <Navigation className="h-3.5 w-3.5" />
-                              Get Directions
-                            </button>
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
 
         <section className="py-16 bg-white/50">
           <div className="container mx-auto px-4">
