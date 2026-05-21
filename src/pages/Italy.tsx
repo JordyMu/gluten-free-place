@@ -1343,93 +1343,112 @@ const Italy = () => {
                     Gluten-Free Restaurants in {city.name}
                   </h2>
                 </div>
-                <div className="grid gap-6">
-                  {city.restaurants.map((r) => (
-                    <Card key={r.name} className="overflow-hidden">
+                <div className="space-y-5">
+                  {city.restaurants.map((r, index) => (
+                    <Card
+                      key={r.name}
+                      className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+                    >
                       <CardContent className="p-6">
                         <div className="mb-3">
-                          <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
                             <span className="text-2xl">{r.icon}</span>
-                            <h3 className="text-xl font-bold text-gray-900">{r.name}</h3>
-                          </div>
-                          {r.specialty && <p className="text-sm text-gray-500">{r.specialty}</p>}
+                            <span>{r.name}</span>
+                            {index < 3 && (
+                              <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
+                                Top {index + 1}
+                              </Badge>
+                            )}
+                          </h3>
+                          {r.specialty && (
+                            <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
+                          )}
                         </div>
 
                         {r.rating && (
-                          <div className="flex items-center gap-2 mb-3">
-                            {renderStars(r.rating)}
-                            <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
+                          <div className="flex items-center gap-2 mb-3 ml-9">
+                            <div className="flex items-center">
+                              {Array.from({ length: 5 }).map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`h-4 w-4 ${
+                                    i < Math.floor(r.rating!)
+                                      ? "text-amber-400 fill-amber-400"
+                                      : "text-gray-200"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                            <span className="font-semibold text-sm text-gray-900">{r.rating}</span>
+                            <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
                           </div>
                         )}
 
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {r.cuisineTypes?.map((c) => (
-                            <Badge key={c} variant="outline">{c}</Badge>
-                          ))}
+                        {r.cuisineTypes && r.cuisineTypes.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                            {r.cuisineTypes.map((cuisine) => (
+                              <Badge
+                                key={cuisine}
+                                variant="outline"
+                                className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                              >
+                                🍴 {cuisine}
+                              </Badge>
+                            ))}
+                          </div>
+                        )}
+
+                        <div className="flex flex-wrap gap-2 mb-3 ml-9">
                           {getCeliacSafeBadge(r.celiacSafe)}
                           {getMenuTypeBadge(r.menuType)}
                         </div>
 
-                        {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
-
-                        {r.menuHighlights && r.menuHighlights.length > 0 && (
-                          <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {r.menuHighlights.map((item) => (
-                                <Badge key={item} variant="secondary" className="text-sm">{item}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {r.proTip && (
-                          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2">
-                              <MessageCircle className="w-4 h-4 text-amber-700" />
-                              <span className="font-medium text-amber-800">Pro Tip:</span>
-                              <span className="text-amber-700">{r.proTip}</span>
-                            </div>
-                          </div>
-                        )}
-
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-gray-400" />
+                        <div className="space-y-2 ml-9 text-sm text-gray-600">
+                          <div className="flex items-start gap-2">
+                            <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
                             <span>{r.address}</span>
                           </div>
                           {r.hours && (
                             <div className="flex items-center gap-2">
-                              <Clock className="w-4 h-4 text-gray-400" />
+                              <Clock className="h-4 w-4 text-gray-400 shrink-0" />
                               <span>{r.hours}</span>
                             </div>
                           )}
-                          {r.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone}`} className="hover:text-green-700">{r.phone}</a>
-                            </div>
-                          )}
+                          <div className="flex items-center gap-4 flex-wrap">
+                            {r.website && (
+                              <button
+                                type="button"
+                                onClick={() => openExternalLink(r.website!.startsWith("http") ? r.website! : `https://${r.website}`)}
+                                className="flex items-center gap-1.5 text-blue-600 hover:text-blue-800 transition-colors"
+                              >
+                                <Globe className="h-4 w-4" />
+                                <span>{r.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</span>
+                              </button>
+                            )}
+                            {r.phone && (
+                              <a
+                                href={`tel:${r.phone}`}
+                                className="flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 transition-colors"
+                              >
+                                <Phone className="h-4 w-4" />
+                                <span>{r.phone}</span>
+                              </a>
+                            )}
+                          </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-3">
-                          {r.directionsUrl && (
-                            <Button
+                        {r.directionsUrl && (
+                          <div className="mt-4 ml-9">
+                            <button
                               type="button"
-                              className="bg-green-700 hover:bg-green-800"
                               onClick={() => openExternalLink(r.directionsUrl!)}
+                              className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
                             >
-                              <Navigation className="w-4 h-4 mr-2" />
+                              <Navigation className="h-3.5 w-3.5" />
                               Get Directions
-                            </Button>
-                          )}
-                          {r.website && (
-                            <Button type="button" variant="outline" onClick={() => openExternalLink(r.website!)}>
-                              <Globe className="w-4 h-4 mr-2" />
-                              Website
-                            </Button>
-                          )}
-                        </div>
+                            </button>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   ))}
