@@ -9,7 +9,7 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 
-type ItalyRestaurant = {
+export type ItalyRestaurant = {
   name: string;
   address: string;
   hours?: string;
@@ -28,7 +28,7 @@ type ItalyRestaurant = {
   reviewCount?: number;
 };
 
-type ItalyCity = {
+export type ItalyCity = {
   name: string;
   slug: string;
   emoji: string;
@@ -40,7 +40,7 @@ type ItalyCity = {
 
 const mapsUrl = (q: string) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(q)}`;
 
-const cities: ItalyCity[] = [
+export const cities: ItalyCity[] = [
   {
     name: "Rome",
     slug: "rome",
@@ -1282,12 +1282,12 @@ const Italy = () => {
                 Italy's world-class gluten-free dining, all verified for celiac safety.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#city-rome">
+                <Link to="/gluten-free/italy/rome">
                   <Button size="lg" className="bg-white text-green-700 hover:bg-green-50">
                     Start with Rome
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </a>
+                </Link>
                 <AddRestaurantDialog
                   city="Italy"
                   triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
@@ -1355,12 +1355,12 @@ const Italy = () => {
                           ))}
                         </div>
                       </div>
-                      <a href={`#city-${city.slug}`}>
+                      <Link to={`/gluten-free/italy/${city.slug}`}>
                         <Button className="w-full bg-gradient-to-r from-green-700 to-red-600 hover:from-green-800 hover:to-red-700">
                           Explore {city.name}
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                      </a>
+                      </Link>
                     </CardContent>
                   </Card>
                 );
