@@ -1355,12 +1355,12 @@ const Italy = () => {
                           ))}
                         </div>
                       </div>
-                      <a href={`#city-${city.slug}`}>
+                      <Link to={`/gluten-free/italy/${city.slug}`}>
                         <Button className="w-full bg-gradient-to-r from-green-700 to-red-600 hover:from-green-800 hover:to-red-700">
                           Explore {city.name}
                           <ArrowRight className="h-4 w-4 ml-2" />
                         </Button>
-                      </a>
+                      </Link>
                     </CardContent>
                   </Card>
                 );
