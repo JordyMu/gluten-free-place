@@ -1181,7 +1181,7 @@ const Italy = () => {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {cities.map((city, index) => {
+              {cities.filter((c) => ["rome", "florence", "venice", "milan"].includes(c.slug)).map((city, index) => {
                 const cityRating = city.restaurants.length > 0
                   ? Number((city.restaurants.reduce((sum, r) => sum + (r.rating || 0), 0) / city.restaurants.length).toFixed(1))
                   : 0;
