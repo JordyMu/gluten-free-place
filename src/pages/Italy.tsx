@@ -484,6 +484,102 @@ const Italy = () => {
           </div>
         </section>
 
+        <section className="py-16 bg-white/40">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Top Restaurants
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Top 25 Gluten-Free Restaurants in Italy
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our highest-rated gluten-free dining spots across Italy, verified for celiac safety
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-5">
+              {cities
+                .flatMap((c) => c.restaurants.map((r) => ({ ...r, cityName: c.name })))
+                .sort((a, b) => (b.rating || 0) - (a.rating || 0) || (b.reviewCount || 0) - (a.reviewCount || 0))
+                .slice(0, 25)
+                .map((r, index) => (
+                  <Card
+                    key={`${r.name}-${index}`}
+                    className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+                  >
+                    <CardContent className="p-6">
+                      <div className="mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
+                          <span className="text-2xl">{r.icon}</span>
+                          <span>{r.name}</span>
+                          {index < 3 && (
+                            <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
+                              Top {index + 1}
+                            </Badge>
+                          )}
+                        </h3>
+                        {r.specialty && (
+                          <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
+                        )}
+                      </div>
+
+                      {r.rating && (
+                        <div className="flex items-center gap-2 mb-3 ml-9">
+                          <div className="flex items-center">
+                            {Array.from({ length: 5 }).map((_, i) => (
+                              <Star
+                                key={i}
+                                className={`h-4 w-4 ${
+                                  i < Math.floor(r.rating!)
+                                    ? "text-amber-400 fill-amber-400"
+                                    : "text-gray-200"
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <span className="font-semibold text-sm text-gray-900">{r.rating}</span>
+                          <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
+                        </div>
+                      )}
+
+                      <div className="flex flex-wrap gap-2 mb-3 ml-9">
+                        <Badge variant="outline" className="text-xs bg-gray-50 text-gray-700">
+                          📍 {r.cityName}
+                        </Badge>
+                        {getCeliacSafeBadge(r.celiacSafe)}
+                        {getMenuTypeBadge(r.menuType)}
+                      </div>
+
+                      <div className="space-y-2 ml-9 text-sm text-gray-600">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                          <span>{r.address}</span>
+                        </div>
+                      </div>
+
+                      {r.directionsUrl && (
+                        <div className="mt-4 ml-9">
+                          <button
+                            type="button"
+                            onClick={() => openExternalLink(r.directionsUrl!)}
+                            className="inline-flex items-center gap-1.5 text-sm font-medium text-green-700 hover:text-green-900 transition-colors"
+                          >
+                            <Navigation className="h-3.5 w-3.5" />
+                            Get Directions
+                          </button>
+                        </div>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+            </div>
+          </div>
+        </section>
+
+
+
         <section className="py-16">
           <div className="container mx-auto px-4 max-w-5xl space-y-16">
             {visibleCities.map((city) => (
