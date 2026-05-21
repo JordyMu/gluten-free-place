@@ -266,6 +266,7 @@ const App = () => (
               <Route path="/spain/la-papita-de-leche-take-away" element={<LaPapitaDeLecheTakeAway />} />
               <Route path="/spain/restaurante-en-ville" element={<RestauranteEnVille />} />
               <Route path="/spain/messie-pizza-gluten-free-gracia" element={<MessiePizzaGlutenFreeGracia />} />
+              <Route path="/spain/:slug" element={<SpainCityPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
