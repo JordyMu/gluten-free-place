@@ -1282,12 +1282,12 @@ const Italy = () => {
                 Italy's world-class gluten-free dining, all verified for celiac safety.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#city-rome">
+                <Link to="/gluten-free/italy/rome">
                   <Button size="lg" className="bg-white text-green-700 hover:bg-green-50">
                     Start with Rome
                     <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                </a>
+                </Link>
                 <AddRestaurantDialog
                   city="Italy"
                   triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
