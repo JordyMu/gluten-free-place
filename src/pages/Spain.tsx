@@ -10,7 +10,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { SEOHead } from "@/components/SEOHead";
 
 // --- Restaurant data (kept from previous Spain page) ---
-type SpainRestaurant = {
+export type SpainRestaurant = {
   name: string;
   icon: string;
   city: string;
@@ -27,7 +27,7 @@ type SpainRestaurant = {
   reviewCount: number;
 };
 
-const spainRestaurants: SpainRestaurant[] = [
+export const spainRestaurants: SpainRestaurant[] = [
   {
     name: "Grosso Napoletano Senza Glutine",
     icon: "🍕",
@@ -743,40 +743,41 @@ const Spain = () => {
     {
       name: "Barcelona",
       image: "photo-1583422409516-2895a77efded",
-      places: 8,
+      places: spainRestaurants.filter((r) => r.city === "Barcelona").length,
       rating: 4.7,
       description: "Catalan capital with dedicated GF pizzerias, bakeries and tapas bars",
-      route: "#",
+      route: "/spain/barcelona",
       highlights: ["Grosso Napoletano", "Jansana Bakery", "Messié Pizza"],
     },
     {
       name: "Madrid",
       image: "photo-1543783207-ec64e4d95325",
-      places: 6,
+      places: spainRestaurants.filter((r) => r.city === "Madrid").length,
       rating: 4.6,
       description: "Spain's vibrant capital with FACE-certified trattorias and pastry shops",
-      route: "#",
+      route: "/spain/madrid",
       highlights: ["chök Sagasta", "La Nonna Carmela", "La Papita"],
     },
     {
       name: "Valencia",
       image: "photo-1599930113854-d6d7fd521f10",
-      places: 4,
+      places: spainRestaurants.filter((r) => r.city === "Valencia").length,
       rating: 4.5,
       description: "Mediterranean city famous for naturally GF paella and artisan gelato",
-      route: "#",
+      route: "/spain/valencia",
       highlights: ["YUMMY heladería", "Gluten-free paella", "Beachfront cafés"],
     },
     {
       name: "Seville",
       image: "photo-1559682468-a6a29e7d9517",
-      places: 5,
+      places: spainRestaurants.filter((r) => r.city === "Seville").length,
       rating: 4.7,
       description: "Andalusian gem with dedicated celiac bakeries and tapas",
-      route: "#",
+      route: "/spain/seville",
       highlights: ["Cøliaki", "Tapas Tours", "GF Flamenco Cafés"],
     },
   ];
+
 
   const topRestaurants = useMemo(
     () =>
