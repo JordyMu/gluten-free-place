@@ -14,6 +14,7 @@ const Index = lazy(() => import("./pages/Index"));
 const Countries = lazy(() => import("./pages/Countries"));
 const AllCountries = lazy(() => import("./pages/AllCountries"));
 const Italy = lazy(() => import("./pages/Italy"));
+const ItalyCityPage = lazy(() => import("./pages/italy/ItalyCityPage"));
 const Spain = lazy(() => import("./pages/Spain"));
 const France = lazy(() => import("./pages/France"));
 const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
