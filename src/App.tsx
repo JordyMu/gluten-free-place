@@ -15,6 +15,7 @@ const Countries = lazy(() => import("./pages/Countries"));
 const AllCountries = lazy(() => import("./pages/AllCountries"));
 const Italy = lazy(() => import("./pages/Italy"));
 const ItalyCityPage = lazy(() => import("./pages/italy/ItalyCityPage"));
+const ItalyRestaurantPage = lazy(() => import("./pages/italy/ItalyRestaurantPage"));
 const Spain = lazy(() => import("./pages/Spain"));
 const France = lazy(() => import("./pages/France"));
 const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
@@ -150,6 +151,7 @@ const App = () => (
               <Route path="/all-countries" element={<AllCountries />} />
               <Route path="/italy" element={<Italy />} />
               <Route path="/gluten-free/italy/:slug" element={<ItalyCityPage />} />
+              <Route path="/gluten-free/italy/:citySlug/:restaurantSlug" element={<ItalyRestaurantPage />} />
               <Route path="/spain" element={<Spain />} />
               <Route path="/france" element={<France />} />
               <Route path="/gluten-free/france" element={<France />} />
