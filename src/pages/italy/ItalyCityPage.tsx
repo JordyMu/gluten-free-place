@@ -38,7 +38,7 @@ const ItalyCityPage = () => {
       <SEOHead
         title={`Gluten-Free Restaurants in ${city.name}, Italy | Celiac-Safe Guide`}
         description={`${city.restaurants.length} verified gluten-free restaurants in ${city.name}, Italy. Hours, phone numbers, websites and celiac-safe ratings.`}
-        canonicalUrl={`https://glutenfreeplaces.com/gluten-free/italy/${city.slug}`}
+        canonical={`https://glutenfreeplaces.com/gluten-free/italy/${city.slug}`}
       />
 
       <header className="border-b bg-white sticky top-0 z-50">
