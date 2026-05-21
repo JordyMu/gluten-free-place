@@ -163,7 +163,13 @@ const SpainCityPage = () => {
                       <div className="mb-3">
                         <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
                           <span className="text-2xl">{r.icon}</span>
-                          <span>{r.name}</span>
+                          {RESTAURANT_SLUGS[r.name] ? (
+                            <Link to={RESTAURANT_SLUGS[r.name]} className="hover:text-red-600 transition-colors underline-offset-4 hover:underline">
+                              {r.name}
+                            </Link>
+                          ) : (
+                            <span>{r.name}</span>
+                          )}
                           {index < 3 && (
                             <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
                               Top {index + 1}
