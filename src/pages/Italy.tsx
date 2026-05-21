@@ -1468,6 +1468,33 @@ const Italy = () => {
                           <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
                           <span>{r.address}</span>
                         </div>
+                        {r.hours && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-gray-400 shrink-0" />
+                            <span>{r.hours}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-4 flex-wrap">
+                          {r.website && (
+                            <button
+                              type="button"
+                              onClick={() => openExternalLink(r.website!.startsWith("http") ? r.website! : `https://${r.website}`)}
+                              className="flex items-center gap-1.5 text-blue-600 hover:text-blue-800 transition-colors"
+                            >
+                              <Globe className="h-4 w-4" />
+                              <span>{r.website.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</span>
+                            </button>
+                          )}
+                          {r.phone && (
+                            <a
+                              href={`tel:${r.phone}`}
+                              className="flex items-center gap-1.5 text-emerald-600 hover:text-emerald-800 transition-colors"
+                            >
+                              <Phone className="h-4 w-4" />
+                              <span>{r.phone}</span>
+                            </a>
+                          )}
+                        </div>
                       </div>
 
                       {r.directionsUrl && (
