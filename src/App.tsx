@@ -121,7 +121,7 @@ const ChokChocolateBar = lazy(() => import("./pages/ChokChocolateBar"));
 const MessieSinGlutenMuntaner = lazy(() => import("./pages/MessieSinGlutenMuntaner"));
 const LaNonnaCarmela = lazy(() => import("./pages/LaNonnaCarmela"));
 const Aruku = lazy(() => import("./pages/Aruku"));
-const GrossoNapoletanoSenzaGlutine = lazy(() => import("./pages/GrossoNapoletanoSenzaGlutine"));
+const GrossoNapoletanoSenzaGlutine = lazy(() => import("./pages/spain/GrossoNapoletanoSenzaGlutinePage"));
 const YummyHeladeria = lazy(() => import("./pages/YummyHeladeria"));
 const Coliaki = lazy(() => import("./pages/Coliaki"));
 const LaPapitaDeLecheTakeAway = lazy(() => import("./pages/LaPapitaDeLecheTakeAway"));
