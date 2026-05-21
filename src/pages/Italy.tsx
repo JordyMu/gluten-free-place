@@ -29,6 +29,7 @@ type ItalyRestaurant = {
 };
 
 type ItalyCity = {
+  name: string;
   slug: string;
   emoji: string;
   description: string;
@@ -41,6 +42,13 @@ const mapsUrl = (q: string) => `https://www.google.com/maps/search/?api=1&query=
 
 const cities: ItalyCity[] = [
   {
+    name: "Rome",
+    slug: "rome",
+    emoji: "🏛️",
+    description: "Capital with dedicated GF pizzerias, trattorias, bakeries and gelaterias",
+    highlights: ["Mama Eat", "Voglia di Pizza", "Sgrano", "Fatamorgana"],
+    image: "photo-1525874684015-58379d421a52",
+    restaurants: [
       {
         name: "Mama Eat – Gluten-Free Italian Restaurant",
         address: "Via di San Cosimato 7/9, Trastevere, Rome",
