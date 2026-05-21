@@ -18,6 +18,7 @@ const ItalyCityPage = lazy(() => import("./pages/italy/ItalyCityPage"));
 const ItalyRestaurantPage = lazy(() => import("./pages/italy/ItalyRestaurantPage"));
 const GlutenFreeRomeBest = lazy(() => import("./pages/italy/GlutenFreeRomeBest"));
 const Spain = lazy(() => import("./pages/Spain"));
+const SpainCityPage = lazy(() => import("./pages/spain/SpainCityPage"));
 const France = lazy(() => import("./pages/France"));
 const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
 const GlutenFreeParisBest = lazy(() => import("./pages/france/GlutenFreeParisBest"));
