@@ -184,6 +184,31 @@ const ItalyCityPage = () => {
             </Card>
           </section>
 
+          {city.slug === "rome" && (
+            <section className="mb-8">
+              <Card className="bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200">
+                <CardContent className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                  <div className="flex items-start gap-4">
+                    <Award className="w-8 h-8 text-amber-600 flex-shrink-0" />
+                    <div>
+                      <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                        Best Gluten-Free Restaurants in Rome
+                      </h2>
+                      <p className="text-gray-700">
+                        Our editorial top 10 celiac-safe picks across Rome — ranked by safety, reviews and quality.
+                      </p>
+                    </div>
+                  </div>
+                  <Link to="/gluten-free/italy/rome/best">
+                    <Button className="bg-orange-600 hover:bg-orange-700 whitespace-nowrap">
+                      View the Top 10
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            </section>
+          )}
+
           {/* Filters */}
           <section className="mb-8">
             <Card>
