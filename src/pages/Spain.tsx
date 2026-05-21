@@ -10,7 +10,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { SEOHead } from "@/components/SEOHead";
 
 // --- Restaurant data (kept from previous Spain page) ---
-type SpainRestaurant = {
+export type SpainRestaurant = {
   name: string;
   icon: string;
   city: string;
