@@ -9,6 +9,10 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { SEOHead } from "@/components/SEOHead";
 import { spainRestaurants, type SpainRestaurant } from "@/pages/Spain";
 
+const RESTAURANT_SLUGS: Record<string, string> = {
+  "Grosso Napoletano Senza Glutine": "/spain/grosso-napoletano-senza-glutine",
+};
+
 const CITY_META: Record<string, { name: string; image: string; tagline: string }> = {
   barcelona: {
     name: "Barcelona",
