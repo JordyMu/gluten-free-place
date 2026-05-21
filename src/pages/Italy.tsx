@@ -29,6 +29,7 @@ type ItalyRestaurant = {
 };
 
 type ItalyCity = {
+  name: string;
   slug: string;
   emoji: string;
   description: string;
