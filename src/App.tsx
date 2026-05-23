@@ -188,7 +188,7 @@ const App = () => (
               <Route path="/gluten-free/canada" element={<Canada />} />
               <Route path="/canada" element={<Canada />} />
               <Route path="/gluten-free/canada/toronto" element={<GlutenFreeToronto />} />
-              <Route path="/gluten-free/canada/toronto/best" element={<GlutenFreeTorontoBest />} />
+              <Route path="/gluten-free/canada/toronto/best-gluten-free-restaurants-in-toronto" element={<GlutenFreeTorontoBest />} />
               <Route path="/gluten-free/canada/toronto/:slug" element={<TorontoRestaurantPage />} />
               <Route path="/gluten-free/canada/vancouver" element={<GlutenFreeVancouver />} />
               <Route path="/gluten-free/canada/vancouver/:slug" element={<VancouverRestaurantPage />} />
