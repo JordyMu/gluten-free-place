@@ -116,42 +116,6 @@ const Canada = () => {
       description: "Alberta's hub with growing gluten-free dining options",
       route: "/gluten-free/canada/calgary",
       highlights: ["Sweet Rice", "TRE Vietnamese"]
-    },
-    {
-      name: "Québec City",
-      image: "photo-1558618666-fcd25c85f82e",
-      places: 4,
-      rating: 4.5,
-      description: "Historic city with charming European-style GF cafes",
-      route: "#",
-      highlights: ["Julio Taqueria", "Bistro Hortus", "Chez Hansel et Gretel"]
-    },
-    {
-      name: "Victoria",
-      image: "photo-1559511260-66a654ae982a",
-      places: 3,
-      rating: 4.6,
-      description: "Beautiful island city with artisan GF spots",
-      route: "#",
-      highlights: ["MAiiZ Tortillería", "Better Acres"]
-    },
-    {
-      name: "Ottawa",
-      image: "photo-1570531356612-c0a2e7c52ef7",
-      places: 2,
-      rating: 4.5,
-      description: "Canada's capital with emerging GF dining scene",
-      route: "#",
-      highlights: ["Coming Soon"]
-    },
-    {
-      name: "Winnipeg",
-      image: "photo-1517935706615-2717063c2225",
-      places: 2,
-      rating: 4.3,
-      description: "Prairie city with growing gluten-free awareness",
-      route: "#",
-      highlights: ["Habanero Sombrero"]
     }
   ];
 
