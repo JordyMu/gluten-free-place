@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import portLouisHero from "@/assets/port-louis-mauritius.jpg";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -294,6 +294,24 @@ useEffect(() => {
                   </p>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* Best of Port Louis Banner */}
+        <section className="mb-10">
+          <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200">
+            <CardContent className="p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <Trophy className="w-8 h-8 text-amber-600 flex-shrink-0" />
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-900 mb-1">Best Gluten-Free Restaurants in Port Louis</h2>
+                  <p className="text-gray-700">Our editorial top 10 celiac-safe picks across Port Louis — ranked by safety, reviews and quality.</p>
+                </div>
+              </div>
+              <Link to="/gluten-free/mauritius/port-louis/best-gluten-free-restaurants-in-port-louis" className="md:flex-shrink-0">
+                <Button className="bg-amber-600 hover:bg-amber-700 text-white">View the Top 10</Button>
+              </Link>
             </CardContent>
           </Card>
         </section>
