@@ -66,6 +66,7 @@ const GlutenFreeJohannesburg = lazy(() => import("./pages/GlutenFreeJohannesburg
 const GlutenFreeJohannesburgBest = lazy(() => import("./pages/johannesburg/GlutenFreeJohannesburgBest"));
 const GlutenFreeDurban = lazy(() => import("./pages/GlutenFreeDurban"));
 const GlutenFreePretoria = lazy(() => import("./pages/GlutenFreePretoria"));
+const GlutenFreePretoriaBest = lazy(() => import("./pages/pretoria/GlutenFreePretoriaBest"));
 const GlutenFreeStellenbosch = lazy(() => import("./pages/GlutenFreeStellenbosch"));
 const GlutenFreeFranschhoek = lazy(() => import("./pages/GlutenFreeFranschhoek"));
 const CapeTownRestaurantPage = lazy(() => import("./pages/cape-town/CapeTownRestaurantPage"));
@@ -219,6 +220,7 @@ const App = () => (
               <Route path="/gluten-free/south-africa/durban" element={<GlutenFreeDurban />} />
               <Route path="/gluten-free/south-africa/durban/:slug" element={<DurbanRestaurantPage />} />
               <Route path="/gluten-free/south-africa/pretoria" element={<GlutenFreePretoria />} />
+              <Route path="/gluten-free/south-africa/pretoria/best-gluten-free-restaurants-in-pretoria" element={<GlutenFreePretoriaBest />} />
               <Route path="/gluten-free/south-africa/pretoria/:slug" element={<PretoriaRestaurantPage />} />
               <Route path="/gluten-free/south-africa/cape-town/stellenbosch" element={<GlutenFreeStellenbosch />} />
               <Route path="/gluten-free/south-africa/cape-town/franschhoek" element={<GlutenFreeFranschhoek />} />
