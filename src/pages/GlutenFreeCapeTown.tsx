@@ -604,6 +604,26 @@ const GlutenFreeCapeTown = () => {
           </Card>
         </section>
 
+        {/* Best of Cape Town banner */}
+        <section className="mb-12">
+          <Card className="bg-gradient-to-r from-yellow-50 to-orange-50 border-yellow-200">
+            <CardContent className="p-6 flex flex-wrap items-center justify-between gap-4">
+              <div className="flex items-start gap-4">
+                <Award className="w-8 h-8 text-orange-600 flex-shrink-0" />
+                <div>
+                  <h2 className="text-xl font-semibold text-gray-900 mb-1">Best Gluten-Free Restaurants in Cape Town</h2>
+                  <p className="text-gray-700">Our editorial top 10 celiac-safe picks across Cape Town — ranked by safety, reviews and quality.</p>
+                </div>
+              </div>
+              <Link to="/gluten-free/south-africa/cape-town/best-gluten-free-restaurants-in-cape-town">
+                <Button className="bg-gradient-to-r from-orange-600 to-red-600 hover:from-orange-700 hover:to-red-700 text-white">
+                  View the Top 10
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* Wine Regions Quick Navigation */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
