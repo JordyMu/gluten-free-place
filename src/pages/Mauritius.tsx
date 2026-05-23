@@ -4,8 +4,6 @@ import portLouisImage from "@/assets/port-louis-mauritius.jpg";
 import grandBaieImage from "@/assets/grand-baie-mauritius.jpg";
 import flicEnFlacImage from "@/assets/flic-en-flac-mauritius.jpg";
 import curepipeImage from "@/assets/curepipe-mauritius.jpg";
-import quatreBornesImage from "@/assets/quatre-bornes-mauritius.jpg";
-import mahebourgImage from "@/assets/mahebourg-mauritius.jpg";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -56,26 +54,6 @@ const cities = [
     route: "/gluten-free/mauritius/curepipe",
     highlights: ["Yellow Chilli", "Escale Créole", "ZAYTOON", "Island Babe"]
   },
-  {
-    name: "Quatre Bornes",
-    image: quatreBornesImage,
-    isLocal: true,
-    places: 6,
-    rating: 4.2,
-    description: "Bustling market town with street food and authentic Mauritian home cooking",
-    route: "/gluten-free/mauritius/quatre-bornes",
-    highlights: ["ZAYTOON", "Yellow Chilli", "Island Babe", "Nando's"]
-  },
-  {
-    name: "Mahebourg",
-    image: mahebourgImage,
-    isLocal: true,
-    places: 6,
-    rating: 4.1,
-    description: "Historic fishing village on the southeast coast with fresh seafood and Creole flavors",
-    route: "/gluten-free/mauritius/mahebourg",
-    highlights: ["Taste of Freedom", "Tamassa Resort", "Green Island", "L'Escale"]
-  }
 ];
 
 const faqItems = [
