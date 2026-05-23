@@ -24,6 +24,7 @@ const France = lazy(() => import("./pages/France"));
 const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
 const GlutenFreeParisBest = lazy(() => import("./pages/france/GlutenFreeParisBest"));
 const GlutenFreeTorontoBest = lazy(() => import("./pages/canada/GlutenFreeTorontoBest"));
+const GlutenFreeMontrealBest = lazy(() => import("./pages/canada/GlutenFreeMontrealBest"));
 const GlutenFreeLyon = lazy(() => import("./pages/france/GlutenFreeLyon"));
 const GlutenFreeLyonBest = lazy(() => import("./pages/france/GlutenFreeLyonBest"));
 const GlutenFreeBordeaux = lazy(() => import("./pages/france/GlutenFreeBordeaux"));
@@ -193,6 +194,7 @@ const App = () => (
               <Route path="/gluten-free/canada/vancouver" element={<GlutenFreeVancouver />} />
               <Route path="/gluten-free/canada/vancouver/:slug" element={<VancouverRestaurantPage />} />
               <Route path="/gluten-free/canada/montreal" element={<GlutenFreeMontreal />} />
+              <Route path="/gluten-free/canada/montreal/best-gluten-free-restaurants-in-montreal" element={<GlutenFreeMontrealBest />} />
               <Route path="/gluten-free/canada/montreal/:slug" element={<MontrealRestaurantPage />} />
               <Route path="/gluten-free/canada/calgary" element={<GlutenFreeCalgary />} />
               <Route path="/gluten-free/canada/calgary/:slug" element={<CalgaryRestaurantPage />} />
