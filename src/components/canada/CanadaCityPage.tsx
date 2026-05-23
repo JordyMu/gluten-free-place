@@ -23,6 +23,7 @@ interface CanadaCityPageProps {
   intro: string;
   restaurants: Restaurant[];
   faqItems: FAQItem[];
+  extraSection?: React.ReactNode;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
@@ -63,7 +64,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
@@ -145,6 +146,10 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
             </CardContent>
           </Card>
         </section>
+
+        {extraSection}
+
+
 
         <section className="mb-8">
           <Card>
