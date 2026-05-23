@@ -56,26 +56,6 @@ const cities = [
     route: "/gluten-free/mauritius/curepipe",
     highlights: ["Yellow Chilli", "Escale Créole", "ZAYTOON", "Island Babe"]
   },
-  {
-    name: "Quatre Bornes",
-    image: quatreBornesImage,
-    isLocal: true,
-    places: 6,
-    rating: 4.2,
-    description: "Bustling market town with street food and authentic Mauritian home cooking",
-    route: "/gluten-free/mauritius/quatre-bornes",
-    highlights: ["ZAYTOON", "Yellow Chilli", "Island Babe", "Nando's"]
-  },
-  {
-    name: "Mahebourg",
-    image: mahebourgImage,
-    isLocal: true,
-    places: 6,
-    rating: 4.1,
-    description: "Historic fishing village on the southeast coast with fresh seafood and Creole flavors",
-    route: "/gluten-free/mauritius/mahebourg",
-    highlights: ["Taste of Freedom", "Tamassa Resort", "Green Island", "L'Escale"]
-  }
 ];
 
 const faqItems = [
