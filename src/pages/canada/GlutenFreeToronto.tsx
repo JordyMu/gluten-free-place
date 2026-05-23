@@ -30,7 +30,7 @@ const GlutenFreeToronto = () => (
                 <p className="text-gray-700">Our editorial top 10 celiac-safe picks across Toronto — ranked by safety, reviews and quality.</p>
               </div>
             </div>
-            <Link to="/gluten-free/canada/toronto/best" className="md:flex-shrink-0">
+            <Link to="/gluten-free/canada/toronto/best-gluten-free-restaurants-in-toronto" className="md:flex-shrink-0">
               <Button className="bg-amber-600 hover:bg-amber-700 text-white">View the Top 10</Button>
             </Link>
           </CardContent>
