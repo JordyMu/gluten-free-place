@@ -79,6 +79,7 @@ const GlutenFreePortLouisBest = lazy(() => import("./pages/mauritius/GlutenFreeP
 const GlutenFreeFlicEnFlac = lazy(() => import("./pages/mauritius/GlutenFreeFlicEnFlac"));
 const GlutenFreeFlicEnFlacBest = lazy(() => import("./pages/mauritius/GlutenFreeFlicEnFlacBest"));
 const GlutenFreeCurepipe = lazy(() => import("./pages/mauritius/GlutenFreeCurepipe"));
+const GlutenFreeCurepipeBest = lazy(() => import("./pages/mauritius/GlutenFreeCurepipeBest"));
 const GlutenFreeQuatreBornes = lazy(() => import("./pages/mauritius/GlutenFreeQuatreBornes"));
 const GlutenFreeMahebourg = lazy(() => import("./pages/mauritius/GlutenFreeMahebourg"));
 const QuatreBornesRestaurantPage = lazy(() => import("./pages/mauritius/QuatreBornesRestaurantPage"));
@@ -261,6 +262,7 @@ const App = () => (
               <Route path="/gluten-free/mauritius/flic-en-flac/best-gluten-free-restaurants-in-flic-en-flac" element={<GlutenFreeFlicEnFlacBest />} />
               <Route path="/gluten-free/mauritius/flic-en-flac/:slug" element={<FlicEnFlacRestaurantPage />} />
               <Route path="/gluten-free/mauritius/curepipe" element={<GlutenFreeCurepipe />} />
+              <Route path="/gluten-free/mauritius/curepipe/best-gluten-free-restaurants-in-curepipe" element={<GlutenFreeCurepipeBest />} />
               <Route path="/gluten-free/mauritius/curepipe/:slug" element={<CurepipeRestaurantPage />} />
               <Route path="/gluten-free/mauritius/quatre-bornes" element={<GlutenFreeQuatreBornes />} />
               <Route path="/gluten-free/mauritius/quatre-bornes/:slug" element={<QuatreBornesRestaurantPage />} />
