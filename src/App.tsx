@@ -73,6 +73,7 @@ const CapeTownBakeries = lazy(() => import("./pages/cape-town/CapeTownBakeries")
 const CapeTownGroceryStores = lazy(() => import("./pages/cape-town/CapeTownGroceryStores"));
 const CapeTownGFProducts = lazy(() => import("./pages/cape-town/CapeTownGFProducts"));
 const GlutenFreeGrandBaie = lazy(() => import("./pages/mauritius/GlutenFreeGrandBaie"));
+const GlutenFreeGrandBaieBest = lazy(() => import("./pages/mauritius/GlutenFreeGrandBaieBest"));
 const GlutenFreePortLouis = lazy(() => import("./pages/mauritius/GlutenFreePortLouis"));
 const GlutenFreePortLouisBest = lazy(() => import("./pages/mauritius/GlutenFreePortLouisBest"));
 const GlutenFreeFlicEnFlac = lazy(() => import("./pages/mauritius/GlutenFreeFlicEnFlac"));
@@ -250,6 +251,7 @@ const App = () => (
               <Route path="/gluten-free/egypt/luxor/:slug" element={<LuxorRestaurantPage />} />
               <Route path="/gluten-free/mauritius" element={<Mauritius />} />
               <Route path="/gluten-free/mauritius/grand-baie" element={<GlutenFreeGrandBaie />} />
+              <Route path="/gluten-free/mauritius/grand-baie/best-gluten-free-restaurants-in-grand-baie" element={<GlutenFreeGrandBaieBest />} />
               <Route path="/gluten-free/mauritius/grand-baie/:slug" element={<GrandBaieRestaurantPage />} />
               <Route path="/gluten-free/mauritius/port-louis" element={<GlutenFreePortLouis />} />
               <Route path="/gluten-free/mauritius/port-louis/best-gluten-free-restaurants-in-port-louis" element={<GlutenFreePortLouisBest />} />
