@@ -401,75 +401,10 @@ const GlutenFreeDurban = () => {
 
 
         {/* Filters */}
-        <section className="mb-8">
-          <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Filter className="w-5 h-5" />
-                Filter Restaurants
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
-                  <Input 
-                    placeholder="Search restaurants..." 
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Venue Type</label>
-                  <Select value={venueFilter} onValueChange={setVenueFilter}>
-                    <SelectTrigger className="bg-white">
-                      <SelectValue placeholder="All venues" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white z-50">
-                      <SelectItem value="all">All Venues</SelectItem>
-                      <SelectItem value="bakery">🥐 Bakery</SelectItem>
-                      <SelectItem value="restaurant">🍽️ Restaurant</SelectItem>
-                      <SelectItem value="cafe">☕ Café</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Safety Rating</label>
-                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                    <SelectTrigger className="bg-white">
-                      <SelectValue placeholder="All safety levels" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white z-50">
-                      <SelectItem value="all">All Safety Levels</SelectItem>
-                      <SelectItem value="dedicated-facility">🛡️ Dedicated GF Facility</SelectItem>
-                      <SelectItem value="protocols-in-place">✓ Careful Handling</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
-                  <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger className="bg-white">
-                      <SelectValue placeholder="All menu types" />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white z-50">
-                      <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-              <div className="mt-4 text-sm text-gray-600">
-                Showing {filteredRestaurants.length} of {durbanRestaurants.length} restaurants
-              </div>
-            </CardContent>
-          </Card>
-        </section>
-
-        {/* Restaurant Cards - Single Column Full Width */}
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Verified Gluten-Free Restaurants
           </h2>
           <div className="grid gap-6">
@@ -580,6 +515,73 @@ const GlutenFreeDurban = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+            </div>
+            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+              <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Filter className="w-5 h-5" />
+                Filter Restaurants
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                  <Input 
+                    placeholder="Search restaurants..." 
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-1 block">Venue Type</label>
+                  <Select value={venueFilter} onValueChange={setVenueFilter}>
+                    <SelectTrigger className="bg-white">
+                      <SelectValue placeholder="All venues" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Venues</SelectItem>
+                      <SelectItem value="bakery">🥐 Bakery</SelectItem>
+                      <SelectItem value="restaurant">🍽️ Restaurant</SelectItem>
+                      <SelectItem value="cafe">☕ Café</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-1 block">Safety Rating</label>
+                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
+                    <SelectTrigger className="bg-white">
+                      <SelectValue placeholder="All safety levels" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Safety Levels</SelectItem>
+                      <SelectItem value="dedicated-facility">🛡️ Dedicated GF Facility</SelectItem>
+                      <SelectItem value="protocols-in-place">✓ Careful Handling</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
+                  <Select value={menuFilter} onValueChange={setMenuFilter}>
+                    <SelectTrigger className="bg-white">
+                      <SelectValue placeholder="All menu types" />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Menu Types</SelectItem>
+                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
+                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+              <div className="mt-4 text-sm text-gray-600">
+                Showing {filteredRestaurants.length} of {durbanRestaurants.length} restaurants
+              </div>
+            </CardContent>
+          </Card>
+            </aside>
           </div>
         </section>
 
