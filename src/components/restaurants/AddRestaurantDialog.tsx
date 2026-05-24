@@ -138,7 +138,7 @@ export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Rest
 
         {!user ? (
           <div className="py-8 text-center">
-            <p className="text-gray-600 mb-4">Please sign in to submit a restaurant.</p>
+            <p className="text-gray-600 mb-4">Please sign in to submit a {venueLabel.toLowerCase()}.</p>
             <Button asChild>
               <Link to="/auth">Sign In</Link>
             </Button>
