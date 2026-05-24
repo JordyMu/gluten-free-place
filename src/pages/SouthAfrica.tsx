@@ -153,7 +153,7 @@ const SouthAfrica = () => {
     },
     {
       name: "Pretoria",
-      image: "photo-1625047509248-ec889cbff17f",
+      image: "/images/pretoria-hero.webp",
       places: 12,
       rating: 4.4,
       description: "Administrative capital with cozy cafés and family restaurants",
@@ -324,7 +324,7 @@ const SouthAfrica = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img 
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
