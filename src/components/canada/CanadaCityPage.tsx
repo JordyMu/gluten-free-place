@@ -246,49 +246,60 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
             ))}
           </div>
             </div>
-            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
               <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Filter className="w-5 h-5" />
-                Filter Restaurants
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Search className="w-4 h-4 text-red-700" />
+                    Search Restaurants
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
                   <div className="relative">
                     <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
                     <Input className="pl-9" placeholder="Search by name or cuisine" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                   </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Filter className="w-4 h-4 text-red-700" />
+                    Filter by Menu Type
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
                   <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger><SelectValue placeholder="All menu types" /></SelectTrigger>
+                    <SelectTrigger><SelectValue placeholder="All Menu Types" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Menu Types</SelectItem>
                       <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
                       <SelectItem value="mixed-menu">GF Options Available</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Safety</label>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Filter className="w-4 h-4 text-red-700" />
+                    Filter by Safety
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
                   <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                    <SelectTrigger><SelectValue placeholder="All safety levels" /></SelectTrigger>
+                    <SelectTrigger><SelectValue placeholder="All Safety Levels" /></SelectTrigger>
                     <SelectContent>
                       <SelectItem value="all">All Safety Levels</SelectItem>
                       <SelectItem value="dedicated-facility">Dedicated GF Facility</SelectItem>
                       <SelectItem value="protocols-in-place">Celiac Protocols</SelectItem>
                     </SelectContent>
                   </Select>
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-gray-600">Showing {filteredRestaurants.length} of {restaurants.length} restaurants</p>
-            </CardContent>
-          </Card>
+                  <p className="mt-3 text-sm text-gray-600">Showing {filteredRestaurants.length} of {restaurants.length}</p>
+                </CardContent>
+              </Card>
             </aside>
           </div>
         </section>
