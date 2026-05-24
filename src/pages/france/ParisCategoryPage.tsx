@@ -47,7 +47,7 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     description:
       "Supermarkets, health food shops and specialty stores in Paris stocking gluten-free ranges — Monoprix, Naturalia, Bio c' Bon and more.",
     badgeLabel: (n) => `${n} Stores`,
-    filter: (r) => r.venueType === "grocery" || r.venueType === "supermarket",
+    filter: (r) => r.venueType === "supermarket",
     comingSoonText:
       "We're mapping the best gluten-free grocery stores and supermarkets in Paris. Check back soon!",
   },
@@ -57,7 +57,7 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     description:
       "Specialty gluten-free products available in Paris — flours, pastas, snacks and pantry essentials from local and imported brands.",
     badgeLabel: (n) => `${n} Product Spots`,
-    filter: (r) => r.venueType === "gf-products" || r.venueType === "specialty",
+    filter: (r) => r.venueType === "gf-products",
     comingSoonText:
       "We're putting together our recommended gluten-free product list for Paris. Check back soon!",
   },
