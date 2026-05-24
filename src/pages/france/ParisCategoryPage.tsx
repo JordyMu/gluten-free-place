@@ -42,6 +42,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "street-food",
     comingSoonText:
       "We're actively researching gluten-free street food and food-truck options in Paris. Check back soon or suggest a venue!",
+    venueLabel: "Street Food Spot",
+    defaultVenueType: "street-food",
   },
   bakeries: {
     title: "Gluten-Free Bakeries in Paris",
