@@ -380,7 +380,7 @@ export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Rest
                 </Button>
                 <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-                  Submit Restaurant
+                  Submit {venueLabel}
                 </Button>
               </div>
             </form>
