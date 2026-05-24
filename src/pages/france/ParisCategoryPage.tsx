@@ -28,6 +28,8 @@ interface CategoryMeta {
   badgeLabel: (n: number) => string;
   filter: (r: Restaurant) => boolean;
   comingSoonText: string;
+  venueLabel: string;
+  defaultVenueType: "restaurant" | "cafe" | "bakery" | "street-food" | "supermarket" | "gf-products";
 }
 
 const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
@@ -40,6 +42,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "street-food",
     comingSoonText:
       "We're actively researching gluten-free street food and food-truck options in Paris. Check back soon or suggest a venue!",
+    venueLabel: "Street Food Spot",
+    defaultVenueType: "street-food",
   },
   bakeries: {
     title: "Gluten-Free Bakeries in Paris",
@@ -52,6 +56,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
       /bakery|boulangerie|patisserie|pastry/i.test(r.specialty || ""),
     comingSoonText:
       "We're curating the best dedicated gluten-free bakeries in Paris. Check back soon!",
+    venueLabel: "Bakery",
+    defaultVenueType: "bakery",
   },
   "grocery-stores": {
     title: "Gluten-Free Grocery Stores in Paris",
@@ -62,6 +68,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "supermarket",
     comingSoonText:
       "We're mapping the best gluten-free grocery stores and supermarkets in Paris. Check back soon!",
+    venueLabel: "Grocery Store",
+    defaultVenueType: "supermarket",
   },
   "gluten-free-products": {
     title: "Gluten-Free Products in Paris",
@@ -72,6 +80,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "gf-products",
     comingSoonText:
       "We're putting together our recommended gluten-free product list for Paris. Check back soon!",
+    venueLabel: "GF Product Spot",
+    defaultVenueType: "gf-products",
   },
 };
 
@@ -159,7 +169,7 @@ const ParisCategoryPage = ({ category }: Props) => {
               <h2 className="text-lg font-semibold text-gray-900">Know a great spot?</h2>
               <p className="text-sm text-gray-600">Help the community — share your favorite {meta.emoji} place in Paris.</p>
             </div>
-            <AddRestaurantDialog city="paris" triggerClassName="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 hover:from-orange-600 hover:to-red-600" />
+            <AddRestaurantDialog city="paris" venueLabel={meta.venueLabel} defaultVenueType={meta.defaultVenueType} triggerClassName="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 hover:from-orange-600 hover:to-red-600" />
           </div>
 
           {venues.length > 0 ? (

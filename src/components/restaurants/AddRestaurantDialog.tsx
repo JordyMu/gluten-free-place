@@ -24,7 +24,7 @@ const restaurantSchema = z.object({
   specialty: z.string().trim().max(50, "Specialty must be less than 50 characters").optional().or(z.literal("")),
   overview: z.string().trim().max(500, "Overview must be less than 500 characters").optional().or(z.literal("")),
   cuisine_types: z.string().trim().max(200, "Cuisine types must be less than 200 characters").optional().or(z.literal("")),
-  venue_type: z.enum(["restaurant", "cafe", "bakery"]),
+  venue_type: z.enum(["restaurant", "cafe", "bakery", "street-food", "supermarket", "gf-products"]),
   celiac_safe: z.enum(["dedicated-facility", "protocols-in-place"]),
   menu_type: z.enum(["fully-gluten-free", "mixed-menu"]),
   pro_tip: z.string().trim().max(200, "Pro tip must be less than 200 characters").optional().or(z.literal("")),
@@ -35,9 +35,11 @@ type RestaurantFormValues = z.infer<typeof restaurantSchema>;
 interface AddRestaurantDialogProps {
   city: string;
   triggerClassName?: string;
+  venueLabel?: string;
+  defaultVenueType?: "restaurant" | "cafe" | "bakery" | "street-food" | "supermarket" | "gf-products";
 }
 
-export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDialogProps) => {
+export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Restaurant", defaultVenueType = "restaurant" }: AddRestaurantDialogProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -55,7 +57,7 @@ export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDia
       specialty: "",
       overview: "",
       cuisine_types: "",
-      venue_type: "restaurant",
+      venue_type: defaultVenueType,
       celiac_safe: "protocols-in-place",
       menu_type: "mixed-menu",
       pro_tip: "",
@@ -123,20 +125,20 @@ export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDia
       <DialogTrigger asChild>
         <Button size="lg" variant="outline" className={triggerClassName}>
           <Plus className="w-5 h-5 mr-2" />
-          Add a Restaurant
+          Add a {venueLabel}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Add a Gluten-Free Restaurant</DialogTitle>
+          <DialogTitle>Add a Gluten-Free {venueLabel}</DialogTitle>
           <DialogDescription>
-            Help the community by sharing a gluten-free friendly restaurant. Your submission will be reviewed before being published.
+            Help the community by sharing a gluten-free friendly {venueLabel.toLowerCase()}. Your submission will be reviewed before being published.
           </DialogDescription>
         </DialogHeader>
 
         {!user ? (
           <div className="py-8 text-center">
-            <p className="text-gray-600 mb-4">Please sign in to submit a restaurant.</p>
+            <p className="text-gray-600 mb-4">Please sign in to submit a {venueLabel.toLowerCase()}.</p>
             <Button asChild>
               <Link to="/auth">Sign In</Link>
             </Button>
@@ -271,6 +273,9 @@ export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDia
                           <SelectItem value="restaurant">Restaurant</SelectItem>
                           <SelectItem value="cafe">Café</SelectItem>
                           <SelectItem value="bakery">Bakery</SelectItem>
+                          <SelectItem value="street-food">Street Food</SelectItem>
+                          <SelectItem value="supermarket">Grocery Store</SelectItem>
+                          <SelectItem value="gf-products">GF Products</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
@@ -375,7 +380,7 @@ export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDia
                 </Button>
                 <Button type="submit" disabled={isSubmitting}>
                   {isSubmitting && <Loader2 className="w-4 h-4 mr-2 animate-spin" />}
-                  Submit Restaurant
+                  Submit {venueLabel}
                 </Button>
               </div>
             </form>
