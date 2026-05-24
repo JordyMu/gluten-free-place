@@ -218,7 +218,7 @@ const France = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={(city as any).isLocal ? `${city.image}?v=2` : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
