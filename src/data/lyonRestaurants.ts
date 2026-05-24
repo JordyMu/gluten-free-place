@@ -31,7 +31,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 234,
     "lat": 0,
     "lng": 0,
-    "venueType": "street-food",
+    "venueType": "restaurant",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
