@@ -103,7 +103,8 @@ const France = () => {
     },
     {
       name: "Lyon",
-      image: "photo-1524396309943-e03f5249f002",
+      image: "/images/lyon.webp",
+      isLocal: true,
       places: 2,
       rating: 4.6,
       description: "Gastronomic capital with growing gluten-free scene",
