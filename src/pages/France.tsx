@@ -112,7 +112,8 @@ const France = () => {
     },
     {
       name: "Bordeaux",
-      image: "photo-1606744824163-985d376605aa",
+      image: "/images/bordeaux.webp",
+      isLocal: true,
       places: 1,
       rating: 4.6,
       description: "Wine capital with artisan GF bakery options",
