@@ -106,7 +106,9 @@ export const otherCanadaRestaurants: Restaurant[] = [
     lat: 46.8121,
     lng: -71.2201,
     venueType: "restaurant",
-    photos: [],
+    photos: [
+      { url: "/images/bistro-hortus-1.webp", caption: "Featured Photos" },
+    ],
     celiacSafetyScore: 8,
   },
   {
