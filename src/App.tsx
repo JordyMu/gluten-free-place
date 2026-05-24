@@ -50,6 +50,7 @@ const BirminghamRestaurantPage = lazy(() => import("./pages/uk/BirminghamRestaur
 const Canada = lazy(() => import("./pages/Canada"));
 const GlutenFreeToronto = lazy(() => import("./pages/canada/GlutenFreeToronto"));
 const GlutenFreeVancouver = lazy(() => import("./pages/canada/GlutenFreeVancouver"));
+const GlutenFreeVancouverBest = lazy(() => import("./pages/canada/GlutenFreeVancouverBest"));
 const GlutenFreeMontreal = lazy(() => import("./pages/canada/GlutenFreeMontreal"));
 const GlutenFreeCalgary = lazy(() => import("./pages/canada/GlutenFreeCalgary"));
 const GlutenFreeCalgaryBest = lazy(() => import("./pages/canada/GlutenFreeCalgaryBest"));
