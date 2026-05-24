@@ -273,6 +273,9 @@ export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Rest
                           <SelectItem value="restaurant">Restaurant</SelectItem>
                           <SelectItem value="cafe">Café</SelectItem>
                           <SelectItem value="bakery">Bakery</SelectItem>
+                          <SelectItem value="street-food">Street Food</SelectItem>
+                          <SelectItem value="supermarket">Grocery Store</SelectItem>
+                          <SelectItem value="gf-products">GF Products</SelectItem>
                         </SelectContent>
                       </Select>
                       <FormMessage />
