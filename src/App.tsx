@@ -57,6 +57,7 @@ const TorontoRestaurantPage = lazy(() => import("./pages/canada/TorontoRestauran
 const VancouverRestaurantPage = lazy(() => import("./pages/canada/VancouverRestaurantPage"));
 const MontrealRestaurantPage = lazy(() => import("./pages/canada/MontrealRestaurantPage"));
 const CalgaryRestaurantPage = lazy(() => import("./pages/canada/CalgaryRestaurantPage"));
+const OtherCanadaRestaurantPage = lazy(() => import("./pages/canada/OtherCanadaRestaurantPage"));
 const Ireland = lazy(() => import("./pages/Ireland"));
 const Germany = lazy(() => import("./pages/Germany"));
 const NewZealand = lazy(() => import("./pages/NewZealand"));
