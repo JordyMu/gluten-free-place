@@ -171,7 +171,7 @@ const SouthAfrica = () => {
     },
     {
       name: "Stellenbosch",
-      image: "photo-1591373032196-47bae63b7baf",
+      image: "photo-1506377247377-2a5b3b417ebb",
       places: 8,
       rating: 4.5,
       description: "Winelands gem with farm-to-table dining and celiac-aware restaurants",
