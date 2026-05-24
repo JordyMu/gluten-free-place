@@ -194,6 +194,10 @@ const App = () => (
               <Route path="/gluten-free/france/marseille" element={<GlutenFreeMarseille />} />
               <Route path="/gluten-free/france/marseille/:slug" element={<MarseilleRestaurantPage />} />
               <Route path="/gluten-free/france/nice" element={<GlutenFreeNice />} />
+              <Route path="/gluten-free/france/nice/street-food" element={<NiceCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/france/nice/bakeries" element={<NiceCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/france/nice/grocery-stores" element={<NiceCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/france/nice/gluten-free-products" element={<NiceCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/france/nice/:slug" element={<NiceRestaurantPage />} />
               <Route path="/gluten-free/france/strasbourg" element={<GlutenFreeStrasbourg />} />
               <Route path="/gluten-free/france/strasbourg/:slug" element={<StrasbourgRestaurantPage />} />
