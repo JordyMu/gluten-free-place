@@ -57,7 +57,7 @@ const GlutenFreePretoriaBest = () => (
       </header>
 
       <section
-        className="relative text-white py-14 bg-cover bg-center"
+        className="relative text-white py-8 bg-cover bg-center"
         style={{ backgroundImage: "linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('/images/pretoria-hero.webp')" }}
       >
         <div className="absolute inset-0 bg-black/40" />
