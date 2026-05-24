@@ -17,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { parisRestaurants } from "@/data/parisRestaurants";
 import { SEOHead } from "@/components/SEOHead";
 import type { Restaurant } from "@/data/capeTownRestaurants";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
 type CategoryKey = "street-food" | "bakeries" | "grocery-stores" | "gluten-free-products";
 
