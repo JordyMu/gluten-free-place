@@ -265,7 +265,8 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
               <Card>
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-2 text-base">
-                    <Filter className="w-4 h-4 text-red-700" />
+                    <Filter className="w-4 h-4 text-violet-600" />
+
                     Filter by Menu Type
                   </CardTitle>
                 </CardHeader>
@@ -284,7 +285,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
               <Card>
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-2 text-base">
-                    <Filter className="w-4 h-4 text-red-700" />
+                    <Filter className="w-4 h-4 text-violet-600" />
                     Filter by Safety
                   </CardTitle>
                 </CardHeader>
