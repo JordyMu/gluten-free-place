@@ -104,30 +104,10 @@ const GlutenFreeCairo = () => {
           </Card>
         </section>
 
-        <section className="mb-8">
-          <Card>
-            <CardHeader><CardTitle className="flex items-center gap-2"><Filter className="w-5 h-5" />Filter Restaurants</CardTitle></CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
-                  <Input placeholder="Search restaurants..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} /></div>
-                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
-                  <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger className="bg-white"><SelectValue placeholder="All menu types" /></SelectTrigger>
-                    <SelectContent className="bg-white z-50">
-                      <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
-                    </SelectContent>
-                  </Select></div>
-              </div>
-              <div className="mt-4 text-sm text-gray-600">Showing {filteredRestaurants.length} of {cairoRestaurants.length} restaurants</div>
-            </CardContent>
-          </Card>
-        </section>
-
         <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants</h2>
           <div className="grid gap-6">
             {filteredRestaurants.map((restaurant) => (
               <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-amber-300' : ''}`}>
@@ -194,6 +174,29 @@ const GlutenFreeCairo = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+            </div>
+            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+              <Card>
+            <CardHeader><CardTitle className="flex items-center gap-2"><Filter className="w-5 h-5" />Filter Restaurants</CardTitle></CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                  <Input placeholder="Search restaurants..." value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} /></div>
+                <div><label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
+                  <Select value={menuFilter} onValueChange={setMenuFilter}>
+                    <SelectTrigger className="bg-white"><SelectValue placeholder="All menu types" /></SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Menu Types</SelectItem>
+                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
+                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
+                    </SelectContent>
+                  </Select></div>
+              </div>
+              <div className="mt-4 text-sm text-gray-600">Showing {filteredRestaurants.length} of {cairoRestaurants.length} restaurants</div>
+            </CardContent>
+          </Card>
+            </aside>
           </div>
         </section>
 
