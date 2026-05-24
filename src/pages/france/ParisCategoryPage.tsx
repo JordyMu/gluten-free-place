@@ -28,6 +28,8 @@ interface CategoryMeta {
   badgeLabel: (n: number) => string;
   filter: (r: Restaurant) => boolean;
   comingSoonText: string;
+  venueLabel: string;
+  defaultVenueType: "restaurant" | "cafe" | "bakery" | "street-food" | "supermarket" | "gf-products";
 }
 
 const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
