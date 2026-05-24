@@ -117,7 +117,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
             <MapPin className="h-4 w-4 mr-1" />
             <span className="font-semibold">{country.places} places</span>
           </div>
-          <div className="flex items-center text-blue-600">
+          <div className="flex items-center text-orange-600">
             <Users className="h-4 w-4 mr-1" />
             <span className="text-sm">Verified reviews</span>
           </div>

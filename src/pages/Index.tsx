@@ -368,7 +368,7 @@ const Index = () => {
                       <span className="font-semibold">{destination.places} places</span>
                     </div>
                     {destination.topCities && (
-                      <div className="flex items-center text-blue-600">
+                      <div className="flex items-center text-orange-600">
                         <Users className="h-4 w-4 mr-1" />
                         <span className="text-sm">Verified reviews</span>
                       </div>
