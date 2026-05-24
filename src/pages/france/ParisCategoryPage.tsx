@@ -80,6 +80,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "gf-products",
     comingSoonText:
       "We're putting together our recommended gluten-free product list for Paris. Check back soon!",
+    venueLabel: "GF Product Spot",
+    defaultVenueType: "gf-products",
   },
 };
 
