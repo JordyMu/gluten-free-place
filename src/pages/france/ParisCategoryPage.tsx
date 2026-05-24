@@ -154,6 +154,14 @@ const ParisCategoryPage = ({ category }: Props) => {
         </section>
 
         <main className="container mx-auto px-4 py-12">
+          <div className="max-w-3xl mx-auto mb-8 bg-white border border-orange-200 rounded-lg p-6 flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
+            <div>
+              <h2 className="text-lg font-semibold text-gray-900">Know a great spot?</h2>
+              <p className="text-sm text-gray-600">Help the community — share your favorite {meta.emoji} place in Paris.</p>
+            </div>
+            <AddRestaurantDialog city="paris" triggerClassName="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 hover:from-orange-600 hover:to-red-600" />
+          </div>
+
           {venues.length > 0 ? (
             <div className="max-w-3xl mx-auto grid gap-6">
               {venues.map((restaurant) => (
