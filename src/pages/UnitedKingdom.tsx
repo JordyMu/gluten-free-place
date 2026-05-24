@@ -156,7 +156,7 @@ const UnitedKingdom = () => {
                   </div>
                   {city.route !== "#" ? (
                     <Link to={city.route}>
-                      <Button className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700">
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
                         Explore {city.name}
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
