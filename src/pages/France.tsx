@@ -112,7 +112,8 @@ const France = () => {
     },
     {
       name: "Bordeaux",
-      image: "photo-1606744824163-985d376605aa",
+      image: "/images/bordeaux.webp",
+      isLocal: true,
       places: 1,
       rating: 4.6,
       description: "Wine capital with artisan GF bakery options",
@@ -217,7 +218,7 @@ const France = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={(city as any).isLocal ? `${city.image}?v=2` : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     loading="lazy"
