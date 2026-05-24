@@ -74,7 +74,7 @@ export const niceRestaurants: Restaurant[] = [
     "reviewCount": 89,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -117,7 +117,7 @@ export const niceRestaurants: Restaurant[] = [
     "reviewCount": 72,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -160,7 +160,7 @@ export const niceRestaurants: Restaurant[] = [
     "reviewCount": 145,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -203,7 +203,7 @@ export const niceRestaurants: Restaurant[] = [
     "reviewCount": 98,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
