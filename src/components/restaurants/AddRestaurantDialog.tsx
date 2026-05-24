@@ -24,7 +24,7 @@ const restaurantSchema = z.object({
   specialty: z.string().trim().max(50, "Specialty must be less than 50 characters").optional().or(z.literal("")),
   overview: z.string().trim().max(500, "Overview must be less than 500 characters").optional().or(z.literal("")),
   cuisine_types: z.string().trim().max(200, "Cuisine types must be less than 200 characters").optional().or(z.literal("")),
-  venue_type: z.enum(["restaurant", "cafe", "bakery"]),
+  venue_type: z.enum(["restaurant", "cafe", "bakery", "street-food", "supermarket", "gf-products"]),
   celiac_safe: z.enum(["dedicated-facility", "protocols-in-place"]),
   menu_type: z.enum(["fully-gluten-free", "mixed-menu"]),
   pro_tip: z.string().trim().max(200, "Pro tip must be less than 200 characters").optional().or(z.literal("")),
