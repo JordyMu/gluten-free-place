@@ -180,7 +180,7 @@ const SouthAfrica = () => {
     },
     {
       name: "Port Elizabeth",
-      image: "photo-1580060839134-75a5edca2e99",
+      image: "/images/port-elizabeth-hero.webp",
       places: 6,
       rating: 4.3,
       description: "Friendly city on the Sunshine Coast with emerging GF dining options",
