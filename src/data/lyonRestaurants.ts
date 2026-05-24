@@ -31,7 +31,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 234,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -74,7 +74,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 189,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -118,7 +118,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 312,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -162,7 +162,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 198,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
@@ -206,7 +206,7 @@ export const lyonRestaurants: Restaurant[] = [
     "reviewCount": 245,
     "lat": 0,
     "lng": 0,
-    "venueType": "restaurant",
+    "venueType": "street-food",
     photos: [
       { url: "/images/almond-butterfly-bistro-1.webp", caption: "Bistro Interior" },
       { url: "/images/almond-butterfly-bistro-2.webp", caption: "GF Pastries" },
