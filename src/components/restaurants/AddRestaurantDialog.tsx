@@ -35,9 +35,11 @@ type RestaurantFormValues = z.infer<typeof restaurantSchema>;
 interface AddRestaurantDialogProps {
   city: string;
   triggerClassName?: string;
+  venueLabel?: string;
+  defaultVenueType?: "restaurant" | "cafe" | "bakery" | "street-food" | "supermarket" | "gf-products";
 }
 
-export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDialogProps) => {
+export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Restaurant", defaultVenueType = "restaurant" }: AddRestaurantDialogProps) => {
   const [open, setOpen] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -55,7 +57,7 @@ export const AddRestaurantDialog = ({ city, triggerClassName }: AddRestaurantDia
       specialty: "",
       overview: "",
       cuisine_types: "",
-      venue_type: "restaurant",
+      venue_type: defaultVenueType,
       celiac_safe: "protocols-in-place",
       menu_type: "mixed-menu",
       pro_tip: "",
