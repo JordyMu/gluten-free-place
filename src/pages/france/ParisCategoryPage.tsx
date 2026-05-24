@@ -68,6 +68,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     filter: (r) => r.venueType === "supermarket",
     comingSoonText:
       "We're mapping the best gluten-free grocery stores and supermarkets in Paris. Check back soon!",
+    venueLabel: "Grocery Store",
+    defaultVenueType: "supermarket",
   },
   "gluten-free-products": {
     title: "Gluten-Free Products in Paris",
