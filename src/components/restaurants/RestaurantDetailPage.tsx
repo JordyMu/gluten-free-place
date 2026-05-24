@@ -241,40 +241,61 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
       <div className="container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
           {/* Static Photos from data */}
-          {restaurant.photos && restaurant.photos.length > 0 && (
-            <div className="mb-8">
-              <h3 className="flex items-center gap-2 text-sm font-semibold text-muted-foreground mb-3">
-                <Camera className="w-4 h-4" />
-                Featured Photos
-              </h3>
-              <div className="flex gap-3 overflow-x-auto pb-2">
-                {restaurant.photos.map((photo, index) => {
-                  const isObject = typeof photo === 'object';
-                  const photoUrl = isObject ? photo.url : photo;
-                  const caption = isObject ? photo.caption : undefined;
+          {(() => {
+            const hasPhotos = restaurant.photos && restaurant.photos.length > 0;
+            const showEmptyPlaceholder = !hasPhotos && restaurant.country === "Canada";
+            if (!hasPhotos && !showEmptyPlaceholder) return null;
+            return (
+              <div className="mb-8">
+                <h3 className="flex items-center gap-2 text-sm font-semibold text-muted-foreground mb-3">
+                  <Camera className="w-4 h-4" />
+                  Featured Photos
+                </h3>
+                {hasPhotos ? (
+                  <div className="flex gap-3 overflow-x-auto pb-2">
+                    {restaurant.photos!.map((photo, index) => {
+                      const isObject = typeof photo === 'object';
+                      const photoUrl = isObject ? photo.url : photo;
+                      const caption = isObject ? photo.caption : undefined;
 
-                  return (
-                    <div key={index} className="shrink-0 flex flex-col items-center gap-1.5">
-                      <div className="w-28 h-28 rounded-xl overflow-hidden bg-muted shadow-sm">
-                        <img 
-                          src={photoUrl} 
-                          alt={caption || `${restaurant.name} photo ${index + 1}`}
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </div>
-                      {caption && (
-                        <span className="text-xs font-medium text-muted-foreground text-center w-28 leading-tight line-clamp-2">
-                          {caption}
+                      return (
+                        <div key={index} className="shrink-0 flex flex-col items-center gap-1.5">
+                          <div className="w-28 h-28 rounded-xl overflow-hidden bg-muted shadow-sm">
+                            <img
+                              src={photoUrl}
+                              alt={caption || `${restaurant.name} photo ${index + 1}`}
+                              className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          {caption && (
+                            <span className="text-xs font-medium text-muted-foreground text-center w-28 leading-tight line-clamp-2">
+                              {caption}
+                            </span>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                ) : (
+                  <div className="flex gap-3 overflow-x-auto pb-2">
+                    {Array.from({ length: 4 }).map((_, i) => (
+                      <div key={i} className="shrink-0 flex flex-col items-center gap-1.5">
+                        <div className="w-28 h-28 rounded-xl bg-muted/60 border border-dashed border-muted-foreground/30 flex items-center justify-center">
+                          <Camera className="w-6 h-6 text-muted-foreground/40" />
+                        </div>
+                        <span className="text-xs font-medium text-muted-foreground/70 text-center w-28 leading-tight">
+                          Photos coming soon
                         </span>
-                      )}
-                    </div>
-                  );
-                })}
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
-            </div>
-          )}
+            );
+          })()}
+
 
           {/* Location & Contact */}
           <div className="grid md:grid-cols-2 gap-8 mb-8">
