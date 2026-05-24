@@ -123,7 +123,8 @@ const France = () => {
     },
     {
       name: "Nice",
-      image: "photo-1533614767277-ed01112a4e34",
+      image: "/images/nice.webp",
+      isLocal: true,
       places: 1,
       rating: 4.6,
       description: "Côte d'Azur destination with vegan & GF patisseries",
