@@ -56,6 +56,8 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
       /bakery|boulangerie|patisserie|pastry/i.test(r.specialty || ""),
     comingSoonText:
       "We're curating the best dedicated gluten-free bakeries in Paris. Check back soon!",
+    venueLabel: "Bakery",
+    defaultVenueType: "bakery",
   },
   "grocery-stores": {
     title: "Gluten-Free Grocery Stores in Paris",
