@@ -154,7 +154,8 @@ export const lyonRestaurants: Restaurant[] = [
     "cuisineTypes": [
       "Italian",
       "Pizza",
-      "Gluten-Free"
+      "Gluten-Free",
+      "Bakery"
     ],
     "celiacSafe": "dedicated-facility",
     "menuType": "fully-gluten-free",
