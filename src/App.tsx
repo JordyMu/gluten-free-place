@@ -38,6 +38,7 @@ const LyonRestaurantPage = lazy(() => import("./pages/france/LyonRestaurantPage"
 const BordeauxRestaurantPage = lazy(() => import("./pages/france/BordeauxRestaurantPage"));
 const MarseilleRestaurantPage = lazy(() => import("./pages/france/MarseilleRestaurantPage"));
 const NiceRestaurantPage = lazy(() => import("./pages/france/NiceRestaurantPage"));
+const NiceCategoryPage = lazy(() => import("./pages/france/NiceCategoryPage"));
 const StrasbourgRestaurantPage = lazy(() => import("./pages/france/StrasbourgRestaurantPage"));
 const Australia = lazy(() => import("./pages/Australia"));
 const UnitedKingdom = lazy(() => import("./pages/UnitedKingdom"));
