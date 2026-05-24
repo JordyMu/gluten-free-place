@@ -1908,6 +1908,96 @@ export const parisRestaurants: Restaurant[] = [
       { url: "/images/almond-butterfly-bistro-8.webp", caption: "Brazilian Guaraná & Fresh Juices" },
     ],
     "celiacSafetyScore": 10
+  },
+  {
+    "name": "Café Mareva",
+    "slug": "cafe-mareva",
+    "address": "8 Rue des Martyrs, 75009 Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "hours": "Mon-Sat: 10:00AM - 8:00PM",
+    "phone": "+33 1 42 33 10 54",
+    "website": "www.cafemareva-paris.com",
+    "directionsUrl": "https://maps.google.com/?q=8+Rue+des+Martyrs+75009+Paris",
+    "specialty": "French • Street Food • Crêpes",
+    "overview": "Cozy gluten-free street food café in SoPi (South Pigalle) serving buckwheat galettes, savory crêpes and fresh juices. Dedicated gluten-free kitchen with a warm, neighborhood vibe.",
+    "menuHighlights": [
+      "🥞 Savory Buckwheat Galettes",
+      "🧀 Raclette Crêpe",
+      "🥤 Fresh Pressed Juices",
+      "🍰 GF Lemon Tart"
+    ],
+    "proTip": "Order the raclette galette with potatoes and cornichons — a Parisian street food classic done gluten-free!",
+    "icon": "🍢",
+    "featured": false,
+    "cuisineTypes": [
+      "French",
+      "Street Food",
+      "Crêpes"
+    ],
+    "celiacSafe": "dedicated-facility",
+    "menuType": "fully-gluten-free",
+    "rating": 4.5,
+    "reviewCount": 167,
+    "lat": 0,
+    "lng": 0,
+    "venueType": "street-food",
+    photos: [
+      { url: "/images/almond-butterfly-bistro-1.webp", caption: "Savory Buckwheat Galette" },
+      { url: "/images/almond-butterfly-bistro-2.webp", caption: "Raclette Crêpe with Potatoes" },
+      { url: "/images/almond-butterfly-bistro-3.webp", caption: "Fresh Pressed Juices Bar" },
+      { url: "/images/almond-butterfly-bistro-4.webp", caption: "Cozy SoPi Street Counter" },
+      { url: "/images/almond-butterfly-bistro-5.webp", caption: "GF Lemon Tart Slice" },
+      { url: "/images/almond-butterfly-bistro-6.webp", caption: "Seasonal Vegetable Galette" },
+      { url: "/images/almond-butterfly-bistro-7.webp", caption: "Cider & Crêpe Pairing" },
+      { url: "/images/almond-butterfly-bistro-8.webp", caption: "Outdoor Street Seating" },
+    ],
+    "celiacSafetyScore": 10
+  },
+  {
+    "name": "La Crème de Paris Notre-Dame",
+    "slug": "la-creme-de-paris-notre-dame",
+    "address": "1 Rue du Petit Pont, 75005 Paris, France",
+    "city": "Paris",
+    "country": "France",
+    "hours": "Daily: 9:00AM - 11:00PM",
+    "phone": "+33 1 42 33 10 55",
+    "website": "www.lacremedeparis.com",
+    "directionsUrl": "https://maps.google.com/?q=1+Rue+du+Petit+Pont+75005+Paris",
+    "specialty": "French • Street Food • Desserts",
+    "overview": "Iconic gluten-free crêperie steps from Notre-Dame Cathedral serving artisan sweet crêpes, gaufres (waffles) and rich hot chocolate. A must-visit celiac-safe spot in the heart of Paris.",
+    "menuHighlights": [
+      "🥞 Nutella Banana Crêpe",
+      "🧇 Belgian-Style GF Waffles",
+      "🍫 Parisian Hot Chocolate",
+      "🍓 Seasonal Fruit Crêpe"
+    ],
+    "proTip": "Get the Nutella banana crêpe with a side of their legendary thick hot chocolate — best enjoyed watching Notre-Dame!",
+    "icon": "🍢",
+    "featured": true,
+    "cuisineTypes": [
+      "French",
+      "Street Food",
+      "Desserts"
+    ],
+    "celiacSafe": "dedicated-facility",
+    "menuType": "fully-gluten-free",
+    "rating": 4.7,
+    "reviewCount": 312,
+    "lat": 0,
+    "lng": 0,
+    "venueType": "street-food",
+    photos: [
+      { url: "/images/almond-butterfly-bistro-1.webp", caption: "Nutella Banana Crêpe" },
+      { url: "/images/almond-butterfly-bistro-2.webp", caption: "Belgian-Style GF Waffles" },
+      { url: "/images/almond-butterfly-bistro-3.webp", caption: "Thick Parisian Hot Chocolate" },
+      { url: "/images/almond-butterfly-bistro-4.webp", caption: "Notre-Dame View Seating" },
+      { url: "/images/almond-butterfly-bistro-5.webp", caption: "Seasonal Berry Crêpe" },
+      { url: "/images/almond-butterfly-bistro-6.webp", caption: "Artisan Caramel Crêpe" },
+      { url: "/images/almond-butterfly-bistro-7.webp", caption: "GF Gaufre with Ice Cream" },
+      { url: "/images/almond-butterfly-bistro-8.webp", caption: "Late Night Crêpe Station" },
+    ],
+    "celiacSafetyScore": 10
   }
 ];
 
