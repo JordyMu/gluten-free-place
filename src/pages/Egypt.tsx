@@ -308,7 +308,7 @@ const Egypt = () => {
                     </div>
                   </div>
                   <Link to={city.route}>
-                    <Button className="w-full">
+                    <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
                       Explore {city.name}
                     </Button>
                   </Link>

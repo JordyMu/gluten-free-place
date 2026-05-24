@@ -216,7 +216,7 @@ const Mauritius = () => {
                     <Button disabled className="w-full opacity-60">Coming Soon</Button>
                   ) : (
                     <Link to={city.route} className="w-full">
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700">Explore {city.name}</Button>
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">Explore {city.name}</Button>
                     </Link>
                   )}
                 </CardContent>
