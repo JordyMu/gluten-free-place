@@ -125,14 +125,14 @@ export const AddRestaurantDialog = ({ city, triggerClassName, venueLabel = "Rest
       <DialogTrigger asChild>
         <Button size="lg" variant="outline" className={triggerClassName}>
           <Plus className="w-5 h-5 mr-2" />
-          Add a Restaurant
+          Add a {venueLabel}
         </Button>
       </DialogTrigger>
       <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto">
         <DialogHeader>
-          <DialogTitle>Add a Gluten-Free Restaurant</DialogTitle>
+          <DialogTitle>Add a Gluten-Free {venueLabel}</DialogTitle>
           <DialogDescription>
-            Help the community by sharing a gluten-free friendly restaurant. Your submission will be reviewed before being published.
+            Help the community by sharing a gluten-free friendly {venueLabel.toLowerCase()}. Your submission will be reviewed before being published.
           </DialogDescription>
         </DialogHeader>
 
