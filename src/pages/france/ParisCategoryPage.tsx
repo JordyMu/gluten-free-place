@@ -169,7 +169,7 @@ const ParisCategoryPage = ({ category }: Props) => {
               <h2 className="text-lg font-semibold text-gray-900">Know a great spot?</h2>
               <p className="text-sm text-gray-600">Help the community — share your favorite {meta.emoji} place in Paris.</p>
             </div>
-            <AddRestaurantDialog city="paris" triggerClassName="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 hover:from-orange-600 hover:to-red-600" />
+            <AddRestaurantDialog city="paris" venueLabel={meta.venueLabel} defaultVenueType={meta.defaultVenueType} triggerClassName="bg-gradient-to-r from-orange-500 to-red-500 text-white border-0 hover:from-orange-600 hover:to-red-600" />
           </div>
 
           {venues.length > 0 ? (
