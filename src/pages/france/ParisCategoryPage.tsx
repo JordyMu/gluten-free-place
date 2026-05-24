@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Star, UtensilsCrossed } from "lucide-react";
+import {
+  ArrowLeft,
+  CheckCircle,
+  Clock,
+  Globe,
+  MapPin,
+  MessageCircle,
+  Navigation,
+  Phone,
+  Shield,
+  Star,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { parisRestaurants } from "@/data/parisRestaurants";
 import { SEOHead } from "@/components/SEOHead";
@@ -63,6 +74,44 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
   },
 };
 
+const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
+  if (level === "dedicated-facility") {
+    return (
+      <Badge className="bg-green-100 text-green-800 border-green-300">
+        <Shield className="w-3 h-3 mr-1" />
+        Dedicated GF Facility
+      </Badge>
+    );
+  }
+  return (
+    <Badge className="bg-blue-100 text-blue-800 border-blue-300">
+      <CheckCircle className="w-3 h-3 mr-1" />
+      Celiac Protocols
+    </Badge>
+  );
+};
+
+const getMenuTypeBadge = (type: Restaurant["menuType"]) => {
+  if (type === "fully-gluten-free") {
+    return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% Gluten-Free</Badge>;
+  }
+  return <Badge className="bg-amber-100 text-amber-800 border-amber-300">GF Options Available</Badge>;
+};
+
+const renderStarRating = (rating: number) => (
+  <div className="flex items-center gap-1">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Star key={i} className={`w-4 h-4 ${i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
+    ))}
+    <span className="ml-1 font-semibold">{rating}</span>
+  </div>
+);
+
+const openExternalLink = (url: string) => {
+  const normalizedUrl = url.startsWith("http") ? url : `https://${url}`;
+  window.open(normalizedUrl, "_blank", "noopener,noreferrer");
+};
+
 interface Props {
   category: CategoryKey;
 }
@@ -105,47 +154,116 @@ const ParisCategoryPage = ({ category }: Props) => {
 
         <main className="container mx-auto px-4 py-12">
           {venues.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {venues.map((venue) => (
-                <Link key={venue.slug} to={`/gluten-free/france/paris/${venue.slug}`}>
-                  <Card className="h-full hover:shadow-lg transition-shadow cursor-pointer">
-                    <CardHeader>
-                      <div className="flex items-start justify-between gap-2">
-                        <CardTitle className="text-lg">{venue.name}</CardTitle>
-                        <Badge variant="secondary" className="bg-orange-100 text-orange-800 shrink-0">
-                          {meta.emoji}
-                        </Badge>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-3">
-                        <div className="flex items-center gap-2 text-gray-600">
-                          <MapPin className="w-4 h-4" />
-                          <span className="text-sm">
-                            {venue.address.split(",")[1]?.trim() || venue.city}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          <Star className="w-4 h-4 text-yellow-500 fill-yellow-500" />
-                          <span className="font-medium">{venue.rating}</span>
-                        </div>
-                        {venue.celiacSafetyScore && (
-                          <div className="flex items-center gap-2">
-                            <UtensilsCrossed className="w-4 h-4 text-green-600" />
-                            <span className="text-sm text-green-700">
-                              Safety Score: {venue.celiacSafetyScore}/10
-                            </span>
-                          </div>
+            <div className="max-w-3xl mx-auto grid gap-6">
+              {venues.map((restaurant) => (
+                <Card
+                  key={restaurant.slug}
+                  className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="mb-3">
+                      <div className="flex items-center gap-2 mb-1 flex-wrap">
+                        <span className="text-2xl">{restaurant.icon}</span>
+                        <Link
+                          to={`/gluten-free/france/paris/${restaurant.slug}`}
+                          className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
+                        >
+                          {restaurant.name}
+                        </Link>
+                        {restaurant.featured && (
+                          <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
                         )}
-                        <p className="text-sm text-gray-600 line-clamp-2">{venue.overview}</p>
                       </div>
-                    </CardContent>
-                  </Card>
-                </Link>
+                      <p className="text-sm text-gray-500">{restaurant.specialty}</p>
+                    </div>
+
+                    <div className="flex items-center gap-2 mb-3">
+                      {renderStarRating(restaurant.rating)}
+                      <span className="text-sm text-gray-500">({restaurant.reviewCount} reviews)</span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {restaurant.cuisineTypes.map((cuisine) => (
+                        <Badge key={cuisine} variant="outline">
+                          {cuisine}
+                        </Badge>
+                      ))}
+                      {getCeliacSafeBadge(restaurant.celiacSafe)}
+                      {getMenuTypeBadge(restaurant.menuType)}
+                    </div>
+
+                    <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                    {restaurant.menuHighlights?.length > 0 && (
+                      <div className="mb-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.menuHighlights.map((item) => (
+                            <Badge key={`${restaurant.slug}-${item}`} variant="secondary" className="text-sm">
+                              {item}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {restaurant.proTip && (
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MessageCircle className="w-4 h-4 text-amber-700" />
+                          <span className="font-medium text-amber-800">Pro Tip:</span>
+                          <span className="text-amber-700">{restaurant.proTip}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span>{restaurant.address}</span>
+                      </div>
+                      {restaurant.hours && (
+                        <div className="flex items-center gap-2">
+                          <Clock className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.hours}</span>
+                        </div>
+                      )}
+                      {restaurant.phone && (
+                        <div className="flex items-center gap-2">
+                          <Phone className="w-4 h-4 text-gray-400" />
+                          <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">
+                            {restaurant.phone}
+                          </a>
+                        </div>
+                      )}
+                    </div>
+
+                    <div className="flex flex-wrap gap-3">
+                      <Button
+                        type="button"
+                        className="bg-blue-700 hover:bg-blue-800"
+                        onClick={() => openExternalLink(restaurant.directionsUrl)}
+                      >
+                        <Navigation className="w-4 h-4 mr-2" />
+                        Get Directions
+                      </Button>
+                      {restaurant.website && (
+                        <Button
+                          type="button"
+                          variant="outline"
+                          onClick={() => openExternalLink(restaurant.website!)}
+                        >
+                          <Globe className="w-4 h-4 mr-2" />
+                          Website
+                        </Button>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           ) : (
-            <Card className="text-center py-12">
+            <Card className="text-center py-12 max-w-2xl mx-auto">
               <CardContent>
                 <div className="text-5xl mb-4">{meta.emoji}</div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Coming Soon!</h2>
