@@ -12,6 +12,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 interface Restaurant {
   name: string;
@@ -914,6 +915,10 @@ const GlutenFreeCapeTown = () => {
 
 
         {/* FAQ Section */}
+        <section className="mb-12">
+          <RelatedCities country="south-africa" currentCitySlug="cape-town" />
+        </section>
+
         <section className="mb-12">
           <Card>
             <CardHeader>

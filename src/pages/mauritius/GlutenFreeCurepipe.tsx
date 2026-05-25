@@ -14,6 +14,7 @@ import curepipeHero from "@/assets/curepipe-mauritius.jpg";
 import { curepipeRestaurants } from "@/data/curepipeRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeCurepipe = () => {
@@ -317,6 +318,10 @@ const GlutenFreeCurepipe = () => {
           </Card>
             </aside>
           </div>
+        </section>
+
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="curepipe" />
         </section>
 
         <section className="mb-12">

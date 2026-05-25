@@ -12,6 +12,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import quatreBornesHero from "@/assets/quatre-bornes-mauritius.jpg";
 import { quatreBornesRestaurants } from "@/data/quatreBornesRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 
 const GlutenFreeQuatreBornes = () => {
@@ -263,6 +264,10 @@ const GlutenFreeQuatreBornes = () => {
           </Card>
             </aside>
           </div>
+        </section>
+
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="quatre-bornes" />
         </section>
 
         <section className="mb-12">

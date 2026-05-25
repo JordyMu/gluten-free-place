@@ -12,6 +12,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import mahebourgHero from "@/assets/mahebourg-mauritius.jpg";
 import { mahebourgRestaurants } from "@/data/mahebourgRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 
 const GlutenFreeMahebourg = () => {
@@ -264,6 +265,10 @@ const GlutenFreeMahebourg = () => {
           </Card>
             </aside>
           </div>
+        </section>
+
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="mahebourg" />
         </section>
 
         <section className="mb-12">

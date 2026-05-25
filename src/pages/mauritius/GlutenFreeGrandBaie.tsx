@@ -13,6 +13,7 @@ import grandBaieHero from "@/assets/grand-baie-mauritius.jpg";
 
 import { grandBaieRestaurants, MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 type Restaurant = MauritiusCityRestaurant;
 const GlutenFreeGrandBaie = () => {
@@ -504,6 +505,10 @@ useEffect(() => {
         </section>
 
         {/* FAQ Section */}
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="grand-baie" />
+        </section>
+
         <section className="mb-12">
           <Card>
             <CardHeader>

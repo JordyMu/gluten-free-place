@@ -13,6 +13,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
 import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 interface RestaurantWithDistance extends Restaurant {
   distance?: number;
@@ -552,6 +553,10 @@ const GlutenFreePretoria = () => {
         </section>
 
         {/* FAQ Section */}
+        <section className="mb-12">
+          <RelatedCities country="south-africa" currentCitySlug="pretoria" />
+        </section>
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">❓ Frequently Asked Questions</h2>
           <Card>
