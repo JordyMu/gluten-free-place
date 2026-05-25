@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { niceRestaurants } from "@/data/niceRestaurants";
+import { niceRestaurants, NICE_STREET_FOOD_SLUGS } from "@/data/niceRestaurants";
 import { SEOHead } from "@/components/SEOHead";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
