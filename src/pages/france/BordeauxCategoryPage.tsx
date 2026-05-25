@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { bordeauxRestaurants } from "@/data/bordeauxRestaurants";
+import { bordeauxRestaurants, BORDEAUX_STREET_FOOD_SLUGS } from "@/data/bordeauxRestaurants";
 import { SEOHead } from "@/components/SEOHead";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
