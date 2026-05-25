@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 
 interface FAQItem {
@@ -301,6 +302,8 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
             </aside>
           </div>
         </section>
+
+        <RelatedCities country="kenya" currentCitySlug={citySlug} />
 
         <section className="mb-12">
           <Card>
