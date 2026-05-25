@@ -14,6 +14,7 @@ import flicEnFlacHero from "@/assets/flic-en-flac-mauritius.jpg";
 import { flicEnFlacRestaurants } from "@/data/flicEnFlacRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreeFlicEnFlac = () => {
@@ -420,6 +421,10 @@ useEffect(() => {
           </Card>
             </aside>
           </div>
+        </section>
+
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="flic-en-flac" />
         </section>
 
         <section className="mb-12">

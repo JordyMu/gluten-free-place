@@ -14,6 +14,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { portLouisRestaurants } from "@/data/portLouisRestaurants";
 import { MauritiusCityRestaurant } from "@/data/grandBaieRestaurants";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreePortLouis = () => {
@@ -545,6 +546,10 @@ useEffect(() => {
         </section>
 
         {/* FAQ Section */}
+        <section className="mb-12">
+          <RelatedCities country="mauritius" currentCitySlug="port-louis" />
+        </section>
+
         <section className="mb-12">
           <Card>
             <CardHeader>

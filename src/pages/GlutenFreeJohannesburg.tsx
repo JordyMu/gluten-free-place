@@ -14,6 +14,7 @@ import { johannesburgRestaurants } from "@/data/johannesburgRestaurants";
 import { Restaurant } from "@/data/capeTownRestaurants";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 interface RestaurantWithDistance extends Restaurant {
   distance?: number;
@@ -608,6 +609,10 @@ const GlutenFreeJohannesburg = () => {
         </section>
 
         {/* FAQ Section */}
+        <section className="mb-12">
+          <RelatedCities country="south-africa" currentCitySlug="johannesburg" />
+        </section>
+
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-900 mb-6">❓ Frequently Asked Questions</h2>
           <Card>
