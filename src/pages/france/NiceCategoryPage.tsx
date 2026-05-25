@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { niceRestaurants } from "@/data/niceRestaurants";
+import { niceRestaurants, NICE_STREET_FOOD_SLUGS } from "@/data/niceRestaurants";
 import { SEOHead } from "@/components/SEOHead";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
@@ -129,7 +129,12 @@ interface Props {
 
 const NiceCategoryPage = ({ category }: Props) => {
   const meta = CATEGORIES[category];
-  const venues = niceRestaurants.filter(meta.filter);
+  const venues =
+    category === "street-food"
+      ? (NICE_STREET_FOOD_SLUGS
+          .map((slug) => niceRestaurants.find((r) => r.slug === slug))
+          .filter(Boolean) as Restaurant[])
+      : niceRestaurants.filter(meta.filter);
 
   return (
     <>
