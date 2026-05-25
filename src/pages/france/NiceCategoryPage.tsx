@@ -129,7 +129,12 @@ interface Props {
 
 const NiceCategoryPage = ({ category }: Props) => {
   const meta = CATEGORIES[category];
-  const venues = niceRestaurants.filter(meta.filter);
+  const venues =
+    category === "street-food"
+      ? (NICE_STREET_FOOD_SLUGS
+          .map((slug) => niceRestaurants.find((r) => r.slug === slug))
+          .filter(Boolean) as Restaurant[])
+      : niceRestaurants.filter(meta.filter);
 
   return (
     <>
