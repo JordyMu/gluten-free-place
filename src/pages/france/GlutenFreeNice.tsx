@@ -85,7 +85,7 @@ const GlutenFreeNice = () => (
                   <p className="text-gray-700">Our editorial top 10 celiac-safe picks across Nice — ranked by safety, reviews and quality.</p>
                 </div>
               </div>
-              <Link to="/gluten-free/france/nice/best" className="md:flex-shrink-0">
+              <Link to="/gluten-free/france/nice/best-gluten-free-restaurant-in-nice" className="md:flex-shrink-0">
                 <Button className="bg-amber-600 hover:bg-amber-700 text-white">View the Top 10</Button>
               </Link>
             </CardContent>

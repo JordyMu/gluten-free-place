@@ -28,7 +28,7 @@ const schemaJson = [
     "@type": "ItemList",
     name: "Best Gluten-Free Restaurants in Nice",
     description,
-    url: "https://glutenfreeplace.org/gluten-free/france/nice/best",
+    url: "https://glutenfreeplace.org/gluten-free/france/nice/best-gluten-free-restaurant-in-nice",
     itemListElement: top.map((r, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -43,7 +43,7 @@ const GlutenFreeNiceBest = () => (
     <SEOHead
       title={pageTitle}
       description={description}
-      canonical="/gluten-free/france/nice/best"
+      canonical="/gluten-free/france/nice/best-gluten-free-restaurant-in-nice"
       schemaJson={schemaJson}
     />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
