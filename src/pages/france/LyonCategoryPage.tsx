@@ -127,6 +127,25 @@ interface Props {
   category: CategoryKey;
 }
 
+// Curated street-food allowlist (ordered) — overrides venueType filter for this category
+const STREET_FOOD_SLUGS: string[] = [
+  "suzette-creperie",
+  "la-creperie-de-dede",
+  "creperie-emren",
+  "atelier-artisan-crepier-lyon",
+  "sans-gluten-pizza-epicerie",
+  "against-the-grain",
+  "pny-presquile",
+  "arepado",
+  "les-halles-de-lyon-paul-bocuse",
+  "marche-saint-antoine-celestins",
+  "les-gasteliers",
+  "chez-gregoire",
+  "copains-lyon",
+];
+
+
+
 const LyonCategoryPage = ({ category }: Props) => {
   const meta = CATEGORIES[category];
   let venues: Restaurant[];
