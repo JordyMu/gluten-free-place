@@ -127,9 +127,35 @@ interface Props {
   category: CategoryKey;
 }
 
+// Curated street-food allowlist (ordered) — overrides venueType filter for this category
+const STREET_FOOD_SLUGS: string[] = [
+  "breizh-cafe",
+  "creperie-parisienne-paris",
+  "la-creme-de-paris",
+  "la-sajerie",
+  "cookn-saj",
+  "las-du-fallafel",
+  "falafel-du-liban",
+  "boulangerie-chambelland",
+  "la-manufacture-du-sans-gluten",
+  "copains",
+  "onda-street-food-do-brasil",
+  "aujourdhui-demain",
+  "judy-rousseau-healthy-sans-gluten",
+  "loulou",
+];
+
 const ParisCategoryPage = ({ category }: Props) => {
   const meta = CATEGORIES[category];
-  const venues = parisRestaurants.filter(meta.filter);
+  let venues: Restaurant[];
+  if (category === "street-food") {
+    const seen = new Set<string>();
+    venues = STREET_FOOD_SLUGS
+      .map((slug) => parisRestaurants.find((r) => r.slug === slug && !seen.has(slug) && (seen.add(slug), true)))
+      .filter((r): r is Restaurant => Boolean(r));
+  } else {
+    venues = parisRestaurants.filter(meta.filter);
+  }
 
   return (
     <>
