@@ -129,7 +129,14 @@ interface Props {
 
 const BordeauxCategoryPage = ({ category }: Props) => {
   const meta = CATEGORIES[category];
-  const venues = bordeauxRestaurants.filter(meta.filter);
+  let venues: Restaurant[];
+  if (category === "street-food") {
+    venues = BORDEAUX_STREET_FOOD_SLUGS
+      .map((slug) => bordeauxRestaurants.find((r) => r.slug === slug))
+      .filter((r): r is Restaurant => Boolean(r));
+  } else {
+    venues = bordeauxRestaurants.filter(meta.filter);
+  }
 
   return (
     <>
