@@ -51,9 +51,7 @@ const CATEGORIES: Record<CategoryKey, CategoryMeta> = {
     description:
       "Toronto has incredible 100% gluten-free bakeries — fresh bread, pastries and cakes safe for celiacs.",
     badgeLabel: (n) => `${n} Bakeries`,
-    filter: (r) =>
-      r.cuisineTypes?.some((c) => /bakery|patisserie|boulangerie/i.test(c)) ||
-      /bakery|boulangerie|patisserie|pastry/i.test(r.specialty || ""),
+    filter: (r) => r.venueType === "bakery",
     comingSoonText:
       "We're curating the best dedicated gluten-free bakeries in Toronto. Check back soon!",
     venueLabel: "Bakery",
