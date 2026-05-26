@@ -2181,3 +2181,6 @@ export const torontoRestaurants: Restaurant[] = [
     celiacSafetyScore: 7,
   },
 ];
+
+export const getRestaurantBySlug = (slug: string) =>
+  torontoRestaurants.find((r) => r.slug === slug);
