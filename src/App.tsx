@@ -25,6 +25,7 @@ const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
 const GlutenFreeParisBest = lazy(() => import("./pages/france/GlutenFreeParisBest"));
 const ParisCategoryPage = lazy(() => import("./pages/france/ParisCategoryPage"));
 const GlutenFreeTorontoBest = lazy(() => import("./pages/canada/GlutenFreeTorontoBest"));
+const TorontoCategoryPage = lazy(() => import("./pages/canada/TorontoCategoryPage"));
 const GlutenFreeMontrealBest = lazy(() => import("./pages/canada/GlutenFreeMontrealBest"));
 const GlutenFreeLyon = lazy(() => import("./pages/france/GlutenFreeLyon"));
 const LyonCategoryPage = lazy(() => import("./pages/france/LyonCategoryPage"));
