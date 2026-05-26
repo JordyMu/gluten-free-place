@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Award } from "lucide-react";
+import { Trophy } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import CanadaCityPage from "@/components/canada/CanadaCityPage";
 import { montrealRestaurants } from "@/data/montrealRestaurants";
 
