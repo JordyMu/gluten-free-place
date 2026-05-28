@@ -1395,29 +1395,6 @@ export const newZealandCities: NZCity[] = [
           menuType: "mixed-menu",
           rating: 4.6,
           reviewCount: 178
-        },
-        {
-          name: "SPAR",
-          address: "Wellington, New Zealand",
-          hours: "Mon-Sun: 7:00AM – 10:00PM",
-          phone: "",
-          website: "",
-          directionsUrl: "https://maps.google.com/?q=SPAR+Wellington",
-          specialty: "Neighbourhood Supermarket",
-          overview: "A convenient neighbourhood SPAR supermarket in Wellington stocking everyday essentials including a small but useful gluten-free section.",
-          menuHighlights: [
-            "🛒 GF Snacks & Staples",
-            "🍞 GF Bread",
-            "🥫 GF Canned Goods"
-          ],
-          proTip: "Check the end-of-aisle displays for rotating GF product specials.",
-          icon: "🏪",
-          featured: false,
-          cuisineTypes: ["Supermarket", "Grocery"],
-          celiacSafe: "protocols-in-place",
-          menuType: "mixed-menu",
-          rating: 4.3,
-          reviewCount: 76
         }
       ]
     },
