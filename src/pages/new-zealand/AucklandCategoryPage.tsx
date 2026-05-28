@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SEOHead } from "@/components/SEOHead";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { newZealandCities, type NZRestaurant } from "@/data/newZealandCities";
+import { newZealandCities, nzSlug, type NZRestaurant } from "@/data/newZealandCities";
 
 type CategoryKey = "street-food" | "bakeries" | "grocery-stores" | "gluten-free-products";
 
@@ -176,7 +176,12 @@ const AucklandCategoryPage = ({ category }: Props) => {
                     <div className="mb-3">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <span className="text-2xl">{restaurant.icon}</span>
-                        <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
+                        <Link
+                          to={`/gluten-free/new-zealand/auckland/${nzSlug(restaurant.name)}`}
+                          className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
+                        >
+                          {restaurant.name}
+                        </Link>
                         {restaurant.featured && (
                           <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
                         )}
