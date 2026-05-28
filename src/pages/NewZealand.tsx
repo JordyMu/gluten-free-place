@@ -1538,6 +1538,74 @@ const NewZealand = () => {
           </div>
         ))}
       </main>
+
+      <section className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+                <Award className="h-4 w-4 mr-2" />
+                About
+              </Badge>
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in New Zealand</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Why New Zealand?</h3>
+                <p className="text-gray-600 mb-4">
+                  New Zealand has one of the highest celiac-awareness rates in the world. Cafés and
+                  restaurants from Auckland to Queenstown clearly mark gluten-free options, and dedicated
+                  GF bakeries make it easy to enjoy fresh bread, pies and pastries safely.
+                </p>
+                <p className="text-gray-600">
+                  Clear food labelling laws and a strong farm-to-table culture mean naturally gluten-free
+                  produce, seafood and meats are abundant nationwide.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Look for "GF" labelling — widely used across NZ menus</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Dedicated GF bakeries: The GF Depot (Auckland), Gluten Free 4u (Wellington)</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Coeliac New Zealand provides crossed-grain certification</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-blue-700 mt-0.5 flex-shrink-0" />
+                    <span>Countdown, New World and Pak'nSave stock wide GF ranges</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-16 bg-blue-50/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-10">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">FAQ</Badge>
+              <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+            </div>
+            <Accordion type="single" collapsible className="bg-white rounded-lg shadow-sm">
+              {nzFaqItems.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`faq-${index}`} className="px-6">
+                  <AccordionTrigger className="text-left font-semibold">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
     </div>
     </>
   );
