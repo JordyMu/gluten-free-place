@@ -72,6 +72,7 @@ const Ireland = lazy(() => import("./pages/Ireland"));
 const Germany = lazy(() => import("./pages/Germany"));
 const NewZealand = lazy(() => import("./pages/NewZealand"));
 const GlutenFreeAuckland = lazy(() => import("./pages/new-zealand/GlutenFreeAuckland"));
+const AucklandCategoryPage = lazy(() => import("./pages/new-zealand/AucklandCategoryPage"));
 const GlutenFreeWellington = lazy(() => import("./pages/new-zealand/GlutenFreeWellington"));
 const GlutenFreeQueenstownArrowtown = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtown"));
 const GlutenFreeChristchurch = lazy(() => import("./pages/new-zealand/GlutenFreeChristchurch"));
@@ -260,6 +261,10 @@ const App = () => (
               <Route path="/germany" element={<Germany />} />
               <Route path="/new-zealand" element={<NewZealand />} />
               <Route path="/gluten-free/new-zealand/auckland" element={<GlutenFreeAuckland />} />
+              <Route path="/gluten-free/new-zealand/auckland/street-food" element={<AucklandCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/new-zealand/auckland/bakeries" element={<AucklandCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/new-zealand/auckland/grocery-stores" element={<AucklandCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/new-zealand/auckland/gluten-free-products" element={<AucklandCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/new-zealand/wellington" element={<GlutenFreeWellington />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown" element={<GlutenFreeQueenstownArrowtown />} />
               <Route path="/gluten-free/new-zealand/christchurch" element={<GlutenFreeChristchurch />} />
