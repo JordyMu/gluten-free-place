@@ -1468,6 +1468,29 @@ export const newZealandCities: NZCity[] = [
           menuType: "mixed-menu",
           rating: 4.4,
           reviewCount: 189
+        },
+        {
+          name: "Taco Medic",
+          address: "Brecon Street, Queenstown 9300, New Zealand",
+          hours: "Mon-Sun: 11:00AM – 9:00PM",
+          phone: "",
+          website: "www.tacomedic.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Taco+Medic+Queenstown",
+          specialty: "Mexican Street Food",
+          overview: "Popular Queenstown taco spot serving fresh, made-to-order tacos with corn tortillas — naturally gluten-free and perfect for a quick, safe bite.",
+          menuHighlights: [
+            "🌮 Corn Tortilla Tacos (GF)",
+            "🥑 Guacamole & Chips (GF)",
+            "🌶️ Fresh Salsas (GF)"
+          ],
+          proTip: "All tacos are served on 100% corn tortillas — just confirm no cross-contact during busy periods!",
+          icon: "🌮",
+          featured: true,
+          cuisineTypes: ["Mexican", "Street Food", "Tacos"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.7,
+          reviewCount: 198
         }
       ]
     },
