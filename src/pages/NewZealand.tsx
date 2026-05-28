@@ -1051,27 +1051,80 @@ const NewZealand = () => {
           <div className="flex items-center gap-2 mb-2">
             <MapPin className="w-5 h-5 text-blue-600" />
             <h2 className="text-2xl font-bold text-gray-900">More Gluten-Free Spots Across New Zealand</h2>
+            <Badge variant="secondary">{moreRestaurants.length} restaurants</Badge>
           </div>
           <p className="text-gray-600 mb-6">Additional verified gluten-free venues nationwide.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {moreRestaurants.map((r) => (
-              <Card key={r.name} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-5">
-                  <h3 className="font-bold text-gray-900 mb-2">{r.name}</h3>
-                  <div className="flex items-start gap-2 text-sm text-gray-600 mb-4">
-                    <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
-                    <span>{r.address}</span>
+          <div className="grid gap-6">
+            {moreRestaurants.map((restaurant, index) => (
+              <Card key={index} className="overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-1">{restaurant.name}</h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          {renderStarRating(restaurant.rating)}
+                          <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                        </div>
+                      </div>
+                      <Button variant="ghost" size="sm">
+                        <Heart className="w-4 h-4" />
+                      </Button>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {restaurant.cuisineTypes?.map((cuisine, i) => (
+                        <Badge key={i} variant="outline">{cuisine}</Badge>
+                      ))}
+                      {getCeliacSafeBadge("protocols-in-place")}
+                      {getMenuTypeBadge("mixed-menu")}
+                    </div>
+
+                    <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span>{restaurant.address}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-gray-400" />
+                        <span>{restaurant.hours}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {restaurant.menuHighlights.map((item, i) => (
+                          <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {restaurant.proTip && (
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                        <div className="flex items-center gap-2">
+                          <MessageCircle className="w-4 h-4 text-amber-600" />
+                          <span className="font-medium text-amber-800">Pro Tip:</span>
+                          <span className="text-amber-700">{restaurant.proTip}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex gap-3 mt-4">
+                      <Button asChild className="bg-blue-600 hover:bg-blue-700">
+                        <a
+                          href={`https://maps.google.com/?q=${encodeURIComponent(restaurant.name + " " + restaurant.address)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Navigation className="w-4 h-4 mr-2" />
+                          Get Directions
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
-                    <a
-                      href={`https://maps.google.com/?q=${encodeURIComponent(r.name + " " + r.address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Navigation className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </a>
-                  </Button>
                 </CardContent>
               </Card>
             ))}
