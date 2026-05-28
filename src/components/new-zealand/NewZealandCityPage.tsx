@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
   MessageCircle, Navigation, Phone, Search, Shield, Star,
+  Utensils, Croissant, ShoppingCart, Package, Trophy,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -162,7 +163,81 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
             </Card>
           </section>
 
-          <section className="mb-12">
+          <section className="mb-10">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+              <Utensils className="w-6 h-6 text-blue-700" />
+              Browse by Category
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Find exactly what you're looking for with our curated category pages.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+              <Card className="border-red-200 bg-red-50/50">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <Utensils className="w-6 h-6 text-red-600" />
+                  <div>
+                    <div className="font-semibold text-gray-900">Street Food</div>
+                    <div className="text-xs text-gray-600">Markets & food trucks</div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-amber-200 bg-amber-50/50">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <Croissant className="w-6 h-6 text-amber-600" />
+                  <div>
+                    <div className="font-semibold text-gray-900">Bakeries</div>
+                    <div className="text-xs text-gray-600">Fresh bread & pastries</div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-emerald-200 bg-emerald-50/50">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <ShoppingCart className="w-6 h-6 text-emerald-600" />
+                  <div>
+                    <div className="font-semibold text-gray-900">Grocery Stores</div>
+                    <div className="text-xs text-gray-600">Supermarkets & shops</div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card className="border-purple-200 bg-purple-50/50">
+                <CardContent className="p-4 flex items-center gap-3">
+                  <Package className="w-6 h-6 text-purple-600" />
+                  <div>
+                    <div className="font-semibold text-gray-900">GF Products</div>
+                    <div className="text-xs text-gray-600">Specialty GF items</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+
+          <section className="mb-10">
+            <Card className="bg-amber-50 border-amber-200">
+              <CardContent className="p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <Trophy className="w-8 h-8 text-amber-600 flex-shrink-0" />
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                      Best Gluten-Free Restaurants in {city.name}
+                    </h2>
+                    <p className="text-gray-700">
+                      Our editorial top 10 celiac-safe picks across {city.name} — ranked by safety, reviews and quality.
+                    </p>
+                  </div>
+                </div>
+                <Button
+                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+                  onClick={() => {
+                    document.getElementById("verified-restaurants")?.scrollIntoView({ behavior: "smooth" });
+                  }}
+                >
+                  View the Top 10
+                </Button>
+              </CardContent>
+            </Card>
+          </section>
+
+          <section className="mb-12" id="verified-restaurants">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
