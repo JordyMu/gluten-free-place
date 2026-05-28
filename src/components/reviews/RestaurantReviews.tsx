@@ -32,7 +32,7 @@ export const RestaurantReviews = ({
         onReviewSubmitted={refetch}
       />
 
-      <ReviewList reviews={reviews} loading={loading} />
+      <ReviewList reviews={reviews} loading={loading} onDeleted={refetch} />
     </div>
   );
 };
