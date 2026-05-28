@@ -233,14 +233,11 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
                     </p>
                   </div>
                 </div>
-                <Button
-                  className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                  onClick={() => {
-                    document.getElementById("verified-restaurants")?.scrollIntoView({ behavior: "smooth" });
-                  }}
-                >
-                  View the Top 10
-                </Button>
+                <Link to={`/gluten-free/new-zealand/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`}>
+                  <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                    View the Top 10
+                  </Button>
+                </Link>
               </CardContent>
             </Card>
           </section>
