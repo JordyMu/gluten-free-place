@@ -4,7 +4,7 @@ import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { newZealandCities } from "@/data/newZealandCities";
+import { newZealandCities, nzSlug } from "@/data/newZealandCities";
 
 const openExternalLink = (url: string) => {
   const normalizedUrl = url.startsWith("http") ? url : `https://${url}`;
@@ -31,7 +31,7 @@ const schemaJson = [
       "@type": "ListItem",
       position: i + 1,
       name: r.name,
-      url: `https://glutenfreeplace.org/gluten-free/new-zealand/auckland/${r.slug}`,
+      url: `https://glutenfreeplace.org/gluten-free/new-zealand/auckland/${nzSlug(r.name)}`,
     })),
   },
 ];
@@ -87,7 +87,7 @@ const GlutenFreeAucklandBest = () => (
           <h2 className="text-2xl font-bold text-gray-900 mb-6">Top 10 Gluten-Free Restaurants in Auckland</h2>
           <div className="grid gap-6">
             {top.map((r, i) => (
-              <Card key={r.slug} className="overflow-hidden">
+              <Card key={nzSlug(r.name)} className="overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4 mb-3 flex-wrap">
                     <div className="flex items-center justify-center w-12 h-12 rounded-full bg-blue-700 text-white font-bold text-lg flex-shrink-0">
@@ -97,7 +97,7 @@ const GlutenFreeAucklandBest = () => (
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         <span className="text-2xl">{r.icon}</span>
                         <Link
-                          to={`/gluten-free/new-zealand/auckland/${r.slug}`}
+                          to={`/gluten-free/new-zealand/auckland/${nzSlug(r.name)}`}
                           className="text-xl font-bold text-gray-900 hover:text-blue-700 hover:underline transition-colors"
                         >
                           {r.name}
@@ -152,7 +152,7 @@ const GlutenFreeAucklandBest = () => (
                     >
                       <Navigation className="w-4 h-4 mr-2" /> Get Directions
                     </Button>
-                    <Link to={`/gluten-free/new-zealand/auckland/${r.slug}`}>
+                    <Link to={`/gluten-free/new-zealand/auckland/${nzSlug(r.name)}`}>
                       <Button type="button" variant="outline">View details</Button>
                     </Link>
                   </div>
