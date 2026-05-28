@@ -71,6 +71,10 @@ const OtherCanadaRestaurantPage = lazy(() => import("./pages/canada/OtherCanadaR
 const Ireland = lazy(() => import("./pages/Ireland"));
 const Germany = lazy(() => import("./pages/Germany"));
 const NewZealand = lazy(() => import("./pages/NewZealand"));
+const GlutenFreeAuckland = lazy(() => import("./pages/new-zealand/GlutenFreeAuckland"));
+const GlutenFreeWellington = lazy(() => import("./pages/new-zealand/GlutenFreeWellington"));
+const GlutenFreeQueenstownArrowtown = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtown"));
+const GlutenFreeChristchurch = lazy(() => import("./pages/new-zealand/GlutenFreeChristchurch"));
 const SouthAfrica = lazy(() => import("./pages/SouthAfrica"));
 const GlutenFreeCapeTown = lazy(() => import("./pages/GlutenFreeCapeTown"));
 const GlutenFreeJohannesburg = lazy(() => import("./pages/GlutenFreeJohannesburg"));
