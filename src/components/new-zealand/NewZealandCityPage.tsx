@@ -263,7 +263,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
                             <span className="text-2xl">{restaurant.icon}</span>
                             <Link
                               to={`/gluten-free/new-zealand/${city.slug}/${nzSlug(restaurant.name)}`}
-                              className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
+                              className="text-xl font-bold text-gray-900 hover:text-blue-700 hover:underline transition-colors"
                             >
                               {restaurant.name}
                             </Link>
