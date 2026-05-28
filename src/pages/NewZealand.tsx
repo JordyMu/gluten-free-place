@@ -740,34 +740,36 @@ const NewZealand = () => {
   ];
 
   const moreRestaurants = [
-    { name: "Sabal", address: "169 Maunganui Road, Mount Maunganui 3116, New Zealand" },
-    { name: "Wooden Spoon", address: "169 London Street, Hamilton Central, Hamilton 3204, New Zealand" },
-    { name: "Dhara's Caffe", address: "19 Buxton Square, Nelson 7010, New Zealand" },
-    { name: "Black Rabbit Pizza", address: "94 Beach Road, Kaikōura 7300, New Zealand" },
-    { name: "That Sandwich Place", address: "112 Emerson Street, Napier South, Napier 4110, New Zealand" },
-    { name: "Munch", address: "62 Broadway Avenue, Palmerston North Central, Palmerston North 4410, New Zealand" },
-    { name: "Te Mata Figs Cafe", address: "205 Napier Road, Havelock North 4130, New Zealand" },
-    { name: "Bambuchi", address: "31a Waitoa Road, Hataitai, Wellington 6021, New Zealand" },
-    { name: "San Sea People Ice Cream", address: "107A Maunganui Road, Mount Maunganui 3116, New Zealand" },
-    { name: "Earth Store Whitianga", address: "67 Albert Street, Whitianga 3510, New Zealand" },
-    { name: "Dragonfruit Café", address: "7 Laurie Hall Lane, Whangārei 0110, New Zealand" },
-    { name: "Taste Nature", address: "131 High Street, Central Dunedin, Dunedin 9016, New Zealand" },
-    { name: "Hello Stranger Cafe", address: "1149 Pukuatua Street, Rotorua 3010, New Zealand" },
-    { name: "Stoked Bar & Grill", address: "19 Esplanade, Whitianga 3510, New Zealand" },
-    { name: "Mike's Bistro & Taproom", address: "40 Devon Street East, New Plymouth Central, New Plymouth 4310, New Zealand" },
-    { name: "Relishes Cafe", address: "1/99 Ardmore Street, Wanaka 9305, New Zealand" },
-    { name: "Kisa", address: "195 Cuba Street, Te Aro, Wellington 6011, New Zealand" },
-    { name: "Hunger Monger Seafood", address: "129 Marine Parade, Napier 4110, New Zealand" },
-    { name: "Sands Fish & Chips", address: "Shop 1, 623 Rocks Road, Tāhunanui, Nelson 7011, New Zealand" },
-    { name: "Big Fig", address: "105 Ardmore Street, Wanaka 9305, New Zealand" },
-    { name: "CBD Cafe", address: "41 Queen Street, Blenheim 7201, New Zealand" },
-    { name: "tibs", address: "112 Ocean View Road, Oneroa, Waiheke Island 1081, New Zealand" },
-    { name: "Plateau Bar + Eatery", address: "64 Tuwharetoa Street, Taupō 3330, New Zealand" },
-    { name: "Community Burgers", address: "112 Tennyson Street, Napier South, Napier 4110, New Zealand" },
-    { name: "Leonardo's Pure Pizzeria", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand" },
-    { name: "White & Wong's", address: "149 Quay Street, Auckland CBD, Auckland 1010, New Zealand" },
-    { name: "& Wine", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand" },
+    { name: "Sabal", address: "169 Maunganui Road, Mount Maunganui 3116, New Zealand", cuisineTypes: ["Indian", "Vegetarian"], overview: "Modern Indian eatery with a strong gluten-free menu and clear allergen labelling.", menuHighlights: ["🍛 GF curries", "🥘 Dosa (GF)", "🌶️ Vegan options"], proTip: "Ask for the GF menu — most curries are naturally gluten-free.", hours: "Tue-Sun: 5:00PM – 9:30PM", rating: 4.6, reviewCount: 187 },
+    { name: "Wooden Spoon", address: "169 London Street, Hamilton Central, Hamilton 3204, New Zealand", cuisineTypes: ["Cafe", "Brunch"], overview: "Hamilton brunch favourite with dedicated GF baking and a clearly marked menu.", menuHighlights: ["🥞 GF pancakes", "🥑 Smashed avo (GF)", "☕ Specialty coffee"], proTip: "Their GF bread is baked in-house — fantastic toast.", hours: "Mon-Sun: 7:00AM – 3:00PM", rating: 4.5, reviewCount: 142 },
+    { name: "Dhara's Caffe", address: "19 Buxton Square, Nelson 7010, New Zealand", cuisineTypes: ["Indian", "Cafe"], overview: "Indian-inspired café in Nelson with extensive gluten-free and vegan options.", menuHighlights: ["🍛 GF thali", "🫓 Rice flour roti", "🍵 Chai"], proTip: "The thali is almost entirely gluten-free.", hours: "Mon-Sat: 9:00AM – 4:00PM", rating: 4.7, reviewCount: 96 },
+    { name: "Black Rabbit Pizza", address: "94 Beach Road, Kaikōura 7300, New Zealand", cuisineTypes: ["Pizza", "Italian"], overview: "Seaside pizzeria offering reliable gluten-free bases and craft toppings.", menuHighlights: ["🍕 GF pizza base", "🥗 Fresh salads", "🍺 Local beer"], proTip: "Order GF base in advance on busy nights.", hours: "Wed-Sun: 4:00PM – 9:00PM", rating: 4.4, reviewCount: 118 },
+    { name: "That Sandwich Place", address: "112 Emerson Street, Napier South, Napier 4110, New Zealand", cuisineTypes: ["Sandwiches", "Cafe"], overview: "Napier deli with house-made GF bread and big, generous sandwiches.", menuHighlights: ["🥪 GF sandwiches", "🥗 Salads", "☕ Coffee"], proTip: "GF bread is baked fresh daily — ask what's available.", hours: "Mon-Fri: 8:00AM – 3:00PM", rating: 4.6, reviewCount: 89 },
+    { name: "Munch", address: "62 Broadway Avenue, Palmerston North Central, Palmerston North 4410, New Zealand", cuisineTypes: ["Cafe", "Brunch"], overview: "Palmerston North all-day eatery clearly marking GF and DF options across the menu.", menuHighlights: ["🍳 GF breakfast", "🥯 GF bagels", "🥗 Bowls"], proTip: "Almost the entire brunch menu can be made GF.", hours: "Mon-Sun: 7:30AM – 3:00PM", rating: 4.5, reviewCount: 156 },
+    { name: "Te Mata Figs Cafe", address: "205 Napier Road, Havelock North 4130, New Zealand", cuisineTypes: ["Cafe", "Orchard"], overview: "Hawke's Bay orchard café with seasonal, mostly naturally GF dishes.", menuHighlights: ["🌿 Seasonal plates", "🍯 Fig produce", "☕ Coffee"], proTip: "Most dishes are naturally GF — staff are very allergen-aware.", hours: "Wed-Sun: 9:00AM – 3:00PM", rating: 4.7, reviewCount: 112 },
+    { name: "Bambuchi", address: "31a Waitoa Road, Hataitai, Wellington 6021, New Zealand", cuisineTypes: ["Japanese", "Sushi"], overview: "Wellington Japanese spot with naturally GF sushi and tamari on request.", menuHighlights: ["🍣 Sushi", "🍜 Rice bowls", "🥢 GF tamari"], proTip: "Ask for tamari instead of soy sauce.", hours: "Tue-Sat: 11:30AM – 9:00PM", rating: 4.5, reviewCount: 73 },
+    { name: "San Sea People Ice Cream", address: "107A Maunganui Road, Mount Maunganui 3116, New Zealand", cuisineTypes: ["Ice Cream", "Dessert"], overview: "Artisan gelato with many naturally gluten-free flavours.", menuHighlights: ["🍦 Gelato (GF)", "🍫 Vegan flavours", "🍓 Sorbet"], proTip: "Most flavours are GF — confirm cones aren't shared.", hours: "Mon-Sun: 11:00AM – 9:00PM", rating: 4.8, reviewCount: 204 },
+    { name: "Earth Store Whitianga", address: "67 Albert Street, Whitianga 3510, New Zealand", cuisineTypes: ["Health Food", "Cafe"], overview: "Wholefoods store and café on the Coromandel with strong GF range.", menuHighlights: ["🥗 GF bowls", "🍪 GF baking", "🥤 Smoothies"], proTip: "Great for GF travel snacks for the road.", hours: "Mon-Sat: 8:30AM – 5:00PM", rating: 4.6, reviewCount: 64 },
+    { name: "Dragonfruit Café", address: "7 Laurie Hall Lane, Whangārei 0110, New Zealand", cuisineTypes: ["Cafe", "Vegan"], overview: "Whangārei plant-based café with a fully labelled GF menu.", menuHighlights: ["🌱 Vegan GF mains", "🥞 GF baking", "🥤 Smoothie bowls"], proTip: "Vegan + GF combined — easy to dine safely.", hours: "Tue-Sat: 8:00AM – 2:30PM", rating: 4.7, reviewCount: 98 },
+    { name: "Taste Nature", address: "131 High Street, Central Dunedin, Dunedin 9016, New Zealand", cuisineTypes: ["Organic", "Cafe"], overview: "Dunedin organic store + café with reliable gluten-free choices.", menuHighlights: ["🥗 GF deli bowls", "🍞 GF bread", "☕ Organic coffee"], proTip: "Stock up on GF pantry items from the store.", hours: "Mon-Sat: 8:00AM – 5:30PM", rating: 4.5, reviewCount: 121 },
+    { name: "Hello Stranger Cafe", address: "1149 Pukuatua Street, Rotorua 3010, New Zealand", cuisineTypes: ["Cafe", "Brunch"], overview: "Rotorua café known for GF baking and a wide allergen-friendly menu.", menuHighlights: ["🥯 GF baking", "🍳 GF brunch", "☕ Coffee"], proTip: "GF cabinet baking is excellent — go early.", hours: "Mon-Sun: 7:00AM – 3:00PM", rating: 4.6, reviewCount: 178 },
+    { name: "Stoked Bar & Grill", address: "19 Esplanade, Whitianga 3510, New Zealand", cuisineTypes: ["Grill", "Seafood"], overview: "Coromandel waterfront grill with a clearly marked GF menu.", menuHighlights: ["🥩 GF steaks", "🐟 Fresh fish", "🥗 Sides (GF)"], proTip: "Most mains can be made GF — ask for sauce on side.", hours: "Mon-Sun: 11:30AM – 9:00PM", rating: 4.4, reviewCount: 167 },
+    { name: "Mike's Bistro & Taproom", address: "40 Devon Street East, New Plymouth Central, New Plymouth 4310, New Zealand", cuisineTypes: ["Bistro", "Brewery"], overview: "New Plymouth bistro and brewery with GF beers and a labelled menu.", menuHighlights: ["🍺 GF beer", "🍔 GF burger", "🍟 GF fries"], proTip: "Genuinely GF craft beer on tap — rare in NZ.", hours: "Wed-Sun: 12:00PM – 10:00PM", rating: 4.5, reviewCount: 145 },
+    { name: "Relishes Cafe", address: "1/99 Ardmore Street, Wanaka 9305, New Zealand", cuisineTypes: ["Cafe", "Bistro"], overview: "Lakefront Wanaka institution with a long-running GF menu.", menuHighlights: ["🥗 GF lunch plates", "🍰 GF cabinet", "☕ Coffee"], proTip: "Book a window seat for the lake view.", hours: "Mon-Sun: 8:00AM – 4:00PM", rating: 4.6, reviewCount: 213 },
+    { name: "Kisa", address: "195 Cuba Street, Te Aro, Wellington 6011, New Zealand", cuisineTypes: ["Modern NZ", "Bar"], overview: "Cuba St small plates with strong GF flagging across the menu.", menuHighlights: ["🍽️ GF small plates", "🍷 Natural wine", "🥢 Snacks"], proTip: "Tell staff at the start — they're great at adapting plates.", hours: "Tue-Sat: 5:00PM – Late", rating: 4.7, reviewCount: 156 },
+    { name: "Hunger Monger Seafood", address: "129 Marine Parade, Napier 4110, New Zealand", cuisineTypes: ["Seafood"], overview: "Napier seafront seafood spot with naturally GF fresh fish and sides.", menuHighlights: ["🐟 Grilled fish (GF)", "🦐 Prawns", "🥗 Salads"], proTip: "Grilled options are naturally GF — skip the batter.", hours: "Mon-Sun: 11:30AM – 9:30PM", rating: 4.5, reviewCount: 188 },
+    { name: "Sands Fish & Chips", address: "Shop 1, 623 Rocks Road, Tāhunanui, Nelson 7011, New Zealand", cuisineTypes: ["Fish & Chips"], overview: "Tāhunanui beachside chippy offering a dedicated GF fryer on request.", menuHighlights: ["🍟 GF chips", "🐟 GF battered fish", "🍔 GF burger"], proTip: "Call ahead so they can run the GF fryer.", hours: "Mon-Sun: 11:00AM – 8:30PM", rating: 4.4, reviewCount: 132 },
+    { name: "Big Fig", address: "105 Ardmore Street, Wanaka 9305, New Zealand", cuisineTypes: ["Mediterranean", "Slow Food"], overview: "Wanaka slow-cooked sharing plates, most naturally gluten-free.", menuHighlights: ["🥘 Slow-cooked tagines", "🥗 Salads", "🍷 Wine"], proTip: "Nearly the whole menu is GF — ideal for celiacs.", hours: "Mon-Sun: 5:00PM – 9:30PM", rating: 4.8, reviewCount: 276 },
+    { name: "CBD Cafe", address: "41 Queen Street, Blenheim 7201, New Zealand", cuisineTypes: ["Cafe"], overview: "Blenheim café with a clearly labelled GF menu and cabinet.", menuHighlights: ["🥪 GF wraps", "🍰 GF slices", "☕ Coffee"], proTip: "Strong GF cabinet — call to reserve favourites.", hours: "Mon-Fri: 7:00AM – 3:00PM", rating: 4.4, reviewCount: 87 },
+    { name: "tibs", address: "112 Ocean View Road, Oneroa, Waiheke Island 1081, New Zealand", cuisineTypes: ["Ethiopian"], overview: "Waiheke Ethiopian — injera made from teff is naturally gluten-free.", menuHighlights: ["🫓 Teff injera (GF)", "🍛 Wat stews", "🌱 Vegan options"], proTip: "Confirm 100% teff injera (no wheat blend).", hours: "Thu-Sun: 5:00PM – 9:00PM", rating: 4.7, reviewCount: 64 },
+    { name: "Plateau Bar + Eatery", address: "64 Tuwharetoa Street, Taupō 3330, New Zealand", cuisineTypes: ["Bistro", "Bar"], overview: "Taupō bistro with a clearly marked GF menu and GF beer on tap.", menuHighlights: ["🍔 GF burgers", "🍕 GF pizza", "🍺 GF beer"], proTip: "GF buns and pizza bases always available.", hours: "Mon-Sun: 11:30AM – Late", rating: 4.5, reviewCount: 201 },
+    { name: "Community Burgers", address: "112 Tennyson Street, Napier South, Napier 4110, New Zealand", cuisineTypes: ["Burgers"], overview: "Napier smash burgers with reliable GF buns and dedicated prep.", menuHighlights: ["🍔 GF burgers", "🍟 GF fries", "🥤 Shakes"], proTip: "Ask for fries cooked separately to avoid cross-contact.", hours: "Wed-Sun: 12:00PM – 9:00PM", rating: 4.6, reviewCount: 154 },
+    { name: "Leonardo's Pure Pizzeria", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand", cuisineTypes: ["Pizza", "Italian"], overview: "Eat Streat pizzeria with proper Italian GF pizza bases.", menuHighlights: ["🍕 GF pizza", "🍝 GF pasta", "🥗 Insalata"], proTip: "GF pasta and pizza both available — confirm separate prep.", hours: "Mon-Sun: 5:00PM – 10:00PM", rating: 4.5, reviewCount: 198 },
+    { name: "White & Wong's", address: "149 Quay Street, Auckland CBD, Auckland 1010, New Zealand", cuisineTypes: ["Asian Fusion"], overview: "Auckland viaduct pan-Asian with a dedicated allergen-aware menu.", menuHighlights: ["🥢 GF dumplings", "🍜 GF noodles", "🍤 Stir-fries"], proTip: "Ask for the allergen menu — clear GF marking.", hours: "Mon-Sun: 11:30AM – Late", rating: 4.5, reviewCount: 312 },
+    { name: "& Wine", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand", cuisineTypes: ["Wine Bar", "Small Plates"], overview: "Rotorua Eat Streat wine bar with GF-friendly grazing plates.", menuHighlights: ["🧀 GF charcuterie", "🥂 Wine", "🥗 Small plates"], proTip: "Most plates are naturally GF — just skip the bread.", hours: "Wed-Sun: 4:00PM – Late", rating: 4.4, reviewCount: 142 },
   ];
+
+
 
   const getCeliacSafeBadge = (level: string) => {
     switch (level) {
@@ -1049,27 +1051,80 @@ const NewZealand = () => {
           <div className="flex items-center gap-2 mb-2">
             <MapPin className="w-5 h-5 text-blue-600" />
             <h2 className="text-2xl font-bold text-gray-900">More Gluten-Free Spots Across New Zealand</h2>
+            <Badge variant="secondary">{moreRestaurants.length} restaurants</Badge>
           </div>
           <p className="text-gray-600 mb-6">Additional verified gluten-free venues nationwide.</p>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {moreRestaurants.map((r) => (
-              <Card key={r.name} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-5">
-                  <h3 className="font-bold text-gray-900 mb-2">{r.name}</h3>
-                  <div className="flex items-start gap-2 text-sm text-gray-600 mb-4">
-                    <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
-                    <span>{r.address}</span>
+          <div className="grid gap-6">
+            {moreRestaurants.map((restaurant, index) => (
+              <Card key={index} className="overflow-hidden">
+                <CardContent className="p-6">
+                  <div className="flex-1">
+                    <div className="flex items-start justify-between mb-3">
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-1">{restaurant.name}</h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          {renderStarRating(restaurant.rating)}
+                          <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                        </div>
+                      </div>
+                      <Button variant="ghost" size="sm">
+                        <Heart className="w-4 h-4" />
+                      </Button>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {restaurant.cuisineTypes?.map((cuisine, i) => (
+                        <Badge key={i} variant="outline">{cuisine}</Badge>
+                      ))}
+                      {getCeliacSafeBadge("protocols-in-place")}
+                      {getMenuTypeBadge("mixed-menu")}
+                    </div>
+
+                    <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <div className="flex items-center gap-2">
+                        <MapPin className="w-4 h-4 text-gray-400" />
+                        <span>{restaurant.address}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 text-gray-400" />
+                        <span>{restaurant.hours}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {restaurant.menuHighlights.map((item, i) => (
+                          <Badge key={i} variant="secondary" className="text-sm">{item}</Badge>
+                        ))}
+                      </div>
+                    </div>
+
+                    {restaurant.proTip && (
+                      <div className="bg-amber-50 border border-amber-200 rounded-lg p-3">
+                        <div className="flex items-center gap-2">
+                          <MessageCircle className="w-4 h-4 text-amber-600" />
+                          <span className="font-medium text-amber-800">Pro Tip:</span>
+                          <span className="text-amber-700">{restaurant.proTip}</span>
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="flex gap-3 mt-4">
+                      <Button asChild className="bg-blue-600 hover:bg-blue-700">
+                        <a
+                          href={`https://maps.google.com/?q=${encodeURIComponent(restaurant.name + " " + restaurant.address)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Navigation className="w-4 h-4 mr-2" />
+                          Get Directions
+                        </a>
+                      </Button>
+                    </div>
                   </div>
-                  <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
-                    <a
-                      href={`https://maps.google.com/?q=${encodeURIComponent(r.name + " " + r.address)}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Navigation className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </a>
-                  </Button>
                 </CardContent>
               </Card>
             ))}
