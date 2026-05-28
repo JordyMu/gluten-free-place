@@ -47,7 +47,7 @@ import { nairobiRestaurants } from "@/data/nairobiRestaurants";
 import { mombasaRestaurants } from "@/data/mombasaRestaurants";
 import { kisumuRestaurants } from "@/data/kisumuRestaurants";
 import { nakuruRestaurants } from "@/data/nakuruRestaurants";
-import { egyptRestaurants } from "@/data/egyptRestaurants";
+import { allEgyptRestaurants } from "@/data/egyptRestaurants";
 import { mauritiusRestaurants } from "@/data/mauritiusRestaurants";
 import { portLouisRestaurants } from "@/data/portLouisRestaurants";
 import { grandBaieRestaurants } from "@/data/grandBaieRestaurants";
@@ -101,7 +101,7 @@ const allRestaurants = [
   ...mombasaRestaurants,
   ...kisumuRestaurants,
   ...nakuruRestaurants,
-  ...egyptRestaurants,
+  ...allEgyptRestaurants,
   ...mauritiusRestaurants,
   ...portLouisRestaurants,
   ...grandBaieRestaurants,
@@ -233,7 +233,7 @@ const Admin = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEOHead title="Admin Dashboard" description="Admin moderation panel" />
+      <SEOHead title="Admin Dashboard" description="Admin moderation panel" canonical="/admin" />
       <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white py-8 px-4">
         <div className="max-w-7xl mx-auto">
           <Link to="/" className="inline-flex items-center text-white/90 hover:text-white mb-4">
