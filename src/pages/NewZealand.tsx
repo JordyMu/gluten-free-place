@@ -1043,6 +1043,38 @@ const NewZealand = () => {
             </div>
           </div>
         ))}
+
+        {/* More gluten-free spots across New Zealand */}
+        <div className="mt-12 mb-10">
+          <div className="flex items-center gap-2 mb-2">
+            <MapPin className="w-5 h-5 text-blue-600" />
+            <h2 className="text-2xl font-bold text-gray-900">More Gluten-Free Spots Across New Zealand</h2>
+          </div>
+          <p className="text-gray-600 mb-6">Additional verified gluten-free venues nationwide.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {moreRestaurants.map((r) => (
+              <Card key={r.name} className="hover:shadow-lg transition-shadow">
+                <CardContent className="p-5">
+                  <h3 className="font-bold text-gray-900 mb-2">{r.name}</h3>
+                  <div className="flex items-start gap-2 text-sm text-gray-600 mb-4">
+                    <MapPin className="w-4 h-4 text-gray-400 mt-0.5 flex-shrink-0" />
+                    <span>{r.address}</span>
+                  </div>
+                  <Button asChild size="sm" className="bg-blue-600 hover:bg-blue-700 w-full">
+                    <a
+                      href={`https://maps.google.com/?q=${encodeURIComponent(r.name + " " + r.address)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Navigation className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
       </main>
 
       <section className="py-16 bg-white/50">
