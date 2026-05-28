@@ -17,7 +17,7 @@ import {
 } from "@/components/ui/accordion";
 import { SEOHead } from "@/components/SEOHead";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import type { NZCity } from "@/data/newZealandCities";
+import { nzSlug, type NZCity } from "@/data/newZealandCities";
 
 interface FAQItem {
   question: string;
