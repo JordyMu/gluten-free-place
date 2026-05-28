@@ -870,10 +870,22 @@ const NewZealand = () => {
                     <h3 className="relative text-2xl font-bold text-white text-center px-4">{city.name}</h3>
                   </div>
                   <CardContent className="p-5">
-                    <div className="flex items-center text-blue-700 mb-4">
+                    <div className="flex items-center text-blue-700 mb-3">
                       <MapPin className="h-4 w-4 mr-1" />
                       <span className="font-semibold text-sm">{city.restaurants.length} places</span>
                     </div>
+                    {city.restaurants.length > 0 && (
+                      <div className="mb-4">
+                        <p className="text-sm text-gray-600 mb-2">Popular spots:</p>
+                        <div className="flex flex-wrap gap-1.5">
+                          {city.restaurants.slice(0, 3).map((r) => (
+                            <Badge key={r.name} variant="secondary" className="bg-blue-50 text-blue-700 hover:bg-blue-100 font-normal">
+                              {r.name}
+                            </Badge>
+                          ))}
+                        </div>
+                      </div>
+                    )}
                     <a href={`#city-${slug}`}>
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
                         Explore {city.name}
