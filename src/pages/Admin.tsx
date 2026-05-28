@@ -78,7 +78,26 @@ interface AdminPhoto {
   uploaded_by: string;
 }
 
-const allRestaurants = [
+interface AdminRestaurantRow {
+  name: string;
+  slug: string;
+  city: string;
+  country: string;
+  icon: string;
+}
+
+const toRow = (r: any): AdminRestaurantRow | null => {
+  if (!r?.slug || !r?.city || !r?.country) return null;
+  return {
+    name: r.name,
+    slug: r.slug,
+    city: r.city,
+    country: r.country,
+    icon: r.icon || "🍽️",
+  };
+};
+
+const allRestaurants: AdminRestaurantRow[] = [
   ...capeTownRestaurants,
   ...johannesburgRestaurants,
   ...durbanRestaurants,
@@ -109,7 +128,9 @@ const allRestaurants = [
   ...curepipeRestaurants,
   ...quatreBornesRestaurants,
   ...mahebourgRestaurants,
-];
+]
+  .map(toRow)
+  .filter((r): r is AdminRestaurantRow => r !== null);
 
 const Admin = () => {
   const { user, loading: authLoading } = useAuth();
