@@ -741,3 +741,20 @@ export const newZealandCities: NZCity[] = [
       ]
     },
 ];
+
+export const nzSlug = (name: string) =>
+  name
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+
+export const findNZRestaurant = (citySlug: string, restaurantSlug: string) => {
+  const city = newZealandCities.find((c) => c.slug === citySlug);
+  if (!city) return null;
+  const restaurant = city.restaurants.find((r) => nzSlug(r.name) === restaurantSlug);
+  if (!restaurant) return null;
+  return { city, restaurant };
+};
