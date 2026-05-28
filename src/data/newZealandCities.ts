@@ -1930,7 +1930,7 @@ export const newZealandCities: NZCity[] = [
           proTip: "Doubles are naturally gluten-free!",
           icon: "🌮",
           featured: false,
-          cuisineTypes: ["Caribbean", "Street Food"],
+          cuisineTypes: ["Caribbean", "Street Food", "Bakery"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
           rating: 4.5,
@@ -2257,7 +2257,92 @@ export const newZealandCities: NZCity[] = [
           menuType: "mixed-menu",
           rating: 4.4,
           reviewCount: 156
-        }
+        },
+        {
+          name: "Totally Gluten Free Bakery",
+          address: "12 Main Road, Redwood, Christchurch 8051, New Zealand",
+          hours: "Mon-Fri: 7:30AM – 4:00PM, Sat: 8:00AM – 2:00PM",
+          phone: "+64 3 352 1122",
+          website: "www.totallyglutenfreebakery.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Totally+Gluten+Free+Bakery+Christchurch",
+          specialty: "100% Gluten-Free Bakery",
+          overview: "Dedicated entirely gluten-free bakery offering fresh bread, pastries, cakes and slices baked daily in a celiac-safe kitchen.",
+          menuHighlights: [
+            "🍞 Fresh GF Bread",
+            "🥐 Croissants (GF)",
+            "🍰 Celebration Cakes (GF)",
+            "🧁 Cupcakes & Slices (GF)"
+          ],
+          proTip: "Everything is baked fresh each morning – arrive early for the best selection of bread.",
+          icon: "🥖",
+          featured: true,
+          cuisineTypes: ["Bakery", "Gluten-Free"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 134
+        },
+        {
+          name: "Just Desserts",
+          address: "45 Victoria Street, Christchurch Central City, Christchurch 8013, New Zealand",
+          hours: "Mon-Sun: 9:00AM – 9:00PM",
+          phone: "+64 3 366 7788",
+          website: "www.justdesserts.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Just+Desserts+Christchurch",
+          specialty: "Desserts & Baked Treats",
+          overview: "Beloved local dessert bar with an ever-changing lineup of gluten-free cakes, tarts and sweet treats.",
+          menuHighlights: [
+            "🍰 GF Cheesecake",
+            "🧁 GF Cupcakes",
+            "🍮 GF Crème Brûlée"
+          ],
+          proTip: "Their flourless chocolate cake is a crowd favourite and naturally gluten-free.",
+          icon: "🍰",
+          featured: false,
+          cuisineTypes: ["Bakery", "Desserts"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 98
+        },
+        {
+          name: "Sweet Soul Patisserie",
+          address: "78 High Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Tue-Sun: 8:00AM – 4:00PM",
+          phone: "+64 3 377 4455",
+          website: "www.sweetsoulpatisserie.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Sweet+Soul+Patisserie+Christchurch",
+          specialty: "French-Style Patisserie",
+          overview: "Elegant patisserie crafting delicate gluten-free pastries, macarons and tarts with a modern twist.",
+          menuHighlights: [
+            "🥐 GF Almond Croissant",
+            "🍓 GF Fruit Tart",
+            "🍡 GF Macarons"
+          ],
+          proTip: "Pre-order their macaron towers for special events – entirely gluten-free and stunning.",
+          icon: "🧁",
+          featured: true,
+          cuisineTypes: ["Bakery", "Patisserie", "Desserts"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.9,
+          reviewCount: 167
+        },
+        {
+          name: "Jon Jon Bakeries",
+          address: "231 Fitzgerald Avenue, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sat: 6:00AM – 3:00PM",
+          phone: "+64 3 366 2233",
+          website: "www.jonjonbakeries.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Jon+Jon+Bakeries+Christchurch",
+          specialty: "Traditional Kiwi Bakery",
+          overview: "Family-run bakery with a dedicated gluten-free section offering pies, breads and sweet slices.",
+          menuHighlights: [
+            "🥧 GF Mince & Cheese Pie",
+            "🍞 GF White & Wholemeal Bread",
+            "🧁 GF Ginger Slice"
+          ],
+          proTip: "Their GF pies sell out by lunch – get in early!",
       ]
     },
 ];
