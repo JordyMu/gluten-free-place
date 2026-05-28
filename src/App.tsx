@@ -81,6 +81,7 @@ const GlutenFreeWellingtonBest = lazy(() => import("./pages/new-zealand/GlutenFr
 const GlutenFreeQueenstownArrowtown = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtown"));
 const GlutenFreeQueenstownArrowtownBest = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtownBest"));
 const GlutenFreeChristchurch = lazy(() => import("./pages/new-zealand/GlutenFreeChristchurch"));
+const GlutenFreeChristchurchBest = lazy(() => import("./pages/new-zealand/GlutenFreeChristchurchBest"));
 const SouthAfrica = lazy(() => import("./pages/SouthAfrica"));
 const GlutenFreeCapeTown = lazy(() => import("./pages/GlutenFreeCapeTown"));
 const GlutenFreeJohannesburg = lazy(() => import("./pages/GlutenFreeJohannesburg"));
