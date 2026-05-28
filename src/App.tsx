@@ -270,6 +270,10 @@ const App = () => (
               <Route path="/gluten-free/new-zealand/auckland/grocery-stores" element={<AucklandCategoryPage category="grocery-stores" />} />
               <Route path="/gluten-free/new-zealand/auckland/gluten-free-products" element={<AucklandCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/new-zealand/wellington" element={<GlutenFreeWellington />} />
+              <Route path="/gluten-free/new-zealand/wellington/street-food" element={<NZCityCategoryPage citySlug="wellington" category="street-food" />} />
+              <Route path="/gluten-free/new-zealand/wellington/bakeries" element={<NZCityCategoryPage citySlug="wellington" category="bakeries" />} />
+              <Route path="/gluten-free/new-zealand/wellington/grocery-stores" element={<NZCityCategoryPage citySlug="wellington" category="grocery-stores" />} />
+              <Route path="/gluten-free/new-zealand/wellington/gluten-free-products" element={<NZCityCategoryPage citySlug="wellington" category="gluten-free-products" />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown" element={<GlutenFreeQueenstownArrowtown />} />
               <Route path="/gluten-free/new-zealand/christchurch" element={<GlutenFreeChristchurch />} />
               <Route path="/gluten-free/new-zealand/:city/:slug" element={<NewZealandRestaurantPage />} />
