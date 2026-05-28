@@ -151,7 +151,7 @@ export const RestaurantPhotoGallery = ({
                 alt="Restaurant photo"
                 className="w-full h-32 object-cover rounded-lg"
               />
-              {isOwner && (
+              {(isOwner || isAdmin) && (
                 <Button
                   variant="destructive"
                   size="icon"
