@@ -2414,7 +2414,7 @@ export const newZealandCities: NZCity[] = [
           proTip: "Sign up for their loyalty card – every 10th loaf of bread is free.",
           icon: "🛒",
           featured: true,
-          cuisineTypes: ["Bakery", "Gluten-Free", "Café"],
+          cuisineTypes: ["Bakery", "Gluten-Free", "Café", "Grocery"],
           celiacSafe: "dedicated-facility",
           menuType: "fully-gluten-free",
           rating: 4.8,
