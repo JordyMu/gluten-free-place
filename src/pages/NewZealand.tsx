@@ -176,7 +176,7 @@ const NewZealand = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cities.map((city, index) => {
-              const slug = city.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+              const slug = city.slug;
               return (
                 <Card
                   key={city.name}
@@ -204,12 +204,12 @@ const NewZealand = () => {
                         </div>
                       </div>
                     )}
-                    <a href={`#city-${slug}`}>
+                    <Link to={`/gluten-free/new-zealand/${slug}`}>
                       <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
                         Explore {city.name}
                         <ArrowRight className="h-4 w-4 ml-2" />
                       </Button>
-                    </a>
+                    </Link>
                   </CardContent>
                 </Card>
               );
