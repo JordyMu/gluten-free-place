@@ -233,11 +233,11 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
                     </p>
                   </div>
                 </div>
-                <Link to={`/gluten-free/new-zealand/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`}>
-                  <Button className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                <Button asChild className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                  <Link to={`/gluten-free/new-zealand/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`}>
                     View the Top 10
-                  </Button>
-                </Link>
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           </section>
