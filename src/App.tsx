@@ -269,6 +269,7 @@ const App = () => (
               <Route path="/gluten-free/new-zealand/wellington" element={<GlutenFreeWellington />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown" element={<GlutenFreeQueenstownArrowtown />} />
               <Route path="/gluten-free/new-zealand/christchurch" element={<GlutenFreeChristchurch />} />
+              <Route path="/gluten-free/new-zealand/:city/:slug" element={<NewZealandRestaurantPage />} />
               <Route path="/gluten-free/south-africa" element={<SouthAfrica />} />
               <Route path="/gluten-free/south-africa/cape-town" element={<GlutenFreeCapeTown />} />
               <Route path="/gluten-free/south-africa/cape-town/best-gluten-free-restaurants-in-cape-town" element={<GlutenFreeCapeTownBest />} />
