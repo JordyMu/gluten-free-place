@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
   ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
   MessageCircle, Navigation, Phone, Search, Shield, Star,
+  Utensils, Croissant, ShoppingCart, Package, Trophy,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
