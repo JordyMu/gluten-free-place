@@ -1212,7 +1212,6 @@ export const newZealandCities: NZCity[] = [
           reviewCount: 104
         }
       ]
-      ]
     },
     {
       name: "Queenstown & Arrowtown", slug: "queenstown-arrowtown",
