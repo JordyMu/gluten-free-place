@@ -1958,6 +1958,121 @@ export const newZealandCities: NZCity[] = [
           menuType: "mixed-menu",
           rating: 4.3,
           reviewCount: 98
+        },
+        {
+          name: "Burgers & Beers",
+          address: "355 Colombo Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sun: 11:00AM – 10:00PM",
+          phone: "+64 3 377 0077",
+          website: "www.burgersandbeers.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Burgers+and+Beers+Christchurch",
+          specialty: "Gourmet Burgers",
+          overview: "Popular burger joint with dedicated gluten-free buns and a separate prep area for celiac orders.",
+          menuHighlights: [
+            "🍔 GF Beef Burger",
+            "🍗 GF Chicken Burger",
+            "🍟 Loaded Fries (GF)"
+          ],
+          proTip: "Ask for the GF bun – they toast it separately to avoid cross-contamination.",
+          icon: "🍔",
+          featured: true,
+          cuisineTypes: ["Burger", "Street Food"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.6,
+          reviewCount: 312
+        },
+        {
+          name: "Dimitris Greek Food",
+          address: "76 Manchester Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sat: 10:00AM – 8:00PM",
+          phone: "+64 3 366 5888",
+          website: "www.dimitrisgreek.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Dimitris+Greek+Food+Christchurch",
+          specialty: "Greek Street Food",
+          overview: "Authentic Greek street food with gluten-free pita options and naturally GF grilled meats.",
+          menuHighlights: [
+            "🥙 GF Souvlaki",
+            "🍖 Greek Lamb Skewers (GF)",
+            "🥗 Greek Salad (GF)"
+          ],
+          proTip: "They offer a GF pita wrap – just ask at the counter.",
+          icon: "🥙",
+          featured: false,
+          cuisineTypes: ["Greek", "Street Food"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 189
+        },
+        {
+          name: "Rollickin Gelato",
+          address: "New Regent Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sun: 10:00AM – 10:00PM",
+          phone: "+64 3 365 7788",
+          website: "www.rollickingelato.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Rollickin+Gelato+Christchurch",
+          specialty: "Artisan Gelato",
+          overview: "Famous for award-winning gelato with a wide range of naturally gluten-free flavours.",
+          menuHighlights: [
+            "🍨 Gelato (naturally GF)",
+            "🍦 Sorbet (dairy-free & GF)",
+            "☕ Affogato"
+          ],
+          proTip: "Most flavours are naturally gluten-free – just avoid the cookie-based toppings.",
+          icon: "🍨",
+          featured: true,
+          cuisineTypes: ["Ice Cream", "Desserts", "Street Food"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.8,
+          reviewCount: 267
+        },
+        {
+          name: "The Fish & Chip Shop",
+          address: "284 Saint Asaph Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Tue-Sun: 11:00AM – 8:00PM",
+          phone: "+64 3 377 1122",
+          website: "",
+          directionsUrl: "https://maps.google.com/?q=Fish+and+Chip+Shop+Christchurch",
+          specialty: "Classic Fish & Chips",
+          overview: "Traditional Kiwi fish and chip shop with a dedicated gluten-free fryer for celiac-safe meals.",
+          menuHighlights: [
+            "🐟 GF Battered Fish",
+            "🍟 GF Chips",
+            "🦑 GF Calamari"
+          ],
+          proTip: "They have a separate GF fryer – mention celiac when ordering.",
+          icon: "🐟",
+          featured: false,
+          cuisineTypes: ["Fish & Chips", "Takeaway", "Street Food"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.4,
+          reviewCount: 156
+        },
+        {
+          name: "Bacon Bros Burgers",
+          address: "255 Saint Asaph Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sun: 11:00AM – 9:00PM",
+          phone: "+64 3 377 2244",
+          website: "www.baconbros.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Bacon+Bros+Burgers+Christchurch",
+          specialty: "Smash Burgers",
+          overview: "Smash-style burger bar with gluten-free buns and a dedicated prep zone for GF orders.",
+          menuHighlights: [
+            "🍔 Smash Burger (GF bun)",
+            "🥓 Bacon Burger (GF)",
+            "🧀 Loaded Cheese Fries (GF)"
+          ],
+          proTip: "Let them know you need GF and they'll use a clean grill section.",
+          icon: "🍔",
+          featured: true,
+          cuisineTypes: ["Burger", "Street Food"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.7,
+          reviewCount: 223
         }
       ]
     },
