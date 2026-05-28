@@ -2343,6 +2343,152 @@ export const newZealandCities: NZCity[] = [
             "🧁 GF Ginger Slice"
           ],
           proTip: "Their GF pies sell out by lunch – get in early!",
+          icon: "🥐",
+          featured: false,
+          cuisineTypes: ["Bakery", "Café"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.4,
+          reviewCount: 112
+        },
+        {
+          name: "Ma Baker",
+          address: "123 Moorhouse Avenue, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Fri: 7:00AM – 3:00PM, Sat: 8:00AM – 2:00PM",
+          phone: "+64 3 377 6677",
+          website: "www.mabaker.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Ma+Baker+Christchurch",
+          specialty: "Artisan Bread & Pastries",
+          overview: "Cosy neighbourhood bakery known for handcrafted sourdough and an impressive range of gluten-free loaves and sweet treats.",
+          menuHighlights: [
+            "🍞 GF Sourdough Loaf",
+            "🥐 GF Croissant",
+            "🍰 GF Lemon Drizzle Cake"
+          ],
+          proTip: "Friday is GF sourdough day – order ahead as they bake limited batches.",
+          icon: "🍞",
+          featured: true,
+          cuisineTypes: ["Bakery", "Café"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.7,
+          reviewCount: 145
+        },
+        {
+          name: "Gentle Giant Cafe",
+          address: "50 Lichfield Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Mon-Sun: 7:30AM – 3:30PM",
+          phone: "+64 3 366 8899",
+          website: "www.gentlegiantcafe.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Gentle+Giant+Cafe+Christchurch",
+          specialty: "Cafe & Gluten-Free Baking",
+          overview: "Friendly cafe with a dedicated gluten-free baking counter serving freshly made muffins, slices and artisan bread daily.",
+          menuHighlights: [
+            "🧁 GF Banana Muffin",
+            "🍞 GF Seeded Bread",
+            "🥧 GF Quiche"
+          ],
+          proTip: "Ask which tray is the GF batch – they bake separately every morning.",
+          icon: "☕",
+          featured: false,
+          cuisineTypes: ["Café", "Bakery"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 87
+        },
+        {
+          name: "Gluten Free Choice & Pavillion",
+          address: "88 Riccarton Road, Riccarton, Christchurch 8041, New Zealand",
+          hours: "Mon-Sat: 9:00AM – 5:00PM",
+          phone: "+64 3 343 5544",
+          website: "www.glutenfreechoice.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Gluten+Free+Choice+Pavillion+Christchurch",
+          specialty: "Gluten-Free Specialty Store & Bakery",
+          overview: "One-stop gluten-free shop with an in-house bakery producing fresh bread, biscuits and frozen meals for celiac households.",
+          menuHighlights: [
+            "🍞 Fresh GF Bread Loaves",
+            "🍪 GF Biscuits & Cookies",
+            "🥧 Frozen GF Pies & Quiches"
+          ],
+          proTip: "Sign up for their loyalty card – every 10th loaf of bread is free.",
+          icon: "🛒",
+          featured: true,
+          cuisineTypes: ["Bakery", "Gluten-Free", "Café"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 203
+        },
+        {
+          name: "FOG Food",
+          address: "15 Poplar Street, Woolston, Christchurch 8023, New Zealand",
+          hours: "Tue-Sat: 8:00AM – 3:00PM",
+          phone: "+64 3 384 1122",
+          website: "www.fogfood.co.nz",
+          directionsUrl: "https://maps.google.com/?q=FOG+Food+Christchurch",
+          specialty: "Farm-to-Table Bakery",
+          overview: "Rustic bakery using locally sourced ingredients to create wholesome gluten-free bread, savoury tarts and sweet slices.",
+          menuHighlights: [
+            "🍞 GF Wholegrain Loaf",
+            "🥧 GF Spinach & Feta Tart",
+            "🍰 GF Carrot Cake"
+          ],
+          proTip: "Their Saturday farmers market stall has exclusive GF items not available in-store.",
+          icon: "🌾",
+          featured: false,
+          cuisineTypes: ["Bakery", "Café"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.6,
+          reviewCount: 76
+        },
+        {
+          name: "Ris'tretto Cafe",
+          address: "66 Victoria Street, Christchurch Central City, Christchurch 8013, New Zealand",
+          hours: "Mon-Fri: 7:00AM – 4:00PM",
+          phone: "+64 3 366 9900",
+          website: "www.ristrettocafe.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Ris'tretto+Cafe+Christchurch",
+          specialty: "Coffee & Gluten-Free Baking",
+          overview: "Specialty coffee bar with a dedicated gluten-free cabinet of muffins, brownies and fresh bread baked in-house each morning.",
+          menuHighlights: [
+            "☕ Single-Origin Coffee",
+            "🧁 GF Double Choc Muffin",
+            "🍞 GF Focaccia (daily)"
+          ],
+          proTip: "Their GF brownies are made with almond flour – rich, fudgy and completely gluten-free.",
+          icon: "☕",
+          featured: false,
+          cuisineTypes: ["Café", "Bakery"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 134
+        },
+        {
+          name: "Jammit Cakery",
+          address: "28 Manchester Street, Christchurch Central City, Christchurch 8011, New Zealand",
+          hours: "Wed-Sun: 9:00AM – 5:00PM",
+          phone: "+64 3 377 3344",
+          website: "www.jammitcakery.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Jammit+Cakery+Christchurch",
+          specialty: "Cakes & Celebration Baking",
+          overview: "Vibrant cake shop specialising in custom gluten-free celebration cakes, cupcakes and seasonal baked gifts for every occasion.",
+          menuHighlights: [
+            "🎂 Custom GF Birthday Cakes",
+            "🧁 GF Vanilla Cupcakes",
+            "🍪 GF Cookie Gift Boxes"
+          ],
+          proTip: "Book cake consultations two weeks ahead – their gluten-free wedding cake bookings fill up fast!",
+          icon: "🎂",
+          featured: true,
+          cuisineTypes: ["Bakery", "Desserts"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.9,
+          reviewCount: 189
+        }
       ]
     },
 ];
