@@ -172,42 +172,50 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
               Find exactly what you're looking for with our curated category pages.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-              <Card className="border-red-200 bg-red-50/50">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <Utensils className="w-6 h-6 text-red-600" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Street Food</div>
-                    <div className="text-xs text-gray-600">Markets & food trucks</div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-amber-200 bg-amber-50/50">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <Croissant className="w-6 h-6 text-amber-600" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Bakeries</div>
-                    <div className="text-xs text-gray-600">Fresh bread & pastries</div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-emerald-200 bg-emerald-50/50">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <ShoppingCart className="w-6 h-6 text-emerald-600" />
-                  <div>
-                    <div className="font-semibold text-gray-900">Grocery Stores</div>
-                    <div className="text-xs text-gray-600">Supermarkets & shops</div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card className="border-purple-200 bg-purple-50/50">
-                <CardContent className="p-4 flex items-center gap-3">
-                  <Package className="w-6 h-6 text-purple-600" />
-                  <div>
-                    <div className="font-semibold text-gray-900">GF Products</div>
-                    <div className="text-xs text-gray-600">Specialty GF items</div>
-                  </div>
-                </CardContent>
-              </Card>
+              <Link to={`/gluten-free/new-zealand/${city.slug}/street-food`}>
+                <Card className="border-red-200 bg-red-50/50 hover:shadow-md hover:border-red-400 transition cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <Utensils className="w-6 h-6 text-red-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">Street Food</div>
+                      <div className="text-xs text-gray-600">Markets & food trucks</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to={`/gluten-free/new-zealand/${city.slug}/bakeries`}>
+                <Card className="border-amber-200 bg-amber-50/50 hover:shadow-md hover:border-amber-400 transition cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <Croissant className="w-6 h-6 text-amber-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">Bakeries</div>
+                      <div className="text-xs text-gray-600">Fresh bread & pastries</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to={`/gluten-free/new-zealand/${city.slug}/grocery-stores`}>
+                <Card className="border-emerald-200 bg-emerald-50/50 hover:shadow-md hover:border-emerald-400 transition cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <ShoppingCart className="w-6 h-6 text-emerald-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">Grocery Stores</div>
+                      <div className="text-xs text-gray-600">Supermarkets & shops</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to={`/gluten-free/new-zealand/${city.slug}/gluten-free-products`}>
+                <Card className="border-purple-200 bg-purple-50/50 hover:shadow-md hover:border-purple-400 transition cursor-pointer h-full">
+                  <CardContent className="p-4 flex items-center gap-3">
+                    <Package className="w-6 h-6 text-purple-600" />
+                    <div>
+                      <div className="font-semibold text-gray-900">GF Products</div>
+                      <div className="text-xs text-gray-600">Specialty GF items</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             </div>
           </section>
 
