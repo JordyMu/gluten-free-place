@@ -151,6 +151,7 @@ const LaPapitaDeLecheTakeAway = lazy(() => import("./pages/LaPapitaDeLecheTakeAw
 const RestauranteEnVille = lazy(() => import("./pages/RestauranteEnVille"));
 const MessiePizzaGlutenFreeGracia = lazy(() => import("./pages/MessiePizzaGlutenFreeGracia"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const Admin = lazy(() => import("./pages/Admin"));
 
 const queryClient = new QueryClient();
 
@@ -335,6 +336,7 @@ const App = () => (
               <Route path="/spain/restaurant/:slug" element={<SpainRestaurantPage />} />
               <Route path="/spain/:slug" element={<SpainCityPage />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+              <Route path="/admin" element={<Admin />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

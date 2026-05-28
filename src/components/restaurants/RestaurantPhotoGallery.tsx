@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { useAuth } from "@/contexts/AuthContext";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 import { PhotoUploadSection } from "./PhotoUploadSection";
 import { ClaimRestaurantDialog } from "./ClaimRestaurantDialog";
 import { Button } from "@/components/ui/button";
@@ -27,6 +28,7 @@ export const RestaurantPhotoGallery = ({
   restaurantCountry,
 }: RestaurantPhotoGalleryProps) => {
   const { user } = useAuth();
+  const { isAdmin } = useIsAdmin();
   const [photos, setPhotos] = useState<Photo[]>([]);
   const [isOwner, setIsOwner] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -149,7 +151,7 @@ export const RestaurantPhotoGallery = ({
                 alt="Restaurant photo"
                 className="w-full h-32 object-cover rounded-lg"
               />
-              {isOwner && (
+              {(isOwner || isAdmin) && (
                 <Button
                   variant="destructive"
                   size="icon"

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { User, LogOut, Loader2 } from "lucide-react";
+import { User, LogOut, Loader2, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -10,9 +10,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { useAuth } from "@/contexts/AuthContext";
+import { useIsAdmin } from "@/hooks/useIsAdmin";
 
 export const UserMenu = () => {
   const { user, signOut, loading } = useAuth();
+  const { isAdmin } = useIsAdmin();
 
   if (loading) {
     return <Loader2 className="h-5 w-5 animate-spin text-gray-400" />;
@@ -56,6 +58,14 @@ export const UserMenu = () => {
             <span>My Reviews</span>
           </Link>
         </DropdownMenuItem>
+        {isAdmin && (
+          <DropdownMenuItem asChild>
+            <Link to="/admin" className="flex items-center cursor-pointer">
+              <Shield className="mr-2 h-4 w-4 text-orange-600" />
+              <span>Admin Dashboard</span>
+            </Link>
+          </DropdownMenuItem>
+        )}
         <DropdownMenuSeparator />
         <DropdownMenuItem
           onClick={() => signOut()}
