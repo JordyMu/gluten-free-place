@@ -739,6 +739,36 @@ const NewZealand = () => {
     },
   ];
 
+  const moreRestaurants = [
+    { name: "Sabal", address: "169 Maunganui Road, Mount Maunganui 3116, New Zealand" },
+    { name: "Wooden Spoon", address: "169 London Street, Hamilton Central, Hamilton 3204, New Zealand" },
+    { name: "Dhara's Caffe", address: "19 Buxton Square, Nelson 7010, New Zealand" },
+    { name: "Black Rabbit Pizza", address: "94 Beach Road, Kaikōura 7300, New Zealand" },
+    { name: "That Sandwich Place", address: "112 Emerson Street, Napier South, Napier 4110, New Zealand" },
+    { name: "Munch", address: "62 Broadway Avenue, Palmerston North Central, Palmerston North 4410, New Zealand" },
+    { name: "Te Mata Figs Cafe", address: "205 Napier Road, Havelock North 4130, New Zealand" },
+    { name: "Bambuchi", address: "31a Waitoa Road, Hataitai, Wellington 6021, New Zealand" },
+    { name: "San Sea People Ice Cream", address: "107A Maunganui Road, Mount Maunganui 3116, New Zealand" },
+    { name: "Earth Store Whitianga", address: "67 Albert Street, Whitianga 3510, New Zealand" },
+    { name: "Dragonfruit Café", address: "7 Laurie Hall Lane, Whangārei 0110, New Zealand" },
+    { name: "Taste Nature", address: "131 High Street, Central Dunedin, Dunedin 9016, New Zealand" },
+    { name: "Hello Stranger Cafe", address: "1149 Pukuatua Street, Rotorua 3010, New Zealand" },
+    { name: "Stoked Bar & Grill", address: "19 Esplanade, Whitianga 3510, New Zealand" },
+    { name: "Mike's Bistro & Taproom", address: "40 Devon Street East, New Plymouth Central, New Plymouth 4310, New Zealand" },
+    { name: "Relishes Cafe", address: "1/99 Ardmore Street, Wanaka 9305, New Zealand" },
+    { name: "Kisa", address: "195 Cuba Street, Te Aro, Wellington 6011, New Zealand" },
+    { name: "Hunger Monger Seafood", address: "129 Marine Parade, Napier 4110, New Zealand" },
+    { name: "Sands Fish & Chips", address: "Shop 1, 623 Rocks Road, Tāhunanui, Nelson 7011, New Zealand" },
+    { name: "Big Fig", address: "105 Ardmore Street, Wanaka 9305, New Zealand" },
+    { name: "CBD Cafe", address: "41 Queen Street, Blenheim 7201, New Zealand" },
+    { name: "tibs", address: "112 Ocean View Road, Oneroa, Waiheke Island 1081, New Zealand" },
+    { name: "Plateau Bar + Eatery", address: "64 Tuwharetoa Street, Taupō 3330, New Zealand" },
+    { name: "Community Burgers", address: "112 Tennyson Street, Napier South, Napier 4110, New Zealand" },
+    { name: "Leonardo's Pure Pizzeria", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand" },
+    { name: "White & Wong's", address: "149 Quay Street, Auckland CBD, Auckland 1010, New Zealand" },
+    { name: "& Wine", address: "1099 Tutanekai Street, Rotorua 3010, New Zealand" },
+  ];
+
   const getCeliacSafeBadge = (level: string) => {
     switch (level) {
       case "dedicated-facility":
