@@ -1675,6 +1675,121 @@ export const newZealandCities: NZCity[] = [
           menuType: "mixed-menu",
           rating: 4.6,
           reviewCount: 167
+        },
+        {
+          name: "Liquorland",
+          address: "15 Camp Street, Queenstown 9300, New Zealand",
+          hours: "Mon-Sun: 9:00AM – 10:00PM",
+          phone: "+64 3 442 8200",
+          website: "www.liquorland.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Liquorland+Queenstown",
+          specialty: "Liquor & Beverage Store",
+          overview: "Well-stocked liquor store in central Queenstown offering a wide range of wines, spirits and ready-to-drink beverages, including gluten-free beer and cider selections.",
+          menuHighlights: [
+            "🍺 Gluten-Free Beer Range",
+            "🍎 GF Ciders",
+            "🍷 Wine Selection"
+          ],
+          proTip: "Ask staff for their current gluten-free beer and cider selection — stock rotates seasonally!",
+          icon: "🍾",
+          featured: false,
+          cuisineTypes: ["Grocery", "Liquor Store"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.2,
+          reviewCount: 89
+        },
+        {
+          name: "FreshChoice Queenstown",
+          address: "36 Gorge Road, Queenstown 9300, New Zealand",
+          hours: "Mon-Sun: 7:00AM – 10:00PM",
+          phone: "+64 3 442 7530",
+          website: "www.freshchoice.co.nz",
+          directionsUrl: "https://maps.google.com/?q=FreshChoice+Queenstown",
+          specialty: "Supermarket & Grocery",
+          overview: "Full-service supermarket in Queenstown with a dedicated gluten-free aisle, fresh produce, health foods and a wide range of pantry staples for gluten-free living.",
+          menuHighlights: [
+            "🌾 Dedicated GF Aisle",
+            "🥗 Fresh Produce",
+            "🥫 Health Food Range"
+          ],
+          proTip: "Check the health food section for specialty GF brands not found in the main aisles!",
+          icon: "🛒",
+          featured: true,
+          cuisineTypes: ["Supermarket", "Grocery"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.4,
+          reviewCount: 256
+        },
+        {
+          name: "New World Queenstown",
+          address: "64 Gorge Road, Queenstown 9300, New Zealand",
+          hours: "Mon-Sun: 7:00AM – 10:00PM",
+          phone: "+64 3 442 8500",
+          website: "www.newworld.co.nz",
+          directionsUrl: "https://maps.google.com/?q=New+World+Queenstown",
+          specialty: "Supermarket & Grocery",
+          overview: "Popular New Zealand supermarket chain with an excellent gluten-free product range, fresh bakery items and a well-stocked health food section in Queenstown.",
+          menuHighlights: [
+            "🌾 Large GF Product Range",
+            "🍞 GF Bakery Items",
+            "🥜 Health Food Section"
+          ],
+          proTip: "Look for the 'Free From' shelf tags to quickly spot gluten-free items across the store!",
+          icon: "🛒",
+          featured: true,
+          cuisineTypes: ["Supermarket", "Grocery"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.5,
+          reviewCount: 312
+        },
+        {
+          name: "Soulfood Organic Queenstown",
+          address: "7 Earl Street, Queenstown 9300, New Zealand",
+          hours: "Mon-Sat: 9:00AM – 6:00PM, Sun: 10:00AM – 5:00PM",
+          phone: "+64 3 442 7610",
+          website: "www.soulfoodorganic.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Soulfood+Organic+Queenstown",
+          specialty: "Organic & Health Food Store",
+          overview: "Boutique organic store specialising in health foods, gluten-free pantry staples, organic produce and specialty dietary products for conscious shoppers.",
+          menuHighlights: [
+            "🌿 Organic GF Products",
+            "🥜 Specialty Health Foods",
+            "🍞 GF Flours & Baking"
+          ],
+          proTip: "Ask the knowledgeable staff for GF product recommendations — they know every item in store!",
+          icon: "🌿",
+          featured: true,
+          cuisineTypes: ["Health Food", "Grocery", "Organic"],
+          celiacSafe: "protocols-in-place",
+          menuType: "fully-gluten-free",
+          rating: 4.7,
+          reviewCount: 145
+        },
+        {
+          name: "Woolworths Queenstown",
+          address: "19-29 Earl Street, Queenstown 9300, New Zealand",
+          hours: "Mon-Sun: 7:00AM – 11:00PM",
+          phone: "+64 3 442 6200",
+          website: "www.woolworths.co.nz",
+          directionsUrl: "https://maps.google.com/?q=Woolworths+Queenstown",
+          specialty: "Supermarket & Grocery",
+          overview: "Major supermarket in the heart of Queenstown offering an extensive gluten-free range, fresh produce and convenient one-stop shopping for GF pantry essentials.",
+          menuHighlights: [
+            "🌾 Extensive GF Range",
+            "🥗 Fresh Produce",
+            "🥫 GF Pantry Essentials"
+          ],
+          proTip: "Their own-brand 'Free From' line offers great value GF staples — check the bottom shelves!",
+          icon: "🛒",
+          featured: false,
+          cuisineTypes: ["Supermarket", "Grocery"],
+          celiacSafe: "protocols-in-place",
+          menuType: "mixed-menu",
+          rating: 4.3,
+          reviewCount: 278
         }
       ]
     },
