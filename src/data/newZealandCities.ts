@@ -1907,7 +1907,7 @@ export const newZealandCities: NZCity[] = [
           proTip: "Check for daily GF dessert specials!",
           icon: "🍰",
           featured: false,
-          cuisineTypes: ["Desserts", "Café"],
+          cuisineTypes: ["Desserts", "Café", "Bakery"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
           rating: 4.6,
