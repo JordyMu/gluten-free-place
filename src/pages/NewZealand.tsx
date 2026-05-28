@@ -1,9 +1,20 @@
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useSearchParams } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+
+const nzFaqItems = [
+  { question: "Is New Zealand a good destination for gluten-free travelers?", answer: "Yes! New Zealand has excellent celiac awareness, clear allergen labelling, and a strong café culture. Auckland and Wellington both have dedicated 100% gluten-free bakeries." },
+  { question: "What are the best dedicated gluten-free spots in New Zealand?", answer: "The GF Depot in Auckland and Gluten Free 4u in Wellington are both fully dedicated facilities offering breads, pastries, pies and cakes that are safe for celiacs." },
+  { question: "Are gluten-free options widely available in New Zealand cafés?", answer: "Yes — most cafés across Auckland, Wellington, Christchurch and Queenstown clearly mark GF items on the menu and can accommodate dietary requests." },
+  { question: "How do I find safe gluten-free food in smaller NZ towns?", answer: "Supermarkets like Countdown, New World and Pak'nSave stock a wide GF range. Naturally GF options like grilled meats, fish, rice dishes and salads are easy to find." },
+  { question: "Which New Zealand city is most celiac-friendly?", answer: "Auckland leads with the widest selection of dedicated and GF-friendly venues, followed by Wellington and Christchurch." },
+];
 const NewZealand = () => {
   const [searchParams] = useSearchParams();
   const cityFilter = searchParams.get("city");
