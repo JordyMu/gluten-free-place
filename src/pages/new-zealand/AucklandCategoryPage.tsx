@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { SEOHead } from "@/components/SEOHead";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { newZealandCities, type NZRestaurant } from "@/data/newZealandCities";
+import { newZealandCities, nzSlug, type NZRestaurant } from "@/data/newZealandCities";
 
 type CategoryKey = "street-food" | "bakeries" | "grocery-stores" | "gluten-free-products";
 
