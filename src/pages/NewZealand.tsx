@@ -1322,47 +1322,112 @@ const NewZealand = () => {
       description="Find the best gluten-free restaurants in New Zealand. Dedicated bakeries, cafes & restaurants in Auckland, Wellington, Christchurch, Queenstown."
       canonical="/new-zealand"
     />
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="container mx-auto px-4 py-4">
-          <Link to="/countries" className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-4">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Countries
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-green-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <Globe className="h-8 w-8 text-blue-700" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-blue-700 via-gray-700 to-green-700 bg-clip-text text-transparent">
+              Gluten-Free Places
+            </span>
           </Link>
-          <div className="flex items-center gap-3">
-            <span className="text-4xl">🇳🇿</span>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Dining in New Zealand</h1>
-              <p className="text-gray-600">Discover celiac-safe restaurants across Aotearoa</p>
-            </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-blue-700 transition-colors whitespace-nowrap">Home</Link>
+            <Link to="/countries" className="text-gray-700 hover:text-blue-700 transition-colors">Countries</Link>
+            <Link to="#cities" className="text-gray-700 hover:text-blue-700 transition-colors">Cities</Link>
+            <Link to="#faq" className="text-gray-700 hover:text-blue-700 transition-colors">FAQ</Link>
+            <UserMenu />
           </div>
         </div>
       </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        {/* Introduction */}
-        <Card className="mb-8 bg-gradient-to-r from-blue-50 to-green-50 border-blue-200">
-          <CardContent className="p-6">
-            <div className="flex items-start gap-4">
-              <Award className="w-8 h-8 text-blue-600 flex-shrink-0" />
-              <div>
-                <h2 className="text-xl font-semibold text-gray-900 mb-2">New Zealand's Gluten-Free Scene</h2>
-                <p className="text-gray-700">
-                  New Zealand offers an excellent gluten-free dining scene, from dedicated bakeries in Auckland 
-                  to cafés along the stunning South Island. Kiwis are generally very aware of dietary requirements, 
-                  and many restaurants offer gluten-free options. Look for dedicated gluten-free facilities 
-                  for the safest dining experience.
-                </p>
-              </div>
+      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-blue-700 via-white/10 to-green-700">
+        <div className="absolute inset-0 bg-black/30" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to All Countries
+          </Link>
+          <div className="max-w-4xl mx-auto">
+            <span className="text-5xl mb-4 block">🇳🇿</span>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <MapPin className="h-4 w-4 mr-2" />
+              {cities.reduce((sum, c) => sum + c.restaurants.length, 0)}+ Gluten-Free Places
+            </Badge>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Gluten-Free New Zealand
+            </h1>
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+              Discover safe, delicious gluten-free dining across Aotearoa — from Auckland's dedicated
+              bakeries to Wellington's café scene and the South Island's stunning eateries.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#cities">
+                <Button size="lg" className="bg-white text-blue-700 hover:bg-blue-50">
+                  Explore Cities
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </a>
+              <AddRestaurantDialog
+                city="New Zealand"
+                triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+              />
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
+      </section>
 
+      <section id="cities" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Explore by City
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Top Gluten-Free Cities in New Zealand
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose a city to jump to its verified gluten-free restaurants and cafés
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cities.map((city, index) => {
+              const slug = city.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+              return (
+                <Card
+                  key={city.name}
+                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
+                  style={{ animationDelay: `${index * 0.05}s` }}
+                >
+                  <div className="relative h-40 bg-gradient-to-br from-blue-600 to-green-600 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-black/20" />
+                    <h3 className="relative text-2xl font-bold text-white text-center px-4">{city.name}</h3>
+                  </div>
+                  <CardContent className="p-5">
+                    <div className="flex items-center text-blue-700 mb-4">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span className="font-semibold text-sm">{city.restaurants.length} places</span>
+                    </div>
+                    <a href={`#city-${slug}`}>
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                        Explore {city.name}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <main className="container mx-auto px-4 py-8">
         {/* Cities and Restaurants */}
         {filteredCities.map((city) => (
-          <div key={city.name} className="mb-10">
+          <div key={city.name} id={`city-${city.name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`} className="mb-10 scroll-mt-24">
             <div className="flex items-center gap-2 mb-4">
               <MapPin className="w-5 h-5 text-blue-600" />
               <h2 className="text-2xl font-bold text-gray-900">{city.name}</h2>
