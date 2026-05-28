@@ -74,6 +74,7 @@ const NewZealand = lazy(() => import("./pages/NewZealand"));
 const GlutenFreeAuckland = lazy(() => import("./pages/new-zealand/GlutenFreeAuckland"));
 const GlutenFreeAucklandBest = lazy(() => import("./pages/new-zealand/GlutenFreeAucklandBest"));
 const AucklandCategoryPage = lazy(() => import("./pages/new-zealand/AucklandCategoryPage"));
+const NZCityCategoryPage = lazy(() => import("./pages/new-zealand/NZCityCategoryPage"));
 const NewZealandRestaurantPage = lazy(() => import("./pages/new-zealand/NewZealandRestaurantPage"));
 const GlutenFreeWellington = lazy(() => import("./pages/new-zealand/GlutenFreeWellington"));
 const GlutenFreeQueenstownArrowtown = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtown"));
