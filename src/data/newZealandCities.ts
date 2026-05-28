@@ -1304,30 +1304,6 @@ export const newZealandCities: NZCity[] = [
           reviewCount: 112
         },
         {
-          name: "Gluten Free 4u NZ Ltd (Gluten Free Heaven)",
-          address: "44 Nelson Street, Wellington 5012, New Zealand",
-          hours: "Mon-Fri: 8:00AM – 4:00PM, Sat: 9:00AM – 2:00PM",
-          phone: "+64 4 566 7677",
-          website: "www.glutenfree4u.co.nz",
-          directionsUrl: "https://maps.google.com/?q=Gluten+Free+4u+NZ+Ltd+Wellington",
-          specialty: "Dedicated Gluten-Free Grocery & Bakery",
-          overview: "Wellington's dedicated gluten-free facility offering a huge range of GF baked goods, breads, frozen meals and specialty grocery items under one roof.",
-          menuHighlights: [
-            "🍞 GF Bread & Rolls",
-            "🥧 GF Pies & Pastries",
-            "🛒 GF Grocery Range",
-            "❄️ GF Frozen Meals"
-          ],
-          proTip: "Ask about their frozen meal range — perfect for stocking the freezer with quick celiac-safe dinners.",
-          icon: "🥐",
-          featured: true,
-          cuisineTypes: ["Grocery", "Health Food", "Supermarket", "Gluten-Free"],
-          celiacSafe: "dedicated-facility",
-          menuType: "fully-gluten-free",
-          rating: 4.9,
-          reviewCount: 210
-        },
-        {
           name: "Bin Inn",
           address: "Wellington, New Zealand",
           hours: "Mon-Sat: 9:00AM – 5:30PM",
