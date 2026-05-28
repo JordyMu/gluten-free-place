@@ -79,6 +79,7 @@ const NewZealandRestaurantPage = lazy(() => import("./pages/new-zealand/NewZeala
 const GlutenFreeWellington = lazy(() => import("./pages/new-zealand/GlutenFreeWellington"));
 const GlutenFreeWellingtonBest = lazy(() => import("./pages/new-zealand/GlutenFreeWellingtonBest"));
 const GlutenFreeQueenstownArrowtown = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtown"));
+const GlutenFreeQueenstownArrowtownBest = lazy(() => import("./pages/new-zealand/GlutenFreeQueenstownArrowtownBest"));
 const GlutenFreeChristchurch = lazy(() => import("./pages/new-zealand/GlutenFreeChristchurch"));
 const SouthAfrica = lazy(() => import("./pages/SouthAfrica"));
 const GlutenFreeCapeTown = lazy(() => import("./pages/GlutenFreeCapeTown"));
@@ -277,6 +278,7 @@ const App = () => (
               <Route path="/gluten-free/new-zealand/wellington/grocery-stores" element={<NZCityCategoryPage citySlug="wellington" category="grocery-stores" />} />
               <Route path="/gluten-free/new-zealand/wellington/gluten-free-products" element={<NZCityCategoryPage citySlug="wellington" category="gluten-free-products" />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown" element={<GlutenFreeQueenstownArrowtown />} />
+              <Route path="/gluten-free/new-zealand/queenstown-arrowtown/best-gluten-free-restaurants-in-queenstown-arrowtown" element={<GlutenFreeQueenstownArrowtownBest />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown/street-food" element={<NZCityCategoryPage citySlug="queenstown-arrowtown" category="street-food" />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown/bakeries" element={<NZCityCategoryPage citySlug="queenstown-arrowtown" category="bakeries" />} />
               <Route path="/gluten-free/new-zealand/queenstown-arrowtown/grocery-stores" element={<NZCityCategoryPage citySlug="queenstown-arrowtown" category="grocery-stores" />} />
