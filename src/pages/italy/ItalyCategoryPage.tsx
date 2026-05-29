@@ -200,20 +200,27 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
           {venues.length > 0 ? (
             <div className="max-w-3xl mx-auto grid gap-6">
               {venues.map((restaurant, index) => (
-                <Card key={`${slugify(restaurant.name)}-${index}`} className="overflow-hidden">
+                <Card
+                  key={`${slugify(restaurant.name)}-${index}`}
+                  className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}
+                >
                   <CardContent className="p-6">
                     <div className="mb-3">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         {restaurant.icon && <span className="text-2xl">{restaurant.icon}</span>}
                         <Link
                           to={`/gluten-free/italy/${city.slug}/${slugify(restaurant.name)}`}
-                          className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors"
+                          className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
                         >
                           {restaurant.name}
                         </Link>
+                        {restaurant.featured && (
+                          <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
+                        )}
                       </div>
                       {restaurant.specialty && <p className="text-sm text-gray-500">{restaurant.specialty}</p>}
                     </div>
+
 
                     {restaurant.rating !== undefined && (
                       <div className="flex items-center gap-2 mb-3">
