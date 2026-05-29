@@ -291,7 +291,7 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
                       {restaurant.directionsUrl && (
                         <Button
                           type="button"
-                          className="bg-orange-600 hover:bg-orange-700"
+                          className="bg-blue-700 hover:bg-blue-800"
                           onClick={() => openExternalLink(restaurant.directionsUrl!)}
                         >
                           <Navigation className="w-4 h-4 mr-2" />
