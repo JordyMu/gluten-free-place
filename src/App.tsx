@@ -24,6 +24,7 @@ const France = lazy(() => import("./pages/France"));
 const GlutenFreeParis = lazy(() => import("./pages/france/GlutenFreeParis"));
 const GlutenFreeParisBest = lazy(() => import("./pages/france/GlutenFreeParisBest"));
 const ParisCategoryPage = lazy(() => import("./pages/france/ParisCategoryPage"));
+const ItalyCategoryPage = lazy(() => import("./pages/italy/ItalyCategoryPage"));
 const GlutenFreeTorontoBest = lazy(() => import("./pages/canada/GlutenFreeTorontoBest"));
 const TorontoCategoryPage = lazy(() => import("./pages/canada/TorontoCategoryPage"));
 const GlutenFreeMontrealBest = lazy(() => import("./pages/canada/GlutenFreeMontrealBest"));
@@ -189,6 +190,10 @@ const App = () => (
               <Route path="/italy" element={<Italy />} />
               <Route path="/gluten-free/italy/:slug" element={<ItalyCityPage />} />
               <Route path="/gluten-free/italy/rome/best" element={<GlutenFreeRomeBest />} />
+              <Route path="/gluten-free/italy/rome/street-food" element={<ItalyCategoryPage citySlug="rome" category="street-food" />} />
+              <Route path="/gluten-free/italy/rome/bakeries" element={<ItalyCategoryPage citySlug="rome" category="bakeries" />} />
+              <Route path="/gluten-free/italy/rome/grocery-stores" element={<ItalyCategoryPage citySlug="rome" category="grocery-stores" />} />
+              <Route path="/gluten-free/italy/rome/gluten-free-products" element={<ItalyCategoryPage citySlug="rome" category="gluten-free-products" />} />
               <Route path="/gluten-free/italy/:citySlug/:restaurantSlug" element={<ItalyRestaurantPage />} />
               <Route path="/spain" element={<Spain />} />
               <Route path="/france" element={<France />} />
