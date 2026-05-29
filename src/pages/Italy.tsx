@@ -26,6 +26,7 @@ export type ItalyRestaurant = {
   menuType?: string;
   rating?: number;
   reviewCount?: number;
+  featured?: boolean;
 };
 
 export type ItalyCity = {

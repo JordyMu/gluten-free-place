@@ -111,7 +111,7 @@ const getCeliacSafeBadge = (level?: string) => {
   return (
     <Badge className="bg-blue-100 text-blue-800 border-blue-300">
       <CheckCircle className="w-3 h-3 mr-1" />
-      Careful Handling
+      Celiac Protocols
     </Badge>
   );
 };
@@ -200,20 +200,27 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
           {venues.length > 0 ? (
             <div className="max-w-3xl mx-auto grid gap-6">
               {venues.map((restaurant, index) => (
-                <Card key={`${slugify(restaurant.name)}-${index}`} className="overflow-hidden">
+                <Card
+                  key={`${slugify(restaurant.name)}-${index}`}
+                  className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}
+                >
                   <CardContent className="p-6">
                     <div className="mb-3">
                       <div className="flex items-center gap-2 mb-1 flex-wrap">
                         {restaurant.icon && <span className="text-2xl">{restaurant.icon}</span>}
                         <Link
                           to={`/gluten-free/italy/${city.slug}/${slugify(restaurant.name)}`}
-                          className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors"
+                          className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
                         >
                           {restaurant.name}
                         </Link>
+                        {restaurant.featured && (
+                          <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
+                        )}
                       </div>
                       {restaurant.specialty && <p className="text-sm text-gray-500">{restaurant.specialty}</p>}
                     </div>
+
 
                     {restaurant.rating !== undefined && (
                       <div className="flex items-center gap-2 mb-3">
@@ -273,7 +280,7 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
                       {restaurant.phone && (
                         <div className="flex items-center gap-2">
                           <Phone className="w-4 h-4 text-gray-400" />
-                          <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                          <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-blue-700">
                             {restaurant.phone}
                           </a>
                         </div>
@@ -284,7 +291,7 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
                       {restaurant.directionsUrl && (
                         <Button
                           type="button"
-                          className="bg-orange-600 hover:bg-orange-700"
+                          className="bg-blue-700 hover:bg-blue-800"
                           onClick={() => openExternalLink(restaurant.directionsUrl!)}
                         >
                           <Navigation className="w-4 h-4 mr-2" />
