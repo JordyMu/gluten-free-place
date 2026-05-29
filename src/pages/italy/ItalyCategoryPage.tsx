@@ -280,7 +280,7 @@ const ItalyCategoryPage = ({ citySlug, category }: Props) => {
                       {restaurant.phone && (
                         <div className="flex items-center gap-2">
                           <Phone className="w-4 h-4 text-gray-400" />
-                          <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                          <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-blue-700">
                             {restaurant.phone}
                           </a>
                         </div>
