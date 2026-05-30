@@ -123,7 +123,7 @@ const ItalyBestPage = ({ citySlug }: Props) => {
                             {r.icon && <span className="text-2xl">{r.icon}</span>}
                             <Link
                               to={`/gluten-free/italy/${city.slug}/${rSlug}`}
-                              className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors"
+                              className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline transition-colors"
                             >
                               {r.name}
                             </Link>
