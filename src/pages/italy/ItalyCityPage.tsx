@@ -184,7 +184,7 @@ const ItalyCityPage = () => {
             </Card>
           </section>
 
-          {city.slug === "rome" && (
+          {(city.slug === "rome" || city.slug === "florence") && (
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                 🍽️ Browse by Category
@@ -193,7 +193,7 @@ const ItalyCityPage = () => {
                 Find exactly what you're looking for with our curated category pages.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <Link to="/gluten-free/italy/rome/street-food">
+                <Link to={`/gluten-free/italy/${city.slug}/street-food`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🍢</span>
