@@ -396,52 +396,61 @@ const ItalyCityPage = () => {
               ))}
             </div>
             </div>
-            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
               <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Filter className="w-5 h-5" />
-                  Filter Restaurants
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Search className="w-5 h-5 text-red-600" />
+                    <h3 className="font-semibold text-gray-900">Search Restaurants</h3>
+                  </div>
+                  <div className="relative">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                     <Input
-                      placeholder="Search restaurants..."
+                      placeholder="Search by name or cuisine"
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
+                      className="pl-9"
                     />
                   </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-1 block">Safety Rating</label>
-                    <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                      <SelectTrigger className="bg-white"><SelectValue placeholder="All safety levels" /></SelectTrigger>
-                      <SelectContent className="bg-white z-50">
-                        <SelectItem value="all">All Safety Levels</SelectItem>
-                        <SelectItem value="dedicated-facility">🛡️ Dedicated GF Facility</SelectItem>
-                        <SelectItem value="protocols-in-place">✓ Careful Handling</SelectItem>
-                      </SelectContent>
-                    </Select>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Filter className="w-5 h-5 text-purple-600" />
+                    <h3 className="font-semibold text-gray-900">Filter by Menu Type</h3>
                   </div>
-                  <div>
-                    <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
-                    <Select value={menuFilter} onValueChange={setMenuFilter}>
-                      <SelectTrigger className="bg-white"><SelectValue placeholder="All menu types" /></SelectTrigger>
-                      <SelectContent className="bg-white z-50">
-                        <SelectItem value="all">All Menu Types</SelectItem>
-                        <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                        <SelectItem value="mixed-menu">GF Options Available</SelectItem>
-                      </SelectContent>
-                    </Select>
+                  <Select value={menuFilter} onValueChange={setMenuFilter}>
+                    <SelectTrigger className="bg-white"><SelectValue placeholder="All Menu Types" /></SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Menu Types</SelectItem>
+                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
+                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="p-5">
+                  <div className="flex items-center gap-2 mb-3">
+                    <Filter className="w-5 h-5 text-purple-600" />
+                    <h3 className="font-semibold text-gray-900">Filter by Safety</h3>
                   </div>
-                </div>
-                <div className="mt-4 text-sm text-gray-600">
-                  Showing {filteredRestaurants.length} of {city.restaurants.length} restaurants
-                </div>
-              </CardContent>
-            </Card>
+                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
+                    <SelectTrigger className="bg-white"><SelectValue placeholder="All Safety Levels" /></SelectTrigger>
+                    <SelectContent className="bg-white z-50">
+                      <SelectItem value="all">All Safety Levels</SelectItem>
+                      <SelectItem value="dedicated-facility">🛡️ Dedicated GF Facility</SelectItem>
+                      <SelectItem value="protocols-in-place">✓ Careful Handling</SelectItem>
+                    </SelectContent>
+                  </Select>
+                  <div className="mt-4 text-sm text-gray-500">
+                    Showing {filteredRestaurants.length} of {city.restaurants.length}
+                  </div>
+                </CardContent>
+              </Card>
             </aside>
           </div>
         </section>
