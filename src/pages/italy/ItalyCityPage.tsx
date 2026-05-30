@@ -215,7 +215,7 @@ const ItalyCityPage = () => {
                     </CardContent>
                   </Card>
                 </Link>
-                <Link to="/gluten-free/italy/rome/grocery-stores">
+                <Link to={`/gluten-free/italy/${city.slug}/grocery-stores`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🛒</span>
