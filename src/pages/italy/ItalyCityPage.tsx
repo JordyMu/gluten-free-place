@@ -290,7 +290,7 @@ const ItalyCityPage = () => {
                                   .replace(/[\u0300-\u036f]/g, "")
                                   .replace(/[^a-z0-9]+/g, "-")
                                   .replace(/^-+|-+$/g, "")}`}
-                                className="text-xl font-bold text-gray-900 hover:text-orange-600"
+                                className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline"
                               >
                                 {r.name}
                               </Link>
