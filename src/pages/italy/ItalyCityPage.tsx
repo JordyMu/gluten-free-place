@@ -184,7 +184,7 @@ const ItalyCityPage = () => {
             </Card>
           </section>
 
-          {city.slug === "rome" && (
+          {(city.slug === "rome" || city.slug === "florence") && (
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                 🍽️ Browse by Category
@@ -193,7 +193,7 @@ const ItalyCityPage = () => {
                 Find exactly what you're looking for with our curated category pages.
               </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
-                <Link to="/gluten-free/italy/rome/street-food">
+                <Link to={`/gluten-free/italy/${city.slug}/street-food`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🍢</span>
@@ -204,7 +204,7 @@ const ItalyCityPage = () => {
                     </CardContent>
                   </Card>
                 </Link>
-                <Link to="/gluten-free/italy/rome/bakeries">
+                <Link to={`/gluten-free/italy/${city.slug}/bakeries`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🥐</span>
@@ -215,7 +215,7 @@ const ItalyCityPage = () => {
                     </CardContent>
                   </Card>
                 </Link>
-                <Link to="/gluten-free/italy/rome/grocery-stores">
+                <Link to={`/gluten-free/italy/${city.slug}/grocery-stores`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🛒</span>
@@ -226,7 +226,7 @@ const ItalyCityPage = () => {
                     </CardContent>
                   </Card>
                 </Link>
-                <Link to="/gluten-free/italy/rome/gluten-free-products">
+                <Link to={`/gluten-free/italy/${city.slug}/gluten-free-products`}>
                   <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50">
                     <CardContent className="p-2 flex items-center gap-2">
                       <span className="text-lg">🛍️</span>
@@ -241,7 +241,7 @@ const ItalyCityPage = () => {
             </section>
           )}
 
-          {city.slug === "rome" && (
+          {(city.slug === "rome" || city.slug === "florence") && (
             <section className="mb-8">
               <Card className="bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200">
                 <CardContent className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
@@ -249,14 +249,14 @@ const ItalyCityPage = () => {
                     <Award className="w-8 h-8 text-amber-600 flex-shrink-0" />
                     <div>
                       <h2 className="text-xl font-semibold text-gray-900 mb-1">
-                        Best Gluten-Free Restaurants in Rome
+                        Best Gluten-Free Restaurants in {city.name}
                       </h2>
                       <p className="text-gray-700">
-                        Our editorial top 10 celiac-safe picks across Rome — ranked by safety, reviews and quality.
+                        Our editorial top 10 celiac-safe picks across {city.name} — ranked by safety, reviews and quality.
                       </p>
                     </div>
                   </div>
-                  <Link to="/gluten-free/italy/rome/best">
+                  <Link to={`/gluten-free/italy/${city.slug}/best`}>
                     <Button className="bg-orange-600 hover:bg-orange-700 whitespace-nowrap">
                       View the Top 10
                     </Button>
