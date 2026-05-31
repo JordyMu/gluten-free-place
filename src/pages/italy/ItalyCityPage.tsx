@@ -256,7 +256,7 @@ const ItalyCityPage = () => {
                       </p>
                     </div>
                   </div>
-                  <Link to={`/gluten-free/italy/${city.slug}/best`}>
+                  <Link to={`/gluten-free/italy/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`}>
                     <Button className="bg-orange-600 hover:bg-orange-700 whitespace-nowrap">
                       View the Top 10
                     </Button>
