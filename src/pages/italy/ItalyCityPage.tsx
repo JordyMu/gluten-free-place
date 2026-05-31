@@ -275,39 +275,40 @@ const ItalyCityPage = () => {
             </h2>
             <div className="grid gap-6">
               {filteredRestaurants.map((r, index) => (
-                <Card key={index} className="overflow-hidden">
+                <Card key={index} className="overflow-hidden border-2 border-blue-100 rounded-xl">
                   <CardContent className="p-6">
                     <div className="flex flex-col lg:flex-row gap-6">
                       <div className="flex-1">
-                        <div className="flex items-start justify-between mb-3">
-                          <div>
-                            <div className="flex items-center gap-2 mb-1 flex-wrap">
-                              {r.icon && <span className="text-2xl">{r.icon}</span>}
-                              <Link
-                                to={`/gluten-free/italy/${city.slug}/${r.name
-                                  .toLowerCase()
-                                  .normalize("NFD")
-                                  .replace(/[\u0300-\u036f]/g, "")
-                                  .replace(/[^a-z0-9]+/g, "-")
-                                  .replace(/^-+|-+$/g, "")}`}
-                                className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline"
-                              >
-                                {r.name}
-                              </Link>
-                            </div>
-                            {r.rating !== undefined && (
-                              <div className="flex items-center gap-2 mb-2 flex-wrap">
-                                {renderStarRating(r.rating)}
-                                {r.reviewCount !== undefined && (
-                                  <span className="text-gray-500 text-sm">({r.reviewCount} reviews)</span>
-                                )}
-                              </div>
+                        <div className="flex items-center gap-2 mb-1 flex-wrap">
+                          {r.icon && <span className="text-2xl">{r.icon}</span>}
+                          <Link
+                            to={`/gluten-free/italy/${city.slug}/${r.name
+                              .toLowerCase()
+                              .normalize("NFD")
+                              .replace(/[\u0300-\u036f]/g, "")
+                              .replace(/[^a-z0-9]+/g, "-")
+                              .replace(/^-+|-+$/g, "")}`}
+                            className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline"
+                          >
+                            {r.name}
+                          </Link>
+                          {r.featured && (
+                            <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
+                          )}
+                        </div>
+
+                        {r.specialty && (
+                          <p className="text-sm text-gray-500 mb-2">{r.specialty}</p>
+                        )}
+
+                        {r.rating !== undefined && (
+                          <div className="flex items-center gap-2 mb-3 flex-wrap">
+                            {renderStarRating(r.rating)}
+                            {r.reviewCount !== undefined && (
+                              <span className="text-gray-500 text-sm">({r.reviewCount} reviews)</span>
                             )}
                           </div>
-                          <Button variant="ghost" size="sm">
-                            <Heart className="w-4 h-4" />
-                          </Button>
-                        </div>
+                        )}
 
                         <div className="flex flex-wrap gap-2 mb-3">
                           {(r.cuisineTypes || []).map((c, i) => (
@@ -315,27 +316,6 @@ const ItalyCityPage = () => {
                           ))}
                           {getCeliacSafeBadge(r.celiacSafe)}
                           {getMenuTypeBadge(r.menuType)}
-                        </div>
-
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
-                          <div className="flex items-center gap-2">
-                            <MapPin className="w-4 h-4 text-gray-400" />
-                            <span>{r.address}</span>
-                          </div>
-                          {r.hours && (
-                            <div className="flex items-center gap-2">
-                              <Clock className="w-4 h-4 text-gray-400" />
-                              <span>{r.hours}</span>
-                            </div>
-                          )}
-                          {r.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
-                                {r.phone}
-                              </a>
-                            </div>
-                          )}
                         </div>
 
                         {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
@@ -360,6 +340,27 @@ const ItalyCityPage = () => {
                             </div>
                           </div>
                         )}
+
+                        <div className="space-y-2 text-sm text-gray-600 mb-4">
+                          <div className="flex items-center gap-2">
+                            <MapPin className="w-4 h-4 text-gray-400" />
+                            <span>{r.address}</span>
+                          </div>
+                          {r.hours && (
+                            <div className="flex items-center gap-2">
+                              <Clock className="w-4 h-4 text-gray-400" />
+                              <span>{r.hours}</span>
+                            </div>
+                          )}
+                          {r.phone && (
+                            <div className="flex items-center gap-2">
+                              <Phone className="w-4 h-4 text-gray-400" />
+                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                                {r.phone}
+                              </a>
+                            </div>
+                          )}
+                        </div>
 
                         <div className="flex gap-3 flex-wrap">
                           {r.directionsUrl && (
