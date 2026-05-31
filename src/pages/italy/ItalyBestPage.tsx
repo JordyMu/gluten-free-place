@@ -1,5 +1,17 @@
 import { Link, Navigate } from "react-router-dom";
-import { ArrowLeft, Award, CheckCircle, MapPin, Navigation, Shield, Star } from "lucide-react";
+import {
+  ArrowLeft,
+  Award,
+  CheckCircle,
+  Clock,
+  Globe,
+  MapPin,
+  MessageCircle,
+  Navigation,
+  Phone,
+  Shield,
+  Star,
+} from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -112,7 +124,7 @@ const ItalyBestPage = ({ citySlug }: Props) => {
               {top.map((r, i) => {
                 const rSlug = slugify(r.name);
                 return (
-                  <Card key={rSlug} className="overflow-hidden">
+                  <Card key={rSlug} className={`overflow-hidden ${r.featured ? "ring-2 ring-blue-300" : ""}`}>
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4 mb-3 flex-wrap">
                         <div className="flex items-center justify-center w-12 h-12 rounded-full bg-orange-600 text-white font-bold text-lg flex-shrink-0">
@@ -127,6 +139,9 @@ const ItalyBestPage = ({ citySlug }: Props) => {
                             >
                               {r.name}
                             </Link>
+                            {r.featured && (
+                              <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
+                            )}
                           </div>
                           {r.specialty && <p className="text-sm text-gray-500">{r.specialty}</p>}
                         </div>
@@ -150,6 +165,11 @@ const ItalyBestPage = ({ citySlug }: Props) => {
                       )}
 
                       <div className="flex flex-wrap gap-2 mb-3">
+                        {(r.cuisineTypes || []).map((cuisine) => (
+                          <Badge key={cuisine} variant="outline">
+                            {cuisine}
+                          </Badge>
+                        ))}
                         {r.celiacSafe === "dedicated-facility" ? (
                           <Badge className="bg-green-100 text-green-800 border-green-300">
                             <Shield className="w-3 h-3 mr-1" /> Dedicated GF Facility
@@ -168,9 +188,48 @@ const ItalyBestPage = ({ citySlug }: Props) => {
 
                       {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
 
-                      <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">
-                        <MapPin className="w-4 h-4 text-gray-400" />
-                        <span>{r.address}</span>
+                      {r.menuHighlights && r.menuHighlights.length > 0 && (
+                        <div className="mb-4">
+                          <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                          <div className="flex flex-wrap gap-2">
+                            {r.menuHighlights.map((item) => (
+                              <Badge key={item} variant="secondary" className="text-sm">
+                                {item}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {r.proTip && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                          <div className="flex items-center gap-2">
+                            <MessageCircle className="w-4 h-4 text-amber-700" />
+                            <span className="font-medium text-amber-800">Pro Tip:</span>
+                            <span className="text-amber-700">{r.proTip}</span>
+                          </div>
+                        </div>
+                      )}
+
+                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{r.address}</span>
+                        </div>
+                        {r.hours && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4 text-gray-400" />
+                            <span>{r.hours}</span>
+                          </div>
+                        )}
+                        {r.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-gray-400" />
+                            <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                              {r.phone}
+                            </a>
+                          </div>
+                        )}
                       </div>
 
                       <div className="flex flex-wrap gap-3">
@@ -183,6 +242,11 @@ const ItalyBestPage = ({ citySlug }: Props) => {
                             <Navigation className="w-4 h-4 mr-2" /> Get Directions
                           </Button>
                         )}
+                        {r.website && (
+                          <Button type="button" variant="outline" onClick={() => openExternalLink(r.website!)}>
+                            <Globe className="w-4 h-4 mr-2" /> Website
+                          </Button>
+                        )}
                         <Link to={`/gluten-free/italy/${city.slug}/${rSlug}`}>
                           <Button type="button" variant="outline">View details</Button>
                         </Link>
@@ -193,6 +257,7 @@ const ItalyBestPage = ({ citySlug }: Props) => {
               })}
             </div>
           </section>
+
 
           <section className="mb-12 text-center">
             <Link to={`/gluten-free/italy/${city.slug}`} className="text-orange-600 hover:text-orange-700 font-medium">
