@@ -3712,7 +3712,8 @@ export const cities: ItalyCity[] = [
         menuType: "mixed-menu",
         rating: 4.6,
         reviewCount: 540,
-{
+      },
+      {
         name: "Osteria Al Squero",
         address: "Fondamenta Nani, 943/944, 30123 Venezia (Dorsoduro)",
         directionsUrl: mapsUrl("Osteria Al Squero Venezia"),
