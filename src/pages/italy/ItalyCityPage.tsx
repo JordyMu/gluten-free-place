@@ -184,7 +184,7 @@ const ItalyCityPage = () => {
             </Card>
           </section>
 
-          {(city.slug === "rome" || city.slug === "florence") && (
+          {(city.slug === "rome" || city.slug === "florence" || city.slug === "milan") && (
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                 🍽️ Browse by Category
