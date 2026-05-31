@@ -200,6 +200,11 @@ const App = () => (
               <Route path="/gluten-free/italy/florence/bakeries" element={<ItalyCategoryPage citySlug="florence" category="bakeries" />} />
               <Route path="/gluten-free/italy/florence/grocery-stores" element={<ItalyCategoryPage citySlug="florence" category="grocery-stores" />} />
               <Route path="/gluten-free/italy/florence/gluten-free-products" element={<ItalyCategoryPage citySlug="florence" category="gluten-free-products" />} />
+              <Route path="/gluten-free/italy/milan/best-gluten-free-restaurants-in-milan" element={<ItalyBestPage citySlug="milan" />} />
+              <Route path="/gluten-free/italy/milan/street-food" element={<ItalyCategoryPage citySlug="milan" category="street-food" />} />
+              <Route path="/gluten-free/italy/milan/bakeries" element={<ItalyCategoryPage citySlug="milan" category="bakeries" />} />
+              <Route path="/gluten-free/italy/milan/grocery-stores" element={<ItalyCategoryPage citySlug="milan" category="grocery-stores" />} />
+              <Route path="/gluten-free/italy/milan/gluten-free-products" element={<ItalyCategoryPage citySlug="milan" category="gluten-free-products" />} />
               <Route path="/gluten-free/italy/:citySlug/:restaurantSlug" element={<ItalyRestaurantPage />} />
               <Route path="/spain" element={<Spain />} />
               <Route path="/france" element={<France />} />
