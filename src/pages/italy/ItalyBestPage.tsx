@@ -56,7 +56,7 @@ const ItalyBestPage = ({ citySlug }: Props) => {
       "@type": "ItemList",
       name: `Best Gluten-Free Restaurants in ${city.name}`,
       description,
-      url: `https://glutenfreeplace.org/gluten-free/italy/${city.slug}/best`,
+      url: `https://glutenfreeplace.org/gluten-free/italy/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`,
       itemListElement: top.map((r, i) => ({
         "@type": "ListItem",
         position: i + 1,
@@ -71,7 +71,7 @@ const ItalyBestPage = ({ citySlug }: Props) => {
       <SEOHead
         title={`Best Gluten-Free Restaurants in ${city.name} (2026) | Top 10 Celiac-Safe Picks`}
         description={description}
-        canonical={`/gluten-free/italy/${city.slug}/best`}
+        canonical={`/gluten-free/italy/${city.slug}/best-gluten-free-restaurants-in-${city.slug}`}
         schemaJson={schemaJson}
       />
       <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">
