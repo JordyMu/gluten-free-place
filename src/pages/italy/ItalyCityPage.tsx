@@ -184,7 +184,7 @@ const ItalyCityPage = () => {
             </Card>
           </section>
 
-          {(city.slug === "rome" || city.slug === "florence" || city.slug === "milan") && (
+          {(city.slug === "rome" || city.slug === "florence" || city.slug === "milan" || city.slug === "venice") && (
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                 🍽️ Browse by Category
@@ -241,7 +241,7 @@ const ItalyCityPage = () => {
             </section>
           )}
 
-          {(city.slug === "rome" || city.slug === "florence" || city.slug === "milan") && (
+          {(city.slug === "rome" || city.slug === "florence" || city.slug === "milan" || city.slug === "venice") && (
             <section className="mb-8">
               <Card className="bg-gradient-to-r from-amber-50 to-yellow-50 border-amber-200">
                 <CardContent className="p-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
