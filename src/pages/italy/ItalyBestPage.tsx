@@ -1,5 +1,17 @@
 import { Link, Navigate } from "react-router-dom";
-import { ArrowLeft, Award, CheckCircle, MapPin, Navigation, Shield, Star } from "lucide-react";
+import {
+  ArrowLeft,
+  Award,
+  CheckCircle,
+  Clock,
+  Globe,
+  MapPin,
+  MessageCircle,
+  Navigation,
+  Phone,
+  Shield,
+  Star,
+} from "lucide-react";
 import { SEOHead } from "@/components/SEOHead";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
