@@ -290,6 +290,32 @@ const SpainCityPage = () => {
                             <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
                           </div>
 
+                          <p className="text-gray-700 leading-relaxed mb-4">
+                            {r.description ?? r.specialty}
+                          </p>
+
+                          {(r.menuHighlights?.length ? r.menuHighlights : r.cuisineTypes).length > 0 && (
+                            <div className="mb-4">
+                              <h4 className="text-sm font-bold text-gray-900 mb-2">Menu Highlights</h4>
+                              <div className="flex flex-wrap gap-2">
+                                {(r.menuHighlights?.length ? r.menuHighlights : r.cuisineTypes).map((h) => (
+                                  <Badge key={h} variant="secondary" className="bg-gray-100 text-gray-700 font-medium">
+                                    {h}
+                                  </Badge>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+
+                          {r.proTip && (
+                            <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
+                              <MessageCircle className="w-4 h-4 mt-0.5 text-amber-600 shrink-0" />
+                              <p className="text-sm text-amber-900">
+                                <span className="font-semibold">Pro Tip:</span> {r.proTip}
+                              </p>
+                            </div>
+                          )}
+
                           <div className="space-y-1.5 text-sm text-gray-700 mb-4">
                             <div className="flex items-start gap-2">
                               <MapPin className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
