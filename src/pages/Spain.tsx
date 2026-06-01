@@ -25,6 +25,9 @@ export type SpainRestaurant = {
   menuType: "fully-gluten-free" | "mixed-menu";
   rating: number;
   reviewCount: number;
+  description?: string;
+  menuHighlights?: string[];
+  proTip?: string;
 };
 
 export const slugifyRestaurant = (name: string) =>
