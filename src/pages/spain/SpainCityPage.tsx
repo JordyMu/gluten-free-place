@@ -1,9 +1,11 @@
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { MapPin, Star, ArrowLeft, Globe, Shield, CheckCircle, Clock, Phone, ExternalLink, Navigation, Trophy, Award } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, CheckCircle, Clock, Phone, ExternalLink, Navigation, Trophy, Award, Search, Filter } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
@@ -65,6 +67,10 @@ const SpainCityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const meta = slug ? CITY_META[slug.toLowerCase()] : undefined;
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [menuFilter, setMenuFilter] = useState<string>("all");
+  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
@@ -75,6 +81,20 @@ const SpainCityPage = () => {
       .filter((r) => r.city.toLowerCase() === meta.name.toLowerCase())
       .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
   }, [meta]);
+
+  const filteredRestaurants = useMemo(
+    () =>
+      restaurants.filter((r) => {
+        const matchesSearch =
+          searchQuery === "" ||
+          r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          r.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
+        const matchesMenu = menuFilter === "all" || r.menuType === menuFilter;
+        const matchesSafety = safetyFilter === "all" || r.celiacSafe === safetyFilter;
+        return matchesSearch && matchesMenu && matchesSafety;
+      }),
+    [restaurants, searchQuery, menuFilter, safetyFilter]
+  );
 
   if (!meta) return <Navigate to="/spain" replace />;
 
@@ -217,119 +237,176 @@ const SpainCityPage = () => {
         )}
 
         {/* Restaurants */}
-        <section id="all-restaurants" className="py-16">
-
+        <section id="all-restaurants" className="py-12">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
-                <MapPin className="h-4 w-4 mr-2" />
-                Verified Listings
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                All Gluten-Free Restaurants in {meta.name}
-              </h2>
-              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Sorted by rating and reviews. Every venue is verified for celiac safety.
-              </p>
-            </div>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+              <div>
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                  Verified Gluten-Free Restaurants in {meta.name}
+                </h2>
 
-            {restaurants.length === 0 ? (
-              <p className="text-center text-gray-500">No restaurants listed yet. Check back soon.</p>
-            ) : (
-              <div className="max-w-3xl mx-auto space-y-5">
-                {restaurants.map((r, index) => (
-                  <Card key={r.name} className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden">
-                    <CardContent className="p-6">
-                      <div className="mb-3">
-                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
-                          <span className="text-2xl">{r.icon}</span>
-                          <Link to={restaurantPath(r.name)} className="hover:text-red-600 transition-colors underline-offset-4 hover:underline">
-                            {r.name}
-                          </Link>
-                          {index < 3 && (
-                            <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
-                              Top {index + 1}
-                            </Badge>
-                          )}
-                        </h3>
-                        <p className="text-gray-600 mt-1">{r.specialty}</p>
-                      </div>
-
-                      <div className="flex flex-wrap gap-2 mb-3">
-                        {celiacBadge(r.celiacSafe)}
-                        {menuTypeBadge(r.menuType)}
-                        {r.cuisineTypes.map((c) => (
-                          <Badge key={c} variant="secondary" className="text-xs bg-gray-100 text-gray-700">
-                            {c}
-                          </Badge>
-                        ))}
-                      </div>
-
-                      <div className="flex items-center gap-2 mb-3">
-                        <div className="flex">
-                          {[...Array(5)].map((_, i) => (
-                            <Star
-                              key={i}
-                              className={`w-4 h-4 ${i < Math.floor(r.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
-                            />
-                          ))}
-                        </div>
-                        <span className="font-semibold text-gray-900">{r.rating}</span>
-                        <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
-                      </div>
-
-                      <div className="space-y-1.5 text-sm text-gray-700 mb-4">
-                        <div className="flex items-start gap-2">
-                          <MapPin className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                          <span>{r.address}</span>
-                        </div>
-                        {r.hours && (
-                          <div className="flex items-start gap-2">
-                            <Clock className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                            <span>{r.hours}</span>
+                {filteredRestaurants.length === 0 ? (
+                  <p className="text-gray-500">No restaurants match your filters. Try adjusting your search.</p>
+                ) : (
+                  <div className="grid gap-6">
+                    {filteredRestaurants.map((r, index) => (
+                      <Card key={r.name} className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden">
+                        <CardContent className="p-6">
+                          <div className="mb-3">
+                            <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
+                              <span className="text-2xl">{r.icon}</span>
+                              <Link to={restaurantPath(r.name)} className="hover:text-red-600 transition-colors underline-offset-4 hover:underline">
+                                {r.name}
+                              </Link>
+                              {index < 3 && (
+                                <Badge className="bg-amber-100 text-amber-800 border-amber-200 text-xs ml-1">
+                                  Top {index + 1}
+                                </Badge>
+                              )}
+                            </h3>
+                            <p className="text-gray-600 mt-1">{r.specialty}</p>
                           </div>
-                        )}
-                        {r.phone && (
-                          <div className="flex items-start gap-2">
-                            <Phone className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                            <span>{r.phone}</span>
-                          </div>
-                        )}
-                      </div>
 
-                      <div className="flex flex-wrap gap-2">
-                        <Link to={restaurantPath(r.name)}>
-                          <Button
-                            size="sm"
-                            className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
-                          >
-                            View Details
-                          </Button>
-                        </Link>
-                        <Button
-                          size="sm"
-                          variant="outline"
-                          onClick={() => openExternalLink(r.directionsUrl)}
-                        >
-                          <Navigation className="w-4 h-4 mr-1" />
-                          Directions
-                        </Button>
-                        {r.website && (
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => openExternalLink(getExternalLink(r.website)!)}
-                          >
-                            <ExternalLink className="w-4 h-4 mr-1" />
-                            Website
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                          <div className="flex flex-wrap gap-2 mb-3">
+                            {celiacBadge(r.celiacSafe)}
+                            {menuTypeBadge(r.menuType)}
+                            {r.cuisineTypes.map((c) => (
+                              <Badge key={c} variant="secondary" className="text-xs bg-gray-100 text-gray-700">
+                                {c}
+                              </Badge>
+                            ))}
+                          </div>
+
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="flex">
+                              {[...Array(5)].map((_, i) => (
+                                <Star
+                                  key={i}
+                                  className={`w-4 h-4 ${i < Math.floor(r.rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+                                />
+                              ))}
+                            </div>
+                            <span className="font-semibold text-gray-900">{r.rating}</span>
+                            <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
+                          </div>
+
+                          <div className="space-y-1.5 text-sm text-gray-700 mb-4">
+                            <div className="flex items-start gap-2">
+                              <MapPin className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                              <span>{r.address}</span>
+                            </div>
+                            {r.hours && (
+                              <div className="flex items-start gap-2">
+                                <Clock className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                                <span>{r.hours}</span>
+                              </div>
+                            )}
+                            {r.phone && (
+                              <div className="flex items-start gap-2">
+                                <Phone className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                                <span>{r.phone}</span>
+                              </div>
+                            )}
+                          </div>
+
+                          <div className="flex flex-wrap gap-2">
+                            <Link to={restaurantPath(r.name)}>
+                              <Button
+                                size="sm"
+                                className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                              >
+                                View Details
+                              </Button>
+                            </Link>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => openExternalLink(r.directionsUrl)}
+                            >
+                              <Navigation className="w-4 h-4 mr-1" />
+                              Directions
+                            </Button>
+                            {r.website && (
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                onClick={() => openExternalLink(getExternalLink(r.website)!)}
+                              >
+                                <ExternalLink className="w-4 h-4 mr-1" />
+                                Website
+                              </Button>
+                            )}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                )}
               </div>
-            )}
+
+              <aside className="lg:sticky lg:top-24 lg:self-start space-y-4 order-first lg:order-last">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <Search className="w-4 h-4 text-red-600" />
+                      Search Restaurants
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="relative">
+                      <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
+                      <Input
+                        className="pl-9"
+                        placeholder="Search by name or cuisine"
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <Filter className="w-4 h-4 text-red-600" />
+                      Filter by Menu Type
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select value={menuFilter} onValueChange={setMenuFilter}>
+                      <SelectTrigger><SelectValue placeholder="All menu types" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Menu Types</SelectItem>
+                        <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
+                        <SelectItem value="mixed-menu">Mixed Menu</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <Filter className="w-4 h-4 text-red-600" />
+                      Filter by Safety
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <Select value={safetyFilter} onValueChange={setSafetyFilter}>
+                      <SelectTrigger><SelectValue placeholder="All safety levels" /></SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Safety Levels</SelectItem>
+                        <SelectItem value="dedicated-facility">Dedicated GF Facility</SelectItem>
+                        <SelectItem value="protocols-in-place">Celiac Protocols</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <p className="mt-3 text-sm text-gray-600">
+                      Showing {filteredRestaurants.length} of {restaurants.length}
+                    </p>
+                  </CardContent>
+                </Card>
+              </aside>
+            </div>
           </div>
         </section>
       </div>
