@@ -986,8 +986,9 @@ const Spain = () => {
                 Top Restaurants
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Top Gluten-Free Restaurants in Spain
+                Top 25 Gluten-Free Restaurants in Spain
               </h2>
+
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                 Our highest-rated gluten-free dining spots across Spain, verified for celiac safety.
               </p>
