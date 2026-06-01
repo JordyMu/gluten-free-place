@@ -67,6 +67,10 @@ const SpainCityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const meta = slug ? CITY_META[slug.toLowerCase()] : undefined;
 
+  const [searchQuery, setSearchQuery] = useState("");
+  const [menuFilter, setMenuFilter] = useState<string>("all");
+  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [slug]);
@@ -77,6 +81,20 @@ const SpainCityPage = () => {
       .filter((r) => r.city.toLowerCase() === meta.name.toLowerCase())
       .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
   }, [meta]);
+
+  const filteredRestaurants = useMemo(
+    () =>
+      restaurants.filter((r) => {
+        const matchesSearch =
+          searchQuery === "" ||
+          r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          r.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
+        const matchesMenu = menuFilter === "all" || r.menuType === menuFilter;
+        const matchesSafety = safetyFilter === "all" || r.celiacSafe === safetyFilter;
+        return matchesSearch && matchesMenu && matchesSafety;
+      }),
+    [restaurants, searchQuery, menuFilter, safetyFilter]
+  );
 
   if (!meta) return <Navigate to="/spain" replace />;
 
