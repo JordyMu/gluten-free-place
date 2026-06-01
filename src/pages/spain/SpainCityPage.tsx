@@ -139,6 +139,18 @@ const SpainCityPage = () => {
         {slug?.toLowerCase() === "barcelona" && (
           <section className="py-10">
             <div className="container mx-auto px-4 space-y-10">
+              <Card className="bg-gradient-to-r from-red-50 to-yellow-50 border-red-200">
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Award className="w-8 h-8 text-red-600 flex-shrink-0" />
+                    <div>
+                      <h2 className="text-xl font-semibold text-gray-900 mb-2">Gluten-Free Dining in {meta.name}</h2>
+                      <p className="text-gray-700">{meta.tagline}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
                   🍽️ Browse by Category
