@@ -253,6 +253,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥐",
     city: "Barcelona",
     specialty: "Dedicated GF bakery and brunch spot in Gràcia",
+    description:
+      "Dedicated gluten-free bakery and brunch spot in Gràcia where everything is safe for celiacs. Expect freshly baked pastries, sourdough-style breads, cakes, and a full brunch menu with eggs, toasts, and sweet bakes — all prepared in a 100% gluten-free kitchen, making it a favourite morning destination for the gluten-free community in Barcelona.",
     address: "Carrer del Torrent de l'Olla, 85, 08012 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Glutery+Barcelona",
     cuisineTypes: ["Bakery", "Brunch"],
@@ -292,6 +294,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍕",
     city: "Barcelona",
     specialty: "Healthy gluten-free pizza in Eixample",
+    description:
+      "Health-focused pizzeria in Eixample specialising in nutritious, 100% gluten-free pizzas made with wholesome bases and quality toppings. With a dedicated gluten-free preparation area, celiacs can enjoy guilt-free Italian classics alongside salads and vegetarian options, all served in a bright, casual space in central Barcelona.",
     address: "C/ de Pau Claris, 153, 08009 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Pizza+Natura+sin+gluten+Barcelona",
     cuisineTypes: ["Pizza", "Italian"],
@@ -331,6 +335,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥐",
     city: "Barcelona",
     specialty: "Dedicated GF obrador (workshop bakery) in Gràcia",
+    description:
+      "Dedicated gluten-free obrador (workshop bakery) in Gràcia crafting artisanal breads, pastries, and savoury bakes entirely free from gluten. Everything is made on-site in a fully gluten-free environment, so celiacs can browse the whole counter with confidence and pick up fresh loaves, croissants, and treats baked throughout the day in Barcelona.",
     address: "Travessera de Gràcia, 173, 08012 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Gluten+Tag+Obrador+Barcelona",
     cuisineTypes: ["Bakery", "Pastry"],
@@ -344,6 +350,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥗",
     city: "Barcelona",
     specialty: "Healthy GF-friendly brunch and lunch on Pg. de St. Joan",
+    description:
+      "Bright, health-conscious brunch and lunch spot on Passeig de Sant Joan with a strong focus on gluten-free cooking. Enjoy colourful bowls, fresh salads, toasts, and indulgent brunch plates prepared with care for celiacs, alongside specialty coffee and homemade cakes — a wholesome, welcoming retreat in the heart of Barcelona.",
     address: "Pg. de St. Joan, 80, 08009 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Bloome+by+Sasha+Barcelona",
     cuisineTypes: ["Brunch", "Healthy"],
@@ -474,6 +482,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍕",
     city: "Barcelona",
     specialty: "Gluten-free Neapolitan pizza branch on C/ València",
+    description:
+      "The Carrer de València branch of Grosso Napoletano serving certified 100% gluten-free Neapolitan pizza from a dedicated kitchen. Celiacs can enjoy wood-fired classics, fresh pastas, and Italian desserts with complete peace of mind, thanks to strict cross-contamination protocols and gluten-free flours used across the entire menu in Barcelona.",
     address: "C/ de València, 234, 08007 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Grosso+Napoletano+Valencia+Barcelona",
     cuisineTypes: ["Pizza", "Italian"],
@@ -500,6 +510,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍫",
     city: "Barcelona",
     specialty: "Original Chök chocolate kitchen in Ciutat Vella",
+    description:
+      "The original Chök chocolate kitchen in Ciutat Vella, renowned for its artisanal chocolates, kookies, doughnuts, and creative desserts with a wide gluten-free selection. Clearly labelled celiac-safe options and attentive staff make it easy for gluten-free visitors to indulge in some of Barcelona's most inventive sweet creations.",
     address: "Carrer de les Ramelleres, 26, Ciutat Vella, 08001 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Chok+The+Chocolate+Kitchen+Barcelona",
     cuisineTypes: ["Chocolate", "Desserts"],
@@ -591,6 +603,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥖",
     city: "Barcelona",
     specialty: "Dedicated celiac bakery and café in Eixample",
+    description:
+      "Dedicated celiac bakery and café in Eixample offering a fully gluten-free range of breads, pastries, sandwiches, and cakes. Everything is prepared in a controlled gluten-free environment, so celiacs can relax over coffee and freshly baked treats knowing every item on the menu is completely safe to enjoy in central Barcelona.",
     address: "C/ de Mallorca, 504, bajos, 08013 Eixample, Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Coliaki+Barcelona",
     cuisineTypes: ["Bakery", "Café"],
@@ -656,6 +670,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥗",
     city: "Barcelona",
     specialty: "Healthy GF-friendly bistro on Via Laietana",
+    description:
+      "Healthy, gluten-free-friendly bistro on Via Laietana serving nourishing brunch and lunch plates, bowls, salads, and homemade cakes. The kitchen takes care to accommodate celiacs with clearly marked dishes and safe preparation, making it a convenient and wholesome stop while exploring central Barcelona.",
     address: "Via Laietana, 45, 08003 Barcelona",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Bloome+by+Sasha+Via+Laietana",
     cuisineTypes: ["Brunch", "Healthy"],
