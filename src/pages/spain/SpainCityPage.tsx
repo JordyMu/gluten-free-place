@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
-import { MapPin, Star, ArrowLeft, Globe, Shield, CheckCircle, Clock, Phone, ExternalLink, Navigation, Trophy, Award, Search, Filter, MessageCircle } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, CheckCircle, Clock, Phone, ExternalLink, Navigation, Trophy, Award, Search, Filter, MessageCircle, Tag } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -296,10 +296,15 @@ const SpainCityPage = () => {
 
                           {(r.menuHighlights?.length ? r.menuHighlights : r.cuisineTypes).length > 0 && (
                             <div className="mb-4">
-                              <h4 className="text-sm font-bold text-gray-900 mb-2">Menu Highlights</h4>
+                              <h4 className="text-base font-bold text-gray-900 mb-2">Menu Highlights</h4>
                               <div className="flex flex-wrap gap-2">
                                 {(r.menuHighlights?.length ? r.menuHighlights : r.cuisineTypes).map((h) => (
-                                  <Badge key={h} variant="secondary" className="bg-gray-100 text-gray-700 font-medium">
+                                  <Badge
+                                    key={h}
+                                    variant="secondary"
+                                    className="bg-orange-50 text-orange-700 border border-orange-100 font-medium gap-1.5 px-3 py-1 rounded-full"
+                                  >
+                                    <Tag className="w-3 h-3 text-orange-500" />
                                     {h}
                                   </Badge>
                                 ))}
@@ -311,7 +316,7 @@ const SpainCityPage = () => {
                             <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-200 bg-amber-50 p-3">
                               <MessageCircle className="w-4 h-4 mt-0.5 text-amber-600 shrink-0" />
                               <p className="text-sm text-amber-900">
-                                <span className="font-semibold">Pro Tip:</span> {r.proTip}
+                                <span className="font-semibold text-orange-600">Pro Tip:</span> {r.proTip}
                               </p>
                             </div>
                           )}
