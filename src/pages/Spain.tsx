@@ -47,6 +47,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍕",
     city: "Barcelona",
     specialty: "Authentic Neapolitan pizza, 100% gluten-free",
+    description:
+      "Authentic Neapolitan pizzeria serving 100% gluten-free pizzas, pastas, and antipasti from a fully dedicated kitchen. Every dish — from the classic Margherita to the daily specials — is prepared with certified gluten-free flours and strict cross-contamination protocols, making it completely safe for celiacs and the wider gluten-free community in Barcelona.",
     address: "Carrer d'Enric Granados 9, 08007 Barcelona",
     hours: "Daily: 12:00 PM – 12:00 AM",
     phone: "+34 933 789 012",
@@ -63,6 +65,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🥖",
     city: "Barcelona",
     specialty: "Artisanal GF breads and traditional Catalan pastries",
+    description:
+      "Beloved 100% gluten-free bakery offering artisanal Catalan breads, pastries, and cakes. All products are made in a dedicated facility ensuring complete safety for celiacs, with fresh loaves, croissants, and traditional sweets baked daily. A trusted neighbourhood spot in Gràcia for anyone seeking authentic gluten-free baking in Barcelona.",
     address: "Carrer de Verdi 38, 08012 Barcelona",
     hours: "Mon–Sat: 8:00 AM – 8:00 PM",
     phone: "+34 932 123 456",
@@ -127,6 +131,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍫",
     city: "Barcelona",
     specialty: "Artisanal chocolate with extensive GF selection",
+    description:
+      "Artisanal chocolate bar famous for its handcrafted chocolates, kookies, and decadent desserts, with an extensive gluten-free selection. Staff are knowledgeable about cross-contamination and clearly mark celiac-safe options, making it a delicious stop in the El Born district for gluten-free chocolate lovers visiting Barcelona.",
     address: "Carrer del Comerç 36, 08003 Barcelona",
     hours: "Daily: 10:00 AM – 10:00 PM",
     phone: "+34 934 345 678",
@@ -159,6 +165,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍝",
     city: "Barcelona",
     specialty: "Italian restaurant with extensive GF menu",
+    description:
+      "Italian restaurant on Carrer de Muntaner with an extensive gluten-free menu spanning pizzas, fresh pastas, and classic Italian mains. The kitchen follows careful protocols to keep gluten-free dishes safe, and the friendly staff are happy to guide celiac diners, making it a reliable choice for Italian comfort food in Barcelona.",
     address: "Carrer de Muntaner 193, 08036 Barcelona",
     hours: "Daily: 12:00 PM – 11:00 PM",
     phone: "+34 933 456 789",
@@ -175,6 +183,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍕",
     city: "Barcelona",
     specialty: "Dedicated gluten-free pizzeria",
+    description:
+      "Dedicated gluten-free pizzeria in the heart of Gràcia serving Neapolitan-style pizzas, pastas, and Italian classics entirely free from gluten. With a 100% gluten-free kitchen and certified ingredients, celiacs can order anything on the menu with confidence, enjoying authentic Italian flavours in a relaxed Barcelona setting.",
     address: "Carrer de Guillem Tell 20, 08006 Barcelona",
     hours: "Daily: 12:00 PM – 11:30 PM",
     phone: "+34 932 234 567",
@@ -191,6 +201,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍜",
     city: "Barcelona",
     specialty: "Asian fusion with extensive GF options",
+    description:
+      "Creative Asian-fusion restaurant blending Japanese and Southeast Asian flavours with an extensive range of gluten-free options. From bao and dumplings to rice-based mains, the kitchen adapts dishes for celiacs using tamari and gluten-free ingredients, offering an adventurous and safe dining experience in central Barcelona.",
     address: "Carrer del Carme 21, 08001 Barcelona",
     hours: "Tue–Sun: 7:00 PM – 12:00 AM",
     phone: "+34 932 678 901",
@@ -207,6 +219,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     icon: "🍽️",
     city: "Barcelona",
     specialty: "French fine dining with adapted GF menu",
+    description:
+      "Elegant French fine-dining restaurant offering a refined menu thoughtfully adapted for gluten-free diners. Each course is prepared with care to avoid cross-contamination, allowing celiacs to enjoy classic French cuisine — from delicate starters to indulgent desserts — in an intimate, romantic setting in Barcelona's Raval district.",
     address: "Carrer del Dr. Dou 14, 08001 Barcelona",
     hours: "Tue–Sat: 7:00 PM – 11:30 PM",
     phone: "+34 934 123 456",
