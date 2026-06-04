@@ -219,6 +219,52 @@ const GlutenFreeCurepipe = () => {
           </Card>
         </section>
 
+        {/* Browse by Category */}
+        <section className="mb-10">
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2 flex items-center gap-2">
+            🍽️ Browse by Category
+          </h2>
+          <p className="text-gray-600 mb-6">Find exactly what you're looking for with our curated category pages.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <Card className="bg-gradient-to-br from-orange-50 to-red-50 border-orange-200">
+              <CardContent className="p-4 flex items-center gap-3">
+                <span className="text-2xl">🌮</span>
+                <div>
+                  <h3 className="font-semibold text-orange-700">Street Food</h3>
+                  <p className="text-sm text-gray-500">Markets & food trucks</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-yellow-50 to-amber-50 border-yellow-200">
+              <CardContent className="p-4 flex items-center gap-3">
+                <span className="text-2xl">🥐</span>
+                <div>
+                  <h3 className="font-semibold text-amber-700">Bakeries</h3>
+                  <p className="text-sm text-gray-500">Fresh bread & pastries</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-emerald-50 to-teal-50 border-emerald-200">
+              <CardContent className="p-4 flex items-center gap-3">
+                <span className="text-2xl">🛒</span>
+                <div>
+                  <h3 className="font-semibold text-emerald-700">Grocery Stores</h3>
+                  <p className="text-sm text-gray-500">Supermarkets & shops</p>
+                </div>
+              </CardContent>
+            </Card>
+            <Card className="bg-gradient-to-br from-purple-50 to-fuchsia-50 border-purple-200">
+              <CardContent className="p-4 flex items-center gap-3">
+                <span className="text-2xl">🛍️</span>
+                <div>
+                  <h3 className="font-semibold text-purple-700">GF Products</h3>
+                  <p className="text-sm text-gray-500">Specialty GF items</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Best of Curepipe Banner */}
         <section className="mb-10">
           <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200">
