@@ -17,7 +17,7 @@ export const torontoRestaurants: Restaurant[] = [
     proTip: "Try the almond croissant — it's their signature item!",
     whyPeopleLoveIt: ["100% gluten-free facility", "Fresh artisan breads daily", "Large imported GF product selection", "Popular among coeliacs visiting Toronto"],
     nearby: [
-      { label: "Bakery", name: "Almond Butterfly" },
+      { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Cafe", name: "Found Coffee" },
       { label: "Grocery", name: "Metro" },
     ],
