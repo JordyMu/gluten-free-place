@@ -18,7 +18,7 @@ export const torontoRestaurants: Restaurant[] = [
     whyPeopleLoveIt: ["100% gluten-free facility", "Fresh artisan breads daily", "Large imported GF product selection", "Popular among coeliacs visiting Toronto"],
     nearby: [
       { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Cafe", name: "Found Coffee" },
+      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
       { label: "Grocery", name: "Metro" },
     ],
     icon: "🦋",
@@ -913,7 +913,7 @@ export const torontoRestaurants: Restaurant[] = [
     whyPeopleLoveIt: ["100% gluten-free facility", "Fresh artisan breads daily", "Large imported GF product selection", "Popular among coeliacs visiting Toronto"],
     nearby: [
       { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Cafe", name: "Found Coffee" },
+      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
       { label: "Grocery", name: "Metro" },
     ],
     icon: "🦋",
