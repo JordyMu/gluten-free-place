@@ -76,6 +76,8 @@ export const torontoRestaurants: Restaurant[] = [
     ],
     celiacSafetyScore: 7,
   },
+  {
+    name: "El Pocho Antojitos Bar",
     slug: "el-pocho-antojitos-bar",
     address: "2 Follis Ave, Toronto, ON M6G 1S3",
     city: "Toronto",
