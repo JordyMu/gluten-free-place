@@ -186,6 +186,20 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
 
                   <p className="text-gray-700 mb-4">{restaurant.overview}</p>
 
+                  {restaurant.whyPeopleLoveIt && restaurant.whyPeopleLoveIt.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Why people love it:</h4>
+                      <ul className="space-y-1">
+                        {restaurant.whyPeopleLoveIt.map((item) => (
+                          <li key={`${restaurant.slug}-love-${item}`} className="flex items-center gap-2 text-gray-700">
+                            <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                            <span>{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
                   <div className="mb-4">
                     <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
                     <div className="flex flex-wrap gap-2">
