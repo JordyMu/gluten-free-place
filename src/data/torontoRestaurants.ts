@@ -15,6 +15,7 @@ export const torontoRestaurants: Restaurant[] = [
     overview: "Almond Butterfly Bistro is a fully dedicated gluten-free restaurant and bakery in Toronto's west end. Every dish is celiac-safe, from savoury mains to decadent desserts.",
     menuHighlights: ["🥐 GF Pastries", "🍝 GF Pasta Dishes", "🥗 Fresh Salads", "🍰 GF Cakes"],
     proTip: "Try the almond croissant — it's their signature item!",
+    whyPeopleLoveIt: ["100% gluten-free facility", "Fresh artisan breads daily", "Large imported GF product selection", "Popular among coeliacs visiting Toronto"],
     icon: "🦋",
     featured: true,
     cuisineTypes: ["Bistro", "Bakery", "Gluten-Free"],
