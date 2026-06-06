@@ -32,6 +32,7 @@ export interface Restaurant {
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
   whyPeopleLoveIt?: string[];
+  nearby?: { label: string; name: string }[];
 }
 
 export const capeTownRestaurants: Restaurant[] = [
