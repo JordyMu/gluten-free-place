@@ -263,7 +263,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                       <ul className="space-y-1 text-gray-700">
                         {restaurant.nearby.map((item) => (
                           <li key={`${restaurant.slug}-nearby-${item.label}`}>
-                            {item.label}:{" "}
+                            <span className="font-bold">{item.label}:</span>{" "}
                             {item.href ? (
                               <Link to={item.href} className="text-red-700 hover:underline">
                                 {item.name}
