@@ -24,6 +24,7 @@ interface RestaurantDetailPageProps {
     overview: string;
     menuHighlights: string[];
     proTip: string;
+    whyPeopleLoveIt?: string[];
     icon: string;
     celiacSafe: "dedicated-facility" | "protocols-in-place";
     menuType: "fully-gluten-free" | "mixed-menu";
