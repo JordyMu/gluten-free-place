@@ -378,6 +378,26 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               </CardContent>
             </Card>
 
+            {restaurant.whyPeopleLoveIt && restaurant.whyPeopleLoveIt.length > 0 && (
+              <Card className="border-l-4 border-l-green-500">
+                <CardHeader>
+                  <CardTitle>Why people love it</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    {restaurant.whyPeopleLoveIt.map((item, index) => (
+                      <li key={index} className="flex items-center gap-2 text-gray-700">
+                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
+
+
             <Card className="border-l-4 border-l-orange-500">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
