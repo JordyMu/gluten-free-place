@@ -465,6 +465,45 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Where Are You Located Section */}
+      <section id="location" className="py-16 bg-gradient-to-br from-orange-50 to-blue-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-2xl mx-auto text-center">
+            <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Find Nearby
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Where Are You Located?
+            </h2>
+            <p className="text-lg text-gray-600 mb-8">
+              Share your location to discover safe gluten-free restaurants closest to you, sorted by distance.
+            </p>
+            <Button
+              size="lg"
+              onClick={() => {
+                if (navigator.geolocation) {
+                  navigator.geolocation.getCurrentPosition(
+                    () => {
+                      const section = document.getElementById("destinations");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    },
+                    () => {
+                      const section = document.getElementById("destinations");
+                      section?.scrollIntoView({ behavior: "smooth" });
+                    }
+                  );
+                }
+              }}
+              className="bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600"
+            >
+              <MapPin className="h-5 w-5 mr-2" />
+              Use My Location
+            </Button>
+          </div>
+        </div>
+      </section>
+
       {/* Trust Section */}
       <section id="about" className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
         <div className="container mx-auto px-4">
