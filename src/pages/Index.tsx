@@ -633,10 +633,10 @@ const Index = () => {
             <div>
               <h3 className="text-white font-semibold mb-4">Popular Regions</h3>
               <ul className="space-y-2 text-sm">
-                <li><Link to="/canada" className="hover:text-orange-500 transition-colors">Canada</Link></li>
-                <li><Link to="/gluten-free/south-africa" className="hover:text-orange-500 transition-colors">South Africa</Link></li>
-                <li><Link to="/gluten-free/mauritius" className="hover:text-orange-500 transition-colors">Mauritius</Link></li>
-                <li><Link to="/gluten-free/kenya" className="hover:text-orange-500 transition-colors">Kenya</Link></li>
+                <li><Link to="/italy" className="hover:text-orange-500 transition-colors">Italy</Link></li>
+                <li><Link to="/spain" className="hover:text-orange-500 transition-colors">Spain</Link></li>
+                <li><Link to="/new-zealand" className="hover:text-orange-500 transition-colors">New Zealand</Link></li>
+                <li><Link to="/australia" className="hover:text-orange-500 transition-colors">Australia</Link></li>
               </ul>
             </div>
             <div>
