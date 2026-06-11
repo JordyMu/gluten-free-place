@@ -260,9 +260,9 @@ const Index = () => {
               Trusted by 50,000+ Travelers
             </Badge>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-orange-600 via-red-500 to-blue-600 bg-clip-text text-transparent">
-              Discover Amazing
+              Find Gluten-Free
               <br />
-              Gluten-Free Places
+              Restaurants Near You
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
               Find safe, delicious gluten-free restaurants and cafes around the world. 
