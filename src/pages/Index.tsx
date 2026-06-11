@@ -501,6 +501,40 @@ const Index = () => {
               Use My Location
             </Button>
           </div>
+
+          <div className="max-w-4xl mx-auto mt-12 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-3">
+            {[
+              { name: "Italy", route: "/italy" },
+              { name: "France", route: "/france" },
+              { name: "United States", route: "/usa" },
+              { name: "Spain", route: "/spain" },
+              { name: "Australia", route: "/australia" },
+              { name: "South Africa", route: "/south-africa" },
+              { name: "United Kingdom", route: "/united-kingdom" },
+              { name: "Ireland", route: "/ireland" },
+              { name: "Canada", route: "/canada" },
+              { name: "New Zealand", route: "/new-zealand" },
+              { name: "Germany", route: "/germany" },
+              { name: "Sweden", route: "/sweden" },
+              { name: "Thailand", route: "/thailand" },
+              { name: "Argentina", route: "/argentina" },
+              { name: "Mauritius", route: "/mauritius" },
+              { name: "Kenya", route: "/gluten-free/kenya" },
+              { name: "Nigeria", route: "/nigeria" },
+              { name: "Japan", route: "/japan" },
+              { name: "Egypt", route: "/egypt" },
+              { name: "Botswana", route: "/botswana" },
+              { name: "Morocco", route: "/gluten-free/morocco" },
+            ].map((country) => (
+              <Link
+                key={country.name}
+                to={country.route}
+                className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
+              >
+                {country.name}
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
