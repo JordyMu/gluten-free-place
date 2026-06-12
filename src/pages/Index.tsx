@@ -529,7 +529,7 @@ const Index = () => {
               <Link
                 key={country.name}
                 to={country.route}
-                className="text-gray-700 hover:text-orange-600 hover:underline transition-colors font-medium"
+                className="text-gray-700 hover:text-orange-600 hover:underline transition-colors font-medium text-lg md:text-xl"
               >
                 {country.name}
               </Link>
