@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award } from "lucide-react";
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -685,7 +685,25 @@ const Index = () => {
               </Link>
             </div>
           </div>
-          <div className="border-t border-gray-800 mt-10 pt-6 text-center text-sm text-gray-500">
+          <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+              <li><Link to="/#about" className="hover:text-orange-500 transition-colors">About us</Link></li>
+              <li><Link to="/all-countries" className="hover:text-orange-500 transition-colors">Site map</Link></li>
+              <li><Link to="/privacy" className="hover:text-orange-500 transition-colors">Privacy</Link></li>
+              <li><Link to="/terms" className="hover:text-orange-500 transition-colors">Terms &amp; conditions</Link></li>
+            </ul>
+            <div className="flex items-center gap-4">
+              <span className="text-sm font-semibold text-white uppercase tracking-wide">Follow us</span>
+              <div className="flex items-center gap-3">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-orange-500 transition-colors"><Facebook className="h-5 w-5" /></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="hover:text-orange-500 transition-colors"><Twitter className="h-5 w-5" /></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-orange-500 transition-colors"><Instagram className="h-5 w-5" /></a>
+                <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="hover:text-orange-500 transition-colors"><Youtube className="h-5 w-5" /></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-orange-500 transition-colors"><Linkedin className="h-5 w-5" /></a>
+              </div>
+            </div>
+          </div>
+          <div className="mt-6 text-center text-sm text-gray-500">
             © {new Date().getFullYear()} Gluten-Free Places. All rights reserved.
           </div>
         </div>
