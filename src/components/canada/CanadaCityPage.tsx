@@ -66,7 +66,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
