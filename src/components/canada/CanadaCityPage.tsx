@@ -25,6 +25,7 @@ interface CanadaCityPageProps {
   restaurants: Restaurant[];
   faqItems: FAQItem[];
   extraSection?: React.ReactNode;
+  heading?: string;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
