@@ -123,7 +123,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-5xl mb-4 block">{emoji}</span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Restaurants in {cityName}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">{heading ?? `Gluten-Free Restaurants in ${cityName}`}</h1>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
             Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {cityName}.
           </p>
