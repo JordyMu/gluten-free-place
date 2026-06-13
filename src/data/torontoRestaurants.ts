@@ -24,7 +24,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
-      { label: "Grocery", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
     featured: true,
@@ -66,7 +66,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Bunner's Bakeshop" },
       { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
-      { label: "Grocery", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "☕",
     featured: false,
@@ -956,7 +956,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
-      { label: "Grocery", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
     featured: true,
