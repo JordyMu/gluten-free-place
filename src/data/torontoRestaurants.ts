@@ -954,9 +954,9 @@ export const torontoRestaurants: Restaurant[] = [
     menuHighlights: ["🥐 GF Pastries", "🍝 GF Pasta Dishes", "🥗 Fresh Salads", "🍰 GF Cakes"],
     proTip: "Try the almond croissant — it's their signature item!",
     nearby: [
-      { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
-      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Bakery", name: "Almond Butterfly (250m)", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
+      { label: "Cafe", name: "Found Coffee (400m)", href: "/gluten-free/canada/toronto/found-coffee" },
+      { label: "Grocery store", name: "Metro (800m)", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
     featured: true,
