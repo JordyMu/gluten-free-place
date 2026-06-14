@@ -70,8 +70,37 @@ const openExternalLink = (url: string) => {
 
 const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: restaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: restaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    [restaurants]
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: restaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: restaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    [restaurants]
+  );
+
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    restaurants.forEach((r) => r.cuisineTypes.forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [restaurants]);
 
   const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, Canada. Explore celiac-safe places with reviews, menu tips, and directions.`;
   const pageTitle = `Gluten-Free Restaurants in ${cityName}, Canada | Celiac-Safe Guide 2026`;
