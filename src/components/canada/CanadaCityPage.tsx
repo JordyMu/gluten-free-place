@@ -130,11 +130,13 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
           searchQuery === "" ||
           restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
           restaurant.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
-        const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-        const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-        return matchesSearch && matchesMenu && matchesSafety;
+        const matchesMenu = menuFilters.length === 0 || menuFilters.includes(restaurant.menuType);
+        const matchesSafety = safetyFilters.length === 0 || safetyFilters.includes(restaurant.celiacSafe);
+        const matchesCuisine =
+          cuisineFilters.length === 0 || restaurant.cuisineTypes.some((c) => cuisineFilters.includes(c));
+        return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
       }),
-    [restaurants, searchQuery, menuFilter, safetyFilter]
+    [restaurants, searchQuery, menuFilters, safetyFilters, cuisineFilters]
   );
 
   return (
