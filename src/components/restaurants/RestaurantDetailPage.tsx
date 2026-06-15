@@ -250,7 +250,8 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
       </section>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-5xl mx-auto">
+        <div className={hasSidebar ? "max-w-6xl mx-auto lg:grid lg:grid-cols-[1fr_340px] lg:gap-8 lg:items-start" : "max-w-5xl mx-auto"}>
+          <div className="min-w-0">
           {/* Static Photos from data */}
           {(() => {
             const hasPhotos = restaurant.photos && restaurant.photos.length > 0;
