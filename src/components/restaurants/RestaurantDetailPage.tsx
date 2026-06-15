@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { RestaurantPhotoGallery } from "./RestaurantPhotoGallery";
+import { BookOrOrderCard } from "./BookOrOrderCard";
 import { supabase } from "@/integrations/supabase/client";
 
 interface RestaurantDetailPageProps {
