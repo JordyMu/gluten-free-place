@@ -602,6 +602,20 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               />
             </CardContent>
           </Card>
+          </div>
+
+          {/* Sidebar */}
+          {hasSidebar && (
+            <aside className="space-y-6 mt-8 lg:mt-0 lg:sticky lg:top-24">
+              <BookOrOrderCard phone={restaurant.phone} />
+              <ServicesGlance
+                services={restaurant.services!}
+                rating={restaurant.rating}
+                reviewCount={restaurant.reviewCount}
+              />
+              <ShareListing name={restaurant.name} />
+            </aside>
+          )}
         </div>
       </div>
     </div>
