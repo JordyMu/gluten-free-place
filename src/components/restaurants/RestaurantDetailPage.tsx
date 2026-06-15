@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { RestaurantPhotoGallery } from "./RestaurantPhotoGallery";
 import { BookOrOrderCard } from "./BookOrOrderCard";
+import { ServiceAvailability, ServicesGlance, ShareListing } from "./ServiceInfo";
 import { supabase } from "@/integrations/supabase/client";
 
 interface RestaurantDetailPageProps {
@@ -39,6 +40,13 @@ interface RestaurantDetailPageProps {
     menuPhotos?: string[];
     staffKnowledgeScore?: number;
     celiacSafetyScore?: number;
+    services?: {
+      dineIn?: { available: boolean; note: string };
+      takeaway?: { available: boolean; note: string };
+      delivery?: { available: boolean; note: string };
+      accessible?: boolean;
+      gfPackaging?: boolean;
+    };
   };
   backLink: string;
   backLabel: string;
@@ -47,6 +55,7 @@ interface RestaurantDetailPageProps {
 export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: RestaurantDetailPageProps) => {
   const [aiSummary, setAiSummary] = useState<string>("");
   const [isLoadingSummary, setIsLoadingSummary] = useState(false);
+  const hasSidebar = !!restaurant.services;
 
   const getCeliacSafeBadge = () => {
     switch (restaurant.celiacSafe) {
@@ -241,7 +250,8 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
       </section>
 
       <div className="container mx-auto px-4 py-8">
-        <div className="max-w-5xl mx-auto">
+        <div className={hasSidebar ? "max-w-6xl mx-auto lg:grid lg:grid-cols-[1fr_340px] lg:gap-8 lg:items-start" : "max-w-5xl mx-auto"}>
+          <div className="min-w-0">
           {/* Static Photos from data */}
           {(() => {
             const hasPhotos = restaurant.photos && restaurant.photos.length > 0;
@@ -299,12 +309,11 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           })()}
 
 
-          {/* Book or order */}
-          {restaurant.slug === "almond-butterfly-bistro" && (
-            <div className="mb-8 max-w-md">
-              <BookOrOrderCard phone={restaurant.phone} />
-            </div>
+          {/* Service availability */}
+          {restaurant.services && (
+            <ServiceAvailability services={restaurant.services} />
           )}
+
 
           {/* Location & Contact */}
 
@@ -593,6 +602,20 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               />
             </CardContent>
           </Card>
+          </div>
+
+          {/* Sidebar */}
+          {hasSidebar && (
+            <aside className="space-y-6 mt-8 lg:mt-0 lg:sticky lg:top-24">
+              <BookOrOrderCard phone={restaurant.phone} />
+              <ServicesGlance
+                services={restaurant.services!}
+                rating={restaurant.rating}
+                reviewCount={restaurant.reviewCount}
+              />
+              <ShareListing name={restaurant.name} />
+            </aside>
+          )}
         </div>
       </div>
     </div>
