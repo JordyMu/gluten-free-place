@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { RestaurantPhotoGallery } from "./RestaurantPhotoGallery";
 import { BookOrOrderCard } from "./BookOrOrderCard";
+import { ServiceAvailability, ServicesGlance, ShareListing } from "./ServiceInfo";
 import { supabase } from "@/integrations/supabase/client";
 
 interface RestaurantDetailPageProps {
