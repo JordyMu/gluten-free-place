@@ -55,6 +55,7 @@ interface RestaurantDetailPageProps {
 export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: RestaurantDetailPageProps) => {
   const [aiSummary, setAiSummary] = useState<string>("");
   const [isLoadingSummary, setIsLoadingSummary] = useState(false);
+  const hasSidebar = !!restaurant.services;
 
   const getCeliacSafeBadge = () => {
     switch (restaurant.celiacSafe) {
