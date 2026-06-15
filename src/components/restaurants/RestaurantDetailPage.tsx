@@ -299,7 +299,15 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           })()}
 
 
+          {/* Book or order */}
+          {restaurant.slug === "almond-butterfly-bistro" && (
+            <div className="mb-8 max-w-md">
+              <BookOrOrderCard phone={restaurant.phone} />
+            </div>
+          )}
+
           {/* Location & Contact */}
+
           <div className="grid md:grid-cols-2 gap-8 mb-8">
             <Card>
               <CardHeader>
