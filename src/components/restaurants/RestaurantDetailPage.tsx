@@ -40,6 +40,13 @@ interface RestaurantDetailPageProps {
     menuPhotos?: string[];
     staffKnowledgeScore?: number;
     celiacSafetyScore?: number;
+    services?: {
+      dineIn?: { available: boolean; note: string };
+      takeaway?: { available: boolean; note: string };
+      delivery?: { available: boolean; note: string };
+      accessible?: boolean;
+      gfPackaging?: boolean;
+    };
   };
   backLink: string;
   backLabel: string;
