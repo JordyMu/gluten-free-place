@@ -309,12 +309,11 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           })()}
 
 
-          {/* Book or order */}
-          {restaurant.slug === "almond-butterfly-bistro" && (
-            <div className="mb-8 max-w-md">
-              <BookOrOrderCard phone={restaurant.phone} />
-            </div>
+          {/* Service availability */}
+          {restaurant.services && (
+            <ServiceAvailability services={restaurant.services} />
           )}
+
 
           {/* Location & Contact */}
 
