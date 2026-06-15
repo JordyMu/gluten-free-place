@@ -46,6 +46,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/almond-butterfly-bistro-7.webp", caption: "Bakery Display" },
       { url: "/images/almond-butterfly-bistro-8.webp", caption: "Dessert Platter" },
     ],
+    services: {
+      dineIn: { available: true, note: "Reservations recommended · up to 8 guests · outdoor terrace open in summer" },
+      takeaway: { available: true, note: "Order by phone or in person · ready in 20–30 min · dedicated GF packaging used" },
+      delivery: { available: false, note: "No third-party delivery — owner prefers to control packaging to prevent cross-contamination" },
+      accessible: true,
+      gfPackaging: true,
+    },
     celiacSafetyScore: 10,
   },
   {
