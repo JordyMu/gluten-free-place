@@ -626,21 +626,21 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Community Verified</h3>
               <p className="opacity-90">Every restaurant is reviewed by real travelers with gluten sensitivities</p>
             </div>
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Safety First</h3>
               <p className="opacity-90">Detailed cross-contamination information and staff training ratings</p>
             </div>
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Quality Assured</h3>
