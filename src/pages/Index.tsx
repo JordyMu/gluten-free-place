@@ -609,7 +609,7 @@ const Index = () => {
 
 
       {/* Trust Section */}
-      <section id="about" className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+      <section id="about" className="py-16 bg-gradient-to-r from-orange-500 to-red-600 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">
