@@ -609,10 +609,10 @@ const Index = () => {
 
 
       {/* Trust Section */}
-      <section id="about" className="py-16 bg-gradient-to-r from-[#0c447c] to-[#1e6bb8] text-white">
+      <section id="about" className="py-16 bg-[#e6f1fb] text-[#0c447c]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+            <Badge className="mb-4 bg-[#0c447c]/10 text-[#0c447c] border-[#0c447c]/20">
               <Shield className="h-4 w-4 mr-2" />
               Why Trust Us
             </Badge>
@@ -626,21 +626,21 @@ const Index = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Users className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Community Verified</h3>
               <p className="opacity-90">Every restaurant is reviewed by real travelers with gluten sensitivities</p>
             </div>
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Shield className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Safety First</h3>
               <p className="opacity-90">Detailed cross-contamination information and staff training ratings</p>
             </div>
             <div className="text-center">
-              <div className="bg-white/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#0c447c]/10 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                 <Award className="h-8 w-8" />
               </div>
               <h3 className="text-xl font-bold mb-2">Quality Assured</h3>
