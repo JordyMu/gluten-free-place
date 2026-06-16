@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, Award, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, ShieldCheck, RefreshCw, Award, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -537,6 +537,76 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Why We Are Different Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900">
+            Why GlutenFreePlace is different
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {[
+              {
+                icon: ShieldCheck,
+                title: "Dedicated kitchens only",
+                text: "We list only restaurants where no gluten-containing ingredients are on the premises. No exceptions, no “mostly GF” venues.",
+              },
+              {
+                icon: Users,
+                title: "Reviewed by celiacs",
+                text: "Every review is from someone who has to eat this way. Not food bloggers. Not dieters. Real celiacs rating real safety.",
+              },
+              {
+                icon: RefreshCw,
+                title: "Kept current",
+                text: "Restaurants change ownership, protocols, and kitchens. We re-verify listings regularly and remove any that no longer qualify.",
+              },
+            ].map((item) => (
+              <div
+                key={item.title}
+                className="rounded-2xl border border-gray-200 p-6 bg-white"
+              >
+                <item.icon className="h-7 w-7 text-green-700 mb-4" />
+                <h3 className="text-xl font-bold mb-3 text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{item.text}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-2xl bg-green-50 p-8 md:p-12 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-3 text-green-900">
+              Own a dedicated GF restaurant?
+            </h2>
+            <p className="text-green-800 max-w-2xl mx-auto mb-8">
+              Get listed and connect with thousands of celiac diners searching for safe restaurants exactly like yours.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-green-700 hover:bg-green-800 text-white"
+                onClick={() => {
+                  const section = document.getElementById("destinations");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                List your restaurant
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-green-700 text-green-800 hover:bg-green-100"
+                onClick={() => {
+                  const section = document.getElementById("about");
+                  section?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Learn about verification
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Trust Section */}
       <section id="about" className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
