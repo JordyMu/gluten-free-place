@@ -32,7 +32,11 @@ export interface Restaurant {
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
   whyPeopleLoveIt?: string[];
-  nearby?: { label: string; name: string; href?: string }[];
+  nearby?: { label: string; name: string; href?: string; badge?: string }[];
+  celiacReviewCount?: number;
+  kitchenInfo?: { type: string; title: string; description: string };
+  crossContaminationProtocol?: { text: string; safe: boolean }[];
+  celiacReviews?: { initials: string; name: string; tag: string; rating: number; text: string }[];
   services?: {
     dineIn?: { available: boolean; note: string };
     takeaway?: { available: boolean; note: string };
