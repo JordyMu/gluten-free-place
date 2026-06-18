@@ -27,11 +27,6 @@ interface RestaurantDetailPageProps {
     menuHighlights: string[];
     proTip: string;
     whyPeopleLoveIt?: string[];
-    nearby?: { label: string; name: string; href?: string; badge?: string }[];
-    celiacReviewCount?: number;
-    kitchenInfo?: { type: string; title: string; description: string };
-    crossContaminationProtocol?: { text: string; safe: boolean }[];
-    celiacReviews?: { initials: string; name: string; tag: string; rating: number; text: string }[];
     icon: string;
     celiacSafe: "dedicated-facility" | "protocols-in-place";
     menuType: "fully-gluten-free" | "mixed-menu";
