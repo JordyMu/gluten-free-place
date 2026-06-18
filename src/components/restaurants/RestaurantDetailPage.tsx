@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine, AlertTriangle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -27,6 +27,11 @@ interface RestaurantDetailPageProps {
     menuHighlights: string[];
     proTip: string;
     whyPeopleLoveIt?: string[];
+    nearby?: { label: string; name: string; href?: string; badge?: string }[];
+    celiacReviewCount?: number;
+    kitchenInfo?: { type: string; title: string; description: string };
+    crossContaminationProtocol?: { text: string; safe: boolean }[];
+    celiacReviews?: { initials: string; name: string; tag: string; rating: number; text: string }[];
     icon: string;
     celiacSafe: "dedicated-facility" | "protocols-in-place";
     menuType: "fully-gluten-free" | "mixed-menu";
@@ -89,7 +94,9 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           />
         ))}
         <span className="ml-2 text-2xl font-bold">{rating}</span>
-        <span className="text-gray-500 ml-1">({restaurant.reviewCount} reviews)</span>
+        <span className="text-gray-500 ml-1">
+          ({restaurant.reviewCount} reviews{restaurant.celiacReviewCount ? ` · ${restaurant.celiacReviewCount} from celiac community` : ""})
+        </span>
       </div>
     );
   };
@@ -314,6 +321,41 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
             <ServiceAvailability services={restaurant.services} />
           )}
 
+          {/* Kitchen Type Warning */}
+          {restaurant.kitchenInfo && (
+            <div className="mb-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                <h3 className="font-semibold text-amber-900">{restaurant.kitchenInfo.title}</h3>
+              </div>
+              <p className="text-amber-800 text-sm leading-relaxed">{restaurant.kitchenInfo.description}</p>
+            </div>
+          )}
+
+          {/* Cross-contamination protocol */}
+          {restaurant.crossContaminationProtocol && restaurant.crossContaminationProtocol.length > 0 && (
+            <Card className="mb-8 border-l-4 border-l-green-500">
+              <CardHeader>
+                <CardTitle>Cross-contamination protocol</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {restaurant.crossContaminationProtocol.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      {item.safe ? (
+                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      ) : (
+                        <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      )}
+                      <span>{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+
 
           {/* Location & Contact */}
 
@@ -443,6 +485,67 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               </CardContent>
             </Card>
           </div>
+
+          {/* What celiacs are saying */}
+          {restaurant.celiacReviews && restaurant.celiacReviews.length > 0 && (
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle>What celiacs are saying</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-6">
+                  {restaurant.celiacReviews.map((review, index) => (
+                    <div key={index} className="flex gap-3">
+                      <div className="w-9 h-9 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-xs font-semibold flex-shrink-0">
+                        {review.initials}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap mb-1">
+                          <span className="font-semibold text-gray-900">{review.name}</span>
+                          <Badge className="bg-green-50 text-green-700 border-green-200">{review.tag}</Badge>
+                          <span className="flex items-center ml-auto">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className={`w-4 h-4 ${i < review.rating ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`} />
+                            ))}
+                          </span>
+                        </div>
+                        <p className="text-gray-700 text-sm leading-relaxed">{review.text}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
+
+          {/* Nearby celiac-safe options */}
+          {restaurant.nearby && restaurant.nearby.length > 0 && (
+            <Card className="mb-8">
+              <CardHeader>
+                <CardTitle>Nearby celiac-safe options</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="divide-y">
+                  {restaurant.nearby.map((item, index) => (
+                    <li key={index} className="flex items-center justify-between gap-3 py-3">
+                      <span className="text-gray-500 text-sm">{item.label}:</span>
+                      <div className="flex items-center gap-2 flex-wrap justify-end">
+                        {item.href ? (
+                          <Link to={item.href} className="font-semibold text-gray-900 hover:text-orange-600">{item.name}</Link>
+                        ) : (
+                          <span className="font-semibold text-gray-900">{item.name}</span>
+                        )}
+                        {item.badge && (
+                          <Badge className="bg-emerald-50 text-emerald-700 border-emerald-200">{item.badge}</Badge>
+                        )}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
 
           {/* Celiac Safety Score */}
           {restaurant.celiacSafetyScore && (
