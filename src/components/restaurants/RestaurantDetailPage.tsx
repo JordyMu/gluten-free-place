@@ -94,7 +94,9 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
           />
         ))}
         <span className="ml-2 text-2xl font-bold">{rating}</span>
-        <span className="text-gray-500 ml-1">({restaurant.reviewCount} reviews)</span>
+        <span className="text-gray-500 ml-1">
+          ({restaurant.reviewCount} reviews{restaurant.celiacReviewCount ? ` · ${restaurant.celiacReviewCount} from celiac community` : ""})
+        </span>
       </div>
     );
   };
