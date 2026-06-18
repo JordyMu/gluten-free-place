@@ -321,6 +321,41 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
             <ServiceAvailability services={restaurant.services} />
           )}
 
+          {/* Kitchen Type Warning */}
+          {restaurant.kitchenInfo && (
+            <div className="mb-8 rounded-xl border border-amber-200 bg-amber-50 p-5">
+              <div className="flex items-center gap-2 mb-2">
+                <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0" />
+                <h3 className="font-semibold text-amber-900">{restaurant.kitchenInfo.title}</h3>
+              </div>
+              <p className="text-amber-800 text-sm leading-relaxed">{restaurant.kitchenInfo.description}</p>
+            </div>
+          )}
+
+          {/* Cross-contamination protocol */}
+          {restaurant.crossContaminationProtocol && restaurant.crossContaminationProtocol.length > 0 && (
+            <Card className="mb-8 border-l-4 border-l-green-500">
+              <CardHeader>
+                <CardTitle>Cross-contamination protocol</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <ul className="space-y-3">
+                  {restaurant.crossContaminationProtocol.map((item, index) => (
+                    <li key={index} className="flex items-start gap-2 text-gray-700">
+                      {item.safe ? (
+                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+                      ) : (
+                        <AlertTriangle className="w-5 h-5 text-amber-500 flex-shrink-0 mt-0.5" />
+                      )}
+                      <span>{item.text}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          )}
+
+
 
           {/* Location & Contact */}
 
