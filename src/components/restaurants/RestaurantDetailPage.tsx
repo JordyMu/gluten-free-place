@@ -38,6 +38,11 @@ interface RestaurantDetailPageProps {
     photos: (string | { url: string; caption?: string })[];
     menuNotes?: string[];
     menuPhotos?: string[];
+    fullMenu?: {
+      category: string;
+      note?: string;
+      items: { name: string; price: string; description?: string }[];
+    }[];
     staffKnowledgeScore?: number;
     celiacSafetyScore?: number;
     services?: {
