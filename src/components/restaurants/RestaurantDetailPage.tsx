@@ -446,7 +446,40 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                         <li key={index}>• {note}</li>
                       ))}
                     </ul>
-                  </div>
+          </div>
+
+          {/* Full Menu */}
+          {restaurant.fullMenu && restaurant.fullMenu.length > 0 && (
+            <Card className="mb-8 border-l-4 border-l-orange-500">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ChefHat className="w-5 h-5 text-orange-600" />
+                  Menu
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid md:grid-cols-2 gap-8">
+                  {restaurant.fullMenu.map((section, si) => (
+                    <div key={si}>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">{section.category}</h3>
+                      {section.note && <p className="text-sm text-gray-500 mb-3">{section.note}</p>}
+                      <ul className="space-y-3">
+                        {section.items.map((item, ii) => (
+                          <li key={ii}>
+                            <div className="flex justify-between items-baseline gap-3">
+                              <span className="font-semibold text-gray-900">{item.name}</span>
+                              <span className="font-semibold text-orange-600 whitespace-nowrap">{item.price}</span>
+                            </div>
+                            {item.description && <p className="text-sm text-gray-600">{item.description}</p>}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          )}
                 )}
               </CardContent>
             </Card>
