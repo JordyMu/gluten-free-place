@@ -54,6 +54,46 @@ export const torontoRestaurants: Restaurant[] = [
       gfPackaging: true,
     },
     celiacSafetyScore: 10,
+    fullMenu: [
+      {
+        category: "Starters & Shareables",
+        items: [
+          { name: "A.B. Jumbo Rings", price: "$15.50", description: "Beer-battered, thick-cut onion rings, housemade dijon mayo dipping sauce" },
+          { name: "Loaded Nachos", price: "$18.75", description: "Corn tortilla chips, cheese, jalapeños, pico de gallo, sour cream, cilantro" },
+          { name: "Buffalo Cauliflower Wings", price: "$18.50", description: "Beer-battered jumbo cauliflower wings, choice of housemade dipping sauce" },
+          { name: "Chicken Wings", price: "$20.50", description: "Pound of hot, bbq, or salt & pepper wings" },
+        ],
+      },
+      {
+        category: "Burgers & Handhelds",
+        note: "Served with choice of fresh-cut fries or side verde",
+        items: [
+          { name: "Bistro Burger", price: "$22.50", description: "Flame-broiled chuck & brisket patty, dijon mayo, pickled onion, lettuce, tomato, pickle" },
+          { name: "Smokehouse Burger", price: "$25.75", description: "Chuck & brisket patty, BBQ sauce, bacon, fried jalapenos, crispy onions, smoked gouda" },
+          { name: "Crispy Chicken Sandwich", price: "$23.00", description: "Crispy chicken breast filet, honey mustard, pickled onion, lettuce, tomato" },
+          { name: "Apple Rosemary Grilled Cheese", price: "$21.75", description: "Smoked gouda & aged white cheddar, rosemary, dijon, roasted garlic, sliced apple" },
+        ],
+      },
+      {
+        category: "Mains & Pastas",
+        items: [
+          { name: "Chicken Parmesan", price: "$28.75", description: "Crispy chicken, parmesan, marinara, mozzarella, side pesto penne, garlic toast" },
+          { name: "Canadian Prime Sirloin", price: "$29.00", description: "AAA prime sirloin, garlic mashed potatoes, compound butter, seasonal vegetables" },
+          { name: "Maple Dijon Salmon", price: "$29.00", description: "Pan seared salmon filet, maple dijon glaze, garlic mashed potatoes, asparagus" },
+          { name: "A.B. Mac'n Cheese", price: "$23.50", description: "Smoked gouda, aged white cheddar, cherry tomato, garlic cream sauce, garlic toast" },
+        ],
+      },
+      {
+        category: "Brunch",
+        note: "Available daily until 4:00pm",
+        items: [
+          { name: "Classic Breakfast", price: "$21.75", description: "Two eggs, bacon, mexican-style mixed beans, cajun homefries, housemade toast" },
+          { name: "Eggs Benny", price: "$23.50", description: "Two poached eggs, canadian bacon, housemade hollandaise, english muffin, cajun homefries" },
+          { name: "Butterfly Stack", price: "$22.50", description: "Triple pancake stack, housemade maple butter, side berry compote" },
+          { name: "Lavender Love French Toast", price: "$23.50", description: "Cacao nib & almond crusted french toast, lemon lavender ricotta & mascarpone crema" },
+        ],
+      },
+    ],
   },
   {
     name: "Found Coffee",
