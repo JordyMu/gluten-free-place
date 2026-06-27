@@ -425,6 +425,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
 
 
 
+            {!(restaurant.fullMenu && restaurant.fullMenu.length > 0) && (
             <Card className="border-l-4 border-l-orange-500">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
@@ -450,6 +451,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                 )}
               </CardContent>
             </Card>
+            )}
           </div>
 
           {/* Full Menu */}
