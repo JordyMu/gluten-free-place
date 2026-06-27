@@ -27,6 +27,7 @@ export const torontoRestaurants: Restaurant[] = [
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
+    heroImage: "/images/almond-butterfly-bistro-hero.webp",
     featured: true,
     cuisineTypes: ["Bistro", "Bakery", "Gluten-Free"],
     celiacSafe: "dedicated-facility",

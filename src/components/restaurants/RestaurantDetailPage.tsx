@@ -36,6 +36,7 @@ interface RestaurantDetailPageProps {
     lng: number;
     venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
     photos: (string | { url: string; caption?: string })[];
+    heroImage?: string;
     menuNotes?: string[];
     menuPhotos?: string[];
     fullMenu?: {
@@ -237,8 +238,12 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
       </header>
 
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-orange-600 to-amber-500 text-white py-12">
-        <div className="container mx-auto px-4">
+      <section
+        className="relative bg-gradient-to-r from-orange-600 to-amber-500 text-white py-12 bg-cover bg-center"
+        style={restaurant.heroImage ? { backgroundImage: `url(${restaurant.heroImage})` } : undefined}
+      >
+        {restaurant.heroImage && <div className="absolute inset-0 bg-black/50" />}
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <span className="text-6xl mb-4 block">{restaurant.icon}</span>
             <h1 className="text-4xl md:text-5xl font-bold mb-4">{restaurant.name}</h1>
