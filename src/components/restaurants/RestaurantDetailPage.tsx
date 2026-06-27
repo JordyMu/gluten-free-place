@@ -446,6 +446,10 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                         <li key={index}>• {note}</li>
                       ))}
                     </ul>
+                  </div>
+                )}
+              </CardContent>
+            </Card>
           </div>
 
           {/* Full Menu */}
@@ -480,10 +484,6 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               </CardContent>
             </Card>
           )}
-                )}
-              </CardContent>
-            </Card>
-          </div>
 
 
 
