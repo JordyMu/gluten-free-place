@@ -451,6 +451,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                 )}
               </CardContent>
             </Card>
+            )}
           </div>
 
           {/* Full Menu */}
