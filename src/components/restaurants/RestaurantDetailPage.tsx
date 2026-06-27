@@ -36,6 +36,7 @@ interface RestaurantDetailPageProps {
     lng: number;
     venueType: "bakery" | "restaurant" | "cafe" | "supermarket" | "street-food" | "home-baker" | "gf-products";
     photos: (string | { url: string; caption?: string })[];
+    heroImage?: string;
     menuNotes?: string[];
     menuPhotos?: string[];
     fullMenu?: {
