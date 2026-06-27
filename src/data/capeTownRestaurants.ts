@@ -29,6 +29,11 @@ export interface Restaurant {
   photos: (string | { url: string; caption?: string })[];
   menuNotes?: string[];
   menuPhotos?: string[];
+  fullMenu?: {
+    category: string;
+    note?: string;
+    items: { name: string; price: string; description?: string }[];
+  }[];
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
   whyPeopleLoveIt?: string[];
