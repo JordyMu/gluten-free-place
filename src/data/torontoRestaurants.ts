@@ -103,7 +103,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     hours: "Mon–Sun: 7:30AM – 6:00PM",
-    phone: "+1 416-792-0022",
+    phone: "+1 416-516-9666",
     website: "www.foundcoffee.ca",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=324+College+St+Toronto+ON+M5T+1S3+Canada",
     specialty: "Specialty café with gluten-free bakes",
