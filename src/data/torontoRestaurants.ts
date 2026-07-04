@@ -22,8 +22,8 @@ export const torontoRestaurants: Restaurant[] = [
       "Popular among coeliacs visiting Toronto",
     ],
     nearby: [
-      { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
+      { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
+      { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
@@ -1002,8 +1002,8 @@ export const torontoRestaurants: Restaurant[] = [
     menuHighlights: ["🥐 GF Pastries", "🍝 GF Pasta Dishes", "🥗 Fresh Salads", "🍰 GF Cakes"],
     proTip: "Try the almond croissant — it's their signature item!",
     nearby: [
-      { label: "Bakery", name: "Almond Butterfly", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
+      { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
+      { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "🦋",
