@@ -112,8 +112,8 @@ export const torontoRestaurants: Restaurant[] = [
     proTip: "Ask the barista which bakes are gluten-free that day — the selection rotates.",
     whyPeopleLoveIt: ["Clearly labelled GF options", "Friendly, knowledgeable staff", "Great specialty coffee", "Relaxed neighbourhood vibe"],
     nearby: [
-      { label: "Bakery", name: "Bunner's Bakeshop" },
-      { label: "Cafe", name: "Found Coffee", href: "/gluten-free/canada/toronto/found-coffee" },
+      { label: "Bakery", name: "Sunshine Wholesome Market" },
+      { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     icon: "☕",
