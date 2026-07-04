@@ -220,7 +220,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     nearby: [
-      { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
+      { label: "Bakery", name: "Wild Blue Bakery" },
       { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Grocery store", name: "Fruitful Market" },
     ],
