@@ -179,7 +179,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     nearby: [
-      { label: "Bakery", name: "Cock-A-Doodle-Doo Gluten-Free Bakeshop" },
+      { label: "Bakery", name: "Cock-A-Doodle-Doo Gluten-Free Bakeshop", href: "/gluten-free/canada/toronto/cock-a-doodle-doo" },
       { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
