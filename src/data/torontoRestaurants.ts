@@ -222,7 +222,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
       { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
-      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Fruitful Market" },
     ],
     hours: "Mon–Sat: 10:00AM – 7:00PM",
     phone: "+1 416-792-0003",
