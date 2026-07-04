@@ -143,7 +143,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Tartistry", href: "/gluten-free/canada/toronto/tartistry" },
       { label: "Coffee Shop", name: "Good Earth Coffeehouse" },
-      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Healthy Planet – Yonge & Dundas" },
     ],
     hours: "Mon–Sun: 7:00AM – 11:00PM",
     phone: "+1 416-977-3373",
