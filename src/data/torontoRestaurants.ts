@@ -263,7 +263,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Kimbo Bakery" },
       { label: "Coffee Shop", name: "Te Aro Roasted" },
-      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "The Big Carrot Natural Food Market" },
     ],
     hours: "Mon–Sat: 11:00AM – 9:00PM",
     phone: "",
