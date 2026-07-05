@@ -257,7 +257,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Pho Concept 100% GF by Riz",
     slug: "pho-concept-gf-by-riz",
-    address: "Toronto, ON",
+    address: "760 St Clair Ave W, Toronto, ON M6C 1B5",
     city: "Toronto",
     country: "Canada",
     nearby: [
