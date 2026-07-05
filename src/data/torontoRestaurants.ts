@@ -302,7 +302,7 @@ export const torontoRestaurants: Restaurant[] = [
     city: "Toronto",
     country: "Canada",
     nearby: [
-      { label: "Bakery", name: "Wild Blue Bakery" },
+      { label: "Bakery", name: "Gluten Free by l'Artisan" },
       { label: "Coffee Shop", name: "Hunter Coffee Shop" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
