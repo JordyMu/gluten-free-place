@@ -262,7 +262,7 @@ export const torontoRestaurants: Restaurant[] = [
     country: "Canada",
     nearby: [
       { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
-      { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
+      { label: "Coffee Shop", name: "Te Aro Roasted" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     hours: "Mon–Sat: 11:00AM – 9:00PM",
