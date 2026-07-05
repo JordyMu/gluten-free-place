@@ -9,6 +9,9 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { CanadaRestaurantList } from "@/components/canada/CanadaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
+import canadaHeroAsset from "@/assets/canada-hero.webp.asset.json";
+
+const canadaHero = canadaHeroAsset.url;
 
 const Canada = () => {
   useEffect(() => {
@@ -172,8 +175,11 @@ const Canada = () => {
         </div>
       </header>
 
-      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-red-700 to-red-500">
-        <div className="absolute inset-0 bg-black/20" />
+      <section
+        className="relative py-12 overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: `url(${canadaHero})` }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
