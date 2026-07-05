@@ -9,6 +9,9 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { CanadaRestaurantList } from "@/components/canada/CanadaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
+import canadaHeroAsset from "@/assets/canada-hero.webp.asset.json";
+
+const canadaHero = canadaHeroAsset.url;
 
 const Canada = () => {
   useEffect(() => {
