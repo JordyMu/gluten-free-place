@@ -304,7 +304,7 @@ export const torontoRestaurants: Restaurant[] = [
     nearby: [
       { label: "Bakery", name: "Gluten Free by l'Artisan" },
       { label: "Coffee Shop", name: "Hunter Coffee Shop" },
-      { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
+      { label: "Grocery store", name: "Nutriviva" },
     ],
     hours: "Wed–Sun: 8:00AM – 4:00PM",
     phone: "+1 416-792-0004",
