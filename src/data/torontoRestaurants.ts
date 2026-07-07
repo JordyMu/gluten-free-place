@@ -9,7 +9,7 @@ export const torontoRestaurants: Restaurant[] = [
     country: "Canada",
     nearby: [
       { label: "Bakery", name: "Sunshine Wholesome Market", href: "/gluten-free/canada/toronto/sunshine-wholesome-market" },
-      { label: "Coffee Shop", name: "Almond Butterfly Bakeshop & Cafe", href: "/gluten-free/canada/toronto/almond-butterfly-bistro" },
+      { label: "Coffee Shop", name: "Tartistry", href: "/gluten-free/canada/toronto/tartistry" },
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     hours: "Tue–Sun: 9:00AM – 8:00PM",
