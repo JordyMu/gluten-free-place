@@ -465,7 +465,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <ChefHat className="w-5 h-5 text-orange-600" />
-                  Menu
+                  Menu Highlights
                 </CardTitle>
               </CardHeader>
               <CardContent>
