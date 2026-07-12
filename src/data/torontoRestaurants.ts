@@ -319,6 +319,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/metro-6.webp", caption: "Snacks Aisle" },
       { url: "/images/toronto/metro-7.webp", caption: "Grab & Go Selection" },
     ],
+    services: {
+      dineIn: { available: false, note: "No seating area — Metro is a grocery store" },
+      takeaway: { available: true, note: "Grab-and-go meals, sandwiches, sushi & bakery items ready to take away" },
+      delivery: { available: true, note: "Online grocery delivery & curbside pickup available via Metro and partner services" },
+      accessible: true,
+      gfPackaging: true,
+    },
     celiacSafetyScore: 6,
   },
   {
