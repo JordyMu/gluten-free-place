@@ -368,6 +368,56 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/el-pocho-8.webp", caption: "Mexican Feast" },
     ],
     celiacSafetyScore: 7,
+    fullMenu: [
+      {
+        category: "Antojitos",
+        items: [
+          { name: "Tacos de Carne Asada", price: "$15.00", description: "Arrachera steak with white onions, spicy tomato salsa, and avocado sauce." },
+          { name: "Tacos de Pescado", price: "$11.50", description: "Battered fish with house slaw, chipotle aioli, and cilantro." },
+          { name: "Tacos de Carnitas", price: "$12.00", description: "Smoked carnitas with guacamole, habanero salsa, cilantro, and pickled red onions." },
+          { name: "Ceviche", price: "$14.50", description: "White fish marinated in lime juice with habanero chiles, red onions, cilantro, and tomato. Served with tortilla chips." },
+          { name: "Elotes", price: "$7.00", description: "Grilled corn on the cob with house-made aioli and queso Cotija." },
+        ],
+      },
+      {
+        category: "Desserts",
+        items: [
+          { name: "Churros & Dulce de Leche", price: "$12.00", description: "Gluten-free churros rolled in cinnamon sugar. 4 pieces." },
+          { name: "Tres Leches", price: "$12.00", description: "Strawberry compote, strawberry chantilly cream." },
+          { name: "ChocoFlan", price: "$12.00", description: "Chocolate cake and flan, mezcal caramel, macerated raspberries and espresso meringue." },
+        ],
+      },
+      {
+        category: "Beer",
+        items: [
+          { name: "Ancenstral GF", price: "$10.00" },
+          { name: "Ducks IPA", price: "$8.50" },
+        ],
+      },
+      {
+        category: "Red Wine",
+        items: [
+          { name: "Sindicat la Figuera, Garnacha, Spain", price: "$65.00" },
+          { name: "Versado, Malbec, Argentina", price: "$114.00" },
+        ],
+      },
+      {
+        category: "White Wine",
+        items: [
+          { name: "Meu, Albariño, Spain", price: "$65.00" },
+        ],
+      },
+      {
+        category: "Drinks",
+        items: [
+          { name: "Spicy Margarita", price: "$16.00", description: "Half salted rim with (1.5oz) Tromba Blanco tequila, fresh lime juice, agave." },
+          { name: "Margarita", price: "$14.00", description: "Half salted rim with (1.5oz) Tromba Blanco tequila, fresh lime juice, agave." },
+          { name: "Oaxacan Old Fashion", price: "$16.00", description: "(1oz) Professor mezcal, (1oz) Cazadores añejo, sugar, Angostura bitters, orange peel." },
+          { name: "Coconut Mojito", price: "$16.00", description: "(1oz) Havana Club, (1oz) Malibu, mint, agave, turbinado sugar." },
+          { name: "Watermelon Mexican Martini", price: "$16.00", description: "(1.5oz) Centenario añejo tequila, watermelon, lime, agave." },
+        ],
+      },
+    ],
   },
   {
     name: "Sprouty",
