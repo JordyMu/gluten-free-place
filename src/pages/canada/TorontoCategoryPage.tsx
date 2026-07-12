@@ -275,6 +275,26 @@ const TorontoCategoryPage = ({ category }: Props) => {
                         </Button>
                       )}
                     </div>
+
+                    {restaurant.nearby && restaurant.nearby.length > 0 && (
+                      <div className="mt-4">
+                        <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
+                        <ul className="space-y-1 text-gray-700">
+                          {restaurant.nearby.map((item) => (
+                            <li key={`${restaurant.slug}-nearby-${item.label}`}>
+                              <span className="font-bold">{item.label}:</span>{" "}
+                              {item.href ? (
+                                <Link to={item.href} className="text-red-700 hover:underline">
+                                  {item.name}
+                                </Link>
+                              ) : (
+                                item.name
+                              )}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    )}
                   </CardContent>
                 </Card>
               ))}
