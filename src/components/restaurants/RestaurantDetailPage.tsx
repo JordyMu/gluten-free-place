@@ -24,7 +24,7 @@ interface RestaurantDetailPageProps {
     directionsUrl: string;
     specialty: string;
     overview: string;
-    menuHighlights: string[];
+    menuHighlights?: string[];
     proTip: string;
     whyPeopleLoveIt?: string[];
     icon: string;

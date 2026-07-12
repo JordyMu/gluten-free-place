@@ -14,7 +14,7 @@ export interface Restaurant {
   directionsUrl: string;
   specialty: string;
   overview: string;
-  menuHighlights: string[];
+  menuHighlights?: string[];
   proTip: string;
   icon: string;
   featured: boolean;
