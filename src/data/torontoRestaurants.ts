@@ -136,6 +136,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/found-coffee-7.webp", caption: "GF Pastries" },
     ],
     celiacSafetyScore: 7,
+    services: {
+      dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: false, note: "No third-party delivery — stop by for coffee and fresh bakes" },
+      accessible: true,
+      gfPackaging: true,
+    },
     fullMenu: [
       {
         category: "Hot Drinks",
