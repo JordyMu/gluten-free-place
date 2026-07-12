@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import CanadaCityPage from "@/components/canada/CanadaCityPage";
 import { torontoRestaurants } from "@/data/torontoRestaurants";
 
+const restaurantsForCityPage = torontoRestaurants.filter((r) => r.slug !== "metro");
+
 const faqItems = [
   { question: "Is Toronto good for celiac travellers?", answer: "Absolutely! Toronto has one of North America's best gluten-free scenes with dedicated bakeries like Bunner's and Almond Butterfly, plus many restaurants with GF menus." },
   { question: "Which Toronto areas are best for gluten-free dining?", answer: "Dundas West, the Annex, and Yorkville have the highest concentration of dedicated GF venues. The Distillery District also has great options." },
@@ -20,7 +22,7 @@ const GlutenFreeToronto = () => (
     heroImage="/images/toronto-hero.webp?v=1"
     compactHero
     intro="Toronto is Canada's gluten-free capital with numerous dedicated bakeries, 100% GF restaurants like Riz and Pho Concept, and a thriving health-conscious food scene. Whether you're in the Annex or exploring Dundas West, celiac-safe options abound."
-    restaurants={torontoRestaurants}
+    restaurants={restaurantsForCityPage}
     faqItems={faqItems}
     extraSection={
       <>
