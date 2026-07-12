@@ -199,7 +199,105 @@ export const torontoRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=444+Yonge+St+Toronto+ON+M5B+2H4+Canada",
     specialty: "Supermarket with a wide gluten-free range",
     overview: "Metro is a major Canadian supermarket chain with a well-stocked gluten-free section. You'll find certified GF breads, pastas, snacks, baking mixes and fresh produce, making it a convenient one-stop shop for celiac-safe groceries.",
-    menuHighlights: ["🍞 GF Breads", "🍝 GF Pasta", "🍪 GF Snacks", "🥖 GF Baking Mixes"],
+    fullMenu: [
+      {
+        category: "🥗 Prepared Foods",
+        items: [
+          { name: "Ready-to-heat meals", price: "" },
+          { name: "Hot BBQ meals", price: "" },
+          { name: "Fresh grab-and-go lunches", price: "" },
+          { name: "Rotisserie chicken (availability varies)", price: "" },
+          { name: "Family-sized meal options", price: "" },
+        ],
+      },
+      {
+        category: "🍣 Sushi",
+        items: [
+          { name: "Fresh sushi rolls", price: "" },
+          { name: "Nigiri", price: "" },
+          { name: "Sashimi", price: "" },
+          { name: "Sushi party trays (select days)", price: "" },
+          { name: "Bento-style meals", price: "" },
+        ],
+      },
+      {
+        category: "🍕 Pizza",
+        items: [
+          { name: "Hot pizza by the slice", price: "" },
+          { name: "Whole pizzas", price: "" },
+          { name: "Freshly baked throughout the day", price: "" },
+        ],
+      },
+      {
+        category: "🥪 Sandwiches & Wraps",
+        items: [
+          { name: "Fresh 2 Go sandwiches", price: "" },
+          { name: "Wraps", price: "" },
+          { name: "Paninis", price: "" },
+          { name: "Ready-made lunch boxes", price: "" },
+        ],
+      },
+      {
+        category: "🥗 Salads",
+        items: [
+          { name: "Garden salads", price: "" },
+          { name: "Caesar salads", price: "" },
+          { name: "Pasta salads", price: "" },
+          { name: "Greek salads", price: "" },
+          { name: "Chef salads", price: "" },
+        ],
+      },
+      {
+        category: "🍲 Soups & Sides",
+        items: [
+          { name: "Daily soups", price: "" },
+          { name: "Mashed potatoes", price: "" },
+          { name: "Rice dishes", price: "" },
+          { name: "Roasted vegetables", price: "" },
+          { name: "Pasta sides", price: "" },
+        ],
+      },
+      {
+        category: "🥐 Bakery",
+        items: [
+          { name: "Fresh bread", price: "" },
+          { name: "Croissants", price: "" },
+          { name: "Muffins", price: "" },
+          { name: "Cookies", price: "" },
+          { name: "Cakes", price: "" },
+          { name: "Special occasion cakes", price: "" },
+        ],
+      },
+      {
+        category: "🦞 Seafood",
+        items: [
+          { name: "Fresh seafood counter", price: "" },
+          { name: "Live lobsters", price: "" },
+          { name: "Fish fillets", price: "" },
+          { name: "Seafood platters", price: "" },
+          { name: "Custom seafood preparation", price: "" },
+        ],
+      },
+      {
+        category: "🧀 Deli",
+        items: [
+          { name: "Sliced meats", price: "" },
+          { name: "Gourmet cheeses", price: "" },
+          { name: "Party trays", price: "" },
+          { name: "Catering options", price: "" },
+        ],
+      },
+      {
+        category: "🌱 Vegetarian Options",
+        items: [
+          { name: "Vegetarian ready meals", price: "" },
+          { name: "Salads", price: "" },
+          { name: "Vegetable sides", price: "" },
+          { name: "Hummus", price: "" },
+          { name: "Plant-based snacks", price: "" },
+        ],
+      },
+    ],
     proTip: "Check the dedicated 'Free From' aisle for the widest selection of certified gluten-free products.",
     whyPeopleLoveIt: ["Wide GF product range", "Certified gluten-free options", "Convenient central location", "Long opening hours"],
     icon: "🛒",
