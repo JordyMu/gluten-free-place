@@ -236,7 +236,7 @@ useEffect(() => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-6xl mb-4 block">🇲🇺</span>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            Find Safe Gluten-Free Restaurants in Port Louis
+            Dedicated Gluten-Free Restaurants in Port Louis
           </h1>
           <p className="text-xl md:text-2xl text-orange-100 mb-8 max-w-3xl mx-auto">
             Real reviews from gluten-free diners. Verified listings. Zero guesswork.
