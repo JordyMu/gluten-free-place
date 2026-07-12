@@ -371,7 +371,7 @@ export const torontoRestaurants: Restaurant[] = [
     services: {
       dineIn: { available: true, note: "Walk-ins welcome · patio seating in season · reservations recommended for groups" },
       takeaway: { available: true, note: "Order by phone or in person · ready in 15–25 min · corn-based packaging" },
-      delivery: { available: false, note: "No third-party delivery — come in for the full antojitos experience" },
+      delivery: { available: true, note: "Available via third-party apps · corn-based GF packaging sealed for transport" },
       accessible: true,
       gfPackaging: true,
     },
