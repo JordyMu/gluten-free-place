@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import CanadaCityPage from "@/components/canada/CanadaCityPage";
 import { torontoRestaurants } from "@/data/torontoRestaurants";
 
+const restaurantsForCityPage = torontoRestaurants.filter((r) => r.slug !== "metro");
+
 const faqItems = [
   { question: "Is Toronto good for celiac travellers?", answer: "Absolutely! Toronto has one of North America's best gluten-free scenes with dedicated bakeries like Bunner's and Almond Butterfly, plus many restaurants with GF menus." },
   { question: "Which Toronto areas are best for gluten-free dining?", answer: "Dundas West, the Annex, and Yorkville have the highest concentration of dedicated GF venues. The Distillery District also has great options." },
