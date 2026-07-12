@@ -136,6 +136,43 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/found-coffee-7.webp", caption: "GF Pastries" },
     ],
     celiacSafetyScore: 7,
+    fullMenu: [
+      {
+        category: "Hot Drinks",
+        items: [
+          { name: "Espresso [Double]", price: "$4.75", description: "Strong, sweet and smooth. Expertly extracted freshly roasted espresso for an intense coffee hit." },
+          { name: "Black", price: "$4.75", description: "Professionally extracted seasonal espresso over hot filtered water — an Americano or Aussie 'Long Black'." },
+          { name: "White", price: "$4.75 - $6.75", description: "Specialty espresso infused with barista textured milk of your choice." },
+          { name: "The Doctor [6oz]", price: "$5.75", description: "A Found flagship — double ristretto in a 6oz cup with expertly textured milk. Stronger, sweeter, smoother." },
+          { name: "Chai", price: "$5.25 - $7.35", description: "Small-batch spiced chai, slow-steeped with cardamom, ginger, cinnamon, cloves and black peppercorn." },
+          { name: "Matcha", price: "$5.25 - $7.35", description: "Reserve ceremonial grade Japanese matcha from the Matsushita family of Kakegawa." },
+          { name: "London Fog", price: "$6.00", description: "Cream of Earl Grey tea, textured milk and natural in-house vanilla syrup." },
+          { name: "Mocha", price: "$5.75 - $7.85", description: "Vegan-friendly 40% milk couverture chocolate infused with espresso and textured milk." },
+        ],
+      },
+      {
+        category: "Cold Drinks",
+        items: [
+          { name: "Cold Brew", price: "$5.95", description: "House specialty single origin brewed over 18 hours — high caffeine, low acidity." },
+          { name: "Iced White", price: "$7.00", description: "Specialty espresso and fresh milk of your choice poured over ice." },
+          { name: "Iced Matcha", price: "$7.50", description: "Reserve ceremonial grade Japanese matcha poured to order over ice." },
+          { name: "Iced Strawberry Matcha Latte", price: "$8.10", description: "Ceremonial matcha with natural strawberry syrup and textured milk over ice." },
+          { name: "Iced Tiramisu Latte", price: "$8.20", description: "Espresso, vanilla and milk topped with house-made mascarpone cold foam, cocoa and a ladyfinger." },
+          { name: "Iced Lemon Honey Matcha Fizz", price: "$7.80", description: "Kato matcha, sparkling water, fresh lemon juice and local golden honey over ice." },
+        ],
+      },
+      {
+        category: "Pastries",
+        items: [
+          { name: "Cheesymite Scroll", price: "$6.00", description: "An Aussie classic savoury scroll." },
+          { name: "Muffin", price: "$4.25", description: "Locally baked and delivered daily — the perfect sweet snack." },
+          { name: "Pastries by Gouter", price: "$4.50 - $8.50", description: "Rotating selection of pastries." },
+          { name: "Overnight Oats", price: "$7.90", description: "Almond butter and berry compote." },
+          { name: "Chia Pudding", price: "$7.90", description: "Coconut granola and pineapple." },
+          { name: "Cookies", price: "$3.75", description: "Freshly baked cookies." },
+        ],
+      },
+    ],
   },
   {
     name: "Metro",
