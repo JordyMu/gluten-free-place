@@ -368,6 +368,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/el-pocho-8.webp", caption: "Mexican Feast" },
     ],
     celiacSafetyScore: 7,
+    services: {
+      dineIn: { available: true, note: "Walk-ins welcome · patio seating in season · reservations recommended for groups" },
+      takeaway: { available: true, note: "Order by phone or in person · ready in 15–25 min · corn-based packaging" },
+      delivery: { available: false, note: "No third-party delivery — come in for the full antojitos experience" },
+      accessible: true,
+      gfPackaging: true,
+    },
     fullMenu: [
       {
         category: "Antojitos",
