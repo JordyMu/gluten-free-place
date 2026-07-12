@@ -225,14 +225,16 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
 
 
 
-                  <div className="mb-4">
-                    <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {restaurant.menuHighlights.map((item) => (
-                        <Badge key={`${restaurant.slug}-${item}`} variant="secondary" className="text-sm">{item}</Badge>
-                      ))}
+                  {restaurant.menuHighlights && restaurant.menuHighlights.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {restaurant.menuHighlights.map((item) => (
+                          <Badge key={`${restaurant.slug}-${item}`} variant="secondary" className="text-sm">{item}</Badge>
+                        ))}
+                      </div>
                     </div>
-                  </div>
+                  )}
 
                   {restaurant.proTip && (
                     <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
