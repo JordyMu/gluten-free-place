@@ -139,7 +139,7 @@ export const torontoRestaurants: Restaurant[] = [
     services: {
       dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
       takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
-      delivery: { available: false, note: "No third-party delivery — stop by for coffee and fresh bakes" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
       accessible: true,
       gfPackaging: true,
     },
