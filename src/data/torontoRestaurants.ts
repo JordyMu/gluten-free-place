@@ -99,6 +99,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Found Coffee",
     slug: "found-coffee",
+    heroImage: "/images/toronto/found-coffee-hero.webp",
     address: "324 College St, Toronto, ON M5T 1S3, Canada",
     city: "Toronto",
     country: "Canada",
