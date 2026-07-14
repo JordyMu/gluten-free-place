@@ -493,6 +493,11 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Most items are naturally GF — just confirm dressings",
+    services: {
+      dineIn: { available: true, note: "Casual cafe seating · counter service" },
+      takeaway: { available: true, note: "Order at counter · ready in 10–15 min" },
+      delivery: { available: true, note: "Available via Uber Eats and DoorDash" },
+    },
     icon: "🌱",
     featured: false,
     cuisineTypes: ["Vegan", "Health Food", "Cafe"],
