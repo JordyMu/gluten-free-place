@@ -429,6 +429,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Sprouty",
     slug: "sprouty",
+    heroImage: "/images/toronto/sprouty-hero.webp",
     address: "1062 Gerrard St E, Toronto, ON M4M 1Z7",
     city: "Toronto",
     country: "Canada",
