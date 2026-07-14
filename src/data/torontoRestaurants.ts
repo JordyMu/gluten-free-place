@@ -493,6 +493,15 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Most items are naturally GF — just confirm dressings",
+    whyPeopleLoveIt: [
+      "Extensive selection of vegan and plant-based meals",
+      "Freshly made sandwiches, bagels, and pasta prepared to order",
+      "Delicious all-vegan smoothies made with wholesome ingredients",
+      "Specialty coffee and handcrafted lattes, including matcha and turmeric lattes",
+      "House-baked desserts, including cakes, banana bread, muffins, cookies, and seasonal soft serve",
+      "Healthy, fresh ingredients with vegetarian, vegan, and omnivore options to suit different diets",
+      "Cozy neighborhood café with a welcoming atmosphere, great for relaxing or working",
+    ],
     services: {
       dineIn: { available: true, note: "Casual cafe seating · counter service" },
       takeaway: { available: true, note: "Order at counter · ready in 10–15 min" },
