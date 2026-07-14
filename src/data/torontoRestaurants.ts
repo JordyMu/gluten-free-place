@@ -443,7 +443,54 @@ export const torontoRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=1062+Gerrard+St+E+Toronto+ON+M4M+1Z7",
     specialty: "Plant-based & gluten-free meals",
     overview: "Sprouty offers nourishing plant-based meals with extensive gluten-free options. Their health-focused menu caters to multiple dietary needs.",
-    menuHighlights: ["🥗 Buddha Bowls", "🥤 Smoothies", "🌯 GF Wraps", "🍰 Raw Desserts"],
+    fullMenu: [
+      {
+        category: "Sandwiches & Melts",
+        items: [
+          { name: "🥪 Truffle Melt (Vegan)", price: "", description: "Toasted sandwich featuring truffle-flavored vegan ingredients, rich and savory." },
+          { name: "🥪 Caprese (Vegan)", price: "", description: "Fresh vegan caprese-style sandwich with tomatoes, basil, and plant-based cheese." },
+          { name: "🥪 Basil Melt (Turkey)", price: "", description: "Turkey sandwich with melted cheese and basil for a comforting lunch." },
+          { name: "🥪 P.L.T. (Prosciutto)", price: "", description: "Prosciutto, lettuce, and tomato sandwich with classic Italian flavors." },
+        ],
+      },
+      {
+        category: "Bagels",
+        items: [
+          { name: "🥯 Smoked Salmon Bagel", price: "", description: "A café favorite with smoked salmon served on a fresh bagel." },
+          { name: "🥯 Egg & Black Forest Ham Bagel", price: "", description: "Hearty breakfast bagel with egg and premium Black Forest ham." },
+        ],
+      },
+      {
+        category: "Pasta",
+        items: [
+          { name: "🍝 Basil Pesto Chicken Pasta", price: "", description: "Pasta tossed in basil pesto with tender chicken." },
+          { name: "🍝 Truffled Mushroom Pasta (Vegan)", price: "", description: "Creamy mushroom pasta infused with truffle flavors." },
+        ],
+      },
+      {
+        category: "Smoothies",
+        items: [
+          { name: "🥭 Mango Tango Smoothie", price: "", description: "Refreshing vegan smoothie made with tropical mango." },
+          { name: "🍓 Be My Berry Smoothie", price: "", description: "Mixed berry vegan smoothie packed with fruity flavor." },
+          { name: "💚 Tropical Green Smoothie", price: "", description: "Nutritious blend of tropical fruits and leafy greens." },
+        ],
+      },
+      {
+        category: "Hot Drinks",
+        items: [
+          { name: "☕ Flat White", price: "", description: "Smooth espresso drink with velvety steamed milk." },
+          { name: "🍵 Matcha Latte", price: "", description: "Premium matcha blended into a creamy latte." },
+          { name: "🍫 Belgian Hot Chocolate", price: "", description: "Rich and indulgent hot chocolate made with Belgian chocolate." },
+        ],
+      },
+      {
+        category: "Desserts",
+        items: [
+          { name: "🍰 Almond Orange Cake", price: "", description: "Freshly baked house dessert with citrus and almond flavors." },
+          { name: "🍦 Seasonal Soft Serve Ice Cream", price: "", description: "Rotating seasonal soft-serve flavors available for a limited time." },
+        ],
+      },
+    ],
     proTip: "Most items are naturally GF — just confirm dressings",
     icon: "🌱",
     featured: false,
