@@ -183,7 +183,7 @@ const TorontoCategoryPage = ({ category }: Props) => {
                         <span className="text-2xl">{restaurant.icon}</span>
                         <Link
                           to={`/gluten-free/canada/toronto/${restaurant.slug}`}
-                          className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors"
+                          className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
                         >
                           {restaurant.name}
                         </Link>
@@ -248,7 +248,7 @@ const TorontoCategoryPage = ({ category }: Props) => {
                       {restaurant.phone && (
                         <div className="flex items-center gap-2">
                           <Phone className="w-4 h-4 text-gray-400" />
-                          <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">
+                          <a href={`tel:${restaurant.phone}`} className="hover:text-red-700">
                             {restaurant.phone}
                           </a>
                         </div>
@@ -258,7 +258,7 @@ const TorontoCategoryPage = ({ category }: Props) => {
                     <div className="flex flex-wrap gap-3">
                       <Button
                         type="button"
-                        className="bg-blue-700 hover:bg-blue-800"
+                        className="bg-red-700 hover:bg-red-800"
                         onClick={() => openExternalLink(restaurant.directionsUrl)}
                       >
                         <Navigation className="w-4 h-4 mr-2" />
