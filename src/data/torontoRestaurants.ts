@@ -770,7 +770,55 @@ export const torontoRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/Tartistry+1+Trinity+St+Toronto",
     specialty: "Artisan GF tarts & pastries",
     overview: "Tartistry at the Distillery District creates beautiful artisan tarts and pastries with gluten-free options. A lovely weekend market find.",
-    menuHighlights: ["🥧 GF Fruit Tarts", "🍰 Mini Cakes", "🧁 Cupcakes", "☕ Coffee"],
+    fullMenu: [
+      {
+        category: "Zero Sugar",
+        items: [
+          { name: "Zero Sugar Plain", price: "" },
+          { name: "Zero Sugar Pecan", price: "" },
+        ],
+      },
+      {
+        category: "Vegan",
+        items: [
+          { name: "Plain Vegan", price: "" },
+          { name: "Pecan Vegan", price: "" },
+          { name: "Raisin Vegan", price: "" },
+          { name: '3.5" Tart Shells', price: "" },
+          { name: '9" Pie Shells', price: "" },
+        ],
+      },
+      {
+        category: "Savoury",
+        items: [
+          { name: 'Cheddar, Leek & Spinach Quiche (3.5" & 9") - VEG', price: "" },
+          { name: 'Chicken Vegetable with Rosemary (3.5" & 9")', price: "" },
+          { name: 'Chicken Tourtière (3.5" & 9")', price: "" },
+          { name: "Beef Brisket Stew", price: "" },
+          { name: "Mushroom Chicken", price: "" },
+          { name: "Butter Chicken", price: "" },
+          { name: 'Boeuf à la Bourguignon (3.5" & 9")', price: "" },
+        ],
+      },
+      {
+        category: "Keto",
+        items: [
+          { name: "Almond Kookies", price: "" },
+          { name: "Lemon Coconut Kookies", price: "" },
+          { name: "Tangerine Pecan Kookies", price: "" },
+        ],
+      },
+      {
+        category: "Other",
+        items: [
+          { name: "Shortbread Cookies", price: "" },
+          { name: '9" Peach Pie', price: "" },
+          { name: '9" Pumpkin Pie', price: "" },
+          { name: "Scones (Variety)", price: "" },
+          { name: "Christmas Fruit Cake**", price: "" },
+        ],
+      },
+    ],
     proTip: "Visit on weekends at the Distillery Market",
     icon: "🥧",
     featured: false,
