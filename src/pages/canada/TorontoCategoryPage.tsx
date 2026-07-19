@@ -258,7 +258,7 @@ const TorontoCategoryPage = ({ category }: Props) => {
                     <div className="flex flex-wrap gap-3">
                       <Button
                         type="button"
-                        className="bg-blue-700 hover:bg-blue-800"
+                        className="bg-red-700 hover:bg-red-800"
                         onClick={() => openExternalLink(restaurant.directionsUrl)}
                       >
                         <Navigation className="w-4 h-4 mr-2" />
