@@ -768,6 +768,13 @@ export const torontoRestaurants: Restaurant[] = [
     phone: "",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Tartistry+1+Trinity+St+Toronto",
+    services: {
+      dineIn: { available: false, note: "No dedicated seating — this is a market container with takeaway service" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · tarts packed in GF-safe boxes" },
+      delivery: { available: false, note: "Not available — visit the Distillery District container on weekends" },
+      accessible: true,
+      gfPackaging: true,
+    },
     specialty: "Artisan GF tarts & pastries",
     overview: "Tartistry at the Distillery District creates beautiful artisan tarts and pastries with gluten-free options. A lovely weekend market find.",
     fullMenu: [
