@@ -745,7 +745,7 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/wild-blue-bakery-8.webp", caption: "Fresh Bakes" },
     ],
     services: {
-      dineIn: { available: true, note: "Limited indoor seating · casual counter-style tables · perfect for a quick coffee & pastry" },
+      dineIn: { available: false, note: "No (primarily a bakery with takeaway service; no dedicated dine-in seating)" },
       takeaway: { available: true, note: "Order at the counter or by phone · fresh breads & pastries packed in dedicated GF packaging" },
       delivery: { available: true, note: "Available via third-party delivery partners · frozen meals and baked goods packed securely" },
       accessible: true,
