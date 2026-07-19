@@ -820,6 +820,13 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Visit on weekends at the Distillery Market",
+    whyPeopleLoveIt: [
+      "Award-Winning Butter Tarts",
+      "Excellent Gluten-Free Options",
+      "Inclusive Menu for Different Diets",
+      "Creative & Unique Tart Flavors",
+      "Warm & Welcoming Atmosphere",
+    ],
     icon: "🥧",
     featured: false,
     cuisineTypes: ["Bakery", "Desserts"],
