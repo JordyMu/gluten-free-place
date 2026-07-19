@@ -588,6 +588,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/pho-concept-gf-riz-7.webp", caption: "Banh Mi (GF)" },
       { url: "/images/pho-concept-gf-riz-8.webp", caption: "Vietnamese Coffee" },
     ],
+    services: {
+      dineIn: { available: true, note: "Casual dine-in seating · family-friendly · quick table service" },
+      takeaway: { available: true, note: "Order at the counter or by phone · ready in 15–20 min · large pho sizes available for takeout" },
+      delivery: { available: true, note: "Available via third-party delivery partners · pho and rice bowls packed securely" },
+      accessible: true,
+      gfPackaging: true,
+    },
     celiacSafetyScore: 10,
   },
   {
