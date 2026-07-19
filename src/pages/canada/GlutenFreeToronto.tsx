@@ -6,7 +6,7 @@ import CanadaCityPage from "@/components/canada/CanadaCityPage";
 import { torontoRestaurants } from "@/data/torontoRestaurants";
 
 const restaurantsForCityPage = torontoRestaurants.filter(
-  (r) => r.slug !== "metro" && r.slug !== "wild-blue-bakery"
+  (r) => r.slug !== "metro" && r.slug !== "wild-blue-bakery" && r.slug !== "cock-a-doodle-doo" && r.slug !== "cock-a-doodle-doo-gf-bakeshop"
 );
 
 const faqItems = [
