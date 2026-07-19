@@ -608,6 +608,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Wild Blue Bakery",
     slug: "wild-blue-bakery",
+    heroImage: "/images/toronto/wild-blue-bakery-hero.webp",
     address: "366 Oakwood Ave, York, ON M6E 2W3",
     city: "Toronto",
     country: "Canada",
