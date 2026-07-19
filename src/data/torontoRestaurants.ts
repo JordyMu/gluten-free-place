@@ -623,6 +623,98 @@ export const torontoRestaurants: Restaurant[] = [
     specialty: "Dedicated gluten-free artisan bakery",
     overview: "Wild Blue Bakery is a dedicated gluten-free bakery in York producing artisan breads, pastries, and treats in a completely wheat-free facility.",
     menuHighlights: ["🥖 GF Sourdough", "🥐 GF Croissants", "🍪 Cookies", "🎂 Custom Cakes"],
+    fullMenu: [
+      {
+        category: "🥯 Bagels",
+        items: [
+          { name: "Everything Bagel", price: "" },
+          { name: "Bagel Bomb (Cream Cheese)", price: "" },
+          { name: "Sesame Seed Bagel", price: "" },
+          { name: "Jalapeño Cheddar Bagel", price: "" },
+          { name: "Cinnamon Raisin Bagel", price: "" },
+        ],
+      },
+      {
+        category: "🍞 Bread",
+        items: [
+          { name: "Sandwich Bread", price: "" },
+          { name: "Faux Rye Bread", price: "" },
+          { name: "Buckwheat Bread", price: "" },
+          { name: "Challah Bread", price: "" },
+          { name: "Burger Buns", price: "" },
+        ],
+      },
+      {
+        category: "🍕 Pizza",
+        items: [
+          { name: "Cheese Pizza", price: "" },
+          { name: "Pepperoni Pizza", price: "" },
+          { name: "Veggie Pizza", price: "" },
+          { name: "Whole Cheese Pizza", price: "" },
+          { name: "Whole Pepperoni Pizza", price: "" },
+        ],
+      },
+      {
+        category: "🍪 Cookies",
+        items: [
+          { name: "Chocolate Chunk Cookie", price: "" },
+          { name: "Chocolate Fudgy Cookie (Dairy-Free)", price: "" },
+          { name: "Red Velvet Cookie", price: "" },
+          { name: "S'mores Cookie", price: "" },
+          { name: "Brookie", price: "" },
+        ],
+      },
+      {
+        category: "🧁 Muffins & Loaves",
+        items: [
+          { name: "Blueberry Muffin", price: "" },
+          { name: "Chocolate Chip Muffin", price: "" },
+          { name: "Coffee Cake Muffin", price: "" },
+          { name: "Banana Loaf", price: "" },
+          { name: "Lemon Poppy Loaf", price: "" },
+        ],
+      },
+      {
+        category: "🍰 Bakery Treats",
+        items: [
+          { name: "Galaxy Brownie", price: "" },
+          { name: "Cinnamon Roll", price: "" },
+          { name: "Chocolate Babka", price: "" },
+          { name: "Blondie", price: "" },
+          { name: "Cake Pop", price: "" },
+        ],
+      },
+      {
+        category: "🎂 Custom Cakes & Party Desserts",
+        items: [
+          { name: "Custom Cakes", price: "" },
+          { name: "Custom Cupcakes", price: "" },
+          { name: "Cookiegram (Cookie Cake)", price: "" },
+          { name: "Giant Brownie", price: "" },
+          { name: "Rice Krispie Cake", price: "" },
+        ],
+      },
+      {
+        category: "❄️ Frozen Meals",
+        items: [
+          { name: "Beef Lasagna", price: "" },
+          { name: "Vegetarian Lasagna", price: "" },
+          { name: "Mac & Cheese", price: "" },
+          { name: "Chicken Fingers", price: "" },
+          { name: "Pizza Dough", price: "" },
+        ],
+      },
+      {
+        category: "🌱 Vegan Favorites",
+        items: [
+          { name: "Everything Bagel", price: "" },
+          { name: "Buckwheat Bread", price: "" },
+          { name: "Faux Rye Bread", price: "" },
+          { name: "Chocolate Tahini Loaf", price: "" },
+          { name: "Chocolate Fudgy Cookie (Dairy-Free)", price: "" },
+        ],
+      },
+    ],
     proTip: "Pre-order custom cakes 48 hours ahead",
     icon: "🥖",
     featured: true,
