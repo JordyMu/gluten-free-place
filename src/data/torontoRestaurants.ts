@@ -756,6 +756,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Tartistry",
     slug: "tartistry",
+    heroImage: "/images/toronto/tartistry-hero.webp",
     address: "1 Trinity St Container #2, Toronto, ON M5A 1G3",
     city: "Toronto",
     country: "Canada",
