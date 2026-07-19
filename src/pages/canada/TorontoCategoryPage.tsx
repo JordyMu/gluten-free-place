@@ -248,7 +248,7 @@ const TorontoCategoryPage = ({ category }: Props) => {
                       {restaurant.phone && (
                         <div className="flex items-center gap-2">
                           <Phone className="w-4 h-4 text-gray-400" />
-                          <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">
+                          <a href={`tel:${restaurant.phone}`} className="hover:text-red-700">
                             {restaurant.phone}
                           </a>
                         </div>
