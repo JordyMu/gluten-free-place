@@ -716,6 +716,13 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Pre-order custom cakes 48 hours ahead",
+    whyPeopleLoveIt: [
+      "100% Dedicated Gluten-Free Bakery",
+      "Authentic Bagels & Bread",
+      "Outstanding Gluten-Free Pizza",
+      "Exceptional Fresh Baked Treats",
+      "Traditional Baking Techniques",
+    ],
     icon: "🥖",
     featured: true,
     cuisineTypes: ["Bakery", "Gluten-Free"],
