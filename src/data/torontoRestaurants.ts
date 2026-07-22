@@ -1292,6 +1292,8 @@ export const torontoRestaurants: Restaurant[] = [
           { name: "Multigrain Loaf" },
           { name: "Ciabatta Rolls" },
           { name: "Burger Buns" },
+          { name: "Bagels gluten Poppy Seed & dairy-free (x5)", price: "$13.95" },
+          { name: "Baguette gluten & dairy-free", price: "$7.95" },
         ],
       },
       {
