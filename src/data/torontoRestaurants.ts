@@ -1286,12 +1286,6 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🍞 Breads",
         items: [
-          { name: "Baguette" },
-          { name: "Sourdough Loaf" },
-          { name: "Sandwich Bread" },
-          { name: "Multigrain Loaf" },
-          { name: "Ciabatta Rolls" },
-          { name: "Burger Buns" },
           { name: "Bagels gluten Poppy Seed & dairy-free (x5)", price: "$13.95" },
           { name: "Baguette gluten & dairy-free", price: "$7.95" },
         ],
@@ -1299,12 +1293,6 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🥐 Pastries",
         items: [
-          { name: "Croissant" },
-          { name: "Pain au Chocolat" },
-          { name: "Almond Croissant" },
-          { name: "Chausson aux Pommes" },
-          { name: "Palmier" },
-          { name: "Cinnamon Danish" },
           { name: "Apple Turnover gluten & dairy-free", price: "$6.95" },
           { name: "Bag of 6 palms gluten & dairy-free", price: "$8.49" },
           { name: "Blueberries Danish gluten & dairy-free", price: "$6.95" },
@@ -1363,12 +1351,6 @@ export const torontoRestaurants: Restaurant[] = [
           { name: "VEGAN Dome Raspberry Chocolate gluten & dairy-free", price: "$8.95" },
           { name: "VEGAN Strawberry (Fraisier) gluten & dairy-free", price: "$7.95" },
           { name: "VEGAN Triple chocolate gluten & dairy-free", price: "$8.95" },
-          { name: "Vegan Chocolate Cookie" },
-          { name: "Vegan Banana Bread" },
-          { name: "Vegan Muffin" },
-          { name: "Vegan Brownie" },
-          { name: "Vegan Cinnamon Bun" },
-          { name: "Vegan Fruit Loaf" },
         ],
       },
       {
@@ -1382,6 +1364,7 @@ export const torontoRestaurants: Restaurant[] = [
         ],
       },
     ],
+
     services: {
       dineIn: { available: true, note: "Small café seating · French bistro atmosphere · perfect for a pastry & coffee" },
       takeaway: { available: true, note: "Fresh breads, pastries & cakes packed to go · call ahead for large orders" },
