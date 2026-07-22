@@ -1345,15 +1345,6 @@ export const torontoRestaurants: Restaurant[] = [
         ],
       },
       {
-        category: "🌱 Vegan Products",
-        items: [
-          { name: "VEGAN Chocolate raspberry gluten & dairy-free", price: "$7.95" },
-          { name: "VEGAN Dome Raspberry Chocolate gluten & dairy-free", price: "$8.95" },
-          { name: "VEGAN Strawberry (Fraisier) gluten & dairy-free", price: "$7.95" },
-          { name: "VEGAN Triple chocolate gluten & dairy-free", price: "$8.95" },
-        ],
-      },
-      {
         category: "☕ Barista Coffee",
         items: [
           { name: "Americano Barista Coffee", price: "$3.50" },
@@ -1361,6 +1352,15 @@ export const torontoRestaurants: Restaurant[] = [
           { name: "Espresso Barista Coffee", price: "$3.50" },
           { name: "Latte Barista Coffee", price: "$4.50" },
           { name: "Tea Brand Camilia", price: "$3.75" },
+        ],
+      },
+      {
+        category: "🌱 Vegan Products",
+        items: [
+          { name: "VEGAN Chocolate raspberry gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Dome Raspberry Chocolate gluten & dairy-free", price: "$8.95" },
+          { name: "VEGAN Strawberry (Fraisier) gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Triple chocolate gluten & dairy-free", price: "$8.95" },
         ],
       },
     ],
