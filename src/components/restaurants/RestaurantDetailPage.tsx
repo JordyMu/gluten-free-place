@@ -42,7 +42,7 @@ interface RestaurantDetailPageProps {
     fullMenu?: {
       category: string;
       note?: string;
-      items: { name: string; price: string; description?: string }[];
+      items: { name: string; price?: string; description?: string }[];
     }[];
     staffKnowledgeScore?: number;
     celiacSafetyScore?: number;
