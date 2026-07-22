@@ -978,6 +978,13 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Arrive early — popular items sell out by noon",
+    whyPeopleLoveIt: [
+      "100% Dedicated Gluten-Free Facility",
+      "Amazing Baked Goods",
+      "Excellent Dairy-Free & Vegan Options",
+      "Great Coffee & Espresso Drinks",
+      "Fresh Breakfast & Lunch Menu",
+    ],
     icon: "🦋",
     featured: true,
     cuisineTypes: ["Bakery", "Cafe", "Gluten-Free"],
