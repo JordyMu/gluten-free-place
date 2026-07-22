@@ -1220,6 +1220,13 @@ export const torontoRestaurants: Restaurant[] = [
       },
     ],
     proTip: "Ask for GF bread substitution on any sandwich",
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Kitchen",
+      "Clean, High-Quality Ingredients",
+      "Protein-Packed Healthy Meals",
+      "Excellent Smoothies & Drinks",
+      "Options for Every Diet",
+    ],
     icon: "💪",
     featured: false,
     cuisineTypes: ["Health Food", "Cafe", "Canadian"],
