@@ -1374,12 +1374,11 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "☕ Barista Coffee",
         items: [
-          { name: "Espresso" },
-          { name: "Cappuccino" },
-          { name: "Latte" },
-          { name: "Americano" },
-          { name: "Mocha" },
-          { name: "Hot Chocolate" },
+          { name: "Americano Barista Coffee", price: "$3.50" },
+          { name: "Cappuccino Barista Coffee", price: "$4.50" },
+          { name: "Espresso Barista Coffee", price: "$3.50" },
+          { name: "Latte Barista Coffee", price: "$4.50" },
+          { name: "Tea Brand Camilia", price: "$3.75" },
         ],
       },
     ],
