@@ -1161,7 +1161,64 @@ export const torontoRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/Impact+Kitchen+181+Bay+St+Toronto",
     specialty: "Health-focused with extensive GF menu",
     overview: "Impact Kitchen focuses on wholesome, health-conscious food with clearly marked gluten-free options across their entire menu.",
-    menuHighlights: ["🥗 Power Bowls", "🥤 Smoothies", "🍗 GF Proteins", "🥑 Avocado Toast (GF bread)"],
+    fullMenu: [
+      {
+        category: "Bowls",
+        note: "Most bowls are gluten-free or easily made GF — just ask",
+        items: [
+          { name: "Power Bowl", description: "Brown rice, quinoa, kale, roasted sweet potato, avocado, choice of protein, tahini dressing" },
+          { name: "Buddha Bowl", description: "Quinoa, roasted vegetables, chickpeas, avocado, greens, lemon tahini" },
+          { name: "Burrito Bowl", description: "Cilantro-lime rice, black beans, salsa, guacamole, cheddar, choice of protein" },
+          { name: "Chicken Caesar Bowl", description: "Kale, romaine, grilled chicken, parmesan, bacon, GF croutons, Caesar dressing" },
+        ],
+      },
+      {
+        category: "Plates",
+        items: [
+          { name: "Grilled Chicken Plate", description: "Free-range grilled chicken, roasted sweet potato, seasonal greens" },
+          { name: "Grilled Salmon Plate", description: "Wild salmon, brown rice, sautéed kale, lemon" },
+          { name: "Steak Plate", description: "Grass-fed sirloin, roasted potatoes, chimichurri, greens" },
+          { name: "Falafel Plate", description: "Housemade falafel, quinoa tabbouleh, hummus, tahini" },
+        ],
+      },
+      {
+        category: "Breakfast & Brunch",
+        note: "Available all day",
+        items: [
+          { name: "Impact Breakfast", description: "Two eggs, avocado, roasted sweet potato, greens, GF toast" },
+          { name: "Breakfast Bowl", description: "Quinoa, kale, sweet potato, avocado, poached egg, tahini" },
+          { name: "Avocado Toast", description: "GF bread, smashed avocado, chili flakes, hemp seeds, poached egg" },
+          { name: "Açaí Bowl", description: "Açaí, banana, berries, granola (GF), coconut, honey" },
+        ],
+      },
+      {
+        category: "Smoothies",
+        items: [
+          { name: "Green Machine", description: "Spinach, kale, banana, pineapple, ginger, almond milk" },
+          { name: "PB Power", description: "Peanut butter, banana, cacao, protein, almond milk" },
+          { name: "Berry Blast", description: "Mixed berries, banana, hemp, coconut water" },
+          { name: "Recovery", description: "Cacao, banana, dates, almond butter, protein, oat milk" },
+        ],
+      },
+      {
+        category: "Cold-Pressed Juices",
+        items: [
+          { name: "Green Glow", description: "Kale, spinach, cucumber, celery, apple, lemon, ginger" },
+          { name: "Sunrise", description: "Carrot, orange, apple, turmeric, ginger" },
+          { name: "Beet Reset", description: "Beet, apple, carrot, lemon, ginger" },
+          { name: "Immunity Shot", description: "Ginger, lemon, cayenne, turmeric" },
+        ],
+      },
+      {
+        category: "Coffee & Lattes",
+        items: [
+          { name: "Espresso / Americano", description: "Locally roasted organic espresso" },
+          { name: "Cappuccino / Latte", description: "Choice of oat, almond, or coconut milk" },
+          { name: "Turmeric Latte", description: "Turmeric, ginger, cinnamon, black pepper, milk of choice" },
+          { name: "Matcha Latte", description: "Ceremonial matcha, milk of choice, honey optional" },
+        ],
+      },
+    ],
     proTip: "Ask for GF bread substitution on any sandwich",
     icon: "💪",
     featured: false,
