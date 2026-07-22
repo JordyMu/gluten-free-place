@@ -1247,6 +1247,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/impact-kitchen-7.webp", caption: "Grain Bowl" },
       { url: "/images/impact-kitchen-8.webp", caption: "Fresh Juice" },
     ],
+    services: {
+      dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
     celiacSafetyScore: 7,
   },
   {
