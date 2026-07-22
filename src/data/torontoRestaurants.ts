@@ -1353,6 +1353,13 @@ export const torontoRestaurants: Restaurant[] = [
         ],
       },
     ],
+    services: {
+      dineIn: { available: true, note: "Small café seating · French bistro atmosphere · perfect for a pastry & coffee" },
+      takeaway: { available: true, note: "Fresh breads, pastries & cakes packed to go · call ahead for large orders" },
+      delivery: { available: true, note: "Local delivery available on select items · third-party partners for wider reach" },
+      accessible: true,
+      gfPackaging: true,
+    },
     proTip: "Follow them on social media for pop-up locations",
     icon: "🥖",
     featured: false,
