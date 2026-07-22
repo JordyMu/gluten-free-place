@@ -1310,12 +1310,14 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🍰 Cakes & Pies",
         items: [
-          { name: "Opera Cake" },
-          { name: "Fraisier" },
-          { name: "Chocolate Ganache Cake" },
-          { name: "Lemon Tart" },
-          { name: "Apple Pie" },
-          { name: "Pecan Pie" },
+          { name: "Black Forest Cake", price: "$38.00 – $48.00" },
+          { name: "Chocolate Cake", price: "$38.00 – $48.00" },
+          { name: "Jardinière Pie 6/8 parts", price: "$38.00" },
+          { name: "Lemon Meringue Pie 6/8 parts", price: "$38.00" },
+          { name: "Raspberry Chocolate Cake", price: "$38.00 – $48.00" },
+          { name: "Strawberry Cake", price: "$38.00 – $48.00" },
+          { name: "Triple chocolate Cake", price: "$38.00 – $48.00" },
+          { name: "Vanilla caramel Cake", price: "$38.00 – $48.00" },
         ],
       },
       {
