@@ -1030,6 +1030,7 @@ export const torontoRestaurants: Restaurant[] = [
     website: "www.bunners.ca",
     directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=3054+Dundas+St+W,+Toronto,+ON+M6P+1Z7",
     specialty: "100% gluten-free & vegan bakery",
+    heroImage: "/images/toronto/bunners-bakeshop-hero.webp",
     overview: "Bunner's is Toronto's iconic 100% gluten-free and vegan bakery. Everything is made in a dedicated facility, making it completely safe for celiacs.",
     menuHighlights: ["🥐 GF Pastries", "🎂 Custom Cakes", "🍪 Cookies & Brownies", "🥖 Artisan Bread"],
     fullMenu: [
