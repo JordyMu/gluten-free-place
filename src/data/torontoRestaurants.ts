@@ -1106,6 +1106,13 @@ export const torontoRestaurants: Restaurant[] = [
         ],
       },
     ],
+    services: {
+      dineIn: { available: false, note: "No dedicated dine-in seating · primarily a takeaway bakery" },
+      takeaway: { available: true, note: "Order in-shop or online · ready same day · dedicated GF packaging" },
+      delivery: { available: true, note: "Available via third-party delivery partners and online shop · GF items packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
     proTip: "Order custom cakes 48 hours in advance!",
     icon: "🥐",
     featured: true,
