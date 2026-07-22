@@ -1347,12 +1347,13 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🥗 Salty Products",
         items: [
-          { name: "Quiche Lorraine" },
-          { name: "Vegetable Quiche" },
-          { name: "Savoury Tart" },
-          { name: "Croque Monsieur" },
-          { name: "Sausage Roll" },
-          { name: "Pizza Slice" },
+          { name: "Bag of 10 Beef Sausage puff pastries", price: "$12.95" },
+          { name: "Bagel (smoked salmon and cream cheese)", price: "$9.95" },
+          { name: "Chicken mushroom and tomato turnover", price: "$9.95" },
+          { name: "Escargot (smoked salmon and pesto)", price: "$9.95" },
+          { name: "Fougasse (mediterranean vegetables)", price: "$12.95" },
+          { name: "Spanakopita (spinach and feta veg)", price: "$9.95" },
+          { name: "Turkey croissant", price: "$9.95" },
         ],
       },
       {
