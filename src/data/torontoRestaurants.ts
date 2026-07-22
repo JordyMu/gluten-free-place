@@ -1274,6 +1274,14 @@ export const torontoRestaurants: Restaurant[] = [
     specialty: "Dedicated GF artisan baked goods",
     overview: "Gluten Free by l'Artisan creates exquisite artisan baked goods in a 100% gluten-free kitchen. French-inspired pastries and breads for the celiac community.",
     menuHighlights: ["🥖 GF Baguettes", "🥐 French Pastries", "🍰 Tarts", "🍞 Sandwich Bread"],
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Bakery",
+      "Authentic French Pastries",
+      "Beautiful Cakes & Desserts",
+      "Dairy-Free and Allergy-Friendly",
+      "Fresh Artisan Baking",
+      "Great Coffee & Café Experience",
+    ],
     fullMenu: [
       {
         category: "🍞 Breads",
