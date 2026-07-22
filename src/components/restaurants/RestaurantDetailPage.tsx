@@ -479,7 +479,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                           <li key={ii}>
                             <div className="flex justify-between items-baseline gap-3">
                               <span className="font-semibold text-gray-900">{item.name}</span>
-                              <span className="font-semibold text-orange-600 whitespace-nowrap">{item.price}</span>
+                              {item.price && <span className="font-semibold text-orange-600 whitespace-nowrap">{item.price}</span>}
                             </div>
                             {item.description && <p className="text-sm text-gray-600">{item.description}</p>}
                           </li>
