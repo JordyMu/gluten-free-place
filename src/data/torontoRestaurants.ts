@@ -1008,7 +1008,7 @@ export const torontoRestaurants: Restaurant[] = [
     services: {
       dineIn: { available: true, note: "Limited counter seating · perfect for coffee & pastry · laptop-friendly weekday mornings" },
       takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
-      delivery: { available: false, note: "No delivery — fresh pastries are best enjoyed in-shop or takeaway" },
+      delivery: { available: true, note: "Available via third-party apps and in-shop ordering" },
       accessible: true,
       gfPackaging: true,
     },
