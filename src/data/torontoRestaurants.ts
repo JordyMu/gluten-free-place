@@ -1343,6 +1343,10 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🌱 Vegan Products",
         items: [
+          { name: "VEGAN Chocolate raspberry gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Dome Raspberry Chocolate gluten & dairy-free", price: "$8.95" },
+          { name: "VEGAN Strawberry (Fraisier) gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Triple chocolate gluten & dairy-free", price: "$8.95" },
           { name: "Vegan Chocolate Cookie" },
           { name: "Vegan Banana Bread" },
           { name: "Vegan Muffin" },
