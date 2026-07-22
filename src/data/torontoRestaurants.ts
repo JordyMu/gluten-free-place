@@ -1323,12 +1323,16 @@ export const torontoRestaurants: Restaurant[] = [
       {
         category: "🧁 Individual Cakes",
         items: [
-          { name: "Mini Éclair" },
-          { name: "Paris-Brest" },
-          { name: "Mille-Feuille" },
-          { name: "Fruit Tartlet" },
-          { name: "Chocolate Mousse Cup" },
-          { name: "Cheesecake Slice" },
+          { name: "Paris-Brest gluten & dairy-free", price: "$8.95" },
+          { name: "Chantilly Eclair gluten & dairy-free", price: "$8.95" },
+          { name: "Garden Tartlet gluten & dairy-free", price: "$6.95" },
+          { name: "Lemon Meringue Tartlet gluten & dairy-free", price: "$8.95" },
+          { name: "Millefeuille gluten & dairy-free", price: "$8.95" },
+          { name: "Vanilla caramel eclair gluten & dairy-free", price: "$8.95" },
+          { name: "VEGAN Chocolate raspberry gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Dome Raspberry Chocolate gluten & dairy-free", price: "$8.95" },
+          { name: "VEGAN Strawberry (Fraisier) gluten & dairy-free", price: "$7.95" },
+          { name: "VEGAN Triple chocolate gluten & dairy-free", price: "$8.95" },
         ],
       },
       {
