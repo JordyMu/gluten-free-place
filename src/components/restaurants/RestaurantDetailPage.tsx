@@ -469,9 +469,9 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="grid md:grid-cols-2 gap-8">
+                <div className="md:columns-2 gap-8 [column-fill:_balance]">
                   {restaurant.fullMenu.map((section, si) => (
-                    <div key={si}>
+                    <div key={si} className="mb-8 break-inside-avoid">
                       <h3 className="text-lg font-bold text-gray-900 mb-1">{section.category}</h3>
                       {section.note && <p className="text-sm text-gray-500 mb-3">{section.note}</p>}
                       <ul className="space-y-3">
@@ -488,6 +488,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                     </div>
                   ))}
                 </div>
+
               </CardContent>
             </Card>
           )}
