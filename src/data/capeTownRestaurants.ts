@@ -33,7 +33,7 @@ export interface Restaurant {
   fullMenu?: {
     category: string;
     note?: string;
-    items: { name: string; price: string; description?: string }[];
+    items: { name: string; price?: string; description?: string }[];
   }[];
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
