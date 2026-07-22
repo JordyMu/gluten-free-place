@@ -908,7 +908,75 @@ export const torontoRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/Almond+Butterfly+100+Harbord+St+Toronto",
     specialty: "100% gluten-free bake shop & espresso bar",
     overview: "The original Almond Butterfly location on Harbord Street is a dedicated gluten-free bake shop serving fresh pastries, bread, and espresso daily.",
-    menuHighlights: ["🥐 GF Croissants", "🍞 GF Bread", "☕ Espresso", "🍰 Daily Specials"],
+    fullMenu: [
+      {
+        category: "Starters & Shareables",
+        items: [
+          { name: "A.B. Jumbo Rings", price: "$15.50", description: "Beer-battered thick-cut onion rings, housemade dijon mayo" },
+          { name: "Buffalo Cauliflower Wings", price: "$18.50", description: "Beer-battered jumbo cauliflower wings, choice of dipping sauce" },
+          { name: "Chicken Wings", price: "$20.50", description: "One pound — hot, BBQ, or salt & pepper" },
+          { name: "Loaded Nachos", price: "$18.75", description: "Corn tortilla chips, cheese, jalapeños, pico de gallo, sour cream" },
+        ],
+      },
+      {
+        category: "Burgers & Handhelds",
+        note: "Served with fresh-cut fries or side verde",
+        items: [
+          { name: "Bistro Burger", price: "$22.50", description: "Chuck & brisket patty, dijon mayo, pickled onion, lettuce, tomato, pickle" },
+          { name: "Smokehouse Burger", price: "$25.75", description: "BBQ sauce, bacon, fried jalapeños, crispy onions, smoked gouda" },
+          { name: "Crispy Chicken Sandwich", price: "$23.00", description: "Crispy chicken filet, honey mustard, pickled onion, lettuce, tomato" },
+          { name: "Fish 'n Chips", price: "$24.50", description: "Beer-battered haddock, fresh-cut fries, tartar sauce, lemon" },
+        ],
+      },
+      {
+        category: "Mains & Pastas",
+        items: [
+          { name: "Chicken Parmesan", price: "$28.75", description: "Crispy chicken, parmesan, marinara, mozzarella, pesto penne, garlic toast" },
+          { name: "Canadian Prime Sirloin", price: "$29.00", description: "AAA sirloin, garlic mashed potatoes, compound butter, seasonal veg" },
+          { name: "Maple Dijon Salmon", price: "$29.00", description: "Pan-seared salmon, maple dijon glaze, garlic mash, asparagus" },
+          { name: "A.B. Mac 'n Cheese", price: "$23.50", description: "Smoked gouda, aged white cheddar, garlic cream sauce, garlic toast" },
+        ],
+      },
+      {
+        category: "Brunch",
+        note: "Available daily until 4:00pm",
+        items: [
+          { name: "Classic Breakfast", price: "$21.75", description: "Two eggs, bacon, mexican-style beans, cajun homefries, housemade toast" },
+          { name: "Eggs Benny", price: "$23.50", description: "Poached eggs, canadian bacon, hollandaise, english muffin, homefries" },
+          { name: "Butterfly Stack", price: "$22.50", description: "Triple pancake stack, maple butter, berry compote" },
+          { name: "Lavender French Toast", price: "$23.50", description: "Cacao nib & almond crusted french toast, lemon lavender ricotta" },
+        ],
+      },
+      {
+        category: "Cocktails & Mimosas",
+        note: "$5 Brunch Mimosas weekdays",
+        items: [
+          { name: "Classic Mimosa", price: "$5.00", description: "Sparkling wine + fresh orange juice — weekday brunch special" },
+          { name: "Espresso Martini", price: "$16.00", description: "Vodka, fresh espresso, coffee liqueur" },
+          { name: "Aperol Spritz", price: "$14.00", description: "Aperol, prosecco, soda, orange" },
+          { name: "Caesar", price: "$13.00", description: "House-spiced vodka Caesar with celery salt rim" },
+        ],
+      },
+      {
+        category: "Wine & Beer",
+        note: "$25 Wine Thursdays on select bottles",
+        items: [
+          { name: "House Red / White", price: "$11 / $42", description: "By the glass or bottle — rotating Ontario & imported picks" },
+          { name: "Prosecco", price: "$12 / $48", description: "Crisp Italian sparkling by the glass or bottle" },
+          { name: "Local Craft Lager", price: "$9.00", description: "Rotating Toronto craft tap — always gluten-free friendly" },
+          { name: "GF Cider", price: "$10.00", description: "Ontario dry apple cider, naturally gluten-free" },
+        ],
+      },
+      {
+        category: "Non-Alcoholic",
+        items: [
+          { name: "Espresso Drinks", price: "$4.25+", description: "Espresso, americano, latte, cappuccino, cortado" },
+          { name: "Fresh OJ", price: "$6.50", description: "Freshly squeezed daily" },
+          { name: "Housemade Lemonade", price: "$5.50", description: "Classic or seasonal fruit variety" },
+          { name: "Loose Leaf Tea", price: "$4.50", description: "Selection of black, green, and herbal teas" },
+        ],
+      },
+    ],
     proTip: "Arrive early — popular items sell out by noon",
     icon: "🦋",
     featured: true,
