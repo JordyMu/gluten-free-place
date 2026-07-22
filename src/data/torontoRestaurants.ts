@@ -1032,6 +1032,80 @@ export const torontoRestaurants: Restaurant[] = [
     specialty: "100% gluten-free & vegan bakery",
     overview: "Bunner's is Toronto's iconic 100% gluten-free and vegan bakery. Everything is made in a dedicated facility, making it completely safe for celiacs.",
     menuHighlights: ["🥐 GF Pastries", "🎂 Custom Cakes", "🍪 Cookies & Brownies", "🥖 Artisan Bread"],
+    fullMenu: [
+      {
+        category: "⭐ Best Sellers",
+        items: [
+          { name: "Mamma Bun", price: "$8.45" },
+          { name: "Josephine Louise", price: "$7.60" },
+          { name: "Double Chocolate Brownie", price: "$4.75" },
+          { name: "Nanaimo Bar", price: "$6.30" },
+          { name: "Chocolate Chunk Cookie", price: "$4.35" },
+          { name: "Chocolate Cupcake", price: "$6.50" },
+          { name: "Morning Glory Muffin", price: "$6.50" },
+        ],
+      },
+      {
+        category: "Cinnamon Buns",
+        items: [
+          { name: "Mamma Bun", price: "$8.45" },
+          { name: "Baby Bun", price: "$5.85 online delivery / $4.50 online shop" },
+        ],
+      },
+      {
+        category: "Cupcakes",
+        items: [
+          { name: "Chocolate Cupcake", price: "$6.50" },
+          { name: "Cookies & Cream Cupcake", price: "$6.50" },
+        ],
+      },
+      {
+        category: "Muffins",
+        items: [
+          { name: "Banana Crunch Muffin", price: "$6.50" },
+          { name: "Morning Glory Muffin", price: "$6.50" },
+          { name: "Strawberry Lemon Muffin", price: "$6.50" },
+        ],
+      },
+      {
+        category: "Brownies",
+        items: [
+          { name: "Double Chocolate Brownie", price: "$4.75" },
+        ],
+      },
+      {
+        category: "Squares",
+        items: [
+          { name: "Nanaimo Bar", price: "$6.30" },
+          { name: "Carmelita Square", price: "~$6.30" },
+        ],
+      },
+      {
+        category: "Cookies",
+        items: [
+          { name: "Chocolate Chunk Cookie", price: "$4.35" },
+          { name: "Supersonic Cookie", price: "$4.35" },
+          { name: "Chocolate Chip Creamie", price: "$5.25–$6.44" },
+          { name: "Cookies & Creamie", price: "$5.25–$6.44" },
+          { name: "S'mores Creamie", price: "$5.25–$6.44" },
+        ],
+      },
+      {
+        category: "Specialty Dessert",
+        items: [
+          { name: "Josephine Louise", price: "$7.60" },
+        ],
+      },
+      {
+        category: "Combo Boxes",
+        items: [
+          { name: "Cupcake Combo Box", price: "$39.85" },
+          { name: "Muffin Combo Box", price: "$39.00" },
+          { name: "Square Combo Box", price: "$40.95" },
+          { name: "Office Combo Box", price: "$36.14" },
+        ],
+      },
+    ],
     proTip: "Order custom cakes 48 hours in advance!",
     icon: "🥐",
     featured: true,
