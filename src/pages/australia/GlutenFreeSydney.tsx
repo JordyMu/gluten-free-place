@@ -214,7 +214,7 @@ const GlutenFreeSydney = () => {
 
   const filteredRestaurants = useMemo(
     () =>
-      restaurants.filter((r) => {
+      sydneyRestaurants.filter((r) => {
         const q = searchQuery.toLowerCase();
         const matchesSearch =
           q === "" ||
@@ -262,7 +262,7 @@ const GlutenFreeSydney = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">
-                {restaurants.length} listed restaurants
+                {sydneyRestaurants.length} listed restaurants
               </Badge>
               <AddRestaurantDialog
                 city="Sydney"
@@ -471,7 +471,7 @@ const GlutenFreeSydney = () => {
                       </SelectContent>
                     </Select>
                     <p className="mt-3 text-sm text-gray-600">
-                      Showing {filteredRestaurants.length} of {restaurants.length}
+                      Showing {filteredRestaurants.length} of {sydneyRestaurants.length}
                     </p>
                   </CardContent>
                 </Card>
