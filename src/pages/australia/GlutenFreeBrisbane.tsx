@@ -176,6 +176,7 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
         ],
       },
     ],
+  },
   {
     slug: "urban-fish-market",
     name: "Urban Fish Market",
