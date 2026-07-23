@@ -62,12 +62,12 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       "🎂 Custom celebration cakes",
     ],
     proTip: "Arrive early for the best selection of fresh croissants.",
-    address: "123 George St, Sydney NSW 2000, Australia",
+    address: "131 Marion Street, Leichhardt, Sydney NSW 2040, Australia",
     hours: "Mon–Sun: 8:00AM – 7:00PM",
     phone: "+61 2 9234 5678",
     website: "www.sebastiensansgluten.com.au",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Sebastien+Sans+Gluten+Sydney",
+      "https://www.google.com/maps/dir/?api=1&destination=131+Marion+Street+Leichhardt+Sydney+NSW+2040+Australia",
     featured: true,
   },
   {
