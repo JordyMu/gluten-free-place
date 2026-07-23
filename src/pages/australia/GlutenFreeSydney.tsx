@@ -44,6 +44,7 @@ interface SydneyRestaurant {
     note?: string;
     items: { name: string; price?: string; description?: string }[];
   }[];
+  photos?: { url: string; caption?: string }[];
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
@@ -159,6 +160,15 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=131+Marion+Street+Leichhardt+Sydney+NSW+2040+Australia",
     featured: true,
+    photos: [
+      { url: "/images/sydney/sebastien/photo1.webp", caption: "Strawberry Tart" },
+      { url: "/images/sydney/sebastien/photo2.webp", caption: "GF Croissants" },
+      { url: "/images/sydney/sebastien/photo3.webp", caption: "Artisan Bread" },
+      { url: "/images/sydney/sebastien/photo4.webp", caption: "Chocolate Éclairs" },
+      { url: "/images/sydney/sebastien/photo5.webp", caption: "Paris-Brest" },
+      { url: "/images/sydney/sebastien/photo6.webp", caption: "Hot Cross Buns" },
+      { url: "/images/sydney/sebastien/photo7.webp", caption: "Chocolate Cake" },
+    ],
   },
   {
     slug: "noglu-sydney",
