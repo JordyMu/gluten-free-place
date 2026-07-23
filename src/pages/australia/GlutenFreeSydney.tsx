@@ -288,6 +288,16 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     website: "www.noglu.com.au",
     directionsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=47+Rose+St+Essendon+VIC+3040+Australia",
+    photos: [
+      { url: "/images/sydney/noglu/salmon_benedict.webp", caption: "Salmon Benedict" },
+      { url: "/images/sydney/noglu/creme_brulee_hotcakes.webp", caption: "Crème Brûlée Hotcakes" },
+      { url: "/images/sydney/noglu/pork_belly_benedict.webp", caption: "Pork Belly Benedict" },
+      { url: "/images/sydney/noglu/pulled_pork.webp", caption: "Pulled Pork" },
+      { url: "/images/sydney/noglu/matcha_hotcakes.webp", caption: "Matcha Hotcakes" },
+      { url: "/images/sydney/noglu/granola_bowl.webp", caption: "Granola Bowl" },
+      { url: "/images/sydney/noglu/smashed_avo_on_toast.webp", caption: "Smashed Avo on Toast" },
+      { url: "/images/sydney/noglu/chili_scrambled_eggs.webp", caption: "Chili Scrambled Eggs" },
+    ],
   },
   {
     slug: "the-little-kitchen-cafe",
