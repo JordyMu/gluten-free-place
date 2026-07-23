@@ -250,7 +250,7 @@ const SpainCityPage = () => {
                 ) : (
                   <div className="grid gap-6">
                     {filteredRestaurants.map((r, index) => (
-                      <Card key={r.name} className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden">
+                      <Card key={r.name} className="overflow-hidden border-2 border-red-200 rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
                         <CardContent className="p-6">
                           <div className="mb-3">
                             <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2 flex-wrap">
@@ -368,6 +368,16 @@ const SpainCityPage = () => {
                               </Button>
                             )}
                           </div>
+
+                          <div className="mt-4">
+                            <h4 className="sr-only">Nearby</h4>
+                            <ul className="space-y-1 text-gray-700">
+                              <li><span className="font-bold">Bakery:</span></li>
+                              <li><span className="font-bold">Coffee Shop:</span></li>
+                              <li><span className="font-bold">Grocery store:</span></li>
+                            </ul>
+                          </div>
+
                         </CardContent>
                       </Card>
                     ))}
