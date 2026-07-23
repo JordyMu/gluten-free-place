@@ -39,6 +39,11 @@ interface SydneyRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  fullMenu?: {
+    category: string;
+    note?: string;
+    items: { name: string; price?: string; description?: string }[];
+  }[];
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
@@ -60,6 +65,91 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       "🍰 French Cakes & Tarts",
       "☕ Specialty Coffee",
       "🎂 Custom celebration cakes",
+    ],
+    fullMenu: [
+      {
+        category: "🥧 Savoury",
+        note: "20% off frozen savoury items (subject to availability)",
+        items: [
+          { name: "Cheesy puff*", price: "$15.95" },
+          { name: "Eggplant & hummus croissant*", price: "$15.95" },
+          { name: "Frittata*", price: "$11.95" },
+          { name: "Ham & cheese croissant", price: "$15.95" },
+          { name: "Pie – beef or chicken", price: "$14.95" },
+          { name: "Pie of the month*", price: "$16.95" },
+          { name: "Quiche – veggie or lorraine", price: "$13.95" },
+          { name: "Sausage roll – beef or pork", price: "$11.95" },
+          { name: "Spinach & feta feuilleté", price: "$15.95" },
+        ],
+      },
+      {
+        category: "🥐 Viennoiserie",
+        items: [
+          { name: "Almond croissant*", price: "$12.95" },
+          { name: "Apple turnover", price: "$11.95" },
+          { name: "Cinnabun*", price: "$11.95" },
+          { name: "Cinnamon scroll", price: "$10.95" },
+          { name: "Cookies*", price: "$11.95" },
+          { name: "Croissant", price: "$7.95" },
+          { name: "Danish", price: "$9.95" },
+          { name: "Gingerbread", price: "$3.95" },
+          { name: "Pain au chocolat", price: "$8.95" },
+          { name: "Pain au raisin", price: "$8.95" },
+          { name: "Palmier", price: "$5.95" },
+        ],
+      },
+      {
+        category: "🍰 Patisserie",
+        items: [
+          { name: "Apple slice", price: "$8.95" },
+          { name: "Brownie", price: "$8.95" },
+          { name: "Carrot cake", price: "$10.95" },
+          { name: "Chocolat and almond tarte*", price: "$15.95" },
+          { name: "Éclair*", price: "$12.95" },
+          { name: "Fruit tart", price: "$12.95" },
+          { name: "Lemon tart", price: "$12.95" },
+          { name: "Lemon meringue tart", price: "$14.95" },
+          { name: "Paris-brest*", price: "$15.95" },
+          { name: "Pear and almond tart", price: "$11.95" },
+          { name: "Weekend special*", price: "$15.95" },
+        ],
+      },
+      {
+        category: "🥖 Boulangerie",
+        items: [
+          { name: "Baguette (Saturdays only)*", price: "$9.95" },
+          { name: "Plain la boule*", price: "$12.95" },
+          { name: "Seeded la boule*", price: "$12.95" },
+        ],
+      },
+      {
+        category: "🌱 Dairy Free & Vegan",
+        items: [
+          { name: "DF almond croissant*", price: "$12.95" },
+          { name: "DF banana bread", price: "$7.95" },
+          { name: "DF frittata*", price: "$11.95" },
+          { name: "Vegan croissant*", price: "$7.95" },
+          { name: "Vegan danish*", price: "$12.95" },
+          { name: "Vegan granola", price: "$12.95" },
+          { name: "Vegan pain au chocolat*", price: "$8.95" },
+        ],
+      },
+      {
+        category: "☕ Drinks",
+        note: "Alternative milks available. *Available weekends only. 10% surcharge on Sundays, 15% on public holidays.",
+        items: [
+          { name: "Espresso", price: "$4.50" },
+          { name: "Cappuccino, flat white, latte, piccolo", price: "$5.00" },
+          { name: "Hot chocolate", price: "$5.00" },
+          { name: "Chai latte, long black, mocha", price: "$5.50" },
+          { name: "Loose leaf tea", price: "$5.50" },
+          { name: "Matcha latte", price: "$6.00" },
+          { name: "Fresh OJ", price: "$5.50" },
+          { name: "Iced coffee", price: "$7.00" },
+          { name: "Iced matcha", price: "$8.00" },
+          { name: "Soft drinks", price: "$4.00" },
+        ],
+      },
     ],
     proTip: "Arrive early for the best selection of fresh croissants.",
     address: "131 Marion Street, Leichhardt, Sydney NSW 2040, Australia",
