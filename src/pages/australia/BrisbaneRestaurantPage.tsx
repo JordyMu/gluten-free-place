@@ -22,6 +22,7 @@ const BrisbaneRestaurantPage = () => {
     specialty: r.specialty ?? "",
     overview: r.overview ?? "",
     menuHighlights: r.menuHighlights,
+    whyPeopleLoveIt: r.whyPeopleLoveIt,
     proTip: r.proTip ?? "",
     icon: r.icon ?? "🍽️",
     celiacSafe: r.celiacSafe ?? "protocols-in-place",
