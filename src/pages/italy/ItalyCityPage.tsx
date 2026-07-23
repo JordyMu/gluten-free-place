@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation,
-  Heart, MessageCircle, Award, Shield, Search, Plus, Filter,
+  MessageCircle, Award, Shield, Search, Filter,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +14,6 @@ import {
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
-import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 import { cities } from "@/pages/Italy";
