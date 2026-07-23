@@ -275,10 +275,9 @@ const ItalyCityPage = () => {
             </h2>
             <div className="grid gap-6">
               {filteredRestaurants.map((r, index) => (
-                <Card key={index} className="overflow-hidden border-2 border-blue-100 rounded-xl">
+                <Card key={index} className="overflow-hidden border-2 border-red-200 rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
                   <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row gap-6">
-                      <div className="flex-1">
+                    <div>
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {r.icon && <span className="text-2xl">{r.icon}</span>}
                           <Link
@@ -288,7 +287,7 @@ const ItalyCityPage = () => {
                               .replace(/[\u0300-\u036f]/g, "")
                               .replace(/[^a-z0-9]+/g, "-")
                               .replace(/^-+|-+$/g, "")}`}
-                            className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline"
+                            className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
                           >
                             {r.name}
                           </Link>
@@ -298,7 +297,7 @@ const ItalyCityPage = () => {
                         </div>
 
                         {r.specialty && (
-                          <p className="text-sm text-gray-500 mb-2">{r.specialty}</p>
+                          <p className="text-sm text-gray-500 mb-3">{r.specialty}</p>
                         )}
 
                         {r.rating !== undefined && (
@@ -325,7 +324,7 @@ const ItalyCityPage = () => {
                             <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
                             <div className="flex flex-wrap gap-2">
                               {r.menuHighlights.map((m, i) => (
-                                <Badge key={i} variant="secondary" className="text-sm">{m}</Badge>
+                                <Badge key={i} variant="secondary" className="text-sm bg-gray-100 text-gray-900 hover:bg-gray-100">{m}</Badge>
                               ))}
                             </div>
                           </div>
@@ -355,7 +354,7 @@ const ItalyCityPage = () => {
                           {r.phone && (
                             <div className="flex items-center gap-2">
                               <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-red-700">
                                 {r.phone}
                               </a>
                             </div>
@@ -366,7 +365,7 @@ const ItalyCityPage = () => {
                           {r.directionsUrl && (
                             <Button
                               onClick={() => openExternalLink(r.directionsUrl!)}
-                              className="bg-orange-600 hover:bg-orange-700"
+                              className="bg-red-700 hover:bg-red-800"
                             >
                               <Navigation className="w-4 h-4 mr-2" />
                               Get Directions
@@ -385,7 +384,7 @@ const ItalyCityPage = () => {
 
                         {r.nearby && r.nearby.length > 0 && (
                           <div className="mt-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
+                            <h4 className="sr-only">Nearby</h4>
                             <ul className="space-y-1 text-gray-700">
                               {r.nearby.map((item) => (
                                 <li key={`${r.name}-nearby-${item.label}`}>
@@ -402,17 +401,6 @@ const ItalyCityPage = () => {
                             </ul>
                           </div>
                         )}
-
-
-
-                        <div className="mt-6 pt-6 border-t">
-                          <RestaurantReviews
-                            restaurantName={r.name}
-                            restaurantCountry="Italy"
-                            restaurantCity={city.name}
-                          />
-                        </div>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
