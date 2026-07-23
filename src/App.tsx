@@ -49,6 +49,9 @@ const NiceCategoryPage = lazy(() => import("./pages/france/NiceCategoryPage"));
 const StrasbourgRestaurantPage = lazy(() => import("./pages/france/StrasbourgRestaurantPage"));
 const Australia = lazy(() => import("./pages/Australia"));
 const GlutenFreeSydney = lazy(() => import("./pages/australia/GlutenFreeSydney"));
+const GlutenFreeMelbourne = lazy(() => import("./pages/australia/GlutenFreeMelbourne"));
+const GlutenFreeBrisbane = lazy(() => import("./pages/australia/GlutenFreeBrisbane"));
+const GlutenFreePerth = lazy(() => import("./pages/australia/GlutenFreePerth"));
 
 const UnitedKingdom = lazy(() => import("./pages/UnitedKingdom"));
 const GlutenFreeLondon = lazy(() => import("./pages/uk/GlutenFreeLondon"));
