@@ -45,6 +45,7 @@ interface SydneyRestaurant {
     items: { name: string; price?: string; description?: string }[];
   }[];
   photos?: { url: string; caption?: string }[];
+  heroImage?: string;
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
