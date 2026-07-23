@@ -224,6 +224,27 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
     website: "https://urbanfishmarket.com.au",
+    whyPeopleLoveIt: [
+      "Fresh Local Seafood Daily",
+      "Knowledgeable GF-Trained Staff",
+      "Separate GF Preparation Areas",
+      "Broadbeach Waterfront Location",
+      "Great Value Family Platters",
+    ],
+    services: {
+      dineIn: {
+        available: true,
+        note: "Casual indoor and outdoor seating overlooking Broadbeach.",
+      },
+      takeaway: {
+        available: true,
+        note: "Order at the counter — fish & chips, burgers and platters packed to go.",
+      },
+      delivery: {
+        available: true,
+        note: "Available via Uber Eats, DoorDash and Menulog across the Gold Coast.",
+      },
+    },
     fullMenu: [
       {
         category: "🐟 Fish Fillets",
