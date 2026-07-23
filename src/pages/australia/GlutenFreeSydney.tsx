@@ -298,6 +298,11 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       { url: "/images/sydney/noglu/smashed_avo_on_toast.webp", caption: "Smashed Avo on Toast" },
       { url: "/images/sydney/noglu/chili_scrambled_eggs.webp", caption: "Chili Scrambled Eggs" },
     ],
+    services: {
+      dineIn: { available: true, note: "Relaxed café seating · indoor & outdoor tables · family-friendly" },
+      takeaway: { available: true, note: "Order at the counter · ready in 10–15 min · hot meals packed for transport" },
+      delivery: { available: true, note: "Available via third-party delivery partners · full breakfast & lunch menu" },
+    },
   },
   {
     slug: "the-little-kitchen-cafe",
