@@ -32,7 +32,7 @@ const SydneyRestaurantPage = () => {
     lat: 0,
     lng: 0,
     venueType: "restaurant" as const,
-    photos: [] as (string | { url: string; caption?: string })[],
+    photos: (r.photos ?? []) as (string | { url: string; caption?: string })[],
     cuisineTypes: r.cuisineTypes ?? [],
   };
 
