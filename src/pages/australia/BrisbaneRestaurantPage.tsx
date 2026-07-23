@@ -35,6 +35,7 @@ const BrisbaneRestaurantPage = () => {
     photos: [] as (string | { url: string; caption?: string })[],
     cuisineTypes: r.cuisineTypes ?? [],
     fullMenu: r.fullMenu,
+    services: r.services,
   };
 
   return (
