@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
-  MessageCircle, Navigation, Phone, Search, Shield, Star,
+  MessageCircle, Navigation, Phone, Search, Shield, Star, Trophy,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -234,10 +234,10 @@ const GlutenFreeBrisbane = () => {
         canonical="/gluten-free/australia/brisbane"
         schemaJson={schemaJson}
       />
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
+      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
         <header className="bg-white shadow-sm border-b">
           <div className="container mx-auto px-4 py-4">
-            <Link to="/australia" className="inline-flex items-center text-blue-700 hover:text-blue-800">
+            <Link to="/australia" className="inline-flex items-center text-red-700 hover:text-red-800">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Australia
             </Link>
@@ -273,10 +273,10 @@ const GlutenFreeBrisbane = () => {
 
         <main className="container mx-auto px-4 py-8">
           <section className="mb-10">
-            <Card className="bg-gradient-to-r from-blue-50 to-yellow-50 border-blue-200">
+            <Card className="bg-gradient-to-r from-red-50 to-orange-50 border-red-200">
               <CardContent className="p-6">
                 <div className="flex items-start gap-4">
-                  <Award className="w-8 h-8 text-blue-700 flex-shrink-0" />
+                  <Award className="w-8 h-8 text-red-700 flex-shrink-0" />
                   <div>
                     <h2 className="text-xl font-semibold text-gray-900 mb-2">
                       Gluten-Free Dining in Brisbane
@@ -287,6 +287,87 @@ const GlutenFreeBrisbane = () => {
                     </p>
                   </div>
                 </div>
+              </CardContent>
+            </Card>
+          </section>
+
+          {/* Browse by Category */}
+          <section className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+              🍽️ Browse by Category
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Find exactly what you're looking for with our curated category pages.
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+              <Link to="/gluten-free/australia/brisbane/street-food">
+                <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
+                  <CardContent className="p-2 flex items-center gap-2">
+                    <span className="text-lg">🍢</span>
+                    <div>
+                      <h3 className="text-sm font-medium text-orange-900">Street Food</h3>
+                      <p className="text-orange-700 text-[11px]">Markets & food trucks</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/gluten-free/australia/brisbane/bakeries">
+                <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-amber-200 bg-gradient-to-r from-amber-50 to-yellow-50">
+                  <CardContent className="p-2 flex items-center gap-2">
+                    <span className="text-lg">🥐</span>
+                    <div>
+                      <h3 className="text-sm font-medium text-amber-900">Bakeries</h3>
+                      <p className="text-amber-700 text-[11px]">Fresh bread & pastries</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/gluten-free/australia/brisbane/grocery-stores">
+                <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
+                  <CardContent className="p-2 flex items-center gap-2">
+                    <span className="text-lg">🛒</span>
+                    <div>
+                      <h3 className="text-sm font-medium text-green-900">Grocery Stores</h3>
+                      <p className="text-green-700 text-[11px]">Supermarkets & shops</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+              <Link to="/gluten-free/australia/brisbane/gluten-free-products">
+                <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-violet-200 bg-gradient-to-r from-violet-50 to-purple-50">
+                  <CardContent className="p-2 flex items-center gap-2">
+                    <span className="text-lg">🛍️</span>
+                    <div>
+                      <h3 className="text-sm font-medium text-violet-900">GF Products</h3>
+                      <p className="text-violet-700 text-[11px]">Specialty GF items</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
+            </div>
+          </section>
+
+          {/* Best CTA */}
+          <section className="mb-10">
+            <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200">
+              <CardContent className="p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div className="flex items-start gap-4">
+                  <Trophy className="w-8 h-8 text-amber-600 flex-shrink-0" />
+                  <div>
+                    <h2 className="text-xl font-semibold text-gray-900 mb-1">
+                      Best Gluten-Free Restaurants in Brisbane
+                    </h2>
+                    <p className="text-gray-700">
+                      Our editorial top 10 celiac-safe picks across Brisbane — ranked by safety, reviews and quality.
+                    </p>
+                  </div>
+                </div>
+                <Link
+                  to="/gluten-free/australia/brisbane/best-gluten-free-restaurants-in-brisbane"
+                  className="md:flex-shrink-0"
+                >
+                  <Button className="bg-amber-600 hover:bg-amber-700 text-white">View the Top 10</Button>
+                </Link>
               </CardContent>
             </Card>
           </section>
@@ -416,7 +497,7 @@ const GlutenFreeBrisbane = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-base">
-                      <Search className="w-4 h-4 text-blue-700" />
+                      <Search className="w-4 h-4 text-red-700" />
                       Search Restaurants
                     </CardTitle>
                   </CardHeader>
@@ -436,7 +517,7 @@ const GlutenFreeBrisbane = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-base">
-                      <Filter className="w-4 h-4 text-blue-700" />
+                      <Filter className="w-4 h-4 text-red-700" />
                       Filter by Menu Type
                     </CardTitle>
                   </CardHeader>
@@ -455,7 +536,7 @@ const GlutenFreeBrisbane = () => {
                 <Card>
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2 text-base">
-                      <Filter className="w-4 h-4 text-blue-700" />
+                      <Filter className="w-4 h-4 text-red-700" />
                       Filter by Safety
                     </CardTitle>
                   </CardHeader>
