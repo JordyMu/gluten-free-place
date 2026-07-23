@@ -45,6 +45,7 @@ interface SydneyRestaurant {
     items: { name: string; price?: string; description?: string }[];
   }[];
   photos?: { url: string; caption?: string }[];
+  heroImage?: string;
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
@@ -160,6 +161,7 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=131+Marion+Street+Leichhardt+Sydney+NSW+2040+Australia",
     featured: true,
+    heroImage: "/images/sydney/sebastien-hero.webp",
     photos: [
       { url: "/images/sydney/sebastien/photo1.webp", caption: "Strawberry Tart" },
       { url: "/images/sydney/sebastien/photo2.webp", caption: "GF Croissants" },
