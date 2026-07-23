@@ -558,8 +558,8 @@ const Australia = () => {
               <a
                 key={city.name}
                 href={
-                  city.name.toLowerCase() === "sydney"
-                    ? "/gluten-free/australia/sydney"
+                  ["sydney", "melbourne", "brisbane", "perth"].includes(city.name.toLowerCase())
+                    ? `/gluten-free/australia/${city.name.toLowerCase()}`
                     : `#city-${city.name.toLowerCase()}`
                 }
               >
