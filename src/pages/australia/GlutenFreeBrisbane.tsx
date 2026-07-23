@@ -363,6 +363,7 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
   {
     slug: "nodo-south-bank",
     name: "Nodo South Bank",
+    heroImage: "/images/brisbane/nodo-south-bank-hero.webp",
     icon: "🍽️",
     specialty: "Modern Australian cuisine · GF options",
     rating: 4.7,
