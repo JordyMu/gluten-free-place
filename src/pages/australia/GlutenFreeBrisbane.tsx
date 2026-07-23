@@ -372,6 +372,13 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     menuType: "mixed-menu",
     overview:
       "Contemporary Australian restaurant with well-trained staff offering innovative gluten-free dishes. Beautiful riverside location.",
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Menu",
+      "Famous Baked (Not Fried) Donuts",
+      "Excellent All-Day Breakfast & Brunch",
+      "Great Specialty Coffee",
+      "Inclusive Dietary Options",
+    ],
     proTip: "Weekend brunch is amazing — book ahead.",
     address: "89 Grey St, South Brisbane QLD 4101, Australia",
     hours: "Daily: 7:00AM – 10:00PM",
