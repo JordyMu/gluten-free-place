@@ -207,10 +207,12 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     overview:
       "French restaurant with extensively trained staff and excellent gluten-free expertise. A dedicated gluten-free establishment offering an authentic French dining experience.",
     menuHighlights: [
-      "🍲 French Onion Soup",
-      "🥩 Steak Frites",
-      "🐟 Pan-seared Salmon",
-      "🍷 Extensive wine list",
+      "☕ House Blend Maple Coffee (by ONA)",
+      "🍵 Strawberry Iced Matcha",
+      "🥤 Sublime Pine Cold-Pressed Juice",
+      "🥭 Tropical Smoothie (Banana, Mango, Pineapple, Passion fruit)",
+      "🍫 Dirty Chai",
+      "🥛 Milkshake (Vanilla / Chocolate / Strawberry)",
     ],
     proTip: "Book ahead for dinner service — very popular.",
     address: "47 Rose St, Essendon VIC 3040, Australia",
