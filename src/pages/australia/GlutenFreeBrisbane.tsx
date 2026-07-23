@@ -529,6 +529,13 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
       { url: "/images/brisbane/nodo/coffees.webp", caption: "Iced Coffees" },
       { url: "/images/brisbane/nodo/mocha.webp", caption: "Chocolate Mocha" },
     ],
+    services: {
+      dineIn: { available: true, note: "Riverside indoor & outdoor seating at South Bank · family-friendly · walk-ins & bookings" },
+      takeaway: { available: true, note: "Order at the counter · donuts, coffee & brunch packed to go · GF items packed separately" },
+      delivery: { available: true, note: "Available via Uber Eats & DoorDash · GF items packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
 ];
 
