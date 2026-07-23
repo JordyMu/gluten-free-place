@@ -224,6 +224,108 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
     website: "https://urbanfishmarket.com.au",
+    fullMenu: [
+      {
+        category: "🐟 Fish Fillets",
+        note: "Choice of grilled, crumbed or battered. Add garlic/chilli oil confit +$1 · chilli & garlic marinade +$2",
+        items: [
+          { name: "NZ Hoki", price: "$14.00" },
+          { name: "NZ Flake", price: "$16.00" },
+          { name: "Barramundi", price: "$19.00" },
+          { name: "QLD Barramundi", price: "$26.50" },
+          { name: "Goldband Snapper", price: "$24.00" },
+          { name: "Norwegian Salmon", price: "$22.00" },
+          { name: "Market Fish of the Day", price: "MP" },
+        ],
+      },
+      {
+        category: "🍟 Value Meals",
+        note: "Fish your way — choice of grilled, crumbed or battered",
+        items: [
+          { name: "Fish & Chips", price: "$16.00", description: "NZ Hoki, chips & tartare" },
+          { name: "Fishermans Treat", price: "$25.00", description: "NZ Hoki, 2 crumbed calamari, 1 crumbed prawn, chips & tartare. Add sea scallop +$4" },
+          { name: "Snack Pack", price: "$29.00", description: "4 crumbed prawns, 4 crumbed calamari, chips & tartare" },
+          { name: "Urban For Two", price: "$48.00", description: "2 NZ Hoki, 6 crumbed calamari, 2 crumbed prawns, chips & tartare" },
+          { name: "Family Feast", price: "$88.00", description: "4 NZ Hoki, 8 crumbed calamari, 4 crumbed prawns, chips & tartare" },
+        ],
+      },
+      {
+        category: "🍔 Burgers",
+        items: [
+          { name: "Calamari Burger", price: "$18.00", description: "Crumbed calamari, tomato, lettuce & tartare" },
+          { name: "Urban Tropicano", price: "$23.00", description: "Beef patty, grilled pineapple, caramelised onion, cheese, tomato, lettuce, relish & aioli" },
+          { name: "Barra Burger", price: "$22.00", description: "Barramundi (crumbed, battered or grilled), tomato, lettuce & tartare" },
+          { name: "Fishcake Burger", price: "$22.00", description: "Housemade barramundi fishcake, coleslaw & tartare" },
+          { name: "Surf & Turf Burger", price: "$24.90", description: "Beef patty, grilled king prawns, cheese, tomato, lettuce, relish & house chilli mayo" },
+          { name: "Urban Lamb Burger", price: "$27.00", description: "Slow cooked lamb shoulder, coleslaw & house coconut tzatziki" },
+        ],
+      },
+      {
+        category: "⭐ Signature Dishes",
+        items: [
+          { name: "Urban Yiros", price: "$22.00", description: "Signature pulled lamb, lettuce, tomato, onion, chips, aioli & spiced harissa in pita. Double lamb +$6.50" },
+          { name: "Barramundi Fishcake", price: "$25.00", description: "Housemade barramundi fishcake with tartare & choice of chips or salad" },
+          { name: "Chilli & Garlic Calamari", price: "$24.00", description: "Marinated grilled calamari with garden salad & fava bean purée" },
+          { name: "Snapper Pie", price: "$28.00", description: "Housemade gourmet snapper pie with choice of chips or salad" },
+          { name: "Lemon Pepper Squid", price: "$26.00", description: "Squid crumbed in zesty citrus seasoning with tartare & chips or salad" },
+          { name: "Spicy Grilled Prawn Salad", price: "$29.00", description: "Chilli & garlic prawns, mixed greens, mango, cucumber, toasted almonds, nam jim dressing. Add avo +$4" },
+          { name: "Thai Salmon", price: "$32.00", description: "Crispy grilled Norwegian salmon, mixed greens, Thai green sauce. Add rice +$5" },
+        ],
+      },
+      {
+        category: "🦐 Snacks",
+        items: [
+          { name: "Hand Cut Potato Scallop", price: "$3.50" },
+          { name: "Hand Cut Sweet Potato Scallop", price: "$3.50" },
+          { name: "Fish Bite", price: "$4.00 ea / 5 for $16" },
+          { name: "Sea Scallop", price: "$4.00" },
+          { name: "Prawn Cutlet", price: "$4.00" },
+          { name: "Calamari", price: "$2.50 ea / 10 for $20" },
+          { name: "Grilled Bugs", price: "$17.50", description: "Moreton Bay bug halves (2) grilled in house chilli garlic marinade" },
+        ],
+      },
+      {
+        category: "🦪 Cold Seafood",
+        note: "Subject to daily availability",
+        items: [
+          { name: "Trawler Prawn Bucket", price: "$33.00", description: "Local king prawns with seafood sauce & lemon" },
+          { name: "Oysters", price: "½ doz $20.50 / doz $41.00", description: "Fresh pacific oysters" },
+          { name: "Fresh Bugs", price: "$30.00", description: "Moreton Bay bug halves (4) with seafood sauce & lemon" },
+          { name: "The Reef Platter", price: "$130.00", description: "12 pacific oysters, 12 trawler prawns, 6 bug halves, seafood & tartare sauce, lemon" },
+          { name: "The Oyster & Prawn Platter", price: "$160.00", description: "24 pacific oysters, 20 trawler prawns, seafood sauce & lemon" },
+        ],
+      },
+      {
+        category: "🥗 Sides & Salads",
+        items: [
+          { name: "Garden Salad", price: "$9.00" },
+          { name: "Mediterranean Salad", price: "$9.00" },
+          { name: "Coleslaw", price: "$9.00" },
+          { name: "Crispy Fried Broccolini", price: "$9.00" },
+          { name: "Fava Bean Purée", price: "$9.00" },
+          { name: "Steamed Rice", price: "$5.00" },
+          { name: "Potato Chips", price: "sml $6 / lge $8" },
+          { name: "Sweet Potato Chips", price: "sml $9 / lge $11" },
+        ],
+      },
+      {
+        category: "🧒 Kids Corner",
+        note: "Served with tomato sauce",
+        items: [
+          { name: "Fish Bites (2) & Chips", price: "$11.00" },
+          { name: "Calamari (3) & Chips", price: "$11.00" },
+          { name: "Chicken Nuggets (4) & Chips", price: "$11.00" },
+        ],
+      },
+      {
+        category: "🍨 Desserts",
+        items: [
+          { name: "Pineapple Fritter", price: "$4.00", description: "Add Cocoflow +$4.50" },
+          { name: "Banana Fritter Sundae", price: "$15.00", description: "Banana fritter bites, cocoflow softserve, choc sauce & toasted almonds" },
+          { name: "Specialty Cakes", description: "See dessert cabinet — all gluten-free & dairy-free" },
+        ],
+      },
+    ],
   },
   {
     slug: "nodo-south-bank",
