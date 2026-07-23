@@ -27,13 +27,11 @@ const getExternalLink = (raw?: string) => {
   return raw.startsWith("http") ? raw : `https://${raw}`;
 };
 
-const getDefaultNearbyItems = (citySlug: string) => {
-  if (citySlug !== "rome") return [];
-
+const getDefaultNearbyItems = (_citySlug: string) => {
   return [
-    { label: "Bakery", name: "Pandalì", href: "/gluten-free/italy/rome/pandali" },
-    { label: "Coffee Shop", name: "Timoty Dispensa Caffe e Cucina", href: "/gluten-free/italy/rome/timoty-dispensa-caffe-e-cucina" },
-    { label: "Grocery store", name: "Celiachiamo Lab", href: "/gluten-free/italy/rome/celiachiamo-lab" },
+    { label: "Bakery", name: "", href: undefined as string | undefined },
+    { label: "Coffee Shop", name: "", href: undefined as string | undefined },
+    { label: "Grocery store", name: "", href: undefined as string | undefined },
   ];
 };
 
