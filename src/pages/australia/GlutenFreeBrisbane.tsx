@@ -223,6 +223,7 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     phone: "+61 7 5526 7340",
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
+    website: "https://urbanfishmarket.com.au",
   },
   {
     slug: "nodo-south-bank",
