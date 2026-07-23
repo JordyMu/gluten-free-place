@@ -225,6 +225,7 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
     website: "https://urbanfishmarket.com.au",
+    heroImage: "/images/brisbane/urban-fish-market-hero.webp",
     whyPeopleLoveIt: [
       "Fresh Local Seafood Daily",
       "Knowledgeable GF-Trained Staff",
