@@ -41,6 +41,7 @@ interface BrisbaneRestaurant {
   directionsUrl?: string;
   featured?: boolean;
   heroImage?: string;
+  photos?: { url: string; caption?: string }[];
   fullMenu?: {
     category: string;
     note?: string;
@@ -226,6 +227,15 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
       "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
     website: "https://urbanfishmarket.com.au",
     heroImage: "/images/brisbane/urban-fish-market-hero.webp",
+    photos: [
+      { url: "/images/brisbane/urban-fish-market/seafood-platter.webp", caption: "Fresh Oysters & Prawns Platter" },
+      { url: "/images/brisbane/urban-fish-market/fish-chips.webp", caption: "Beer-Battered Fish & Chips" },
+      { url: "/images/brisbane/urban-fish-market/burger.webp", caption: "GF Beef Burger on House Bun" },
+      { url: "/images/brisbane/urban-fish-market/takeaway.webp", caption: "Takeaway Boxes" },
+      { url: "/images/brisbane/urban-fish-market/burger-chips.webp", caption: "Burger with Golden Fries" },
+      { url: "/images/brisbane/urban-fish-market/dessert.webp", caption: "GF Dessert with Strawberries" },
+      { url: "/images/brisbane/urban-fish-market/chips.webp", caption: "Crispy Hand-Cut Chips" },
+    ],
     whyPeopleLoveIt: [
       "Fresh Local Seafood Daily",
       "Knowledgeable GF-Trained Staff",
