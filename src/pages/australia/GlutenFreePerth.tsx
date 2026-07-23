@@ -338,7 +338,12 @@ const GlutenFreePerth = () => {
                         <div className="mb-3">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
                             {r.icon && <span className="text-2xl">{r.icon}</span>}
-                            <span className="text-xl font-bold text-gray-900">{r.name}</span>
+                            <Link
+                              to={`/gluten-free/australia/perth/${r.slug}`}
+                              className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
+                            >
+                              {r.name}
+                            </Link>
                             {r.featured && (
                               <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
                             )}
