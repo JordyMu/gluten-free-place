@@ -35,6 +35,7 @@ const SydneyRestaurantPage = () => {
     photos: (r.photos ?? []) as (string | { url: string; caption?: string })[],
     cuisineTypes: r.cuisineTypes ?? [],
     heroImage: r.heroImage,
+    services: r.services,
   };
 
   return (
