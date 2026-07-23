@@ -174,7 +174,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants in {cityName}</h2>
               <div className="grid gap-6">
                 {filteredRestaurants.map((restaurant) => (
-                  <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}>
+                  <Card key={restaurant.slug} className={`overflow-hidden border-2 border-red-200 ${restaurant.featured ? "ring-2 ring-red-300" : ""}`}>
                     <CardContent className="p-6">
                       <div className="mb-3">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
@@ -261,6 +261,12 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                             Website
                           </Button>
                         )}
+                      </div>
+
+                      <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
+                        <div><span className="font-bold text-gray-900">Bakery:</span></div>
+                        <div><span className="font-bold text-gray-900">Coffee Shop:</span></div>
+                        <div><span className="font-bold text-gray-900">Grocery store:</span></div>
                       </div>
                     </CardContent>
                   </Card>
