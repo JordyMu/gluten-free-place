@@ -555,7 +555,15 @@ const Australia = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cityCards.map((city, index) => (
-              <a key={city.name} href={`#city-${city.name.toLowerCase()}`}>
+              <a
+                key={city.name}
+                href={
+                  city.name.toLowerCase() === "sydney"
+                    ? "/gluten-free/australia/sydney"
+                    : `#city-${city.name.toLowerCase()}`
+                }
+              >
+
                 <Card
                   className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden h-full"
                   style={{ animationDelay: `${index * 0.1}s` }}
