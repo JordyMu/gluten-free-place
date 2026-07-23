@@ -213,12 +213,12 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       "🍷 Extensive wine list",
     ],
     proTip: "Book ahead for dinner service — very popular.",
-    address: "45 Waterloo Rd, Sydney NSW 2017, Australia",
+    address: "47 Rose St, Essendon VIC 3040, Australia",
     hours: "Daily: 8:00AM – 9:00PM",
     phone: "+61 2 9678 9012",
     website: "www.noglu.com.au",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Noglu+Waterloo+Sydney",
+      "https://www.google.com/maps/dir/?api=1&destination=47+Rose+St+Essendon+VIC+3040+Australia",
   },
   {
     slug: "the-little-kitchen-cafe",
