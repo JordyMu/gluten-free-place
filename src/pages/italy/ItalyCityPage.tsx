@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation,
-  Heart, MessageCircle, Award, Shield, Search, Plus, Filter,
+  MessageCircle, Award, Shield, Search, Filter,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -14,7 +14,6 @@ import {
 import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
-import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 import { cities } from "@/pages/Italy";
@@ -26,6 +25,16 @@ const openExternalLink = (url: string) => {
 const getExternalLink = (raw?: string) => {
   if (!raw) return undefined;
   return raw.startsWith("http") ? raw : `https://${raw}`;
+};
+
+const getDefaultNearbyItems = (citySlug: string) => {
+  if (citySlug !== "rome") return [];
+
+  return [
+    { label: "Bakery", name: "Pandalì", href: "/gluten-free/italy/rome/pandali" },
+    { label: "Coffee Shop", name: "Timoty Dispensa Caffe e Cucina", href: "/gluten-free/italy/rome/timoty-dispensa-caffe-e-cucina" },
+    { label: "Grocery store", name: "Celiachiamo Lab", href: "/gluten-free/italy/rome/celiachiamo-lab" },
+  ];
 };
 
 const getCeliacSafeBadge = (level?: string) => {
@@ -274,11 +283,13 @@ const ItalyCityPage = () => {
               Verified Gluten-Free Restaurants in {city.name}
             </h2>
             <div className="grid gap-6">
-              {filteredRestaurants.map((r, index) => (
-                <Card key={index} className="overflow-hidden border-2 border-blue-100 rounded-xl">
+              {filteredRestaurants.map((r, index) => {
+                const nearbyItems = r.nearby && r.nearby.length > 0 ? r.nearby : getDefaultNearbyItems(city.slug);
+
+                return (
+                <Card key={index} className="overflow-hidden border-2 border-red-200 rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
                   <CardContent className="p-6">
-                    <div className="flex flex-col lg:flex-row gap-6">
-                      <div className="flex-1">
+                    <div>
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {r.icon && <span className="text-2xl">{r.icon}</span>}
                           <Link
@@ -288,7 +299,7 @@ const ItalyCityPage = () => {
                               .replace(/[\u0300-\u036f]/g, "")
                               .replace(/[^a-z0-9]+/g, "-")
                               .replace(/^-+|-+$/g, "")}`}
-                            className="text-xl font-bold text-gray-900 hover:text-orange-600 hover:underline"
+                            className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
                           >
                             {r.name}
                           </Link>
@@ -298,7 +309,7 @@ const ItalyCityPage = () => {
                         </div>
 
                         {r.specialty && (
-                          <p className="text-sm text-gray-500 mb-2">{r.specialty}</p>
+                          <p className="text-sm text-gray-500 mb-3">{r.specialty}</p>
                         )}
 
                         {r.rating !== undefined && (
@@ -325,7 +336,7 @@ const ItalyCityPage = () => {
                             <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
                             <div className="flex flex-wrap gap-2">
                               {r.menuHighlights.map((m, i) => (
-                                <Badge key={i} variant="secondary" className="text-sm">{m}</Badge>
+                                <Badge key={i} variant="secondary" className="text-sm bg-gray-100 text-gray-900 hover:bg-gray-100">{m}</Badge>
                               ))}
                             </div>
                           </div>
@@ -355,7 +366,7 @@ const ItalyCityPage = () => {
                           {r.phone && (
                             <div className="flex items-center gap-2">
                               <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-orange-600">
+                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-red-700">
                                 {r.phone}
                               </a>
                             </div>
@@ -366,7 +377,7 @@ const ItalyCityPage = () => {
                           {r.directionsUrl && (
                             <Button
                               onClick={() => openExternalLink(r.directionsUrl!)}
-                              className="bg-orange-600 hover:bg-orange-700"
+                              className="bg-red-700 hover:bg-red-800"
                             >
                               <Navigation className="w-4 h-4 mr-2" />
                               Get Directions
@@ -383,11 +394,11 @@ const ItalyCityPage = () => {
                           )}
                         </div>
 
-                        {r.nearby && r.nearby.length > 0 && (
+                        {nearbyItems.length > 0 && (
                           <div className="mt-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
+                            <h4 className="sr-only">Nearby</h4>
                             <ul className="space-y-1 text-gray-700">
-                              {r.nearby.map((item) => (
+                              {nearbyItems.map((item) => (
                                 <li key={`${r.name}-nearby-${item.label}`}>
                                   <span className="font-bold">{item.label}:</span>{" "}
                                   {item.href ? (
@@ -402,21 +413,11 @@ const ItalyCityPage = () => {
                             </ul>
                           </div>
                         )}
-
-
-
-                        <div className="mt-6 pt-6 border-t">
-                          <RestaurantReviews
-                            restaurantName={r.name}
-                            restaurantCountry="Italy"
-                            restaurantCity={city.name}
-                          />
-                        </div>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                );
+              })}
             </div>
             </div>
             <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
