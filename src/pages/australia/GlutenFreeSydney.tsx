@@ -46,6 +46,13 @@ interface SydneyRestaurant {
   }[];
   photos?: { url: string; caption?: string }[];
   heroImage?: string;
+  services?: {
+    dineIn?: { available: boolean; note: string };
+    takeaway?: { available: boolean; note: string };
+    delivery?: { available: boolean; note: string };
+    accessible?: boolean;
+    gfPackaging?: boolean;
+  };
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
