@@ -36,6 +36,7 @@ const BrisbaneRestaurantPage = () => {
     cuisineTypes: r.cuisineTypes ?? [],
     fullMenu: r.fullMenu,
     services: r.services,
+    heroImage: r.heroImage,
   };
 
   return (
