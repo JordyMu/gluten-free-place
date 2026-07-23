@@ -39,6 +39,11 @@ interface BrisbaneRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  fullMenu?: {
+    category: string;
+    note?: string;
+    items: { name: string; price?: string; description?: string }[];
+  }[];
 }
 
 export const brisbaneRestaurants: BrisbaneRestaurant[] = [
