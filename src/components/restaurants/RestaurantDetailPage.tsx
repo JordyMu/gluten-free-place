@@ -353,19 +353,23 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                   <Phone className="w-5 h-5 text-gray-400" />
                   <a href={`tel:${restaurant.phone}`} className="text-orange-600 hover:underline">{restaurant.phone}</a>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Globe className="w-5 h-5 text-gray-400" />
-                  <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:underline">
-                    {restaurant.website}
-                  </a>
+                <div className="grid grid-cols-2 gap-3 mt-4">
+                  <Button
+                    className="w-full bg-red-700 hover:bg-red-800 text-white"
+                    onClick={() => window.open(restaurant.directionsUrl, '_blank')}
+                  >
+                    <Navigation className="w-4 h-4 mr-2" />
+                    Get Directions
+                  </Button>
+                  <Button
+                    variant="outline"
+                    className="w-full border-gray-300 hover:bg-gray-50"
+                    onClick={() => window.open(restaurant.website.startsWith('http') ? restaurant.website : `https://${restaurant.website}`, '_blank')}
+                  >
+                    <Globe className="w-4 h-4 mr-2" />
+                    Website
+                  </Button>
                 </div>
-                <Button 
-                  className="w-full bg-orange-600 hover:bg-orange-700 mt-4"
-                  onClick={() => window.open(restaurant.directionsUrl, '_blank')}
-                >
-                  <Navigation className="w-4 h-4 mr-2" />
-                  Get Directions
-                </Button>
               </CardContent>
             </Card>
 
