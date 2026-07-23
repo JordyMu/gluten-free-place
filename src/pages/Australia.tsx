@@ -114,7 +114,7 @@ const Australia = () => {
     },
     {
       name: "Brisbane",
-      image: "photo-1572125675722-238a4f1f4ea2",
+      image: "photo-1566734904496-9309bb1798ae",
       places: 3,
       rating: 4.8,
       description: "Riverside dining with artisan GF patisseries and fresh seafood",
