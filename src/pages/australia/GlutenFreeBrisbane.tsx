@@ -32,6 +32,7 @@ interface BrisbaneRestaurant {
   menuType?: MenuType;
   overview?: string;
   menuHighlights?: string[];
+  whyPeopleLoveIt?: string[];
   proTip?: string;
   address?: string;
   hours?: string;
@@ -65,6 +66,13 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
       "🧁 Cupcakes & tarts",
       "🍪 Cookies & macarons",
       "☕ Specialty coffee",
+    ],
+    whyPeopleLoveIt: [
+      "100% Dedicated Gluten-Free Bakery",
+      "Award-Winning Artisan Pastries",
+      "Excellent Coffee & Brunch",
+      "Beautiful Celebration Cakes",
+      "Safe for Coeliacs",
     ],
     proTip: "Order custom cakes 48 hours in advance — they're stunning.",
     address: "56 Grey St, South Brisbane QLD 4101, Australia",
