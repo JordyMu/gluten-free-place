@@ -40,6 +40,7 @@ interface BrisbaneRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  heroImage?: string;
   fullMenu?: {
     category: string;
     note?: string;
