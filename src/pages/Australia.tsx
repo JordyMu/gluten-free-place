@@ -619,7 +619,7 @@ const Australia = () => {
                 </h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {city.restaurants.map((restaurant, index) => (
-                    <Card key={restaurant.name} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md animate-fade-in ${restaurant.featured ? 'md:col-span-2 lg:col-span-3' : ''}`} style={{ animationDelay: `${(cityIndex * 0.1) + (index * 0.05)}s` }}>
+                    <Card key={restaurant.name} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 border-red-200 shadow-md animate-fade-in ${restaurant.featured ? 'md:col-span-2 lg:col-span-3 ring-2 ring-red-300' : ''}`} style={{ animationDelay: `${(cityIndex * 0.1) + (index * 0.05)}s` }}>
                       <CardHeader className="pb-3">
                         <CardTitle className={`${restaurant.featured ? 'text-xl' : 'text-lg'} flex items-start justify-between`}>
                           <span>{restaurant.name}</span>
@@ -767,7 +767,13 @@ const Australia = () => {
                             )}
                           </>
                         )}
+                        <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
+                          <div><span className="font-bold text-gray-900">Bakery:</span></div>
+                          <div><span className="font-bold text-gray-900">Coffee Shop:</span></div>
+                          <div><span className="font-bold text-gray-900">Grocery store:</span></div>
+                        </div>
                       </CardContent>
+
                     </Card>
                   ))}
                 </div>
