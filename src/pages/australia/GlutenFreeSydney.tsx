@@ -46,6 +46,7 @@ interface SydneyRestaurant {
   }[];
   photos?: { url: string; caption?: string }[];
   heroImage?: string;
+  whyPeopleLoveIt?: string[];
   services?: {
     dineIn?: { available: boolean; note: string };
     takeaway?: { available: boolean; note: string };
@@ -177,6 +178,14 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       { url: "/images/sydney/sebastien/photo5.webp", caption: "Paris-Brest" },
       { url: "/images/sydney/sebastien/photo6.webp", caption: "Hot Cross Buns" },
       { url: "/images/sydney/sebastien/photo7.webp", caption: "Chocolate Cake" },
+    ],
+    whyPeopleLoveIt: [
+      "Authentic French Gluten-Free Pastries",
+      "100% Dedicated Gluten-Free Bakery",
+      "Outstanding Artisan Breads",
+      "Beautiful Cakes & Desserts",
+      "Excellent Coffee & Café Experience",
+      "Trusted by the Coeliac Community",
     ],
     services: {
       dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
