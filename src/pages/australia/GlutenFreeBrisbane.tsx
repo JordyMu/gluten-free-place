@@ -218,11 +218,11 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
       "🍋 Lemon pepper calamari (GF)",
     ],
     proTip: "Ask for the daily catch — always fresh and delicious.",
-    address: "234 George St, Brisbane QLD 4000, Australia",
+    address: "Shop 3/90 Surf Parade, Broadbeach QLD 4218, Australia",
     hours: "Daily: 11:00AM – 10:00PM",
     phone: "+61 7 3345 6789",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Brisbane",
+      "https://www.google.com/maps/search/?api=1&query=Urban+Fish+Market+Broadbeach",
   },
   {
     slug: "nodo-south-bank",
