@@ -89,6 +89,13 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=Glazed+Gluten+Free+Patisserie+Brisbane",
     featured: true,
+    services: {
+      dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
     fullMenu: [
       {
         category: "🍞 Freshly Baked Bread",
