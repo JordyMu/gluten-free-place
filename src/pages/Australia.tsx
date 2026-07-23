@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { AustraliaRestaurantList } from "@/components/australia/AustraliaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
 const australiaHero = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80";
