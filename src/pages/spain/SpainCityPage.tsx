@@ -368,6 +368,16 @@ const SpainCityPage = () => {
                               </Button>
                             )}
                           </div>
+
+                          <div className="mt-4">
+                            <h4 className="sr-only">Nearby</h4>
+                            <ul className="space-y-1 text-gray-700">
+                              <li><span className="font-bold">Bakery:</span></li>
+                              <li><span className="font-bold">Coffee Shop:</span></li>
+                              <li><span className="font-bold">Grocery store:</span></li>
+                            </ul>
+                          </div>
+
                         </CardContent>
                       </Card>
                     ))}
