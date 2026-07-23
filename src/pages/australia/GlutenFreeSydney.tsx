@@ -46,6 +46,13 @@ interface SydneyRestaurant {
   }[];
   photos?: { url: string; caption?: string }[];
   heroImage?: string;
+  services?: {
+    dineIn?: { available: boolean; note: string };
+    takeaway?: { available: boolean; note: string };
+    delivery?: { available: boolean; note: string };
+    accessible?: boolean;
+    gfPackaging?: boolean;
+  };
 }
 
 export const sydneyRestaurants: SydneyRestaurant[] = [
@@ -171,7 +178,13 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       { url: "/images/sydney/sebastien/photo6.webp", caption: "Hot Cross Buns" },
       { url: "/images/sydney/sebastien/photo7.webp", caption: "Chocolate Cake" },
     ],
+    services: {
+      dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
+    },
   },
+
   {
     slug: "noglu-sydney",
     name: "Noglu",
