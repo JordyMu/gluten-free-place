@@ -520,6 +520,15 @@ export const brisbaneRestaurants: BrisbaneRestaurant[] = [
         ],
       },
     ],
+    photos: [
+      { url: "/images/brisbane/nodo/tropical_acai.webp", caption: "Tropical Acai Bowl" },
+      { url: "/images/brisbane/nodo/eggs_on_toast.webp", caption: "Poached Eggs on Sourdough" },
+      { url: "/images/brisbane/nodo/avocado_toast.webp", caption: "Native Avo Toast" },
+      { url: "/images/brisbane/nodo/burger_and_chips.webp", caption: "Cheeky Beef Burger & Fries" },
+      { url: "/images/brisbane/nodo/salad_jk_doughnuts.webp", caption: "Signature Donut Display" },
+      { url: "/images/brisbane/nodo/coffees.webp", caption: "Iced Coffees" },
+      { url: "/images/brisbane/nodo/mocha.webp", caption: "Chocolate Mocha" },
+    ],
   },
 ];
 
