@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { AustraliaRestaurantList } from "@/components/australia/AustraliaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
 const australiaHero = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80";
@@ -268,7 +269,10 @@ const Australia = () => {
         </div>
       </section>
 
+      <AustraliaRestaurantList />
+
       <section className="py-16 bg-white/50">
+
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">

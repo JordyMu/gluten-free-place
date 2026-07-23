@@ -41,7 +41,7 @@ interface BrisbaneRestaurant {
   featured?: boolean;
 }
 
-const restaurants: BrisbaneRestaurant[] = [
+export const brisbaneRestaurants: BrisbaneRestaurant[] = [
   {
     slug: "glazed-gluten-free-patisserie",
     name: "Glazed Gluten Free Patisserie",
@@ -213,7 +213,7 @@ const GlutenFreeBrisbane = () => {
 
   const filteredRestaurants = useMemo(
     () =>
-      restaurants.filter((r) => {
+      brisbaneRestaurants.filter((r) => {
         const q = searchQuery.toLowerCase();
         const matchesSearch =
           q === "" ||
@@ -261,7 +261,7 @@ const GlutenFreeBrisbane = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">
-                {restaurants.length} listed restaurants
+                {brisbaneRestaurants.length} listed restaurants
               </Badge>
               <AddRestaurantDialog
                 city="Brisbane"
@@ -469,7 +469,7 @@ const GlutenFreeBrisbane = () => {
                       </SelectContent>
                     </Select>
                     <p className="mt-3 text-sm text-gray-600">
-                      Showing {filteredRestaurants.length} of {restaurants.length}
+                      Showing {filteredRestaurants.length} of {brisbaneRestaurants.length}
                     </p>
                   </CardContent>
                 </Card>
