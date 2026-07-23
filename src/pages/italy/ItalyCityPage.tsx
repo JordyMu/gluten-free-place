@@ -27,6 +27,16 @@ const getExternalLink = (raw?: string) => {
   return raw.startsWith("http") ? raw : `https://${raw}`;
 };
 
+const getDefaultNearbyItems = (citySlug: string) => {
+  if (citySlug !== "rome") return [];
+
+  return [
+    { label: "Bakery", name: "Pandalì", href: "/gluten-free/italy/rome/pandali" },
+    { label: "Coffee Shop", name: "Timoty Dispensa Caffe e Cucina", href: "/gluten-free/italy/rome/timoty-dispensa-caffe-e-cucina" },
+    { label: "Grocery store", name: "Celiachiamo Lab", href: "/gluten-free/italy/rome/celiachiamo-lab" },
+  ];
+};
+
 const getCeliacSafeBadge = (level?: string) => {
   if (level === "dedicated-facility")
     return (
@@ -273,7 +283,10 @@ const ItalyCityPage = () => {
               Verified Gluten-Free Restaurants in {city.name}
             </h2>
             <div className="grid gap-6">
-              {filteredRestaurants.map((r, index) => (
+              {filteredRestaurants.map((r, index) => {
+                const nearbyItems = r.nearby && r.nearby.length > 0 ? r.nearby : getDefaultNearbyItems(city.slug);
+
+                return (
                 <Card key={index} className="overflow-hidden border-2 border-red-200 rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
                   <CardContent className="p-6">
                     <div>
@@ -381,11 +394,11 @@ const ItalyCityPage = () => {
                           )}
                         </div>
 
-                        {r.nearby && r.nearby.length > 0 && (
+                        {nearbyItems.length > 0 && (
                           <div className="mt-4">
                             <h4 className="sr-only">Nearby</h4>
                             <ul className="space-y-1 text-gray-700">
-                              {r.nearby.map((item) => (
+                              {nearbyItems.map((item) => (
                                 <li key={`${r.name}-nearby-${item.label}`}>
                                   <span className="font-bold">{item.label}:</span>{" "}
                                   {item.href ? (
@@ -403,7 +416,8 @@ const ItalyCityPage = () => {
                     </div>
                   </CardContent>
                 </Card>
-              ))}
+                );
+              })}
             </div>
             </div>
             <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
