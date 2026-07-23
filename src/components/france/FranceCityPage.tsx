@@ -262,7 +262,6 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                           </Button>
                         )}
                       </div>
-                      </div>
 
                       <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
                         <div><span className="font-bold text-gray-900">Bakery:</span></div>
