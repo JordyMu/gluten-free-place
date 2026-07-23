@@ -41,6 +41,7 @@ interface BrisbaneRestaurant {
   directionsUrl?: string;
   featured?: boolean;
   heroImage?: string;
+  photos?: { url: string; caption?: string }[];
   fullMenu?: {
     category: string;
     note?: string;
