@@ -41,7 +41,7 @@ interface PerthRestaurant {
   featured?: boolean;
 }
 
-const restaurants: PerthRestaurant[] = [
+export const perthRestaurants: PerthRestaurant[] = [
   {
     slug: "baked-gluten-free",
     name: "BAKED Gluten Free",

@@ -41,7 +41,7 @@ interface SydneyRestaurant {
   featured?: boolean;
 }
 
-const restaurants: SydneyRestaurant[] = [
+export const sydneyRestaurants: SydneyRestaurant[] = [
   {
     slug: "sebastien-sans-gluten",
     name: "Sebastien Sans Gluten",

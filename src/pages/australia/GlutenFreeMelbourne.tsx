@@ -41,7 +41,7 @@ interface MelbourneRestaurant {
   featured?: boolean;
 }
 
-const restaurants: MelbourneRestaurant[] = [
+export const melbourneRestaurants: MelbourneRestaurant[] = [
   {
     slug: "wholegreen-bakery",
     name: "Wholegreen Bakery",
