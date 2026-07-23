@@ -111,7 +111,7 @@ const faqItems = [
   {
     question: "Where should I go for a gluten-free brunch in Melbourne?",
     answer:
-      "Bondi and the inner-west have excellent celiac-aware brunch spots. The Little Kitchen Cafe in Bondi is a local favourite for GF pancakes and breakfast bowls.",
+      "Melbourne has excellent celiac-aware brunch spots across the city — look for dedicated GF bakeries and cafes offering clearly labelled menus.",
   },
   {
     question: "How do I communicate my celiac needs in Melbourne?",
@@ -258,8 +258,7 @@ const GlutenFreeMelbourne = () => {
                     </h2>
                     <p className="text-gray-700">
                       Melbourne has a thriving celiac-aware dining scene, from dedicated French patisseries in
-                      the CBD to beachside brunch cafes in Bondi. Coeliac Australia certification is widely
-                      recognised across the city, and many venues clearly label gluten-free options on their menus.
+                      dedicated gluten-free bakeries to celiac-aware cafes and restaurants. Coeliac Australia certification is widely recognised across Melbourne, and many venues clearly label gluten-free options on their menus.
                     </p>
                   </div>
                 </div>
