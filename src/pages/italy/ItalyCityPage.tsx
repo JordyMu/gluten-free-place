@@ -383,6 +383,28 @@ const ItalyCityPage = () => {
                           )}
                         </div>
 
+                        {r.nearby && r.nearby.length > 0 && (
+                          <div className="mt-4">
+                            <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
+                            <ul className="space-y-1 text-gray-700">
+                              {r.nearby.map((item) => (
+                                <li key={`${r.name}-nearby-${item.label}`}>
+                                  <span className="font-bold">{item.label}:</span>{" "}
+                                  {item.href ? (
+                                    <Link to={item.href} className="text-red-700 hover:underline">
+                                      {item.name}
+                                    </Link>
+                                  ) : (
+                                    item.name
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        )}
+
+
+
                         <div className="mt-6 pt-6 border-t">
                           <RestaurantReviews
                             restaurantName={r.name}
