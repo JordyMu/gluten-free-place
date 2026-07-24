@@ -277,6 +277,13 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       takeaway: { available: true, note: "Order at the bar · ready in 15–20 min · GF meals packed separately" },
       delivery: { available: true, note: "Available via third-party delivery partners · GF meals clearly labelled" },
     },
+    whyPeopleLoveIt: [
+      "100% Certified Gluten-Free Kitchen",
+      "Classic Pub Food Without the Gluten",
+      "Safe for the Coeliac Community",
+      "Excellent Gluten-Free Drinks Selection",
+      "Perfect for Groups & Functions",
+    ],
   },
 ];
 
