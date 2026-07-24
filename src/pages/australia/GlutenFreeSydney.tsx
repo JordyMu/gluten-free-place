@@ -447,6 +447,15 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       takeaway: { available: true, note: "Order at the counter · ready in 10–15 min · sushi & bento packed for transport" },
       delivery: { available: true, note: "Available via third-party delivery partners · ramen & bento packed separately" },
     },
+    whyPeopleLoveIt: [
+      "Dedicated Gluten-Free Japanese Cuisine",
+      "Authentic Home-Style Japanese Cooking",
+      "Accommodates Many Dietary Needs",
+      "Fresh, Organic & Seasonal Ingredients",
+      "Eco-Friendly Philosophy",
+      "Safe Choice for Food Allergies",
+      "Passionate Chef & Personal Touch",
+    ],
   },
 ];
 
