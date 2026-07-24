@@ -178,12 +178,85 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     menuType: "mixed-menu",
     overview:
       "Traditional pub with well-trained staff offering extensive gluten-free pub classics. Separate fryers and preparation areas ensure safety.",
-    menuHighlights: [
-      "🍔 GF Burgers",
-      "🍟 GF Fish & Chips",
-      "🍕 GF Pizzas",
-      "🍺 GF Beer selection",
+    fullMenu: [
+      {
+        category: "Starters & Sides",
+        items: [
+          { name: "GF Garlic Bread", price: "$10" },
+          { name: "Salt & Pepper Squid (GF)", price: "$18" },
+          { name: "Loaded Fries (GF)", price: "$16" },
+          { name: "Buffalo Wings (GF)", price: "$18" },
+          { name: "Bowl of Chips with Aioli (GF)", price: "$12" },
+          { name: "Seasonal Greens (GF)", price: "$12" },
+        ],
+      },
+      {
+        category: "Pub Classics",
+        items: [
+          { name: "Chicken Schnitzel (GF)", price: "$28" },
+          { name: "Chicken Parmigiana (GF)", price: "$32" },
+          { name: "Beef Burger on GF Bun", price: "$26" },
+          { name: "Southern Fried Chicken Burger (GF)", price: "$26" },
+          { name: "Beer Battered Fish & Chips (GF)", price: "$30" },
+          { name: "Steak Sandwich on GF Bread", price: "$28" },
+        ],
+      },
+      {
+        category: "Mains & Steaks",
+        items: [
+          { name: "Porterhouse Steak 300g (GF)", price: "$42" },
+          { name: "Scotch Fillet 300g (GF)", price: "$46" },
+          { name: "Slow-Cooked Lamb Shoulder (GF)", price: "$38" },
+          { name: "Grilled Barramundi (GF)", price: "$36" },
+          { name: "Roast of the Day (GF)", price: "$28" },
+        ],
+      },
+      {
+        category: "Pizzas",
+        note: "GF base +$4",
+        items: [
+          { name: "Margherita", price: "$24" },
+          { name: "Pepperoni", price: "$26" },
+          { name: "Prosciutto & Rocket", price: "$28" },
+          { name: "BBQ Meat Lovers", price: "$28" },
+          { name: "Vegetarian", price: "$24" },
+        ],
+      },
+      {
+        category: "Weekly Specials",
+        items: [
+          { name: "Monday – Parma Night (GF available)", price: "$22" },
+          { name: "Tuesday – Steak Night (GF)", price: "$25" },
+          { name: "Wednesday – Burger Night (GF bun)", price: "$20" },
+          { name: "Thursday – GF Pizza Night", price: "$20" },
+          { name: "Sunday Roast (GF)", price: "$25" },
+        ],
+      },
+      {
+        category: "Desserts",
+        items: [
+          { name: "Flourless Chocolate Cake (GF)", price: "$14" },
+          { name: "Sticky Date Pudding (GF)", price: "$14" },
+          { name: "Crème Brûlée (GF)", price: "$14" },
+          { name: "Pavlova with Berries (GF)", price: "$14" },
+          { name: "Affogato (GF)", price: "$12" },
+          { name: "Ice Cream Selection (GF)", price: "$10" },
+        ],
+      },
+      {
+        category: "Drinks",
+        items: [
+          { name: "GF Beer on Tap", price: "$11" },
+          { name: "GF Bottled Beer Selection", price: "from $10" },
+          { name: "House Wine (Red / White / Rosé)", price: "$11" },
+          { name: "Cocktails", price: "from $18" },
+          { name: "Soft Drinks & Juices", price: "$5" },
+          { name: "Coffee & Tea", price: "from $4.50" },
+        ],
+      },
     ],
+
+
     proTip: "Thursday nights have GF pizza specials.",
     address: "207 Gilbert St, Adelaide SA 5000, Australia 5000",
     hours: "Daily: 12:00PM – 11:00PM",
