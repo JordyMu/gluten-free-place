@@ -263,6 +263,15 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     phone: "+61 3 9456 7890",
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=207+Gilbert+St+Adelaide+SA+5000",
+    photos: [
+      { url: "/images/melbourne/duke/dob-super-salad.webp", caption: "DOB Super Salad" },
+      { url: "/images/melbourne/duke/crumbed-camembert-v.webp", caption: "Crumbed Camembert (V)" },
+      { url: "/images/melbourne/duke/salt-pepper-squid-df.webp", caption: "Salt & Pepper Squid (DF)" },
+      { url: "/images/melbourne/duke/fried-chicken-wings.webp", caption: "Fried Chicken Wings" },
+      { url: "/images/melbourne/duke/eggplant-parmigiana.webp", caption: "Eggplant Parmigiana" },
+      { url: "/images/melbourne/duke/250gm-sirloin-steak.webp", caption: "250gm Sirloin Steak" },
+      { url: "/images/melbourne/duke/gluten-free-beer.webp", caption: "O'Brien Gluten-Free Beer" },
+    ],
   },
 ];
 
