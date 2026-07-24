@@ -101,7 +101,7 @@ const Australia = () => {
       rating: 4.7,
       description: "Harbour city with dedicated GF patisseries and beachside cafes",
       route: "/gluten-free/australia/sydney",
-      highlights: ["Sebastien Sans Gluten", "Noglu", "The Little Kitchen"]
+      highlights: ["Sebastien Sans Gluten", "Noglu", "Wafu Kitchen"]
     },
     {
       name: "Melbourne",
