@@ -44,6 +44,7 @@ interface MelbourneRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  photos?: { url: string; caption?: string }[];
 }
 
 export const melbourneRestaurants: MelbourneRestaurant[] = [
@@ -133,6 +134,16 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=257+Clarence+St+Sydney+NSW+2000+Australia",
     featured: true,
+    photos: [
+      { url: "/images/sydney/wholegreen/vegan-sandwich.webp", caption: "Vegan sandwich with beetroot, roasted peppers & greens on sourdough" },
+      { url: "/images/sydney/wholegreen/vegan-curry-pie.webp", caption: "Vegan curry pie with flaky pastry & poppy seeds" },
+      { url: "/images/sydney/wholegreen/apple-turnover.webp", caption: "Almond croissants in the bakery display case" },
+      { url: "/images/sydney/wholegreen/chicken-pie.webp", caption: "Chicken pie with sesame seeds & flaky crust" },
+      { url: "/images/sydney/wholegreen/beetroot-cake.webp", caption: "Chocolate raspberry brownies stacked" },
+      { url: "/images/sydney/wholegreen/veggie-frittata.webp", caption: "Roasted vegetable frittata with broccoli, mushroom & herbs" },
+      { url: "/images/sydney/wholegreen/chicken-and-leek-pie.webp", caption: "Chicken & leek pie served with tomato relish" },
+      { url: "/images/sydney/wholegreen/pain-au-chocolat-2.webp", caption: "Golden pain au chocolat" },
+    ],
   },
   {
     slug: "duke-of-brunswick-hotel",
