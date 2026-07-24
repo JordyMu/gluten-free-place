@@ -314,7 +314,7 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     ],
   },
   {
-    slug: "the-little-kitchen-cafe",
+    slug: "wafu-kitchen",
     name: "Wafu Kitchen",
     icon: "☕",
     specialty: "Breakfast & brunch · GF options",
