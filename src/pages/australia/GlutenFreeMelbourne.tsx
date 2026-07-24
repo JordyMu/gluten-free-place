@@ -62,12 +62,12 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       "🍪 Cookies & slices",
     ],
     proTip: "Their sourdough is incredible — preorder to avoid missing out.",
-    address: "234 Brunswick St, Melbourne VIC 3065, Australia",
+    address: "257 Clarence St, Sydney NSW 2000, Australia",
     hours: "Daily: 7:00AM – 6:00PM",
     phone: "+61 3 9123 4567",
     website: "www.wholegreenbakery.com.au",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Wholegreen+Bakery+Melbourne",
+      "https://www.google.com/maps/search/?api=1&query=257+Clarence+St+Sydney+NSW+2000+Australia",
     featured: true,
   },
   {
