@@ -50,6 +50,7 @@ interface MelbourneRestaurant {
     takeaway?: { available: boolean; note: string };
     delivery?: { available: boolean; note: string };
   };
+  whyPeopleLoveIt?: string[];
 }
 
 export const melbourneRestaurants: MelbourneRestaurant[] = [
@@ -154,6 +155,14 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
       delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
     },
+    whyPeopleLoveIt: [
+      "100% Dedicated Gluten-Free Bakery",
+      "Freshly Made with Real Ingredients",
+      "Exceptional Artisan Baked Goods",
+      "Excellent Coffee & Café Experience",
+      "Trusted by the Coeliac Community",
+      "Great Variety for Different Diets",
+    ],
   },
   {
     slug: "duke-of-brunswick-hotel",

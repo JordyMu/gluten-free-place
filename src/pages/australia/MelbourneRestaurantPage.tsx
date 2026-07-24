@@ -35,6 +35,7 @@ const MelbourneRestaurantPage = () => {
     photos: (r.photos ?? []) as (string | { url: string; caption?: string })[],
     cuisineTypes: r.cuisineTypes ?? [],
     services: r.services,
+    whyPeopleLoveIt: r.whyPeopleLoveIt,
   };
 
   return (
