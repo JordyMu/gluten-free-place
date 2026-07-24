@@ -442,6 +442,11 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       { url: "/images/sydney/wafu/Ramen_with_gluten_free_noodles.webp", caption: "Tokyo chicken ramen with GF noodles" },
       { url: "/images/sydney/wafu/miso_eggplant.webp", caption: "Miso eggplant side" },
     ],
+    services: {
+      dineIn: { available: true, note: "Casual Japanese dining · indoor seating · family-friendly" },
+      takeaway: { available: true, note: "Order at the counter · ready in 10–15 min · sushi & bento packed for transport" },
+      delivery: { available: true, note: "Available via third-party delivery partners · ramen & bento packed separately" },
+    },
   },
 ];
 
