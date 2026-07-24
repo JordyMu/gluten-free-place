@@ -32,6 +32,11 @@ interface MelbourneRestaurant {
   menuType?: MenuType;
   overview?: string;
   menuHighlights?: string[];
+  fullMenu?: {
+    category: string;
+    note?: string;
+    items: { name: string; price?: string; description?: string }[];
+  }[];
   proTip?: string;
   address?: string;
   hours?: string;
