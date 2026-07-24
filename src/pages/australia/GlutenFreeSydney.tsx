@@ -332,11 +332,11 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       "🥗 Fresh salads",
     ],
     proTip: "Try the banana bread — it's incredible.",
-    address: "78 Campbell Parade, Bondi NSW 2026, Australia",
+    address: "34-36 Mitchell Rd, Alexandria NSW 2015, Australia",
     hours: "Daily: 7:00AM – 4:00PM",
     phone: "+61 2 9901 2345",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=The+Little+Kitchen+Cafe+Bondi",
+      "https://www.google.com/maps/dir/?api=1&destination=34-36+Mitchell+Rd+Alexandria+NSW+2015+Australia",
   },
 ];
 
