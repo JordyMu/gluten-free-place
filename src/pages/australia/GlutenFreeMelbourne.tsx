@@ -44,6 +44,7 @@ interface MelbourneRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  photos?: { url: string; caption?: string }[];
 }
 
 export const melbourneRestaurants: MelbourneRestaurant[] = [
