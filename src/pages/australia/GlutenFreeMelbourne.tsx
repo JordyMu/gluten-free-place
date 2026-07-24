@@ -55,11 +55,13 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     overview:
       "Premium gluten-free bakery with expertly trained staff and comprehensive celiac knowledge. All products are made in a dedicated facility with the highest safety standards.",
     menuHighlights: [
-      "🥖 Sourdough loaves",
-      "🥐 Pastries & croissants",
-      "🍞 Sandwich bread",
-      "🥧 Pies & sausage rolls",
-      "🍪 Cookies & slices",
+      "🥖 Artisan sourdough loaves (plain, seeded, charcoal & turmeric, olive & rosemary, fruit & spice)",
+      "🥖 Sourdough baguettes (plain, seeded, olive & rosemary, charcoal, fruit)",
+      "🥐 Croissants & almond & chocolate croissant pudding",
+      "🥧 Savoury: sausage rolls, za'atar feta & tomato swirl, quiches & pies",
+      "🍰 Sweet: decadent chocolate cake, lemon & coconut cake, danishes",
+      "🛒 Pantry: shortcrust pastry sheets & baking essentials",
+      "🎁 Catering platters & gift bundles",
     ],
     proTip: "Their sourdough is incredible — preorder to avoid missing out.",
     address: "257 Clarence St, Sydney NSW 2000, Australia",
