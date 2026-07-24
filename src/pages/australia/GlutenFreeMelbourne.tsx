@@ -46,9 +46,9 @@ interface MelbourneRestaurant {
   featured?: boolean;
   photos?: { url: string; caption?: string }[];
   services?: {
-    dineIn?: { available: boolean; note?: string };
-    takeaway?: { available: boolean; note?: string };
-    delivery?: { available: boolean; note?: string };
+    dineIn?: { available: boolean; note: string };
+    takeaway?: { available: boolean; note: string };
+    delivery?: { available: boolean; note: string };
   };
 }
 
