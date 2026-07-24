@@ -315,7 +315,7 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
   },
   {
     slug: "the-little-kitchen-cafe",
-    name: "The Little Kitchen Cafe",
+    name: "Wafu Kitchen",
     icon: "☕",
     specialty: "Breakfast & brunch · GF options",
     rating: 4.6,
@@ -354,7 +354,7 @@ const faqItems = [
   {
     question: "Where should I go for a gluten-free brunch in Sydney?",
     answer:
-      "Bondi and the inner-west have excellent celiac-aware brunch spots. The Little Kitchen Cafe in Bondi is a local favourite for GF pancakes and breakfast bowls.",
+      "Bondi and the inner-west have excellent celiac-aware brunch spots. Wafu Kitchen in Bondi is a local favourite for GF pancakes and breakfast bowls.",
   },
   {
     question: "How do I communicate my celiac needs in Sydney?",
