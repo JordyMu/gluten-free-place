@@ -197,6 +197,7 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
   {
     slug: "noglu-sydney",
     name: "Noglu",
+    heroImage: "/images/sydney/noglu-hero.webp",
     icon: "🍽️",
     specialty: "French cuisine · 100% gluten-free",
     rating: 4.7,
