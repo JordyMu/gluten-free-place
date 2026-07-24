@@ -433,6 +433,15 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
     phone: "+61 2 9901 2345",
     directionsUrl:
       "https://www.google.com/maps/dir/?api=1&destination=34-36+Mitchell+Rd+Alexandria+NSW+2015+Australia",
+    photos: [
+      { url: "/images/sydney/wafu/wafu.webp", caption: "Signature bento box" },
+      { url: "/images/sydney/wafu/chicken_rice_bowl.webp", caption: "Teriyaki chicken on rice" },
+      { url: "/images/sydney/wafu/bentobox_teriyaki_salmon.webp", caption: "Teriyaki salmon bento" },
+      { url: "/images/sydney/wafu/sushi_bento_salmon_only.webp", caption: "Salmon sushi bento" },
+      { url: "/images/sydney/wafu/veggie_tempura_bento.webp", caption: "Chicken katsu & veggie tempura bento" },
+      { url: "/images/sydney/wafu/Ramen_with_gluten_free_noodles.webp", caption: "Tokyo chicken ramen with GF noodles" },
+      { url: "/images/sydney/wafu/miso_eggplant.webp", caption: "Miso eggplant side" },
+    ],
   },
 ];
 
