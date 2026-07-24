@@ -22,6 +22,7 @@ const MelbourneRestaurantPage = () => {
     specialty: r.specialty ?? "",
     overview: r.overview ?? "",
     menuHighlights: r.menuHighlights,
+    fullMenu: r.fullMenu,
     proTip: r.proTip ?? "",
     icon: r.icon ?? "🍽️",
     celiacSafe: r.celiacSafe ?? "protocols-in-place",
