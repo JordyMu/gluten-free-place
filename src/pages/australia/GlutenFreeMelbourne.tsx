@@ -272,6 +272,11 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       { url: "/images/melbourne/duke/250gm-sirloin-steak.webp", caption: "250gm Sirloin Steak" },
       { url: "/images/melbourne/duke/gluten-free-beer.webp", caption: "O'Brien Gluten-Free Beer" },
     ],
+    services: {
+      dineIn: { available: true, note: "Full pub dining · bar & garden seating · bookings recommended for weekends" },
+      takeaway: { available: true, note: "Order at the bar · ready in 15–20 min · GF meals packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF meals clearly labelled" },
+    },
   },
 ];
 
