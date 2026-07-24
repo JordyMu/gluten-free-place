@@ -45,6 +45,11 @@ interface MelbourneRestaurant {
   directionsUrl?: string;
   featured?: boolean;
   photos?: { url: string; caption?: string }[];
+  services?: {
+    dineIn?: { available: boolean; note: string };
+    takeaway?: { available: boolean; note: string };
+    delivery?: { available: boolean; note: string };
+  };
 }
 
 export const melbourneRestaurants: MelbourneRestaurant[] = [
@@ -144,6 +149,11 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       { url: "/images/sydney/wholegreen/chicken-and-leek-pie.webp", caption: "Chicken & leek pie served with tomato relish" },
       { url: "/images/sydney/wholegreen/pain-au-chocolat-2.webp", caption: "Golden pain au chocolat" },
     ],
+    services: {
+      dineIn: { available: true, note: "Limited indoor seating · communal tables · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
+    },
   },
   {
     slug: "duke-of-brunswick-hotel",

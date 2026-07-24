@@ -34,6 +34,7 @@ const MelbourneRestaurantPage = () => {
     venueType: "restaurant" as const,
     photos: (r.photos ?? []) as (string | { url: string; caption?: string })[],
     cuisineTypes: r.cuisineTypes ?? [],
+    services: r.services,
   };
 
   return (
