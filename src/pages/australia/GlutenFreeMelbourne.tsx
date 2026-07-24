@@ -44,6 +44,7 @@ interface MelbourneRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  heroImage?: string;
   photos?: { url: string; caption?: string }[];
   services?: {
     dineIn?: { available: boolean; note: string };
@@ -140,6 +141,7 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     directionsUrl:
       "https://www.google.com/maps/search/?api=1&query=257+Clarence+St+Sydney+NSW+2000+Australia",
     featured: true,
+    heroImage: "/images/sydney/wholegreen-hero.webp",
     photos: [
       { url: "/images/sydney/wholegreen/vegan-sandwich.webp", caption: "Vegan sandwich with beetroot, roasted peppers & greens on sourdough" },
       { url: "/images/sydney/wholegreen/vegan-curry-pie.webp", caption: "Vegan curry pie with flaky pastry & poppy seeds" },
