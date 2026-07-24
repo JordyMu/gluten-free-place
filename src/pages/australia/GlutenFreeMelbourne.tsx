@@ -183,11 +183,11 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
       "🍺 GF Beer selection",
     ],
     proTip: "Thursday nights have GF pizza specials.",
-    address: "384 Melbourne Rd, Brunswick VIC 3056, Australia",
+    address: "207 Gilbert St, Adelaide SA 5000, Australia 5000",
     hours: "Daily: 12:00PM – 11:00PM",
     phone: "+61 3 9456 7890",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=Duke+of+Brunswick+Hotel+Melbourne",
+      "https://www.google.com/maps/search/?api=1&query=207+Gilbert+St+Adelaide+SA+5000",
   },
 ];
 
