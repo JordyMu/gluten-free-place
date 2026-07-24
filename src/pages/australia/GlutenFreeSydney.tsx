@@ -303,6 +303,14 @@ export const sydneyRestaurants: SydneyRestaurant[] = [
       takeaway: { available: true, note: "Order at the counter · ready in 10–15 min · hot meals packed for transport" },
       delivery: { available: true, note: "Available via third-party delivery partners · full breakfast & lunch menu" },
     },
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Kitchen",
+      "Delicious Breakfast & Brunch",
+      "Great Coffee & Beverages",
+      "Organic, High-Quality Ingredients",
+      "Fresh Artisan Baked Goods",
+      "Safe for the Coeliac Community",
+    ],
   },
   {
     slug: "the-little-kitchen-cafe",
