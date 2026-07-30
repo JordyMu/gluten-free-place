@@ -54,6 +54,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       },
     ],
     proTip: "Their fish vindaye and octopus curry are legendary — both naturally gluten-free!",
+    services: {
+      dineIn: { available: true, note: "Charming colonial garden setting · booking strongly recommended · lunch & dinner sittings" },
+      takeaway: { available: true, note: "Order ahead by phone · creole plates packed in sealed containers" },
+      delivery: { available: false, note: "No delivery — dine in or collect from the restaurant" },
+      accessible: true,
+      gfPackaging: true,
+    },
     icon: "🍲",
     featured: true,
     cuisineTypes: ["Mauritian", "Creole", "Traditional"],
