@@ -14,6 +14,45 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     specialty: "Authentic Creole Cuisine",
     overview: "A beloved Mauritian restaurant serving traditional Creole cuisine in a charming colonial-style setting. Many dishes are naturally gluten-free, prepared with local spices and fresh ingredients.",
     menuHighlights: ["🍲 Creole Fish Curry (GF)", "🐙 Octopus Vindaye (GF)", "🍚 Dal & Rice (GF)", "🥘 Rougaille (GF)"],
+    fullMenu: [
+      {
+        category: "Menu Créole",
+        note: "One choice per person — served with rice, grains, vegetables, chutneys & dessert",
+        items: [
+          { name: "Rougaille Saucisses Créoles", price: "Rs 990", description: "Traditional creole sausages in tomato base (pork)" },
+          { name: "Cari Poulet Créole", price: "Rs 990", description: "Traditional creole chicken curry" },
+          { name: "Cari Poisson & Bringels", price: "Rs 990", description: "Fish curry with aubergines" },
+          { name: "Salmi de Poulet", price: "Rs 990", description: "Chicken in local spices, red wine base" },
+        ],
+      },
+      {
+        category: "Menu Découverte",
+        note: "'Terre & Mer' — two small-portion choices per person, served with rice, grains, vegetables, chutneys & dessert",
+        items: [
+          { name: "Rougaille Saucisses Créoles", price: "Rs 1,340", description: "Or Salmi de Poulet with local spices" },
+          { name: "Vindaye Poisson", price: "Rs 1,340", description: "Turmeric fish vindaye — or Cari Zourite (octopus) with green papaya" },
+        ],
+      },
+      {
+        category: "Menu Dégustation",
+        note: "Four tasting-portion flavours per person, served with rice, grains, vegetables, chutneys & dessert",
+        items: [
+          { name: "Rougaille Saucisses Créoles", price: "Rs 1,460", description: "Tomato base with creole pork sausages" },
+          { name: "Cari Zourite", price: "Rs 1,460", description: "Octopus curry with green papaya" },
+          { name: "Vindaye Poisson", price: "Rs 1,460", description: "Turmeric, onions & preserved lemon" },
+          { name: "Salmi de Cerf", price: "Rs 1,460", description: "Venison civet, red wine base" },
+        ],
+      },
+      {
+        category: "Vegetarian & Vegan",
+        note: "Call ahead for the daily proposal",
+        items: [
+          { name: "Rice & Dried Grains", description: "Core of most plates" },
+          { name: "Vegetable Fricassées", description: "Seasonal local vegetables" },
+          { name: "Assorted Chatinis", description: "Traditional creole chutneys" },
+        ],
+      },
+    ],
     proTip: "Their fish vindaye and octopus curry are legendary — both naturally gluten-free!",
     icon: "🍲",
     featured: true,
