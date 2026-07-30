@@ -170,6 +170,7 @@ export const melbourneRestaurants: MelbourneRestaurant[] = [
     slug: "duke-of-brunswick-hotel",
     name: "The Duke of Brunswick Hotel",
     icon: "🍺",
+    heroImage: "/images/melbourne/duke/duke-hero.webp",
     specialty: "Pub food with extensive GF menu",
     rating: 4.5,
     reviewCount: 98,
