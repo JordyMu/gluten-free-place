@@ -70,6 +70,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       "Tropical Dining Experience",
     ],
     icon: "🍲",
+    heroImage: "/images/port-louis/escale-creole/escale-creole-hero.webp",
     featured: true,
     cuisineTypes: ["Mauritian", "Creole", "Traditional"],
     celiacSafe: "protocols-in-place",
