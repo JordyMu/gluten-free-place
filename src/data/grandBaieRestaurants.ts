@@ -30,6 +30,15 @@ export interface MauritiusCityRestaurant {
     note?: string;
     items: { name: string; price?: string; description?: string }[];
   }[];
+  services?: {
+    dineIn?: { available: boolean; note: string };
+    takeaway?: { available: boolean; note: string };
+    delivery?: { available: boolean; note: string };
+    accessible?: boolean;
+    gfPackaging?: boolean;
+  };
+  whyPeopleLoveIt?: string[];
+  heroImage?: string;
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number;
   distance?: number;
