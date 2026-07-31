@@ -319,6 +319,179 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     specialty: "Grilled & BBQ with GF Options",
     overview: "A popular grill restaurant in Tribeca Mall. Grilled meats, burgers (without buns), and fresh sides offer good gluten-free options for meat lovers.",
     menuHighlights: ["🥩 Grilled Steaks (GF)", "🍗 BBQ Chicken (GF)", "🥗 Fresh Salads (GF)", "🍟 Fries (ask about shared fryer)"],
+    fullMenu: [
+      {
+        category: "Chicken Burgers",
+        note: "Gluten-free bun available on selected burgers (marked GF)",
+        items: [
+          { name: "The Boss 2.0", price: "Rs 1100", description: "Oversized — cheesy bun, charcoal grilled chicken, crispy chicken, fried eggs, SJ slaw, homemade garlic chilli sauce" },
+          { name: "Sloppy Joe", price: "Rs 460", description: "Smashed chicken patty, chicken ham, grilled pineapple, jalapeño jam, fried egg, lettuce, American mayo" },
+          { name: "Waffle My Chicken", price: "Rs 520", description: "Crispy Nashville chicken, buttery garlic waffles, creamy potato salad with boiled eggs, house slaw & maple syrup" },
+          { name: "Shaka Burger (GF bun option)", price: "Rs 490", description: "Black bun, charcoal grilled chicken, pineapple slices, Sambal Olek mayo, cheddar, spicy bbq sauce, coleslaw" },
+        ],
+      },
+      {
+        category: "Beef Burgers",
+        items: [
+          { name: "Farmerhouse (GF bun option)", price: "Rs 1050", description: "12hr slowcooked short ribs, beef bacon, aged cheddar, sweet & sour gherkins, chimichurri" },
+          { name: "The NY Stack", price: "Rs 470", description: "Rye bread, rump steak slices, cheese, egg, cream cheese" },
+          { name: "Table Mountain (GF bun option)", price: "Rs 590", description: "Pulled SA beef rump, braai spices, tomato, havarti cheese, shredded biltong, fried egg" },
+          { name: "Smashed by Joe (GF bun option)", price: "Rs 590", description: "Double smashed beef patties, caramelised onions, cheddar, lettuce, tomato, beef bacon, fried egg, spicy mayo" },
+        ],
+      },
+      {
+        category: "Lamb & Tacos",
+        items: [
+          { name: "Wooly Smash (GF bun option)", price: "Rs 620", description: "Double smashed lamb patties, spiced honey mustard sauce, caramelised onions, cheddar, lettuce, tomato, fried egg" },
+          { name: "SJ Birria Tacos", price: "Rs 500", description: "Taco shells, smoked lamb, pico de gallo, roasted tomato salsa" },
+        ],
+      },
+      {
+        category: "Something from the Sea",
+        items: [
+          { name: "Fish-ionista", price: "Rs 480", description: "Seafood cake, acahard mayo, green apple, pickles, capers, watercress & black bun" },
+        ],
+      },
+      {
+        category: "No Meat – No Problem",
+        items: [
+          { name: "The No Meat Heat [V] (GF bun option)", price: "Rs 450", description: "Crispy chili bites, vegetable 'achard', lettuce & sweet spicy sauce in a veg bun" },
+        ],
+      },
+      {
+        category: "Wings (GF)",
+        items: [
+          { name: "Peri Peri Wings", price: "Rs 350" },
+          { name: "Peri Peri Daredevil Wings", price: "Rs 370", description: "Same as above, but one wing is dangerously hot" },
+        ],
+      },
+      {
+        category: "SJ Cuts",
+        note: "Cooked to your liking: rare to cremated",
+        items: [
+          { name: "Sirloin Steak SA (250 gm)", price: "Rs 950" },
+          { name: "Sirloin Steak SA (350 gm)", price: "Rs 1200" },
+          { name: "Ribeye SA (250 gm)", price: "Rs 1100" },
+          { name: "Braised Short Ribs Korean Style", price: "Rs 900" },
+          { name: "Lamb Shoulder Steak", price: "Rs 620" },
+          { name: "Chicken Legs Louisiana Style", price: "Rs 300" },
+        ],
+      },
+      {
+        category: "Choose Your Sauce",
+        items: [
+          { name: "Spicy BBQ" },
+          { name: "Peppercorn Sauce" },
+          { name: "Mushroom Sauce" },
+          { name: "Chimichurri Sauce" },
+          { name: "Truffle Butter" },
+          { name: "Cow Boy Sauce" },
+        ],
+      },
+      {
+        category: "Sides",
+        items: [
+          { name: "Corn Cake", price: "Rs 150" },
+          { name: "Corn on the Cobb", price: "Rs 150" },
+          { name: "Joe Slaw", price: "Rs 150" },
+          { name: "Small Ceasar Salad", price: "Rs 170" },
+          { name: "Garlic Bread", price: "Rs 150" },
+          { name: "Chicken Tenders", price: "Rs 300" },
+          { name: "Garlic Butter Grilled Corn", price: "Rs 190" },
+          { name: "Onion Rings", price: "Rs 175", description: "Best served with our Carolina Sauce (Rs 40)" },
+        ],
+      },
+      {
+        category: "Salads",
+        note: "For that all important balance",
+        items: [
+          { name: "Grilled BBQ Chicken Ceasar", price: "Rs 370", description: "Anchovy dressing" },
+          { name: "Veg Ceasar Salad [V]", price: "Rs 320" },
+        ],
+      },
+      {
+        category: "Kids Burger",
+        note: "Served simple and yummy — no add-ons or changes",
+        items: [
+          { name: "Chicken & Cheese", price: "Rs 290" },
+          { name: "Beef & Cheese", price: "Rs 320" },
+        ],
+      },
+      {
+        category: "Specials",
+        items: [
+          { name: "Nachomania", price: "Rs 470", description: "Nachos, Thai chicken, sour cream" },
+          { name: "Ultimate Melt Toastie", price: "Rs 530", description: "Brioche toast, grilled chicken, beef bacon, fried egg, cheesy béchamel, cheddar, Emmental, mozzarella" },
+          { name: "Double Trouble Platter", price: "Rs 1800", description: "Louisiana chicken leg, grilled lamb shoulder, grilled scampi, cornbread, Mexican-style salad, onion rings, peppercorn sauce, salsa verde, chipotle sauce" },
+        ],
+      },
+      {
+        category: "Joes Loaded Fries",
+        items: [
+          { name: "Jalisco [V, GF]", price: "Rs 320", description: "Jalapenos, cheddar, avocado" },
+          { name: "Poutine", price: "Rs 320", description: "Quebec beef gravy & cheese" },
+          { name: "Brooklyn", price: "Rs 380", description: "Pulled bbq beef, sour cream" },
+          { name: "Pop'N'Fries", price: "Rs 380", description: "Chicken, béchamel, spicy BBQ sauce, jalapeños, cheese" },
+          { name: "Just Fries [V, GF]", price: "Rs 130" },
+          { name: "Sweet Potato Fries [V, GF]", price: "Rs 200" },
+        ],
+      },
+      {
+        category: "Fries Dip",
+        items: [
+          { name: "Sambal Oelek Mayo", price: "Rs 50" },
+          { name: "Curry Ketchup", price: "Rs 40" },
+          { name: "Spicy Dijon Mustard", price: "Rs 40" },
+          { name: "Thai Sweet Chilli Sauce", price: "Rs 40" },
+          { name: "Cheddar Cheese Sauce", price: "Rs 40" },
+        ],
+      },
+      {
+        category: "The Watering Hole — Soft Drinks",
+        items: [
+          { name: "Coke", price: "Rs 150" },
+          { name: "Fanta", price: "Rs 150" },
+          { name: "Sprite", price: "Rs 150" },
+          { name: "Diet Coke", price: "Rs 150" },
+          { name: "Red Bull", price: "Rs 170" },
+          { name: "Still Water", price: "Rs 80" },
+          { name: "Sparkling Water", price: "Rs 80" },
+        ],
+      },
+      {
+        category: "Milk Shakes",
+        items: [
+          { name: "Vanilla", price: "Rs 190" },
+          { name: "Choco", price: "Rs 190" },
+          { name: "Popcorn", price: "Rs 190" },
+        ],
+      },
+      {
+        category: "Joejitos (Non Alcoholic)",
+        items: [
+          { name: "Citrus & Mint", price: "Rs 230" },
+          { name: "Yuzu & Pear", price: "Rs 230" },
+          { name: "Pina Ginga", price: "Rs 230" },
+          { name: "Jungle Berry", price: "Rs 230" },
+          { name: "Cucumber & Lychee Glow", price: "Rs 230" },
+          { name: "Crimson Bloom", price: "Rs 230" },
+        ],
+      },
+      {
+        category: "Non Alco Beer",
+        items: [
+          { name: "Tsing Tao 0%", price: "Rs 180" },
+          { name: "Heineken 0%", price: "Rs 180" },
+          { name: "Savannah 0% Cider", price: "Rs 180" },
+        ],
+      },
+      {
+        category: "Dessert",
+        items: [
+          { name: "Joecolat", price: "Rs 230" },
+        ],
+      },
+    ],
     proTip: "Order any grilled meat without the bun or sauce for a safe GF meal. Ask about shared fryers for fries.",
     icon: "🥩",
     featured: false,
