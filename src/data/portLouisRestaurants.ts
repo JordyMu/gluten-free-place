@@ -588,7 +588,59 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
           { name: "Pistachio Kulfi Entremet", price: "MUR 2800", description: "Eid special — serves 8–10 pax, pre-order required" },
         ],
       },
+      {
+        category: "Sunday Brunch — Toasts, Omelettes & Pancakes",
+        note: "Served Sundays from 9am to 1pm",
+        items: [
+          { name: "Multigrain & Herb Toast (Veg)", price: "Rs 380", description: "Humus, cream cheese, avocado puree, tomato coulis & grilled veg" },
+          { name: "Danish Filled Omelette", price: "Rs 420", description: "Cream cheese, chicken ham, bell pepper, parsley, rocket & sauteed mushroom" },
+          { name: "Savoury Pancakes", price: "Rs 480", description: "Roasted chicken ham, cream cheese, poached eggs, tomato coulis" },
+        ],
+      },
+      {
+        category: "Sandwiches & Salads",
+        items: [
+          { name: "Bar'hes Bread Sandwich", price: "Rs 380", description: "Sesame brioche bread, brie, roast chicken ham, comaco, lettuce, mustard butter & cornichons" },
+          { name: "Parisian Benedict", price: "Rs 360", description: "Poached egg, smoked salmon, cream cheese, truffle hollandaise & rocket" },
+          { name: "Café Veg Salad", price: "Rs 280", description: "Grilled pear, chickpeas, sweet corn, cherry tomatoes, black beans, cucumber, romaine, croutons & balsamic dressing" },
+        ],
+      },
+      {
+        category: "Sunday Brunch — Plates & Grills",
+        note: "Sundays, from 9am to 1pm",
+        items: [
+          { name: "Ratatouille Shakshuka & Eggs", price: "Rs 290" },
+          { name: "Chilaquiles Breakfast Nachos & Fried Eggs", price: "Rs 350" },
+          { name: "Gorgonzola & Walnut Bread Caesar Salad & Egg", price: "Rs 350" },
+          { name: "Slow Cooked BBQ Pulled Beef Ribs", price: "Rs 790", description: "Truffle mashed potatoes & vegetables" },
+        ],
+      },
+      {
+        category: "Let's Brunch — Specials",
+        note: "Sundays, from 9am to 1pm",
+        items: [
+          { name: "Vol au Vent (V)", price: "Rs 320", description: "With bechamel, oyster & shiitake mushrooms, and parmesan" },
+          { name: "Fusilli Merlin Salad", price: "Rs 330", description: "With smoked marlin, feta cheese, pesto, black olives and julienned bell peppers" },
+          { name: "Frittata Omelette", price: "Rs 350", description: "With smoked chicken ham, diced vegetables, cheese and toast" },
+          { name: "Chili con Carne", price: "Rs 420", description: "Lamb chilli served in white bread with salad" },
+          { name: "Crêpe Sarrasin (V)", price: "Rs 260", description: "Buckwheat crepe filled with spinach, mushrooms, béchamel sauce, sun-dried tomato and a side of salad" },
+          { name: "Crispy Chicken Wrap", price: "Rs 320", description: "Crispy chicken wrapped with sambal mayo, Emmental cheese, fresh lettuce, served with sweet potato chips and salad" },
+          { name: "Exotic Prawn Salad", price: "Rs 350", description: "Juicy prawns tossed with mango vinaigrette, citrus segments (orange & grapefruit), crisp lettuce, cucumber, tomatoes and olives" },
+        ],
+      },
+      {
+        category: "Mother's Day Special Brunch",
+        note: "Seasonal — served 9am to 1pm on Mother's Day weekend",
+        items: [
+          { name: "Sweet Bites Trio", price: "Rs 260", description: "Mini pain au chocolat, mini croissant & mini blueberry muffin" },
+          { name: "Pretzel Sandwich", price: "Rs 320", description: "With smoked chicken ham" },
+          { name: "Britanny Buckwheat Crepe", price: "Rs 350", description: "With shrimp sauce rouge" },
+          { name: "Smoked Salmon Croissant", price: "Rs 380", description: "With truffle & egg tapenade" },
+          { name: "Savory Waffle", price: "Rs 420", description: "With smoked marlin & artichoke espuma" },
+        ],
+      },
     ],
+
     proTip: "Ask about their daily GF options — availability varies but staff are knowledgeable about ingredients.",
     icon: "☕",
     featured: false,
