@@ -269,6 +269,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       },
     ],
     proTip: "Most curries and tandoori items are naturally GF — just confirm no flour-based thickeners are used.",
+    services: {
+      dineIn: { available: true, note: "Seating inside Tribeca Food Hall · casual family dining · no booking needed" },
+      takeaway: { available: true, note: "Order at the counter · curries and biryanis packed in sealed containers" },
+      delivery: { available: true, note: "Available via third-party delivery partners across the Trianon area" },
+      accessible: true,
+      gfPackaging: true,
+    },
 
     icon: "🍛",
     featured: true,
