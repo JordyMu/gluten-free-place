@@ -545,6 +545,50 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     specialty: "Specialty Coffee & Light Bites",
     overview: "Part of the LUX* brand, this specialty café offers artisan coffee and light bites. Several items on the menu can be prepared gluten-free upon request.",
     menuHighlights: ["☕ Specialty Coffee", "🥗 GF Salads", "🍰 Select GF Treats", "🥤 Fresh Juices"],
+    fullMenu: [
+      {
+        category: "Sunday Brunch — Eggs & Toast",
+        note: "Served Sundays from 9am to 1pm",
+        items: [
+          { name: "Curried Masala Eggs on Toast", price: "Rs 420", description: "Spicy masala eggs, creamy cabbage slaw" },
+          { name: "Soft Scrambled Egg Tartine", price: "Rs 450", description: "Creamy avocado, balsamic mushrooms" },
+          { name: "Cheese Omelette on Toast", price: "Rs 450", description: "Spinach, mushroom & homemade cranberry chutney" },
+          { name: "Omelette", price: "Rs 350", description: "Omelette served with greens, mushroom & tomato salsa" },
+          { name: "Fluffy Chicken Omelette on Toast", price: "Rs 450", description: "Light and fluffy chicken omelette served on toasted bread with microgreens and a sprinkle of smoked paprika" },
+          { name: "Mauritian Shrimp Omelette", price: "Rs 440", description: "Fluffy omelette folded with sautéed shrimp, served the Mauritian way with a tomato rougaille" },
+        ],
+      },
+      {
+        category: "Sunday Brunch — Signature Plates",
+        note: "Served Sundays from 9am to 1pm",
+        items: [
+          { name: "Savory Pain Perdu", price: "Rs 480", description: "Norwegian smoked salmon, shaved parmesan, sun-dried tomatoes, baby rocket salad" },
+          { name: "Çılbır | Turkish Poached Eggs", price: "Rs 420", description: "Perfectly poached eggs, creamy garlicky yogurt, chilli oil, served with a toasted melva bread" },
+          { name: "Cobb Salad Bagel", price: "Rs 380", description: "Homemade bagel, mozzarella, tomato, boiled egg, fresh greens and onion, served with a grainy mustard dressing" },
+          { name: "Croissant Benedict", price: "Rs 490", description: "Flat croissant with roasted chicken ham and truffle egg Benedict" },
+          { name: "Tofu Shakshuka", price: "Rs 320", description: "Tofu and vegetables gently simmered in a rich, spiced tomato sauce, served warm" },
+          { name: "Mexican Huevos Rancheros", price: "Rs 320", description: "Sunny-side-up eggs served on a crispy tortilla with fresh tomato salsa and crushed avocado" },
+        ],
+      },
+      {
+        category: "Brunch Mains",
+        items: [
+          { name: "Indonesian Style Burger", price: "Rs 450", description: "Peanut butter mayo, coleslaw with fried garlic, seared chicken in ginger soy sauce, poultry ham & fried egg" },
+          { name: "Steak Sandwich", price: "Rs 950", description: "250g pan Sirloin Steak sandwich with work stir-fry vegetables" },
+          { name: "Slow Cooked Lamb Shank", price: "Rs 1250", description: "Braised in salani spices, served with creamy mashed potatoes & seasonal vegetables" },
+        ],
+      },
+      {
+        category: "Seasonal Specials",
+        note: "Availability varies — ask staff for the current specials",
+        items: [
+          { name: "Vegetarian Paneer Tikka Khati Roll", price: "Rs 750", description: "Served with mint and coriander chutney" },
+          { name: "Slow Cooked Spanish Style Braised Chicken", price: "Rs 870", description: "Olive, roasted bell pepper in a rich tomato sauce" },
+          { name: "Oven Baked Parmesan Crust Salmon", price: "Rs 950", description: "Baked Mediterranean spiced salmon, zucchini saffron couscous and seafood stew" },
+          { name: "Pistachio Kulfi Entremet", price: "MUR 2800", description: "Eid special — serves 8–10 pax, pre-order required" },
+        ],
+      },
+    ],
     proTip: "Ask about their daily GF options — availability varies but staff are knowledgeable about ingredients.",
     icon: "☕",
     featured: false,
