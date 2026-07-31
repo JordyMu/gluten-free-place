@@ -8,7 +8,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     city: "Port Louis",
     country: "Mauritius",
     hours: "Tue–Sun: 11:30AM – 3:00PM, 6:30PM – 9:30PM",
-    phone: "",
+    phone: "+230 5422 2332",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Escale+Creole+Moka+Mauritius",
     specialty: "Authentic Creole Cuisine",
