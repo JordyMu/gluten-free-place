@@ -698,6 +698,21 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
 
 
     proTip: "Ask about their daily GF options — availability varies but staff are knowledgeable about ingredients.",
+    services: {
+      dineIn: { available: true, note: "Indoor café seating inside Tribeca Mall · relaxed LUX* atmosphere · laptop-friendly during weekday mornings" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF pastries packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF pastries packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
+    whyPeopleLoveIt: [
+      "Specialty LUX* Coffee Experience",
+      "Stylish Café Atmosphere",
+      "Light Gluten-Free Bites",
+      "Fresh Brunch & Pastries",
+      "Convenient Mall Location",
+      "Knowledgeable Staff",
+    ],
     icon: "☕",
     featured: false,
     cuisineTypes: ["Café", "Coffee", "Light Bites"],
