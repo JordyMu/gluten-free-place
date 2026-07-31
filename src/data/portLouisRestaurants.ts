@@ -152,6 +152,57 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
         ],
       },
       {
+        category: "Appetizers — From the Tandoor (Veg)",
+        note: "5 pcs per plate",
+        items: [
+          { name: "Veg Seekh Kabab", price: "Rs 400", description: "An exquisite combination of fresh vegetables, aromatic spices and expertly grilled to perfection" },
+          { name: "Haripa Paneer Tikka", price: "Rs 425", description: "Cottage cheese marinated in a mixture of chilli and spices, then cooked to perfection in a tandoor" },
+          { name: "Dahi Ke Kabab", price: "Rs 450", description: "Yogurt kababs featuring a crisp exterior and a creamy interior" },
+          { name: "Fondue Malai Broccoli", price: "Rs 425", description: "Broccoli florets cooked in a tandoor and topped with a fondue sauce" },
+          { name: "Malai Soya Chaap", price: "Rs 425", description: "The original much-loved, marinated in a mildly spiced creamy mix and perfectly cooked" },
+          { name: "Mix Veg Kabab Platter", price: "Rs 1,490", description: "Malai Soya Chaap · Dahi Ke Kabab · Haripa Paneer Tikka · Veg Seekh Kabab · Fondue Malai Broccoli" },
+        ],
+      },
+      {
+        category: "Express Rolls",
+        note: "Choose your roll base — naan or wrap",
+        items: [
+          { name: "Mix Veg Jaffrezi", price: "Rs 275" },
+          { name: "Veg Seekh", price: "Rs 275" },
+          { name: "Paneer Makhani", price: "Rs 300" },
+          { name: "Paneer Tikka", price: "Rs 300" },
+          { name: "Fish Tikka", price: "Rs 350" },
+          { name: "Chicken Makhani", price: "Rs 375" },
+          { name: "Chicken Tikka", price: "Rs 375" },
+          { name: "Chicken Malai", price: "Rs 375" },
+          { name: "Mutton Seekh", price: "Rs 400" },
+          { name: "Roll Platter", price: "Rs 1,200" },
+        ],
+      },
+      {
+        category: "Bread",
+        note: "Contains gluten — not suitable for celiacs",
+        items: [
+          { name: "Naan — Plain", price: "Rs 85" },
+          { name: "Naan — Butter / Garlic", price: "Rs 95" },
+          { name: "Naan — Cheese", price: "Rs 135" },
+          { name: "Tandoori Roti — Plain", price: "Rs 70" },
+          { name: "Tandoori Roti — Butter", price: "Rs 85" },
+          { name: "Tandoori Roti — Chilli Onion", price: "Rs 85" },
+          { name: "Laccha Parantha (Wholewheat) — Plain", price: "Rs 85" },
+          { name: "Laccha Parantha (Wholewheat) — Butter", price: "Rs 95" },
+          { name: "Assorted Basket of Breads (5)", price: "Rs 425", description: "Plain, butter garlic & cheese naan, plain laccha parantha, butter tandoori roti" },
+        ],
+      },
+      {
+        category: "Rice",
+        items: [
+          { name: "Steam Rice", price: "Rs 105" },
+          { name: "Jeera Rice", price: "Rs 115" },
+          { name: "Dum Biryani Rice", price: "Rs 120" },
+        ],
+      },
+      {
         category: "Signature Curries (Non Veg) — Chicken",
         note: "Curry / Meal price",
         items: [
