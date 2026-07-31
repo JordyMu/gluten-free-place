@@ -317,6 +317,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     website: "",
     directionsUrl: "https://www.google.com/maps/search/Smokey+Joe+Trianon+Mauritius",
     specialty: "Grilled & BBQ with GF Options",
+    heroImage: "/images/port-louis/smokey-joe/smokey-joe-hero.webp",
     overview: "A popular grill restaurant in Tribeca Mall. Grilled meats, burgers (without buns), and fresh sides offer good gluten-free options for meat lovers.",
     menuHighlights: ["🥩 Grilled Steaks (GF)", "🍗 BBQ Chicken (GF)", "🥗 Fresh Salads (GF)", "🍟 Fries (ask about shared fryer)"],
     fullMenu: [
