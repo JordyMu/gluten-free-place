@@ -276,6 +276,14 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "Authentic Indian Cuisine",
+      "Rich & Flavorful Dishes",
+      "Famous Signature Biryanis",
+      "Chef Sanjeev Kapoor's Recipes",
+      "Generous Portions",
+      "Vegetarian & Non-Vegetarian Variety",
+    ],
 
     icon: "🍛",
     featured: true,
