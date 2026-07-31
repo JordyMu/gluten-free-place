@@ -98,7 +98,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
     city: "Port Louis",
     country: "Mauritius",
     hours: "Daily: 11:00AM – 10:00PM",
-    phone: "",
+    phone: "+230 5940 8484",
     website: "",
     directionsUrl: "https://www.google.com/maps/search/The+Yellow+Chilli+Trianon+Mauritius",
     specialty: "Indian Fine Dining with GF Options",
