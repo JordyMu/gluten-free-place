@@ -535,6 +535,7 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
   {
     name: "Café LUX* Riserva",
     slug: "cafe-lux-riserva",
+    heroImage: "/images/port-louis/cafe-lux-riserva/cafe-lux-riserva-hero.webp",
     address: "Tribeca Mall, Trianon 72261, Mauritius",
     city: "Port Louis",
     country: "Mauritius",
