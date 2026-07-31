@@ -493,6 +493,13 @@ export const portLouisRestaurants: MauritiusCityRestaurant[] = [
       },
     ],
     proTip: "Order any grilled meat without the bun or sauce for a safe GF meal. Ask about shared fryers for fries.",
+    services: {
+      dineIn: { available: true, note: "Casual mall-side dining · indoor & outdoor seating · family-friendly" },
+      takeaway: { available: true, note: "Order at the counter · burgers & grills packed to go" },
+      delivery: { available: true, note: "Available via third-party delivery partners around Trianon" },
+      accessible: true,
+      gfPackaging: true,
+    },
     icon: "🥩",
     featured: false,
     cuisineTypes: ["Grill", "BBQ", "American"],
