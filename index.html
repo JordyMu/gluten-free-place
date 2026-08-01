@@ -12,12 +12,37 @@
       gtag('config', 'G-P1T49E92ZB');
     </script>
     <script>
-      window.addEventListener('error', function(e) {
-        if (String(e.message || '').includes('Failed to fetch dynamically imported module')) {
-          window.location.reload();
+      (function () {
+        var KEY = '__chunk_reload_at';
+        function isChunkError(msg) {
+          msg = String(msg || '');
+          return msg.indexOf('Failed to fetch dynamically imported module') !== -1
+            || msg.indexOf('error loading dynamically imported module') !== -1
+            || msg.indexOf('Importing a module script failed') !== -1;
         }
-      });
+        function recover() {
+          var last = 0;
+          try { last = parseInt(sessionStorage.getItem(KEY) || '0', 10); } catch (err) {}
+          if (Date.now() - last < 10000) return;
+          try { sessionStorage.setItem(KEY, String(Date.now())); } catch (err) {}
+          if (window.caches && caches.keys) {
+            caches.keys().then(function (ks) {
+              return Promise.all(ks.map(function (k) { return caches.delete(k); }));
+            }).catch(function () {}).then(function () { window.location.reload(); });
+          } else {
+            window.location.reload();
+          }
+        }
+        window.addEventListener('error', function (e) {
+          if (isChunkError(e && e.message)) recover();
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+          var r = e && e.reason;
+          if (isChunkError(r && r.message ? r.message : r)) recover();
+        });
+      })();
     </script>
+
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon.png" />
     <link rel="preconnect" href="https://images.unsplash.com" />
     <link rel="dns-prefetch" href="https://images.unsplash.com" />
