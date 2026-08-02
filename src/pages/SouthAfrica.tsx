@@ -276,7 +276,7 @@ const SouthAfrica = () => {
               69+ Gluten-Free Places
             </Badge>
             <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-              Gluten-Free South Africa
+              Dedicated Gluten-Free Restaurants in South Africa
             </h1>
             <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
               Discover safe, delicious gluten-free dining across the Rainbow Nation. 
