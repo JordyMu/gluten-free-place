@@ -262,8 +262,11 @@ const SouthAfrica = () => {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-12 overflow-hidden bg-gradient-to-r from-green-600 to-orange-500">
-        <div className="absolute inset-0 bg-black/20" />
+      <section
+        className="relative py-12 overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url('/images/south-africa-hero.webp')" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
