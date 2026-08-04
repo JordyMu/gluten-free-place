@@ -485,64 +485,102 @@ useEffect(() => {
               </Card>
 
               <Card>
-                <CardHeader className="pb-3">
+                <CardHeader className="pb-2">
                   <CardTitle className="flex items-center gap-2 text-base">
-                    <Filter className="w-4 h-4 text-violet-600" />
-                    Filter by Venue Type
+                    <Filter className="w-4 h-4 text-red-700" />
+                    Filter Restaurants
                   </CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <Select value={venueFilter} onValueChange={setVenueFilter}>
-                    <SelectTrigger><SelectValue placeholder="All Venues" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Venues</SelectItem>
-                      <SelectItem value="restaurant">Restaurant</SelectItem>
-                      <SelectItem value="cafe">Café</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-2 text-base">
-                    <Filter className="w-4 h-4 text-violet-600" />
-                    Filter by Menu Type
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger><SelectValue placeholder="All Menu Types" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardHeader className="pb-3">
-                  <CardTitle className="flex items-center gap-2 text-base">
-                    <Filter className="w-4 h-4 text-violet-600" />
-                    Filter by Safety
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                    <SelectTrigger><SelectValue placeholder="All Safety Levels" /></SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Safety Levels</SelectItem>
-                      <SelectItem value="dedicated-facility">Dedicated GF Facility</SelectItem>
-                      <SelectItem value="protocols-in-place">Careful Handling</SelectItem>
-                    </SelectContent>
-                  </Select>
-                  <div className="mt-4 text-sm text-gray-600">
-                    Showing {filteredRestaurants.length} of {restaurants.length} restaurants
+                <CardContent className="p-5 pt-0 space-y-2">
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, kitchen: !s.kitchen }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Kitchen Type</span>
+                      <span className="text-gray-400">{openFilterSections.kitchen ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.kitchen && (
+                      <div className="pb-3 space-y-2">
+                        {menuOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={menuFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, menuFilters, setMenuFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
                   </div>
+
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, cuisine: !s.cuisine }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Cuisine</span>
+                      <span className="text-gray-400">{openFilterSections.cuisine ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.cuisine && (
+                      <div className="pb-3 space-y-2">
+                        {(showAllCuisines ? cuisineOptions : cuisineOptions.slice(0, 6)).map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={cuisineFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, cuisineFilters, setCuisineFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1 truncate">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                        {cuisineOptions.length > 6 && (
+                          <button
+                            type="button"
+                            onClick={() => setShowAllCuisines(!showAllCuisines)}
+                            className="text-sm text-red-700 hover:text-red-800 font-medium pt-1"
+                          >
+                            {showAllCuisines ? 'Show less' : `Show all ${cuisineOptions.length} cuisines`}
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, badges: !s.badges }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Badges</span>
+                      <span className="text-gray-400">{openFilterSections.badges ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.badges && (
+                      <div className="pb-3 space-y-2">
+                        {safetyOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={safetyFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, safetyFilters, setSafetyFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {(menuFilters.length > 0 || cuisineFilters.length > 0 || safetyFilters.length > 0) && (
+                    <button
+                      type="button"
+                      onClick={() => { setMenuFilters([]); setCuisineFilters([]); setSafetyFilters([]); }}
+                      className="text-sm text-red-700 hover:text-red-800 font-medium pt-2"
+                    >
+                      Clear all filters
+                    </button>
+                  )}
+
+                  <p className="border-t pt-3 text-sm text-gray-600">Showing {filteredRestaurants.length} of {restaurants.length}</p>
                 </CardContent>
               </Card>
+
             </aside>
           </div>
         </section>
