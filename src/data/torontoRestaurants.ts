@@ -1436,6 +1436,13 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/sunshine-wholesome-market-8.webp", caption: "Checkout Area" },
     ],
     celiacSafetyScore: 6,
+    services: {
+      dineIn: { available: true, note: "Limited counter seating · casual market café setting · order at the counter" },
+      takeaway: { available: true, note: "Order at the counter · ready in 5–10 min · GF items packed separately" },
+      delivery: { available: true, note: "Available via third-party delivery partners · GF items packed separately" },
+      accessible: true,
+      gfPackaging: true,
+    },
     fullMenu: [
       {
         category: "Breakfast",
