@@ -526,14 +526,14 @@ const GlutenFreeSydney = () => {
   const [menuFilter, setMenuFilter] = useState("all");
   const [safetyFilter, setSafetyFilter] = useState("all");
 
-  const pageTitle = "Gluten-Free Restaurants in Sydney | Celiac-Safe Guide 2026";
+  const pageTitle = "Gluten-Free Options in Sydney | Celiac-Safe Dining";
   const metaDescription =
-    "Find verified gluten-free restaurants in Sydney, Australia. Explore celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
+    "Browse verified gluten free options in Sydney, Australia. Discover celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Gluten-Free Restaurants in Sydney, Australia",
+      name: "Gluten-Free Options in Sydney, Australia",
       description: metaDescription,
       url: "https://glutenfreeplace.org/gluten-free/australia/sydney",
     },

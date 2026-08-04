@@ -253,8 +253,8 @@ const GlutenFreeJohannesburg = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in Johannesburg | Celiac-Safe Dining 2026"
-      description="Find verified gluten-free restaurants in Johannesburg, South Africa."
+      title="Gluten-Free Options in Johannesburg | Celiac-Safe Dining"
+      description="Browse verified gluten free options in Johannesburg: dedicated celiac-safe restaurants, bakeries and cafés with menus, hours and directions."
       canonical="/gluten-free/south-africa/johannesburg"
     />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">

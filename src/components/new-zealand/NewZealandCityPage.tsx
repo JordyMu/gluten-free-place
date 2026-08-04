@@ -71,13 +71,13 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
-  const pageTitle = `Gluten-Free Restaurants in ${city.name}, New Zealand | Celiac-Safe Guide 2026`;
-  const description = `Find verified gluten-free restaurants in ${city.name}, New Zealand. Celiac-safe places with reviews, menu tips and directions.`;
+  const pageTitle = `Gluten-Free Options in ${city.name}, New Zealand | Celiac-Safe Dining`;
+  const description = `Browse verified gluten free options in ${city.name}, New Zealand: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Gluten-Free Restaurants in ${city.name}, New Zealand`,
+      name: `Gluten-Free Options in ${city.name}, New Zealand`,
       description,
       url: `https://glutenfreeplace.org/gluten-free/new-zealand/${city.slug}`,
     },

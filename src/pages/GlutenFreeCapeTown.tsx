@@ -508,8 +508,8 @@ const GlutenFreeCapeTown = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in Cape Town | Celiac-Safe Dining 2026"
-      description="Find verified gluten-free restaurants in Cape Town, South Africa."
+      title="Gluten-Free Options in Cape Town | Celiac-Safe Dining"
+      description="Browse verified gluten free options in Cape Town: dedicated celiac-safe restaurants, bakeries and cafés with menus, hours and directions."
       canonical="/gluten-free/south-africa/cape-town"
     />
     <div className="min-h-screen bg-gradient-to-b from-orange-50 to-white">

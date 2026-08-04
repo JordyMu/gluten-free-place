@@ -64,13 +64,13 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
-  const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, UK. Explore celiac-safe places with reviews, menu tips, and directions.`;
-  const pageTitle = `Gluten-Free Restaurants in ${cityName}, UK | Celiac-Safe Guide 2026`;
+  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, UK: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
+  const pageTitle = `Gluten-Free Options in ${cityName}, UK | Celiac-Safe Dining`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Gluten-Free Restaurants in ${cityName}, UK`,
+      name: `Gluten-Free Options in ${cityName}, UK`,
       description: metaDescriptionText,
       url: `https://glutenfreeplace.org/gluten-free/united-kingdom/${citySlug}`,
     },

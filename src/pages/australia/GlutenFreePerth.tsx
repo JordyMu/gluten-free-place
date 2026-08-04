@@ -139,14 +139,14 @@ const GlutenFreePerth = () => {
   const [menuFilter, setMenuFilter] = useState("all");
   const [safetyFilter, setSafetyFilter] = useState("all");
 
-  const pageTitle = "Gluten-Free Restaurants in Perth | Celiac-Safe Guide 2026";
+  const pageTitle = "Gluten-Free Options in Perth | Celiac-Safe Dining";
   const metaDescription =
-    "Find verified gluten-free restaurants in Perth, Australia. Explore celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
+    "Browse verified gluten free options in Perth, Australia. Discover celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Gluten-Free Restaurants in Perth, Australia",
+      name: "Gluten-Free Options in Perth, Australia",
       description: metaDescription,
       url: "https://glutenfreeplace.org/gluten-free/australia/perth",
     },

@@ -614,14 +614,14 @@ const GlutenFreeBrisbane = () => {
   const [menuFilter, setMenuFilter] = useState("all");
   const [safetyFilter, setSafetyFilter] = useState("all");
 
-  const pageTitle = "Gluten-Free Restaurants in Brisbane | Celiac-Safe Guide 2026";
+  const pageTitle = "Gluten-Free Options in Brisbane | Celiac-Safe Dining";
   const metaDescription =
-    "Find verified gluten-free restaurants in Brisbane, Australia. Explore celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
+    "Browse verified gluten free options in Brisbane, Australia. Discover celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: "Gluten-Free Restaurants in Brisbane, Australia",
+      name: "Gluten-Free Options in Brisbane, Australia",
       description: metaDescription,
       url: "https://glutenfreeplace.org/gluten-free/australia/brisbane",
     },
