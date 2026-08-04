@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
@@ -95,13 +95,20 @@ const GlutenFreeJohannesburg = () => {
       if (faqSchemaToRemove) faqSchemaToRemove.remove();
     };
   }, []);
-  const [venueFilter, setVenueFilter] = useState<string>("all");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string>("");
   const [sortByDistance, setSortByDistance] = useState(false);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({
+    kitchen: true,
+    cuisine: true,
+    badges: true,
+  });
 
   const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
     const R = 6371; // Earth's radius in km
@@ -228,16 +235,45 @@ const GlutenFreeJohannesburg = () => {
     </div>
   );
 
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: johannesburgRestaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: johannesburgRestaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    []
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: johannesburgRestaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: johannesburgRestaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    []
+  );
+
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    johannesburgRestaurants.forEach((r) => r.cuisineTypes.forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, []);
+
   const filteredRestaurants = useMemo((): RestaurantWithDistance[] => {
-    let filtered = johannesburgRestaurants.filter(restaurant => {
-      const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-      const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
-      const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-      const matchesSearch = searchQuery === "" || 
+    let filtered = johannesburgRestaurants.filter((restaurant) => {
+      const matchesSearch =
+        searchQuery === "" ||
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        restaurant.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
+        restaurant.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchesMenu = menuFilters.length === 0 || menuFilters.includes(restaurant.menuType);
+      const matchesSafety = safetyFilters.length === 0 || safetyFilters.includes(restaurant.celiacSafe);
+      const matchesCuisine =
+        cuisineFilters.length === 0 || restaurant.cuisineTypes.some((c) => cuisineFilters.includes(c));
+      return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
     });
 
     if (sortByDistance && userLocation) {
@@ -248,7 +284,7 @@ const GlutenFreeJohannesburg = () => {
     }
 
     return filtered;
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
+  }, [menuFilters, safetyFilters, cuisineFilters, searchQuery, sortByDistance, userLocation]);
 
   return (
     <>
@@ -374,10 +410,7 @@ const GlutenFreeJohannesburg = () => {
             Find exactly what you're looking for with our curated category pages.
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
-              onClick={() => setVenueFilter("supermarket")}
-            >
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🛒</span>
                 <div>
@@ -386,10 +419,7 @@ const GlutenFreeJohannesburg = () => {
                 </div>
               </CardContent>
             </Card>
-            <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
-              onClick={() => setVenueFilter("street-food")}
-            >
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🌮</span>
                 <div>
@@ -399,15 +429,6 @@ const GlutenFreeJohannesburg = () => {
               </CardContent>
             </Card>
           </div>
-          {venueFilter !== "all" && (
-            <Button 
-              variant="ghost" 
-              className="mt-2 text-orange-600"
-              onClick={() => setVenueFilter("all")}
-            >
-              Clear filter
-            </Button>
-          )}
         </section>
 
 
@@ -540,70 +561,135 @@ const GlutenFreeJohannesburg = () => {
             ))}
           </div>
             </div>
-            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
               <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Filter className="w-5 h-5" />
-                Filter Restaurants
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
-                  <Input
-                    placeholder="Search restaurants..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="w-full"
-                  />
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Safety Level</label>
-                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="All Safety Levels" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Safety Levels</SelectItem>
-                      <SelectItem value="dedicated-facility">Dedicated GF Facility</SelectItem>
-                      <SelectItem value="protocols-in-place">Careful Handling</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Venue Type</label>
-                  <Select value={venueFilter} onValueChange={setVenueFilter}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="All Venues" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Venues</SelectItem>
-                      <SelectItem value="bakery">Bakery</SelectItem>
-                      <SelectItem value="restaurant">Restaurant</SelectItem>
-                      <SelectItem value="cafe">Café</SelectItem>
-                      <SelectItem value="supermarket">Supermarket</SelectItem>
-                      <SelectItem value="street-food">Street Food</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
-                  <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="All Menu Types" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Search className="w-4 h-4 text-red-700" />
+                    Search Restaurants
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="relative">
+                    <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
+                    <Input className="pl-9" placeholder="Search by name or cuisine" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-2">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Filter className="w-4 h-4 text-red-700" />
+                    Filter Restaurants
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-5 pt-0 space-y-2">
+                  {/* Kitchen Type */}
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, kitchen: !s.kitchen }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Kitchen Type</span>
+                      <span className="text-gray-400">{openFilterSections.kitchen ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.kitchen && (
+                      <div className="pb-3 space-y-2">
+                        {menuOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox
+                              checked={menuFilters.includes(opt.value)}
+                              onCheckedChange={() => toggle(opt.value, menuFilters, setMenuFilters)}
+                            />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Cuisine */}
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, cuisine: !s.cuisine }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Cuisine</span>
+                      <span className="text-gray-400">{openFilterSections.cuisine ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.cuisine && (
+                      <div className="pb-3 space-y-2">
+                        {(showAllCuisines ? cuisineOptions : cuisineOptions.slice(0, 6)).map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox
+                              checked={cuisineFilters.includes(opt.value)}
+                              onCheckedChange={() => toggle(opt.value, cuisineFilters, setCuisineFilters)}
+                            />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                        {cuisineOptions.length > 6 && (
+                          <button
+                            type="button"
+                            onClick={() => setShowAllCuisines(!showAllCuisines)}
+                            className="text-sm text-red-700 hover:text-red-800 font-medium"
+                          >
+                            {showAllCuisines ? 'Show fewer cuisines' : `Show all ${cuisineOptions.length} cuisines`}
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* Badges */}
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections(s => ({ ...s, badges: !s.badges }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Badges</span>
+                      <span className="text-gray-400">{openFilterSections.badges ? '−' : '+'}</span>
+                    </button>
+                    {openFilterSections.badges && (
+                      <div className="pb-3 space-y-2">
+                        {safetyOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox
+                              checked={safetyFilters.includes(opt.value)}
+                              onCheckedChange={() => toggle(opt.value, safetyFilters, setSafetyFilters)}
+                            />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="pt-2 text-sm text-gray-600">
+                    Showing {filteredRestaurants.length} of {johannesburgRestaurants.length} restaurants
+                  </div>
+                  {(menuFilters.length > 0 || safetyFilters.length > 0 || cuisineFilters.length > 0) && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMenuFilters([]);
+                        setSafetyFilters([]);
+                        setCuisineFilters([]);
+                      }}
+                      className="text-sm text-red-700 hover:text-red-800 font-medium"
+                    >
+                      Clear filters
+                    </button>
+                  )}
+                </CardContent>
+              </Card>
             </aside>
           </div>
         </section>
