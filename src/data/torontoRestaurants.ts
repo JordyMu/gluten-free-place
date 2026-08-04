@@ -1436,6 +1436,71 @@ export const torontoRestaurants: Restaurant[] = [
       { url: "/images/toronto/sunshine-wholesome-market-8.webp", caption: "Checkout Area" },
     ],
     celiacSafetyScore: 6,
+    fullMenu: [
+      {
+        category: "Breakfast",
+        note: "100% gluten-free kitchen · seed-oil free (olive, avocado & coconut oil only)",
+        items: [
+          { name: "Breakfast Sandwich", price: "$9", description: "Egg, bacon, cheddar, tomato, arugula, vegan mayo, house dressing" },
+          { name: "Breakfast Wrap", price: "$10", description: "Egg, feta, spinach, tomato, vegan mayo" },
+          { name: "Breakfast Burrito", price: "$14", description: "Egg, cheddar, avocado, black beans, pico de gallo, sweet potato" },
+        ],
+      },
+      {
+        category: "Wraps",
+        items: [
+          { name: "Greek Chicken Wrap", price: "$15", description: "Chicken breast, feta, tomato, cucumber, onion, kalamata olives, Greek dressing" },
+          { name: "The Works Wrap", price: "$16", description: "Chicken breast, avocado, sweet potato, baby spinach, caramelized onion, black beans, pico" },
+          { name: "Sweet Potato Wrap", price: "$14", description: "Oven roasted sweet potato, avocado, black beans, baby spinach, pico de gallo, vegan mayo, house dressing" },
+          { name: "Falafel Wrap", price: "$16", description: "Falafel, hummus, tomato, cucumber, feta, kalamata olives, pickled onion, iceberg, tahini" },
+        ],
+      },
+      {
+        category: "Sandwiches",
+        note: "Made on freshly baked gluten-free bread / quinoa bun",
+        items: [
+          { name: "Roast Chicken", price: "$16", description: "Chicken breast, avocado, caramelized onion, baby greens, pesto mayo, honey mustard" },
+          { name: "Beef Brisket", price: "$17", description: "Slow cooked brisket, BBQ sauce, cheddar, arugula, caramelized onion, vegan mayo" },
+          { name: "Avocado Sub", price: "$15", description: "Avocado, alfalfa sprouts, iceberg lettuce, mango chutney, vegan mayo, feta" },
+          { name: "Albacore Tuna", price: "$16", description: "Tuna salad with dill-jalapeño mayo, red onion, cucumber, iceberg, honey mustard" },
+          { name: "Club", price: "$17", description: "Chicken breast, bacon, cheddar, avocado, tomato, alfalfa sprouts, iceberg, vegan mayo" },
+        ],
+      },
+      {
+        category: "Entrée Bowls & Salads",
+        items: [
+          { name: "Sunshine Bowl", price: "$17", description: "Sautéed kale, roasted red pepper, feta, avocado, sundried tomato, sweet potato, rice" },
+          { name: "Falafel Bowl", price: "$17", description: "Falafel, roasted cauliflower, tomato, cucumber, pickled onion, iceberg, lemon, tahini" },
+          { name: "Greek Chicken Salad", price: "$18", description: "Chicken breast, feta, cucumber, tomato, red onion, kalamata olives, Greek dressing" },
+          { name: "Daily Soup", price: "$9", description: "Rotating housemade soup — ask for today's option" },
+        ],
+      },
+      {
+        category: "Organic Superfood Smoothies",
+        items: [
+          { name: "Sunshine's Very Own", price: "$11", description: "Kale, spinach, cucumber, avocado, celery, apple + lemon juice, flax oil, spirulina" },
+          { name: "Hey, Stella", price: "$10", description: "Wild blueberries, spinach, kale, apple, coconut water, açaí" },
+          { name: "Mama Always Said", price: "$11", description: "Banana, dates, cocoa, vanilla bean, cinnamon, coconut oil, housemade almond milk" },
+          { name: "Just Keep Swimming", price: "$10", description: "Strawberry, raspberry, banana, dates, goji berries, vanilla bean, coconut milk" },
+          { name: "Make My Day", price: "$9", description: "Banana, avocado, ginger, flax oil, juiced apple, cinnamon" },
+          { name: "Shaken, Not Stirred", price: "$11", description: "Wild blueberries, banana, vanilla bean, dates, almond milk, vegan protein" },
+          { name: "Fasten Your Seatbelts", price: "$10", description: "Pineapple, banana, fresh OJ, turmeric, chia seeds, coconut oil + milk" },
+          { name: "Açaí Bowl", price: "$9", description: "Granola, fresh fruit, cacao nibs, coconut flakes" },
+        ],
+      },
+      {
+        category: "Organic Juice Bar",
+        note: "Made fresh to order",
+        items: [
+          { name: "16 oz Classic Juice", price: "$7", description: "Choose one: apple, orange, grapefruit or carrot" },
+          { name: "16 oz Custom Juice", price: "$9", description: "Choose 1 base (apple, carrot, orange, grapefruit, celery) + 2 of beet, cucumber, lemon, lime, kale, spinach, ginger, cayenne" },
+          { name: "16 oz Premium Juice", price: "$10", description: "Choose any 4 ingredients from the full list" },
+          { name: "Kids Smoothie / Juice (8 oz)", price: "$4", description: "Smaller portion of any smoothie or juice" },
+          { name: "Organic Coffee or Tea", price: "$2.95", description: "Fair-trade organic coffee or loose-leaf tea" },
+        ],
+      },
+    ],
+
   },
   {
     name: "Colombian Street Food",
