@@ -216,6 +216,36 @@ const GlutenFreePretoria = () => {
     </div>
   );
 
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter(v => v !== value) : [...list, value]);
+  };
+
+  const menuOptions = useMemo(() => {
+    const counts: Record<string, number> = {};
+    pretoriaRestaurants.forEach(r => { counts[r.menuType] = (counts[r.menuType] || 0) + 1; });
+    return [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: counts["fully-gluten-free"] || 0 },
+      { value: "mixed-menu", label: "GF Options Available", count: counts["mixed-menu"] || 0 },
+    ];
+  }, []);
+
+  const safetyOptions = useMemo(() => {
+    const counts: Record<string, number> = {};
+    pretoriaRestaurants.forEach(r => { counts[r.celiacSafe] = (counts[r.celiacSafe] || 0) + 1; });
+    return [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: counts["dedicated-facility"] || 0 },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: counts["protocols-in-place"] || 0 },
+    ];
+  }, []);
+
+  const cuisineOptions = useMemo(() => {
+    const counts: Record<string, number> = {};
+    pretoriaRestaurants.forEach(r => r.cuisineTypes.forEach(c => { counts[c] = (counts[c] || 0) + 1; }));
+    return Object.entries(counts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([label, count]) => ({ value: label, label, count }));
+  }, []);
+
   const filteredRestaurants = useMemo(() => {
     let results: RestaurantWithDistance[] = pretoriaRestaurants.map(r => ({ ...r }));
 
@@ -228,16 +258,16 @@ const GlutenFreePretoria = () => {
     }
 
     return results.filter(restaurant => {
-      const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-      const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
-      const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-      const matchesSearch = searchQuery === "" || 
+      const matchesSafety = safetyFilters.length === 0 || safetyFilters.includes(restaurant.celiacSafe);
+      const matchesMenu = menuFilters.length === 0 || menuFilters.includes(restaurant.menuType);
+      const matchesCuisine = cuisineFilters.length === 0 || restaurant.cuisineTypes.some(c => cuisineFilters.includes(c));
+      const matchesSearch = searchQuery === "" ||
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         restaurant.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
+
+      return matchesSafety && matchesMenu && matchesCuisine && matchesSearch;
     });
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery, userLocation]);
+  }, [safetyFilters, menuFilters, cuisineFilters, searchQuery, userLocation]);
 
   return (
     <>
