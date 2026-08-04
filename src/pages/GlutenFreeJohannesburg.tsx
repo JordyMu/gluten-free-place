@@ -235,16 +235,45 @@ const GlutenFreeJohannesburg = () => {
     </div>
   );
 
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: johannesburgRestaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: johannesburgRestaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    []
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: johannesburgRestaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: johannesburgRestaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    []
+  );
+
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    johannesburgRestaurants.forEach((r) => r.cuisineTypes.forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, []);
+
   const filteredRestaurants = useMemo((): RestaurantWithDistance[] => {
-    let filtered = johannesburgRestaurants.filter(restaurant => {
-      const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-      const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
-      const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-      const matchesSearch = searchQuery === "" || 
+    let filtered = johannesburgRestaurants.filter((restaurant) => {
+      const matchesSearch =
+        searchQuery === "" ||
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        restaurant.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()));
-      
-      return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
+        restaurant.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
+      const matchesMenu = menuFilters.length === 0 || menuFilters.includes(restaurant.menuType);
+      const matchesSafety = safetyFilters.length === 0 || safetyFilters.includes(restaurant.celiacSafe);
+      const matchesCuisine =
+        cuisineFilters.length === 0 || restaurant.cuisineTypes.some((c) => cuisineFilters.includes(c));
+      return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
     });
 
     if (sortByDistance && userLocation) {
@@ -255,7 +284,7 @@ const GlutenFreeJohannesburg = () => {
     }
 
     return filtered;
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
+  }, [menuFilters, safetyFilters, cuisineFilters, searchQuery, sortByDistance, userLocation]);
 
   return (
     <>
