@@ -340,7 +340,6 @@ const GlutenFreeCurepipe = () => {
                           </Button>
                         </Link>
                       </div>
-                      <div className="mt-6 pt-6 border-t"><RestaurantReviews restaurantName={restaurant.name} restaurantCountry="Mauritius" restaurantCity="Curepipe" /></div>
                     </div>
                   </div>
                 </CardContent>

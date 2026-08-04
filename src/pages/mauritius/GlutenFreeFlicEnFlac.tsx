@@ -412,9 +412,6 @@ useEffect(() => {
                         </Link>
                       </div>
 
-                      <div className="mt-6 pt-6 border-t">
-                        <RestaurantReviews restaurantName={restaurant.name} restaurantCountry="Mauritius" restaurantCity="Flic en Flac" />
-                      </div>
                     </div>
                   </div>
                 </CardContent>
