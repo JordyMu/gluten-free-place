@@ -102,8 +102,8 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
       .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
   }, [restaurants]);
 
-  const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, Canada. Explore celiac-safe places with reviews, menu tips, and directions.`;
-  const pageTitle = `Gluten-Free Restaurants in ${cityName}, Canada | Celiac-Safe Guide 2026`;
+  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, Canada: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
+  const pageTitle = `Gluten-Free Options in ${cityName}, Canada | Celiac-Safe`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
