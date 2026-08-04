@@ -8,6 +8,10 @@ import { montrealRestaurants } from "@/data/montrealRestaurants";
 const faqItems = [
   { question: "Is Montreal good for gluten-free dining?", answer: "Yes! Montreal has a growing GF scene with dedicated bakeries like Parc Sans Gluten and naturally GF options at places like Arepera." },
   { question: "How do I ask for gluten-free in French?", answer: "Say 'sans gluten' (without gluten) or 'maladie cœliaque' (celiac disease). Most Montreal restaurants understand both English and French dietary requests." },
+  { question: "Where can I find gluten-free sandwiches in Montreal?", answer: "Dedicated GF spots like Parc Sans Gluten and Cookie Stefanie offer safe sandwiches, while many downtown delis and cafés can prepare them on request with proper protocols." },
+  { question: "Best gluten free bakery Montréal", answer: "Top picks include Parc Sans Gluten for 100% GF bread and pastries, Cookie Stefanie for sweets, and La Marquette for fresh daily options." },
+  { question: "Any great Gluten Free places to hit in downtown Montreal?", answer: "Downtown Montreal has celiac-friendly options such as Arepera for naturally GF arepas, plus several bistros and cafés with clearly marked gluten-free menus near Rue Sainte-Catherine." },
+  { question: "What are celiac safe restaurants in Montreal, QC?", answer: "Celiac-safe choices include dedicated facilities like Parc Sans Gluten and Cookie Stefanie, plus restaurants with strong cross-contamination protocols such as Arepera and La Marquette." },
 ];
 
 const ExtraSections = () => (
