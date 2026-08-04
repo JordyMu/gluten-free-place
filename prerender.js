@@ -6,6 +6,22 @@ const __dirname = path.dirname(url.fileURLToPath(import.meta.url))
 const toAbsolute = (p) => path.resolve(__dirname, p)
 
 const template = fs.readFileSync(toAbsolute('dist/index.html'), 'utf-8')
+
+// Minimal browser storage shims so client-only modules can be imported during SSG
+if (typeof globalThis.localStorage === 'undefined') {
+  const store = new Map()
+  const memoryStorage = {
+    getItem: (k) => (store.has(k) ? store.get(k) : null),
+    setItem: (k, v) => { store.set(k, String(v)) },
+    removeItem: (k) => { store.delete(k) },
+    clear: () => { store.clear() },
+    key: (i) => Array.from(store.keys())[i] ?? null,
+    get length() { return store.size },
+  }
+  globalThis.localStorage = memoryStorage
+  globalThis.sessionStorage = memoryStorage
+}
+
 const { render } = await import('./dist/server/entry-server.js')
 
 // All actual routes (excluding dynamic :slug routes)
