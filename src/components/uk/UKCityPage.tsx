@@ -65,12 +65,12 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
   const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, UK. Explore celiac-safe places with reviews, menu tips, and directions.`;
-  const pageTitle = `Gluten-Free Restaurants in ${cityName}, UK | Celiac-Safe Guide 2026`;
+  const pageTitle = `Gluten-Free Options in ${cityName}, UK | Celiac-Safe Dining`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Gluten-Free Restaurants in ${cityName}, UK`,
+      name: `Gluten-Free Options in ${cityName}, UK`,
       description: metaDescriptionText,
       url: `https://glutenfreeplace.org/gluten-free/united-kingdom/${citySlug}`,
     },
@@ -116,7 +116,7 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
         <div className="absolute inset-0 bg-black/20" />
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-5xl mb-4 block">{emoji}</span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Restaurants in {cityName}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Options in {cityName}</h1>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
             Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {cityName}.
           </p>
@@ -145,7 +145,7 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
         <section className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants in {cityName}</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Options in {cityName}</h2>
           <div className="grid gap-6">
             {filteredRestaurants.map((restaurant) => (
               <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}>
