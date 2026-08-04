@@ -1272,6 +1272,7 @@ export const torontoRestaurants: Restaurant[] = [
     website: "glutenfreelartisan.com",
     directionsUrl: "https://www.google.com/maps/search/Gluten+Free+by+l'Artisan+Toronto",
     specialty: "Dedicated GF artisan baked goods",
+    heroImage: "/images/lartisan-hero.webp",
     overview: "Gluten Free by l'Artisan creates exquisite artisan baked goods in a 100% gluten-free kitchen. French-inspired pastries and breads for the celiac community.",
     menuHighlights: ["🥖 GF Baguettes", "🥐 French Pastries", "🍰 Tarts", "🍞 Sandwich Bread"],
     whyPeopleLoveIt: [
@@ -2301,6 +2302,7 @@ export const torontoRestaurants: Restaurant[] = [
     website: "glutenfreelartisan.com",
     directionsUrl: "https://www.google.com/maps/search/Gluten+Free+by+l'Artisan+Toronto",
     specialty: "Dedicated GF artisan baked goods",
+    heroImage: "/images/lartisan-hero.webp",
     overview: "Gluten Free by l'Artisan creates exquisite artisan baked goods in a 100% gluten-free kitchen. French-inspired pastries and breads for the celiac community.",
     menuHighlights: ["🥖 GF Baguettes", "🥐 French Pastries", "🍰 Tarts", "🍞 Sandwich Bread"],
     proTip: "Follow them on social media for pop-up locations",
