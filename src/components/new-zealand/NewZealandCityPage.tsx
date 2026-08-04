@@ -129,7 +129,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
           <div className="container mx-auto px-4 text-center relative z-10">
             <span className="text-5xl mb-4 block">{emoji}</span>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Gluten-Free Options in {city.name}
+              Gluten-Free Restaurants in {city.name}
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
               Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {city.name}.
@@ -226,7 +226,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
                   <Trophy className="w-8 h-8 text-amber-600 flex-shrink-0" />
                   <div>
                     <h2 className="text-xl font-semibold text-gray-900 mb-1">
-                      Best Gluten-Free Options in {city.name}
+                      Best Gluten-Free Restaurants in {city.name}
                     </h2>
                     <p className="text-gray-700">
                       Our editorial top 10 celiac-safe picks across {city.name} — ranked by safety, reviews and quality.
@@ -246,7 +246,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
               <div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Verified Gluten-Free Options in {city.name}
+                  Verified Gluten-Free Restaurants in {city.name}
                 </h2>
                 <div className="grid gap-6">
                   {filtered.map((restaurant) => (

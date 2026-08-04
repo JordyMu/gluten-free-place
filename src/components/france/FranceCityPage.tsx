@@ -138,7 +138,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         {citySlug !== "paris" && <div className="absolute inset-0 bg-black/30" />}
         <div className="container mx-auto px-4 text-center relative z-10">
           <span className="text-5xl mb-4 block">{emoji}</span>
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Options in {cityName}</h1>
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Gluten-Free Restaurants in {cityName}</h1>
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
             Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {cityName}.
           </p>
@@ -171,7 +171,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
         <section className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Options in {cityName}</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants in {cityName}</h2>
               <div className="grid gap-6">
                 {filteredRestaurants.map((restaurant) => (
                   <Card key={restaurant.slug} className={`overflow-hidden border-2 border-red-200 ${restaurant.featured ? "ring-2 ring-red-300" : ""}`}>
