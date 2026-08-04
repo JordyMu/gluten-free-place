@@ -72,7 +72,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems }: NewZealandCityPage
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
   const pageTitle = `Gluten-Free Options in ${city.name}, New Zealand | Celiac-Safe Dining`;
-  const description = `Find verified gluten-free restaurants in ${city.name}, New Zealand. Celiac-safe places with reviews, menu tips and directions.`;
+  const description = `Browse verified gluten free options in ${city.name}, New Zealand: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
