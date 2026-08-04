@@ -1399,7 +1399,7 @@ export const torontoRestaurants: Restaurant[] = [
   {
     name: "Sunshine Wholesome Market",
     slug: "sunshine-wholesome-market",
-    address: "Toronto, ON",
+    address: "942 College St, Toronto, ON M6H 1A5, Canada",
     city: "Toronto",
     country: "Canada",
     nearby: [
@@ -1408,9 +1408,9 @@ export const torontoRestaurants: Restaurant[] = [
       { label: "Grocery store", name: "Metro", href: "/gluten-free/canada/toronto/metro" },
     ],
     hours: "Mon–Sat: 9:00AM – 7:00PM",
-    phone: "",
+    phone: "+1 416-533-9582",
     website: "",
-    directionsUrl: "https://www.google.com/maps/search/Sunshine+Wholesome+Market+Toronto",
+    directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=942+College+St+Toronto+ON+M6H+1A5+Canada",
     specialty: "Health food store with GF products",
     overview: "Sunshine Wholesome Market stocks an impressive range of gluten-free products, from fresh baked goods to pantry staples and prepared meals.",
     menuHighlights: ["🛒 GF Product Range", "🥖 Fresh GF Bread", "🥣 GF Cereals", "🍪 GF Snacks"],
