@@ -93,6 +93,7 @@ const GlutenFreeVancouver = () => (
     citySlug="vancouver"
     emoji="🏔️"
     heading="Dedicated Gluten Restaurant in Vancouver"
+    heroImage="/images/vancouver-hero.webp?v=2"
     intro="Vancouver's health-conscious food culture makes it a paradise for gluten-free diners. From The Gluten Free Epicurean's artisan breads to Lemonade Bakery's dedicated facility, the city offers excellent celiac-safe options."
     restaurants={vancouverRestaurants}
     faqItems={faqItems}
