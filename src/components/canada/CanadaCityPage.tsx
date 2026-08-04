@@ -282,7 +282,14 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                         Website
                       </Button>
                     )}
+                    <Link to={`/gluten-free/canada/${citySlug}/${restaurant.slug}`}>
+                      <Button type="button" variant="outline">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Menu
+                      </Button>
+                    </Link>
                   </div>
+
 
                   {restaurant.nearby && restaurant.nearby.length > 0 && (
                     <div className="mt-4">
