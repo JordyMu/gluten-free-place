@@ -18,9 +18,14 @@ import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 type Restaurant = MauritiusCityRestaurant;
 
 const GlutenFreePortLouis = () => {
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
-  const [venueFilter, setVenueFilter] = useState<string>("all");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({ kitchen: true, cuisine: true, badges: true });
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
   const [searchQuery, setSearchQuery] = useState("");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState(false);
