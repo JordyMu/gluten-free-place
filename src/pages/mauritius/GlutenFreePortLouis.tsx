@@ -380,7 +380,7 @@ useEffect(() => {
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants</h2>
           <div className="grid gap-6">
             {filteredRestaurants.map((restaurant, index) => (
-              <Card key={index} className={`overflow-hidden ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
+              <Card key={index} className={`overflow-hidden border-2 border-red-200 ${restaurant.featured ? 'ring-2 ring-orange-300' : ''}`}>
                 <CardContent className="p-6">
                   <div className="flex flex-col lg:flex-row gap-6">
                     <div className="flex-1">
@@ -392,7 +392,7 @@ useEffect(() => {
                                 <Award className="w-3 h-3 mr-1" />Featured
                               </Badge>
                             )}
-                            <Link to={`/gluten-free/mauritius/port-louis/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-orange-600 transition-colors">{restaurant.name}</Link>
+                            <Link to={`/gluten-free/mauritius/port-louis/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">{restaurant.name}</Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
@@ -418,7 +418,7 @@ useEffect(() => {
                         <div className="flex items-center gap-2"><MapPin className="w-4 h-4 text-gray-400" /><span>{restaurant.address}</span></div>
                         <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-gray-400" /><span>{restaurant.hours}</span></div>
                         {restaurant.phone && (
-                          <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-gray-400" /><a href={`tel:${restaurant.phone}`} className="hover:text-orange-600">{restaurant.phone}</a></div>
+                          <div className="flex items-center gap-2"><Phone className="w-4 h-4 text-gray-400" /><a href={`tel:${restaurant.phone}`} className="hover:text-red-700">{restaurant.phone}</a></div>
                         )}
                       </div>
 
@@ -442,7 +442,7 @@ useEffect(() => {
                       )}
 
                       <div className="flex gap-3">
-                        <Button asChild className="bg-orange-600 hover:bg-orange-700">
+                        <Button asChild className="bg-red-700 hover:bg-red-800">
                           <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                             <Navigation className="w-4 h-4 mr-2" />Get Directions
                           </a>
