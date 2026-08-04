@@ -26,6 +26,12 @@ const GlutenFreeCurepipe = () => {
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string>("");
   const [sortByDistance, setSortByDistance] = useState(false);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({
+    kitchen: true,
+    cuisine: true,
+    badges: true,
+  });
 
   const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
     setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
