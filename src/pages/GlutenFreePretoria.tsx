@@ -236,8 +236,8 @@ const GlutenFreePretoria = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in Pretoria | Celiac-Safe Dining 2026"
-      description="Find verified gluten-free restaurants in Pretoria, South Africa."
+      title="Gluten-Free Options in Pretoria | Celiac-Safe Dining"
+      description="Browse verified gluten free options in Pretoria: dedicated celiac-safe restaurants, bakeries and cafés with menus, hours and directions."
       canonical="/gluten-free/south-africa/pretoria"
     />
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">

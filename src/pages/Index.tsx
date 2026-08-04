@@ -199,8 +199,8 @@ const Index = () => {
   return (
     <>
     <SEOHead
-      title="GlutenFreePlace | Find Gluten-Free Restaurants Near You"
-      description="Find gluten-free restaurants near you. Verified celiac-safe dining in Italy, Spain, USA, UK, Japan & 150+ countries. Real reviews from GF travelers."
+      title="Gluten-Free Options Near You | GlutenFreePlace"
+      description="Find gluten free options near you: verified celiac-safe restaurants, bakeries and cafés in Canada, Australia, South Africa, Mauritius and 150+ countries."
       canonical="/"
     />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-blue-50">

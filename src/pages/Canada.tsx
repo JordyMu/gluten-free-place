@@ -152,8 +152,8 @@ const Canada = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in Canada | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants across Canada. Verified celiac-safe dining in Toronto, Vancouver, Montreal, Calgary & more. Real reviews from GF travelers."
+      title="Gluten-Free Options in Canada | Celiac-Safe Dining"
+      description="Gluten free options across Canada: verified celiac-safe restaurants, bakeries and cafés in Toronto, Vancouver, Montreal, Calgary and more."
       canonical="/gluten-free/canada"
     />
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">

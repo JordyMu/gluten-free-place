@@ -237,8 +237,8 @@ const SouthAfrica = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in South Africa | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants across South Africa. Verified celiac-safe dining in Cape Town, Johannesburg, Pretoria, Durban & more. Real reviews from GF travelers."
+      title="Gluten-Free Options in South Africa | Celiac-Safe Dining"
+      description="Gluten free options across South Africa: verified celiac-safe restaurants, bakeries and cafés in Cape Town, Johannesburg, Pretoria, Durban and more."
       canonical="/gluten-free/south-africa"
     />
     <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-green-50">

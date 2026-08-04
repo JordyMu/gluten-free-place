@@ -135,8 +135,8 @@ const Australia = () => {
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in Australia | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants across Australia. Verified celiac-safe dining in Sydney, Melbourne, Brisbane, Perth & more. Real reviews from GF travelers."
+      title="Gluten-Free Options in Australia | Celiac-Safe Dining"
+      description="Gluten free options across Australia: verified celiac-safe restaurants, bakeries and cafés in Sydney, Melbourne, Brisbane, Perth and more."
       canonical="/australia"
     />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-blue-50">
