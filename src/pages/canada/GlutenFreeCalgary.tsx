@@ -31,6 +31,7 @@ const GlutenFreeCalgary = () => (
     citySlug="calgary"
     emoji="🤠"
     heading="Dedicated Gluten Restaurant in Calgary"
+    heroImage="/images/calgary-hero.webp?v=2"
     intro="Calgary's dining scene offers growing gluten-free options, especially in Asian cuisine with naturally rice-based dishes. The city's proximity to the Rocky Mountains also means access to celiac-safe dining in nearby Canmore and Banff."
     restaurants={calgaryRestaurants}
     faqItems={faqItems}
