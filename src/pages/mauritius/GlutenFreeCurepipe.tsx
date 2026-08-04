@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, Trophy } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, Trophy, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -297,7 +297,7 @@ const GlutenFreeCurepipe = () => {
                         <div>
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
                             {restaurant.featured && (<Badge className="bg-purple-100 text-purple-800 border-purple-300"><Award className="w-3 h-3 mr-1" />Featured</Badge>)}
-                            <Link to={`/gluten-free/mauritius/curepipe/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-purple-600 transition-colors">{restaurant.name}</Link>
+                            <Link to={`/gluten-free/mauritius/curepipe/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">{restaurant.name}</Link>
                           </div>
                           <div className="flex items-center gap-2 mb-2 flex-wrap">
                             {renderStarRating(restaurant.rating)}
@@ -332,8 +332,13 @@ const GlutenFreeCurepipe = () => {
                         </div>
                       )}
                       <div className="flex gap-3">
-                        <Button asChild className="bg-purple-600 hover:bg-purple-700"><a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer"><Navigation className="w-4 h-4 mr-2" />Get Directions</a></Button>
+                        <Button asChild className="bg-red-700 hover:bg-red-800"><a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer"><Navigation className="w-4 h-4 mr-2" />Get Directions</a></Button>
                         {restaurant.website && (<Button variant="outline" asChild><a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer"><Globe className="w-4 h-4 mr-2" />Website</a></Button>)}
+                        <Link to={`/gluten-free/mauritius/curepipe/${restaurant.slug}`}>
+                          <Button type="button" variant="outline">
+                            <BookOpen className="w-4 h-4 mr-2" />View Menu
+                          </Button>
+                        </Link>
                       </div>
                       <div className="mt-6 pt-6 border-t"><RestaurantReviews restaurantName={restaurant.name} restaurantCountry="Mauritius" restaurantCity="Curepipe" /></div>
                     </div>

@@ -1,6 +1,6 @@
 import { useState, useMemo, useEffect } from "react";
 import portLouisHero from "@/assets/port-louis-mauritius.jpg";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, Trophy } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, Trophy, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -454,6 +454,11 @@ useEffect(() => {
                             </a>
                           </Button>
                         )}
+                        <Link to={`/gluten-free/mauritius/port-louis/${restaurant.slug}`}>
+                          <Button type="button" variant="outline">
+                            <BookOpen className="w-4 h-4 mr-2" />View Menu
+                          </Button>
+                        </Link>
                       </div>
 
                       <div className="mt-6 pt-6 border-t">
