@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
