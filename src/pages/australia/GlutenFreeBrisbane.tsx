@@ -616,7 +616,7 @@ const GlutenFreeBrisbane = () => {
 
   const pageTitle = "Gluten-Free Options in Brisbane | Celiac-Safe Dining";
   const metaDescription =
-    "Find verified gluten-free restaurants in Brisbane, Australia. Explore celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
+    "Browse verified gluten free options in Brisbane, Australia. Discover celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
   const schemaJson = [
     {
       "@context": "https://schema.org",

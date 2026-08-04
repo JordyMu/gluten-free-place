@@ -357,7 +357,7 @@ const GlutenFreeMelbourne = () => {
 
   const pageTitle = "Gluten-Free Options in Melbourne | Celiac-Safe Dining";
   const metaDescription =
-    "Find verified gluten-free restaurants in Melbourne, Australia. Explore celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
+    "Browse verified gluten free options in Melbourne, Australia. Discover celiac-safe cafes, patisseries and brunch spots with reviews, menu tips and directions.";
   const schemaJson = [
     {
       "@context": "https://schema.org",
