@@ -410,10 +410,7 @@ const GlutenFreeJohannesburg = () => {
             Find exactly what you're looking for with our curated category pages.
           </p>
           <div className="grid grid-cols-2 gap-2">
-            <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
-              onClick={() => setVenueFilter("supermarket")}
-            >
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🛒</span>
                 <div>
@@ -422,10 +419,7 @@ const GlutenFreeJohannesburg = () => {
                 </div>
               </CardContent>
             </Card>
-            <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
-              onClick={() => setVenueFilter("street-food")}
-            >
+            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🌮</span>
                 <div>
@@ -435,15 +429,6 @@ const GlutenFreeJohannesburg = () => {
               </CardContent>
             </Card>
           </div>
-          {venueFilter !== "all" && (
-            <Button 
-              variant="ghost" 
-              className="mt-2 text-orange-600"
-              onClick={() => setVenueFilter("all")}
-            >
-              Clear filter
-            </Button>
-          )}
         </section>
 
 
