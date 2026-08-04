@@ -1425,6 +1425,7 @@ export const torontoRestaurants: Restaurant[] = [
     lat: 43.6581,
     lng: -79.4001,
     venueType: "supermarket",
+    heroImage: "/images/sunshine-wholesome-market-hero.webp?v=1",
     photos: [
       { url: "/images/toronto/sunshine-wholesome-market-1.webp", caption: "Store Front" },
       { url: "/images/toronto/sunshine-wholesome-market-2.webp", caption: "GF Products Aisle" },
