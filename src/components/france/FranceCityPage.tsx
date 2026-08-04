@@ -70,7 +70,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
-  const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, France. Explore celiac-safe places with reviews, menu tips, and directions.`;
+  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, France: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const pageTitle = `Gluten-Free Options in ${cityName}, France | Celiac-Safe Dining`;
   const schemaJson = [
     {

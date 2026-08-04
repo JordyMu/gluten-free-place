@@ -64,7 +64,7 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
   const [menuFilter, setMenuFilter] = useState<string>("all");
   const [safetyFilter, setSafetyFilter] = useState<string>("all");
 
-  const metaDescriptionText = `Find verified gluten-free restaurants in ${cityName}, UK. Explore celiac-safe places with reviews, menu tips, and directions.`;
+  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, UK: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const pageTitle = `Gluten-Free Options in ${cityName}, UK | Celiac-Safe Dining`;
   const schemaJson = [
     {
