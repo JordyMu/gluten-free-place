@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
