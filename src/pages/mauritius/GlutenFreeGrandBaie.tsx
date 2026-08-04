@@ -194,15 +194,33 @@ useEffect(() => {
     </div>
   );
 
+  const menuOptions = useMemo(() => [
+    { value: "fully-gluten-free", label: "100% Gluten-Free", count: restaurants.filter(r => r.menuType === "fully-gluten-free").length },
+    { value: "mixed-menu", label: "GF Options Available", count: restaurants.filter(r => r.menuType === "mixed-menu").length },
+  ], [restaurants]);
+
+  const safetyOptions = useMemo(() => [
+    { value: "dedicated-facility", label: "Dedicated GF Facility", count: restaurants.filter(r => r.celiacSafe === "dedicated-facility").length },
+    { value: "protocols-in-place", label: "Careful Handling", count: restaurants.filter(r => r.celiacSafe === "protocols-in-place").length },
+  ], [restaurants]);
+
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    restaurants.forEach(r => r.cuisineTypes.forEach(c => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [restaurants]);
+
   const filteredRestaurants = useMemo(() => {
     let filtered = restaurants.filter(restaurant => {
-      const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-      const matchesVenue = venueFilter === "all" || restaurant.venueType === venueFilter;
-      const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
+      const matchesSafety = safetyFilters.length === 0 || safetyFilters.includes(restaurant.celiacSafe);
+      const matchesMenu = menuFilters.length === 0 || menuFilters.includes(restaurant.menuType);
+      const matchesCuisine = cuisineFilters.length === 0 || restaurant.cuisineTypes.some(c => cuisineFilters.includes(c));
       const matchesSearch = searchQuery === "" ||
         restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
         restaurant.cuisineTypes.some(c => c.toLowerCase().includes(searchQuery.toLowerCase()));
-      return matchesSafety && matchesVenue && matchesMenu && matchesSearch;
+      return matchesSafety && matchesMenu && matchesCuisine && matchesSearch;
     });
 
     if (sortByDistance && userLocation) {
@@ -213,7 +231,7 @@ useEffect(() => {
     }
 
     return filtered;
-  }, [safetyFilter, venueFilter, menuFilter, searchQuery, sortByDistance, userLocation]);
+  }, [safetyFilters, menuFilters, cuisineFilters, searchQuery, sortByDistance, userLocation]);
 
   return (
     <>
