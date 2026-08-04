@@ -92,6 +92,7 @@ const GlutenFreeMontreal = () => (
     cityName="Montreal"
     citySlug="montreal"
     emoji="⚜️"
+    heading="Dedicated Gluten Restaurant in Montreal"
     intro="Montreal's vibrant food scene includes dedicated gluten-free bakeries, French-inspired GF pâtisseries, and naturally celiac-safe Latin American eateries. The bilingual city makes communicating dietary needs easy."
     restaurants={montrealRestaurants}
     faqItems={faqItems}
