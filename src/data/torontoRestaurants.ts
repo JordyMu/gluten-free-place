@@ -1507,7 +1507,13 @@ export const torontoRestaurants: Restaurant[] = [
         ],
       },
     ],
-
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Kitchen",
+      "Fresh Homemade Food",
+      "Outstanding Sandwiches",
+      "Excellent Smoothies & Fresh Juices",
+      "Healthy Grocery Selection",
+    ],
   },
   {
     name: "Colombian Street Food",
