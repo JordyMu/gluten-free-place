@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -282,7 +282,14 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                         Website
                       </Button>
                     )}
+                    <Link to={`/gluten-free/canada/${citySlug}/${restaurant.slug}`}>
+                      <Button type="button" variant="outline">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Menu
+                      </Button>
+                    </Link>
                   </div>
+
 
                   {restaurant.nearby && restaurant.nearby.length > 0 && (
                     <div className="mt-4">
