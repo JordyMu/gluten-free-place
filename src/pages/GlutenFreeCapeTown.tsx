@@ -121,13 +121,20 @@ const GlutenFreeCapeTown = () => {
       if (faqSchemaToRemove) faqSchemaToRemove.remove();
     };
   }, []);
-  const [venueFilter, setVenueFilter] = useState<string>("all");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
   const [searchQuery, setSearchQuery] = useState("");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string>("");
   const [sortByDistance, setSortByDistance] = useState(false);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({
+    kitchen: true,
+    cuisine: true,
+    badges: true,
+  });
 
   const calculateDistance = (lat1: number, lng1: number, lat2: number, lng2: number): number => {
     const R = 6371; // Earth's radius in km
