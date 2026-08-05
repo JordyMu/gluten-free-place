@@ -345,15 +345,27 @@ const Index = () => {
             {destinations.map((destination, index) => (
               <Card key={destination.id} className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg`}>
                 <div className="relative overflow-hidden rounded-t-lg">
-                  <img 
-                    src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
-                    alt={destination.name}
-                    className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                    loading="lazy"
-                    decoding="async"
-                    width={400}
-                    height={192}
-                  />
+                  <Link
+                    to={
+                      destination.name.includes("Canada") ? "/canada" :
+                      destination.name.includes("Mauritius") ? "/gluten-free/mauritius" :
+                      destination.name.includes("South Africa") ? "/gluten-free/south-africa" :
+                      destination.name.includes("Australia") ? "/australia" :
+                      destination.name.includes("UK") ? "/united-kingdom" :
+                      destination.name.includes("Kenya") ? "/gluten-free/kenya" : "#"
+                    }
+                    aria-label={`Explore ${destination.name}`}
+                  >
+                    <img 
+                      src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
+                      alt={destination.name}
+                      className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
+                      loading="lazy"
+                      decoding="async"
+                      width={400}
+                      height={192}
+                    />
+                  </Link>
                   <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
                     <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
                     <span className="font-semibold text-sm">{destination.rating}</span>
