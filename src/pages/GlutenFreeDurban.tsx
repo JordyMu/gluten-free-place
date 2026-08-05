@@ -20,7 +20,15 @@ interface RestaurantWithDistance extends Restaurant {
 }
 
 const GlutenFreeDurban = () => {
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({
+    kitchen: true,
+    cuisine: true,
+    badges: true,
+  });
   useEffect(() => {
     const ogTitle = document.querySelector('meta[property="og:title"]');
     if (ogTitle) {
