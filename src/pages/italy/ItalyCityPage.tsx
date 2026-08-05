@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation,
-  MessageCircle, Award, Shield, Search, Filter,
+  MessageCircle, Award, Shield, Search, Filter, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
