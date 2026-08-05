@@ -153,12 +153,12 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
               <h2 className="text-2xl font-bold text-gray-900 mb-6">Verified Gluten-Free Restaurants in {cityName}</h2>
           <div className="grid gap-6">
             {filteredRestaurants.map((restaurant) => (
-              <Card key={restaurant.slug} className={`overflow-hidden ${restaurant.featured ? "ring-2 ring-blue-300" : ""}`}>
+              <Card key={restaurant.slug} className={`overflow-hidden border-2 border-red-200 ${restaurant.featured ? "ring-2 ring-red-300" : ""}`}>
                 <CardContent className="p-6">
                   <div className="mb-3">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <span className="text-2xl">{restaurant.icon}</span>
-                      <Link to={`/gluten-free/united-kingdom/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors">
+                      <Link to={`/gluten-free/united-kingdom/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">
                         {restaurant.name}
                       </Link>
                       {restaurant.featured && <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>}
@@ -177,6 +177,23 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
                     ))}
                     {getCeliacSafeBadge(restaurant.celiacSafe)}
                     {getMenuTypeBadge(restaurant.menuType)}
+                  </div>
+
+                  <div className="space-y-2 text-sm text-gray-600 mb-4">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-gray-400" />
+                      <span>{restaurant.address}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4 text-gray-400" />
+                      <span>{restaurant.hours}</span>
+                    </div>
+                    {restaurant.phone && (
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-gray-400" />
+                        <a href={`tel:${restaurant.phone.replace(/\s/g, "")}`} className="hover:text-blue-700">{restaurant.phone}</a>
+                      </div>
+                    )}
                   </div>
 
                   <p className="text-gray-700 mb-4">{restaurant.overview}</p>
@@ -200,38 +217,25 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
                     </div>
                   )}
 
-                  <div className="space-y-2 text-sm text-gray-600 mb-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <span>{restaurant.address}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-gray-400" />
-                      <span>{restaurant.hours}</span>
-                    </div>
-                    {restaurant.phone && (
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                        <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">{restaurant.phone}</a>
-                      </div>
-                    )}
-                  </div>
-
                   <div className="flex flex-wrap gap-3">
-                    <Button asChild className="bg-blue-700 hover:bg-blue-800">
-                      <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
+                    {restaurant.directionsUrl && (
+                      <Button type="button" className="bg-red-700 hover:bg-red-800" onClick={() => openExternalLink(restaurant.directionsUrl!)}>
                         <Navigation className="w-4 h-4 mr-2" />
                         Get Directions
-                      </a>
-                    </Button>
-                    {restaurant.website && (
-                      <Button variant="outline" asChild>
-                        <a href={restaurant.website.startsWith("http") ? restaurant.website : `https://${restaurant.website}`} target="_blank" rel="noopener noreferrer">
-                          <Globe className="w-4 h-4 mr-2" />
-                          Website
-                        </a>
                       </Button>
                     )}
+                    {restaurant.website && (
+                      <Button type="button" variant="outline" onClick={() => openExternalLink(restaurant.website!)}>
+                        <Globe className="w-4 h-4 mr-2" />
+                        Website
+                      </Button>
+                    )}
+                    <Link to={`/gluten-free/united-kingdom/${citySlug}/${restaurant.slug}`}>
+                      <Button type="button" variant="outline">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Menu
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
