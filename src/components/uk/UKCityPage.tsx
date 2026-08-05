@@ -3,6 +3,8 @@ import { SEOHead } from "@/components/SEOHead";
 import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
@@ -159,10 +161,12 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
           <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
             Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {cityName}.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
             <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">{restaurants.length} listed restaurants</Badge>
+            <FindNearMeButton city={cityName} />
             <AddRestaurantDialog city={cityName} triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" />
           </div>
+
         </div>
       </section>
 
