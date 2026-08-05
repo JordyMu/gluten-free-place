@@ -5491,7 +5491,7 @@ const Italy = () => {
                     className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="relative overflow-hidden h-48">
+                    <Link to={`/gluten-free/italy/${city.slug}`} className="block relative overflow-hidden h-48 cursor-pointer">
                       <img
                         src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                         alt={`Gluten-free restaurants in ${city.name}, Italy`}
@@ -5506,7 +5506,7 @@ const Italy = () => {
                       <div className="absolute bottom-4 left-4">
                         <h3 className="text-2xl font-bold text-white">{city.name}</h3>
                       </div>
-                    </div>
+                    </Link>
                     <CardContent className="p-5">
                       <p className="text-gray-600 text-sm mb-3">{city.description}</p>
                       <div className="flex items-center text-green-700 mb-3">
