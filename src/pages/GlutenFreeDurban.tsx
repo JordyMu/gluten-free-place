@@ -102,8 +102,6 @@ const GlutenFreeDurban = () => {
       if (faqSchemaToRemove) faqSchemaToRemove.remove();
     };
   }, []);
-  const [venueFilter, setVenueFilter] = useState<string>("all");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isLocating, setIsLocating] = useState(false);
