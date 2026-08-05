@@ -63,8 +63,15 @@ const renderStarRating = (rating: number) => (
 
 const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: KenyaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({ kitchen: true, cuisine: true, badges: true });
+
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
 
   const metaDescriptionText = `Browse verified gluten free options in ${cityName}, Kenya: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const pageTitle = `Gluten-Free Options in ${cityName}, Kenya | Celiac-Safe Dining`;
