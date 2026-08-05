@@ -4,6 +4,7 @@ import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, 
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FindNearMeButton } from "@/components/city/FindNearMeButton";
+import { CityCategoryNav } from "@/components/city/CityCategoryNav";
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -171,6 +172,8 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
       </section>
 
       <main className="container mx-auto px-4 py-8">
+        <CityCategoryNav />
+
         <section className="mb-10">
           <Card className="bg-gradient-to-r from-blue-50 to-red-50 border-blue-200">
             <CardContent className="p-6">
