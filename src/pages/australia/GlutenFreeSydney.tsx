@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
-  MessageCircle, Navigation, Phone, Search, Shield, Star,
+  MessageCircle, Navigation, Phone, Search, Shield, Star, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
