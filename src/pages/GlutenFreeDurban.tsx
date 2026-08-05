@@ -410,8 +410,7 @@ const GlutenFreeDurban = () => {
           </p>
           <div className="grid grid-cols-2 gap-2">
             <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
-              onClick={() => setVenueFilter("supermarket")}
+              className="hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50"
             >
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🛒</span>
@@ -422,8 +421,7 @@ const GlutenFreeDurban = () => {
               </CardContent>
             </Card>
             <Card 
-              className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
-              onClick={() => setVenueFilter("street-food")}
+              className="hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50"
             >
               <CardContent className="p-2 flex items-center gap-2">
                 <span className="text-lg">🌮</span>
