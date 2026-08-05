@@ -843,6 +843,14 @@ const GlutenFreeBrisbane = () => {
                           {getMenuTypeBadge(r.menuType)}
                         </div>
 
+                        <div className="space-y-2 text-sm text-gray-600 mb-4">
+                          {r.address && (
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4 text-gray-400" />
+                              <span>{r.address}</span>
+                            </div>
+
+
                         {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
 
                         {r.menuHighlights && r.menuHighlights.length > 0 && (
@@ -865,13 +873,6 @@ const GlutenFreeBrisbane = () => {
                             </div>
                           </div>
                         )}
-
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
-                          {r.address && (
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4 text-gray-400" />
-                              <span>{r.address}</span>
-                            </div>
                           )}
                           {r.hours && (
                             <div className="flex items-center gap-2">
