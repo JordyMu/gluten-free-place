@@ -13,6 +13,7 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
 import { SEOHead } from "@/components/SEOHead";
 
 type CeliacSafe = "dedicated-facility" | "protocols-in-place";
@@ -248,6 +249,7 @@ const GlutenFreePerth = () => {
               <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">
                 {perthRestaurants.length} listed restaurants
               </Badge>
+              <FindNearMeButton city="Perth" />
               <AddRestaurantDialog
                 city="Perth"
                 triggerClassName="border-white bg-transparent !text-white hover:bg-white/10"
