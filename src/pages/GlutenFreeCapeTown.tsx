@@ -872,14 +872,6 @@ const GlutenFreeCapeTown = () => {
                           </Button>
                         )}
                       </div>
-
-                      <div className="mt-6 pt-6 border-t">
-                        <RestaurantReviews
-                          restaurantName={restaurant.name}
-                          restaurantCountry="South Africa"
-                          restaurantCity="Cape Town"
-                        />
-                      </div>
                     </div>
                   </div>
                 </CardContent>
