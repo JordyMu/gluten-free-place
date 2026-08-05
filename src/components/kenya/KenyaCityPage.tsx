@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
@@ -63,8 +63,15 @@ const renderStarRating = (rating: number) => (
 
 const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: KenyaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({ kitchen: true, cuisine: true, badges: true });
+
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
 
   const metaDescriptionText = `Browse verified gluten free options in ${cityName}, Kenya: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
   const pageTitle = `Gluten-Free Options in ${cityName}, Kenya | Celiac-Safe Dining`;
@@ -87,20 +94,44 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
     },
   ];
 
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    restaurants.forEach((r) => (r.cuisineTypes || []).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [restaurants]);
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: restaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: restaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    [restaurants]
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: restaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: restaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    [restaurants]
+  );
+
   const filteredRestaurants = useMemo(
     () =>
       restaurants.filter((restaurant) => {
+        const q = searchQuery.toLowerCase();
         const matchesSearch =
-          searchQuery === "" ||
-          restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          restaurant.cuisineTypes.some((cuisine) => cuisine.toLowerCase().includes(searchQuery.toLowerCase()));
-
-        const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-        const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-
-        return matchesSearch && matchesMenu && matchesSafety;
+          q === "" ||
+          restaurant.name.toLowerCase().includes(q) ||
+          (restaurant.cuisineTypes || []).some((cuisine) => cuisine.toLowerCase().includes(q));
+        const matchesMenu = menuFilters.length === 0 || (!!restaurant.menuType && menuFilters.includes(restaurant.menuType));
+        const matchesSafety = safetyFilters.length === 0 || (!!restaurant.celiacSafe && safetyFilters.includes(restaurant.celiacSafe));
+        const matchesCuisine = cuisineFilters.length === 0 || (restaurant.cuisineTypes || []).some((c) => cuisineFilters.includes(c));
+        return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
       }),
-    [restaurants, searchQuery, menuFilter, safetyFilter]
+    [restaurants, searchQuery, menuFilters, safetyFilters, cuisineFilters]
   );
 
   return (
@@ -254,58 +285,120 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
             ))}
           </div>
             </div>
-            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last">
+            <aside className="lg:sticky lg:top-4 lg:self-start space-y-4 order-first lg:order-last">
               <Card>
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <Filter className="w-5 h-5" />
-                Filter Restaurants
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Search</label>
+                <CardHeader>
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Search className="w-4 h-4 text-red-700" />
+                    Search Restaurants
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
                   <div className="relative">
                     <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
-                    <Input
-                      className="pl-9"
-                      placeholder="Search by name or cuisine"
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
+                    <Input className="pl-9" placeholder="Search by name or cuisine" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
                   </div>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Menu Type</label>
-                  <Select value={menuFilter} onValueChange={setMenuFilter}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="All menu types" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Menu Types</SelectItem>
-                      <SelectItem value="fully-gluten-free">100% Gluten-Free</SelectItem>
-                      <SelectItem value="mixed-menu">GF Options Available</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <label className="text-sm font-medium text-gray-700 mb-1 block">Safety</label>
-                  <Select value={safetyFilter} onValueChange={setSafetyFilter}>
-                    <SelectTrigger>
-                      <SelectValue placeholder="All safety levels" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Safety Levels</SelectItem>
-                      <SelectItem value="dedicated-facility">Dedicated GF Facility</SelectItem>
-                      <SelectItem value="protocols-in-place">Celiac Protocols</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-              </div>
-              <p className="mt-4 text-sm text-gray-600">Showing {filteredRestaurants.length} of {restaurants.length} restaurants</p>
-            </CardContent>
-          </Card>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader className="pb-3">
+                  <CardTitle className="flex items-center gap-2 text-base">
+                    <Filter className="w-4 h-4 text-red-700" />
+                    Filter Restaurants
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="p-5 pt-0 space-y-2">
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections((s) => ({ ...s, kitchen: !s.kitchen }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Kitchen Type</span>
+                      <span className="text-gray-400">{openFilterSections.kitchen ? "−" : "+"}</span>
+                    </button>
+                    {openFilterSections.kitchen && (
+                      <div className="pb-3 space-y-2">
+                        {menuOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={menuFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, menuFilters, setMenuFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections((s) => ({ ...s, cuisine: !s.cuisine }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Cuisine</span>
+                      <span className="text-gray-400">{openFilterSections.cuisine ? "−" : "+"}</span>
+                    </button>
+                    {openFilterSections.cuisine && (
+                      <div className="pb-3 space-y-2">
+                        {(showAllCuisines ? cuisineOptions : cuisineOptions.slice(0, 6)).map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={cuisineFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, cuisineFilters, setCuisineFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1 truncate">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                        {cuisineOptions.length > 6 && (
+                          <button type="button" onClick={() => setShowAllCuisines(!showAllCuisines)} className="text-sm text-red-700 hover:text-red-800 font-medium pt-1">
+                            {showAllCuisines ? "Show less" : `Show all ${cuisineOptions.length} cuisines`}
+                          </button>
+                        )}
+                      </div>
+                    )}
+                  </div>
+
+                  <div className="border-b last:border-b-0">
+                    <button
+                      type="button"
+                      onClick={() => setOpenFilterSections((s) => ({ ...s, badges: !s.badges }))}
+                      className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
+                    >
+                      <span>Badges</span>
+                      <span className="text-gray-400">{openFilterSections.badges ? "−" : "+"}</span>
+                    </button>
+                    {openFilterSections.badges && (
+                      <div className="pb-3 space-y-2">
+                        {safetyOptions.map((opt) => (
+                          <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
+                            <Checkbox checked={safetyFilters.includes(opt.value)} onCheckedChange={() => toggle(opt.value, safetyFilters, setSafetyFilters)} />
+                            <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
+                            <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">{opt.count}</span>
+                          </label>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+
+                  {(menuFilters.length > 0 || cuisineFilters.length > 0 || safetyFilters.length > 0) && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setMenuFilters([]);
+                        setCuisineFilters([]);
+                        setSafetyFilters([]);
+                      }}
+                      className="text-sm text-red-700 hover:text-red-800 font-medium pt-2"
+                    >
+                      Clear all filters
+                    </button>
+                  )}
+
+                  <p className="border-t pt-3 text-sm text-gray-600">
+                    Showing {filteredRestaurants.length} of {restaurants.length}
+                  </p>
+                </CardContent>
+              </Card>
             </aside>
           </div>
         </section>
