@@ -348,6 +348,7 @@ const App = () => (
               <Route path="/gluten-free/south-africa/pretoria/best-gluten-free-restaurants-in-pretoria" element={<GlutenFreePretoriaBest />} />
               <Route path="/gluten-free/south-africa/pretoria/:slug" element={<PretoriaRestaurantPage />} />
               <Route path="/gluten-free/south-africa/cape-town/stellenbosch" element={<GlutenFreeStellenbosch />} />
+              <Route path="/gluten-free/south-africa/cape-town/stellenbosch/:slug" element={<StellenboschRestaurantPage />} />
               <Route path="/gluten-free/south-africa/cape-town/franschhoek" element={<GlutenFreeFranschhoek />} />
               <Route path="/gluten-free/south-africa/cape-town/street-food" element={<CapeTownStreetFood />} />
               <Route path="/gluten-free/south-africa/cape-town/bakeries" element={<CapeTownBakeries />} />
