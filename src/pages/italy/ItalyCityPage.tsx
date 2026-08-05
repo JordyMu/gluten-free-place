@@ -13,6 +13,7 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
 import { SEOHead } from "@/components/SEOHead";
 import { cities } from "@/pages/Italy";
 
@@ -185,17 +186,10 @@ const ItalyCityPage = () => {
               Real reviews from gluten-free diners. Verified listings. Zero guesswork.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                variant="outline"
+              <FindNearMeButton
+                city={city.name}
                 className="border-white bg-transparent !text-white hover:bg-white/10"
-                onClick={() => {
-                  document.getElementById("restaurants")?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                <Search className="w-5 h-5 mr-2" />
-                Browse {city.restaurants.length} Restaurants
-              </Button>
+              />
               <AddRestaurantDialog
                 city={city.name}
                 triggerClassName="border-white bg-transparent !text-white hover:bg-white/10"
