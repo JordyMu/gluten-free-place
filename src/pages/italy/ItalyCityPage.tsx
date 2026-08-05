@@ -69,9 +69,12 @@ const ItalyCityPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const city = cities.find((c) => c.slug === slug);
 
-  const [menuFilter, setMenuFilter] = useState<string>("all");
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({ kitchen: true, cuisine: true, badges: true });
 
   useEffect(() => {
     window.scrollTo(0, 0);
