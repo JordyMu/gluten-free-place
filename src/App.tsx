@@ -12,8 +12,10 @@ import SiteFooter from "@/components/layout/SiteFooter";
 import { AuthProvider } from "@/contexts/AuthContext";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 
-// Lazy load all pages for code-splitting
-const Index = lazyWithRetry(() => import("./pages/Index"));
+// Home page is bundled eagerly so the landing route can never fail on a stale chunk
+import Index from "./pages/Index";
+
+// Lazy load all other pages for code-splitting
 const Countries = lazyWithRetry(() => import("./pages/Countries"));
 const AllCountries = lazyWithRetry(() => import("./pages/AllCountries"));
 const Italy = lazyWithRetry(() => import("./pages/Italy"));

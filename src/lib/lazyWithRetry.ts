@@ -37,7 +37,10 @@ export function lazyWithRetry<T extends ComponentType<any>>(
               /* ignore */
             }
           }
-          window.location.reload();
+          // Cache-bust the document so we don't get the same stale index.html
+          const url = new URL(window.location.href);
+          url.searchParams.set("__r", String(Date.now()));
+          window.location.replace(url.toString());
           // Keep the promise pending while the page reloads.
           return await new Promise<{ default: T }>(() => {});
         }
