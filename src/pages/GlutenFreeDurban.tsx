@@ -424,7 +424,7 @@ const GlutenFreeDurban = () => {
                             )}
                             <Link 
                               to={`/gluten-free/south-africa/durban/${restaurant.slug}`}
-                              className="text-xl font-bold text-gray-900 hover:text-blue-600 transition-colors"
+                              className="text-xl font-bold text-gray-900 hover:text-red-600 hover:underline hover:overline transition-colors"
                             >
                               {restaurant.name}
                             </Link>
