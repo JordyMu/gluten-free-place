@@ -849,8 +849,8 @@ const GlutenFreeCapeTown = () => {
                         </div>
                       )}
 
-                      <div className="flex gap-3">
-                        <Button asChild className="bg-orange-600 hover:bg-orange-700">
+                      <div className="flex flex-wrap gap-3">
+                        <Button asChild className="bg-red-700 hover:bg-red-800 text-white">
                           <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                             <Navigation className="w-4 h-4 mr-2" />
                             Get Directions
@@ -862,6 +862,14 @@ const GlutenFreeCapeTown = () => {
                               <Globe className="w-4 h-4 mr-2" />
                               Website
                             </a>
+                          </Button>
+                        )}
+                        {getCapeTownSlug(restaurant.name) && (
+                          <Button variant="outline" asChild>
+                            <Link to={`/gluten-free/south-africa/cape-town/${getCapeTownSlug(restaurant.name)}`}>
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Link>
                           </Button>
                         )}
                       </div>
