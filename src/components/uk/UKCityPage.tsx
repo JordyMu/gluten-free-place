@@ -172,8 +172,6 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
       </section>
 
       <main className="container mx-auto px-4 py-8">
-        <CityCategoryNav />
-
         <section className="mb-10">
           <Card className="bg-gradient-to-r from-blue-50 to-red-50 border-blue-200">
             <CardContent className="p-6">
@@ -187,6 +185,8 @@ const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }:
             </CardContent>
           </Card>
         </section>
+
+        <CityCategoryNav />
 
         <section className="mb-12">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
