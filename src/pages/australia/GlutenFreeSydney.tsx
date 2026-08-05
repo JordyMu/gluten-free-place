@@ -823,6 +823,12 @@ const GlutenFreeSydney = () => {
                               Website
                             </Button>
                           )}
+                          <Link to={`/gluten-free/australia/sydney/${r.slug}`}>
+                            <Button type="button" variant="outline">
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Button>
+                          </Link>
                         </div>
 
                         <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
