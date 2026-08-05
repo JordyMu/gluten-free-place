@@ -300,6 +300,12 @@ const GlutenFreeStellenbosch = () => {
                               Website
                             </a>
                           </Button>
+                          <Link to={`/gluten-free/south-africa/cape-town/stellenbosch/${restaurant.slug}`}>
+                            <Button size="sm" variant="outline">
+                              <BookOpen className="w-4 h-4 mr-1" />
+                              View Menu
+                            </Button>
+                          </Link>
                         </div>
                       </CardContent>
                     </Card>
