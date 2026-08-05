@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { SEOHead } from "@/components/SEOHead";
+import { CityCategoryNav } from "@/components/city/CityCategoryNav";
 
 const GlutenFreeStellenbosch = () => {
   const stellenboschRestaurants = [
@@ -166,6 +167,8 @@ const GlutenFreeStellenbosch = () => {
             </ul>
           </CardContent>
         </Card>
+
+        <CityCategoryNav basePath="/gluten-free/south-africa/cape-town" />
 
         {/* Restaurants List */}
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
