@@ -252,22 +252,8 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                     </div>
                   )}
 
-                  <div className="space-y-2 text-sm text-gray-600 mb-4">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-gray-400" />
-                      <span>{restaurant.address}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Clock className="w-4 h-4 text-gray-400" />
-                      <span>{restaurant.hours}</span>
-                    </div>
-                    {restaurant.phone && (
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                        <a href={`tel:${restaurant.phone}`} className="hover:text-red-700">{restaurant.phone}</a>
-                      </div>
-                    )}
-                  </div>
+
+
 
                   <div className="flex flex-wrap gap-3">
                     <Button
