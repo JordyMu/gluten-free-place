@@ -13,6 +13,7 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { pretoriaRestaurants, Restaurant } from "@/data/pretoriaRestaurants";
 import pretoriaUnionBuildingsBg from "@/assets/pretoria-union-buildings.jpg";
 import { SEOHead } from "@/components/SEOHead";
+import { CityCategoryNav } from "@/components/city/CityCategoryNav";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 
 interface RestaurantWithDistance extends Restaurant {
@@ -346,6 +347,8 @@ const GlutenFreePretoria = () => {
           </Card>
         </section>
 
+        <CityCategoryNav />
+
         {/* Best Restaurants Banner */}
         <section className="mb-10">
           <Card className="bg-gradient-to-r from-amber-50 to-orange-50 border-amber-200">
@@ -364,35 +367,6 @@ const GlutenFreePretoria = () => {
           </Card>
         </section>
 
-        {/* Browse by Category */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            🍽️ Browse by Category
-          </h2>
-          <p className="text-gray-600 mb-4">
-            Find exactly what you're looking for with our curated category pages.
-          </p>
-          <div className="grid grid-cols-2 gap-2">
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-green-200 bg-gradient-to-r from-green-50 to-emerald-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🛒</span>
-                <div>
-                  <h3 className="text-sm font-medium text-green-900">Grocery Stores</h3>
-                  <p className="text-green-700 text-[11px]">GF products & supplies</p>
-                </div>
-              </CardContent>
-            </Card>
-            <Card className="cursor-pointer hover:shadow-sm transition-shadow border border-orange-200 bg-gradient-to-r from-orange-50 to-red-50">
-              <CardContent className="p-2 flex items-center gap-2">
-                <span className="text-lg">🌮</span>
-                <div>
-                  <h3 className="text-sm font-medium text-orange-900">Street Food</h3>
-                  <p className="text-orange-700 text-[11px]">Quick bites & markets</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
 
 
         {/* Filters */}
