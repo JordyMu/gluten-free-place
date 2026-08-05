@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
-import { RestaurantReviews } from "@/components/reviews/RestaurantReviews";
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -479,14 +478,6 @@ const GlutenFreePretoria = () => {
                       </Link>
                     </div>
 
-                    {/* Reviews Section */}
-                    <div className="border-t pt-4 mt-2">
-                      <RestaurantReviews
-                        restaurantName={restaurant.name}
-                        restaurantCountry="south-africa"
-                        restaurantCity="pretoria"
-                      />
-                    </div>
                   </div>
                 </CardContent>
               </Card>
