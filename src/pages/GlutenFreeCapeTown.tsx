@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Award, Shield, Search, Plus, Filter, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -13,6 +13,10 @@ import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
+import { capeTownRestaurants } from "@/data/capeTownRestaurants";
+
+const getCapeTownSlug = (name: string) =>
+  capeTownRestaurants.find((r) => r.name.toLowerCase() === name.toLowerCase())?.slug;
 
 interface Restaurant {
   name: string;
@@ -845,8 +849,8 @@ const GlutenFreeCapeTown = () => {
                         </div>
                       )}
 
-                      <div className="flex gap-3">
-                        <Button asChild className="bg-orange-600 hover:bg-orange-700">
+                      <div className="flex flex-wrap gap-3">
+                        <Button asChild className="bg-red-700 hover:bg-red-800 text-white">
                           <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                             <Navigation className="w-4 h-4 mr-2" />
                             Get Directions
@@ -858,6 +862,14 @@ const GlutenFreeCapeTown = () => {
                               <Globe className="w-4 h-4 mr-2" />
                               Website
                             </a>
+                          </Button>
+                        )}
+                        {getCapeTownSlug(restaurant.name) && (
+                          <Button variant="outline" asChild>
+                            <Link to={`/gluten-free/south-africa/cape-town/${getCapeTownSlug(restaurant.name)}`}>
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Link>
                           </Button>
                         )}
                       </div>
