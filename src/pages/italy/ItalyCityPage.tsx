@@ -2,7 +2,7 @@ import { useState, useMemo, useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import {
   MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation,
-  MessageCircle, Award, Shield, Search, Filter,
+  MessageCircle, Award, Shield, Search, Filter, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -283,6 +283,13 @@ const ItalyCityPage = () => {
             <div className="grid gap-6">
               {filteredRestaurants.map((r, index) => {
                 const nearbyItems = r.nearby && r.nearby.length > 0 ? r.nearby : getDefaultNearbyItems(city.slug);
+                const rSlug = r.name
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[\u0300-\u036f]/g, "")
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/^-+|-+$/g, "");
+                const detailPath = `/gluten-free/italy/${city.slug}/${rSlug}`;
 
                 return (
                 <Card key={index} className="overflow-hidden border-2 border-red-200 rounded-xl bg-white shadow-sm transition-shadow hover:shadow-md">
@@ -291,12 +298,7 @@ const ItalyCityPage = () => {
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           {r.icon && <span className="text-2xl">{r.icon}</span>}
                           <Link
-                            to={`/gluten-free/italy/${city.slug}/${r.name
-                              .toLowerCase()
-                              .normalize("NFD")
-                              .replace(/[\u0300-\u036f]/g, "")
-                              .replace(/[^a-z0-9]+/g, "-")
-                              .replace(/^-+|-+$/g, "")}`}
+                            to={detailPath}
                             className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
                           >
                             {r.name}
@@ -374,6 +376,7 @@ const ItalyCityPage = () => {
                         <div className="flex gap-3 flex-wrap">
                           {r.directionsUrl && (
                             <Button
+                              type="button"
                               onClick={() => openExternalLink(r.directionsUrl!)}
                               className="bg-red-700 hover:bg-red-800"
                             >
@@ -383,6 +386,7 @@ const ItalyCityPage = () => {
                           )}
                           {r.website && (
                             <Button
+                              type="button"
                               variant="outline"
                               onClick={() => openExternalLink(getExternalLink(r.website)!)}
                             >
@@ -390,6 +394,12 @@ const ItalyCityPage = () => {
                               Website
                             </Button>
                           )}
+                          <Button type="button" variant="outline" asChild>
+                            <Link to={detailPath}>
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Link>
+                          </Button>
                         </div>
 
                         {nearbyItems.length > 0 && (
