@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
-  MessageCircle, Navigation, Phone, Search, Shield, Star,
+  MessageCircle, Navigation, Phone, Search, Shield, Star, BookOpen,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -823,6 +823,12 @@ const GlutenFreeSydney = () => {
                               Website
                             </Button>
                           )}
+                          <Link to={`/gluten-free/australia/sydney/${r.slug}`}>
+                            <Button type="button" variant="outline">
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Button>
+                          </Link>
                         </div>
 
                         <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
