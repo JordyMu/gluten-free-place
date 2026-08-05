@@ -59,6 +59,11 @@ const renderStarRating = (rating: number) => (
   </div>
 );
 
+const openExternalLink = (url: string) => {
+  const normalized = url.startsWith("http") ? url : `https://${url}`;
+  window.open(normalized, "_blank", "noopener,noreferrer");
+};
+
 const UKCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems }: UKCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilter, setMenuFilter] = useState<string>("all");
