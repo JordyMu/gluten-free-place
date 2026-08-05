@@ -368,7 +368,30 @@ const GlutenFreePerth = () => {
                           {getMenuTypeBadge(r.menuType)}
                         </div>
 
-{r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
+                        <div className="space-y-2 text-sm text-gray-600 mb-4">
+                          {r.address && (
+                            <div className="flex items-center gap-2">
+                              <MapPin className="w-4 h-4 text-gray-400" />
+                              <span>{r.address}</span>
+                            </div>
+                          )}
+                          {r.hours && (
+                            <div className="flex items-center gap-2">
+                              <Clock className="w-4 h-4 text-gray-400" />
+                              <span>{r.hours}</span>
+                            </div>
+                          )}
+                          {r.phone && (
+                            <div className="flex items-center gap-2">
+                              <Phone className="w-4 h-4 text-gray-400" />
+                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-blue-700">
+                                {r.phone}
+                              </a>
+                            </div>
+                          )}
+                        </div>
+
+                        {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
 
                         {r.menuHighlights && r.menuHighlights.length > 0 && (
                           <div className="mb-4">
@@ -390,22 +413,6 @@ const GlutenFreePerth = () => {
                             </div>
                           </div>
                         )}
-                          )}
-                          {r.hours && (
-                            <div className="flex items-center gap-2">
-                              <Clock className="w-4 h-4 text-gray-400" />
-                              <span>{r.hours}</span>
-                            </div>
-                          )}
-                          {r.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-blue-700">
-                                {r.phone}
-                              </a>
-                            </div>
-                          )}
-                        </div>
 
                         <div className="flex flex-wrap gap-3">
                           {r.directionsUrl && (
