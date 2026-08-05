@@ -1,6 +1,7 @@
 import { useState, useMemo } from "react";
 import { Link } from "react-router-dom";
-import { ArrowLeft, MapPin, Star, Clock, Globe, Phone, Award, Wine, Navigation, Heart, Search, Filter, Trophy } from "lucide-react";
+import { ArrowLeft, MapPin, Star, Clock, Globe, Phone, Award, Wine, Navigation, Heart, Search, Filter, Trophy, BookOpen } from "lucide-react";
+import { stellenboschRestaurants } from "@/data/stellenboschRestaurants";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
