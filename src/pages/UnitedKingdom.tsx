@@ -129,17 +129,33 @@ const UnitedKingdom = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cities.map((city, index) => (
               <Card key={city.name} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden" style={{ animationDelay: `${index * 0.1}s` }}>
-                <div className="relative overflow-hidden h-48">
-                  <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                    <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                    <span className="font-semibold text-sm">{city.rating}</span>
+                {city.route !== "#" ? (
+                  <Link to={city.route} className="block">
+                    <div className="relative overflow-hidden h-48">
+                      <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                        <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                        <span className="font-semibold text-sm">{city.rating}</span>
+                      </div>
+                      <div className="absolute bottom-4 left-4">
+                        <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                      </div>
+                    </div>
+                  </Link>
+                ) : (
+                  <div className="relative overflow-hidden h-48">
+                    <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                      <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                      <span className="font-semibold text-sm">{city.rating}</span>
+                    </div>
+                    <div className="absolute bottom-4 left-4">
+                      <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                    </div>
                   </div>
-                  <div className="absolute bottom-4 left-4">
-                    <h3 className="text-2xl font-bold text-white">{city.name}</h3>
-                  </div>
-                </div>
+                )}
                 <CardContent className="p-5">
                   <p className="text-gray-600 text-sm mb-3">{city.description}</p>
                   <div className="flex items-center text-blue-600 mb-3">
