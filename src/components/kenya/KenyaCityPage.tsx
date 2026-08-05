@@ -94,20 +94,44 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
     },
   ];
 
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    restaurants.forEach((r) => (r.cuisineTypes || []).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [restaurants]);
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: restaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: restaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    [restaurants]
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: restaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: restaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    [restaurants]
+  );
+
   const filteredRestaurants = useMemo(
     () =>
       restaurants.filter((restaurant) => {
+        const q = searchQuery.toLowerCase();
         const matchesSearch =
-          searchQuery === "" ||
-          restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          restaurant.cuisineTypes.some((cuisine) => cuisine.toLowerCase().includes(searchQuery.toLowerCase()));
-
-        const matchesMenu = menuFilter === "all" || restaurant.menuType === menuFilter;
-        const matchesSafety = safetyFilter === "all" || restaurant.celiacSafe === safetyFilter;
-
-        return matchesSearch && matchesMenu && matchesSafety;
+          q === "" ||
+          restaurant.name.toLowerCase().includes(q) ||
+          (restaurant.cuisineTypes || []).some((cuisine) => cuisine.toLowerCase().includes(q));
+        const matchesMenu = menuFilters.length === 0 || (!!restaurant.menuType && menuFilters.includes(restaurant.menuType));
+        const matchesSafety = safetyFilters.length === 0 || (!!restaurant.celiacSafe && safetyFilters.includes(restaurant.celiacSafe));
+        const matchesCuisine = cuisineFilters.length === 0 || (restaurant.cuisineTypes || []).some((c) => cuisineFilters.includes(c));
+        return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
       }),
-    [restaurants, searchQuery, menuFilter, safetyFilter]
+    [restaurants, searchQuery, menuFilters, safetyFilters, cuisineFilters]
   );
 
   return (
