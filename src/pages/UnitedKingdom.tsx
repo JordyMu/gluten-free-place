@@ -46,7 +46,7 @@ const UnitedKingdom = () => {
     { name: "London", image: "photo-1513635269975-59663e0ac1ad", places: 30, rating: 4.7, description: "World-class GF bakeries, fish & chip shops with dedicated fryers, and fine dining", route: "/gluten-free/united-kingdom/london", highlights: ["Libby's", "Wicked Fish", "Los Mochis"] },
     { name: "Edinburgh", image: "photo-1506377585622-bedcbb027afc", places: 6, rating: 4.7, description: "Dedicated GF cafes, Brazilian street food, and Scottish classics made celiac-safe", route: "/gluten-free/united-kingdom/edinburgh", highlights: ["Sugar Daddy's", "Tupiniquim", "GF Kitchen"] },
     { name: "Manchester", image: "photo-1515586838455-8f8f940d6853", places: 2, rating: 4.6, description: "Trendy food scene with GF pizza, plant-based comfort food, and more", route: "/gluten-free/united-kingdom/manchester", highlights: ["Rudy's Pizza", "Wholesome Junkies"] },
-    { name: "Birmingham", image: "photo-1589561253898-768105ca91a8", places: 2, rating: 4.5, description: "Growing GF scene with Italian pasta and creative veggie cafes", route: "/gluten-free/united-kingdom/birmingham", highlights: ["Pasta di Piazza", "Warehouse Cafe"] },
+    { name: "Birmingham", image: "/images/birmingham-city.webp?v=2", places: 2, rating: 4.5, description: "Growing GF scene with Italian pasta and creative veggie cafes", route: "/gluten-free/united-kingdom/birmingham", highlights: ["Pasta di Piazza", "Warehouse Cafe"] },
     { name: "Glasgow", image: "photo-1580237072617-771c3ecc4a24", places: 3, rating: 4.4, description: "South Indian cuisine and Vietnamese with naturally GF dishes", route: "#", highlights: ["Dakhin", "Madurai", "Pho"] },
     { name: "Bristol", image: "photo-1567359781514-3b964e2b04d6", places: 1, rating: 4.5, description: "Creative food scene with GF pancakes and harbourside dining", route: "#", highlights: ["The Pancake Man"] },
     { name: "Brighton", image: "photo-1534655378221-6e0e46e1e76e", places: 1, rating: 4.3, description: "Seaside city with GF buckwheat galettes and health-conscious cafes", route: "#", highlights: ["Crepeaffaire"] },
@@ -132,7 +132,7 @@ const UnitedKingdom = () => {
                 {city.route !== "#" ? (
                   <Link to={city.route} className="block">
                     <div className="relative overflow-hidden h-48">
-                      <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                      <img src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                       <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
                         <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
@@ -145,7 +145,7 @@ const UnitedKingdom = () => {
                   </Link>
                 ) : (
                   <div className="relative overflow-hidden h-48">
-                    <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
+                    <img src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free restaurants in ${city.name}`} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
                       <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
