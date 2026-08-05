@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -223,7 +223,7 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
                   </div>
 
                   <div className="flex flex-wrap gap-3">
-                    <Button asChild className="bg-green-700 hover:bg-green-800">
+                    <Button asChild className="bg-red-700 hover:bg-red-800 text-white">
                       <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                         <Navigation className="w-4 h-4 mr-2" />
                         Get Directions
@@ -241,6 +241,12 @@ const KenyaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems
                         </a>
                       </Button>
                     )}
+                    <Button variant="outline" asChild>
+                      <Link to={`/gluten-free/kenya/${citySlug}/${restaurant.slug}`}>
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        View Menu
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
