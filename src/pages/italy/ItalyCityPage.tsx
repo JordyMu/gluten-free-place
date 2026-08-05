@@ -102,19 +102,49 @@ const ItalyCityPage = () => {
     ];
   }, [city]);
 
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
+
+  const cuisineOptions = useMemo(() => {
+    if (!city) return [];
+    const counts = new Map<string, number>();
+    city.restaurants.forEach((r) => (r.cuisineTypes || []).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [city]);
+
+  const menuOptions = useMemo(() => {
+    if (!city) return [];
+    return [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: city.restaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: city.restaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ];
+  }, [city]);
+
+  const safetyOptions = useMemo(() => {
+    if (!city) return [];
+    return [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: city.restaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: city.restaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ];
+  }, [city]);
+
   const filteredRestaurants = useMemo(() => {
     if (!city) return [];
     return city.restaurants.filter((r) => {
-      const matchesSafety = safetyFilter === "all" || r.celiacSafe === safetyFilter;
-      const matchesMenu = menuFilter === "all" || r.menuType === menuFilter;
       const q = searchQuery.toLowerCase();
       const matchesSearch =
         q === "" ||
         r.name.toLowerCase().includes(q) ||
         (r.cuisineTypes || []).some((c) => c.toLowerCase().includes(q));
-      return matchesSafety && matchesMenu && matchesSearch;
+      const matchesMenu = menuFilters.length === 0 || (!!r.menuType && menuFilters.includes(r.menuType));
+      const matchesSafety = safetyFilters.length === 0 || (!!r.celiacSafe && safetyFilters.includes(r.celiacSafe));
+      const matchesCuisine = cuisineFilters.length === 0 || (r.cuisineTypes || []).some((c) => cuisineFilters.includes(c));
+      return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
     });
-  }, [city, safetyFilter, menuFilter, searchQuery]);
+  }, [city, searchQuery, menuFilters, safetyFilters, cuisineFilters]);
 
   if (!city) return <Navigate to="/italy" replace />;
 
