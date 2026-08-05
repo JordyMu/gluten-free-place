@@ -584,29 +584,6 @@ const GlutenFreeMelbourne = () => {
                           {getMenuTypeBadge(r.menuType)}
                         </div>
 
-                        {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
-
-                        {r.menuHighlights && r.menuHighlights.length > 0 && (
-                          <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {r.menuHighlights.map((m) => (
-                                <Badge key={m} variant="secondary" className="text-sm">{m}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {r.proTip && (
-                          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2">
-                              <MessageCircle className="w-4 h-4 text-amber-700" />
-                              <span className="font-medium text-amber-800">Pro Tip:</span>
-                              <span className="text-amber-700">{r.proTip}</span>
-                            </div>
-                          </div>
-                        )}
-
                         <div className="space-y-2 text-sm text-gray-600 mb-4">
                           {r.address && (
                             <div className="flex items-center gap-2">
@@ -629,6 +606,29 @@ const GlutenFreeMelbourne = () => {
                             </div>
                           )}
                         </div>
+
+                        {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
+
+                        {r.menuHighlights && r.menuHighlights.length > 0 && (
+                          <div className="mb-4">
+                            <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {r.menuHighlights.map((m) => (
+                                <Badge key={m} variant="secondary" className="text-sm">{m}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {r.proTip && (
+                          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                            <div className="flex items-center gap-2">
+                              <MessageCircle className="w-4 h-4 text-amber-700" />
+                              <span className="font-medium text-amber-800">Pro Tip:</span>
+                              <span className="text-amber-700">{r.proTip}</span>
+                            </div>
+                          </div>
+                        )}
 
                         <div className="flex flex-wrap gap-3">
                           {r.directionsUrl && (
