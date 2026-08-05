@@ -420,8 +420,25 @@ const GlutenFreePretoria = () => {
                       ))}
                     </div>
                     
+                    {/* Contact Info */}
+                    <div className="space-y-1.5 text-sm text-gray-600">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-4 h-4 mt-0.5 shrink-0" />
+                        <span>{restaurant.address}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Clock className="w-4 h-4 shrink-0" />
+                        <span>{restaurant.hours}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 shrink-0" />
+                        <span>{restaurant.phone}</span>
+                      </div>
+                    </div>
+
                     {/* Overview */}
                     <p className="text-gray-700">{restaurant.overview}</p>
+
                     
                     {/* Menu Highlights */}
                     <div className="flex flex-wrap gap-2">
