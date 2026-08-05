@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from "react";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, Award, Shield, Search, Plus, Filter, Trophy } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Heart, Award, Shield, Search, Plus, Filter, Trophy, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -491,7 +491,7 @@ const GlutenFreeDurban = () => {
                       </div>
 
                       <div className="flex flex-wrap gap-2">
-                        <Button size="sm" asChild>
+                        <Button size="sm" className="bg-red-700 hover:bg-red-800 text-white" asChild>
                           <a href={restaurant.directionsUrl} target="_blank" rel="noopener noreferrer">
                             <Navigation className="w-4 h-4 mr-1" />
                             Get Directions
@@ -507,10 +507,12 @@ const GlutenFreeDurban = () => {
                         )}
                         <Link to={`/gluten-free/south-africa/durban/${restaurant.slug}`}>
                           <Button size="sm" variant="outline">
-                            View Details
+                            <BookOpen className="w-4 h-4 mr-1" />
+                            View Menu
                           </Button>
                         </Link>
                       </div>
+
                     </div>
                   </div>
                 </CardContent>
