@@ -13,6 +13,7 @@ import {
   Accordion, AccordionContent, AccordionItem, AccordionTrigger,
 } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
 import { SEOHead } from "@/components/SEOHead";
 import { cities } from "@/pages/Italy";
 
