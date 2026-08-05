@@ -13,6 +13,10 @@ import tableMountainBg from "@/assets/cape-town-table-mountain.jpg";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
+import { capeTownRestaurants } from "@/data/capeTownRestaurants";
+
+const getCapeTownSlug = (name: string) =>
+  capeTownRestaurants.find((r) => r.name.toLowerCase() === name.toLowerCase())?.slug;
 
 interface Restaurant {
   name: string;
