@@ -115,7 +115,7 @@ const Kenya = () => {
     },
     {
       name: "Nakuru",
-      image: "photo-1516426122078-c23e76801",
+      image: "/images/nakuru-city.webp",
       places: nakuruRestaurants.length,
       rating: 4.3,
       description: "Rift Valley hub near flamingo lakes with charming local eateries and safari lodges",
@@ -242,7 +242,7 @@ const Kenya = () => {
                 {city.route !== "#" ? (
                   <Link to={city.route} className="block relative overflow-hidden h-48">
                     <img
-                      src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                      src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                       alt={`Gluten-free restaurants in ${city.name}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
@@ -258,7 +258,7 @@ const Kenya = () => {
                 ) : (
                   <div className="relative overflow-hidden h-48">
                     <img
-                      src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                      src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                       alt={`Gluten-free restaurants in ${city.name}`}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                     />
