@@ -69,10 +69,10 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
     }
   };
 
-  const ExploreButton = ({ countryName }: { countryName: string }) => {
-    const link = getCountryLink(countryName);
+  const countryLink = getCountryLink(country.name);
 
-    if (link === "#") {
+  const ExploreButton = ({ countryName }: { countryName: string }) => {
+    if (countryLink === "#") {
       return (
         <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
           Explore {countryName}
@@ -82,11 +82,22 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
     }
 
     return (
-      <Link to={link}>
+      <Link to={countryLink}>
         <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
           Explore {countryName}
           <ArrowRight className="h-4 w-4 ml-2" />
         </Button>
+      </Link>
+    );
+  };
+
+  const ImageWrapper = ({ children }: { children: React.ReactNode }) => {
+    if (countryLink === "#") {
+      return <>{children}</>;
+    }
+    return (
+      <Link to={countryLink} className="block">
+        {children}
       </Link>
     );
   };
