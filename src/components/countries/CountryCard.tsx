@@ -92,7 +92,7 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
     );
   };
 
-  const ImageWrapper = ({ children }: { children: React.ReactNode }) => {
+  const ImageWrapper = ({ children }: { children: ReactNode }) => {
     if (countryLink === "#") {
       return <>{children}</>;
     }
