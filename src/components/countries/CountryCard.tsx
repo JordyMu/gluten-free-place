@@ -107,18 +107,20 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
       className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in`}
       style={{ animationDelay: `${index * 0.1}s` }}
     >
-      <div className="relative overflow-hidden rounded-t-lg">
-        <img
-          src={country.isLocal ? country.image : `https://images.unsplash.com/${country.image}?auto=format&fit=crop&w=600&q=80`}
-          alt={country.name}
-          className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-        />
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-          <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-          <span className="font-semibold text-sm">{country.rating}</span>
+      <ImageWrapper>
+        <div className="relative overflow-hidden rounded-t-lg">
+          <img
+            src={country.isLocal ? country.image : `https://images.unsplash.com/${country.image}?auto=format&fit=crop&w=600&q=80`}
+            alt={country.name}
+            className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+          />
+          <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+            <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+            <span className="font-semibold text-sm">{country.rating}</span>
+          </div>
+          <Badge className="absolute top-4 left-4 bg-blue-500 text-white border-0">{country.code}</Badge>
         </div>
-        <Badge className="absolute top-4 left-4 bg-blue-500 text-white border-0">{country.code}</Badge>
-      </div>
+      </ImageWrapper>
       <CardContent className="p-6">
         <h3 className="text-2xl font-bold mb-2 text-gray-900">{country.name}</h3>
         <p className="text-gray-600 mb-4">{country.description}</p>
@@ -138,7 +140,6 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
           <p className="text-sm text-gray-500 mb-2">Top Cities:</p>
           <div className="flex flex-wrap gap-1">
             {country.topCities.map((city) => {
-              const countryLink = getCountryLink(country.name);
               let cityLink = "#";
               
               // South Africa has nested city routes
