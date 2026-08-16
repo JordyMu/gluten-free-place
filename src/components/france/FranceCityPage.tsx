@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 
@@ -143,6 +144,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
             Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {cityName}.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <FindNearMeButton city={cityName} className="border-white bg-transparent !text-white hover:bg-white/10" />
             <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">{restaurants.length} listed restaurants</Badge>
             <AddRestaurantDialog city={cityName} triggerClassName="border-white bg-transparent !text-white hover:bg-white/10" />
           </div>
