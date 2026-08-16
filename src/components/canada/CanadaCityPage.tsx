@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Checkbox } from "@/components/ui/checkbox";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { FindNearMeButton } from "@/components/city/FindNearMeButton";
 import { RelatedCities } from "@/components/internal-linking/RelatedCities";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 
