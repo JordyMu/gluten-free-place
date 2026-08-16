@@ -341,22 +341,24 @@ const SpainCityPage = () => {
                           )}
 
                           <div className="flex flex-wrap gap-2">
+                            <Button
+                              size="sm"
+                              className="bg-red-700 hover:bg-red-800 text-white"
+                              onClick={() => openExternalLink(r.directionsUrl)}
+                            >
+                              <Navigation className="w-4 h-4 mr-2" />
+                              Get Directions
+                            </Button>
                             <Link to={restaurantPath(r.name)}>
                               <Button
                                 size="sm"
-                                className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600"
+                                variant="outline"
+                                className="border-red-700 text-red-700 hover:bg-red-50"
                               >
-                                View Details
+                                <BookOpen className="w-4 h-4 mr-2" />
+                                View Menu
                               </Button>
                             </Link>
-                            <Button
-                              size="sm"
-                              variant="outline"
-                              onClick={() => openExternalLink(r.directionsUrl)}
-                            >
-                              <Navigation className="w-4 h-4 mr-1" />
-                              Directions
-                            </Button>
                             {r.website && (
                               <Button
                                 size="sm"
