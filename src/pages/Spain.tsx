@@ -298,7 +298,7 @@ export const spainRestaurants: SpainRestaurant[] = [
     city: "Seville",
     specialty: "Dedicated GF bakery in central Sevilla",
     address: "C. Zaragoza, 64, Casco Antiguo, 41001 Sevilla, Spain",
-    hours: "Mon–Sat: 12:00 PM – 4:00 PM, 7:00 PM – 11:30 PM",
+    hours: "Tue–Sat: 12:00 PM – 4:00 PM, 7:00 PM – 11:30 PM (Sun–Mon closed)",
     phone: "+34 854 73 70 39",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Senora+Pan+Sevilla",
     cuisineTypes: ["Bakery"],
