@@ -65,7 +65,7 @@ export const bordeauxRestaurants: Restaurant[] = [
     city: "Bordeaux",
     country: "France",
     hours: "",
-    phone: "",
+    phone: r.phone ?? "",
     website: "",
     directionsUrl: `https://maps.google.com/?q=${encodeURIComponent(r.name + " Bordeaux")}`,
     specialty: r.specialty,
