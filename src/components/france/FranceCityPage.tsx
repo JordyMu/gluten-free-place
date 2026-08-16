@@ -202,6 +202,25 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                         {getMenuTypeBadge(restaurant.menuType)}
                       </div>
 
+                      <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="flex items-center gap-2">
+                          <MapPin className="w-4 h-4 text-gray-400" />
+                          <span>{restaurant.address}</span>
+                        </div>
+                        {restaurant.hours && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="w-4 h-4 text-gray-400" />
+                            <span>{restaurant.hours}</span>
+                          </div>
+                        )}
+                        {restaurant.phone && (
+                          <div className="flex items-center gap-2">
+                            <Phone className="w-4 h-4 text-gray-400" />
+                            <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">{restaurant.phone}</a>
+                          </div>
+                        )}
+                      </div>
+
                       <p className="text-gray-700 mb-4">{restaurant.overview}</p>
 
                       {restaurant.menuHighlights.length > 0 && (
@@ -224,25 +243,6 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                           </div>
                         </div>
                       )}
-
-                      <div className="space-y-2 text-sm text-gray-600 mb-4">
-                        <div className="flex items-center gap-2">
-                          <MapPin className="w-4 h-4 text-gray-400" />
-                          <span>{restaurant.address}</span>
-                        </div>
-                        {restaurant.hours && (
-                          <div className="flex items-center gap-2">
-                            <Clock className="w-4 h-4 text-gray-400" />
-                            <span>{restaurant.hours}</span>
-                          </div>
-                        )}
-                        {restaurant.phone && (
-                          <div className="flex items-center gap-2">
-                            <Phone className="w-4 h-4 text-gray-400" />
-                            <a href={`tel:${restaurant.phone}`} className="hover:text-blue-700">{restaurant.phone}</a>
-                          </div>
-                        )}
-                      </div>
 
                       <div className="flex flex-wrap gap-3">
                         <Button
