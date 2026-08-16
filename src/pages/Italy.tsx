@@ -858,7 +858,7 @@ export const cities: ItalyCity[] = [
         phone: "+39 055 8122 622",
         website: "www.osteriadellosgrano.it",
         specialty: "Dedicated GF Tuscan osteria",
-        overview: "A fully gluten-free osteria near Santa Croce serving classic Tuscan dishes — handmade pasta, grilled meats and Florentine comfort food — in a dedicated celiac-safe kitchen.",
+        overview: "A fully gluten-free osteria near Santa Croce serving handmade pasta, grilled meats and classic Tuscan comfort food.",
         menuHighlights: ["Handmade Pici (GF)", "Bistecca alla Fiorentina", "Tiramisù (GF)"],
         proTip: "Book ahead for dinner — the small dining room fills up fast, especially on weekends.",
         icon: "🍷",
