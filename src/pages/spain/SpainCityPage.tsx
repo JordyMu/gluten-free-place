@@ -349,6 +349,17 @@ const SpainCityPage = () => {
                               <Navigation className="w-4 h-4 mr-2" />
                               Get Directions
                             </Button>
+                            {r.website && (
+                              <Button
+                                size="sm"
+                                variant="outline"
+                                className="border-red-700 text-red-700 hover:bg-red-50"
+                                onClick={() => openExternalLink(getExternalLink(r.website)!)}
+                              >
+                                <Globe className="w-4 h-4 mr-2" />
+                                Website
+                              </Button>
+                            )}
                             <Link to={restaurantPath(r.name)}>
                               <Button
                                 size="sm"
@@ -359,16 +370,6 @@ const SpainCityPage = () => {
                                 View Menu
                               </Button>
                             </Link>
-                            {r.website && (
-                              <Button
-                                size="sm"
-                                variant="outline"
-                                onClick={() => openExternalLink(getExternalLink(r.website)!)}
-                              >
-                                <ExternalLink className="w-4 h-4 mr-1" />
-                                Website
-                              </Button>
-                            )}
                           </div>
 
                           <div className="mt-4">
