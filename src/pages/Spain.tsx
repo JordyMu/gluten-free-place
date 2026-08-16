@@ -578,6 +578,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     city: "Valencia",
     specialty: "Dedicated GF bakery — Valencia branch",
     address: "C/ del Convent de Sta. Clara, 12, 46002 València",
+    hours: "Daily: 8:00 AM – 8:30 PM",
+    phone: "+34 961 08 46 84",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Sana+Locura+Valencia",
     cuisineTypes: ["Bakery", "Pastry"],
     celiacSafe: "dedicated-facility",
