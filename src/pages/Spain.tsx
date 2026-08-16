@@ -453,6 +453,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     city: "Valencia",
     specialty: "100% gluten-free shop and bakery in central Valencia",
     address: "C/ de Moratín, 13, 46002 València",
+    hours: "Mon–Sat: 9:30 AM – 4:00 PM",
+    phone: "+34 963 43 00 20",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Berguna+Gluten+Free+Valencia",
     cuisineTypes: ["Bakery", "Shop"],
     celiacSafe: "dedicated-facility",
