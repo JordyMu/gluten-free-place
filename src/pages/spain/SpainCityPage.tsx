@@ -68,8 +68,15 @@ const SpainCityPage = () => {
   const meta = slug ? CITY_META[slug.toLowerCase()] : undefined;
 
   const [searchQuery, setSearchQuery] = useState("");
-  const [menuFilter, setMenuFilter] = useState<string>("all");
-  const [safetyFilter, setSafetyFilter] = useState<string>("all");
+  const [menuFilters, setMenuFilters] = useState<string[]>([]);
+  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
+  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
+  const [showAllCuisines, setShowAllCuisines] = useState(false);
+  const [openFilterSections, setOpenFilterSections] = useState({ kitchen: true, cuisine: true, badges: true });
+
+  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
+    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -82,19 +89,46 @@ const SpainCityPage = () => {
       .sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
   }, [meta]);
 
+  const cuisineOptions = useMemo(() => {
+    const counts = new Map<string, number>();
+    restaurants.forEach((r) => (r.cuisineTypes || []).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
+    return Array.from(counts.entries())
+      .map(([label, count]) => ({ value: label, label, count }))
+      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
+  }, [restaurants]);
+
+  const menuOptions = useMemo(
+    () => [
+      { value: "fully-gluten-free", label: "100% Gluten-Free", count: restaurants.filter((r) => r.menuType === "fully-gluten-free").length },
+      { value: "mixed-menu", label: "GF Options Available", count: restaurants.filter((r) => r.menuType === "mixed-menu").length },
+    ],
+    [restaurants]
+  );
+
+  const safetyOptions = useMemo(
+    () => [
+      { value: "dedicated-facility", label: "Dedicated GF Facility", count: restaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
+      { value: "protocols-in-place", label: "Celiac Protocols", count: restaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
+    ],
+    [restaurants]
+  );
+
   const filteredRestaurants = useMemo(
     () =>
       restaurants.filter((r) => {
+        const q = searchQuery.toLowerCase();
         const matchesSearch =
-          searchQuery === "" ||
-          r.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          r.cuisineTypes.some((c) => c.toLowerCase().includes(searchQuery.toLowerCase()));
-        const matchesMenu = menuFilter === "all" || r.menuType === menuFilter;
-        const matchesSafety = safetyFilter === "all" || r.celiacSafe === safetyFilter;
-        return matchesSearch && matchesMenu && matchesSafety;
+          q === "" ||
+          r.name.toLowerCase().includes(q) ||
+          (r.cuisineTypes || []).some((c) => c.toLowerCase().includes(q));
+        const matchesMenu = menuFilters.length === 0 || (!!r.menuType && menuFilters.includes(r.menuType));
+        const matchesSafety = safetyFilters.length === 0 || (!!r.celiacSafe && safetyFilters.includes(r.celiacSafe));
+        const matchesCuisine = cuisineFilters.length === 0 || (r.cuisineTypes || []).some((c) => cuisineFilters.includes(c));
+        return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
       }),
-    [restaurants, searchQuery, menuFilter, safetyFilter]
+    [restaurants, searchQuery, menuFilters, safetyFilters, cuisineFilters]
   );
+
 
   if (!meta) return <Navigate to="/spain" replace />;
 
