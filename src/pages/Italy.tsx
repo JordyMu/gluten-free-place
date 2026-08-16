@@ -861,7 +861,7 @@ export const cities: ItalyCity[] = [
         overview: "A fully gluten-free osteria near Santa Croce serving classic Tuscan dishes — handmade pasta, grilled meats and Florentine comfort food — in a dedicated celiac-safe kitchen.",
         menuHighlights: ["Handmade Pici (GF)", "Bistecca alla Fiorentina", "Tiramisù (GF)"],
         proTip: "Book ahead for dinner — the small dining room fills up fast, especially on weekends.",
-
+        icon: "🍷",
         cuisineTypes: ["Tuscan", "Italian"],
         celiacSafe: "dedicated-facility",
         menuType: "fully-gluten-free",
