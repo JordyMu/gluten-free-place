@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
+import { ArrowLeft, Award, BookOpen, CheckCircle, Clock, Filter, Globe, MapPin, MessageCircle, Navigation, Phone, Search, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -247,7 +247,8 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                       <div className="flex flex-wrap gap-3">
                         <Button
                           type="button"
-                          className="bg-blue-700 hover:bg-blue-800"
+                          size="sm"
+                          className="bg-red-700 hover:bg-red-800 text-white"
                           onClick={() => openExternalLink(restaurant.directionsUrl)}
                         >
                           <Navigation className="w-4 h-4 mr-2" />
@@ -256,13 +257,26 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                         {restaurant.website && (
                           <Button
                             type="button"
+                            size="sm"
                             variant="outline"
+                            className="border-red-700 text-red-700 hover:bg-red-50"
                             onClick={() => openExternalLink(restaurant.website)}
                           >
                             <Globe className="w-4 h-4 mr-2" />
                             Website
                           </Button>
                         )}
+                        <Link to={`/gluten-free/france/${citySlug}/${restaurant.slug}`}>
+                          <Button
+                            type="button"
+                            size="sm"
+                            variant="outline"
+                            className="border-red-700 text-red-700 hover:bg-red-50"
+                          >
+                            <BookOpen className="w-4 h-4 mr-2" />
+                            View Menu
+                          </Button>
+                        </Link>
                       </div>
 
                       <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
