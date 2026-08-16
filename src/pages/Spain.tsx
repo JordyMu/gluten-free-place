@@ -59,6 +59,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.9,
     reviewCount: 567,
+    menuHighlights: ["Margherita Napoletana (GF)", "Diavola (GF)", "Tiramisù (GF)"],
+    proTip: "Order the daily special pizza — the GF dough is made fresh each morning.",
   },
   {
     name: "Jansana Gluten Free Bakery",
@@ -77,6 +79,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.8,
     reviewCount: 342,
+    menuHighlights: ["Pa de pagès (GF)", "Croissants (GF)", "Coca de vidre (GF)"],
+    proTip: "Arrive before noon for the freshest bread of the day.",
   },
   {
     name: "Cøliaki",
@@ -143,6 +147,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.6,
     reviewCount: 289,
+    menuHighlights: ["Kookies (GF)", "Chocolate babka (GF)", "Hot chocolate (GF)"],
+    proTip: "Ask staff to point out the clearly marked celiac-safe tray.",
   },
   {
     name: "YUMMY heladería",
@@ -177,6 +183,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.6,
     reviewCount: 198,
+    menuHighlights: ["GF pizza al taglio", "Fresh pasta (GF)", "Brownie (GF)"],
+    proTip: "Everything is 100% gluten-free, so you can order without asking.",
   },
   {
     name: "Messié Pizza Gluten Free Gràcia",
@@ -195,6 +203,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.7,
     reviewCount: 221,
+    menuHighlights: ["Neapolitan pizza (GF)", "Focaccia (GF)", "Cheesecake (GF)"],
+    proTip: "Book ahead on weekends — this small Gràcia spot fills fast.",
   },
   {
     name: "ARUKU",
@@ -213,6 +223,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.5,
     reviewCount: 156,
+    menuHighlights: ["GF ramen", "Gyoza (GF)", "Katsu curry (GF)"],
+    proTip: "Confirm the tamari-based broth when ordering ramen.",
   },
   {
     name: "Restaurante En Ville",
@@ -231,6 +243,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.6,
     reviewCount: 143,
+    menuHighlights: ["GF menú del día", "Duck confit (GF)", "Crème brûlée (GF)"],
+    proTip: "The three-course lunch menu has GF options every day.",
   },
   {
     name: "La Papita de Leche Take Away",
@@ -262,6 +276,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.7,
     reviewCount: 180,
+    menuHighlights: ["GF sandwiches", "Empanadas (GF)", "Carrot cake (GF)"],
+    proTip: "Great takeaway stop for GF picnic food near the Eixample.",
   },
   {
     name: "The Glutenfree Company",
@@ -303,6 +319,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.6,
     reviewCount: 152,
+    menuHighlights: ["Wholegrain GF pizza", "Vegan pizza (GF)", "GF salads"],
+    proTip: "Ask for the wholegrain GF base — it's their signature.",
   },
   {
     name: "Coffee and Toffee",
@@ -344,6 +362,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.7,
     reviewCount: 145,
+    menuHighlights: ["GF sourdough", "Ensaïmada (GF)", "Palmeras (GF)"],
+    proTip: "A full obrador — everything on site is gluten-free.",
   },
   {
     name: "Bloome by Sasha",
@@ -359,6 +379,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.5,
     reviewCount: 120,
+    menuHighlights: ["GF brunch plates", "Banana bread (GF)", "Specialty coffee"],
+    proTip: "Come early for brunch; the GF bakes sell out by midday.",
   },
   {
     name: "Restaurante Casa San Juan",
@@ -491,6 +513,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.7,
     reviewCount: 200,
+    menuHighlights: ["Margherita (GF)", "Bufalina (GF)", "Nutella pizza (GF)"],
+    proTip: "Separate GF prep area — mention celiac when ordering.",
   },
   {
     name: "SOLATZ by Saez",
@@ -519,6 +543,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.6,
     reviewCount: 220,
+    menuHighlights: ["GF croissant-donuts", "Chocolate bonbons", "Chocolate shakes"],
+    proTip: "Check the daily GF list at the counter before choosing.",
   },
   {
     name: "Backer sin gluten",
@@ -612,6 +638,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "fully-gluten-free",
     rating: 4.7,
     reviewCount: 160,
+    menuHighlights: ["GF baguettes", "Napolitanas (GF)", "Celiac-safe cakes"],
+    proTip: "100% gluten-free bakery — safe for the whole family.",
   },
   {
     name: "Sana Locura Gluten Free Bakery (Madrid)",
@@ -679,6 +707,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     menuType: "mixed-menu",
     rating: 4.5,
     reviewCount: 110,
+    menuHighlights: ["GF pancakes", "Avocado toast (GF)", "GF pastries"],
+    proTip: "Weekday mornings are quietest for a relaxed GF brunch.",
   },
   {
     name: "chök Pau | Pastelería sin gluten Valencia",
