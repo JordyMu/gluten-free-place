@@ -265,7 +265,7 @@ const Index = () => {
               Restaurants Near You
             </h1>
             <p className="text-xl text-gray-600 mb-10 leading-relaxed">
-              Find safe, delicious gluten-free restaurants and cafes around the world. 
+              Find safe, delicious gluten-free restaurants, cafes, bakeries and places to eat near you. 
               Travel with confidence and never worry about your next meal again.
             </p>
             
