@@ -718,6 +718,8 @@ export const spainRestaurants: SpainRestaurant[] = [
     city: "Valencia",
     specialty: "Premium gluten-free pastries — Valencia branch",
     address: "C/ de la Pau, 19, Ciutat Vella, 46003 València",
+    hours: "Daily: 9:00 AM – 9:00 PM",
+    phone: "+34 960 09 79 54",
     directionsUrl: "https://www.google.com/maps/search/?api=1&query=Chok+Pau+Valencia",
     cuisineTypes: ["Pastry", "Bakery"],
     celiacSafe: "dedicated-facility",
