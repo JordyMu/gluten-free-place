@@ -214,7 +214,7 @@ const FranceCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                       <div className="mb-3">
                         <div className="flex items-center gap-2 mb-1 flex-wrap">
                           <span className="text-2xl">{restaurant.icon}</span>
-                          <Link to={`/gluten-free/france/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-blue-700 transition-colors">
+                          <Link to={`/gluten-free/france/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-blue-700 hover:underline transition-colors">
                             {restaurant.name}
                           </Link>
                           {restaurant.featured && <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>}
