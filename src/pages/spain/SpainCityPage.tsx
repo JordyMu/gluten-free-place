@@ -290,6 +290,25 @@ const SpainCityPage = () => {
                             <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
                           </div>
 
+                          <div className="space-y-1.5 text-sm text-gray-700 mb-4">
+                            <div className="flex items-start gap-2">
+                              <MapPin className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                              <span>{r.address}</span>
+                            </div>
+                            {r.hours && (
+                              <div className="flex items-start gap-2">
+                                <Clock className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                                <span>{r.hours}</span>
+                              </div>
+                            )}
+                            {r.phone && (
+                              <div className="flex items-start gap-2">
+                                <Phone className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
+                                <span>{r.phone}</span>
+                              </div>
+                            )}
+                          </div>
+
                           <p className="text-gray-700 leading-relaxed mb-4">
                             {r.description ?? r.specialty}
                           </p>
@@ -320,25 +339,6 @@ const SpainCityPage = () => {
                               </p>
                             </div>
                           )}
-
-                          <div className="space-y-1.5 text-sm text-gray-700 mb-4">
-                            <div className="flex items-start gap-2">
-                              <MapPin className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                              <span>{r.address}</span>
-                            </div>
-                            {r.hours && (
-                              <div className="flex items-start gap-2">
-                                <Clock className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                                <span>{r.hours}</span>
-                              </div>
-                            )}
-                            {r.phone && (
-                              <div className="flex items-start gap-2">
-                                <Phone className="w-4 h-4 mt-0.5 text-red-600 shrink-0" />
-                                <span>{r.phone}</span>
-                              </div>
-                            )}
-                          </div>
 
                           <div className="flex flex-wrap gap-2">
                             <Link to={restaurantPath(r.name)}>
