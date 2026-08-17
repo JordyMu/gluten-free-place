@@ -48,7 +48,7 @@ export const bordeauxRestaurants: Restaurant[] = [
   ...([
     { name: "Glut", slug: "glut-bordeaux", specialty: "Gluten-Free • Bakery • Café", overview: "Dedicated gluten-free bakery and café with fresh bread, pastries and lunch options.", cuisines: ["Bakery", "Café", "Gluten-Free"], menuType: "fully-gluten-free", celiacSafe: "dedicated-facility", rating: 4.7, reviewCount: 320, score: 9, featured: true, address: "66 Rue Barreyre, 33300 Bordeaux, France", phone: "+33 7 69 80 16 12" },
     { name: "MAMACAM", slug: "mamacam-bordeaux", specialty: "Street Food • Healthy Bowls", overview: "Healthy street food spot serving bowls and quick bites with gluten-free options.", cuisines: ["Street Food", "Healthy"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.5, reviewCount: 180, score: 7, featured: false, address: "83 Cr Victor Hugo, 33000 Bordeaux, France", phone: "+33 9 87 03 83 97" },
-    { name: "Paulette", slug: "paulette-bordeaux", specialty: "Crêperie • Galettes", overview: "Traditional Breton crêperie with naturally gluten-free buckwheat galettes.", cuisines: ["Crêperie", "French"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.5, reviewCount: 220, score: 7, featured: false, address: "Bordeaux, France" },
+    { name: "Paulette", slug: "paulette-bordeaux", specialty: "Crêperie • Galettes", overview: "Traditional Breton crêperie with naturally gluten-free buckwheat galettes.", cuisines: ["Crêperie", "French"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.5, reviewCount: 220, score: 7, featured: false, address: "84 Rue du Loup, 33000 Bordeaux, France", phone: "+33 9 88 51 48 95", hours: "8 am–4:30 pm, Delivery\n\n12–2:30 pm, Takeaway\n\n8 am–4 pm" },
     { name: "La Crêperie", slug: "la-creperie-bordeaux", specialty: "Crêperie • Buckwheat Galettes", overview: "Classic crêperie offering savory buckwheat galettes (naturally GF) and sweet crêpes.", cuisines: ["Crêperie", "French"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.4, reviewCount: 150, score: 6, featured: false, address: "Bordeaux, France" },
     { name: "Crêperie La Belle Suzette | Bordeaux", slug: "creperie-la-belle-suzette-bordeaux", specialty: "Crêperie • Galettes", overview: "Charming crêperie known for its buckwheat galettes — a naturally GF Breton staple.", cuisines: ["Crêperie", "French"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.6, reviewCount: 260, score: 7, featured: true, address: "Bordeaux, France" },
     { name: "Nom d'Une Crêpe", slug: "nom-dune-crepe-bordeaux", specialty: "Crêperie • Galettes", overview: "Cozy crêperie offering fresh galettes made with 100% buckwheat flour.", cuisines: ["Crêperie", "French"], menuType: "mixed-menu", celiacSafe: "protocols-in-place", rating: 4.5, reviewCount: 140, score: 7, featured: false, address: "Bordeaux, France" },
@@ -64,7 +64,7 @@ export const bordeauxRestaurants: Restaurant[] = [
     address: r.address,
     city: "Bordeaux",
     country: "France",
-    hours: "",
+    hours: "hours" in r ? (r as any).hours : "",
     phone: "phone" in r ? (r as any).phone : "",
     website: "",
     directionsUrl: `https://maps.google.com/?q=${encodeURIComponent(r.name + " Bordeaux")}`,
