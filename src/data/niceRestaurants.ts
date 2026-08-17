@@ -392,10 +392,10 @@ export const niceRestaurants: Restaurant[] = [
   {
     "name": "Tigermilk Nice",
     "slug": "tigermilk-nice",
-    "address": "Nice, France",
+    "address": "9 Rue Gustave Deloye, 06000 Nice, France",
     "city": "Nice",
     "country": "France",
-    "hours": "Tue-Sun: 12:00PM - 11:00PM",
+    "hours": "12–2:30 pm, 6:30–10:30 pm",
     "phone": "",
     "website": "",
     "directionsUrl": "https://maps.google.com/?q=Tigermilk+Nice",
