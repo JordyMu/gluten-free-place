@@ -349,10 +349,10 @@ export const niceRestaurants: Restaurant[] = [
   {
     "name": "Le Kalice",
     "slug": "le-kalice",
-    "address": "Nice, France",
+    "address": "12B Rue Mascoinat, 06300 Nice, France",
     "city": "Nice",
     "country": "France",
-    "hours": "Mon-Fri: 11:00AM - 8:00PM",
+    "hours": "6:30 AM - 7:30 PM",
     "phone": "",
     "website": "",
     "directionsUrl": "https://maps.google.com/?q=Le+Kalice+Nice",
