@@ -435,10 +435,10 @@ export const niceRestaurants: Restaurant[] = [
   {
     "name": "Creperie Suzette",
     "slug": "creperie-suzette-nice",
-    "address": "Nice, France",
+    "address": "26 Rue Massena, 06000 Nice, France",
     "city": "Nice",
     "country": "France",
-    "hours": "Daily: 9:00AM - 10:00PM",
+    "hours": "Daily: 8:00AM–10:30PM",
     "phone": "",
     "website": "",
     "directionsUrl": "https://maps.google.com/?q=Creperie+Suzette+Nice",
