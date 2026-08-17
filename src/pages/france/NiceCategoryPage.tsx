@@ -250,6 +250,9 @@ const NiceCategoryPage = ({ category }: Props) => {
                         <div className="flex items-center gap-2">
                           <Clock className="w-4 h-4 text-gray-400" />
                           <span>{restaurant.hours}</span>
+                          {restaurant.temporarilyClosed && (
+                            <span className="text-red-600 font-semibold">Closed today</span>
+                          )}
                         </div>
                       )}
                       {restaurant.phone && (

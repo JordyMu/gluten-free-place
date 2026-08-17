@@ -46,6 +46,7 @@ interface RestaurantDetailPageProps {
     }[];
     staffKnowledgeScore?: number;
     celiacSafetyScore?: number;
+    temporarilyClosed?: boolean;
     services?: {
       dineIn?: { available: boolean; note: string };
       takeaway?: { available: boolean; note: string };
