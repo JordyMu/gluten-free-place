@@ -1366,6 +1366,7 @@ export const niceRestaurants: Restaurant[] = [
       { url: "/images/almond-butterfly-bistro-8.webp", caption: "Pantry" },
     ],
     "celiacSafetyScore": 8
+  },
   {
     "name": "Carrefour Market Nice Gambetta",
     "slug": "carrefour-market-nice-gambetta",
