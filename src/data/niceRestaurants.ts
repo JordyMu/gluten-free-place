@@ -1494,33 +1494,6 @@ export const niceRestaurants: Restaurant[] = [
     "celiacSafetyScore": 7
   },
   {
-    "name": "Bio Brod",
-    "slug": "bio-brod-nice",
-    "address": "Nice, France",
-    "city": "Nice",
-    "country": "France",
-    "hours": "Tue-Sat: 8:00AM - 6:00PM",
-    "phone": "",
-    "website": "",
-    "directionsUrl": "https://maps.google.com/?q=Bio+Brod+Nice",
-    "specialty": "Organic • Bakery",
-    "overview": "Organic bakery in Nice offering gluten-free breads and pastries made with quality natural ingredients.",
-    "menuHighlights": ["🍞 GF Bread", "🥐 Organic Pastries", "🌾 Ancient Grains"],
-    "proTip": "Organic GF loaves sell out early — go in the morning!",
-    "icon": "🍞",
-    "featured": false,
-    "cuisineTypes": ["Bakery", "Organic"],
-    "celiacSafe": "protocols-in-place",
-    "menuType": "mixed-menu",
-    "rating": 4.5,
-    "reviewCount": 76,
-    "lat": 0,
-    "lng": 0,
-    "venueType": "street-food",
-    photos: [],
-    "celiacSafetyScore": 8
-  },
-  {
     "name": "Zendoner",
     "slug": "zendoner-nice",
     "address": "26 Rue Massena, 06000 Nice, France",
@@ -1553,7 +1526,6 @@ export const NICE_STREET_FOOD_SLUGS = [
   "socca-nice",
   "chez-pipo",
   "panozzo-nice",
-  "bio-brod-nice",
   "zendoner-nice",
 ];
 
