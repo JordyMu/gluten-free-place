@@ -738,7 +738,7 @@ export const niceRestaurants: Restaurant[] = [
     "address": "13 Rue de Lépante, 06000 Nice, France",
     "city": "Nice",
     "country": "France",
-    "hours": "7:00 AM - 1:30 PM, 3:30 PM - 6:30 PM, Sun closed, Mon closed",
+    "hours": "Tue-Fri: 7:00 AM - 1:30 PM, 3:30 PM - 6:30 PM, Sat: 7:00 AM - 5:30 PM, Mon closed, Sun closed",
     "phone": "+33 6 23 91 33 86",
     "website": "",
     "directionsUrl": "https://maps.google.com/?q=Mama+Baker+Nice",
