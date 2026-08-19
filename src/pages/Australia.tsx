@@ -9,6 +9,10 @@ import { UserMenu } from "@/components/layout/UserMenu";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { AustraliaRestaurantList } from "@/components/australia/AustraliaRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
+import { sydneyRestaurants } from "@/pages/australia/GlutenFreeSydney";
+import { melbourneRestaurants } from "@/pages/australia/GlutenFreeMelbourne";
+import { brisbaneRestaurants } from "@/pages/australia/GlutenFreeBrisbane";
+import { perthRestaurants } from "@/pages/australia/GlutenFreePerth";
 
 const australiaHero = "https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1600&q=80";
 
@@ -97,38 +101,38 @@ const Australia = () => {
     {
       name: "Sydney",
       image: "photo-1506973035872-a4ec16b8e8d9",
-      places: 3,
+      places: sydneyRestaurants.length,
       rating: 4.7,
       description: "Harbour city with dedicated GF patisseries and beachside cafes",
       route: "/gluten-free/australia/sydney",
-      highlights: ["Sebastien Sans Gluten", "Noglu", "Wafu Kitchen"]
+      highlights: ["Sebastien Sans Gluten", "Wholegreen Bakery", "Nutie"]
     },
     {
       name: "Melbourne",
       image: "photo-1514395462725-fb4566210144",
-      places: 2,
+      places: melbourneRestaurants.length,
       rating: 4.9,
       description: "Laneway culture with Australia's best dedicated GF bakery",
       route: "/gluten-free/australia/melbourne",
-      highlights: ["Wholegreen Bakery", "Duke of Brunswick"]
+      highlights: ["Noglu", "Eat Cannoli", "Glazed GF Patisserie"]
     },
     {
       name: "Brisbane",
       image: "photo-1566734904496-9309bb1798ae",
-      places: 3,
+      places: brisbaneRestaurants.length,
       rating: 4.8,
       description: "Riverside dining with artisan GF patisseries and fresh seafood",
       route: "/gluten-free/australia/brisbane",
-      highlights: ["Glazed GF Patisserie", "Nodo", "Urban Fish Market"]
+      highlights: ["Nodo", "MAIZLAND", "Urban Fish Market"]
     },
     {
       name: "Perth",
       image: "photo-1524293581917-878a6d017c71",
-      places: 2,
+      places: perthRestaurants.length,
       rating: 4.8,
       description: "Sunny west coast with dedicated GF bakeries and specialty coffee",
       route: "/gluten-free/australia/perth",
-      highlights: ["BAKED Gluten Free", "Straight Up Coffee"]
+      highlights: ["Panna Artisan Bakery", "Dough Street", "Darringtons"]
     }
   ];
 
