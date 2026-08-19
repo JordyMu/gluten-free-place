@@ -42,34 +42,71 @@ interface PerthRestaurant {
 
 export const perthRestaurants: PerthRestaurant[] = [
   {
-    slug: "baked-gluten-free",
-    name: "BAKED Gluten Free",
-    icon: "🥖",
-    specialty: "Artisan bakery · 100% gluten-free",
+    slug: "dough-street-balcatta",
+    name: "Dough Street",
+    icon: "🍕",
+    specialty: "Pizza & bakery · GF range",
+    rating: 4.6,
+    reviewCount: 167,
+    cuisineTypes: ["Pizza", "Bakery", "Italian"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    overview:
+      "Balcatta pizzeria and bakehouse with gluten-free bases made and handled separately from wheat dough.",
+    menuHighlights: [
+      "🍕 GF pizza bases",
+      "🥖 GF bread",
+      "🍝 GF pasta dishes",
+    ],
+    proTip: "Mention celiac so the GF base is prepped on a clean bench.",
+    address: "Shop 4/207 Jones St, Balcatta WA 6021, Australia",
+    directionsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Dough+Street+Shop+4%2F207+Jones+St%2C+Balcatta+WA+6021%2C+Australia",
+  },
+  {
+    slug: "darringtons-burswood",
+    name: "Darringtons",
+    icon: "🍽️",
+    specialty: "Cafe & eatery · GF friendly",
+    rating: 4.5,
+    reviewCount: 129,
+    cuisineTypes: ["Cafe", "Modern Australian"],
+    celiacSafe: "protocols-in-place",
+    menuType: "mixed-menu",
+    overview:
+      "Burswood cafe with GF bread, marked menu items and a kitchen used to celiac requests.",
+    menuHighlights: [
+      "🍞 GF toast",
+      "🍳 Breakfast plates",
+      "☕ Coffee",
+    ],
+    proTip: "Ask for the separate toaster for GF bread.",
+    address: "3/285 Great Eastern Hwy, Burswood WA 6100, Australia",
+    directionsUrl:
+      "https://www.google.com/maps/search/?api=1&query=Darringtons+3%2F285+Great+Eastern+Hwy%2C+Burswood+WA+6100%2C+Australia",
+  },
+  {
+    slug: "panna-artisan-bakery-patisserie",
+    name: "Panna Artisan Bakery & Patisserie",
+    icon: "🥐",
+    specialty: "Dedicated GF bakery & patisserie",
     rating: 4.8,
-    reviewCount: 198,
-    cuisineTypes: ["Bakery", "Cafe"],
+    reviewCount: 182,
+    cuisineTypes: ["Bakery", "Patisserie", "Cafe"],
     celiacSafe: "dedicated-facility",
     menuType: "fully-gluten-free",
     overview:
-      "Specialized gluten-free bakery with highly trained bakers and comprehensive celiac safety protocols. Everything is made fresh daily in a dedicated facility.",
+      "Palmyra bakery and patisserie working entirely gluten-free, from sourdough to French-style pastries.",
     menuHighlights: [
-      "🥖 Fresh bread daily",
-      "🥐 Croissants & pastries",
-      "🥧 Meat pies",
-      "🍰 Cakes & slices",
-      "🍪 Cookies & brownies",
+      "🍞 GF sourdough",
+      "🥐 Croissants & danishes",
+      "🍰 Patisserie cakes",
     ],
-    proTip: "Get there early on weekends — popular items sell out fast.",
-    address: "123 Rokeby Rd, Subiaco WA 6008, Australia",
-    hours: "Mon–Sat: 7:30AM – 5:30PM",
-    phone: "+61 8 9234 5678",
-    website: "www.bakedgf.com.au",
+    proTip: "Weekend pastries sell out early — pre-order online.",
+    address: "67 McKimmie Rd, Palmyra WA 6157, Australia",
     directionsUrl:
-      "https://www.google.com/maps/search/?api=1&query=BAKED+Gluten+Free+Subiaco+Perth",
-    featured: true,
-  },
-];
+      "https://www.google.com/maps/search/?api=1&query=Panna+Artisan+Bakery+%26+Patisserie+67+McKimmie+Rd%2C+Palmyra+WA+6157%2C+Australia",
+  },];
 
 const faqItems = [
   {
