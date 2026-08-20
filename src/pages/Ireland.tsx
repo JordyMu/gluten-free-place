@@ -1,228 +1,529 @@
-import { ArrowLeft, MapPin, Clock, Globe, Phone, Star, CheckCircle, Camera, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import { useEffect } from "react";
+import {
+  MapPin, Star, ArrowLeft, Globe, Shield, Award, ArrowRight, Clock, Phone, CheckCircle,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+
+const irelandHero =
+  "https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=1600&q=80";
+
 const cities = [
   {
     name: "Dublin",
-    restaurants: [
-      {
-        name: "The Coeliac Sanctuary",
-        featured: true,
-        rating: 4.8,
-        reviewCount: 156,
-        cuisineTypes: ["Irish", "International"],
-        celiacSafe: "100% Dedicated",
-        menuType: "100% Gluten-Free",
-        address: "45 Grafton Street, Dublin 2, Ireland",
-        hours: "Mon-Sat: 9:00 AM - 9:00 PM, Sun: 10:00 AM - 6:00 PM",
-        website: "www.coeliacsanctuary.ie",
-        phone: "+353 1 234 5678",
-        directions: "https://maps.google.com/?q=The+Coeliac+Sanctuary+Dublin",
-        overview: "Ireland's premier dedicated gluten-free restaurant offering traditional Irish cuisine with a modern twist. Every dish is certified gluten-free and prepared in a 100% dedicated facility.",
-        menuHighlights: ["Irish Stew", "Gluten-Free Soda Bread", "Fish & Chips", "Shepherd's Pie", "Traditional Breakfast"],
-        reviews: [
-          { author: "Sarah M.", text: "Best gluten-free Irish breakfast I've ever had! The soda bread is incredible.", rating: 5 },
-          { author: "John D.", text: "Finally, authentic fish and chips that are completely safe for celiacs.", rating: 5 }
-        ],
-        proTip: "Try their homemade gluten-free soda bread - it's available for takeaway and freezes well!"
-      }
-    ]
-  }
+    image: "photo-1549918864-48ac978761a4",
+    places: 1,
+    rating: 4.8,
+    description: "Capital city with dedicated gluten-free kitchens and celiac-aware pubs",
+    route: "#",
+    highlights: ["The Coeliac Sanctuary"],
+  },
+  {
+    name: "Cork",
+    image: "photo-1564959130747-897fb406b9af",
+    places: 0,
+    rating: 4.6,
+    description: "Foodie capital of the south with a growing celiac-safe cafe scene",
+    route: "#",
+    highlights: ["English Market finds"],
+  },
+  {
+    name: "Galway",
+    image: "photo-1571680322279-a226e6a4cc2a",
+    places: 0,
+    rating: 4.6,
+    description: "West coast city known for fresh seafood and naturally GF plates",
+    route: "#",
+    highlights: ["Seafood & chowder"],
+  },
+  {
+    name: "Belfast",
+    image: "photo-1526129318478-62ed807ebdf9",
+    places: 0,
+    rating: 4.5,
+    description: "Northern hub with clearly labelled gluten-free pub and bistro menus",
+    route: "#",
+    highlights: ["Bistro GF menus"],
+  },
 ];
 
-const getCeliacSafeBadge = (level: string) => {
-  if (level === "100% Dedicated") {
-    return <Badge className="bg-green-100 text-green-800 border-green-300">100% Dedicated GF</Badge>;
-  }
-  return <Badge variant="secondary">{level}</Badge>;
-};
+const topRestaurants = [
+  {
+    name: "The Coeliac Sanctuary",
+    city: "Dublin",
+    rating: 4.8,
+    reviewCount: 156,
+    cuisineTypes: ["Irish", "International"],
+    celiacSafe: "dedicated-facility",
+    menuType: "fully-gluten-free",
+    address: "45 Grafton Street, Dublin 2, Ireland",
+    hours: "Mon–Sat: 9:00 AM – 9:00 PM, Sun: 10:00 AM – 6:00 PM",
+    phone: "+353 1 234 5678",
+    website: "www.coeliacsanctuary.ie",
+    directionsUrl: "https://maps.google.com/?q=The+Coeliac+Sanctuary+Dublin",
+    overview:
+      "Ireland's premier dedicated gluten-free restaurant offering traditional Irish cuisine with a modern twist. Every dish is certified gluten-free and prepared in a 100% dedicated facility.",
+    menuHighlights: [
+      "🍲 Irish Stew",
+      "🍞 Gluten-Free Soda Bread",
+      "🐟 Fish & Chips",
+      "🥧 Shepherd's Pie",
+      "🍳 Traditional Breakfast",
+    ],
+    proTip:
+      "Try their homemade gluten-free soda bread — it's available for takeaway and freezes well!",
+  },
+];
 
-const getMenuTypeBadge = (type: string) => {
-  if (type === "100% Gluten-Free") {
-    return <Badge className="bg-blue-100 text-blue-800 border-blue-300">100% GF Menu</Badge>;
-  }
-  return <Badge variant="outline">{type}</Badge>;
-};
+const faqItems = [
+  {
+    question: "Is Ireland a good destination for gluten-free travellers?",
+    answer:
+      "Yes. Ireland has strong celiac awareness, EU allergen labelling laws and a Coeliac Society network, so most restaurants and pubs can clearly identify gluten-free dishes.",
+  },
+  {
+    question: "Which Irish foods are naturally gluten-free?",
+    answer:
+      "Fresh seafood, Irish stew (with a GF thickener), boiled and roast potatoes, colcannon, smoked salmon and most farmhouse cheeses are naturally gluten-free.",
+  },
+  {
+    question: "Are there dedicated gluten-free restaurants in Ireland?",
+    answer:
+      "Yes — Dublin leads the way with dedicated 100% gluten-free kitchens such as The Coeliac Sanctuary, where cross-contamination risk is virtually zero.",
+  },
+  {
+    question: "Can I get gluten-free beer in Irish pubs?",
+    answer:
+      "Most city pubs now stock at least one gluten-free beer or cider. Cider is a reliable fallback, and many pubs also list GF options on their food menus.",
+  },
+  {
+    question: "How do I explain celiac disease in Ireland?",
+    answer:
+      "English is spoken everywhere. Say you have coeliac disease and ask about cross-contamination — staff are generally well trained on allergen requirements.",
+  },
+  {
+    question: "Can I find gluten-free products in Irish supermarkets?",
+    answer:
+      "Yes. Tesco, Dunnes Stores, SuperValu and Aldi all carry extensive free-from ranges with clear allergen labelling.",
+  },
+];
 
-const renderStarRating = (rating: number) => {
-  return (
-    <div className="flex items-center space-x-1">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${i < Math.floor(rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
-        />
-      ))}
-    </div>
-  );
+const renderStarRating = (rating: number) => (
+  <div className="flex items-center gap-1">
+    {Array.from({ length: 5 }).map((_, i) => (
+      <Star
+        key={i}
+        className={`h-4 w-4 ${i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
+      />
+    ))}
+    <span className="ml-1 font-semibold text-gray-900">{rating}</span>
+  </div>
+);
+
+const openExternalLink = (url: string) => {
+  const normalized = url.startsWith("http") ? url : `https://${url}`;
+  window.open(normalized, "_blank", "noopener,noreferrer");
 };
 
 const Ireland = () => {
-  
+  useEffect(() => {
+    const existingSchema = document.querySelector('script[data-schema="ireland-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement("script");
+    schema.type = "application/ld+json";
+    schema.setAttribute("data-schema", "ireland-gf");
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      name: "Gluten-Free Restaurants in Ireland",
+      description:
+        "Find verified gluten-free and celiac-safe restaurants across Ireland, from Dublin to Cork, Galway and Belfast.",
+      url: "https://glutenfreeplace.org/ireland",
+      breadcrumb: {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://glutenfreeplace.org" },
+          { "@type": "ListItem", position: 2, name: "Countries", item: "https://glutenfreeplace.org/countries" },
+          { "@type": "ListItem", position: 3, name: "Ireland", item: "https://glutenfreeplace.org/ireland" },
+        ],
+      },
+    });
+    document.head.appendChild(schema);
+
+    const existingFaqSchema = document.querySelector('script[data-schema="ireland-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement("script");
+    faqSchema.type = "application/ld+json";
+    faqSchema.setAttribute("data-schema", "ireland-faq");
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqItems.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: { "@type": "Answer", text: faq.answer },
+      })),
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      document.querySelector('script[data-schema="ireland-gf"]')?.remove();
+      document.querySelector('script[data-schema="ireland-faq"]')?.remove();
+    };
+  }, []);
 
   return (
     <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Ireland | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Ireland. Traditional Irish cuisine safely prepared for celiacs in Dublin, Cork, Galway & more cities."
-      canonical="/ireland"
-    />
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
-      <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <Link to="/" className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity mb-4">
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back to Countries</span>
-          </Link>
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">🇮🇪</div>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in Ireland</h1>
-              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
+      <SEOHead
+        title="Gluten-Free Options in Ireland | Celiac-Safe Dining"
+        description="Gluten free options across Ireland: verified celiac-safe restaurants, bakeries and pubs in Dublin, Cork, Galway and Belfast."
+        canonical="/ireland"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
+        <header className="bg-white/80 backdrop-blur-md border-b border-green-100 sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <Link to="/" className="flex items-center space-x-2">
+              <Globe className="h-8 w-8 text-green-700" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-green-700 to-emerald-800 bg-clip-text text-transparent">
+                Gluten-Free Places
+              </span>
+            </Link>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-gray-700 hover:text-green-700 transition-colors whitespace-nowrap">Home</Link>
+              <Link to="/countries" className="text-gray-700 hover:text-green-700 transition-colors">Countries</Link>
+              <Link to="#cities" className="text-gray-700 hover:text-green-700 transition-colors">Cities</Link>
+              <Link to="#faq" className="text-gray-700 hover:text-green-700 transition-colors">FAQ</Link>
+              <UserMenu />
             </div>
           </div>
-        </div>
-      </header>
+        </header>
 
-      <section className="py-12 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="flex flex-wrap justify-center gap-2">
-              <Badge className="bg-green-100 text-green-800">Celiac-Friendly</Badge>
-              <Badge className="bg-blue-100 text-blue-800">Verified Safe</Badge>
-              <Badge className="bg-purple-100 text-purple-800">Local Favorites</Badge>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Discover Ireland's finest gluten-free dining experiences. From traditional Irish cuisine to international flavors,
-              these certified celiac-safe restaurants ensure your safety without compromising on authentic taste.
-            </p>
-          </div>
-        </div>
-      </section>
+        <section
+          className="relative py-12 overflow-hidden bg-cover bg-center"
+          style={{ backgroundImage: `url(${irelandHero})` }}
+        >
+          <div className="absolute inset-0 bg-black/50" />
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to All Countries
+            </Link>
+            <div className="max-w-4xl mx-auto">
+              <span className="text-5xl mb-4 block">🇮🇪</span>
+              <Badge className="mb-4 bg-white/20 text-white border-white/30">
+                <MapPin className="h-4 w-4 mr-2" />
+                Verified Gluten-Free Places
+              </Badge>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+                Dedicated Gluten-Free Restaurants in Ireland
+              </h1>
+              <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+                Celiac-safe Irish dining from Dublin's dedicated gluten-free kitchens to
+                naturally gluten-free seafood on the west coast.
+              </p>
 
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          {cities.map((city) => (
-            <div key={city.name} className="mb-16">
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">{city.name}</h2>
-              <div className="grid gap-8">
-                {city.restaurants.map((restaurant) => (
-                  <Card key={restaurant.name} className="overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="p-6 space-y-6">
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{restaurant.name}</h3>
-                          <div className="flex items-center space-x-4 text-sm">
-                            <div className="flex items-center space-x-1">
-                              {renderStarRating(restaurant.rating)}
-                              <span className="font-semibold ml-1">{restaurant.rating}</span>
-                              <span className="text-gray-500">({restaurant.reviewCount} reviews)</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {restaurant.cuisineTypes.map((type) => (
-                            <Badge key={type} variant="secondary">{type}</Badge>
-                          ))}
-                          {getCeliacSafeBadge(restaurant.celiacSafe)}
-                          {getMenuTypeBadge(restaurant.menuType)}
-                        </div>
-
-                        {restaurant.featured && (
-                          <>
-                            <Button className="w-full sm:w-auto" asChild>
-                              <a href={restaurant.directions} target="_blank" rel="noopener noreferrer">
-                                <MapPin className="h-4 w-4 mr-2" />
-                                Get Directions
-                              </a>
-                            </Button>
-
-                            <div className="grid md:grid-cols-2 gap-4 text-sm">
-                              <div className="flex items-start space-x-2">
-                                <MapPin className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.address}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Clock className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.hours}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Globe className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                  {restaurant.website}
-                                </a>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Phone className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`tel:${restaurant.phone}`} className="text-blue-600 hover:underline">
-                                  {restaurant.phone}
-                                </a>
-                              </div>
-                            </div>
-
-                            <div className="bg-green-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <CheckCircle className="h-5 w-5 text-green-600" />
-                                <h4 className="font-semibold text-gray-900">Overview</h4>
-                              </div>
-                              <p className="text-gray-700 text-sm leading-relaxed">{restaurant.overview}</p>
-                            </div>
-
-                            <div className="bg-orange-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <Camera className="h-5 w-5 text-orange-600" />
-                                <h4 className="font-semibold text-gray-900">Menu Highlights</h4>
-                              </div>
-                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                {restaurant.menuHighlights.map((item) => (
-                                  <li key={item} className="text-sm text-gray-700 flex items-center">
-                                    <span className="mr-2">•</span>
-                                    {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div className="bg-gray-50 rounded-lg p-4 space-y-4">
-                              <div className="flex items-center space-x-2">
-                                <MessageCircle className="h-5 w-5 text-gray-600" />
-                                <h4 className="font-semibold text-gray-900">User Reviews</h4>
-                              </div>
-                              <div className="space-y-3">
-                                {restaurant.reviews.map((review, idx) => (
-                                  <div key={idx} className="bg-white rounded p-3 space-y-1">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-medium text-sm">{review.author}</span>
-                                      {renderStarRating(review.rating)}
-                                    </div>
-                                    <p className="text-sm text-gray-600">{review.text}</p>
-                                  </div>
-                                ))}
-                              </div>
-                              <Button variant="outline" size="sm" className="w-full">View All Reviews</Button>
-                            </div>
-
-                            <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
-                              <p className="text-sm text-gray-700">
-                                <span className="font-semibold">Pro Tip:</span> {restaurant.proTip}
-                              </p>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#cities">
+                  <Button size="lg" className="bg-white text-green-800 hover:bg-green-50">
+                    Explore Irish Cities
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </a>
+                <AddRestaurantDialog
+                  city="Ireland"
+                  triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+                />
               </div>
             </div>
-          ))}
-        </div>
-      </section>
-    </div>
+          </div>
+        </section>
+
+        <section id="cities" className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Explore by City
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Top Gluten-Free Cities in Ireland
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose a city to explore verified gluten-free restaurants with detailed reviews and safety information
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {cities.map((city, index) => (
+                <Card
+                  key={city.name}
+                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {(() => {
+                    const media = (
+                      <div className="relative overflow-hidden h-48">
+                        <img
+                          src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                          alt={`Gluten-free restaurants in ${city.name}, Ireland`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
+                          width={600}
+                          height={400}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                          <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                          <span className="font-semibold text-sm">{city.rating}</span>
+                        </div>
+                        <div className="absolute bottom-4 left-4">
+                          <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                        </div>
+                      </div>
+                    );
+                    return city.route !== "#" ? (
+                      <Link to={city.route} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
+                        {media}
+                      </Link>
+                    ) : (
+                      media
+                    );
+                  })()}
+                  <CardContent className="p-5">
+                    <p className="text-gray-600 text-sm mb-3">{city.description}</p>
+                    <div className="flex items-center text-green-700 mb-3">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span className="font-semibold text-sm">{city.places} places</span>
+                    </div>
+                    <div className="mb-4">
+                      <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {city.highlights.map((spot) => (
+                          <Badge key={spot} variant="secondary" className="text-xs bg-green-50 text-green-800">
+                            {spot}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    {city.route !== "#" ? (
+                      <Link to={city.route}>
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                          Explore {city.name}
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button disabled className="w-full opacity-60">
+                        Coming Soon
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Top Restaurants
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Top Gluten-Free Restaurants in Ireland
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Our highest-rated celiac-safe spots across Ireland, verified by gluten-free travellers
+              </p>
+            </div>
+
+            <div className="max-w-3xl mx-auto space-y-6">
+              {topRestaurants.map((r) => (
+                <Card key={r.name} className="overflow-hidden border-2 border-green-200 hover:shadow-xl transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="mb-3">
+                      <h3 className="text-xl font-bold text-gray-900">{r.name}</h3>
+                      <p className="text-sm text-gray-500">{r.city}, Ireland</p>
+                    </div>
+
+                    <div className="flex items-center gap-2 mb-3">
+                      {renderStarRating(r.rating)}
+                      <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-3">
+                      {r.cuisineTypes.map((c) => (
+                        <Badge key={c} variant="outline">{c}</Badge>
+                      ))}
+                      <Badge className="bg-green-100 text-green-800 border-green-300">
+                        <Shield className="w-3 h-3 mr-1" />
+                        Dedicated GF Facility
+                      </Badge>
+                      <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% Gluten-Free</Badge>
+                    </div>
+
+                    <p className="text-gray-700 mb-4">{r.overview}</p>
+
+                    <div className="space-y-2 text-sm text-gray-600 mb-4">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-4 h-4 mt-0.5 text-gray-400" />
+                        <span>{r.address}</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <Clock className="w-4 h-4 mt-0.5 text-gray-400" />
+                        <span>{r.hours}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Phone className="w-4 h-4 text-gray-400" />
+                        <span>{r.phone}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Globe className="w-4 h-4 text-gray-400" />
+                        <button
+                          onClick={() => openExternalLink(r.website)}
+                          className="text-green-700 hover:underline"
+                        >
+                          {r.website}
+                        </button>
+                      </div>
+                    </div>
+
+                    <div className="bg-orange-50 rounded-lg p-4 mb-4">
+                      <div className="flex items-center gap-2 mb-2">
+                        <CheckCircle className="w-5 h-5 text-orange-600" />
+                        <h4 className="font-semibold text-gray-900">Menu Highlights</h4>
+                      </div>
+                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                        {r.menuHighlights.map((item) => (
+                          <li key={item} className="text-sm text-gray-700">{item}</li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4">
+                      <p className="text-sm text-gray-700">
+                        <span className="font-semibold">Pro Tip:</span> {r.proTip}
+                      </p>
+                    </div>
+
+                    <Button
+                      onClick={() => openExternalLink(r.directionsUrl)}
+                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                  <Award className="h-4 w-4 mr-2" />
+                  About
+                </Badge>
+                <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in Ireland</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Why Ireland?</h3>
+                  <p className="text-gray-600 mb-4">
+                    Ireland combines EU allergen labelling rules with a strong Coeliac Society presence, so
+                    kitchens are used to handling gluten-free requests properly rather than guessing.
+                  </p>
+                  <p className="text-gray-600">
+                    Dublin has dedicated gluten-free kitchens, while coastal towns serve plates of seafood,
+                    potatoes and farmhouse produce that are naturally free from gluten.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <span>Ask for the allergen menu — it's a legal requirement in Ireland</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <span>Gluten-free soda bread is widely available in cafes and bakeries</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <span>Check chips are cooked in a separate fryer before ordering</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-green-700 mt-0.5 flex-shrink-0" />
+                      <span>Most pubs stock gluten-free beer or cider — just ask at the bar</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-green-50/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 mb-3">
+                <Shield className="w-6 h-6 text-green-700" />
+                <h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2>
+              </div>
+              <p className="text-gray-600">
+                All restaurants are verified by our community of celiac travellers. We prioritise dedicated gluten-free
+                facilities and restaurants with proven celiac protocols. Always communicate your dietary needs directly
+                with restaurant staff.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                <p className="text-gray-600 mt-2">Everything you need to know about gluten-free dining in Ireland</p>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                {faqItems.map((faq, index) => (
+                  <AccordionItem key={faq.question} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gradient-to-r from-green-700 to-emerald-800">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Know a Great GF Spot in Ireland?</h2>
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+              Help fellow celiac travellers discover safe dining options across Ireland. Submit a restaurant to our
+              growing directory.
+            </p>
+            <AddRestaurantDialog city="Ireland" triggerClassName="bg-white text-green-800 hover:bg-green-50 text-lg px-8 py-3" />
+          </div>
+        </section>
+      </div>
     </>
   );
 };
