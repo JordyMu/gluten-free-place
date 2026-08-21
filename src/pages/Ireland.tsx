@@ -43,11 +43,11 @@ const cities = [
     highlights: ["Seafood & chowder"],
   },
   {
-    name: "Belfast",
+    name: "Limerick",
     image: "photo-1526129318478-62ed807ebdf9",
     places: 0,
     rating: 4.5,
-    description: "Northern hub with clearly labelled gluten-free pub and bistro menus",
+    description: "Riverside city with clearly labelled gluten-free pub and bistro menus",
     route: "#",
     highlights: ["Bistro GF menus"],
   },
