@@ -43,11 +43,11 @@ const cities = [
     highlights: ["Seafood & chowder"],
   },
   {
-    name: "Belfast",
+    name: "Limerick",
     image: "photo-1526129318478-62ed807ebdf9",
     places: 0,
     rating: 4.5,
-    description: "Northern hub with clearly labelled gluten-free pub and bistro menus",
+    description: "Riverside city with clearly labelled gluten-free pub and bistro menus",
     route: "#",
     highlights: ["Bistro GF menus"],
   },
@@ -144,7 +144,7 @@ const Ireland = () => {
       "@type": "CollectionPage",
       name: "Gluten-Free Restaurants in Ireland",
       description:
-        "Find verified gluten-free and celiac-safe restaurants across Ireland, from Dublin to Cork, Galway and Belfast.",
+        "Find verified gluten-free and celiac-safe restaurants across Ireland, from Dublin to Cork, Galway and Limerick.",
       url: "https://glutenfreeplace.org/ireland",
       breadcrumb: {
         "@type": "BreadcrumbList",
@@ -184,7 +184,7 @@ const Ireland = () => {
     <>
       <SEOHead
         title="Gluten-Free Options in Ireland | Celiac-Safe Dining"
-        description="Gluten free options across Ireland: verified celiac-safe restaurants, bakeries and pubs in Dublin, Cork, Galway and Belfast."
+        description="Gluten free options across Ireland: verified celiac-safe restaurants, bakeries and pubs in Dublin, Cork, Galway and Limerick."
         canonical="/ireland"
       />
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
