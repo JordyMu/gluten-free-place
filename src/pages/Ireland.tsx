@@ -144,7 +144,7 @@ const Ireland = () => {
       "@type": "CollectionPage",
       name: "Gluten-Free Restaurants in Ireland",
       description:
-        "Find verified gluten-free and celiac-safe restaurants across Ireland, from Dublin to Cork, Galway and Belfast.",
+        "Find verified gluten-free and celiac-safe restaurants across Ireland, from Dublin to Cork, Galway and Limerick.",
       url: "https://glutenfreeplace.org/ireland",
       breadcrumb: {
         "@type": "BreadcrumbList",
