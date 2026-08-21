@@ -184,7 +184,7 @@ const Ireland = () => {
     <>
       <SEOHead
         title="Gluten-Free Options in Ireland | Celiac-Safe Dining"
-        description="Gluten free options across Ireland: verified celiac-safe restaurants, bakeries and pubs in Dublin, Cork, Galway and Belfast."
+        description="Gluten free options across Ireland: verified celiac-safe restaurants, bakeries and pubs in Dublin, Cork, Galway and Limerick."
         canonical="/ireland"
       />
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-orange-50">
