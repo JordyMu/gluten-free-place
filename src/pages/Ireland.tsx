@@ -18,11 +18,11 @@ const cities = [
   {
     name: "Dublin",
     image: "photo-1549918864-48ac978761a4",
-    places: 1,
+    places: 6,
     rating: 4.8,
     description: "Capital city with dedicated gluten-free kitchens and celiac-aware pubs",
-    route: "#",
-    highlights: ["The Coeliac Sanctuary"],
+    route: "/gluten-free/ireland/dublin",
+    highlights: ["The Coeliac Sanctuary", "Blazing Salads", "Cornucopia"],
   },
   {
     name: "Cork",
