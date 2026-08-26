@@ -14,7 +14,14 @@ const app = (
 );
 
 if (import.meta.env.PROD) {
-  hydrateRoot(root, app);
+  try {
+    hydrateRoot(root, app, {
+      onRecoverableError: () => {},
+    });
+  } catch {
+    root.innerHTML = "";
+    createRoot(root).render(app);
+  }
 } else {
   createRoot(root).render(app);
 }
