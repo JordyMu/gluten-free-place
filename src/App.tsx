@@ -16,6 +16,10 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Index from "./pages/Index";
 
 // Lazy load all other pages for code-splitting
+const About = lazyWithRetry(() => import("./pages/About"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const PrivacyPolicy = lazyWithRetry(() => import("./pages/PrivacyPolicy"));
+const Terms = lazyWithRetry(() => import("./pages/Terms"));
 const Countries = lazyWithRetry(() => import("./pages/Countries"));
 const AllCountries = lazyWithRetry(() => import("./pages/AllCountries"));
 const Italy = lazyWithRetry(() => import("./pages/Italy"));
@@ -201,6 +205,10 @@ const App = () => (
             <GoogleAnalytics />
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/countries" element={<Countries />} />
               <Route path="/all-countries" element={<AllCountries />} />

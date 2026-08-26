@@ -23,7 +23,7 @@ const SiteFooter = () => (
             <li><Link to="/all-countries" className="hover:text-orange-500 transition-colors">All Countries</Link></li>
             <li><Link to="/#destinations" className="hover:text-orange-500 transition-colors">Destinations</Link></li>
             <li><Link to="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</Link></li>
-            <li><Link to="/#about" className="hover:text-orange-500 transition-colors">About</Link></li>
+            <li><Link to="/about" className="hover:text-orange-500 transition-colors">About</Link></li>
           </ul>
         </div>
         <div>
@@ -49,8 +49,9 @@ const SiteFooter = () => (
       </div>
       <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <ul className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
-          <li><Link to="/#about" className="hover:text-orange-500 transition-colors">About us</Link></li>
-          <li><Link to="/all-countries" className="hover:text-orange-500 transition-colors">Site map</Link></li>
+            <li><Link to="/about" className="hover:text-orange-500 transition-colors">About us</Link></li>
+            <li><Link to="/contact" className="hover:text-orange-500 transition-colors">Contact</Link></li>
+            <li><Link to="/all-countries" className="hover:text-orange-500 transition-colors">Site map</Link></li>
           <li><Link to="/privacy" className="hover:text-orange-500 transition-colors">Privacy</Link></li>
           <li><Link to="/terms" className="hover:text-orange-500 transition-colors">Terms &amp; conditions</Link></li>
         </ul>
