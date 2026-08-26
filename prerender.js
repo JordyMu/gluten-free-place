@@ -27,6 +27,10 @@ const { render } = await import('./dist/server/entry-server.js')
 // All actual routes (excluding dynamic :slug routes)
 const routesToPrerender = [
   '/',
+  '/about',
+  '/contact',
+  '/privacy',
+  '/terms',
   '/countries',
   '/all-countries',
   '/auth',
