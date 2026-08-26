@@ -23,7 +23,7 @@ const SiteFooter = () => (
             <li><Link to="/all-countries" className="hover:text-orange-500 transition-colors">All Countries</Link></li>
             <li><Link to="/#destinations" className="hover:text-orange-500 transition-colors">Destinations</Link></li>
             <li><Link to="/#reviews" className="hover:text-orange-500 transition-colors">Reviews</Link></li>
-            <li><Link to="/#about" className="hover:text-orange-500 transition-colors">About</Link></li>
+            <li><Link to="/about" className="hover:text-orange-500 transition-colors">About</Link></li>
           </ul>
         </div>
         <div>
