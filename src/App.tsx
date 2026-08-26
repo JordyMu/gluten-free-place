@@ -201,6 +201,10 @@ const App = () => (
             <GoogleAnalytics />
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/privacy" element={<PrivacyPolicy />} />
+              <Route path="/terms" element={<Terms />} />
               <Route path="/auth" element={<Auth />} />
               <Route path="/countries" element={<Countries />} />
               <Route path="/all-countries" element={<AllCountries />} />
