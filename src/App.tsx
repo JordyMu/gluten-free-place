@@ -16,6 +16,10 @@ import GoogleAnalytics from "@/components/GoogleAnalytics";
 import Index from "./pages/Index";
 
 // Lazy load all other pages for code-splitting
+const About = lazyWithRetry(() => import("./pages/About"));
+const Contact = lazyWithRetry(() => import("./pages/Contact"));
+const PrivacyPolicy = lazyWithRetry(() => import("./pages/PrivacyPolicy"));
+const Terms = lazyWithRetry(() => import("./pages/Terms"));
 const Countries = lazyWithRetry(() => import("./pages/Countries"));
 const AllCountries = lazyWithRetry(() => import("./pages/AllCountries"));
 const Italy = lazyWithRetry(() => import("./pages/Italy"));
