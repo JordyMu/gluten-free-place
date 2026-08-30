@@ -112,7 +112,7 @@ const Egypt = () => {
     },
     {
       name: "Alexandria",
-      image: "photo-1568322503122-d1d246827de2",
+      image: "/images/alexandria-hero.webp?v=2",
       places: 3,
       rating: 4.4,
       description: "Mediterranean coastal city with fresh seafood and naturally GF Greek-influenced cuisine",
@@ -121,7 +121,7 @@ const Egypt = () => {
     },
     {
       name: "Giza",
-      image: "photo-1539650116574-8efeb43e2750",
+      image: "/images/giza-pyramids-hero.webp?v=2",
       places: 5,
       rating: 4.4,
       description: "Home of the Pyramids with tourist-friendly restaurants offering GF options",
@@ -274,7 +274,7 @@ const Egypt = () => {
               >
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                    src={city.image.startsWith("/") ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                     alt={`Gluten-free restaurants in ${city.name}, Egypt`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                   />
