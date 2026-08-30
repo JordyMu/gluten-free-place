@@ -32,19 +32,17 @@ const Egypt = () => {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "Gluten-Free Restaurants in Egypt",
-      "description": "Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza, Sharm El Sheikh, Hurghada & Luxor.",
+      "description": "Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza & Sharm El Sheikh.",
       "url": "https://glutenfreeplace.org/gluten-free/egypt",
       "mainEntity": {
         "@type": "ItemList",
         "name": "Top Gluten-Free Cities in Egypt",
-        "numberOfItems": 6,
+        "numberOfItems": 4,
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Cairo", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Cairo" },
           { "@type": "ListItem", "position": 2, "name": "Alexandria", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Alexandria" },
           { "@type": "ListItem", "position": 3, "name": "Giza", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Giza" },
-          { "@type": "ListItem", "position": 4, "name": "Sharm El Sheikh", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Sharm+El+Sheikh" },
-          { "@type": "ListItem", "position": 5, "name": "Hurghada", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Hurghada" },
-          { "@type": "ListItem", "position": 6, "name": "Luxor", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Luxor" }
+          { "@type": "ListItem", "position": 4, "name": "Sharm El Sheikh", "url": "https://glutenfreeplace.org/gluten-free/egypt?city=Sharm+El+Sheikh" }
         ]
       },
       "breadcrumb": {
@@ -86,7 +84,7 @@ const Egypt = () => {
         {
           "@type": "Question",
           "name": "Which Egyptian city is most celiac-friendly?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Cairo leads with the most international dining options and health-conscious restaurants. Sharm El Sheikh and Hurghada, being major resort destinations, also have hotels with excellent GF buffet options." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Cairo leads with the most international dining options and health-conscious restaurants. Sharm El Sheikh, as a major resort destination, also has hotels with excellent GF buffet options." }
         }
       ]
     });
@@ -137,24 +135,6 @@ const Egypt = () => {
       route: "/gluten-free/egypt/sharm-el-sheikh",
       highlights: ["Hard Rock Cafe", "Akuna Matata", "Xperience Kiroseiz"]
     },
-    {
-      name: "Hurghada",
-      image: "photo-1580674684081-7617fbf3d745",
-      places: 12,
-      rating: 4.4,
-      description: "Popular beach destination where resort dining caters to gluten-free guests",
-      route: "/gluten-free/egypt/hurghada",
-      highlights: ["Nicole's Greenhouse", "Jaz Aquamarine", "German Bakery"]
-    },
-    {
-      name: "Luxor",
-      image: "photo-1568322503122-d1d246827de2",
-      places: 7,
-      rating: 4.3,
-      description: "Ancient city on the Nile with traditional eateries and hotel restaurants with GF menus",
-      route: "/gluten-free/egypt/luxor",
-      highlights: ["Steigenberger Resort", "Snobs Restaurant", "Café Maratonga"]
-    }
   ];
 
   const faqItems = [
@@ -176,19 +156,15 @@ const Egypt = () => {
     },
     {
       question: "Which Egyptian city is most celiac-friendly?",
-      answer: "Cairo leads with the most diverse international dining options and health-conscious restaurants. Sharm El Sheikh and Hurghada, as major resort destinations, also excel with hotels offering dedicated GF buffet stations."
+      answer: "Cairo leads with the most diverse international dining options and health-conscious restaurants. Sharm El Sheikh, as a major resort destination, also excels with hotels offering dedicated GF buffet stations."
     },
-    {
-      question: "Can I find gluten-free products in Egyptian supermarkets?",
-      answer: "Yes, though selection varies. Cairo's larger supermarkets like Carrefour and Seoudi stock some imported GF products. Health food stores in Zamalek and Maadi neighborhoods have better selections. Stock up before traveling to smaller cities."
-    }
   ];
 
   return (
     <>
     <SEOHead
       title="Gluten-Free Restaurants in Egypt | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza, Sharm El Sheikh, Hurghada & Luxor. Real reviews from GF travelers."
+      description="Find the best gluten-free restaurants across Egypt. Verified celiac-safe dining in Cairo, Alexandria, Giza & Sharm El Sheikh. Real reviews from GF travelers."
       canonical="/gluten-free/egypt"
     />
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-yellow-50">
