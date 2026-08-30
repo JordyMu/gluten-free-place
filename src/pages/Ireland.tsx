@@ -81,6 +81,70 @@ const topRestaurants = [
   },
 ];
 
+const otherLocations = [
+  {
+    name: "Jenny's Kitchen Gluten Free Baking",
+    location: "Nenagh, Co. Tipperary",
+    description: "Dedicated gluten-free bakery supplying cafes and shops across Ireland with fresh GF breads, cakes and treats.",
+    celiacSafe: true,
+    highlight: "🥖 100% Gluten-Free Bakery",
+  },
+  {
+    name: "The Ivy Cottage",
+    location: "Doolin, Co. Clare",
+    description: "Charming seafood cottage restaurant on the Wild Atlantic Way with clearly labelled gluten-free options and coeliac-aware staff.",
+    highlight: "🐟 Wild Atlantic Seafood",
+  },
+  {
+    name: "The Fish Box / Flannery's Seafood Bar",
+    location: "Dingle, Co. Kerry",
+    description: "Family-run seafood bar serving the day's catch with dedicated gluten-free fryer options and fresh local fish.",
+    highlight: "🦐 Fresh Local Catch",
+  },
+  {
+    name: "Rob's Ranch House",
+    location: "Killarney, Co. Kerry",
+    description: "American-style steakhouse and smokehouse with gluten-free menu options, sauces and sides clearly marked.",
+    highlight: "🥩 GF Steaks & Smokehouse",
+  },
+  {
+    name: "The Boat Yard Restaurant",
+    location: "Dingle, Co. Kerry",
+    description: "Waterfront restaurant specialising in Dingle Bay seafood with coeliac-safe preparation and gluten-free menu items.",
+    highlight: "⚓ Harbourfront Dining",
+  },
+  {
+    name: "Caragh Restaurant & Lounge Bar",
+    location: "Killarney, Co. Kerry",
+    description: "Modern Irish restaurant and lounge with a dedicated gluten-free menu and staff trained in allergen protocols.",
+    highlight: "🍽️ Dedicated GF Menu",
+  },
+  {
+    name: "The Reg",
+    location: "Waterford",
+    description: "Historic bar and restaurant in Waterford's Viking Triangle with gluten-free dishes and live music most nights.",
+    highlight: "🍺 Viking Triangle Pub",
+  },
+  {
+    name: "Momo Restaurant",
+    location: "Waterford",
+    description: "Award-winning bistro using local produce, with gluten-free options marked on the menu and coeliac-friendly service.",
+    highlight: "🏆 Award-Winning Bistro",
+  },
+  {
+    name: "Rye River Café",
+    location: "Kilcock, Co. Kildare",
+    description: "Cosy artisan café with gluten-free bread, cakes and brunch options made fresh daily.",
+    highlight: "☕ Artisan Café",
+  },
+  {
+    name: "James Long Gastro Pub",
+    location: "Dingle, Co. Kerry",
+    description: "Traditional Irish gastro pub with gluten-free dishes, local seafood and a warm Kerry welcome.",
+    highlight: "🍀 Traditional Gastro Pub",
+  },
+];
+
 const faqItems = [
   {
     question: "Is Ireland a good destination for gluten-free travellers?",
