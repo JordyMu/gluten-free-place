@@ -96,6 +96,8 @@ const CorkRestaurantPage = lazyWithRetry(() => import("./pages/ireland/CorkResta
 const GlutenFreeDublinBest = lazyWithRetry(() => import("./pages/ireland/GlutenFreeDublinBest"));
 const GlutenFreeGalway = lazyWithRetry(() => import("./pages/ireland/GlutenFreeGalway"));
 const GalwayRestaurantPage = lazyWithRetry(() => import("./pages/ireland/GalwayRestaurantPage"));
+const GlutenFreeGalwayBest = lazyWithRetry(() => import("./pages/ireland/GlutenFreeGalwayBest"));
+const GalwayCategoryPage = lazyWithRetry(() => import("./pages/ireland/GalwayCategoryPage"));
 const DublinCategoryPage = lazyWithRetry(() => import("./pages/ireland/DublinCategoryPage"));
 const Germany = lazyWithRetry(() => import("./pages/Germany"));
 const NewZealand = lazyWithRetry(() => import("./pages/NewZealand"));
@@ -336,6 +338,11 @@ const App = () => (
               <Route path="/gluten-free/ireland/cork" element={<GlutenFreeCork />} />
               <Route path="/gluten-free/ireland/cork/:slug" element={<CorkRestaurantPage />} />
               <Route path="/gluten-free/ireland/galway" element={<GlutenFreeGalway />} />
+              <Route path="/gluten-free/ireland/galway/best-gluten-free-restaurants-in-galway" element={<GlutenFreeGalwayBest />} />
+              <Route path="/gluten-free/ireland/galway/street-food" element={<GalwayCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/ireland/galway/bakeries" element={<GalwayCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/ireland/galway/grocery-stores" element={<GalwayCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/ireland/galway/gluten-free-products" element={<GalwayCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/ireland/galway/:slug" element={<GalwayRestaurantPage />} />
               <Route path="/germany" element={<Germany />} />
               <Route path="/new-zealand" element={<NewZealand />} />
