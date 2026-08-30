@@ -188,10 +188,10 @@ const featuredCountries = [
     name: "Egypt",
     code: "EG",
     image: "photo-1539650116574-8efeb43e2750",
-    places: 25,
+    places: 28,
     rating: 4.3,
     description: "Ancient land with naturally GF staples like ful medames, grilled meats, and fresh salads",
-    topCities: ["Cairo", "Alexandria", "Luxor", "Sharm El Sheikh"]
+    topCities: ["Cairo", "Alexandria", "Giza", "Sharm El Sheikh"]
   },
   {
     id: 20,
