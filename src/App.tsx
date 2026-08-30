@@ -419,6 +419,11 @@ const App = () => (
               <Route path="/gluten-free/egypt/cairo" element={<GlutenFreeCairo />} />
               <Route path="/gluten-free/egypt/alexandria" element={<GlutenFreeAlexandria />} />
               <Route path="/gluten-free/egypt/giza" element={<GlutenFreeGiza />} />
+              <Route path="/gluten-free/egypt/giza/best-gluten-free-restaurants-in-giza" element={<GlutenFreeGizaBest />} />
+              <Route path="/gluten-free/egypt/giza/street-food" element={<GizaCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/egypt/giza/bakeries" element={<GizaCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/egypt/giza/grocery-stores" element={<GizaCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/egypt/giza/gluten-free-products" element={<GizaCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
               <Route path="/gluten-free/egypt/hurghada" element={<GlutenFreeHurghada />} />
               <Route path="/gluten-free/egypt/luxor" element={<GlutenFreeLuxor />} />
