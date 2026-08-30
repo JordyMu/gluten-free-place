@@ -32,6 +32,7 @@ interface CanadaCityPageProps {
   countryName?: string;
   countrySlug?: string;
   relatedCountry?: string;
+  hideOverview?: boolean;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
@@ -72,7 +73,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry, hideOverview }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
@@ -248,7 +249,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                     )}
                   </div>
 
-                  <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+                  {!hideOverview && <p className="text-gray-700 mb-4">{restaurant.overview}</p>}
 
 
 
