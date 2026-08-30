@@ -174,7 +174,7 @@ export const corkRestaurants: CorkRestaurant[] = [
       "🍮 GF desserts",
     ],
     proTip: "Book ahead — it's one of the busiest restaurants in Cork.",
-    address: "5 Oliver Plunkett St, Cork, T12 VP97, Ireland",
+    address: "5-6 Oliver Plunkett St, Centre, Cork, T12 T959, Ireland",
     hours: "Mon–Sun: 12:00 PM – 10:00 PM",
     phone: "+353 21 427 4710",
     website: "www.marketlane.ie",
