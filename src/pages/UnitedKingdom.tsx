@@ -47,10 +47,6 @@ const UnitedKingdom = () => {
     { name: "Edinburgh", image: "photo-1506377585622-bedcbb027afc", places: 6, rating: 4.7, description: "Dedicated GF cafes, Brazilian street food, and Scottish classics made celiac-safe", route: "/gluten-free/united-kingdom/edinburgh", highlights: ["Sugar Daddy's", "Tupiniquim", "GF Kitchen"] },
     { name: "Manchester", image: "photo-1515586838455-8f8f940d6853", places: 2, rating: 4.6, description: "Trendy food scene with GF pizza, plant-based comfort food, and more", route: "/gluten-free/united-kingdom/manchester", highlights: ["Rudy's Pizza", "Wholesome Junkies"] },
     { name: "Birmingham", image: "/images/birmingham-city.webp?v=2", places: 2, rating: 4.5, description: "Growing GF scene with Italian pasta and creative veggie cafes", route: "/gluten-free/united-kingdom/birmingham", highlights: ["Pasta di Piazza", "Warehouse Cafe"] },
-    { name: "Glasgow", image: "photo-1580237072617-771c3ecc4a24", places: 3, rating: 4.4, description: "South Indian cuisine and Vietnamese with naturally GF dishes", route: "#", highlights: ["Dakhin", "Madurai", "Pho"] },
-    { name: "Bristol", image: "photo-1567359781514-3b964e2b04d6", places: 1, rating: 4.5, description: "Creative food scene with GF pancakes and harbourside dining", route: "#", highlights: ["The Pancake Man"] },
-    { name: "Brighton", image: "photo-1534655378221-6e0e46e1e76e", places: 1, rating: 4.3, description: "Seaside city with GF buckwheat galettes and health-conscious cafes", route: "#", highlights: ["Crepeaffaire"] },
-    { name: "Cardiff", image: "photo-1569587112025-0d460e81a126", places: 2, rating: 4.8, description: "Dedicated GF cafes and bakeries in the Welsh capital", route: "#", highlights: ["Against the Grain", "noglü"] },
   ];
 
   const faqItems = [
