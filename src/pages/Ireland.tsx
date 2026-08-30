@@ -45,11 +45,11 @@ const cities = [
   {
     name: "Limerick",
     image: "photo-1526129318478-62ed807ebdf9",
-    places: 0,
+    places: 10,
     rating: 4.5,
     description: "Riverside city with clearly labelled gluten-free pub and bistro menus",
-    route: "#",
-    highlights: ["Bistro GF menus"],
+    route: "/gluten-free/ireland/limerick",
+    highlights: ["The SpitJack", "Coqbull", "The Locke Bar", "Hook & Ladder"],
   },
 ];
 

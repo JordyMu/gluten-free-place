@@ -95,6 +95,7 @@ const COUNTRIES: Record<string, CountryConfig> = {
       { name: "Dublin", slug: "dublin" },
       { name: "Cork", slug: "cork" },
       { name: "Galway", slug: "galway" },
+      { name: "Limerick", slug: "limerick" },
     ],
   },
 };
