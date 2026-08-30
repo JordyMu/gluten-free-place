@@ -494,6 +494,50 @@ const Ireland = () => {
           </div>
         </section>
 
+        <section className="py-16 bg-green-50/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Beyond the Cities
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Other Irish Locations
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Gluten-free gems in smaller towns across Ireland — from Dingle's seafood bars to Waterford's historic pubs
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {otherLocations.map((r) => (
+                <Card key={r.name} className="border-2 border-green-200 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-5">
+                    <div className="mb-2">
+                      <h3 className="text-lg font-bold text-gray-900">{r.name}</h3>
+                      <div className="flex items-center text-green-700 mt-1">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span className="text-sm font-medium">{r.location}</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-3">{r.description}</p>
+                    <Badge variant="secondary" className="text-xs bg-green-50 text-green-800 mb-4">
+                      {r.highlight}
+                    </Badge>
+                    <Button
+                      onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
+                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 bg-white/50">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
