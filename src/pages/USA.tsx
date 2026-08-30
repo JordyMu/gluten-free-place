@@ -1,9 +1,15 @@
-import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, Award, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+
+const openExternalLink = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
 const USA = () => {
   
   const cities = [
@@ -167,272 +173,391 @@ const USA = () => {
     }
   ];
 
-  const renderStarRating = (rating: number) => {
-    return (
-      <div className="flex items-center gap-0.5">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            className={`h-4 w-4 ${
-              i < Math.floor(rating)
-                ? "fill-yellow-400 text-yellow-400"
-                : i < rating
-                ? "fill-yellow-200 text-yellow-400"
-                : "fill-gray-200 text-gray-200"
-            }`}
-          />
-        ))}
-      </div>
-    );
-  };
+  const faqItems = [
+    {
+      question: "Is the USA a good destination for gluten-free travelers?",
+      answer: "Yes! The USA has one of the most developed gluten-free dining scenes in the world. Major cities like New York and Los Angeles have numerous 100% dedicated gluten-free restaurants and bakeries, and FDA labeling laws protect consumers nationwide."
+    },
+    {
+      question: "Are there dedicated gluten-free restaurants in the USA?",
+      answer: "Absolutely. New York City alone has several 100% gluten-free restaurants including Risotteria Melotti, Senza Gluten, and Noglu. Los Angeles is home to Erin McKenna's Bakery, a fully gluten-free and vegan bakery."
+    },
+    {
+      question: "How do gluten-free labeling laws work in the USA?",
+      answer: "The FDA requires that products labeled 'gluten-free' contain less than 20 parts per million of gluten. Many restaurants also undergo third-party certification such as GFCO (Gluten-Free Certification Organization)."
+    },
+    {
+      question: "Which US city is most celiac-friendly?",
+      answer: "New York City leads with the highest concentration of dedicated gluten-free restaurants. Los Angeles, San Francisco, Chicago, and Portland also have strong gluten-free dining scenes with health-conscious cultures."
+    },
+    {
+      question: "Can I find gluten-free products in US supermarkets?",
+      answer: "Yes! Chains like Whole Foods, Trader Joe's, and Sprouts stock extensive gluten-free ranges. Most major supermarkets have dedicated gluten-free sections with clear labeling."
+    },
+    {
+      question: "How do I communicate celiac needs in American restaurants?",
+      answer: "English is spoken everywhere, and celiac awareness is high. Simply tell your server you have celiac disease and need strict gluten-free preparation — most staff in major cities are trained on cross-contamination protocols."
+    }
+  ];
+
+  const totalPlaces = cities.reduce((sum, c) => sum + c.restaurants.length, 0);
 
   return (
     <>
     <SEOHead
-      title="Gluten-Free Restaurants in USA | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants across the USA. Dedicated GF facilities, certified restaurants in New York, Los Angeles, Chicago, Miami & more."
+      title="Gluten-Free Options in the USA | Celiac-Safe Dining"
+      description="Gluten free options across the USA: verified celiac-safe restaurants, bakeries and cafés in New York City, Los Angeles and more."
       canonical="/usa"
     />
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
-      {/* Header with Back Button */}
-      <header className="border-b border-gray-200 sticky top-0 z-50 bg-white/80 backdrop-blur-md">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
-              <ArrowLeft className="h-5 w-5" />
-              <span className="font-medium">Back</span>
-            </Link>
-            <div className="text-center flex-1">
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in the USA</h1>
-              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
+      <header className="bg-white/80 backdrop-blur-md border-b border-red-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <Globe className="h-8 w-8 text-red-600" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+              Gluten-Free Places
+            </span>
+          </Link>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors whitespace-nowrap">Home</Link>
+            <Link to="/countries" className="text-gray-700 hover:text-red-600 transition-colors">Countries</Link>
+            <Link to="#cities" className="text-gray-700 hover:text-red-600 transition-colors">Cities</Link>
+            <Link to="#faq" className="text-gray-700 hover:text-red-600 transition-colors">FAQ</Link>
+            <UserMenu />
           </div>
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-12 bg-gradient-to-r from-blue-600/10 to-red-600/10">
-        <div className="container mx-auto px-4 text-center">
-          <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200">
-            <Flag className="h-4 w-4 mr-2" />
-            Certified Gluten-Free Restaurants
-          </Badge>
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">
-            Discover America's Best Gluten-Free Dining
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            From coast to coast, discover America's thriving gluten-free scene with dedicated facilities, innovative chefs, and celiac-safe dining experiences.
-          </p>
+      <section
+        className="relative py-12 overflow-hidden bg-cover bg-center"
+        style={{ backgroundImage: "url(/images/usa-hero.webp?v=2)" }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to All Countries
+          </Link>
+          <div className="max-w-4xl mx-auto">
+            <span className="text-5xl mb-4 block">🇺🇸</span>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <MapPin className="h-4 w-4 mr-2" />
+              {totalPlaces}+ Gluten-Free Places
+            </Badge>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Dedicated Gluten-Free Restaurants in the USA
+            </h1>
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+              Discover safe, delicious gluten-free dining from coast to coast.
+              From New York's dedicated Italian kitchens to LA's vegan GF bakeries.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="#cities">
+                <Button size="lg" className="bg-white text-red-700 hover:bg-red-50">
+                  Explore Cities
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <AddRestaurantDialog
+                city="USA"
+                triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* Key Notes */}
-      <section className="py-8 bg-yellow-50 border-y border-yellow-200">
+      <section id="cities" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Explore by City
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Top Gluten-Free Cities in the USA
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose a city to explore verified gluten-free restaurants with detailed reviews and safety information
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {cities.map((city, index) => {
+              const avgRating = (city.restaurants.reduce((s, r) => s + (r.rating || 0), 0) / city.restaurants.length).toFixed(1);
+              return (
+                <Card
+                  key={city.name}
+                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg overflow-hidden"
+                >
+                  <div className="relative overflow-hidden h-48 bg-gradient-to-br from-blue-600 to-red-600">
+                    <div className="absolute inset-0 bg-black/30" />
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                      <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                      <span className="font-semibold text-sm">{avgRating}</span>
+                    </div>
+                    <div className="absolute bottom-4 left-4">
+                      <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                    </div>
+                  </div>
+                  <CardContent className="p-5">
+                    <div className="flex items-center text-red-600 mb-3">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span className="font-semibold text-sm">{city.restaurants.length} places</span>
+                    </div>
+                    <div className="mb-4">
+                      <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {city.restaurants.slice(0, 3).map((r) => (
+                          <Badge
+                            key={r.name}
+                            variant="secondary"
+                            className="text-xs bg-red-50 text-red-700"
+                          >
+                            {r.name.replace(/^[^–]+–\s*/, "").split("–")[0].replace(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/gu, "").trim().slice(0, 20)}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    <a href={`#city-${city.name.replace(/\s+/g, "-").toLowerCase()}`}>
+                      <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                        Explore {city.name}
+                        <ArrowRight className="h-4 w-4 ml-2" />
+                      </Button>
+                    </a>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="restaurants" className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+              <Star className="h-4 w-4 mr-2" />
+              Top Rated
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Top Gluten-Free Restaurants in the USA
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Verified celiac-safe dining spots with dedicated facilities and proven protocols
+            </p>
+          </div>
+
+          {cities.map((city) => (
+            <div key={city.name} id={`city-${city.name.replace(/\s+/g, "-").toLowerCase()}`} className="mb-12 scroll-mt-24">
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-2">
+                <MapPin className="h-6 w-6 text-red-600" />
+                {city.name}
+              </h3>
+              <div className="space-y-6">
+                {city.restaurants.map((restaurant) => (
+                  <Card key={restaurant.name} className="border-2 border-red-100 hover:border-red-300 hover:shadow-xl transition-all duration-300 overflow-hidden">
+                    <CardContent className="p-6">
+                      <div className="flex items-start justify-between flex-wrap gap-3 mb-3">
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl">{restaurant.icon}</span>
+                          <div>
+                            <h4 className="text-xl font-bold text-gray-900">{restaurant.name}</h4>
+                            <div className="flex items-center gap-2 mt-1">
+                              <div className="flex items-center gap-0.5">
+                                {[...Array(5)].map((_, i) => (
+                                  <Star
+                                    key={i}
+                                    className={`h-4 w-4 ${i < Math.floor(restaurant.rating) ? "fill-yellow-400 text-yellow-400" : "fill-gray-200 text-gray-200"}`}
+                                  />
+                                ))}
+                              </div>
+                              <span className="font-semibold text-sm">{restaurant.rating}</span>
+                              <span className="text-gray-500 text-sm">({restaurant.reviewCount} reviews)</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex flex-wrap gap-2">
+                          {restaurant.menuType === "fully-gluten-free" && (
+                            <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200">100% Gluten-Free</Badge>
+                          )}
+                          {restaurant.cuisineTypes?.map((c) => (
+                            <Badge key={c} variant="secondary" className="bg-red-50 text-red-700">{c}</Badge>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-x-5 gap-y-1 text-sm text-gray-600 mb-3">
+                        <span className="flex items-center gap-1">
+                          <MapPin className="h-4 w-4 text-red-600" />
+                          {restaurant.address}
+                        </span>
+                        {restaurant.phone && (
+                          <span className="flex items-center gap-1">
+                            <Phone className="h-4 w-4 text-red-600" />
+                            {restaurant.phone}
+                          </span>
+                        )}
+                        {restaurant.hours && (
+                          <span className="flex items-center gap-1">
+                            <Clock className="h-4 w-4 text-red-600" />
+                            {restaurant.hours}
+                          </span>
+                        )}
+                      </div>
+
+                      <p className="text-gray-600 mb-4">{restaurant.overview}</p>
+
+                      {restaurant.menuHighlights && restaurant.menuHighlights.length > 0 && (
+                        <div className="mb-4">
+                          <p className="text-sm font-semibold text-gray-900 mb-2">Menu Highlights:</p>
+                          <div className="flex flex-wrap gap-2">
+                            {restaurant.menuHighlights.map((item) => (
+                              <Badge key={item} variant="outline" className="text-xs border-red-200 text-gray-700">
+                                {item}
+                              </Badge>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+
+                      {restaurant.proTip && (
+                        <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
+                          <p className="text-sm text-amber-800">
+                            <span className="font-semibold">Pro Tip:</span> {restaurant.proTip}
+                          </p>
+                        </div>
+                      )}
+
+                      <div className="flex flex-wrap gap-3">
+                        {restaurant.certificationLevel && (
+                          <Badge className="bg-emerald-50 text-emerald-700 border-emerald-200">
+                            <Shield className="h-3 w-3 mr-1" />
+                            {restaurant.certificationLevel}
+                          </Badge>
+                        )}
+                      </div>
+
+                      <div className="flex flex-col sm:flex-row gap-3 mt-4">
+                        {restaurant.directionsUrl && (
+                          <Button
+                            onClick={() => openExternalLink(restaurant.directionsUrl)}
+                            className="bg-red-700 hover:bg-red-800 text-white"
+                          >
+                            <MapPin className="h-4 w-4 mr-2" />
+                            Get Directions
+                          </Button>
+                        )}
+                        {restaurant.website && (
+                          <Button
+                            variant="outline"
+                            onClick={() => openExternalLink(`https://${restaurant.website}`)}
+                            className="border-red-200 text-red-700 hover:bg-red-50"
+                          >
+                            <Globe className="h-4 w-4 mr-2" />
+                            Visit Website
+                          </Button>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h3 className="text-lg font-bold text-yellow-800 mb-4 flex items-center">
-              <Star className="h-5 w-5 mr-2" />
-              Important Notes
-            </h3>
-            <div className="grid md:grid-cols-2 gap-4 text-yellow-700">
-              <div className="flex items-start space-x-2">
-                <Badge className="bg-yellow-200 text-yellow-800">FDA</Badge>
-                <span>FDA labeling requirements protect consumers nationwide</span>
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+                <Award className="h-4 w-4 mr-2" />
+                About
+              </Badge>
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in the USA</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Why the USA?</h3>
+                <p className="text-gray-600 mb-4">
+                  The USA is a world leader in gluten-free dining. With FDA labeling laws, widespread celiac
+                  awareness, and dedicated GF restaurants in every major city, gluten-free travelers can explore with confidence.
+                </p>
+                <p className="text-gray-600">
+                  New York City pioneered the dedicated gluten-free restaurant movement, while Los Angeles combines
+                  health-conscious culture with innovative GF bakeries and cafes.
+                </p>
               </div>
-              <div className="flex items-start space-x-2">
-                <Phone className="h-4 w-4 mt-1 text-yellow-600" />
-                <span>Download Find Me Gluten Free app for more locations</span>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Look for GFCO-certified products and restaurants</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>FDA rules require "gluten-free" labels to mean under 20ppm</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Dedicated GF facilities eliminate cross-contamination risk</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Always mention celiac disease when ordering, not just "gluten-free preference"</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Cities and Restaurants */}
-      <section className="py-16">
+      <section className="py-16 bg-red-50/50">
         <div className="container mx-auto px-4">
-          <div className="space-y-12">
-            {cities.map((city, cityIndex) => (
-              <div key={city.name} className={`animate-fade-in`} style={{animationDelay: `${cityIndex * 0.1}s`}}>
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                  <MapPin className="h-6 w-6 mr-2 text-blue-600" />
-                  {city.name}
-                </h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {city.restaurants.map((restaurant, index) => (
-                    <Card key={restaurant.name} className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-0 shadow-md animate-fade-in ${restaurant.featured ? 'md:col-span-2 lg:col-span-3' : ''}`} style={{animationDelay: `${(cityIndex * 0.1) + (index * 0.05)}s`}}>
-                      <CardHeader className="pb-3">
-                        <CardTitle className={`${restaurant.featured ? 'text-xl' : 'text-lg'} flex items-start justify-between`}>
-                          <span>{restaurant.name}</span>
-                          {!restaurant.featured && <span className="text-2xl ml-2">{restaurant.icon}</span>}
-                        </CardTitle>
-                        
-                        {/* Rating and Badges */}
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {restaurant.rating && (
-                            <div className="flex items-center space-x-2">
-                              {renderStarRating(restaurant.rating)}
-                              <span className="text-xs text-gray-500">({restaurant.reviewCount} reviews)</span>
-                            </div>
-                          )}
-                        </div>
-                        
-                        <div className="flex flex-wrap gap-2 mt-2">
-                          {/* Cuisine Type Badges */}
-                          {restaurant.cuisineTypes?.map((type, idx) => (
-                            <Badge key={idx} variant="outline" className="border-orange-200 bg-orange-50 text-orange-700">
-                              {type}
-                            </Badge>
-                          ))}
-                          
-                          {/* Celiac Safe Badge */}
-                          {restaurant.celiacSafe && (
-                            <Badge className="bg-green-100 text-green-800 border-green-200">
-                              <Shield className="h-3 w-3 mr-1" />
-                              Celiac Safe
-                            </Badge>
-                          )}
-                        </div>
-                      </CardHeader>
-                      
-                      <CardContent className="space-y-4">
-                        {/* Specialty */}
-                        {restaurant.specialty && (
-                          <div className="flex items-start space-x-2">
-                            <Utensils className="h-4 w-4 text-orange-500 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm font-medium text-orange-700">{restaurant.specialty}</span>
-                          </div>
-                        )}
-                        
-                        {/* Certification Level */}
-                        {restaurant.certificationLevel && (
-                          <div className="flex items-start space-x-2 bg-blue-50 p-3 rounded-lg">
-                            <Award className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
-                            <span className="text-sm font-medium text-blue-800">{restaurant.certificationLevel}</span>
-                          </div>
-                        )}
-                        
-                        {/* Address */}
-                        <div className="flex items-start space-x-2">
-                          <MapPin className="h-4 w-4 text-gray-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm text-gray-600">{restaurant.address}</span>
-                        </div>
-                        
-                        {/* Hours */}
-                        <div className="flex items-start space-x-2">
-                          <Clock className="h-4 w-4 text-blue-500 mt-0.5 flex-shrink-0" />
-                          <span className="text-sm">{restaurant.hours}</span>
-                        </div>
-                        
-                        {/* Website & Phone */}
-                        <div className="flex flex-wrap gap-4">
-                          <div className="flex items-center space-x-2">
-                            <Globe className="h-4 w-4 text-blue-500" />
-                            <span className="text-sm text-blue-600">{restaurant.website}</span>
-                          </div>
-                          <div className="flex items-center space-x-2">
-                            <Phone className="h-4 w-4 text-green-500" />
-                            <span className="text-sm text-green-600">{restaurant.phone}</span>
-                          </div>
-                        </div>
-                        
-                        {/* Directions Button */}
-                        {restaurant.directionsUrl && (
-                          <div className="pt-2">
-                            <Button 
-                              onClick={() => window.open(restaurant.directionsUrl, '_blank')}
-                              className="bg-blue-600 hover:bg-blue-700 text-white"
-                              size="sm"
-                            >
-                              <Navigation className="h-4 w-4 mr-2" />
-                              Get Directions
-                            </Button>
-                          </div>
-                        )}
-                        
-                        {/* Overview */}
-                        <div className="bg-green-50 p-4 rounded-lg">
-                          <h4 className="font-semibold text-green-800 mb-2 flex items-center">
-                            <CheckCircle className="h-4 w-4 mr-2" />
-                            Overview
-                          </h4>
-                          <p className="text-sm text-black">{restaurant.overview}</p>
-                        </div>
-                        
-                        {/* Menu Highlights */}
-                        <div className="bg-orange-50 p-4 rounded-lg">
-                          <h4 className="font-semibold text-orange-800 mb-3 flex items-center">
-                            <Camera className="h-4 w-4 mr-2" />
-                            Menu Highlights
-                          </h4>
-                          <div className="space-y-1">
-                            {restaurant.menuHighlights?.map((item, idx) => (
-                              <div key={idx} className="text-sm text-orange-700">{item}</div>
-                            ))}
-                          </div>
-                        </div>
-                        
-                        {/* User Reviews Section */}
-                        {restaurant.userReviews && (
-                          <div className="bg-gray-50 p-4 rounded-lg">
-                            <h4 className="font-semibold text-gray-800 mb-3 flex items-center">
-                              <MessageCircle className="h-4 w-4 mr-2" />
-                              User Reviews
-                            </h4>
-                            <div className="space-y-3">
-                              {restaurant.userReviews.map((review, idx) => (
-                                <div key={idx} className="bg-white p-3 rounded-lg border border-gray-200">
-                                  <div className="flex items-center justify-between mb-2">
-                                    <span className="font-semibold text-sm">{review.user}</span>
-                                    <div className="flex items-center gap-1">
-                                      {renderStarRating(review.rating)}
-                                    </div>
-                                  </div>
-                                  <p className="text-sm text-gray-700 mb-1">{review.comment}</p>
-                                  <span className="text-xs text-gray-500">{review.date}</span>
-                                </div>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        
-                        {/* Pro Tip */}
-                        {restaurant.proTip && (
-                          <div className="bg-purple-50 p-3 rounded-lg border border-purple-200">
-                            <div className="flex items-start space-x-2">
-                              <Heart className="h-4 w-4 text-purple-600 mt-0.5 flex-shrink-0" />
-                              <div>
-                                <span className="text-xs font-semibold text-purple-800 uppercase tracking-wide">Pro Tip</span>
-                                <p className="text-sm text-purple-700 mt-1">{restaurant.proTip}</p>
-                              </div>
-                            </div>
-                          </div>
-                        )}
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 mb-3">
+              <Shield className="w-6 h-6 text-red-600" />
+              <h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2>
+            </div>
+            <p className="text-gray-600">
+              All restaurants are verified by our community of celiac travelers. We prioritize dedicated gluten-free
+              facilities and restaurants with proven celiac protocols. Always communicate your dietary needs directly with restaurant staff.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-red-600 text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Planning Your American Adventure?</h2>
-          <p className="text-xl mb-8 opacity-90">Explore more gluten-free destinations around the world</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/countries">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
-                Explore More Countries
-              </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="border-white bg-transparent !text-white hover:bg-white hover:text-blue-600">
-              Add a Restaurant
-            </Button>
+      <section id="faq" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+              <p className="text-gray-600 mt-2">Everything you need to know about gluten-free dining in the USA</p>
+            </div>
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`faq-${index}`}>
+                  <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-red-600 to-red-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Know a Great GF Spot in the USA?</h2>
+          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            Help fellow celiac travelers discover safe dining options across America. Submit a restaurant to our growing directory.
+          </p>
+          <AddRestaurantDialog city="USA" triggerClassName="bg-white text-red-700 hover:bg-red-50 text-lg px-8 py-3" />
         </div>
       </section>
     </div>
