@@ -548,31 +548,72 @@ const Ireland = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {otherLocations.map((r) => (
-                <Card key={r.name} className="border-2 border-green-200 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-5">
-                    <div className="mb-2">
-                      <h3 className="text-lg font-bold text-gray-900">{r.name}</h3>
-                      <div className="flex items-center text-green-700 mt-1">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        <span className="text-sm font-medium">{r.location}</span>
+            <div className="max-w-3xl mx-auto space-y-5">
+              {otherLocations.map((r) => {
+                const isFullyGF = r.menuType === "fully-gluten-free";
+                return (
+                  <Card
+                    key={r.name}
+                    className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+                  >
+                    <CardContent className="p-6">
+                      <div className="mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                          <span className="text-2xl">{r.icon}</span>
+                          <span className="hover:text-green-700 transition-colors">{r.name}</span>
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
                       </div>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-3">{r.description}</p>
-                    <Badge variant="secondary" className="text-xs bg-green-50 text-green-800 mb-4">
-                      {r.highlight}
-                    </Badge>
-                    <Button
-                      onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
-                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+
+                      <div className="flex items-center gap-2 mb-3 ml-9">
+                        {renderStarRating(r.rating)}
+                        <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                        {r.cuisineTypes.map((cuisine) => (
+                          <Badge
+                            key={cuisine}
+                            variant="outline"
+                            className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                          >
+                            🍴 {cuisine}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-3 ml-9">
+                        <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 text-xs">
+                          <Shield className="h-3.5 w-3.5 mr-1" />
+                          Celiac Protocols
+                        </Badge>
+                        <Badge className={`text-xs ${isFullyGF
+                          ? "bg-emerald-100 text-emerald-800 border-emerald-200"
+                          : "bg-violet-100 text-violet-800 border-violet-200"}`}>
+                          🍽️ {isFullyGF ? "Fully GF" : "Mixed Menu"}
+                        </Badge>
+                      </div>
+
+                      <div className="space-y-2 ml-9 text-sm text-gray-600">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                          <span>{r.location}, Ireland</span>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 ml-9">
+                        <button
+                          onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                        >
+                          <ArrowRight className="h-3.5 w-3.5" />
+                          Get Directions
+                        </button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
