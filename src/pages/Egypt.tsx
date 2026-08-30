@@ -314,7 +314,7 @@ const Egypt = () => {
                       scene in Cairo and resort cities means more restaurants understand celiac requirements.
                     </p>
                     <p className="text-gray-700 leading-relaxed">
-                      Red Sea resort towns like Sharm El Sheikh and Hurghada excel at catering to dietary needs, with many all-inclusive hotels offering
+                      Red Sea resort towns like Sharm El Sheikh excel at catering to dietary needs, with many all-inclusive hotels offering
                       dedicated gluten-free buffet stations. Cairo's cosmopolitan neighborhoods of Zamalek and Maadi feature health-conscious cafés and
                       international restaurants with GF menus. Always be cautious with fried foods and sauces that may contain hidden wheat flour.
                     </p>
