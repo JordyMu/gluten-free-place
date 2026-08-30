@@ -112,7 +112,7 @@ const Egypt = () => {
     },
     {
       name: "Alexandria",
-      image: "photo-1568322503122-d1d246827de2",
+      image: "/images/alexandria-hero.webp?v=2",
       places: 3,
       rating: 4.4,
       description: "Mediterranean coastal city with fresh seafood and naturally GF Greek-influenced cuisine",
