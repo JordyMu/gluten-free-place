@@ -87,6 +87,12 @@ const COUNTRIES: Record<string, CountryConfig> = {
       { name: "Franschhoek", slug: "franschhoek" },
     ],
   },
+  ireland: {
+    countryName: "Ireland",
+    hubPath: "/ireland",
+    cityBase: "/gluten-free/ireland",
+    cities: [{ name: "Dublin", slug: "dublin" }],
+  },
 };
 
 interface RelatedCitiesProps {
