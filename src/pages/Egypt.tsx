@@ -121,7 +121,7 @@ const Egypt = () => {
     },
     {
       name: "Giza",
-      image: "photo-1539650116574-8efeb43e2750",
+      image: "/images/giza-pyramids-hero.webp?v=2",
       places: 5,
       rating: 4.4,
       description: "Home of the Pyramids with tourist-friendly restaurants offering GF options",
