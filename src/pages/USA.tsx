@@ -420,7 +420,7 @@ const USA = () => {
     <>
     <SEOHead
       title="Gluten-Free Options in the USA | Celiac-Safe Dining"
-      description="Gluten free options across the USA: verified celiac-safe restaurants, bakeries and cafés in New York City, Los Angeles and more."
+      description="Gluten free options across the USA: verified celiac-safe restaurants, bakeries and cafés in New York City, Los Angeles, Chicago, Portland and more."
       canonical="/usa"
     />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-red-50">
@@ -463,7 +463,7 @@ const USA = () => {
             </h1>
             <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
               Discover safe, delicious gluten-free dining from coast to coast.
-              From New York's dedicated Italian kitchens to LA's vegan GF bakeries.
+              From New York's dedicated Italian kitchens to Chicago's GF deep dish and Portland's artisan bakeries.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
