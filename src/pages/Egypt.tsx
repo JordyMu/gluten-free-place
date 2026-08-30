@@ -336,9 +336,6 @@ const Egypt = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
               Other Egyptian Locations
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Gluten-free friendly spots beyond the main cities — from Luxor and Aswan to Hurghada and El Gouna
-            </p>
           </div>
 
           <div className="max-w-3xl mx-auto space-y-5">
