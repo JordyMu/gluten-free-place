@@ -32,6 +32,7 @@ interface CanadaCityPageProps {
   countryName?: string;
   countrySlug?: string;
   relatedCountry?: string;
+  hideOverview?: boolean;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
