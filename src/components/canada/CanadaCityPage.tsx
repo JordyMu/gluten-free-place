@@ -249,7 +249,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                     )}
                   </div>
 
-                  <p className="text-gray-700 mb-4">{restaurant.overview}</p>
+                  {!hideOverview && <p className="text-gray-700 mb-4">{restaurant.overview}</p>}
 
 
 
