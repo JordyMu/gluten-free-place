@@ -73,7 +73,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry, hideOverview }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
