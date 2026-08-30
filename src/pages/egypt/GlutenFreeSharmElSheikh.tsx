@@ -31,6 +31,7 @@ const GlutenFreeSharmElSheikh = () => (
     emoji="🏖️"
     heading="Dedicated Gluten-free Restaurants in Sharm El Sheikh"
     compactHero
+    hideOverview
     heroImage="/images/sharm-el-sheikh-hero.webp?v=2"
     intro="Sharm El Sheikh's Red Sea resorts and international restaurants make gluten-free dining easy — from dedicated GF menus at Hard Rock Cafe to naturally GF grilled seafood, curries, and teppanyaki across Naama Bay, Soho Square, and Nabq Bay."
     restaurants={restaurantsForCityPage}
