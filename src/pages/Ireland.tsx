@@ -56,28 +56,18 @@ const cities = [
 const topRestaurants = [
   {
     name: "The Coeliac Sanctuary",
-    city: "Dublin",
+    icon: "🍀",
     rating: 4.8,
     reviewCount: 156,
     cuisineTypes: ["Irish", "International"],
-    celiacSafe: "dedicated-facility",
     menuType: "fully-gluten-free",
     address: "45 Grafton Street, Dublin 2, Ireland",
     hours: "Mon–Sat: 9:00 AM – 9:00 PM, Sun: 10:00 AM – 6:00 PM",
     phone: "+353 1 234 5678",
     website: "www.coeliacsanctuary.ie",
     directionsUrl: "https://maps.google.com/?q=The+Coeliac+Sanctuary+Dublin",
-    overview:
+    specialty:
       "Ireland's premier dedicated gluten-free restaurant offering traditional Irish cuisine with a modern twist. Every dish is certified gluten-free and prepared in a 100% dedicated facility.",
-    menuHighlights: [
-      "🍲 Irish Stew",
-      "🍞 Gluten-Free Soda Bread",
-      "🐟 Fish & Chips",
-      "🥧 Shepherd's Pie",
-      "🍳 Traditional Breakfast",
-    ],
-    proTip:
-      "Try their homemade gluten-free soda bread — it's available for takeaway and freezes well!",
   },
 ];
 
@@ -450,85 +440,95 @@ const Ireland = () => {
               </p>
             </div>
 
-            <div className="max-w-3xl mx-auto space-y-6">
-              {topRestaurants.map((r) => (
-                <Card key={r.name} className="overflow-hidden border-2 border-green-200 hover:shadow-xl transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="mb-3">
-                      <h3 className="text-xl font-bold text-gray-900">{r.name}</h3>
-                      <p className="text-sm text-gray-500">{r.city}, Ireland</p>
-                    </div>
-
-                    <div className="flex items-center gap-2 mb-3">
-                      {renderStarRating(r.rating)}
-                      <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
-                    </div>
-
-                    <div className="flex flex-wrap gap-2 mb-3">
-                      {r.cuisineTypes.map((c) => (
-                        <Badge key={c} variant="outline">{c}</Badge>
-                      ))}
-                      <Badge className="bg-green-100 text-green-800 border-green-300">
-                        <Shield className="w-3 h-3 mr-1" />
-                        Dedicated GF Facility
-                      </Badge>
-                      <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% Gluten-Free</Badge>
-                    </div>
-
-                    <p className="text-gray-700 mb-4">{r.overview}</p>
-
-                    <div className="space-y-2 text-sm text-gray-600 mb-4">
-                      <div className="flex items-start gap-2">
-                        <MapPin className="w-4 h-4 mt-0.5 text-gray-400" />
-                        <span>{r.address}</span>
+            <div className="max-w-3xl mx-auto space-y-5">
+              {topRestaurants.map((r) => {
+                const isFullyGF = r.menuType === "fully-gluten-free";
+                return (
+                  <Card
+                    key={r.name}
+                    className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+                  >
+                    <CardContent className="p-6">
+                      <div className="mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                          <span className="text-2xl">{r.icon}</span>
+                          <span className="hover:text-green-700 transition-colors">{r.name}</span>
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
                       </div>
-                      <div className="flex items-start gap-2">
-                        <Clock className="w-4 h-4 mt-0.5 text-gray-400" />
-                        <span>{r.hours}</span>
+
+                      <div className="flex items-center gap-2 mb-3 ml-9">
+                        {renderStarRating(r.rating)}
+                        <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Phone className="w-4 h-4 text-gray-400" />
-                        <span>{r.phone}</span>
+
+                      <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                        {r.cuisineTypes.map((c) => (
+                          <Badge
+                            key={c}
+                            variant="outline"
+                            className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                          >
+                            🍴 {c}
+                          </Badge>
+                        ))}
                       </div>
-                      <div className="flex items-center gap-2">
-                        <Globe className="w-4 h-4 text-gray-400" />
+
+                      <div className="flex flex-wrap gap-2 mb-3 ml-9">
+                        <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 text-xs">
+                          <Shield className="h-3.5 w-3.5 mr-1" />
+                          Dedicated GF Facility
+                        </Badge>
+                        <Badge className={`text-xs ${isFullyGF
+                          ? "bg-emerald-100 text-emerald-800 border-emerald-200"
+                          : "bg-violet-100 text-violet-800 border-violet-200"}`}>
+                          🍽️ {isFullyGF ? "Fully GF" : "Mixed Menu"}
+                        </Badge>
+                      </div>
+
+                      <div className="space-y-2 ml-9 text-sm text-gray-600">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                          <span>{r.address}</span>
+                        </div>
+                        {r.hours && (
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-gray-400 shrink-0" />
+                            <span>{r.hours}</span>
+                          </div>
+                        )}
+                        <div className="flex items-center gap-4 flex-wrap">
+                          {r.website && (
+                            <button
+                              onClick={() => openExternalLink(r.website)}
+                              className="flex items-center gap-1.5 text-blue-600 hover:text-blue-800 transition-colors"
+                            >
+                              <Globe className="h-4 w-4" />
+                              <span>{r.website}</span>
+                            </button>
+                          )}
+                          {r.phone && (
+                            <span className="flex items-center gap-1.5 text-emerald-600">
+                              <Phone className="h-4 w-4" />
+                              <span>{r.phone}</span>
+                            </span>
+                          )}
+                        </div>
+                      </div>
+
+                      <div className="mt-4 ml-9">
                         <button
-                          onClick={() => openExternalLink(r.website)}
-                          className="text-green-700 hover:underline"
+                          onClick={() => openExternalLink(r.directionsUrl)}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
                         >
-                          {r.website}
+                          <ArrowRight className="h-3.5 w-3.5" />
+                          Get Directions
                         </button>
                       </div>
-                    </div>
-
-                    <div className="bg-orange-50 rounded-lg p-4 mb-4">
-                      <div className="flex items-center gap-2 mb-2">
-                        <CheckCircle className="w-5 h-5 text-orange-600" />
-                        <h4 className="font-semibold text-gray-900">Menu Highlights</h4>
-                      </div>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
-                        {r.menuHighlights.map((item) => (
-                          <li key={item} className="text-sm text-gray-700">{item}</li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="bg-amber-50 border-l-4 border-amber-400 p-4 mb-4">
-                      <p className="text-sm text-gray-700">
-                        <span className="font-semibold">Pro Tip:</span> {r.proTip}
-                      </p>
-                    </div>
-
-                    <Button
-                      onClick={() => openExternalLink(r.directionsUrl)}
-                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
