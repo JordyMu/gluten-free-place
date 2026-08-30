@@ -10,6 +10,33 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { EgyptRestaurantList } from "@/components/egypt/EgyptRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
+const otherEgyptRestaurants: { name: string; area: string; icon: string; specialty: string; rating: number; cuisines: string[] }[] = [
+  { name: "Eldorado Lodge & Restaurant", area: "South Sinai", icon: "🏕️", specialty: "Lodge restaurant with GF-friendly grilled dishes", rating: 4.5, cuisines: ["International", "Grill"] },
+  { name: "Café & Restaurant Maratonga", area: "Luxor", icon: "☕", specialty: "Riverside café with naturally GF options", rating: 4.4, cuisines: ["Egyptian", "Café"] },
+  { name: "Nicole's Greenhouse", area: "Hurghada", icon: "🌿", specialty: "Health-conscious café with fresh GF choices", rating: 4.6, cuisines: ["Healthy", "Vegetarian"] },
+  { name: "Steigenberger Resort Achti", area: "Luxor", icon: "🏨", specialty: "Resort dining with GF options on request", rating: 4.5, cuisines: ["International", "Buffet"] },
+  { name: "Meraki Resort Hurghada", area: "Hurghada", icon: "🏖️", specialty: "All-inclusive resort with GF-aware buffets", rating: 4.6, cuisines: ["International", "Buffet"] },
+  { name: "Sheraton Miramar Resort El Gouna", area: "El Gouna", icon: "🏝️", specialty: "Resort restaurants catering to dietary needs", rating: 4.5, cuisines: ["International", "Seafood"] },
+  { name: "Snobs Restaurant", area: "Luxor", icon: "🍽️", specialty: "Popular Luxor restaurant with GF-friendly dishes", rating: 4.4, cuisines: ["Egyptian", "International"] },
+  { name: "Premier Le Reve Hotel & Spa", area: "Hurghada", icon: "🌊", specialty: "Adults-only resort with dietary-friendly dining", rating: 4.7, cuisines: ["International", "Fine Dining"] },
+  { name: "Sofitel Legend Old Cataract Aswan", area: "Aswan", icon: "🏛️", specialty: "Legendary hotel with fine GF dining options", rating: 4.8, cuisines: ["French", "Fine Dining"] },
+  { name: "Amarina Abu Soma Resort & Aquapark", area: "Safaga / Soma Bay", icon: "🎢", specialty: "Family resort with GF buffet options", rating: 4.4, cuisines: ["International", "Buffet"] },
+  { name: "Pickalbatros Vita Resort - Portofino Marsa Alam", area: "Marsa Alam", icon: "🐠", specialty: "Red Sea resort with dietary-aware dining", rating: 4.5, cuisines: ["International", "Italian"] },
+  { name: "Swiss Inn Resort Hurghada", area: "Hurghada", icon: "🏨", specialty: "Resort with GF options available on request", rating: 4.3, cuisines: ["International", "Buffet"] },
+  { name: "German Bakery El Gouna", area: "El Gouna", icon: "🥐", specialty: "European-style bakery and café", rating: 4.5, cuisines: ["Bakery", "Café"] },
+  { name: "Red Cat", area: "Saint Catherine", icon: "🐱", specialty: "Cozy spot near Mount Sinai with simple GF dishes", rating: 4.4, cuisines: ["Egyptian", "Grill"] },
+  { name: "Chef Food Supply", area: "Saint Catherine", icon: "🛒", specialty: "Food supply store with GF-friendly products", rating: 4.2, cuisines: ["Grocery", "Specialty"] },
+  { name: "Sharm El Naga Resort & Diving Center", area: "Soma Bay / Hurghada", icon: "🤿", specialty: "Diving resort with fresh seafood and GF dishes", rating: 4.5, cuisines: ["Seafood", "International"] },
+  { name: "Cook's Club El Gouna", area: "El Gouna", icon: "🎶", specialty: "Trendy beach club with GF-friendly menu", rating: 4.5, cuisines: ["International", "Mediterranean"] },
+  { name: "MG Alexander the Great Marsa Alam", area: "Marsa Alam", icon: "🏖️", specialty: "Beach resort catering to dietary needs", rating: 4.4, cuisines: ["International", "Buffet"] },
+  { name: "Three Corners Rihana Resort", area: "El Gouna", icon: "🌴", specialty: "Resort with GF-aware buffet stations", rating: 4.3, cuisines: ["International", "Buffet"] },
+  { name: "Jaz Aquamarine", area: "Hurghada", icon: "💎", specialty: "Large resort with multiple GF dining options", rating: 4.5, cuisines: ["International", "Buffet"] },
+  { name: "Mövenpick Aswan", area: "Aswan", icon: "🏝️", specialty: "Island hotel with celiac-aware kitchen", rating: 4.6, cuisines: ["International", "Fine Dining"] },
+  { name: "King Jamaica", area: "Aswan", icon: "🍹", specialty: "Nubian restaurant with naturally GF dishes", rating: 4.3, cuisines: ["Nubian", "Egyptian"] },
+  { name: "Restaurant Paris", area: "Luxor", icon: "🗼", specialty: "Classic Luxor restaurant with GF options", rating: 4.2, cuisines: ["Egyptian", "International"] },
+  { name: "Sunflower Restaurant", area: "Luxor", icon: "🌻", specialty: "West Bank favorite with GF-friendly meals", rating: 4.4, cuisines: ["Egyptian", "Vegetarian"] },
+];
+
 const Egypt = () => {
   useEffect(() => {
     const ogTitle = document.querySelector('meta[property="og:title"]');
