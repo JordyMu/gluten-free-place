@@ -27,11 +27,11 @@ const cities = [
   {
     name: "Cork",
     image: "photo-1564959130747-897fb406b9af",
-    places: 6,
+    places: 17,
     rating: 4.6,
     description: "Foodie capital of the south with coeliac-aware restaurants and artisan bakeries",
     route: "/gluten-free/ireland/cork",
-    highlights: ["Anton's", "The Quay Co-op", "Good Day Deli"],
+    highlights: ["Anton's", "The Quay Co-op", "Good Day Deli", "Market Lane", "Liberty Grill"],
   },
   {
     name: "Galway",
