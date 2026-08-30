@@ -10,6 +10,33 @@ import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialo
 import { EgyptRestaurantList } from "@/components/egypt/EgyptRestaurantList";
 import { SEOHead } from "@/components/SEOHead";
 
+const otherEgyptRestaurants: { name: string; area: string; icon: string; specialty: string; rating: number; cuisines: string[] }[] = [
+  { name: "Eldorado Lodge & Restaurant", area: "South Sinai", icon: "🏕️", specialty: "Lodge restaurant with GF-friendly grilled dishes", rating: 4.5, cuisines: ["International", "Grill"] },
+  { name: "Café & Restaurant Maratonga", area: "Luxor", icon: "☕", specialty: "Riverside café with naturally GF options", rating: 4.4, cuisines: ["Egyptian", "Café"] },
+  { name: "Nicole's Greenhouse", area: "Hurghada", icon: "🌿", specialty: "Health-conscious café with fresh GF choices", rating: 4.6, cuisines: ["Healthy", "Vegetarian"] },
+  { name: "Steigenberger Resort Achti", area: "Luxor", icon: "🏨", specialty: "Resort dining with GF options on request", rating: 4.5, cuisines: ["International", "Buffet"] },
+  { name: "Meraki Resort Hurghada", area: "Hurghada", icon: "🏖️", specialty: "All-inclusive resort with GF-aware buffets", rating: 4.6, cuisines: ["International", "Buffet"] },
+  { name: "Sheraton Miramar Resort El Gouna", area: "El Gouna", icon: "🏝️", specialty: "Resort restaurants catering to dietary needs", rating: 4.5, cuisines: ["International", "Seafood"] },
+  { name: "Snobs Restaurant", area: "Luxor", icon: "🍽️", specialty: "Popular Luxor restaurant with GF-friendly dishes", rating: 4.4, cuisines: ["Egyptian", "International"] },
+  { name: "Premier Le Reve Hotel & Spa", area: "Hurghada", icon: "🌊", specialty: "Adults-only resort with dietary-friendly dining", rating: 4.7, cuisines: ["International", "Fine Dining"] },
+  { name: "Sofitel Legend Old Cataract Aswan", area: "Aswan", icon: "🏛️", specialty: "Legendary hotel with fine GF dining options", rating: 4.8, cuisines: ["French", "Fine Dining"] },
+  { name: "Amarina Abu Soma Resort & Aquapark", area: "Safaga / Soma Bay", icon: "🎢", specialty: "Family resort with GF buffet options", rating: 4.4, cuisines: ["International", "Buffet"] },
+  { name: "Pickalbatros Vita Resort - Portofino Marsa Alam", area: "Marsa Alam", icon: "🐠", specialty: "Red Sea resort with dietary-aware dining", rating: 4.5, cuisines: ["International", "Italian"] },
+  { name: "Swiss Inn Resort Hurghada", area: "Hurghada", icon: "🏨", specialty: "Resort with GF options available on request", rating: 4.3, cuisines: ["International", "Buffet"] },
+  { name: "German Bakery El Gouna", area: "El Gouna", icon: "🥐", specialty: "European-style bakery and café", rating: 4.5, cuisines: ["Bakery", "Café"] },
+  { name: "Red Cat", area: "Saint Catherine", icon: "🐱", specialty: "Cozy spot near Mount Sinai with simple GF dishes", rating: 4.4, cuisines: ["Egyptian", "Grill"] },
+  { name: "Chef Food Supply", area: "Saint Catherine", icon: "🛒", specialty: "Food supply store with GF-friendly products", rating: 4.2, cuisines: ["Grocery", "Specialty"] },
+  { name: "Sharm El Naga Resort & Diving Center", area: "Soma Bay / Hurghada", icon: "🤿", specialty: "Diving resort with fresh seafood and GF dishes", rating: 4.5, cuisines: ["Seafood", "International"] },
+  { name: "Cook's Club El Gouna", area: "El Gouna", icon: "🎶", specialty: "Trendy beach club with GF-friendly menu", rating: 4.5, cuisines: ["International", "Mediterranean"] },
+  { name: "MG Alexander the Great Marsa Alam", area: "Marsa Alam", icon: "🏖️", specialty: "Beach resort catering to dietary needs", rating: 4.4, cuisines: ["International", "Buffet"] },
+  { name: "Three Corners Rihana Resort", area: "El Gouna", icon: "🌴", specialty: "Resort with GF-aware buffet stations", rating: 4.3, cuisines: ["International", "Buffet"] },
+  { name: "Jaz Aquamarine", area: "Hurghada", icon: "💎", specialty: "Large resort with multiple GF dining options", rating: 4.5, cuisines: ["International", "Buffet"] },
+  { name: "Mövenpick Aswan", area: "Aswan", icon: "🏝️", specialty: "Island hotel with celiac-aware kitchen", rating: 4.6, cuisines: ["International", "Fine Dining"] },
+  { name: "King Jamaica", area: "Aswan", icon: "🍹", specialty: "Nubian restaurant with naturally GF dishes", rating: 4.3, cuisines: ["Nubian", "Egyptian"] },
+  { name: "Restaurant Paris", area: "Luxor", icon: "🗼", specialty: "Classic Luxor restaurant with GF options", rating: 4.2, cuisines: ["Egyptian", "International"] },
+  { name: "Sunflower Restaurant", area: "Luxor", icon: "🌻", specialty: "West Bank favorite with GF-friendly meals", rating: 4.4, cuisines: ["Egyptian", "Vegetarian"] },
+];
+
 const Egypt = () => {
   useEffect(() => {
     const ogTitle = document.querySelector('meta[property="og:title"]');
@@ -297,6 +324,89 @@ const Egypt = () => {
 
       {/* Restaurant Directory */}
       <EgyptRestaurantList />
+
+      {/* Other Egyptian Locations */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-amber-100 text-amber-800 border-amber-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              More Destinations
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Other Egyptian Locations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Gluten-free friendly spots beyond the main cities — from Luxor and Aswan to Hurghada and El Gouna
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-5">
+            {otherEgyptRestaurants.map((r) => (
+              <Card
+                key={r.name}
+                className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+              >
+                <CardContent className="p-6">
+                  <div className="mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                      <span className="text-2xl">{r.icon}</span>
+                      {r.name}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
+                  </div>
+
+                  <div className="flex items-center gap-2 mb-3 ml-9">
+                    <div className="flex items-center">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < Math.floor(r.rating)
+                              ? "text-amber-400 fill-amber-400"
+                              : i < r.rating
+                              ? "text-amber-400 fill-amber-200"
+                              : "text-gray-200"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="font-semibold text-sm text-gray-900">{r.rating}</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                    {r.cuisines.map((c) => (
+                      <Badge
+                        key={c}
+                        variant="outline"
+                        className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                      >
+                        🍴 {c}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 ml-9">
+                    <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 text-xs">
+                      <Shield className="h-3.5 w-3.5 mr-1" />
+                      Celiac Protocols in Place
+                    </Badge>
+                    <Badge className="text-xs bg-violet-100 text-violet-800 border-violet-200">
+                      🍽️ Mixed Menu
+                    </Badge>
+                  </div>
+
+                  <div className="mt-3 ml-9 text-sm text-gray-600 flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                    <span>{r.area}, Egypt</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
 
       {/* Intro Section */}
       <section className="py-16 bg-white/50">
