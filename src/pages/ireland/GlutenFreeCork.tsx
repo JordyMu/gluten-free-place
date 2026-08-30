@@ -716,6 +716,17 @@ const corkLatLng: Record<string, { lat: number; lng: number }> = {
   "market-lane": { lat: 51.898, lng: -8.4751 },
   "nash-19": { lat: 51.8988, lng: -8.4727 },
   "the-farmgate-cafe": { lat: 51.8983, lng: -8.4726 },
+  "my-goodness": { lat: 51.8983, lng: -8.4726 },
+  kielys: { lat: 51.8995, lng: -8.4735 },
+  "eco-fish": { lat: 51.9015, lng: -8.4705 },
+  "jim-edwards": { lat: 51.7075, lng: -8.5225 },
+  "muskerry-arms": { lat: 51.9335, lng: -8.5615 },
+  scoozis: { lat: 51.8975, lng: -8.472 },
+  "liberty-grill": { lat: 51.8965, lng: -8.473 },
+  "joes-bros": { lat: 51.8982, lng: -8.4748 },
+  "marina-market": { lat: 51.8935, lng: -8.458 },
+  "coqbull-cork": { lat: 51.899, lng: -8.4738 },
+  eco: { lat: 51.8937, lng: -8.4582 },
 };
 
 export const restaurantsForCityPage: Restaurant[] = corkRestaurants.map((r) => ({
