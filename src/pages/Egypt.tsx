@@ -298,6 +298,89 @@ const Egypt = () => {
       {/* Restaurant Directory */}
       <EgyptRestaurantList />
 
+      {/* Other Egyptian Locations */}
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-amber-100 text-amber-800 border-amber-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              More Destinations
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+              Other Egyptian Locations
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Gluten-free friendly spots beyond the main cities — from Luxor and Aswan to Hurghada and El Gouna
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto space-y-5">
+            {otherEgyptRestaurants.map((r) => (
+              <Card
+                key={r.name}
+                className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+              >
+                <CardContent className="p-6">
+                  <div className="mb-3">
+                    <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                      <span className="text-2xl">{r.icon}</span>
+                      {r.name}
+                    </h3>
+                    <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
+                  </div>
+
+                  <div className="flex items-center gap-2 mb-3 ml-9">
+                    <div className="flex items-center">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <Star
+                          key={i}
+                          className={`h-4 w-4 ${
+                            i < Math.floor(r.rating)
+                              ? "text-amber-400 fill-amber-400"
+                              : i < r.rating
+                              ? "text-amber-400 fill-amber-200"
+                              : "text-gray-200"
+                          }`}
+                        />
+                      ))}
+                    </div>
+                    <span className="font-semibold text-sm text-gray-900">{r.rating}</span>
+                  </div>
+
+                  <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                    {r.cuisines.map((c) => (
+                      <Badge
+                        key={c}
+                        variant="outline"
+                        className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                      >
+                        🍴 {c}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 ml-9">
+                    <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 text-xs">
+                      <Shield className="h-3.5 w-3.5 mr-1" />
+                      Celiac Protocols in Place
+                    </Badge>
+                    <Badge className="text-xs bg-violet-100 text-violet-800 border-violet-200">
+                      🍽️ Mixed Menu
+                    </Badge>
+                  </div>
+
+                  <div className="mt-3 ml-9 text-sm text-gray-600 flex items-start gap-2">
+                    <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                    <span>{r.area}, Egypt</span>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Intro Section */}
       <section className="py-16 bg-white/50">
         <div className="container mx-auto px-4">
