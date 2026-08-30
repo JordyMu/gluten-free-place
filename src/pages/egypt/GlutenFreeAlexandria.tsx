@@ -31,6 +31,7 @@ const GlutenFreeAlexandria = () => (
     emoji="🌊"
     heading="Dedicated Gluten-Free Restaurants in Alexandria"
     compactHero
+    heroImage="/images/alexandria-hero.webp?v=2"
     intro="Alexandria's Mediterranean heritage means plenty of naturally gluten-free seafood, grilled meats, and fresh produce — from the famous ful medames at Mohamed Ahmed to fresh catches along the Corniche."
     restaurants={restaurantsForCityPage}
     faqItems={faqItems}
