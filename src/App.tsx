@@ -170,6 +170,8 @@ const Egypt = lazyWithRetry(() => import("./pages/Egypt"));
 const GlutenFreeCairo = lazyWithRetry(() => import("./pages/egypt/GlutenFreeCairo"));
 const GlutenFreeAlexandria = lazyWithRetry(() => import("./pages/egypt/GlutenFreeAlexandria"));
 const GlutenFreeGiza = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGiza"));
+const GizaCategoryPage = lazyWithRetry(() => import("./pages/egypt/GizaCategoryPage"));
+const GlutenFreeGizaBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGizaBest"));
 const GlutenFreeSharmElSheikh = lazyWithRetry(() => import("./pages/egypt/GlutenFreeSharmElSheikh"));
 const GlutenFreeHurghada = lazyWithRetry(() => import("./pages/egypt/GlutenFreeHurghada"));
 const GlutenFreeLuxor = lazyWithRetry(() => import("./pages/egypt/GlutenFreeLuxor"));
