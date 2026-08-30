@@ -29,6 +29,9 @@ interface CanadaCityPageProps {
   heading?: string;
   heroImage?: string;
   compactHero?: boolean;
+  countryName?: string;
+  countrySlug?: string;
+  relatedCountry?: string;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
@@ -69,7 +72,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
@@ -109,15 +112,15 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
       .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
   }, [restaurants]);
 
-  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, Canada: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
-  const pageTitle = `Gluten-Free Options in ${cityName}, Canada | Celiac-Safe`;
+  const metaDescriptionText = `Browse verified gluten free options in ${cityName}, ${countryName}: celiac-safe restaurants, bakeries and cafés with reviews, menu tips and directions.`;
+  const pageTitle = `Gluten-Free Options in ${cityName}, ${countryName} | Celiac-Safe`;
   const schemaJson = [
     {
       "@context": "https://schema.org",
       "@type": "CollectionPage",
-      name: `Gluten-Free Restaurants in ${cityName}, Canada`,
+      name: `Gluten-Free Restaurants in ${cityName}, ${countryName}`,
       description: metaDescriptionText,
-      url: `https://glutenfreeplace.org/gluten-free/canada/${citySlug}`,
+      url: `https://glutenfreeplace.org/gluten-free/${countrySlug}/${citySlug}`,
     },
     {
       "@context": "https://schema.org",
@@ -148,13 +151,13 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
 
   return (
     <>
-    <SEOHead title={pageTitle} description={metaDescriptionText} canonical={`/gluten-free/canada/${citySlug}`} schemaJson={schemaJson} />
+    <SEOHead title={pageTitle} description={metaDescriptionText} canonical={`/gluten-free/${countrySlug}/${citySlug}`} schemaJson={schemaJson} />
     <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
       <header className="bg-white shadow-sm border-b">
         <div className="container mx-auto px-4 py-4">
-          <Link to="/gluten-free/canada" className="inline-flex items-center text-red-700 hover:text-red-800">
+          <Link to={`/gluten-free/${countrySlug}`} className="inline-flex items-center text-red-700 hover:text-red-800">
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Canada
+            Back to {countryName}
           </Link>
         </div>
       </header>
@@ -207,7 +210,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                   <div className="mb-3">
                     <div className="flex items-center gap-2 mb-1 flex-wrap">
                       <span className="text-2xl">{restaurant.icon}</span>
-                      <Link to={`/gluten-free/canada/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">
+                      <Link to={`/gluten-free/${countrySlug}/${citySlug}/${restaurant.slug}`} className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">
                         {restaurant.name}
                       </Link>
                       {restaurant.featured && <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>}
@@ -293,7 +296,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                         Website
                       </Button>
                     )}
-                    <Link to={`/gluten-free/canada/${citySlug}/${restaurant.slug}`}>
+                    <Link to={`/gluten-free/${countrySlug}/${citySlug}/${restaurant.slug}`}>
                       <Button type="button" variant="outline">
                         <BookOpen className="w-4 h-4 mr-2" />
                         View Menu
@@ -458,7 +461,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
           </div>
         </section>
 
-        <RelatedCities country="canada" currentCitySlug={citySlug} />
+        <RelatedCities country={relatedCountry ?? countrySlug} currentCitySlug={citySlug} />
 
         <section className="mb-12">
           <Card>
