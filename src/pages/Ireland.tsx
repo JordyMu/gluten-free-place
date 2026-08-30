@@ -81,6 +81,70 @@ const topRestaurants = [
   },
 ];
 
+const otherLocations = [
+  {
+    name: "Jenny's Kitchen Gluten Free Baking",
+    location: "Nenagh, Co. Tipperary",
+    description: "Dedicated gluten-free bakery supplying cafes and shops across Ireland with fresh GF breads, cakes and treats.",
+    celiacSafe: true,
+    highlight: "🥖 100% Gluten-Free Bakery",
+  },
+  {
+    name: "The Ivy Cottage",
+    location: "Doolin, Co. Clare",
+    description: "Charming seafood cottage restaurant on the Wild Atlantic Way with clearly labelled gluten-free options and coeliac-aware staff.",
+    highlight: "🐟 Wild Atlantic Seafood",
+  },
+  {
+    name: "The Fish Box / Flannery's Seafood Bar",
+    location: "Dingle, Co. Kerry",
+    description: "Family-run seafood bar serving the day's catch with dedicated gluten-free fryer options and fresh local fish.",
+    highlight: "🦐 Fresh Local Catch",
+  },
+  {
+    name: "Rob's Ranch House",
+    location: "Killarney, Co. Kerry",
+    description: "American-style steakhouse and smokehouse with gluten-free menu options, sauces and sides clearly marked.",
+    highlight: "🥩 GF Steaks & Smokehouse",
+  },
+  {
+    name: "The Boat Yard Restaurant",
+    location: "Dingle, Co. Kerry",
+    description: "Waterfront restaurant specialising in Dingle Bay seafood with coeliac-safe preparation and gluten-free menu items.",
+    highlight: "⚓ Harbourfront Dining",
+  },
+  {
+    name: "Caragh Restaurant & Lounge Bar",
+    location: "Killarney, Co. Kerry",
+    description: "Modern Irish restaurant and lounge with a dedicated gluten-free menu and staff trained in allergen protocols.",
+    highlight: "🍽️ Dedicated GF Menu",
+  },
+  {
+    name: "The Reg",
+    location: "Waterford",
+    description: "Historic bar and restaurant in Waterford's Viking Triangle with gluten-free dishes and live music most nights.",
+    highlight: "🍺 Viking Triangle Pub",
+  },
+  {
+    name: "Momo Restaurant",
+    location: "Waterford",
+    description: "Award-winning bistro using local produce, with gluten-free options marked on the menu and coeliac-friendly service.",
+    highlight: "🏆 Award-Winning Bistro",
+  },
+  {
+    name: "Rye River Café",
+    location: "Kilcock, Co. Kildare",
+    description: "Cosy artisan café with gluten-free bread, cakes and brunch options made fresh daily.",
+    highlight: "☕ Artisan Café",
+  },
+  {
+    name: "James Long Gastro Pub",
+    location: "Dingle, Co. Kerry",
+    description: "Traditional Irish gastro pub with gluten-free dishes, local seafood and a warm Kerry welcome.",
+    highlight: "🍀 Traditional Gastro Pub",
+  },
+];
+
 const faqItems = [
   {
     question: "Is Ireland a good destination for gluten-free travellers?",
@@ -418,6 +482,50 @@ const Ireland = () => {
 
                     <Button
                       onClick={() => openExternalLink(r.directionsUrl)}
+                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
+                    >
+                      <MapPin className="w-4 h-4 mr-2" />
+                      Get Directions
+                    </Button>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-green-50/30">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Beyond the Cities
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Other Irish Locations
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Gluten-free gems in smaller towns across Ireland — from Dingle's seafood bars to Waterford's historic pubs
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {otherLocations.map((r) => (
+                <Card key={r.name} className="border-2 border-green-200 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-5">
+                    <div className="mb-2">
+                      <h3 className="text-lg font-bold text-gray-900">{r.name}</h3>
+                      <div className="flex items-center text-green-700 mt-1">
+                        <MapPin className="h-4 w-4 mr-1" />
+                        <span className="text-sm font-medium">{r.location}</span>
+                      </div>
+                    </div>
+                    <p className="text-sm text-gray-600 mb-3">{r.description}</p>
+                    <Badge variant="secondary" className="text-xs bg-green-50 text-green-800 mb-4">
+                      {r.highlight}
+                    </Badge>
+                    <Button
+                      onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
                       className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
                     >
                       <MapPin className="w-4 h-4 mr-2" />
