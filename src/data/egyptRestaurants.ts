@@ -1594,7 +1594,5 @@ export const egyptTop25Restaurants: EgyptRestaurant[] = [...allEgyptRestaurants]
 // Helper functions to get restaurant by slug per city
 export const getCairoRestaurantBySlug = (slug: string) => cairoRestaurants.find(r => r.slug === slug);
 export const getGizaRestaurantBySlug = (slug: string) => gizaRestaurants.find(r => r.slug === slug);
-export const getHurghadaRestaurantBySlug = (slug: string) => hurghadaRestaurants.find(r => r.slug === slug);
-export const getLuxorRestaurantBySlug = (slug: string) => luxorRestaurants.find(r => r.slug === slug);
 export const getSharmRestaurantBySlug = (slug: string) => sharmElSheikhRestaurants.find(r => r.slug === slug);
 export const getAlexandriaRestaurantBySlug = (slug: string) => alexandriaRestaurants.find(r => r.slug === slug);

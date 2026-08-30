@@ -82,8 +82,6 @@ const routesToPrerender = [
   '/gluten-free/egypt/alexandria',
   '/gluten-free/egypt/giza',
   '/gluten-free/egypt/sharm-el-sheikh',
-  '/gluten-free/egypt/hurghada',
-  '/gluten-free/egypt/luxor',
   // Mauritius
   '/gluten-free/mauritius',
   '/gluten-free/mauritius/grand-baie',

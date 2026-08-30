@@ -22,8 +22,6 @@ const celiacLabel = (type: string) => {
 const citySlugMap: Record<string, string> = {
   Cairo: "cairo",
   Giza: "giza",
-  Hurghada: "hurghada",
-  Luxor: "luxor",
   Aswan: "aswan",
   "Sharm El Sheikh": "sharm-el-sheikh",
   Alexandria: "alexandria",

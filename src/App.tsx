@@ -173,16 +173,12 @@ const GlutenFreeGiza = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGiza"
 const GizaCategoryPage = lazyWithRetry(() => import("./pages/egypt/GizaCategoryPage"));
 const GlutenFreeGizaBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGizaBest"));
 const GlutenFreeSharmElSheikh = lazyWithRetry(() => import("./pages/egypt/GlutenFreeSharmElSheikh"));
-const GlutenFreeHurghada = lazyWithRetry(() => import("./pages/egypt/GlutenFreeHurghada"));
-const GlutenFreeLuxor = lazyWithRetry(() => import("./pages/egypt/GlutenFreeLuxor"));
 const CairoRestaurantPage = lazyWithRetry(() => import("./pages/egypt/CairoRestaurantPage"));
 const CairoCategoryPage = lazyWithRetry(() => import("./pages/egypt/CairoCategoryPage"));
 const GlutenFreeCairoBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeCairoBest"));
 const AlexandriaRestaurantPage = lazyWithRetry(() => import("./pages/egypt/AlexandriaRestaurantPage"));
 const GizaRestaurantPage = lazyWithRetry(() => import("./pages/egypt/GizaRestaurantPage"));
 const SharmRestaurantPage = lazyWithRetry(() => import("./pages/egypt/SharmRestaurantPage"));
-const HurghadaRestaurantPage = lazyWithRetry(() => import("./pages/egypt/HurghadaRestaurantPage"));
-const LuxorRestaurantPage = lazyWithRetry(() => import("./pages/egypt/LuxorRestaurantPage"));
 const Mauritius = lazyWithRetry(() => import("./pages/Mauritius"));
 const Botswana = lazyWithRetry(() => import("./pages/Botswana"));
 const Auth = lazyWithRetry(() => import("./pages/Auth"));
@@ -425,8 +421,6 @@ const App = () => (
               <Route path="/gluten-free/egypt/giza/grocery-stores" element={<GizaCategoryPage category="grocery-stores" />} />
               <Route path="/gluten-free/egypt/giza/gluten-free-products" element={<GizaCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
-              <Route path="/gluten-free/egypt/hurghada" element={<GlutenFreeHurghada />} />
-              <Route path="/gluten-free/egypt/luxor" element={<GlutenFreeLuxor />} />
               <Route path="/gluten-free/egypt/cairo/best-gluten-free-restaurants-in-cairo" element={<GlutenFreeCairoBest />} />
               <Route path="/gluten-free/egypt/cairo/street-food" element={<CairoCategoryPage category="street-food" />} />
               <Route path="/gluten-free/egypt/cairo/bakeries" element={<CairoCategoryPage category="bakeries" />} />
@@ -436,8 +430,6 @@ const App = () => (
               <Route path="/gluten-free/egypt/alexandria/:slug" element={<AlexandriaRestaurantPage />} />
               <Route path="/gluten-free/egypt/giza/:slug" element={<GizaRestaurantPage />} />
               <Route path="/gluten-free/egypt/sharm-el-sheikh/:slug" element={<SharmRestaurantPage />} />
-              <Route path="/gluten-free/egypt/hurghada/:slug" element={<HurghadaRestaurantPage />} />
-              <Route path="/gluten-free/egypt/luxor/:slug" element={<LuxorRestaurantPage />} />
               <Route path="/gluten-free/mauritius" element={<Mauritius />} />
               <Route path="/gluten-free/mauritius/grand-baie" element={<GlutenFreeGrandBaie />} />
               <Route path="/gluten-free/mauritius/grand-baie/best-gluten-free-restaurants-in-grand-baie" element={<GlutenFreeGrandBaieBest />} />
