@@ -20,7 +20,7 @@ const top = [...restaurantsForCityPage]
 
 const pageTitle = "Best Gluten-Free Restaurants in Cairo (2026) | Top 10 Celiac-Safe Picks";
 const description =
-  "The 10 best gluten-free restaurants in Cairo for celiacs in 2026 — Italian, Thai, Creole and resort dining ranked by safety, reviews and quality.";
+  "The 10 best gluten-free restaurants in Cairo for celiacs in 2026 — dedicated GF restaurants, cafés and hotel dining ranked by safety, reviews and quality.";
 
 const schemaJson = [
   {

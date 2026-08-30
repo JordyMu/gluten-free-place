@@ -174,6 +174,8 @@ const GlutenFreeSharmElSheikh = lazyWithRetry(() => import("./pages/egypt/Gluten
 const GlutenFreeHurghada = lazyWithRetry(() => import("./pages/egypt/GlutenFreeHurghada"));
 const GlutenFreeLuxor = lazyWithRetry(() => import("./pages/egypt/GlutenFreeLuxor"));
 const CairoRestaurantPage = lazyWithRetry(() => import("./pages/egypt/CairoRestaurantPage"));
+const CairoCategoryPage = lazyWithRetry(() => import("./pages/egypt/CairoCategoryPage"));
+const GlutenFreeCairoBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeCairoBest"));
 const AlexandriaRestaurantPage = lazyWithRetry(() => import("./pages/egypt/AlexandriaRestaurantPage"));
 const GizaRestaurantPage = lazyWithRetry(() => import("./pages/egypt/GizaRestaurantPage"));
 const SharmRestaurantPage = lazyWithRetry(() => import("./pages/egypt/SharmRestaurantPage"));
@@ -418,6 +420,11 @@ const App = () => (
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
               <Route path="/gluten-free/egypt/hurghada" element={<GlutenFreeHurghada />} />
               <Route path="/gluten-free/egypt/luxor" element={<GlutenFreeLuxor />} />
+              <Route path="/gluten-free/egypt/cairo/best-gluten-free-restaurants-in-cairo" element={<GlutenFreeCairoBest />} />
+              <Route path="/gluten-free/egypt/cairo/street-food" element={<CairoCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/egypt/cairo/bakeries" element={<CairoCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/egypt/cairo/grocery-stores" element={<CairoCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/egypt/cairo/gluten-free-products" element={<CairoCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/cairo/:slug" element={<CairoRestaurantPage />} />
               <Route path="/gluten-free/egypt/alexandria/:slug" element={<AlexandriaRestaurantPage />} />
               <Route path="/gluten-free/egypt/giza/:slug" element={<GizaRestaurantPage />} />
