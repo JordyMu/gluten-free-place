@@ -1,20 +1,5 @@
-import { useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  ArrowLeft, Award, CheckCircle, Clock, Filter, Globe, MapPin,
-  MessageCircle, Navigation, Phone, Search, Shield, Star, BookOpen,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
-import { Checkbox } from "@/components/ui/checkbox";
-import {
-  Accordion, AccordionContent, AccordionItem, AccordionTrigger,
-} from "@/components/ui/accordion";
-import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
-import { FindNearMeButton } from "@/components/city/FindNearMeButton";
-import { SEOHead } from "@/components/SEOHead";
+import CanadaCityPage from "@/components/canada/CanadaCityPage";
+import type { Restaurant } from "@/data/capeTownRestaurants";
 
 type CeliacSafe = "dedicated-facility" | "protocols-in-place";
 type MenuType = "fully-gluten-free" | "mixed-menu";
@@ -450,500 +435,59 @@ const faqItems = [
   },
 ];
 
-const getCeliacSafeBadge = (level?: CeliacSafe) => {
-  if (level === "dedicated-facility") {
-    return (
-      <Badge className="bg-green-100 text-green-800 border-green-300">
-        <Shield className="w-3 h-3 mr-1" />Dedicated GF Facility
-      </Badge>
-    );
-  }
-  return (
-    <Badge className="bg-blue-100 text-blue-800 border-blue-300">
-      <CheckCircle className="w-3 h-3 mr-1" />Celiac Protocols
-    </Badge>
-  );
+const dublinLatLng: Record<string, { lat: number; lng: number }> = {
+  "the-coeliac-sanctuary": { lat: 53.3421, lng: -6.2596 },
+  "blazing-salad": { lat: 53.3425, lng: -6.2625 },
+  cornucopia: { lat: 53.3428, lng: -6.2601 },
+  "ybells-bakehouse": { lat: 53.3359, lng: -6.2656 },
+  "the-glasshouse": { lat: 53.3431, lng: -6.2823 },
+  "odds-and-ends": { lat: 53.3208, lng: -6.2651 },
 };
 
-const getMenuTypeBadge = (type?: MenuType) => {
-  if (type === "fully-gluten-free") {
-    return <Badge className="bg-emerald-100 text-emerald-800 border-emerald-300">100% Gluten-Free</Badge>;
-  }
-  return <Badge className="bg-amber-100 text-amber-800 border-amber-300">GF Options Available</Badge>;
-};
+export const restaurantsForCityPage: Restaurant[] = dublinRestaurants.map((r) => ({
+  name: r.name,
+  slug: r.slug,
+  address: r.address ?? "Dublin, Ireland",
+  city: "Dublin",
+  country: "Ireland",
+  hours: r.hours ?? "See website for hours",
+  phone: r.phone ?? "",
+  website: r.website ?? "",
+  directionsUrl: r.directionsUrl ?? `https://www.google.com/maps/search/${encodeURIComponent(r.name + " Dublin")}`,
+  specialty: r.specialty ?? "",
+  overview: r.overview ?? "",
+  menuHighlights: r.menuHighlights,
+  proTip: r.proTip ?? "",
+  icon: r.icon ?? "🍽️",
+  featured: r.featured ?? false,
+  cuisineTypes: r.cuisineTypes ?? [],
+  celiacSafe: r.celiacSafe ?? "protocols-in-place",
+  menuType: r.menuType ?? "mixed-menu",
+  rating: r.rating ?? 0,
+  reviewCount: r.reviewCount ?? 0,
+  lat: dublinLatLng[r.slug]?.lat ?? 53.3498,
+  lng: dublinLatLng[r.slug]?.lng ?? -6.2603,
+  venueType: "restaurant",
+  photos: r.photos ?? [],
+  heroImage: r.heroImage,
+  fullMenu: r.fullMenu,
+  whyPeopleLoveIt: r.whyPeopleLoveIt,
+  services: r.services,
+}));
 
-const renderStarRating = (rating: number) => (
-  <div className="flex items-center gap-1">
-    {Array.from({ length: 5 }).map((_, i) => (
-      <Star
-        key={i}
-        className={`w-4 h-4 ${i < Math.floor(rating) ? "text-yellow-400 fill-yellow-400" : "text-gray-300"}`}
-      />
-    ))}
-    <span className="ml-1 font-semibold">{rating}</span>
-  </div>
+const GlutenFreeDublin = () => (
+  <CanadaCityPage
+    cityName="Dublin"
+    citySlug="dublin"
+    countryName="Ireland"
+    countrySlug="ireland"
+    emoji="☘️"
+    heading="Dedicated Gluten-Free Restaurants in Dublin"
+    compactHero
+    intro="Dublin is one of Europe's most celiac-aware cities, with dedicated gluten-free restaurants, bakeries and cafes backed by strong coeliac awareness and EU allergen labelling. From Grafton Street to Rathmines, safe and delicious gluten-free options abound."
+    restaurants={restaurantsForCityPage}
+    faqItems={faqItems}
+  />
 );
-
-const openExternalLink = (url: string) => {
-  const normalized = url.startsWith("http") ? url : `https://${url}`;
-  window.open(normalized, "_blank", "noopener,noreferrer");
-};
-
-const GlutenFreeDublin = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [menuFilters, setMenuFilters] = useState<string[]>([]);
-  const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
-  const [cuisineFilters, setCuisineFilters] = useState<string[]>([]);
-  const [showAllCuisines, setShowAllCuisines] = useState(false);
-  const [openFilterSections, setOpenFilterSections] = useState({
-    kitchen: true,
-    cuisine: true,
-    badges: true,
-  });
-
-  const toggle = (value: string, list: string[], setList: (v: string[]) => void) => {
-    setList(list.includes(value) ? list.filter((v) => v !== value) : [...list, value]);
-  };
-
-  const pageTitle = "Gluten-Free Options in Dublin | Celiac-Safe Dining";
-  const metaDescription =
-    "Browse verified gluten free options in Dublin, Ireland. Discover celiac-safe restaurants, bakeries and cafes with reviews, menu tips and directions.";
-  const schemaJson = [
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      name: "Gluten-Free Options in Dublin, Ireland",
-      description: metaDescription,
-      url: "https://glutenfreeplace.org/gluten-free/ireland/dublin",
-    },
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: faqItems.map((faq) => ({
-        "@type": "Question",
-        name: faq.question,
-        acceptedAnswer: { "@type": "Answer", text: faq.answer },
-      })),
-    },
-  ];
-
-  const cuisineOptions = useMemo(() => {
-    const counts = new Map<string, number>();
-    dublinRestaurants.forEach((r) => (r.cuisineTypes || []).forEach((c) => counts.set(c, (counts.get(c) ?? 0) + 1)));
-    return Array.from(counts.entries())
-      .map(([label, count]) => ({ value: label, label, count }))
-      .sort((a, b) => b.count - a.count || a.label.localeCompare(b.label));
-  }, []);
-
-  const menuOptions = useMemo(
-    () => [
-      { value: "fully-gluten-free", label: "100% Gluten-Free", count: dublinRestaurants.filter((r) => r.menuType === "fully-gluten-free").length },
-      { value: "mixed-menu", label: "GF Options Available", count: dublinRestaurants.filter((r) => r.menuType === "mixed-menu").length },
-    ],
-    [],
-  );
-
-  const safetyOptions = useMemo(
-    () => [
-      { value: "dedicated-facility", label: "Dedicated GF Facility", count: dublinRestaurants.filter((r) => r.celiacSafe === "dedicated-facility").length },
-      { value: "protocols-in-place", label: "Celiac Protocols", count: dublinRestaurants.filter((r) => r.celiacSafe === "protocols-in-place").length },
-    ],
-    [],
-  );
-
-  const filteredRestaurants = useMemo(
-    () =>
-      dublinRestaurants.filter((r) => {
-        const q = searchQuery.toLowerCase();
-        const matchesSearch =
-          q === "" ||
-          r.name.toLowerCase().includes(q) ||
-          (r.cuisineTypes || []).some((c) => c.toLowerCase().includes(q));
-        const matchesMenu = menuFilters.length === 0 || (!!r.menuType && menuFilters.includes(r.menuType));
-        const matchesSafety = safetyFilters.length === 0 || (!!r.celiacSafe && safetyFilters.includes(r.celiacSafe));
-        const matchesCuisine =
-          cuisineFilters.length === 0 || (r.cuisineTypes || []).some((c) => cuisineFilters.includes(c));
-        return matchesSearch && matchesMenu && matchesSafety && matchesCuisine;
-      }),
-    [searchQuery, menuFilters, safetyFilters, cuisineFilters],
-  );
-
-  return (
-    <>
-      <SEOHead
-        title={pageTitle}
-        description={metaDescription}
-        canonical="/gluten-free/ireland/dublin"
-        schemaJson={schemaJson}
-      />
-      <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-emerald-50">
-        <header className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-4">
-            <Link to="/ireland" className="inline-flex items-center text-green-700 hover:text-green-800">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Ireland
-            </Link>
-          </div>
-        </header>
-
-        <section
-          className="relative text-white py-14 bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.45)), url(https://images.unsplash.com/photo-1590089415225-401ed6f9db8e?auto=format&fit=crop&w=1600&q=80)",
-          }}
-        >
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <span className="text-5xl mb-4 block">🇮🇪</span>
-            <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Dedicated Gluten-Free Restaurants in Dublin
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
-              Verified celiac-safe spots, practical menu guidance, and trusted dining picks in Dublin.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <Badge className="bg-white/20 border-white/40 text-white px-4 py-2">
-                {dublinRestaurants.length} listed restaurants
-              </Badge>
-              <FindNearMeButton city="Dublin" />
-              <AddRestaurantDialog
-                city="Dublin"
-                triggerClassName="border-white bg-transparent !text-white hover:bg-white/10"
-              />
-            </div>
-          </div>
-        </section>
-
-        <main className="container mx-auto px-4 py-8">
-          <section className="mb-10">
-            <Card className="bg-gradient-to-r from-green-50 to-emerald-50 border-green-200">
-              <CardContent className="p-6">
-                <div className="flex items-start gap-4">
-                  <Award className="w-8 h-8 text-green-700 flex-shrink-0" />
-                  <div>
-                    <h2 className="text-xl font-semibold text-gray-900 mb-2">
-                      Gluten-Free Dining in Dublin
-                    </h2>
-                    <p className="text-gray-700">
-                      Dublin has one of Europe's most celiac-aware dining scenes, from dedicated gluten-free
-                      restaurants like The Coeliac Sanctuary and Blazing Salads to celiac-friendly cafes and
-                      wholefood restaurants. Ireland's EU allergen labelling laws and the Coeliac Society of
-                      Ireland network mean most venues can clearly identify gluten-free dishes.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </section>
-
-          <section className="mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">
-                  Verified Gluten-Free Restaurants in Dublin
-                </h2>
-                <div className="grid gap-6">
-                  {filteredRestaurants.map((r) => (
-                    <Card
-                      key={r.slug}
-                      className={`overflow-hidden border-2 border-red-200 ${r.featured ? "ring-2 ring-red-300" : ""}`}
-                    >
-                      <CardContent className="p-6">
-                        <div className="mb-3">
-                          <div className="flex items-center gap-2 mb-1 flex-wrap">
-                            {r.icon && <span className="text-2xl">{r.icon}</span>}
-                            <span className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors">
-                              {r.name}
-                            </span>
-                            {r.featured && (
-                              <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
-                            )}
-                          </div>
-                          {r.specialty && <p className="text-sm text-gray-500">{r.specialty}</p>}
-                        </div>
-
-                        {r.rating !== undefined && (
-                          <div className="flex items-center gap-2 mb-3">
-                            {renderStarRating(r.rating)}
-                            {r.reviewCount !== undefined && (
-                              <span className="text-sm text-gray-500">({r.reviewCount} reviews)</span>
-                            )}
-                          </div>
-                        )}
-
-                        <div className="flex flex-wrap gap-2 mb-3">
-                          {(r.cuisineTypes || []).map((c) => (
-                            <Badge key={c} variant="outline">{c}</Badge>
-                          ))}
-                          {getCeliacSafeBadge(r.celiacSafe)}
-                          {getMenuTypeBadge(r.menuType)}
-                        </div>
-
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
-                          {r.address && (
-                            <div className="flex items-center gap-2">
-                              <MapPin className="w-4 h-4 text-gray-400" />
-                              <span>{r.address}</span>
-                            </div>
-                          )}
-                          {r.hours && (
-                            <div className="flex items-center gap-2">
-                              <Clock className="w-4 h-4 text-gray-400" />
-                              <span>{r.hours}</span>
-                            </div>
-                          )}
-                          {r.phone && (
-                            <div className="flex items-center gap-2">
-                              <Phone className="w-4 h-4 text-gray-400" />
-                              <a href={`tel:${r.phone.replace(/\s/g, "")}`} className="hover:text-green-700">
-                                {r.phone}
-                              </a>
-                            </div>
-                          )}
-                        </div>
-
-                        {r.overview && <p className="text-gray-700 mb-4">{r.overview}</p>}
-
-                        {r.menuHighlights && r.menuHighlights.length > 0 && (
-                          <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
-                            <div className="flex flex-wrap gap-2">
-                              {r.menuHighlights.map((m) => (
-                                <Badge key={m} variant="secondary" className="text-sm">{m}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-
-                        {r.proTip && (
-                          <div className="bg-amber-50 border border-amber-200 rounded-lg p-3 mb-4">
-                            <div className="flex items-center gap-2">
-                              <MessageCircle className="w-4 h-4 text-amber-700" />
-                              <span className="font-medium text-amber-800">Pro Tip:</span>
-                              <span className="text-amber-700">{r.proTip}</span>
-                            </div>
-                          </div>
-                        )}
-
-                        {r.whyPeopleLoveIt && r.whyPeopleLoveIt.length > 0 && (
-                          <div className="mb-4">
-                            <h4 className="font-semibold text-gray-900 mb-2">Why people love it</h4>
-                            <ul className="space-y-1">
-                              {r.whyPeopleLoveIt.map((item) => (
-                                <li key={item} className="flex items-start gap-2 text-sm text-gray-700">
-                                  <CheckCircle className="w-4 h-4 text-green-600 mt-0.5 shrink-0" />
-                                  {item}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        )}
-
-                        <div className="flex flex-wrap gap-3">
-                          {r.directionsUrl && (
-                            <Button
-                              type="button"
-                              className="bg-red-700 hover:bg-red-800"
-                              onClick={() => openExternalLink(r.directionsUrl!)}
-                            >
-                              <Navigation className="w-4 h-4 mr-2" />
-                              Get Directions
-                            </Button>
-                          )}
-                          {r.website && (
-                            <Button
-                              type="button"
-                              variant="outline"
-                              onClick={() => openExternalLink(r.website!)}
-                            >
-                              <Globe className="w-4 h-4 mr-2" />
-                              Website
-                            </Button>
-                          )}
-                          <Button type="button" variant="outline">
-                            <BookOpen className="w-4 h-4 mr-2" />
-                            View Menu
-                          </Button>
-                        </div>
-
-                        <div className="mt-4 pt-4 border-t border-gray-100 space-y-1 text-sm">
-                          <div><span className="font-bold text-gray-900">Bakery:</span></div>
-                          <div><span className="font-bold text-gray-900">Coffee Shop:</span></div>
-                          <div><span className="font-bold text-gray-900">Grocery store:</span></div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
-
-              <aside className="lg:sticky lg:top-4 lg:self-start space-y-4 order-first lg:order-last">
-                <Card>
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2 text-base">
-                      <Search className="w-4 h-4 text-green-700" />
-                      Search Restaurants
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="relative">
-                      <Search className="w-4 h-4 absolute left-3 top-3 text-gray-400" />
-                      <Input
-                        className="pl-9"
-                        placeholder="Search by name or cuisine"
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                      />
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card>
-                  <CardHeader className="pb-3">
-                    <CardTitle className="flex items-center gap-2 text-base">
-                      <Filter className="w-4 h-4 text-red-700" />
-                      Filter Restaurants
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-5 pt-0 space-y-2">
-                    {/* Kitchen Type */}
-                    <div className="border-b last:border-b-0">
-                      <button
-                        type="button"
-                        onClick={() => setOpenFilterSections((s) => ({ ...s, kitchen: !s.kitchen }))}
-                        className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
-                      >
-                        <span>Kitchen Type</span>
-                        <span className="text-gray-400">{openFilterSections.kitchen ? "−" : "+"}</span>
-                      </button>
-                      {openFilterSections.kitchen && (
-                        <div className="pb-3 space-y-2">
-                          {menuOptions.map((opt) => (
-                            <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
-                              <Checkbox
-                                checked={menuFilters.includes(opt.value)}
-                                onCheckedChange={() => toggle(opt.value, menuFilters, setMenuFilters)}
-                              />
-                              <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
-                              <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">
-                                {opt.count}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Cuisine */}
-                    <div className="border-b last:border-b-0">
-                      <button
-                        type="button"
-                        onClick={() => setOpenFilterSections((s) => ({ ...s, cuisine: !s.cuisine }))}
-                        className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
-                      >
-                        <span>Cuisine</span>
-                        <span className="text-gray-400">{openFilterSections.cuisine ? "−" : "+"}</span>
-                      </button>
-                      {openFilterSections.cuisine && (
-                        <div className="pb-3 space-y-2">
-                          {(showAllCuisines ? cuisineOptions : cuisineOptions.slice(0, 6)).map((opt) => (
-                            <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
-                              <Checkbox
-                                checked={cuisineFilters.includes(opt.value)}
-                                onCheckedChange={() => toggle(opt.value, cuisineFilters, setCuisineFilters)}
-                              />
-                              <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1 truncate">{opt.label}</span>
-                              <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">
-                                {opt.count}
-                              </span>
-                            </label>
-                          ))}
-                          {cuisineOptions.length > 6 && (
-                            <button
-                              type="button"
-                              onClick={() => setShowAllCuisines(!showAllCuisines)}
-                              className="text-sm text-green-700 hover:text-green-800 font-medium pt-1"
-                            >
-                              {showAllCuisines ? "Show less" : `Show all ${cuisineOptions.length} cuisines`}
-                            </button>
-                          )}
-                        </div>
-                      )}
-                    </div>
-
-                    {/* Badges */}
-                    <div className="border-b last:border-b-0">
-                      <button
-                        type="button"
-                        onClick={() => setOpenFilterSections((s) => ({ ...s, badges: !s.badges }))}
-                        className="w-full flex items-center justify-between py-3 text-xs font-semibold uppercase tracking-wider text-gray-500 hover:text-gray-700"
-                      >
-                        <span>Badges</span>
-                        <span className="text-gray-400">{openFilterSections.badges ? "−" : "+"}</span>
-                      </button>
-                      {openFilterSections.badges && (
-                        <div className="pb-3 space-y-2">
-                          {safetyOptions.map((opt) => (
-                            <label key={opt.value} className="flex items-center gap-2.5 cursor-pointer group">
-                              <Checkbox
-                                checked={safetyFilters.includes(opt.value)}
-                                onCheckedChange={() => toggle(opt.value, safetyFilters, setSafetyFilters)}
-                              />
-                              <span className="text-sm text-gray-700 group-hover:text-gray-900 flex-1">{opt.label}</span>
-                              <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-2 py-0.5 min-w-[1.5rem] text-center">
-                                {opt.count}
-                              </span>
-                            </label>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-
-                    {(menuFilters.length > 0 || cuisineFilters.length > 0 || safetyFilters.length > 0) && (
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setMenuFilters([]);
-                          setCuisineFilters([]);
-                          setSafetyFilters([]);
-                        }}
-                        className="text-sm text-red-700 hover:text-red-800 font-medium pt-2"
-                      >
-                        Clear all filters
-                      </button>
-                    )}
-
-                    <p className="border-t pt-3 text-sm text-gray-600">
-                      Showing {filteredRestaurants.length} of {dublinRestaurants.length}
-                    </p>
-                  </CardContent>
-                </Card>
-              </aside>
-            </div>
-          </section>
-
-          <section className="mb-12">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-2xl">Frequently Asked Questions</CardTitle>
-                <p className="text-gray-600">Gluten-free dining in Dublin</p>
-              </CardHeader>
-              <CardContent>
-                <Accordion type="single" collapsible className="w-full">
-                  {faqItems.map((faq, i) => (
-                    <AccordionItem key={faq.question} value={`faq-${i}`}>
-                      <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                      <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </CardContent>
-            </Card>
-          </section>
-        </main>
-      </div>
-    </>
-  );
-};
 
 export default GlutenFreeDublin;
