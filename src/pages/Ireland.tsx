@@ -56,28 +56,18 @@ const cities = [
 const topRestaurants = [
   {
     name: "The Coeliac Sanctuary",
-    city: "Dublin",
+    icon: "🍀",
     rating: 4.8,
     reviewCount: 156,
     cuisineTypes: ["Irish", "International"],
-    celiacSafe: "dedicated-facility",
     menuType: "fully-gluten-free",
     address: "45 Grafton Street, Dublin 2, Ireland",
     hours: "Mon–Sat: 9:00 AM – 9:00 PM, Sun: 10:00 AM – 6:00 PM",
     phone: "+353 1 234 5678",
     website: "www.coeliacsanctuary.ie",
     directionsUrl: "https://maps.google.com/?q=The+Coeliac+Sanctuary+Dublin",
-    overview:
+    specialty:
       "Ireland's premier dedicated gluten-free restaurant offering traditional Irish cuisine with a modern twist. Every dish is certified gluten-free and prepared in a 100% dedicated facility.",
-    menuHighlights: [
-      "🍲 Irish Stew",
-      "🍞 Gluten-Free Soda Bread",
-      "🐟 Fish & Chips",
-      "🥧 Shepherd's Pie",
-      "🍳 Traditional Breakfast",
-    ],
-    proTip:
-      "Try their homemade gluten-free soda bread — it's available for takeaway and freezes well!",
   },
 ];
 
