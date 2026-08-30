@@ -173,6 +173,8 @@ const GlutenFreeGiza = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGiza"
 const GizaCategoryPage = lazyWithRetry(() => import("./pages/egypt/GizaCategoryPage"));
 const GlutenFreeGizaBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGizaBest"));
 const GlutenFreeSharmElSheikh = lazyWithRetry(() => import("./pages/egypt/GlutenFreeSharmElSheikh"));
+const SharmElSheikhCategoryPage = lazyWithRetry(() => import("./pages/egypt/SharmElSheikhCategoryPage"));
+const GlutenFreeSharmElSheikhBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeSharmElSheikhBest"));
 const CairoRestaurantPage = lazyWithRetry(() => import("./pages/egypt/CairoRestaurantPage"));
 const CairoCategoryPage = lazyWithRetry(() => import("./pages/egypt/CairoCategoryPage"));
 const GlutenFreeCairoBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeCairoBest"));
@@ -421,6 +423,11 @@ const App = () => (
               <Route path="/gluten-free/egypt/giza/grocery-stores" element={<GizaCategoryPage category="grocery-stores" />} />
               <Route path="/gluten-free/egypt/giza/gluten-free-products" element={<GizaCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/best-gluten-free-restaurants-in-sharm-el-sheikh" element={<GlutenFreeSharmElSheikhBest />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/street-food" element={<SharmElSheikhCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/bakeries" element={<SharmElSheikhCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/grocery-stores" element={<SharmElSheikhCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/egypt/sharm-el-sheikh/gluten-free-products" element={<SharmElSheikhCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/cairo/best-gluten-free-restaurants-in-cairo" element={<GlutenFreeCairoBest />} />
               <Route path="/gluten-free/egypt/cairo/street-food" element={<CairoCategoryPage category="street-food" />} />
               <Route path="/gluten-free/egypt/cairo/bakeries" element={<CairoCategoryPage category="bakeries" />} />
