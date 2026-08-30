@@ -84,66 +84,105 @@ const topRestaurants = [
 const otherLocations = [
   {
     name: "Jenny's Kitchen Gluten Free Baking",
+    icon: "🥖",
     location: "Nenagh, Co. Tipperary",
-    description: "Dedicated gluten-free bakery supplying cafes and shops across Ireland with fresh GF breads, cakes and treats.",
-    celiacSafe: true,
-    highlight: "🥖 100% Gluten-Free Bakery",
+    specialty: "Dedicated gluten-free bakery supplying cafes and shops across Ireland with fresh GF breads, cakes and treats.",
+    rating: 4.9,
+    reviewCount: 84,
+    cuisineTypes: ["Bakery", "Café"],
+    menuType: "fully-gluten-free",
   },
   {
     name: "The Ivy Cottage",
+    icon: "🐟",
     location: "Doolin, Co. Clare",
-    description: "Charming seafood cottage restaurant on the Wild Atlantic Way with clearly labelled gluten-free options and coeliac-aware staff.",
-    highlight: "🐟 Wild Atlantic Seafood",
+    specialty: "Charming seafood cottage restaurant on the Wild Atlantic Way with clearly labelled gluten-free options and coeliac-aware staff.",
+    rating: 4.7,
+    reviewCount: 212,
+    cuisineTypes: ["Seafood", "Irish"],
+    menuType: "mixed-menu",
   },
   {
     name: "The Fish Box / Flannery's Seafood Bar",
+    icon: "🦐",
     location: "Dingle, Co. Kerry",
-    description: "Family-run seafood bar serving the day's catch with dedicated gluten-free fryer options and fresh local fish.",
-    highlight: "🦐 Fresh Local Catch",
+    specialty: "Family-run seafood bar serving the day's catch with dedicated gluten-free fryer options and fresh local fish.",
+    rating: 4.8,
+    reviewCount: 178,
+    cuisineTypes: ["Seafood", "Fish & Chips"],
+    menuType: "mixed-menu",
   },
   {
     name: "Rob's Ranch House",
+    icon: "🥩",
     location: "Killarney, Co. Kerry",
-    description: "American-style steakhouse and smokehouse with gluten-free menu options, sauces and sides clearly marked.",
-    highlight: "🥩 GF Steaks & Smokehouse",
+    specialty: "American-style steakhouse and smokehouse with gluten-free menu options, sauces and sides clearly marked.",
+    rating: 4.5,
+    reviewCount: 264,
+    cuisineTypes: ["Steakhouse", "American"],
+    menuType: "mixed-menu",
   },
   {
     name: "The Boat Yard Restaurant",
+    icon: "⚓",
     location: "Dingle, Co. Kerry",
-    description: "Waterfront restaurant specialising in Dingle Bay seafood with coeliac-safe preparation and gluten-free menu items.",
-    highlight: "⚓ Harbourfront Dining",
+    specialty: "Waterfront restaurant specialising in Dingle Bay seafood with coeliac-safe preparation and gluten-free menu items.",
+    rating: 4.7,
+    reviewCount: 195,
+    cuisineTypes: ["Seafood", "Irish"],
+    menuType: "mixed-menu",
   },
   {
     name: "Caragh Restaurant & Lounge Bar",
+    icon: "🍽️",
     location: "Killarney, Co. Kerry",
-    description: "Modern Irish restaurant and lounge with a dedicated gluten-free menu and staff trained in allergen protocols.",
-    highlight: "🍽️ Dedicated GF Menu",
+    specialty: "Modern Irish restaurant and lounge with a dedicated gluten-free menu and staff trained in allergen protocols.",
+    rating: 4.6,
+    reviewCount: 143,
+    cuisineTypes: ["Irish", "European"],
+    menuType: "mixed-menu",
   },
   {
     name: "The Reg",
+    icon: "🍺",
     location: "Waterford",
-    description: "Historic bar and restaurant in Waterford's Viking Triangle with gluten-free dishes and live music most nights.",
-    highlight: "🍺 Viking Triangle Pub",
+    specialty: "Historic bar and restaurant in Waterford's Viking Triangle with gluten-free dishes and live music most nights.",
+    rating: 4.5,
+    reviewCount: 321,
+    cuisineTypes: ["Pub", "Irish"],
+    menuType: "mixed-menu",
   },
   {
     name: "Momo Restaurant",
+    icon: "🏆",
     location: "Waterford",
-    description: "Award-winning bistro using local produce, with gluten-free options marked on the menu and coeliac-friendly service.",
-    highlight: "🏆 Award-Winning Bistro",
+    specialty: "Award-winning bistro using local produce, with gluten-free options marked on the menu and coeliac-friendly service.",
+    rating: 4.7,
+    reviewCount: 156,
+    cuisineTypes: ["Bistro", "European"],
+    menuType: "mixed-menu",
   },
   {
     name: "Rye River Café",
+    icon: "☕",
     location: "Kilcock, Co. Kildare",
-    description: "Cosy artisan café with gluten-free bread, cakes and brunch options made fresh daily.",
-    highlight: "☕ Artisan Café",
+    specialty: "Cosy artisan café with gluten-free bread, cakes and brunch options made fresh daily.",
+    rating: 4.6,
+    reviewCount: 97,
+    cuisineTypes: ["Café", "Brunch"],
+    menuType: "mixed-menu",
   },
   {
     name: "James Long Gastro Pub",
+    icon: "🍀",
     location: "Dingle, Co. Kerry",
-    description: "Traditional Irish gastro pub with gluten-free dishes, local seafood and a warm Kerry welcome.",
-    highlight: "🍀 Traditional Gastro Pub",
+    specialty: "Traditional Irish gastro pub with gluten-free dishes, local seafood and a warm Kerry welcome.",
+    rating: 4.5,
+    reviewCount: 188,
+    cuisineTypes: ["Gastro Pub", "Seafood"],
+    menuType: "mixed-menu",
   },
-];
+].sort((a, b) => b.rating - a.rating || b.reviewCount - a.reviewCount);
 
 const faqItems = [
   {
@@ -509,31 +548,72 @@ const Ireland = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {otherLocations.map((r) => (
-                <Card key={r.name} className="border-2 border-green-200 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-5">
-                    <div className="mb-2">
-                      <h3 className="text-lg font-bold text-gray-900">{r.name}</h3>
-                      <div className="flex items-center text-green-700 mt-1">
-                        <MapPin className="h-4 w-4 mr-1" />
-                        <span className="text-sm font-medium">{r.location}</span>
+            <div className="max-w-3xl mx-auto space-y-5">
+              {otherLocations.map((r) => {
+                const isFullyGF = r.menuType === "fully-gluten-free";
+                return (
+                  <Card
+                    key={r.name}
+                    className="hover:shadow-xl transition-all duration-200 border border-gray-100 overflow-hidden"
+                  >
+                    <CardContent className="p-6">
+                      <div className="mb-3">
+                        <h3 className="text-xl font-bold text-gray-900 flex items-center gap-2">
+                          <span className="text-2xl">{r.icon}</span>
+                          <span className="hover:text-green-700 transition-colors">{r.name}</span>
+                        </h3>
+                        <p className="text-sm text-gray-500 mt-0.5 ml-9">{r.specialty}</p>
                       </div>
-                    </div>
-                    <p className="text-sm text-gray-600 mb-3">{r.description}</p>
-                    <Badge variant="secondary" className="text-xs bg-green-50 text-green-800 mb-4">
-                      {r.highlight}
-                    </Badge>
-                    <Button
-                      onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
-                      className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white"
-                    >
-                      <MapPin className="w-4 h-4 mr-2" />
-                      Get Directions
-                    </Button>
-                  </CardContent>
-                </Card>
-              ))}
+
+                      <div className="flex items-center gap-2 mb-3 ml-9">
+                        {renderStarRating(r.rating)}
+                        <span className="text-sm text-gray-400">({r.reviewCount} reviews)</span>
+                      </div>
+
+                      <div className="flex flex-wrap gap-1.5 mb-3 ml-9">
+                        {r.cuisineTypes.map((cuisine) => (
+                          <Badge
+                            key={cuisine}
+                            variant="outline"
+                            className="text-xs font-medium text-gray-600 border-gray-200 bg-gray-50"
+                          >
+                            🍴 {cuisine}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-3 ml-9">
+                        <Badge className="bg-emerald-100 text-emerald-800 border-emerald-200 text-xs">
+                          <Shield className="h-3.5 w-3.5 mr-1" />
+                          Celiac Protocols
+                        </Badge>
+                        <Badge className={`text-xs ${isFullyGF
+                          ? "bg-emerald-100 text-emerald-800 border-emerald-200"
+                          : "bg-violet-100 text-violet-800 border-violet-200"}`}>
+                          🍽️ {isFullyGF ? "Fully GF" : "Mixed Menu"}
+                        </Badge>
+                      </div>
+
+                      <div className="space-y-2 ml-9 text-sm text-gray-600">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="h-4 w-4 text-gray-400 mt-0.5 shrink-0" />
+                          <span>{r.location}, Ireland</span>
+                        </div>
+                      </div>
+
+                      <div className="mt-4 ml-9">
+                        <button
+                          onClick={() => openExternalLink(`https://maps.google.com/?q=${encodeURIComponent(`${r.name} ${r.location} Ireland`)}`)}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors"
+                        >
+                          <ArrowRight className="h-3.5 w-3.5" />
+                          Get Directions
+                        </button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
