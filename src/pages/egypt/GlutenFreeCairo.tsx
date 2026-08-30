@@ -34,7 +34,7 @@ const GlutenFreeCairo = () => (
     countryName="Egypt"
     countrySlug="egypt"
     emoji="🏛️"
-    heading="Dedicated Gluten-Free Restaurants in Cairo"
+    heading="Dedicated Gluten-free Restaurants in Cairo"
     compactHero
     intro="Cairo's diverse food scene includes dedicated GF restaurants, health-conscious cafés, and luxury hotel dining with celiac-safe options — from Zamalek to Nasr City."
     restaurants={restaurantsForCityPage}

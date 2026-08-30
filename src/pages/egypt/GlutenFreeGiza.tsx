@@ -33,7 +33,7 @@ const GlutenFreeGiza = () => (
     countryName="Egypt"
     countrySlug="egypt"
     emoji="🏜️"
-    heading="Dedicated Gluten-Free Restaurants in Giza"
+    heading="Dedicated Gluten-free Restaurants in Giza"
     compactHero
     heroImage="/images/giza-pyramids-hero.webp?v=2"
     intro="Home to the Great Pyramids, Giza offers tourist-friendly restaurants, luxury hotel dining, and local Egyptian eateries with gluten-free options — from Italian and Indian to traditional grills and gelato."
