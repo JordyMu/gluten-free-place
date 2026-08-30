@@ -170,6 +170,8 @@ const Egypt = lazyWithRetry(() => import("./pages/Egypt"));
 const GlutenFreeCairo = lazyWithRetry(() => import("./pages/egypt/GlutenFreeCairo"));
 const GlutenFreeAlexandria = lazyWithRetry(() => import("./pages/egypt/GlutenFreeAlexandria"));
 const GlutenFreeGiza = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGiza"));
+const GizaCategoryPage = lazyWithRetry(() => import("./pages/egypt/GizaCategoryPage"));
+const GlutenFreeGizaBest = lazyWithRetry(() => import("./pages/egypt/GlutenFreeGizaBest"));
 const GlutenFreeSharmElSheikh = lazyWithRetry(() => import("./pages/egypt/GlutenFreeSharmElSheikh"));
 const GlutenFreeHurghada = lazyWithRetry(() => import("./pages/egypt/GlutenFreeHurghada"));
 const GlutenFreeLuxor = lazyWithRetry(() => import("./pages/egypt/GlutenFreeLuxor"));
@@ -417,6 +419,11 @@ const App = () => (
               <Route path="/gluten-free/egypt/cairo" element={<GlutenFreeCairo />} />
               <Route path="/gluten-free/egypt/alexandria" element={<GlutenFreeAlexandria />} />
               <Route path="/gluten-free/egypt/giza" element={<GlutenFreeGiza />} />
+              <Route path="/gluten-free/egypt/giza/best-gluten-free-restaurants-in-giza" element={<GlutenFreeGizaBest />} />
+              <Route path="/gluten-free/egypt/giza/street-food" element={<GizaCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/egypt/giza/bakeries" element={<GizaCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/egypt/giza/grocery-stores" element={<GizaCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/egypt/giza/gluten-free-products" element={<GizaCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/egypt/sharm-el-sheikh" element={<GlutenFreeSharmElSheikh />} />
               <Route path="/gluten-free/egypt/hurghada" element={<GlutenFreeHurghada />} />
               <Route path="/gluten-free/egypt/luxor" element={<GlutenFreeLuxor />} />
