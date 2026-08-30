@@ -170,6 +170,220 @@ const USA = () => {
           ]
         }
       ]
+    },
+    {
+      name: "Chicago",
+      restaurants: [
+        {
+          name: "🥯 Wheat's End Café – 100% Gluten-Free Brunch",
+          locations: "Lakeview, Chicago",
+          address: "2873 N Broadway, Chicago, IL 60657",
+          phone: "+1 773-770-3527",
+          hours: "Tue–Sun: 8:00 AM - 2:00 PM",
+          website: "www.wheatsendcafe.com",
+          directionsUrl: "https://maps.google.com/?q=Wheat's+End+Cafe+Chicago",
+          specialty: "Brunch, bagels, pancakes, baked goods",
+          overview: "Chicago's beloved 100% gluten-free café serving creative brunch dishes, house-made bagels, and fresh baked goods in a completely safe environment for celiacs.",
+          menuHighlights: [
+            "GF Bagels with Lox - House-baked daily",
+            "Buttermilk Pancakes - Fluffy and golden",
+            "Breakfast Sandwiches - On fresh GF bread",
+            "Cinnamon Rolls - Warm and gooey"
+          ],
+          proTip: "Arrive early on weekends - the brunch line forms fast",
+          icon: "🥯",
+          featured: true,
+          cuisineTypes: ["Brunch", "Bakery", "Café"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 612,
+          certificationLevel: "100% Gluten-Free Facility - Celiac Safe",
+          userReviews: [
+            {
+              user: "Rachel S.",
+              rating: 5,
+              comment: "Finally a place where I can order anything on the menu! The bagels are better than regular ones.",
+              date: "1 week ago"
+            }
+          ]
+        },
+        {
+          name: "🍕 Chicago's Pizza – Dedicated GF Menu",
+          locations: "Lincoln Park",
+          address: "1919 W Montrose Ave, Chicago, IL 60613",
+          phone: "+1 773-271-3930",
+          hours: "Daily: 11:00 AM - 10:00 PM",
+          website: "www.chicagos-pizza.com",
+          directionsUrl: "https://maps.google.com/?q=Chicago's+Pizza+GF",
+          specialty: "Deep dish pizza, thin crust, calzones",
+          overview: "A Chicago institution offering legendary deep dish and thin crust pizzas with a carefully prepared gluten-free menu using separate prep areas and dedicated ovens.",
+          menuHighlights: [
+            "GF Deep Dish Pizza - Classic Chicago style",
+            "GF Thin Crust - Crispy and delicious",
+            "GF Calzones - Stuffed with cheese and toppings",
+            "Garden Salad - Fresh with house dressing"
+          ],
+          proTip: "Call ahead for GF deep dish - it takes longer to prepare",
+          icon: "🍕",
+          featured: true,
+          cuisineTypes: ["Pizza", "Italian", "American"],
+          celiacSafe: "trained-staff",
+          menuType: "dedicated-menu",
+          rating: 4.5,
+          reviewCount: 438,
+          certificationLevel: "Trained Staff - Separate GF Prep Area",
+          userReviews: [
+            {
+              user: "Mike D.",
+              rating: 5,
+              comment: "Finally got to try real Chicago deep dish! The GF crust was amazing and staff took cross-contamination seriously.",
+              date: "3 weeks ago"
+            }
+          ]
+        },
+        {
+          name: "🧁 Defloured Bakery – 100% Gluten-Free",
+          locations: "Andersonville",
+          address: "1477 W Balmoral Ave, Chicago, IL 60640",
+          phone: "+1 773-234-5734",
+          hours: "Tue–Sun: 8:00 AM - 6:00 PM",
+          website: "www.deflouredbakery.com",
+          directionsUrl: "https://maps.google.com/?q=Defloured+Bakery+Chicago",
+          specialty: "Cakes, cupcakes, brownies, cookies",
+          overview: "A charming Andersonville bakery where everything is 100% gluten-free. Their custom cakes and daily-baked treats prove that gluten-free can be absolutely decadent.",
+          menuHighlights: [
+            "Custom Cakes - Wedding and birthday orders",
+            "Brownies - Fudgy and rich",
+            "Cupcakes - Rotating seasonal flavors",
+            "Cookies - Chocolate chip, snickerdoodle & more"
+          ],
+          proTip: "Order custom cakes at least a week in advance",
+          icon: "🧁",
+          featured: true,
+          cuisineTypes: ["Bakery", "Desserts"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.7,
+          reviewCount: 521,
+          certificationLevel: "100% Gluten-Free Bakery - Certified Safe",
+          userReviews: [
+            {
+              user: "Emily W.",
+              rating: 5,
+              comment: "The brownies are life-changing. You would never guess they're gluten-free!",
+              date: "2 weeks ago"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      name: "Portland",
+      restaurants: [
+        {
+          name: "🍩 New Cascadia Traditional – 100% GF Bakery",
+          locations: "Southeast Portland",
+          address: "2502 SE Division St, Portland, OR 97202",
+          phone: "+1 503-546-4901",
+          hours: "Daily: 8:00 AM - 3:00 PM",
+          website: "www.newcascadiatraditional.com",
+          directionsUrl: "https://maps.google.com/?q=New+Cascadia+Traditional+Portland",
+          specialty: "Artisan breads, pastries, bagels, pizza crust",
+          overview: "Portland's pioneering 100% gluten-free artisan bakery, crafting sourdough breads, pastries, and bagels that rival any traditional bakery. A must-visit for celiacs.",
+          menuHighlights: [
+            "Sourdough Loaves - Naturally fermented",
+            "Bagels - Boiled and baked fresh daily",
+            "Seasonal Danishes - Flaky laminated pastry",
+            "Sandwich Bread - Soft and versatile"
+          ],
+          proTip: "Their sourdough sells out fast - get there before noon",
+          icon: "🥖",
+          featured: true,
+          cuisineTypes: ["Bakery", "Artisan Breads"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.8,
+          reviewCount: 587,
+          certificationLevel: "100% Gluten-Free Dedicated Facility",
+          userReviews: [
+            {
+              user: "Sarah P.",
+              rating: 5,
+              comment: "Best gluten-free bread I've ever had. The sourdough is incredible - tangy, chewy, perfect.",
+              date: "4 days ago"
+            }
+          ]
+        },
+        {
+          name: "🍕 Scottie's Pizza Parlor – GF Friendly",
+          locations: "Division Street",
+          address: "2128 SE Division St, Portland, OR 97202",
+          phone: "+1 503-954-2042",
+          hours: "Tue–Sun: 12:00 PM - 9:00 PM",
+          website: "www.scottiespizzaparlor.com",
+          directionsUrl: "https://maps.google.com/?q=Scottie's+Pizza+Parlor+Portland",
+          specialty: "NY-style pizza with GF crust options",
+          overview: "A beloved Portland pizzeria offering excellent gluten-free crusts with careful cross-contamination protocols. Their NY-style slices have a devoted local following.",
+          menuHighlights: [
+            "GF NY-Style Pizza - Foldable and crispy",
+            "Grandma Slice - Square, thin, garlicky",
+            "Seasonal Specials - Local ingredients",
+            "House Salad - Simple and fresh"
+          ],
+          proTip: "Let them know you're celiac - they use fresh pans and cutters",
+          icon: "🍕",
+          featured: true,
+          cuisineTypes: ["Pizza", "American"],
+          celiacSafe: "trained-staff",
+          menuType: "dedicated-menu",
+          rating: 4.6,
+          reviewCount: 394,
+          certificationLevel: "Celiac-Aware - Separate Prep Protocols",
+          userReviews: [
+            {
+              user: "Tom L.",
+              rating: 5,
+              comment: "Staff was super careful with my celiac order. The GF crust was honestly one of the best I've had.",
+              date: "1 month ago"
+            }
+          ]
+        },
+        {
+          name: "🌮 Verde Cocina – 100% Gluten-Free Mexican",
+          locations: "Multiple Portland locations",
+          address: "5246 N Mississippi Ave, Portland, OR 97217",
+          phone: "+1 503-477-8107",
+          hours: "Daily: 11:00 AM - 9:00 PM",
+          website: "www.verdecocinamarket.com",
+          directionsUrl: "https://maps.google.com/?q=Verde+Cocina+Portland",
+          specialty: "Farm-to-table Mexican, tacos, bowls",
+          overview: "A 100% gluten-free Mexican restaurant chain in Portland featuring farm-fresh ingredients, handmade corn tortillas, and creative seasonal dishes in a completely safe kitchen.",
+          menuHighlights: [
+            "Street Tacos - Handmade corn tortillas",
+            "Enchiladas Verde - With roasted tomatillo sauce",
+            "Farmer's Market Bowls - Seasonal vegetables",
+            "Fresh Margaritas - Naturally gluten-free"
+          ],
+          proTip: "Everything on the menu is safe - order freely!",
+          icon: "🌮",
+          featured: true,
+          cuisineTypes: ["Mexican", "Farm-to-Table"],
+          celiacSafe: "dedicated-facility",
+          menuType: "fully-gluten-free",
+          rating: 4.7,
+          reviewCount: 476,
+          certificationLevel: "100% Gluten-Free Kitchen",
+          userReviews: [
+            {
+              user: "Maria G.",
+              rating: 5,
+              comment: "So freeing to eat at a restaurant where EVERYTHING is safe. The tacos are fantastic!",
+              date: "2 weeks ago"
+            }
+          ]
+        }
+      ]
     }
   ];
 
