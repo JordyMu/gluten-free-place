@@ -1,9 +1,15 @@
-import { MapPin, Star, Utensils, ArrowLeft, Flag, Phone, Clock, Globe, CheckCircle, Navigation, Heart, MessageCircle, Camera, Award, Shield } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, Award, Shield, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link } from "react-router-dom";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+
+const openExternalLink = (url: string) => window.open(url, "_blank", "noopener,noreferrer");
 const USA = () => {
   
   const cities = [
