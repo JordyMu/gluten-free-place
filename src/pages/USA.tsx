@@ -188,7 +188,7 @@ const USA = () => {
     },
     {
       question: "Which US city is most celiac-friendly?",
-      answer: "New York City leads with the highest concentration of dedicated gluten-free restaurants. Los Angeles, San Francisco, Chicago, and Portland also have strong gluten-free dining scenes with health-conscious cultures."
+      answer: "New York City leads with the highest concentration of dedicated gluten-free restaurants. Los Angeles, Portland, Chicago, and Austin also have strong gluten-free dining scenes with health-conscious cultures."
     },
     {
       question: "Can I find gluten-free products in US supermarkets?",
