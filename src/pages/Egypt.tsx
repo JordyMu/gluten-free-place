@@ -130,7 +130,7 @@ const Egypt = () => {
     },
     {
       name: "Sharm El Sheikh",
-      image: "photo-1548690590-d0b752fcf418",
+      image: "/images/sharm-el-sheikh-hero.webp?v=2",
       places: 7,
       rating: 4.3,
       description: "Premier Red Sea resort with all-inclusive hotels offering excellent GF buffets",
