@@ -129,11 +129,11 @@ const Egypt = () => {
     {
       name: "Sharm El Sheikh",
       image: "/images/sharm-el-sheikh-hero.webp?v=2",
-      places: 7,
+      places: 31,
       rating: 4.3,
       description: "Premier Red Sea resort with all-inclusive hotels offering excellent GF buffets",
       route: "/gluten-free/egypt/sharm-el-sheikh",
-      highlights: ["Hard Rock Cafe", "Akuna Matata", "Xperience Kiroseiz"]
+      highlights: ["Hard Rock Cafe", "Fairuz Lebanese", "L'Entrecôte Steak House"]
     },
   ];
 
