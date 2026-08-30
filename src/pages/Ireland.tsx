@@ -36,11 +36,11 @@ const cities = [
   {
     name: "Galway",
     image: "photo-1571680322279-a226e6a4cc2a",
-    places: 7,
+    places: 11,
     rating: 4.6,
     description: "West coast cultural hub with GF pizza, burgers and seafood by the Spanish Arch",
     route: "/gluten-free/ireland/galway",
-    highlights: ["Handsome Burger", "Woozza Wood Fired Pizza", "Ard Bia at Nimmos"],
+    highlights: ["Handsome Burger", "Woozza Wood Fired Pizza", "Hooked", "Pascal"],
   },
   {
     name: "Limerick",
