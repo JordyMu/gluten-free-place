@@ -1,4 +1,8 @@
+import { Link } from "react-router-dom";
+import { Trophy } from "lucide-react";
 import CanadaCityPage from "@/components/canada/CanadaCityPage";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import type { Restaurant } from "@/data/capeTownRestaurants";
 
 type CeliacSafe = "dedicated-facility" | "protocols-in-place";
@@ -23,6 +27,7 @@ interface DublinRestaurant {
   website?: string;
   directionsUrl?: string;
   featured?: boolean;
+  venueType?: "restaurant" | "cafe" | "bakery" | "street-food" | "supermarket" | "gf-products";
   fullMenu?: {
     category: string;
     note?: string;
@@ -444,6 +449,11 @@ const dublinLatLng: Record<string, { lat: number; lng: number }> = {
   "odds-and-ends": { lat: 53.3208, lng: -6.2651 },
 };
 
+const dublinVenueType: Record<string, NonNullable<DublinRestaurant["venueType"]>> = {
+  "ybells-bakehouse": "bakery",
+  "odds-and-ends": "supermarket",
+};
+
 export const restaurantsForCityPage: Restaurant[] = dublinRestaurants.map((r) => ({
   name: r.name,
   slug: r.slug,
@@ -467,7 +477,7 @@ export const restaurantsForCityPage: Restaurant[] = dublinRestaurants.map((r) =>
   reviewCount: r.reviewCount ?? 0,
   lat: dublinLatLng[r.slug]?.lat ?? 53.3498,
   lng: dublinLatLng[r.slug]?.lng ?? -6.2603,
-  venueType: "restaurant",
+  venueType: dublinVenueType[r.slug] ?? "restaurant",
   photos: r.photos ?? [],
   heroImage: r.heroImage,
   fullMenu: r.fullMenu,
