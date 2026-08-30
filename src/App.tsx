@@ -91,6 +91,8 @@ const OtherCanadaRestaurantPage = lazyWithRetry(() => import("./pages/canada/Oth
 const Ireland = lazyWithRetry(() => import("./pages/Ireland"));
 const GlutenFreeDublin = lazyWithRetry(() => import("./pages/ireland/GlutenFreeDublin"));
 const DublinRestaurantPage = lazyWithRetry(() => import("./pages/ireland/DublinRestaurantPage"));
+const GlutenFreeCork = lazyWithRetry(() => import("./pages/ireland/GlutenFreeCork"));
+const CorkRestaurantPage = lazyWithRetry(() => import("./pages/ireland/CorkRestaurantPage"));
 const GlutenFreeDublinBest = lazyWithRetry(() => import("./pages/ireland/GlutenFreeDublinBest"));
 const DublinCategoryPage = lazyWithRetry(() => import("./pages/ireland/DublinCategoryPage"));
 const Germany = lazyWithRetry(() => import("./pages/Germany"));
@@ -329,6 +331,8 @@ const App = () => (
               <Route path="/gluten-free/ireland/dublin/grocery-stores" element={<DublinCategoryPage category="grocery-stores" />} />
               <Route path="/gluten-free/ireland/dublin/gluten-free-products" element={<DublinCategoryPage category="gluten-free-products" />} />
               <Route path="/gluten-free/ireland/dublin/:slug" element={<DublinRestaurantPage />} />
+              <Route path="/gluten-free/ireland/cork" element={<GlutenFreeCork />} />
+              <Route path="/gluten-free/ireland/cork/:slug" element={<CorkRestaurantPage />} />
               <Route path="/germany" element={<Germany />} />
               <Route path="/new-zealand" element={<NewZealand />} />
               <Route path="/gluten-free/new-zealand/auckland" element={<GlutenFreeAuckland />} />

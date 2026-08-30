@@ -91,7 +91,10 @@ const COUNTRIES: Record<string, CountryConfig> = {
     countryName: "Ireland",
     hubPath: "/ireland",
     cityBase: "/gluten-free/ireland",
-    cities: [{ name: "Dublin", slug: "dublin" }],
+    cities: [
+      { name: "Dublin", slug: "dublin" },
+      { name: "Cork", slug: "cork" },
+    ],
   },
 };
 
