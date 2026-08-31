@@ -756,7 +756,7 @@ const GlutenFreeCapeTown = () => {
 
         {/* Filters */}
         <section className="mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_320px] gap-6">
             <div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">
             Verified Gluten-Free Restaurants
@@ -878,7 +878,7 @@ const GlutenFreeCapeTown = () => {
             ))}
           </div>
             </div>
-            <aside className="lg:sticky lg:top-4 lg:self-start order-first lg:order-last space-y-4">
+            <aside className="md:sticky md:top-4 md:self-start order-first md:order-last space-y-4">
               <Card>
                 <CardHeader className="pb-3">
                   <CardTitle className="flex items-center gap-2 text-base">
