@@ -186,24 +186,6 @@ const SouthAfrica = () => {
       description: "Friendly city on the Sunshine Coast with emerging GF dining options",
       route: "#",
       highlights: ["Coming Soon"]
-    },
-    {
-      name: "Bloemfontein",
-      image: "photo-1577948000111-9c970dfe3743",
-      places: 5,
-      rating: 4.2,
-      description: "The City of Roses with growing gluten-free awareness",
-      route: "#",
-      highlights: ["Coming Soon"]
-    },
-    {
-      name: "George",
-      image: "photo-1506905925346-21bda4d32df4",
-      places: 4,
-      rating: 4.3,
-      description: "Garden Route hub with charming cafés and health-conscious eateries",
-      route: "#",
-      highlights: ["Coming Soon"]
     }
   ];
 
