@@ -1,230 +1,306 @@
-import { ArrowLeft, MapPin, Clock, Globe, Phone, Star, CheckCircle, Camera, MessageCircle } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, Award, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
-const cities = [
+import { swedenCities } from "@/data/swedenRestaurants";
+
+const faqItems = [
   {
-    name: "Stockholm",
-    restaurants: [
-      {
-        name: "Glutenfritt Kök",
-        featured: true,
-        rating: 4.9,
-        reviewCount: 203,
-        cuisineTypes: ["Swedish", "Scandinavian"],
-        celiacSafe: "100% Dedicated",
-        menuType: "100% Gluten-Free",
-        address: "Drottninggatan 88, 111 36 Stockholm, Sweden",
-        hours: "Mon-Fri: 11:00 AM - 9:00 PM, Sat-Sun: 12:00 PM - 8:00 PM",
-        website: "www.glutenfrittkök.se",
-        phone: "+46 8 123 4567",
-        directions: "https://maps.google.com/?q=Glutenfritt+Kök+Stockholm",
-        overview: "Sweden's premier 100% gluten-free restaurant offering traditional Swedish cuisine with a modern approach. All dishes are prepared in a dedicated gluten-free kitchen ensuring complete safety for celiacs.",
-        menuHighlights: ["Swedish Meatballs", "Gravlax", "Princess Cake", "Cinnamon Buns", "Smörgåsbord"],
-        reviews: [
-          { author: "Emma L.", text: "The best gluten-free Swedish meatballs! Tastes exactly like the traditional version.", rating: 5 },
-          { author: "Lars A.", text: "Finally, a place where I can enjoy authentic Swedish pastries safely!", rating: 5 }
-        ],
-        proTip: "Don't miss their gluten-free Princess Cake - it's a Swedish classic and tastes incredible!"
-      }
-    ]
-  }
+    question: "Is Sweden a good destination for gluten-free travellers?",
+    answer:
+      "Yes. Sweden has excellent coeliac awareness, strict EU allergen labelling and a widely used word for gluten-free — 'glutenfri' — that appears on menus and packaging across the country.",
+  },
+  {
+    question: "How do I ask for gluten-free food in Swedish?",
+    answer:
+      "Say 'glutenfri' for gluten-free and 'jag har celiaki' if you have coeliac disease. Almost all staff also speak fluent English.",
+  },
+  {
+    question: "Which Swedish foods are naturally gluten-free?",
+    answer:
+      "Grilled and cured fish, shellfish, potatoes, lingonberries, cheeses and most Swedish salads are naturally gluten-free. Watch out for breaded fish, flour-thickened sauces and traditional buns.",
+  },
+  {
+    question: "Can I find gluten-free products in Swedish supermarkets?",
+    answer:
+      "Absolutely. ICA, Coop and Willys stock large glutenfri sections with bread, crispbread, pasta, oats and baking mixes from brands such as Semper and Fria.",
+  },
+  {
+    question: "Which Swedish city is most coeliac-friendly?",
+    answer:
+      "Stockholm leads with dedicated gluten-free kitchens and bakeries, followed by Gothenburg and Malmö. Uppsala is great for classic Swedish fika with gluten-free cakes.",
+  },
 ];
 
-const getCeliacSafeBadge = (level: string) => {
-  if (level === "100% Dedicated") {
-    return <Badge className="bg-green-100 text-green-800 border-green-300">100% Dedicated GF</Badge>;
-  }
-  return <Badge variant="secondary">{level}</Badge>;
-};
+const totalPlaces = swedenCities.reduce((sum, c) => sum + c.restaurants.length, 0);
 
-const getMenuTypeBadge = (type: string) => {
-  if (type === "100% Gluten-Free") {
-    return <Badge className="bg-blue-100 text-blue-800 border-blue-300">100% GF Menu</Badge>;
-  }
-  return <Badge variant="outline">{type}</Badge>;
-};
+const schemaJson = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Gluten-Free Restaurants in Sweden",
+    description:
+      "Find gluten free options across Sweden: celiac-safe restaurants, bakeries and cafés in Stockholm, Gothenburg, Malmö and Uppsala.",
+    url: "https://glutenfreeplace.org/sweden",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Top Gluten-Free Cities in Sweden",
+      numberOfItems: swedenCities.length,
+      itemListElement: swedenCities.map((c, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        name: c.name,
+        url: `https://glutenfreeplace.org/gluten-free/sweden/${c.slug}`,
+      })),
+    },
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: { "@type": "Answer", text: faq.answer },
+    })),
+  },
+];
 
-const renderStarRating = (rating: number) => {
-  return (
-    <div className="flex items-center space-x-1">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${i < Math.floor(rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
-        />
-      ))}
-    </div>
-  );
-};
-
-const Sweden = () => {
-  
-
-  return (
-    <>
+const Sweden = () => (
+  <>
     <SEOHead
-      title="Gluten-Free Restaurants in Sweden | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Sweden. Traditional Swedish cuisine safely prepared for celiacs in Stockholm, Gothenburg, Malmö & more."
+      title="Gluten-Free Options in Sweden | Celiac-Safe Dining"
+      description="Gluten free options across Sweden: verified celiac-safe restaurants, bakeries and cafés in Stockholm, Gothenburg, Malmö and Uppsala."
       canonical="/sweden"
+      schema={schemaJson}
     />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
-      <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <Link to="/" className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity mb-4">
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back to Countries</span>
+      <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center space-x-2">
+            <Globe className="h-8 w-8 text-red-600" />
+            <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+              Gluten-Free Places
+            </span>
           </Link>
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">🇸🇪</div>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in Sweden</h1>
-              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
-            </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors">Home</Link>
+            <Link to="/countries" className="text-gray-700 hover:text-red-600 transition-colors">Countries</Link>
+            <a href="#cities" className="text-gray-700 hover:text-red-600 transition-colors">Cities</a>
+            <a href="#faq" className="text-gray-700 hover:text-red-600 transition-colors">FAQ</a>
+            <UserMenu />
           </div>
         </div>
       </header>
 
-      <section className="py-12 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="flex flex-wrap justify-center gap-2">
-              <Badge className="bg-green-100 text-green-800">Celiac-Friendly</Badge>
-              <Badge className="bg-blue-100 text-blue-800">Verified Safe</Badge>
-              <Badge className="bg-purple-100 text-purple-800">Local Favorites</Badge>
+      <section
+        className="relative py-12 overflow-hidden bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url(https://images.unsplash.com/photo-1509356843151-3e7d96241e11?auto=format&fit=crop&w=1600&q=70)",
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to All Countries
+          </Link>
+          <div className="max-w-4xl mx-auto">
+            <span className="text-5xl mb-4 block">🇸🇪</span>
+            <Badge className="mb-4 bg-white/20 text-white border-white/30">
+              <MapPin className="h-4 w-4 mr-2" />
+              {totalPlaces}+ Gluten-Free Places
+            </Badge>
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Dedicated Gluten-Free Restaurants in Sweden
+            </h1>
+            <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+              Explore celiac-safe dining across Sweden — from Stockholm's dedicated gluten-free kitchens to
+              Gothenburg's seafood, Malmö's food halls and Uppsala's classic fika.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/gluten-free/sweden/stockholm">
+                <Button size="lg" className="bg-white text-red-700 hover:bg-red-50">
+                  Start with Stockholm
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Button>
+              </Link>
+              <AddRestaurantDialog
+                city="Sweden"
+                triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+              />
             </div>
-            <p className="text-gray-600 leading-relaxed">
-              Explore Sweden's finest gluten-free dining destinations. From traditional Swedish classics to modern Scandinavian cuisine,
-              these certified celiac-safe restaurants deliver authentic flavors with complete peace of mind.
+          </div>
+        </div>
+      </section>
+
+      <section id="cities" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+              <MapPin className="h-4 w-4 mr-2" />
+              Explore by City
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Top Gluten-Free Cities in Sweden</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Choose a city to explore verified gluten-free restaurants with detailed reviews and safety information
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {swedenCities.map((city, index) => (
+              <Card
+                key={city.slug}
+                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <Link to={`/gluten-free/sweden/${city.slug}`} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
+                  <div className="relative overflow-hidden h-48">
+                    <img
+                      src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                      alt={`Gluten-free restaurants in ${city.name}, Sweden`}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      loading="lazy"
+                      width={600}
+                      height={400}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                      <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                      <span className="font-semibold text-sm">{city.rating}</span>
+                    </div>
+                    <div className="absolute bottom-4 left-4">
+                      <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                    </div>
+                  </div>
+                </Link>
+                <CardContent className="p-5">
+                  <p className="text-gray-600 text-sm mb-3">{city.description}</p>
+                  <div className="flex items-center text-red-600 mb-3">
+                    <MapPin className="h-4 w-4 mr-1" />
+                    <span className="font-semibold text-sm">{city.restaurants.length} places</span>
+                  </div>
+                  <div className="mb-4">
+                    <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                    <div className="flex flex-wrap gap-1">
+                      {city.restaurants.slice(0, 3).map((r) => (
+                        <Badge key={r.slug} variant="secondary" className="text-xs bg-red-50 text-red-700">
+                          {r.name}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <Link to={`/gluten-free/sweden/${city.slug}`}>
+                    <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                      Explore {city.name}
+                      <ArrowRight className="h-4 w-4 ml-2" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-white/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+                <Award className="h-4 w-4 mr-2" />
+                About
+              </Badge>
+              <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in Sweden</h2>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Why Sweden?</h3>
+                <p className="text-gray-600 mb-4">
+                  Sweden is one of Europe's easiest countries for coeliac travellers. Allergen labelling is strict,
+                  the word "glutenfri" appears on menus and packaging everywhere, and staff are used to allergy questions.
+                </p>
+                <p className="text-gray-600">
+                  Stockholm and Gothenburg have dedicated gluten-free kitchens and bakeries, while every supermarket
+                  carries a broad gluten-free range — making self-catering simple.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Look for "glutenfri" and the crossed-grain symbol</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Say "jag har celiaki" to explain coeliac disease</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Grilled fish and shellfish are usually naturally gluten-free</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                    <span>Semper and Fria are the most stocked Swedish GF brands</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-red-50/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex items-center gap-2 mb-3">
+              <Shield className="w-6 h-6 text-red-600" />
+              <h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2>
+            </div>
+            <p className="text-gray-600">
+              Listings are checked by our community of coeliac travellers. We prioritise dedicated gluten-free
+              facilities and venues with proven protocols — always confirm your needs with staff before ordering.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-16">
+      <section id="faq" className="py-16">
         <div className="container mx-auto px-4">
-          {cities.map((city) => (
-            <div key={city.name} className="mb-16">
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">{city.name}</h2>
-              <div className="grid gap-8">
-                {city.restaurants.map((restaurant) => (
-                  <Card key={restaurant.name} className="overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="p-6 space-y-6">
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{restaurant.name}</h3>
-                          <div className="flex items-center space-x-4 text-sm">
-                            <div className="flex items-center space-x-1">
-                              {renderStarRating(restaurant.rating)}
-                              <span className="font-semibold ml-1">{restaurant.rating}</span>
-                              <span className="text-gray-500">({restaurant.reviewCount} reviews)</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {restaurant.cuisineTypes.map((type) => (
-                            <Badge key={type} variant="secondary">{type}</Badge>
-                          ))}
-                          {getCeliacSafeBadge(restaurant.celiacSafe)}
-                          {getMenuTypeBadge(restaurant.menuType)}
-                        </div>
-
-                        {restaurant.featured && (
-                          <>
-                            <Button className="w-full sm:w-auto" asChild>
-                              <a href={restaurant.directions} target="_blank" rel="noopener noreferrer">
-                                <MapPin className="h-4 w-4 mr-2" />
-                                Get Directions
-                              </a>
-                            </Button>
-
-                            <div className="grid md:grid-cols-2 gap-4 text-sm">
-                              <div className="flex items-start space-x-2">
-                                <MapPin className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.address}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Clock className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.hours}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Globe className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                  {restaurant.website}
-                                </a>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Phone className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`tel:${restaurant.phone}`} className="text-blue-600 hover:underline">
-                                  {restaurant.phone}
-                                </a>
-                              </div>
-                            </div>
-
-                            <div className="bg-green-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <CheckCircle className="h-5 w-5 text-green-600" />
-                                <h4 className="font-semibold text-gray-900">Overview</h4>
-                              </div>
-                              <p className="text-gray-700 text-sm leading-relaxed">{restaurant.overview}</p>
-                            </div>
-
-                            <div className="bg-orange-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <Camera className="h-5 w-5 text-orange-600" />
-                                <h4 className="font-semibold text-gray-900">Menu Highlights</h4>
-                              </div>
-                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                {restaurant.menuHighlights.map((item) => (
-                                  <li key={item} className="text-sm text-gray-700 flex items-center">
-                                    <span className="mr-2">•</span>
-                                    {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div className="bg-gray-50 rounded-lg p-4 space-y-4">
-                              <div className="flex items-center space-x-2">
-                                <MessageCircle className="h-5 w-5 text-gray-600" />
-                                <h4 className="font-semibold text-gray-900">User Reviews</h4>
-                              </div>
-                              <div className="space-y-3">
-                                {restaurant.reviews.map((review, idx) => (
-                                  <div key={idx} className="bg-white rounded p-3 space-y-1">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-medium text-sm">{review.author}</span>
-                                      {renderStarRating(review.rating)}
-                                    </div>
-                                    <p className="text-sm text-gray-600">{review.text}</p>
-                                  </div>
-                                ))}
-                              </div>
-                              <Button variant="outline" size="sm" className="w-full">View All Reviews</Button>
-                            </div>
-
-                            <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
-                              <p className="text-sm text-gray-700">
-                                <span className="font-semibold">Pro Tip:</span> {restaurant.proTip}
-                              </p>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="text-center mb-8">
+              <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+              <p className="text-gray-600 mt-2">Everything you need to know about gluten-free dining in Sweden</p>
             </div>
-          ))}
+            <Accordion type="single" collapsible className="w-full">
+              {faqItems.map((faq, index) => (
+                <AccordionItem key={faq.question} value={`faq-${index}`}>
+                  <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                  <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-gradient-to-r from-red-600 to-red-800">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Know a Great GF Spot in Sweden?</h2>
+          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            Help fellow coeliac travellers discover safe dining across Sweden. Submit a restaurant to our directory.
+          </p>
+          <AddRestaurantDialog city="Sweden" triggerClassName="bg-white text-red-700 hover:bg-red-50 text-lg px-8 py-3" />
         </div>
       </section>
     </div>
-    </>
-  );
-};
+  </>
+);
 
 export default Sweden;
