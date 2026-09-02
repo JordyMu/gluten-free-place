@@ -1830,10 +1830,10 @@ export const swedenCities = [
     emoji: "🎓",
     image: "photo-1519677100203-a0e668c92439",
     rating: 4.5,
-    description: "Historic konditori fika and riverside seafood",
+    description: "Historic fika, Italian spots, pubs and dedicated GF cafés",
     restaurants: uppsalaRestaurants,
     intro:
-      "Uppsala's student city centre offers classic Swedish fika with gluten-free cakes, riverside seafood and supermarkets with a wide glutenfri range.",
+      "Uppsala's student city centre offers classic Swedish fika with gluten-free cakes, riverside seafood, Italian trattorias, burger joints, tapas bars and supermarkets with a wide glutenfri range.",
   },
 ];
 
