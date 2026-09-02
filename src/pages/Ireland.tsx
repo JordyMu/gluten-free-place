@@ -781,10 +781,10 @@ const Ireland = () => {
                 Beyond the Cities
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-                Other Irish Locations
+                Other Locations
               </h2>
               <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                Gluten-free gems in smaller towns across Ireland — from Dingle's seafood bars to Waterford's historic pubs
+                Gluten-free gems beyond the main cities — from Irish coastal towns to resort dining and cafés further afield
               </p>
             </div>
 
