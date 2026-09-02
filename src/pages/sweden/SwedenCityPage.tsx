@@ -31,6 +31,7 @@ const SwedenCityPage = () => {
       emoji={city.emoji}
       heading={`Dedicated Gluten-Free Restaurants in ${city.name}`}
       compactHero
+      hideOverview
       intro={city.intro}
       restaurants={city.restaurants}
       faqItems={faqFor(city.name)}
