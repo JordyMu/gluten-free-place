@@ -76,7 +76,7 @@ const Sweden = () => (
       title="Gluten-Free Options in Sweden | Celiac-Safe Dining"
       description="Gluten free options across Sweden: verified celiac-safe restaurants, bakeries and cafés in Stockholm, Gothenburg, Malmö and Uppsala."
       canonical="/sweden"
-      schema={schemaJson}
+      schemaJson={schemaJson}
     />
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-yellow-50">
       <header className="bg-white/80 backdrop-blur-md border-b border-blue-100 sticky top-0 z-50">
