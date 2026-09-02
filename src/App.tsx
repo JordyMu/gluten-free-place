@@ -151,6 +151,8 @@ const JohannesburgRestaurantPage = lazyWithRetry(() => import("./pages/johannesb
 const DurbanRestaurantPage = lazyWithRetry(() => import("./pages/durban/DurbanRestaurantPage"));
 const PretoriaRestaurantPage = lazyWithRetry(() => import("./pages/pretoria/PretoriaRestaurantPage"));
 const Sweden = lazyWithRetry(() => import("./pages/Sweden"));
+const SwedenCityPage = lazyWithRetry(() => import("./pages/sweden/SwedenCityPage"));
+const SwedenRestaurantPage = lazyWithRetry(() => import("./pages/sweden/SwedenRestaurantPage"));
 const Thailand = lazyWithRetry(() => import("./pages/Thailand"));
 const Argentina = lazyWithRetry(() => import("./pages/Argentina"));
 const Kenya = lazyWithRetry(() => import("./pages/Kenya"));
