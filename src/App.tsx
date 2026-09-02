@@ -151,6 +151,8 @@ const JohannesburgRestaurantPage = lazyWithRetry(() => import("./pages/johannesb
 const DurbanRestaurantPage = lazyWithRetry(() => import("./pages/durban/DurbanRestaurantPage"));
 const PretoriaRestaurantPage = lazyWithRetry(() => import("./pages/pretoria/PretoriaRestaurantPage"));
 const Sweden = lazyWithRetry(() => import("./pages/Sweden"));
+const SwedenCityPage = lazyWithRetry(() => import("./pages/sweden/SwedenCityPage"));
+const SwedenRestaurantPage = lazyWithRetry(() => import("./pages/sweden/SwedenRestaurantPage"));
 const Thailand = lazyWithRetry(() => import("./pages/Thailand"));
 const Argentina = lazyWithRetry(() => import("./pages/Argentina"));
 const Kenya = lazyWithRetry(() => import("./pages/Kenya"));
@@ -398,6 +400,9 @@ const App = () => (
               <Route path="/gluten-free/south-africa/cape-town/grocery-stores" element={<CapeTownGroceryStores />} />
               <Route path="/gluten-free/south-africa/cape-town/gluten-free-products" element={<CapeTownGFProducts />} />
               <Route path="/sweden" element={<Sweden />} />
+              <Route path="/gluten-free/sweden" element={<Navigate to="/sweden" replace />} />
+              <Route path="/gluten-free/sweden/:citySlug" element={<SwedenCityPage />} />
+              <Route path="/gluten-free/sweden/:citySlug/:slug" element={<SwedenRestaurantPage />} />
               <Route path="/thailand" element={<Thailand />} />
               <Route path="/argentina" element={<Argentina />} />
               <Route path="/gluten-free/kenya" element={<Kenya />} />
