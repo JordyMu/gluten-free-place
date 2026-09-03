@@ -48,6 +48,24 @@ const cities = [
   },
 ];
 
+const otherMoroccoRestaurants: { name: string; area: string; icon: string; rating: number; cuisines: string[] }[] = [
+  { name: "BILMOS", area: "Chefchaouen", icon: "🫐", rating: 4.6, cuisines: ["Moroccan", "Café"] },
+  { name: "Culture Box", area: "Fès", icon: "📦", rating: 4.5, cuisines: ["International", "Café"] },
+  { name: "KSOU Café & Restaurant", area: "Essaouira", icon: "☕", rating: 4.6, cuisines: ["Moroccan", "Café"] },
+  { name: "Let's Be Healing Food", area: "Tamraght", icon: "🌿", rating: 4.7, cuisines: ["Healthy", "Vegetarian"] },
+  { name: "Pasta Baladin", area: "Essaouira", icon: "🍝", rating: 4.5, cuisines: ["Italian", "Pasta"] },
+  { name: "Cinema Cafe", area: "Fès", icon: "🎬", rating: 4.4, cuisines: ["Café", "International"] },
+  { name: "Le 20 Restaurant", area: "Agadir", icon: "🍽️", rating: 4.5, cuisines: ["Moroccan", "International"] },
+  { name: "Pâtisserie Boujemaa", area: "Essaouira", icon: "🧁", rating: 4.3, cuisines: ["Bakery", "Patisserie"] },
+  { name: "The Loft", area: "Essaouira", icon: "🏠", rating: 4.6, cuisines: ["International", "Bistro"] },
+  { name: "Teapot Cafe", area: "Taghazout", icon: "🫖", rating: 4.5, cuisines: ["Café", "Breakfast"] },
+  { name: "La Terrazza", area: "Aït Benhaddou", icon: "🏜️", rating: 4.4, cuisines: ["Moroccan", "Italian"] },
+  { name: "Gusto Italia", area: "Essaouira", icon: "🇮🇹", rating: 4.5, cuisines: ["Italian", "Pizza"] },
+  { name: "Little Italy", area: "Agadir", icon: "🍕", rating: 4.4, cuisines: ["Italian", "Pizza"] },
+  { name: "Restaurant Hamsa", area: "Chefchaouen", icon: "🪬", rating: 4.6, cuisines: ["Moroccan", "Vegetarian"] },
+  { name: "Toma", area: "Fès", icon: "🍅", rating: 4.5, cuisines: ["Mediterranean", "Bistro"] },
+];
+
 const faqItems = [
   {
     question: "Is Moroccan food naturally gluten-free?",
