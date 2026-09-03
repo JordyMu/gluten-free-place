@@ -197,27 +197,44 @@ const NewZealand = () => {
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {cities.map((city, index) => {
                 const route = `/gluten-free/new-zealand/${city.slug}`;
+                const meta = cityMeta[city.slug] ?? { image: nzHero, description: `Verified gluten-free dining in ${city.name}`, rating: 4.6 };
                 return (
                   <Card
                     key={city.name}
-                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden flex flex-col min-h-[398px]"
+                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden flex flex-col"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <Link to={route} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
-                      <div className="h-48 bg-gradient-to-br from-blue-700 via-cyan-700 to-emerald-700 flex items-center justify-center px-5 transition-[filter] duration-300 group-hover:brightness-110">
-                        <h3 className="text-2xl font-bold text-white text-center leading-tight">{city.name}</h3>
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={meta.image}
+                          alt={`Gluten-free dining in ${city.name}, New Zealand`}
+                          width={600}
+                          height={400}
+                          loading="lazy"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                        <div className="absolute top-3 right-3 bg-white/95 rounded-full px-3 py-1 flex items-center gap-1 shadow">
+                          <Star className="h-4 w-4 text-yellow-500 fill-yellow-500" />
+                          <span className="text-sm font-semibold text-gray-900">{meta.rating}</span>
+                        </div>
+                        <h3 className="absolute bottom-4 left-5 right-5 text-2xl font-bold text-white leading-tight">
+                          {city.name}
+                        </h3>
                       </div>
                     </Link>
                     <CardContent className="p-5 flex flex-col flex-1">
-                      <div className="flex items-center text-blue-700 mb-5">
+                      <p className="text-sm text-gray-600 mb-3 leading-relaxed">{meta.description}</p>
+                      <div className="flex items-center text-red-600 mb-4">
                         <MapPin className="h-4 w-4 mr-1" />
                         <span className="font-semibold text-sm">{city.restaurants.length} places</span>
                       </div>
                       <div className="mb-5">
-                        <p className="text-sm text-gray-600 mb-2">Popular spots:</p>
+                        <p className="text-sm text-gray-500 mb-2">Popular spots:</p>
                         <div className="flex flex-wrap gap-2">
                           {city.restaurants.slice(0, 3).map((r) => (
-                            <Badge key={r.name} variant="secondary" className="text-xs bg-blue-50 text-blue-700">
+                            <Badge key={r.name} variant="secondary" className="text-xs bg-red-50 text-red-700">
                               {r.name}
                             </Badge>
                           ))}
@@ -234,6 +251,7 @@ const NewZealand = () => {
                 );
               })}
             </div>
+
           </div>
         </section>
 
