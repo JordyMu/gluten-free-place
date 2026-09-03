@@ -21,5 +21,18 @@ const app = (
 // The pre-rendered HTML remains useful to crawlers, but some browser-only
 // providers produce different initial markup during SSR. Re-rendering avoids
 // unrecoverable hydration mismatches on static hosting.
-root.innerHTML = '';
-createRoot(root).render(app);
+const prerendered = root.innerHTML;
+
+try {
+  root.innerHTML = '';
+  createRoot(root).render(app);
+} catch (error) {
+  // Never leave a blank white page on static hosting: restore the pre-rendered
+  // markup and surface the failure so it can be diagnosed from the live site.
+  console.error('App failed to start', error);
+  root.innerHTML = prerendered ||
+    '<div style="padding:2rem;font-family:system-ui;text-align:center">' +
+    '<h1>Something went wrong loading this page</h1>' +
+    '<p>Please refresh. If it keeps happening, clear your browser cache.</p></div>';
+}
+
