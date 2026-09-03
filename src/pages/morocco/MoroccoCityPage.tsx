@@ -29,6 +29,7 @@ const MoroccoCityPage = () => {
       countryName="Morocco"
       countrySlug="morocco"
       emoji={city.emoji}
+      heroImage={city.heroImage}
       heading={`Dedicated Gluten-Free Restaurants in ${city.name}`}
       compactHero
       hideOverview
