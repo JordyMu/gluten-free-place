@@ -179,7 +179,7 @@ const Morocco = () => {
               <span className="text-5xl mb-4 block">🇲🇦</span>
               <Badge className="mb-4 bg-white/20 text-white border-white/30">
                 <MapPin className="h-4 w-4 mr-2" />
-                66+ Gluten-Free Places
+                85+ Gluten-Free Places
               </Badge>
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
                 Dedicated Gluten-Free Restaurants in Morocco
