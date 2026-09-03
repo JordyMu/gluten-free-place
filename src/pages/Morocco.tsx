@@ -16,7 +16,7 @@ const cities = [
     places: 18,
     rating: 4.6,
     description: "Navigate the medina with confidence — tagines, msemen, and naturally gluten-free Moroccan classics",
-    route: "#",
+    route: "/gluten-free/morocco/marrakesh",
     highlights: ["Jemaa el-Fnaa grills", "Riad dining", "GF tagines"],
   },
   {
