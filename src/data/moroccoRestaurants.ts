@@ -110,6 +110,34 @@ export const casablancaRestaurants = build(
   { lat: 33.5731, lng: -7.5898 }
 );
 
+export const rabatRestaurants = build(
+  "Rabat",
+  [
+    m("Lina Gluten Free", "lina-gluten-free", "2 Av. Moulay Hassan, Rabat", "Dedicated gluten-free bakery", "A dedicated gluten-free spot in central Rabat offering breads, pastries and sweet treats safe for coeliacs.", ["Bakery", "100% Gluten-Free"], { venueType: "bakery", icon: "🥖", celiacSafe: "dedicated-facility", menuType: "fully-gluten-free", rating: 4.7 }),
+    m("Pause Gourmet", "pause-gourmet", "467 Ave Mohammed V, Rabat", "Gourmet café and deli", "A gourmet café on Avenue Mohammed V serving fresh salads, bowls and light dishes with gluten-free-friendly options.", ["Cafe", "Healthy", "Gourmet"], { venueType: "cafe", rating: 4.5 }),
+    m("Lina", "lina-rabat", "2588+GGR, Rabat", "Moroccan restaurant with GF awareness", "A Rabat restaurant where staff can guide gluten-free diners through traditional Moroccan dishes.", ["Moroccan", "Restaurant"]),
+    m("Restaurant Ziryab", "restaurant-ziryab", "10 Impasse Ennajjar, Rue des Consuls, Rabat", "Andalusian-Moroccan fine dining", "An elegant restaurant in the medina serving refined Moroccan and Andalusian-inspired dishes with attentive service for dietary needs.", ["Moroccan", "Fine Dining", "Andalusian"], { rating: 4.6 }),
+    m("Le Picolo's", "le-picolos", "Av. Mohammed VI, Rabat 10170", "Italian café and pizzeria", "A casual Italian spot on Avenue Mohammed VI with gluten-free pizza and pasta options available on request.", ["Italian", "Pizza", "Pasta"]),
+    m("Dar El Medina", "dar-el-medina", "3 rue benjelloul souk sebbat, Rabat", "Riad restaurant in the medina", "A charming riad restaurant in the medina serving fresh Moroccan dishes that can be adapted for gluten-free guests.", ["Moroccan", "Riad Dining"]),
+    m("Restaurant de la Libération", "restaurant-de-la-liberation", "256 Av. Mohammed V, Rabat 10030", "Classic Moroccan restaurant", "A long-standing Rabat restaurant serving classic tagines, grilled meats and salads suited to gluten-free diners.", ["Moroccan", "Traditional"]),
+    m("Restaurant Nakhat Chef Nour", "restaurant-nakhat-chef-nour", "magasin 2, 32 Av. Al Abtal, Rabat 10100", "Modern Moroccan kitchen", "A modern Moroccan kitchen led by Chef Nour, with fresh preparations and awareness of gluten-free requests.", ["Moroccan", "Modern"], { rating: 4.6 }),
+    m("Restaurant Marocain Dar Safran", "restaurant-marocain-dar-safran", "9, Rue Patrice Lumumba, Av. Moulay Hassan, Rabat 10005", "Traditional Moroccan restaurant", "A traditional Moroccan restaurant near Avenue Moulay Hassan serving tagines and grilled dishes.", ["Moroccan", "Traditional"]),
+    m("Dar Al-Rabatiya", "dar-al-rabatiya", "6 rue Farane Khachane, Rue Sidi Fateh, Rabat 10000", "Heritage Moroccan dining", "A heritage-style restaurant in the medina serving authentic Rabat dishes, many naturally gluten-free.", ["Moroccan", "Traditional"]),
+    m("Dar Naji", "dar-naji", "Av. Jazirat Al Arabe, Rabat", "Moroccan family restaurant", "A family-run Moroccan restaurant known for generous portions of tagines, couscous alternatives and grilled meats.", ["Moroccan", "Family"]),
+    m("Dar Naji Agdal", "dar-naji-agdal", "26 Av. Omar Ibn Al Khattab, Rabat 10000", "Moroccan restaurant in Agdal", "A popular Agdal branch serving the same beloved Moroccan classics with gluten-free-friendly options.", ["Moroccan", "Traditional"]),
+    m("Marjane Arribat Center", "marjane-arribat-center", "Av. Inaouin, Rabat", "Supermarket with GF products", "A large supermarket stocking imported gluten-free breads, pasta, snacks and specialty items.", ["Supermarket", "Grocery"], { venueType: "supermarket", icon: "🛒" }),
+    m("Dinarjat", "dinarjat", "6 Rue Belgnaoui, Rabat 10030", "Historic Moroccan restaurant", "A historic restaurant in a restored 18th-century house, serving refined Moroccan cuisine with advance dietary accommodation.", ["Moroccan", "Historic", "Fine Dining"], { rating: 4.6 }),
+    m("Thai Sushi Cuisine", "thai-sushi-cuisine", "3 rue Assouhaili, n°5, magasin, Rabat 10080", "Thai and Japanese fusion", "A Thai-sushi fusion spot where naturally gluten-free curries and sushi bowls are available — ask for tamari.", ["Thai", "Japanese", "Sushi"]),
+    m("Yamal Acham", "yamal-acham", "5 bis, 5 Av. Al Maghrib Al Arabi, Rabat 10060", "Middle Eastern grill", "A Middle Eastern grill serving shawarma, kebabs and mezze — request no bread and check marinades.", ["Middle Eastern", "Grill", "Lebanese"]),
+    m("Sufra Restaurant", "sufra-restaurant", "19 Av. Moulay Rachid, Rabat", "Contemporary Moroccan dining", "A contemporary Moroccan restaurant with fresh, seasonal dishes and staff attentive to gluten-free requests.", ["Moroccan", "Contemporary"], { rating: 4.5 }),
+    m("Boho Café", "boho-cafe", "10 Rue EL Yamama, Rabat 10000", "Trendy café and brunch spot", "A trendy café serving brunch, smoothie bowls, salads and specialty coffee with gluten-free-friendly choices.", ["Cafe", "Brunch", "Healthy"], { venueType: "cafe" }),
+    m("Restaurant Cafe Bab Laalou", "cafe-bab-laalou", "18 Av. Laalou, Rabat", "Café near the Kasbah", "A relaxed café near Bab Laalou serving light meals, salads and mint tea with medina views.", ["Cafe", "Moroccan"], { venueType: "cafe" }),
+    m("La Casa Di Carta", "la-casa-di-carta", "Rue d'Oran, Rabat", "Italian restaurant", "An Italian restaurant in Rabat offering pasta and pizza with gluten-free options on request.", ["Italian", "Pizza", "Pasta"]),
+    m("Indian Flavors", "indian-flavors", "29 Jbel El Ayachi, Rabat 10080", "Indian restaurant", "An Indian restaurant serving naturally gluten-free curries, tandoori dishes and rice-based meals — confirm naan is avoided.", ["Indian", "Curry", "Tandoori"]),
+  ],
+  { lat: 34.0209, lng: -6.8416 }
+);
+
 export const moroccoCities = [
   {
     name: "Marrakesh",
@@ -133,6 +161,17 @@ export const moroccoCities = [
     restaurants: casablancaRestaurants,
     intro:
       "Casablanca is Morocco's most cosmopolitan city and its best for gluten-free living — home to dedicated gluten-free bakeries like Koul Hani and Achibane Sans Gluten, plus supermarkets such as Marjane stocking imported GF products.",
+  },
+  {
+    name: "Rabat",
+    slug: "rabat",
+    emoji: "🏛️",
+    image: "photo-1553899017-c205d710e08b",
+    rating: 4.4,
+    description: "The capital city blends traditional Moroccan cuisine with growing gluten-free awareness",
+    restaurants: rabatRestaurants,
+    intro:
+      "Rabat is Morocco's capital and a relaxed, walkable city with a growing gluten-free scene. From dedicated bakeries like Lina Gluten Free to riad restaurants and modern cafés, coeliacs can dine well along the Atlantic coast.",
   },
 ];
 
