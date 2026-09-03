@@ -22,7 +22,7 @@ const nzFaqItems = [
 
 const cityMeta: Record<string, { image: string; description: string }> = {
   auckland: {
-    image: "photo-1595125990254-0d78a2971a3b",
+    image: "photo-1600208669687-f19af3638cb9",
     description: "New Zealand's biggest city, home to dedicated GF bakeries and diverse dining",
   },
   wellington: {
@@ -34,7 +34,7 @@ const cityMeta: Record<string, { image: string; description: string }> = {
     description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
   },
   christchurch: {
-    image: "photo-1578674473215-9e07321e0d1a",
+    image: "photo-1523482580672-f109ba8cb9be",
     description: "Garden City eateries with clearly marked gluten-free menus",
   },
 };
@@ -223,7 +223,7 @@ const NewZealand = () => {
                 return (
                   <Card
                     key={city.name}
-                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden flex flex-col"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <Link to={route} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
@@ -244,7 +244,7 @@ const NewZealand = () => {
                         </div>
                       </div>
                     </Link>
-                    <CardContent className="p-5">
+                    <CardContent className="p-5 flex flex-col flex-1">
                       <p className="text-gray-600 text-sm mb-3">{meta?.description}</p>
                       <div className="flex items-center text-red-600 mb-3">
                         <MapPin className="h-4 w-4 mr-1" />
@@ -260,7 +260,7 @@ const NewZealand = () => {
                           ))}
                         </div>
                       </div>
-                      <Link to={route}>
+                      <Link to={route} className="mt-auto">
                         <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
                           Explore {city.name}
                           <ArrowRight className="h-4 w-4 ml-2" />
