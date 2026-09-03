@@ -213,48 +213,30 @@ const NewZealand = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-7">
               {cities.map((city, index) => {
-                const meta = cityMeta[city.slug];
                 const route = `/gluten-free/new-zealand/${city.slug}`;
-                const rating = (
-                  city.restaurants.reduce((sum, r) => sum + (r.rating || 0), 0) / (city.restaurants.length || 1)
-                ).toFixed(1);
                 return (
                   <Card
                     key={city.name}
-                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden flex flex-col"
+                    className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden flex flex-col min-h-[398px]"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
                     <Link to={route} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
-                      <div className="relative overflow-hidden h-48">
-                        <img
-                          src={`https://images.unsplash.com/${meta?.image ?? "photo-1507699622108-4be3abd695ad"}?auto=format&fit=crop&w=600&q=80`}
-                          alt={`Gluten-free restaurants in ${city.name}`}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                          loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                          <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                          <span className="font-semibold text-sm">{rating}</span>
-                        </div>
-                        <div className="absolute bottom-4 left-4">
-                          <h3 className="text-2xl font-bold text-white">{city.name}</h3>
-                        </div>
+                      <div className="h-48 bg-gradient-to-br from-blue-700 via-cyan-700 to-emerald-700 flex items-center justify-center px-5 transition-[filter] duration-300 group-hover:brightness-110">
+                        <h3 className="text-2xl font-bold text-white text-center leading-tight">{city.name}</h3>
                       </div>
                     </Link>
                     <CardContent className="p-5 flex flex-col flex-1">
-                      <p className="text-gray-600 text-sm mb-3">{meta?.description}</p>
-                      <div className="flex items-center text-red-600 mb-3">
+                      <div className="flex items-center text-blue-700 mb-5">
                         <MapPin className="h-4 w-4 mr-1" />
                         <span className="font-semibold text-sm">{city.restaurants.length} places</span>
                       </div>
-                      <div className="mb-4">
-                        <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
-                        <div className="flex flex-wrap gap-1">
+                      <div className="mb-5">
+                        <p className="text-sm text-gray-600 mb-2">Popular spots:</p>
+                        <div className="flex flex-wrap gap-2">
                           {city.restaurants.slice(0, 3).map((r) => (
-                            <Badge key={r.name} variant="secondary" className="text-xs bg-red-50 text-red-700">
+                            <Badge key={r.name} variant="secondary" className="text-xs bg-blue-50 text-blue-700">
                               {r.name}
                             </Badge>
                           ))}
