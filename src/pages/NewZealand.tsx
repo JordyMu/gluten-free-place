@@ -20,25 +20,6 @@ const nzFaqItems = [
   { question: "Which New Zealand city is most celiac-friendly?", answer: "Auckland leads with the widest selection of dedicated and GF-friendly venues, followed by Wellington and Christchurch." },
 ];
 
-const cityMeta: Record<string, { image: string; description: string }> = {
-  auckland: {
-    image: "photo-1600208669687-f19af3638cb9",
-    description: "New Zealand's biggest city, home to dedicated GF bakeries and diverse dining",
-  },
-  wellington: {
-    image: "photo-1589871973318-9ca1258faa5d",
-    description: "The capital's café and craft-food scene with strong GF labelling",
-  },
-  "queenstown-arrowtown": {
-    image: "photo-1589802829985-817e51171b92",
-    description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
-  },
-  christchurch: {
-    image: "photo-1465056836041-7f43ac27dcb5",
-    description: "Garden City eateries with clearly marked gluten-free menus",
-  },
-};
-
 const NewZealand = () => {
   const cities = newZealandCities;
   const totalPlaces = cities.reduce((sum, c) => sum + c.restaurants.length, 0);
@@ -213,7 +194,7 @@ const NewZealand = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-7">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {cities.map((city, index) => {
                 const route = `/gluten-free/new-zealand/${city.slug}`;
                 return (
