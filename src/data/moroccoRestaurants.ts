@@ -203,6 +203,7 @@ export const moroccoCities = [
     name: "Tangier",
     slug: "tangier",
     emoji: "🌊",
+    heroImage: "/images/tangier-hero.webp?v=2",
     image: "photo-1553244469-c2ec6973e0a4",
     rating: 4.2,
     description: "Gateway to Africa with a vibrant food scene and naturally gluten-free Moroccan staples",
