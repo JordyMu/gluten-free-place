@@ -39,7 +39,7 @@ const cities = [
   },
   {
     name: "Tangier",
-    image: "photo-1553244469-c2ec6973e0a4",
+    image: "/images/tangier-hero.webp?v=2",
     places: 19,
     rating: 4.2,
     description: "Gateway to Africa with a vibrant food scene and naturally gluten-free Moroccan staples",
