@@ -138,6 +138,32 @@ export const rabatRestaurants = build(
   { lat: 34.0209, lng: -6.8416 }
 );
 
+export const tangierRestaurants = build(
+  "Tangier",
+  [
+    m("Ch'hiwat Sans Gluten", "chhiwat-sans-gluten", "A côté Masjid Badr, Tanger 90000", "Dedicated gluten-free kitchen", "A dedicated gluten-free spot near Masjid Badr offering Moroccan dishes and baked goods safe for coeliacs.", ["Moroccan", "100% Gluten-Free"], { celiacSafe: "dedicated-facility", menuType: "fully-gluten-free", icon: "🥖", rating: 4.7 }),
+    m("Macondo", "macondo", "13 Rue Ben Abou, Tanger", "Mediterranean-Moroccan bistro", "A cosy bistro on Rue Ben Abou blending Mediterranean and Moroccan flavours with gluten-free-friendly options.", ["Mediterranean", "Moroccan", "Bistro"]),
+    m("Sarayah Food Resturant", "sarayah-food-restaurant", "15 Rue Soralla, Tanger 90000", "Local Moroccan eatery", "A local restaurant on Rue Soralla serving tagines, grilled meats and salads that can be adapted for gluten-free diners.", ["Moroccan", "Traditional"]),
+    m("Alma Kitchen & Coffee", "alma-kitchen-coffee", "Place des Nations 44, Rue Antaki, Tangier 90000, Morocco", "Modern café & coffee shop", "A modern café on Place des Nations serving breakfast, salads and specialty coffee with gluten-free-friendly choices.", ["Cafe", "Coffee", "Brunch"], { venueType: "cafe" }),
+    m("Good Food Corner 2", "good-food-corner-2", "Bab Dar Dbagh, Tangier, Morocco", "Casual Moroccan corner", "A casual corner near Bab Dar Dbagh offering quick Moroccan grills and salads — ask for no bread.", ["Moroccan", "Fast Food"]),
+    m("La Muralla", "la-muralla", "Bab Kasbah, Place du Tabor, Tanger 90000, Morocco", "Spanish-Moroccan restaurant", "A restaurant by the Kasbah walls serving Spanish-influenced Moroccan dishes with attentive staff for dietary requests.", ["Spanish", "Moroccan", "Mediterranean"]),
+    m("Kebdani Restaurant", "kebdani-restaurant", "Rue Dar Baroud, Tanger, Morocco", "Traditional Moroccan dining", "A traditional restaurant on Rue Dar Baroud known for tagines, grilled fish and Moroccan salads.", ["Moroccan", "Seafood", "Traditional"]),
+    m("Abou Tayssir", "abou-tayssir", "11 Rue d'Italie, Tangier, Morocco", "Italian-Moroccan trattoria", "A friendly trattoria on Rue d'Italie offering Italian and Moroccan classics with gluten-free pasta options on request.", ["Italian", "Moroccan", "Pasta"]),
+    m("Carrefour", "carrefour-tangier", "Socco Alto, Av. Banafsaj, Tangier 90040, Morocco", "Supermarket with GF products", "A large supermarket in Socco Alto stocking imported gluten-free bread, pasta and snacks.", ["Supermarket", "Grocery"], { venueType: "supermarket", icon: "🛒" }),
+    m("MOFI", "mofi-tangier", "34 Av. Prince Moulay Abdellah, Tanger, Morocco", "Healthy café & bowls", "A health-focused café serving smoothie bowls, salads and light dishes with several naturally gluten-free options.", ["Cafe", "Healthy", "Bowls"], { venueType: "cafe" }),
+    m("Marjane Market", "marjane-market-tangier", "Q6F7+8M4 City Center, Tanger, Morocco", "Supermarket with GF products", "A major hypermarket in Tangier City Center with a gluten-free section for travellers.", ["Supermarket", "Grocery"], { venueType: "supermarket", icon: "🛒" }),
+    m("El Morocco Club", "el-morocco-club", "Place du Tabor, Tangier 90000, Morocco", "Upscale Moroccan-International", "An elegant club-restaurant on Place du Tabor serving refined Moroccan and international cuisine with gluten-free awareness.", ["Moroccan", "International", "Fine Dining"], { rating: 4.6 }),
+    m("Hamadi", "hamadi-tangier", "Rue de la Kasbah, Tanger 90000, Morocco", "Kasbah Moroccan restaurant", "A long-standing restaurant in the Kasbah area serving traditional tagines and grilled meats.", ["Moroccan", "Traditional"]),
+    m("Heavenly Desserts", "heavenly-desserts-tangier", "Av. de France, Tanger, Morocco", "Dessert café", "A dessert café on Avenue de France offering cakes, ice creams and sweet treats with gluten-free-friendly options.", ["Desserts", "Cafe", "Ice Cream"], { venueType: "cafe" }),
+    m("Soli Tangier", "soli-tangier", "17 Calle Nueva, Tanger 90000, Morocco", "Italian restaurant", "An Italian spot on Calle Nueva with gluten-free pasta and pizza available on request.", ["Italian", "Pizza", "Pasta"]),
+    m("Marshan Park Café Restaurant", "marshan-park-cafe", "28 Av. Hadj Mohamed Tazi, Tanger, Morocco", "Park café & restaurant", "A relaxed café-restaurant near Marshan Park serving salads, grills and light dishes with city views.", ["Cafe", "Moroccan", "International"], { venueType: "cafe" }),
+    m("Indian Spice Tangier", "indian-spice-tangier", "4 Rue Boutouri, Tanger 90000, Morocco", "Indian curry house", "An Indian restaurant on Rue Boutouri serving naturally gluten-free curries, tandoori and rice dishes — confirm no naan.", ["Indian", "Curry", "Tandoori"]),
+    m("Coffee House", "coffee-house-tangier", "Av. Ibn Al Abbar, Tanger 90030, Morocco", "Neighbourhood coffee shop", "A neighbourhood coffee shop on Avenue Ibn Al Abbar serving drinks, pastries and light snacks.", ["Cafe", "Coffee", "Snacks"], { venueType: "cafe" }),
+    m("RR Ice", "rr-ice-tangier", "Tangier, Morocco", "Ice cream parlour", "A local ice cream and dessert spot in Tangier with sorbet and naturally gluten-free options.", ["Ice Cream", "Desserts"], { venueType: "cafe" }),
+  ],
+  { lat: 35.7595, lng: -5.834 }
+);
+
 export const moroccoCities = [
   {
     name: "Marrakesh",
@@ -172,6 +198,17 @@ export const moroccoCities = [
     restaurants: rabatRestaurants,
     intro:
       "Rabat is Morocco's capital and a relaxed, walkable city with a growing gluten-free scene. From dedicated bakeries like Lina Gluten Free to riad restaurants and modern cafés, coeliacs can dine well along the Atlantic coast.",
+  },
+  {
+    name: "Tangier",
+    slug: "tangier",
+    emoji: "🌊",
+    image: "photo-1553244469-c2ec6973e0a4",
+    rating: 4.2,
+    description: "Gateway to Africa with a vibrant food scene and naturally gluten-free Moroccan staples",
+    restaurants: tangierRestaurants,
+    intro:
+      "Tangier sits where the Mediterranean meets the Atlantic, offering a lively mix of Moroccan cafés, seafood grills and international restaurants. Coeliacs can enjoy tagines, fresh fish and salads while watching the port traffic.",
   },
 ];
 
