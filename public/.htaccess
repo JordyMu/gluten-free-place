@@ -1,6 +1,5 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  RewriteBase /
 
   # Force HTTPS
   RewriteCond %{HTTPS} off
@@ -15,9 +14,10 @@
   RewriteRule ^assets/ - [L]
 
   # SPA fallback - serve index.html for all non-file routes
+  # Uses a relative path so this works whether the app is at root or in a subfolder.
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule . /index.html [L]
+  RewriteRule . index.html [L]
 </IfModule>
 
 # Enable compression
