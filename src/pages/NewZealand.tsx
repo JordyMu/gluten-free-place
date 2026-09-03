@@ -34,7 +34,7 @@ const cityMeta: Record<string, { image: string; description: string }> = {
     description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
   },
   christchurch: {
-    image: "photo-1523482580672-f109ba8cb9be",
+    image: "photo-1465056836041-7f43ac27dcb5",
     description: "Garden City eateries with clearly marked gluten-free menus",
   },
 };
