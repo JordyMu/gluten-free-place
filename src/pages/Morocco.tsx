@@ -13,10 +13,10 @@ const cities = [
   {
     name: "Marrakesh",
     image: "photo-1597212618440-806262de4f6b",
-    places: 18,
+    places: 24,
     rating: 4.6,
     description: "Navigate the medina with confidence — tagines, msemen, and naturally gluten-free Moroccan classics",
-    route: "#",
+    route: "/gluten-free/morocco/marrakesh",
     highlights: ["Jemaa el-Fnaa grills", "Riad dining", "GF tagines"],
   },
   {
