@@ -22,10 +22,10 @@ const cities = [
   {
     name: "Casablanca",
     image: "photo-1569383746724-6f1b882b8f46",
-    places: 14,
+    places: 23,
     rating: 4.5,
     description: "Morocco's cosmopolitan hub with modern restaurants offering dedicated gluten-free menus",
-    route: "#",
+    route: "/gluten-free/morocco/casablanca",
     highlights: ["Modern GF menus", "Seafood restaurants", "Marjane GF products"],
   },
   {

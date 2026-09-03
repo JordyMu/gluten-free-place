@@ -79,6 +79,37 @@ export const marrakeshRestaurants = build(
   { lat: 31.6295, lng: -7.9811 }
 );
 
+export const casablancaRestaurants = build(
+  "Casablanca",
+  [
+    m("Rose Léon Pâtisserie", "rose-leon-patisserie", "Rte Sidi Al Khadir, Casablanca", "Pâtisserie with gluten-free treats", "A pâtisserie on Route Sidi Al Khadir offering cakes and pastries with gluten-free-friendly options.", ["Bakery", "Patisserie"], { venueType: "bakery", icon: "🧁" }),
+    m("Koul Hani Boulangerie Sans Gluten", "koul-hani-boulangerie-sans-gluten", "Lot Al Woroud, N N5B, D5 Rue 46, Casablanca 20280", "Dedicated gluten-free bakery", "A fully gluten-free bakery in Casablanca serving breads, pastries and savoury baked goods safe for coeliacs.", ["Bakery", "100% Gluten-Free"], { venueType: "bakery", icon: "🥖", celiacSafe: "dedicated-facility", menuType: "fully-gluten-free", rating: 4.7 }),
+    m("Pâtisserie Katia", "patisserie-katia", "13 Rue Al Bouhtouri, Casablanca 20000", "Classic pâtisserie with GF options", "A classic Casablanca pâtisserie with a selection of gluten-free-friendly cakes and desserts.", ["Bakery", "Patisserie", "Desserts"], { venueType: "bakery", icon: "🧁" }),
+    m("Diet Ibn Batouta", "diet-ibn-batouta", "71 Rue Ibn Batouta, Casablanca 20250", "Health food store & diet products", "A diet and health food store stocking gluten-free breads, pasta and specialty products for coeliacs.", ["Health Food", "Grocery"], { venueType: "supermarket", icon: "🛒" }),
+    m("Organic Kitchen", "organic-kitchen-casablanca", "6-8 Rue Ahmed El Mokri, Casablanca 20000", "Organic health-focused restaurant", "An organic kitchen serving fresh, health-focused dishes with clearly marked gluten-free choices.", ["Healthy", "Organic", "Vegetarian"], { rating: 4.6 }),
+    m("Blend Gourmet Burger", "blend-gourmet-burger", "9 Rue Théophile Gauthier, Casablanca 20250", "Gourmet burgers with GF buns", "A gourmet burger spot offering gluten-free bun options — confirm fryer practices before ordering fries.", ["Burgers", "American"] ),
+    m("Marjane Market", "marjane-market-casablanca", "Rue Pierre Parent, Casablanca 20250", "Supermarket with GF products", "A large supermarket stocking imported gluten-free breads, pasta and snacks — a reliable stop for coeliac travellers.", ["Supermarket", "Grocery"], { venueType: "supermarket", icon: "🛒" }),
+    m("Dar Dada", "dar-dada", "31 Rue El Arsa, Casablanca 20250", "Traditional Moroccan dining", "A traditional Moroccan restaurant serving tagines and grilled dishes that are often naturally gluten-free.", ["Moroccan", "Traditional"]),
+    m("Etoile du Maroc", "etoile-du-maroc", "107 Rue Allal Ben Abdellah, Casablanca 20000", "Moroccan classics", "A Moroccan restaurant serving classic tagines, grills and salads — confirm no flour thickeners are used.", ["Moroccan"]),
+    m("Holy Brunch", "holy-brunch", "Angle Rue Theophile Gauthier et Rue Al Bouhtouri, Casablanca 20012", "Brunch café", "A popular brunch café with smoothie bowls, eggs and salads alongside gluten-free-friendly options.", ["Cafe", "Brunch", "Healthy"], { venueType: "cafe" }),
+    m("Medina Moroccan Taste", "medina-moroccan-taste", "Bd d'Anfa, Casablanca 20250", "Moroccan restaurant", "A Moroccan restaurant on Boulevard d'Anfa serving tagines and grilled meats suited to gluten-free diners.", ["Moroccan"]),
+    m("NIYA", "niya-casablanca", "34 Rue Sebou, Casablanca 20100", "Modern café & restaurant", "A stylish modern café and restaurant with fresh salads, bowls and dishes that staff can adapt for gluten-free guests.", ["Cafe", "Modern", "International"], { venueType: "cafe" }),
+    m("La Sqala", "la-sqala", "Bd des Almohades, Casablanca 20250", "Historic garden restaurant", "A famous restaurant set in the gardens of an 18th-century bastion, serving traditional Moroccan breakfasts, tagines and grilled fish.", ["Moroccan", "Traditional", "Garden"], { rating: 4.6 }),
+    m("Café Crozette", "cafe-crozette", "Angle Rue Louis David et Rue Razi, Casablanca 20360", "Neighbourhood café", "A relaxed neighbourhood café with salads, juices and light dishes.", ["Cafe"], { venueType: "cafe" }),
+    m("Radisson Blu Hotel, Casablanca City Center", "radisson-blu-casablanca", "2 Rue Mohamed Diouri, Casablanca 20300", "Hotel dining with GF awareness", "An international hotel whose restaurants can cater to gluten-free guests with advance notice.", ["Hotel Dining", "International"], { rating: 4.5 }),
+    m("Le 7ème Ciel", "le-7eme-ciel", "6ème Etage, Imm Harmony Business, Rue de Larache, Casablanca 20210", "Rooftop restaurant", "A rooftop restaurant on the 7th floor serving international dishes with city views.", ["Rooftop", "International"] ),
+    m("Oké Poké Bowl", "oke-poke-bowl", "12 Rue Al Bouhtouri, Casablanca 20060", "Poké bowls", "A poké bowl spot where you can build naturally gluten-free bowls — choose tamari instead of soy sauce.", ["Hawaiian", "Poke", "Healthy"] ),
+    m("Vibe Rooftop", "vibe-rooftop", "423 Bd Abdelmoumen, Casablanca 20420", "Rooftop lounge & dining", "A rooftop lounge serving grilled dishes, salads and cocktails with panoramic views.", ["Rooftop", "International", "Grill"]),
+    m("Bondi Coffee Kitchen", "bondi-coffee-kitchen", "31 Rue Sebou, Casablanca 20600", "Australian-style café", "An Australian-style café serving specialty coffee, brunch plates and salads with gluten-free-friendly options.", ["Cafe", "Brunch", "Australian"], { venueType: "cafe", rating: 4.6 }),
+    m("Achibane Sans Gluten", "achibane-sans-gluten", "46 Rue Ibn Batouta, Casablanca 20000", "Dedicated gluten-free shop", "A dedicated gluten-free shop and eatery offering breads, pastries and meals entirely safe for coeliacs.", ["100% Gluten-Free", "Bakery", "Grocery"], { celiacSafe: "dedicated-facility", menuType: "fully-gluten-free", icon: "🥖", rating: 4.7 }),
+    m("Hyatt Regency Casablanca", "hyatt-regency-casablanca", "Pl. des Nations Unies, Casablanca 20000", "Hotel restaurants", "A five-star hotel with multiple restaurants able to accommodate gluten-free diets with advance notice.", ["Hotel Dining", "International"], { rating: 4.5 }),
+    m("Sofitel Casablanca Tour Blanche", "sofitel-casablanca-tour-blanche", "Rue Sidi Belyout, Casablanca 20000", "Luxury hotel dining", "A luxury hotel whose chefs regularly cater to gluten-free and coeliac guests.", ["Hotel Dining", "French", "International"], { rating: 4.5 }),
+    m("Cafe Haussmann", "cafe-haussmann", "Bd Ghandi, Casablanca", "Parisian-style café", "A Parisian-style café on Boulevard Ghandi serving salads, omelettes and light dishes.", ["Cafe", "French"], { venueType: "cafe" }),
+    m("La Pensée", "la-pensee-casablanca", "110 Bd Ibnou Sina, Casablanca 20000", "Local restaurant", "A local restaurant on Boulevard Ibnou Sina serving Moroccan and international dishes.", ["Moroccan", "International"]),
+  ],
+  { lat: 33.5731, lng: -7.5898 }
+);
+
 export const moroccoCities = [
   {
     name: "Marrakesh",
@@ -91,6 +122,17 @@ export const moroccoCities = [
     restaurants: marrakeshRestaurants,
     intro:
       "Marrakesh is Morocco's most visited city, and with some knowledge it is wonderfully navigable for coeliacs. Tagines, grilled meats and salads are naturally gluten-free — just watch for couscous, khobz bread and pastilla.",
+  },
+  {
+    name: "Casablanca",
+    slug: "casablanca",
+    emoji: "🌊",
+    image: "photo-1569383746724-6f1b882b8f46",
+    rating: 4.5,
+    description: "Morocco's cosmopolitan hub with dedicated gluten-free bakeries, modern cafés and hotel dining",
+    restaurants: casablancaRestaurants,
+    intro:
+      "Casablanca is Morocco's most cosmopolitan city and its best for gluten-free living — home to dedicated gluten-free bakeries like Koul Hani and Achibane Sans Gluten, plus supermarkets such as Marjane stocking imported GF products.",
   },
 ];
 
