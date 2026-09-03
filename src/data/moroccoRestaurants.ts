@@ -84,6 +84,7 @@ export const moroccoCities = [
     name: "Marrakesh",
     slug: "marrakesh",
     emoji: "🕌",
+    heroImage: "/images/marrakesh-hero.webp?v=2",
     image: "photo-1597212618440-806262de4f6b",
     rating: 4.6,
     description: "Navigate the medina with confidence — tagines, grills and naturally gluten-free Moroccan classics",
