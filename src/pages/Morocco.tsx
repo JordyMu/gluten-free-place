@@ -21,7 +21,7 @@ const cities = [
   },
   {
     name: "Casablanca",
-    image: "photo-1569383746724-6f1b882b8f46",
+    image: "/images/casablanca-hero.webp?v=2",
     places: 23,
     rating: 4.5,
     description: "Morocco's cosmopolitan hub with modern restaurants offering dedicated gluten-free menus",
