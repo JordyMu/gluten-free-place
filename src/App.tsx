@@ -154,6 +154,8 @@ const Sweden = lazyWithRetry(() => import("./pages/Sweden"));
 const SwedenCityPage = lazyWithRetry(() => import("./pages/sweden/SwedenCityPage"));
 const MoroccoCityPage = lazyWithRetry(() => import("./pages/morocco/MoroccoCityPage"));
 const MoroccoRestaurantPage = lazyWithRetry(() => import("./pages/morocco/MoroccoRestaurantPage"));
+const MoroccoCategoryPage = lazyWithRetry(() => import("./pages/morocco/MoroccoCategoryPage"));
+const MoroccoBestPage = lazyWithRetry(() => import("./pages/morocco/MoroccoBestPage"));
 const SwedenRestaurantPage = lazyWithRetry(() => import("./pages/sweden/SwedenRestaurantPage"));
 const Thailand = lazyWithRetry(() => import("./pages/Thailand"));
 const Argentina = lazyWithRetry(() => import("./pages/Argentina"));
@@ -419,6 +421,11 @@ const App = () => (
               <Route path="/gluten-free/nigeria" element={<Nigeria />} />
               <Route path="/gluten-free/morocco" element={<Morocco />} />
               <Route path="/gluten-free/morocco/:citySlug" element={<MoroccoCityPage />} />
+              <Route path="/gluten-free/morocco/:citySlug/street-food" element={<MoroccoCategoryPage category="street-food" />} />
+              <Route path="/gluten-free/morocco/:citySlug/bakeries" element={<MoroccoCategoryPage category="bakeries" />} />
+              <Route path="/gluten-free/morocco/:citySlug/grocery-stores" element={<MoroccoCategoryPage category="grocery-stores" />} />
+              <Route path="/gluten-free/morocco/:citySlug/gluten-free-products" element={<MoroccoCategoryPage category="gluten-free-products" />} />
+              <Route path="/gluten-free/morocco/:citySlug/best-gluten-free-restaurants" element={<MoroccoBestPage />} />
               <Route path="/gluten-free/morocco/:citySlug/:slug" element={<MoroccoRestaurantPage />} />
               <Route path="/usa" element={<USA />} />
               <Route path="/japan" element={<Japan />} />
