@@ -228,10 +228,13 @@ const Morocco = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   {(() => {
+                    const imageUrl = city.image.startsWith("/")
+                      ? city.image
+                      : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`;
                     const media = (
                       <div className="relative overflow-hidden h-48">
                         <img
-                          src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                          src={imageUrl}
                           alt={`Gluten-free restaurants in ${city.name}, Morocco`}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                           loading="lazy"
