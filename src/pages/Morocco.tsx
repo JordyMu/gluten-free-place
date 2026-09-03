@@ -30,7 +30,7 @@ const cities = [
   },
   {
     name: "Rabat",
-    image: "photo-1553899017-c205d710e08b",
+    image: "/images/rabat-hero.webp?v=2",
     places: 21,
     rating: 4.4,
     description: "The capital city blends traditional Moroccan cuisine with growing gluten-free awareness",
