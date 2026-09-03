@@ -12,6 +12,29 @@ import { newZealandCities } from "@/data/newZealandCities";
 
 const nzHero = "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1600&q=80";
 
+const cityMeta: Record<string, { image: string; description: string; rating: number }> = {
+  auckland: {
+    image: "https://images.unsplash.com/photo-1595125990465-3bb0d0d90f39?auto=format&fit=crop&w=800&q=80",
+    description: "New Zealand's biggest city, home to dedicated GF bakeries and diverse dining",
+    rating: 4.6,
+  },
+  wellington: {
+    image: "https://images.unsplash.com/photo-1589871173318-9d68ad1c5b7b?auto=format&fit=crop&w=800&q=80",
+    description: "The capital's café and craft-food scene with strong GF labelling",
+    rating: 4.6,
+  },
+  "queenstown-arrowtown": {
+    image: "https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80",
+    description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
+    rating: 4.6,
+  },
+  christchurch: {
+    image: "https://images.unsplash.com/photo-1578326457399-3b34dbbf23b8?auto=format&fit=crop&w=800&q=80",
+    description: "Garden City eateries with clearly marked gluten-free menus",
+    rating: 4.6,
+  },
+};
+
 const nzFaqItems = [
   { question: "Is New Zealand a good destination for gluten-free travelers?", answer: "Yes! New Zealand has excellent celiac awareness, clear allergen labelling, and a strong café culture. Auckland and Wellington both have dedicated 100% gluten-free bakeries." },
   { question: "What are the best dedicated gluten-free spots in New Zealand?", answer: "The GF Depot in Auckland and Gluten Free 4u in Wellington are both fully dedicated facilities offering breads, pastries, pies and cakes that are safe for celiacs." },
