@@ -1,65 +1,75 @@
-import { Link } from "react-router-dom";
-import { MapPin, Star, Users, ArrowRight, Shield, ChefHat, Globe, MessageCircle } from "lucide-react";
+import { useEffect } from "react";
+import { MapPin, Star, ArrowLeft, Globe, Shield, Award, Users, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Link } from "react-router-dom";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { SEOHead } from "@/components/SEOHead";
+
 const cities = [
   {
     name: "Marrakesh",
     image: "photo-1597212618440-806262de4f6b",
     places: 18,
-    description: "Navigate the medina with confidence — tagines, msemen, and naturally gluten-free Moroccan classics.",
     rating: 4.6,
+    description: "Navigate the medina with confidence — tagines, msemen, and naturally gluten-free Moroccan classics",
     route: "#",
+    highlights: ["Jemaa el-Fnaa grills", "Riad dining", "GF tagines"],
   },
   {
     name: "Casablanca",
     image: "photo-1569383746724-6f1b882b8f46",
     places: 14,
-    description: "Morocco's cosmopolitan hub with modern restaurants offering dedicated gluten-free menus.",
     rating: 4.5,
+    description: "Morocco's cosmopolitan hub with modern restaurants offering dedicated gluten-free menus",
     route: "#",
+    highlights: ["Modern GF menus", "Seafood restaurants", "Marjane GF products"],
   },
   {
     name: "Rabat",
     image: "photo-1553899017-c205d710e08b",
     places: 10,
-    description: "The capital city blends traditional Moroccan cuisine with growing gluten-free awareness.",
     rating: 4.4,
+    description: "The capital city blends traditional Moroccan cuisine with growing gluten-free awareness",
     route: "#",
+    highlights: ["Traditional tagines", "Café culture", "Fresh salads"],
   },
   {
     name: "Fes",
     image: "photo-1545042679-09db5aba3e8e",
     places: 8,
-    description: "Ancient culinary traditions meet celiac-safe dining in the spiritual heart of Morocco.",
     rating: 4.3,
+    description: "Ancient culinary traditions meet celiac-safe dining in the spiritual heart of Morocco",
     route: "#",
+    highlights: ["Riad restaurants", "Medina dining", "Grilled meats"],
   },
   {
     name: "Agadir",
     image: "photo-1548018560-c7196e70554a",
     places: 9,
-    description: "Beach resort town with international restaurants catering to gluten-free travellers.",
     rating: 4.4,
+    description: "Beach resort town with international restaurants catering to gluten-free travellers",
     route: "#",
+    highlights: ["Resort dining", "Fresh fish", "International menus"],
   },
   {
     name: "Tangier",
     image: "photo-1553244469-c2ec6973e0a4",
     places: 7,
-    description: "Gateway to Africa with a vibrant food scene and naturally gluten-free Moroccan staples.",
     rating: 4.2,
+    description: "Gateway to Africa with a vibrant food scene and naturally gluten-free Moroccan staples",
     route: "#",
+    highlights: ["Seafood grills", "Kasbah cafés", "Fresh juices"],
   },
 ];
 
-const faqs = [
+const faqItems = [
   {
     question: "Is Moroccan food naturally gluten-free?",
-    answer: "Many traditional Moroccan dishes are naturally gluten-free, including tagines, couscous alternatives made from corn, grilled meats, and salads. However, couscous (made from semolina wheat) and msemen (Moroccan flatbread) contain gluten. Always confirm ingredients with restaurants.",
+    answer: "Many traditional Moroccan dishes are naturally gluten-free, including tagines, corn-based couscous alternatives, grilled meats, and salads. However, traditional couscous (semolina wheat) and msemen flatbread contain gluten. Always confirm ingredients with restaurants.",
   },
   {
     question: "How do I explain celiac disease in Morocco?",
@@ -80,169 +90,319 @@ const faqs = [
 ];
 
 const Morocco = () => {
-  
+  useEffect(() => {
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) {
+      ogTitle.setAttribute("content", "Gluten-Free Restaurants in Morocco | Celiac-Safe Dining Guide");
+    }
+
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (ogDescription) {
+      ogDescription.setAttribute("content", "Discover verified gluten-free and celiac-safe restaurants across Morocco. Browse by city, read real reviews, and find safe dining from Marrakesh to Casablanca.");
+    }
+
+    const existingSchema = document.querySelector('script[data-schema="morocco-gf"]');
+    if (existingSchema) existingSchema.remove();
+
+    const schema = document.createElement('script');
+    schema.type = 'application/ld+json';
+    schema.setAttribute('data-schema', 'morocco-gf');
+    schema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gluten-Free Restaurants in Morocco",
+      "description": "Find the best gluten-free restaurants across Morocco. Verified celiac-safe dining in Marrakesh, Casablanca, Rabat, Fes & more.",
+      "url": "https://glutenfreeplace.org/gluten-free/morocco",
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Top Gluten-Free Cities in Morocco",
+        "numberOfItems": cities.length,
+        "itemListElement": cities.map((city, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "name": city.name,
+        })),
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://glutenfreeplace.org" },
+          { "@type": "ListItem", "position": 2, "name": "Countries", "item": "https://glutenfreeplace.org/countries" },
+          { "@type": "ListItem", "position": 3, "name": "Morocco", "item": "https://glutenfreeplace.org/gluten-free/morocco" },
+        ],
+      },
+    });
+    document.head.appendChild(schema);
+
+    const existingFaqSchema = document.querySelector('script[data-schema="morocco-faq"]');
+    if (existingFaqSchema) existingFaqSchema.remove();
+
+    const faqSchema = document.createElement('script');
+    faqSchema.type = 'application/ld+json';
+    faqSchema.setAttribute('data-schema', 'morocco-faq');
+    faqSchema.textContent = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": faqItems.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": { "@type": "Answer", "text": faq.answer },
+      })),
+    });
+    document.head.appendChild(faqSchema);
+
+    return () => {
+      document.querySelector('script[data-schema="morocco-gf"]')?.remove();
+      document.querySelector('script[data-schema="morocco-faq"]')?.remove();
+    };
+  }, []);
 
   return (
     <>
-    <SEOHead
-      title="Gluten-Free Restaurants in Morocco | Celiac-Safe Dining Guide 2026"
-      description="Discover the best gluten-free restaurants, riads, and celiac-safe dining options across Morocco. From Marrakesh tagines to Casablanca's modern eateries — your complete guide to gluten-free travel in Morocco."
-      canonical="/gluten-free/morocco"
-    />
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative py-12 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1920&q=80')`,
-          }}
+      <SEOHead
+        title="Gluten-Free Options in Morocco | Celiac-Safe Dining"
+        description="Gluten free options across Morocco: verified celiac-safe restaurants, riads and cafés in Marrakesh, Casablanca, Rabat, Fes, Agadir and Tangier."
+        canonical="/gluten-free/morocco"
+      />
+      <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
+        <header className="bg-white/80 backdrop-blur-md border-b border-red-100 sticky top-0 z-50">
+          <div className="container mx-auto px-4 py-4 flex items-center justify-between">
+            <Link to="/" className="flex items-center space-x-2">
+              <Globe className="h-8 w-8 text-red-600" />
+              <span className="text-2xl font-bold bg-gradient-to-r from-red-600 to-red-800 bg-clip-text text-transparent">
+                Gluten-Free Places
+              </span>
+            </Link>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link to="/" className="text-gray-700 hover:text-red-600 transition-colors whitespace-nowrap">Home</Link>
+              <Link to="/countries" className="text-gray-700 hover:text-red-600 transition-colors">Countries</Link>
+              <Link to="#cities" className="text-gray-700 hover:text-red-600 transition-colors">Cities</Link>
+              <Link to="#faq" className="text-gray-700 hover:text-red-600 transition-colors">FAQ</Link>
+              <UserMenu />
+            </div>
+          </div>
+        </header>
+
+        <section
+          className="relative py-12 overflow-hidden bg-cover bg-center"
+          style={{ backgroundImage: `url('https://images.unsplash.com/photo-1489749798305-4fea3ae63d43?auto=format&fit=crop&w=1920&q=80')` }}
         >
           <div className="absolute inset-0 bg-black/50" />
-        </div>
-        <div className="container mx-auto px-4 relative z-10 text-center">
-          <span className="text-5xl mb-4 block">🇲🇦</span>
-          <h1 className="text-3xl md:text-5xl font-bold !text-white mb-4">
-            Gluten-Free Morocco
-          </h1>
-          <p className="text-lg md:text-xl !text-white/90 max-w-2xl mx-auto mb-6">
-            Your trusted guide to celiac-safe dining across the Kingdom of Morocco
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Badge variant="outline" className="bg-transparent border-white !text-white px-4 py-2 text-sm">
-              <MapPin className="h-4 w-4 mr-1" /> 6 Cities
-            </Badge>
-            <Badge variant="outline" className="bg-transparent border-white !text-white px-4 py-2 text-sm">
-              <Star className="h-4 w-4 mr-1" /> 66+ Places
-            </Badge>
-            <Badge variant="outline" className="bg-transparent border-white !text-white px-4 py-2 text-sm">
-              <Users className="h-4 w-4 mr-1" /> Community Verified
-            </Badge>
-          </div>
-        </div>
-      </section>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <Link to="/countries" className="inline-flex items-center text-white/80 hover:text-white mb-4 transition-colors">
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to All Countries
+            </Link>
+            <div className="max-w-4xl mx-auto">
+              <span className="text-5xl mb-4 block">🇲🇦</span>
+              <Badge className="mb-4 bg-white/20 text-white border-white/30">
+                <MapPin className="h-4 w-4 mr-2" />
+                66+ Gluten-Free Places
+              </Badge>
+              <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+                Dedicated Gluten-Free Restaurants in Morocco
+              </h1>
+              <p className="text-lg text-white/90 mb-6 leading-relaxed max-w-2xl mx-auto">
+                Your trusted guide to celiac-safe dining across the Kingdom of Morocco.
+                From Marrakesh tagines to Casablanca's modern eateries.
+              </p>
 
-      {/* City Cards */}
-      <section className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-center mb-3">Explore Cities in Morocco</h2>
-        <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Find celiac-safe restaurants, cafés, and food options in Morocco's most visited cities.
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {cities.map((city, index) => (
-            <Card
-              key={city.name}
-              className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative overflow-hidden rounded-t-lg">
-                <img
-                  src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
-                  alt={`Gluten-free dining in ${city.name}, Morocco`}
-                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
-                  <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
-                  <span className="font-semibold text-sm">{city.rating}</span>
-                </div>
-              </div>
-              <CardContent className="p-6">
-                <h3 className="text-xl font-bold mb-2">{city.name}</h3>
-                <p className="text-muted-foreground text-sm mb-4">{city.description}</p>
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center text-orange-600">
-                    <MapPin className="h-4 w-4 mr-1" />
-                    <span className="font-semibold text-sm">{city.places} places</span>
-                  </div>
-                </div>
-                {city.route !== "#" ? (
-                  <Link to={city.route}>
-                    <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600">
-                      Explore {city.name}
-                      <ArrowRight className="h-4 w-4 ml-2" />
-                    </Button>
-                  </Link>
-                ) : (
-                  <Button disabled className="w-full bg-muted text-muted-foreground">
-                    Coming Soon
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="#cities">
+                  <Button size="lg" className="bg-white text-red-700 hover:bg-red-50">
+                    Explore Cities
+                    <ArrowRight className="w-5 h-5 ml-2" />
                   </Button>
-                )}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Intro Content */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold mb-6">Gluten-Free Dining in Morocco</h2>
-          <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-            <p>
-              Morocco is a paradise for food lovers, and with some knowledge, it can be wonderfully navigable for those with celiac disease or gluten sensitivity. Traditional Moroccan cuisine features many naturally gluten-free dishes — from aromatic tagines slow-cooked with preserved lemons and olives, to vibrant salads and grilled meats.
-            </p>
-            <p>
-              The key staples to watch for are <strong>couscous</strong> (traditionally made from wheat semolina), <strong>bread</strong> (khobz, a central part of every meal), and <strong>pastilla</strong> (phyllo-wrapped pastry). However, many riads and modern restaurants in tourist areas are increasingly aware of gluten-free needs and can adapt their menus.
-            </p>
-            <p>
-              Street food markets like Jemaa el-Fnaa in Marrakesh offer grilled meats, fresh juices, and dried fruits that are naturally safe. Always carry a dietary card in Arabic and French for the best communication with local vendors.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Trust Section */}
-      <section className="bg-muted/50 py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl font-bold text-center mb-8">Why Trust Our Morocco Guide</h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            {[
-              { icon: Shield, title: "Celiac Verified", desc: "Restaurants checked for cross-contamination protocols" },
-              { icon: ChefHat, title: "Chef Confirmed", desc: "Kitchen practices verified with staff" },
-              { icon: Globe, title: "Traveller Tested", desc: "Reviewed by gluten-free travellers to Morocco" },
-              { icon: MessageCircle, title: "Community Driven", desc: "Real reviews from the celiac community" },
-            ].map((item) => (
-              <div key={item.title} className="text-center">
-                <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <item.icon className="h-6 w-6 text-orange-600" />
-                </div>
-                <h3 className="font-semibold mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
+                </Link>
+                <AddRestaurantDialog
+                  city="Morocco"
+                  triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10"
+                />
               </div>
-            ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* FAQs */}
-      <section className="container mx-auto px-4 py-12">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`faq-${index}`}>
-                <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
-                <AccordionContent>{faq.answer}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
+        <section id="cities" className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+                <MapPin className="h-4 w-4 mr-2" />
+                Explore by City
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
+                Top Gluten-Free Cities in Morocco
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Choose a city to explore verified gluten-free restaurants with detailed reviews and safety information
+              </p>
+            </div>
 
-      {/* CTA */}
-      <section className="bg-gradient-to-r from-orange-500 to-red-500 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold !text-white mb-4">Ready to Explore Gluten-Free Morocco?</h2>
-          <p className="!text-white/90 mb-6 max-w-xl mx-auto">
-            Start with Marrakesh — Morocco's most popular destination with the widest range of celiac-safe dining options.
-          </p>
-          <Button size="lg" className="bg-white text-orange-600 hover:bg-white/90 font-semibold" disabled>
-            Marrakesh Guide Coming Soon
-          </Button>
-        </div>
-      </section>
-    </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {cities.map((city, index) => (
+                <Card
+                  key={city.name}
+                  className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 shadow-lg animate-fade-in overflow-hidden"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {(() => {
+                    const media = (
+                      <div className="relative overflow-hidden h-48">
+                        <img
+                          src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                          alt={`Gluten-free restaurants in ${city.name}, Morocco`}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                          loading="lazy"
+                          width={600}
+                          height={400}
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 flex items-center">
+                          <Star className="h-4 w-4 text-yellow-400 fill-current mr-1" />
+                          <span className="font-semibold text-sm">{city.rating}</span>
+                        </div>
+                        <div className="absolute bottom-4 left-4">
+                          <h3 className="text-2xl font-bold text-white">{city.name}</h3>
+                        </div>
+                      </div>
+                    );
+                    return city.route !== "#" ? (
+                      <Link to={city.route} aria-label={`Explore gluten-free options in ${city.name}`} className="block">
+                        {media}
+                      </Link>
+                    ) : (
+                      media
+                    );
+                  })()}
+                  <CardContent className="p-5">
+                    <p className="text-gray-600 text-sm mb-3">{city.description}</p>
+                    <div className="flex items-center text-red-600 mb-3">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      <span className="font-semibold text-sm">{city.places} places</span>
+                    </div>
+                    <div className="mb-4">
+                      <p className="text-xs text-gray-500 mb-2">Popular spots:</p>
+                      <div className="flex flex-wrap gap-1">
+                        {city.highlights.map((spot) => (
+                          <Badge
+                            key={spot}
+                            variant="secondary"
+                            className="text-xs bg-red-50 text-red-700"
+                          >
+                            {spot}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                    {city.route !== "#" ? (
+                      <Link to={city.route}>
+                        <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white">
+                          Explore {city.name}
+                          <ArrowRight className="h-4 w-4 ml-2" />
+                        </Button>
+                      </Link>
+                    ) : (
+                      <Button disabled className="w-full opacity-60">
+                        Coming Soon
+                      </Button>
+                    )}
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-white/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">
+                  <Award className="h-4 w-4 mr-2" />
+                  About
+                </Badge>
+                <h2 className="text-3xl font-bold mb-4 text-gray-900">Gluten-Free Dining in Morocco</h2>
+              </div>
+              <div className="grid md:grid-cols-2 gap-8">
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Why Morocco?</h3>
+                  <p className="text-gray-600 mb-4">
+                    Morocco is a paradise for food lovers, and with some knowledge, it can be wonderfully navigable for those with celiac disease or gluten sensitivity. Traditional Moroccan cuisine features many naturally gluten-free dishes — from aromatic tagines to vibrant salads and grilled meats.
+                  </p>
+                  <p className="text-gray-600">
+                    The key staples to watch for are couscous (wheat semolina), khobz bread, and pastilla. Many riads and modern restaurants in tourist areas are increasingly aware of gluten-free needs and can adapt their menus.
+                  </p>
+                </div>
+                <div>
+                  <h3 className="text-xl font-semibold mb-3 text-gray-900">Celiac Tips</h3>
+                  <ul className="space-y-3 text-gray-600">
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                      <span>Carry a dietary card in Arabic and French</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                      <span>Tagines and grilled meats are usually naturally gluten-free</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                      <span>Avoid couscous, khobz bread, and pastilla unless confirmed GF</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <Shield className="w-5 h-5 text-red-600 mt-0.5 flex-shrink-0" />
+                      <span>Marjane and Carrefour stock GF products in major cities</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-red-50/50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-center gap-2 mb-3">
+                <Shield className="w-6 h-6 text-red-600" />
+                <h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2>
+              </div>
+              <p className="text-gray-600">
+                All restaurants are verified by our community of celiac travelers. We prioritize dedicated gluten-free
+                facilities and restaurants with proven celiac protocols. Always communicate your dietary needs directly with restaurant staff.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section id="faq" className="py-16">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-8">
+                <h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2>
+                <p className="text-gray-600 mt-2">Everything you need to know about gluten-free dining in Morocco</p>
+              </div>
+              <Accordion type="single" collapsible className="w-full">
+                {faqItems.map((faq, index) => (
+                  <AccordionItem key={faq.question} value={`faq-${index}`}>
+                    <AccordionTrigger className="text-left">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-gray-600">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 bg-gradient-to-r from-red-600 to-red-800">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="text-3xl font-bold text-white mb-4">Know a Great GF Spot in Morocco?</h2>
+            <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+              Help fellow celiac travelers discover safe dining options across Morocco. Submit a restaurant to our growing directory.
+            </p>
+            <AddRestaurantDialog city="Morocco" triggerClassName="bg-white text-red-700 hover:bg-red-50 text-lg px-8 py-3" />
+          </div>
+        </section>
+      </div>
     </>
   );
 };
