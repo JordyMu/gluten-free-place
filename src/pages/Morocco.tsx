@@ -38,24 +38,6 @@ const cities = [
     highlights: ["Lina Gluten Free", "Traditional tagines", "Café culture"],
   },
   {
-    name: "Fes",
-    image: "photo-1545042679-09db5aba3e8e",
-    places: 8,
-    rating: 4.3,
-    description: "Ancient culinary traditions meet celiac-safe dining in the spiritual heart of Morocco",
-    route: "#",
-    highlights: ["Riad restaurants", "Medina dining", "Grilled meats"],
-  },
-  {
-    name: "Agadir",
-    image: "photo-1548018560-c7196e70554a",
-    places: 9,
-    rating: 4.4,
-    description: "Beach resort town with international restaurants catering to gluten-free travellers",
-    route: "#",
-    highlights: ["Resort dining", "Fresh fish", "International menus"],
-  },
-  {
     name: "Tangier",
     image: "photo-1553244469-c2ec6973e0a4",
     places: 19,
@@ -197,7 +179,7 @@ const Morocco = () => {
               <span className="text-5xl mb-4 block">🇲🇦</span>
               <Badge className="mb-4 bg-white/20 text-white border-white/30">
                 <MapPin className="h-4 w-4 mr-2" />
-                66+ Gluten-Free Places
+                85+ Gluten-Free Places
               </Badge>
               <h1 className="text-3xl md:text-5xl font-bold mb-4 text-white">
                 Dedicated Gluten-Free Restaurants in Morocco
