@@ -31,11 +31,11 @@ const cities = [
   {
     name: "Rabat",
     image: "photo-1553899017-c205d710e08b",
-    places: 10,
+    places: 21,
     rating: 4.4,
     description: "The capital city blends traditional Moroccan cuisine with growing gluten-free awareness",
-    route: "#",
-    highlights: ["Traditional tagines", "Café culture", "Fresh salads"],
+    route: "/gluten-free/morocco/rabat",
+    highlights: ["Lina Gluten Free", "Traditional tagines", "Café culture"],
   },
   {
     name: "Fes",
