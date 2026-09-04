@@ -14,22 +14,22 @@ const nzHero = "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?aut
 
 const cityMeta: Record<string, { image: string; description: string; rating: number }> = {
   auckland: {
-    image: "https://images.unsplash.com/photo-1595125990465-3bb0d0d90f39?auto=format&fit=crop&w=800&q=80",
+    image: "/images/auckland-hero.webp?v=3",
     description: "New Zealand's biggest city, home to dedicated GF bakeries and diverse dining",
     rating: 4.6,
   },
   wellington: {
-    image: "https://images.unsplash.com/photo-1589871173318-9d68ad1c5b7b?auto=format&fit=crop&w=800&q=80",
+    image: "/images/wellington-hero.webp?v=1",
     description: "The capital's café and craft-food scene with strong GF labelling",
     rating: 4.6,
   },
   "queenstown-arrowtown": {
-    image: "https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80",
+    image: "/images/queenstown-hero.webp?v=1",
     description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
     rating: 4.6,
   },
   christchurch: {
-    image: "https://images.unsplash.com/photo-1578326457399-3b34dbbf23b8?auto=format&fit=crop&w=800&q=80",
+    image: "/images/christchurch-hero.webp?v=1",
     description: "Garden City eateries with clearly marked gluten-free menus",
     rating: 4.6,
   },
