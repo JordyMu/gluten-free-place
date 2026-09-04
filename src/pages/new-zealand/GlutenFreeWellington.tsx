@@ -15,6 +15,8 @@ const GlutenFreeWellington = () => (
   <NewZealandCityPage
     city={city}
     emoji="☕"
+    heroImage="/images/wellington-hero.webp?v=1"
+    heroTitle="Dedicated gluten-free restaurants in Wellington"
     intro="Wellington pairs its famous café culture with strong celiac awareness — Gluten Free 4u's dedicated bakery, Mt Vic Chippery's GF fish and chips, and a Cuba St scene where small plates are routinely adapted for celiacs."
     faqItems={faqItems}
   />
