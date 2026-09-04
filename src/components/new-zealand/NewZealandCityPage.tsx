@@ -67,7 +67,7 @@ const openExternalLink = (url: string) => {
   window.open(normalized, "_blank", "noopener,noreferrer");
 };
 
-const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview }: NewZealandCityPageProps) => {
+const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview, heroImage }: NewZealandCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
