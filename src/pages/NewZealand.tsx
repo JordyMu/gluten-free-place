@@ -24,7 +24,7 @@ const cityMeta: Record<string, { image: string; description: string; rating: num
     rating: 4.6,
   },
   "queenstown-arrowtown": {
-    image: "https://images.unsplash.com/photo-1589802829985-817e51171b92?auto=format&fit=crop&w=800&q=80",
+    image: "/images/queenstown-hero.webp?v=1",
     description: "Alpine resort towns with celiac-aware restaurants and lakeside dining",
     rating: 4.6,
   },
