@@ -387,11 +387,11 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview }: NewZ
                           </Link>
                         </div>
 
-                        {"nearby" in restaurant && (restaurant as unknown as { nearby?: { label: string; name: string; href?: string }[] }).nearby && ((restaurant as unknown as { nearby: { label: string; name: string; href?: string }[] }).nearby.length > 0) && (
+                        {restaurant.nearby && restaurant.nearby.length > 0 && (
                           <div className="mt-4">
                             <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
                             <ul className="space-y-1 text-gray-700">
-                              {(restaurant as unknown as { nearby: { label: string; name: string; href?: string }[] }).nearby.map((item) => (
+                              {restaurant.nearby.map((item) => (
                                 <li key={`${restaurant.name}-nearby-${item.label}`}>
                                   <span className="font-bold">{item.label}:</span>{" "}
                                   {item.href ? (
