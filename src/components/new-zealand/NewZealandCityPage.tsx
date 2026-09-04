@@ -30,6 +30,7 @@ interface NewZealandCityPageProps {
   faqItems: FAQItem[];
   hideOverview?: boolean;
   heroImage?: string;
+  heroTitle?: string;
 }
 
 const getCeliacSafeBadge = (level: NZRestaurant["celiacSafe"]) =>
@@ -67,7 +68,7 @@ const openExternalLink = (url: string) => {
   window.open(normalized, "_blank", "noopener,noreferrer");
 };
 
-const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview, heroImage }: NewZealandCityPageProps) => {
+const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview, heroImage, heroTitle }: NewZealandCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
@@ -169,7 +170,7 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview, heroIm
           <div className="container mx-auto px-4 text-center relative z-10">
             <span className="text-5xl mb-4 block">{emoji}</span>
             <h1 className="text-3xl md:text-5xl font-bold mb-4">
-              Gluten-Free Restaurants in {city.name}
+              {heroTitle || `Gluten-Free Restaurants in ${city.name}`}
             </h1>
             <p className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto">
               Verified celiac-safe spots, practical menu guidance, and trusted dining picks in {city.name}.
