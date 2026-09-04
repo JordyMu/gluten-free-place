@@ -17,7 +17,7 @@ const GlutenFreeQueenstownArrowtown = () => (
     emoji="🏔️"
     intro="Queenstown and nearby Arrowtown deliver standout celiac-safe dining for travellers — Erik's GF fish and chips, Fergburger's GF buns, and Postmasters' alpine bistro fare make the Southern Lakes a confident choice for gluten-free visitors."
     faqItems={faqItems}
-    heroImage="/images/queenstown-hero.webp?v=1"
+    heroImage="/images/queenstown-hero.webp?v=2"
   />
 );
 
