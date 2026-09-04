@@ -30,6 +30,7 @@ interface NewZealandCityPageProps {
   faqItems: FAQItem[];
   hideOverview?: boolean;
   heroImage?: string;
+  heroTitle?: string;
 }
 
 const getCeliacSafeBadge = (level: NZRestaurant["celiacSafe"]) =>
