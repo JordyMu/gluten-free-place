@@ -493,27 +493,27 @@ export const newZealandCities: NZCity[] = [
           reviewCount: 223
         },
         {
-          name: "The Fresh Market",
-          address: "Auckland, New Zealand",
-          hours: "Mon-Sun: 7:00AM – 10:00PM",
+          name: "tibs┃food shack",
+          address: "112 Ocean View Road, Oneroa, Waiheke Island 1081, New Zealand",
+          hours: "Wed-Sun: 9:00AM – 3:00PM",
           phone: "",
-          website: "www.thefreshmarket.co.nz",
-          directionsUrl: "https://maps.google.com/?q=The+Fresh+Market+Auckland",
-          specialty: "Supermarket with Gluten-Free Range",
-          overview: "Well-stocked supermarket offering a dedicated gluten-free aisle and health food section for celiac shoppers.",
+          website: "",
+          directionsUrl: "https://maps.google.com/?q=tibs+food+shack+Waiheke+Island",
+          specialty: "Ethiopian Food Shack",
+          overview: "Waiheke Island food shack serving naturally gluten-free Ethiopian injera and vibrant plant-based dishes, popular with celiacs.",
           menuHighlights: [
-            "🛒 GF Aisle",
-            "🥖 GF Breads & Baked Goods",
-            "🍝 GF Pasta & Pantry Staples"
+            "🫓 GF Injera Platters",
+            "🌱 Vegan Ethiopian Dishes",
+            "☕ Coffee & Treats"
           ],
-          proTip: "Head to the health food aisle for the widest dedicated GF selection.",
-          icon: "🛒",
+          proTip: "Injera is naturally gluten-free here — perfect for celiacs visiting Waiheke!",
+          icon: "🫓",
           featured: true,
-          cuisineTypes: ["Supermarket", "Grocery", "Health Food"],
+          cuisineTypes: ["Ethiopian", "Vegan", "Street Food"],
           celiacSafe: "protocols-in-place",
           menuType: "mixed-menu",
-          rating: 4.5,
-          reviewCount: 120
+          rating: 4.8,
+          reviewCount: 96
         },
         {
           name: "Fresh Market Sunhill",

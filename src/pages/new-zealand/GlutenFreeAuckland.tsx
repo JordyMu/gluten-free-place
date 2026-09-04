@@ -17,6 +17,7 @@ const GlutenFreeAuckland = () => (
     emoji="🍦"
     intro="Auckland leads New Zealand's gluten-free scene with The GF Depot's dedicated bakery, celiac-aware brunch cafés, Asian fusion spots and dessert favourites like Giapo across the CBD, Ponsonby and beyond."
     faqItems={faqItems}
+    hideOverview
   />
 );
 
