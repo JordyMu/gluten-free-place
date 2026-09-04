@@ -16,6 +16,7 @@ export interface NZRestaurant {
   menuType: 'mixed-menu' | 'fully-gluten-free';
   rating: number;
   reviewCount: number;
+  nearby?: { label: string; name: string; href?: string }[];
 }
 
 export interface NZCity {
