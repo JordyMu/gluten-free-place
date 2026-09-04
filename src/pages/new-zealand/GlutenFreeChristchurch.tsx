@@ -17,6 +17,8 @@ const GlutenFreeChristchurch = () => (
     emoji="🌿"
     intro="Christchurch combines an allergen-aware café culture with dedicated GF suppliers like Bubbles Gluten Free Catering, plus reliable brunch and bistro picks across the Central City — making it one of New Zealand's most relaxed cities for celiac travellers."
     faqItems={faqItems}
+    heroImage="/images/christchurch-hero.webp?v=1"
+    heroTitle="Dedicated gluten-free restaurants in Christchurch"
   />
 );
 
