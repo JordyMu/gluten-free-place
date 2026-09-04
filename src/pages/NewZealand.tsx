@@ -19,7 +19,7 @@ const cityMeta: Record<string, { image: string; description: string; rating: num
     rating: 4.6,
   },
   wellington: {
-    image: "https://images.unsplash.com/photo-1589871173318-9d68ad1c5b7b?auto=format&fit=crop&w=800&q=80",
+    image: "/images/wellington-hero.webp?v=1",
     description: "The capital's café and craft-food scene with strong GF labelling",
     rating: 4.6,
   },
