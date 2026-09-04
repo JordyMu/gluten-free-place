@@ -14,7 +14,7 @@ const nzHero = "https://images.unsplash.com/photo-1507699622108-4be3abd695ad?aut
 
 const cityMeta: Record<string, { image: string; description: string; rating: number }> = {
   auckland: {
-    image: "https://images.unsplash.com/photo-1595125990465-3bb0d0d90f39?auto=format&fit=crop&w=800&q=80",
+    image: "/images/auckland-hero.webp?v=3",
     description: "New Zealand's biggest city, home to dedicated GF bakeries and diverse dining",
     rating: 4.6,
   },
