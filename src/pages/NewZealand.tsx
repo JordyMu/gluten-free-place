@@ -29,7 +29,7 @@ const cityMeta: Record<string, { image: string; description: string; rating: num
     rating: 4.6,
   },
   christchurch: {
-    image: "https://images.unsplash.com/photo-1578326457399-3b34dbbf23b8?auto=format&fit=crop&w=800&q=80",
+    image: "/images/christchurch-hero.webp?v=1",
     description: "Garden City eateries with clearly marked gluten-free menus",
     rating: 4.6,
   },
