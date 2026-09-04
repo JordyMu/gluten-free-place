@@ -19,6 +19,7 @@ const GlutenFreeAuckland = () => (
     faqItems={faqItems}
     hideOverview
     heroImage="/images/auckland-hero.webp?v=1"
+    heroTitle="Dedicated gluten-free restaurants in Auckland"
   />
 );
 
