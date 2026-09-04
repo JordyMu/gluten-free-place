@@ -29,6 +29,7 @@ interface NewZealandCityPageProps {
   emoji: string;
   faqItems: FAQItem[];
   hideOverview?: boolean;
+  heroImage?: string;
 }
 
 const getCeliacSafeBadge = (level: NZRestaurant["celiacSafe"]) =>
@@ -66,7 +67,7 @@ const openExternalLink = (url: string) => {
   window.open(normalized, "_blank", "noopener,noreferrer");
 };
 
-const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview }: NewZealandCityPageProps) => {
+const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview, heroImage }: NewZealandCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
@@ -160,7 +161,10 @@ const NewZealandCityPage = ({ city, intro, emoji, faqItems, hideOverview }: NewZ
           </div>
         </header>
 
-        <section className="relative text-white py-14 bg-gradient-to-r from-red-700 to-red-500">
+        <section
+          className={`relative text-white py-14 ${heroImage ? "" : "bg-gradient-to-r from-red-700 to-red-500"}`}
+          style={heroImage ? { backgroundImage: `url('${heroImage}')`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+        >
           <div className="absolute inset-0 bg-black/50" />
           <div className="container mx-auto px-4 text-center relative z-10">
             <span className="text-5xl mb-4 block">{emoji}</span>
