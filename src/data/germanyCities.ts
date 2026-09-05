@@ -627,7 +627,7 @@ export interface DECity {
         ],
       },
       {
-        name: "Mongo"s Restaurant",
+        name: "Mongo's Restaurant",
         address: "Ottopl. 1, 50679 Köln",
         hours: "Mon-Sun: 11:30AM – 10:00PM",
         phone: "",
