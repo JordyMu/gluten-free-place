@@ -23,6 +23,7 @@ export interface DECity {
   name: string;
   slug: string;
   restaurants: DERestaurant[];
+}
 
 export const deSlug = (name: string) =>
   name
