@@ -14,6 +14,7 @@ const cityLinks: Record<string, string> = {
   Berlin: "/gluten-free/germany/berlin",
   Munich: "/gluten-free/germany/munich",
   Hamburg: "/gluten-free/germany/hamburg",
+  Cologne: "/gluten-free/germany/cologne",
 };
 
 const cities = [
