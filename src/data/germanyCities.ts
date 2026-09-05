@@ -34,6 +34,13 @@ export const deSlug = (name: string) =>
 const mapsUrl = (name: string, address: string) =>
   `https://maps.google.com/?q=${encodeURIComponent(`${name}, ${address}`)}`;
 
+export const findDERestaurant = (citySlug: string, restaurantSlug: string) => {
+  const city = germanyCities.find((c) => c.slug === citySlug);
+  if (!city) return undefined;
+  const restaurant = city.restaurants.find((r) => deSlug(r.name) === restaurantSlug);
+  return restaurant ? { city, restaurant } : undefined;
+};
+
 export const germanyCities: DECity[] = [
   {
     name: "Berlin",
