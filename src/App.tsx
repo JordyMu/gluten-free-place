@@ -105,6 +105,7 @@ const Germany = lazyWithRetry(() => import("./pages/Germany"));
 const GlutenFreeBerlin = lazyWithRetry(() => import("./pages/germany/GlutenFreeBerlin"));
 const GlutenFreeMunich = lazyWithRetry(() => import("./pages/germany/GlutenFreeMunich"));
 const GlutenFreeHamburg = lazyWithRetry(() => import("./pages/germany/GlutenFreeHamburg"));
+const GlutenFreeCologne = lazyWithRetry(() => import("./pages/germany/GlutenFreeCologne"));
 const GermanyRestaurantPage = lazyWithRetry(() => import("./pages/germany/GermanyRestaurantPage"));
 const NewZealand = lazyWithRetry(() => import("./pages/NewZealand"));
 const GlutenFreeAuckland = lazyWithRetry(() => import("./pages/new-zealand/GlutenFreeAuckland"));
