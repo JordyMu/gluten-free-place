@@ -10,6 +10,10 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import germanyHero from "@/assets/germany-hero.jpg";
 
+const cityLinks: Record<string, string> = {
+  Berlin: "/gluten-free/germany/berlin",
+};
+
 const cities = [
   {
     name: "Berlin",
@@ -183,12 +187,13 @@ const Germany = () => {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
               {cities.map((city) => {
                 const isSelected = selectedCity?.name === city.name;
+                const cityHref = cityLinks[city.name] ?? `/germany?city=${encodeURIComponent(city.name)}`;
                 return (
                   <Card
                     key={city.name}
                     className={`group overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl ${isSelected ? "border-2 border-red-600" : "border-0"}`}
                   >
-                    <Link to={`/germany?city=${encodeURIComponent(city.name)}`} className="block">
+                    <Link to={cityHref} className="block">
                       <div className="relative h-48 overflow-hidden">
                         <img
                           src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
@@ -222,7 +227,7 @@ const Germany = () => {
                           ))}
                         </div>
                       </div>
-                      <Link to={`/germany?city=${encodeURIComponent(city.name)}`}>
+                      <Link to={cityHref}>
                         <Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600">
                           Explore {city.name}
                           <ArrowRight className="ml-2 h-4 w-4" />

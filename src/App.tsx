@@ -102,6 +102,7 @@ const DublinCategoryPage = lazyWithRetry(() => import("./pages/ireland/DublinCat
 const GlutenFreeLimerick = lazyWithRetry(() => import("./pages/ireland/GlutenFreeLimerick"));
 const LimerickRestaurantPage = lazyWithRetry(() => import("./pages/ireland/LimerickRestaurantPage"));
 const Germany = lazyWithRetry(() => import("./pages/Germany"));
+const GlutenFreeBerlin = lazyWithRetry(() => import("./pages/germany/GlutenFreeBerlin"));
 const NewZealand = lazyWithRetry(() => import("./pages/NewZealand"));
 const GlutenFreeAuckland = lazyWithRetry(() => import("./pages/new-zealand/GlutenFreeAuckland"));
 const GlutenFreeAucklandBest = lazyWithRetry(() => import("./pages/new-zealand/GlutenFreeAucklandBest"));
@@ -357,6 +358,7 @@ const App = () => (
               <Route path="/gluten-free/ireland/limerick" element={<GlutenFreeLimerick />} />
               <Route path="/gluten-free/ireland/limerick/:slug" element={<LimerickRestaurantPage />} />
               <Route path="/germany" element={<Germany />} />
+              <Route path="/gluten-free/germany/berlin" element={<GlutenFreeBerlin />} />
               <Route path="/new-zealand" element={<NewZealand />} />
               <Route path="/gluten-free/new-zealand/auckland" element={<GlutenFreeAuckland />} />
               <Route path="/gluten-free/new-zealand/auckland/best-gluten-free-restaurants-in-auckland" element={<GlutenFreeAucklandBest />} />
