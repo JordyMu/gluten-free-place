@@ -39,10 +39,10 @@ const cities = [
     highlights: ["Seafood", "Brunch", "Bakeries"],
   },
   {
-    name: "Frankfurt",
-    image: "photo-1541343672885-9be56236302a",
+    name: "Cologne",
+    image: "photo-1551816230-ef5deaed4a26",
     rating: "4.6",
-    description: "International restaurants and reliable gluten-free choices in the city centre",
+    description: "Cathedral city dining with riverside restaurants and reliable gluten-free choices",
     highlights: ["Global Cuisine", "Casual Dining", "Cafés"],
   },
 ];
