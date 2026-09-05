@@ -66,7 +66,7 @@ const faqItems = [
   },
   {
     question: "Which German city is best for gluten-free dining?",
-    answer: "Berlin generally has the broadest selection, while Munich, Hamburg and Frankfurt also offer strong choices across bakeries, cafés and international restaurants.",
+    answer: "Berlin generally has the broadest selection, while Munich, Hamburg and Cologne also offer strong choices across bakeries, cafés and international restaurants.",
   },
 ];
 
@@ -114,7 +114,7 @@ const Germany = () => {
     <>
       <SEOHead
         title="Gluten-Free Restaurants in Germany | Celiac Guide"
-        description="Find dedicated gluten-free restaurants, bakeries and cafés in Berlin, Munich, Hamburg and Frankfurt, with practical celiac travel tips."
+        description="Find dedicated gluten-free restaurants, bakeries and cafés in Berlin, Munich, Hamburg and Cologne, with practical celiac travel tips."
         canonical="/germany"
         schemaJson={schemaJson}
       />
