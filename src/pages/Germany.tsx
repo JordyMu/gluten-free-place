@@ -12,6 +12,7 @@ import germanyHero from "@/assets/germany-hero.jpg";
 
 const cityLinks: Record<string, string> = {
   Berlin: "/gluten-free/germany/berlin",
+  Munich: "/gluten-free/germany/munich",
 };
 
 const cities = [
