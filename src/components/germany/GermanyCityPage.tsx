@@ -1,7 +1,7 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-  ArrowLeft, Award, CheckCircle, Clock, Globe, MapPin, MessageCircle,
+  ArrowLeft, Award, BookOpen, CheckCircle, Clock, Globe, MapPin, MessageCircle,
   Navigation, Phone, Search, Shield, Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -15,7 +15,7 @@ import {
 import { SEOHead } from "@/components/SEOHead";
 import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
 import { FindNearMeButton } from "@/components/city/FindNearMeButton";
-import type { DERestaurant, DECity } from "@/data/germanyCities";
+import { deSlug, type DERestaurant, type DECity } from "@/data/germanyCities";
 
 interface FAQItem {
   question: string;
@@ -216,7 +216,12 @@ const GermanyCityPage = ({ city, intro, emoji, faqItems, heroImage, heroTitle }:
                         <div className="mb-3">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
                             <span className="text-2xl" aria-hidden="true">{restaurant.icon}</span>
-                            <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
+                            <Link
+                              to={`/gluten-free/germany/${city.slug}/${deSlug(restaurant.name)}`}
+                              className="text-xl font-bold text-gray-900 hover:text-red-700 hover:underline transition-colors"
+                            >
+                              {restaurant.name}
+                            </Link>
                             {restaurant.featured && (
                               <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
                             )}
@@ -296,6 +301,12 @@ const GermanyCityPage = ({ city, intro, emoji, faqItems, heroImage, heroTitle }:
                               Website
                             </Button>
                           )}
+                          <Link to={`/gluten-free/germany/${city.slug}/${deSlug(restaurant.name)}`}>
+                            <Button type="button" variant="outline">
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Button>
+                          </Link>
                         </div>
 
                       </CardContent>
