@@ -18,6 +18,7 @@ const GlutenFreeHamburg = () => (
     intro="Hamburg combines dedicated gluten-free kitchens with a maritime food scene — celiac-safe cakes at Isabella Glutenfree Pasteries, 100% gluten-free burgers at Grilly Idol, harbour fish restaurants and international eateries make the port city easy for gluten-free travellers."
     faqItems={faqItems}
     heroTitle="Dedicated gluten-free restaurants in Hamburg"
+    heroImage="/images/hamburg-hero.webp?v=2"
   />
 );
 
