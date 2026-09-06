@@ -1,230 +1,136 @@
-import { ArrowLeft, MapPin, Clock, Globe, Phone, Star, CheckCircle, Camera, MessageCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Award, Globe, MapPin, Shield, Star } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Card } from "@/components/ui/card";
+import { SEOHead } from "@/components/SEOHead";
+import { ArgentinaRestaurantList } from "@/components/argentina/ArgentinaRestaurantList";
+import { UserMenu } from "@/components/layout/UserMenu";
+import { AddRestaurantDialog } from "@/components/restaurants/AddRestaurantDialog";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { SEOHead } from "@/components/SEOHead";
+import { Card, CardContent } from "@/components/ui/card";
+import argentinaHero from "/images/argentina-hero.webp";
+
 const cities = [
-  {
-    name: "Buenos Aires",
-    restaurants: [
-      {
-        name: "Sin TACC Buenos Aires",
-        featured: true,
-        rating: 4.8,
-        reviewCount: 167,
-        cuisineTypes: ["Argentine", "Steakhouse"],
-        celiacSafe: "100% Dedicated",
-        menuType: "100% Gluten-Free",
-        address: "Av. Santa Fe 2172, C1123 CABA, Buenos Aires, Argentina",
-        hours: "Mon-Sun: 12:00 PM - 11:00 PM",
-        website: "www.sintacc.com.ar",
-        phone: "+54 11 4567 8900",
-        directions: "https://maps.google.com/?q=Sin+TACC+Buenos+Aires",
-        overview: "Argentina's premier 100% gluten-free restaurant specializing in traditional Argentine cuisine. From world-famous steaks to empanadas, everything is prepared in a dedicated celiac-safe facility.",
-        menuHighlights: ["Argentine Beef Steak", "Empanadas", "Milanesa", "Dulce de Leche Desserts", "Chimichurri"],
-        reviews: [
-          { author: "Carlos M.", text: "The best gluten-free empanadas I've ever tasted! Just like grandma used to make.", rating: 5 },
-          { author: "Ana R.", text: "Finally can enjoy authentic Argentine steak with proper chimichurri sauce!", rating: 5 }
-        ],
-        proTip: "Try their gluten-free alfajores for dessert - they're a traditional Argentine treat made perfectly safe!"
-      }
-    ]
-  }
+  { name: "Buenos Aires", image: "photo-1589909202802-8f4aadce1849", places: "40+", rating: 4.8, description: "The country’s largest collection of dedicated bakeries, cafés and restaurants", highlights: ["La Unión", "Sintaxis", "GOUT"] },
+  { name: "Mendoza", image: "/images/mendoza-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Wine-country dining with dedicated gluten-free cafés and bakeries", highlights: ["Enebro", "Enharinate", "Celiac-safe dining"] },
+  { name: "Córdoba", image: "/images/cordoba-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Central Argentina’s growing destination for gluten-free comfort food", highlights: ["Antojitos", "Napoli Sin Tacc", "Gisela Mondino"] },
+  { name: "Patagonia", image: "photo-1531761535209-180857e963b9", places: "10+", rating: 4.8, description: "Celiac-friendly stops from Bariloche and El Calafate to Ushuaia", highlights: ["Celi Deli", "DELCELIACO", "Ruca Umel"] },
 ];
 
-const getCeliacSafeBadge = (level: string) => {
-  if (level === "100% Dedicated") {
-    return <Badge className="bg-green-100 text-green-800 border-green-300">100% Dedicated GF</Badge>;
-  }
-  return <Badge variant="secondary">{level}</Badge>;
-};
+const faqItems = [
+  { question: "Is Argentina good for gluten-free travelers?", answer: "Yes. Argentina has strong awareness of celiac disease, especially in Buenos Aires and major tourist destinations. Look for the phrase “Sin TACC,” which identifies gluten-free food." },
+  { question: "What does Sin TACC mean?", answer: "Sin TACC means food made without wheat, oats, barley or rye. It is Argentina’s widely recognized term for gluten-free food and appears on certified packaged products and restaurant menus." },
+  { question: "Where can I find the most gluten-free restaurants?", answer: "Buenos Aires offers the widest choice of dedicated bakeries, cafés and restaurants. Mendoza, Córdoba, Bariloche, El Calafate and Ushuaia also have useful celiac-safe options." },
+  { question: "How should I explain celiac disease in Spanish?", answer: "Say “Soy celíaco/a” and ask “¿Es sin TACC?” Also confirm whether preparation surfaces, fryers and utensils are shared." },
+  { question: "Are Argentine supermarkets suitable for celiac travelers?", answer: "Major supermarkets carry clearly marked Sin TACC products. Always check for the official gluten-free symbol and read the ingredient label." },
+];
 
-const getMenuTypeBadge = (type: string) => {
-  if (type === "100% Gluten-Free") {
-    return <Badge className="bg-blue-100 text-blue-800 border-blue-300">100% GF Menu</Badge>;
-  }
-  return <Badge variant="outline">{type}</Badge>;
-};
+const schemaJson = [
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Dedicated Gluten-Free Restaurants in Argentina",
+    description: "Find gluten-free restaurants, bakeries and cafés across Argentina, including Buenos Aires, Mendoza, Córdoba and Patagonia.",
+    url: "https://glutenfreeplace.org/argentina",
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({ "@type": "Question", name: faq.question, acceptedAnswer: { "@type": "Answer", text: faq.answer } })),
+  },
+];
 
-const renderStarRating = (rating: number) => {
-  return (
-    <div className="flex items-center space-x-1">
-      {[...Array(5)].map((_, i) => (
-        <Star
-          key={i}
-          className={`h-4 w-4 ${i < Math.floor(rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}`}
-        />
-      ))}
-    </div>
-  );
-};
-
-const Argentina = () => {
-  
-
-  return (
-    <>
+const Argentina = () => (
+  <>
     <SEOHead
-      title="Gluten-Free Restaurants in Argentina | Celiac-Safe Dining Guide 2026"
-      description="Find the best gluten-free restaurants in Argentina. Celiac-safe steaks, empanadas & traditional cuisine in Buenos Aires, Mendoza, Córdoba & more."
+      title="Gluten-Free Restaurants in Argentina | Celiac Guide"
+      description="Find dedicated gluten-free restaurants, bakeries and cafés across Argentina, from Buenos Aires and Mendoza to Patagonia."
       canonical="/argentina"
+      schemaJson={schemaJson}
     />
-    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-yellow-50">
-      <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <Link to="/" className="inline-flex items-center space-x-2 hover:opacity-80 transition-opacity mb-4">
-            <ArrowLeft className="h-5 w-5" />
-            <span className="text-sm font-medium">Back to Countries</span>
+    <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-amber-50">
+      <header className="sticky top-0 z-50 border-b border-red-100 bg-white/80 backdrop-blur-md">
+        <div className="container mx-auto flex items-center justify-between px-4 py-4">
+          <Link to="/" className="flex items-center space-x-2">
+            <Globe className="h-8 w-8 text-red-600" />
+            <span className="text-2xl font-bold text-red-700">Gluten-Free Places</span>
           </Link>
-          <div className="flex items-center space-x-4">
-            <div className="text-6xl">🇦🇷</div>
-            <div>
-              <h1 className="text-3xl font-bold text-gray-900">Gluten-Free Restaurants in Argentina</h1>
-              <p className="text-lg text-gray-600">Top Gluten-Free Restaurants</p>
-            </div>
-          </div>
+          <nav className="hidden items-center space-x-8 md:flex" aria-label="Argentina page navigation">
+            <Link to="/" className="text-gray-700 transition-colors hover:text-red-600">Home</Link>
+            <Link to="/countries" className="text-gray-700 transition-colors hover:text-red-600">Countries</Link>
+            <a href="#cities" className="text-gray-700 transition-colors hover:text-red-600">Cities</a>
+            <a href="#restaurants" className="text-gray-700 transition-colors hover:text-red-600">Restaurants</a>
+            <a href="#faq" className="text-gray-700 transition-colors hover:text-red-600">FAQ</a>
+            <UserMenu />
+          </nav>
         </div>
       </header>
 
-      <section className="py-12 bg-white/50">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center space-y-4">
-            <div className="flex flex-wrap justify-center gap-2">
-              <Badge className="bg-green-100 text-green-800">Celiac-Friendly</Badge>
-              <Badge className="bg-blue-100 text-blue-800">Verified Safe</Badge>
-              <Badge className="bg-purple-100 text-purple-800">Local Favorites</Badge>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              Experience Argentina's finest gluten-free dining. From perfectly grilled steaks to traditional empanadas,
-              these certified celiac-safe restaurants showcase authentic Argentine flavors with complete safety.
-            </p>
+      <section className="relative overflow-hidden py-12">
+        <img src={argentinaHero} alt="Buenos Aires skyline and the Obelisk" className="absolute inset-0 h-full w-full object-cover" width={1200} height={525} loading="eager" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <Link to="/countries" className="mb-4 inline-flex items-center text-white/80 transition-colors hover:text-white"><ArrowLeft className="mr-2 h-4 w-4" />Back to All Countries</Link>
+          <span className="mb-4 block text-5xl" aria-hidden="true">🇦🇷</span>
+          <Badge className="mb-4 border-white/30 bg-white/20 text-white"><MapPin className="mr-2 h-4 w-4" />60+ Gluten-Free Places</Badge>
+          <h1 className="mb-4 text-3xl font-bold text-white md:text-5xl">Dedicated Gluten-Free Restaurants in Argentina</h1>
+          <p className="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-white/90">Discover Sin TACC bakeries, cafés and restaurants from Buenos Aires to Patagonia.</p>
+          <div className="flex flex-col justify-center gap-4 sm:flex-row">
+            <a href="#restaurants"><Button size="lg" className="bg-white text-red-700 hover:bg-red-50">Explore Restaurants<ArrowRight className="ml-2 h-5 w-5" /></Button></a>
+            <AddRestaurantDialog city="Argentina" triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10" />
           </div>
         </div>
       </section>
 
-      <section className="py-16">
+      <section id="cities" className="py-16">
         <div className="container mx-auto px-4">
-          {cities.map((city) => (
-            <div key={city.name} className="mb-16">
-              <h2 className="text-3xl font-bold mb-8 text-gray-900">{city.name}</h2>
-              <div className="grid gap-8">
-                {city.restaurants.map((restaurant) => (
-                  <Card key={restaurant.name} className="overflow-hidden hover:shadow-xl transition-shadow">
-                    <div className="p-6 space-y-6">
-                      <div className="space-y-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-gray-900 mb-2">{restaurant.name}</h3>
-                          <div className="flex items-center space-x-4 text-sm">
-                            <div className="flex items-center space-x-1">
-                              {renderStarRating(restaurant.rating)}
-                              <span className="font-semibold ml-1">{restaurant.rating}</span>
-                              <span className="text-gray-500">({restaurant.reviewCount} reviews)</span>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex flex-wrap gap-2">
-                          {restaurant.cuisineTypes.map((type) => (
-                            <Badge key={type} variant="secondary">{type}</Badge>
-                          ))}
-                          {getCeliacSafeBadge(restaurant.celiacSafe)}
-                          {getMenuTypeBadge(restaurant.menuType)}
-                        </div>
-
-                        {restaurant.featured && (
-                          <>
-                            <Button className="w-full sm:w-auto" asChild>
-                              <a href={restaurant.directions} target="_blank" rel="noopener noreferrer">
-                                <MapPin className="h-4 w-4 mr-2" />
-                                Get Directions
-                              </a>
-                            </Button>
-
-                            <div className="grid md:grid-cols-2 gap-4 text-sm">
-                              <div className="flex items-start space-x-2">
-                                <MapPin className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.address}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Clock className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <span>{restaurant.hours}</span>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Globe className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`https://${restaurant.website}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
-                                  {restaurant.website}
-                                </a>
-                              </div>
-                              <div className="flex items-start space-x-2">
-                                <Phone className="h-5 w-5 text-gray-400 flex-shrink-0 mt-0.5" />
-                                <a href={`tel:${restaurant.phone}`} className="text-blue-600 hover:underline">
-                                  {restaurant.phone}
-                                </a>
-                              </div>
-                            </div>
-
-                            <div className="bg-green-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <CheckCircle className="h-5 w-5 text-green-600" />
-                                <h4 className="font-semibold text-gray-900">Overview</h4>
-                              </div>
-                              <p className="text-gray-700 text-sm leading-relaxed">{restaurant.overview}</p>
-                            </div>
-
-                            <div className="bg-orange-50 rounded-lg p-4 space-y-2">
-                              <div className="flex items-center space-x-2">
-                                <Camera className="h-5 w-5 text-orange-600" />
-                                <h4 className="font-semibold text-gray-900">Menu Highlights</h4>
-                              </div>
-                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                                {restaurant.menuHighlights.map((item) => (
-                                  <li key={item} className="text-sm text-gray-700 flex items-center">
-                                    <span className="mr-2">•</span>
-                                    {item}
-                                  </li>
-                                ))}
-                              </ul>
-                            </div>
-
-                            <div className="bg-gray-50 rounded-lg p-4 space-y-4">
-                              <div className="flex items-center space-x-2">
-                                <MessageCircle className="h-5 w-5 text-gray-600" />
-                                <h4 className="font-semibold text-gray-900">User Reviews</h4>
-                              </div>
-                              <div className="space-y-3">
-                                {restaurant.reviews.map((review, idx) => (
-                                  <div key={idx} className="bg-white rounded p-3 space-y-1">
-                                    <div className="flex items-center justify-between">
-                                      <span className="font-medium text-sm">{review.author}</span>
-                                      {renderStarRating(review.rating)}
-                                    </div>
-                                    <p className="text-sm text-gray-600">{review.text}</p>
-                                  </div>
-                                ))}
-                              </div>
-                              <Button variant="outline" size="sm" className="w-full">View All Reviews</Button>
-                            </div>
-
-                            <div className="bg-blue-50 border-l-4 border-blue-500 p-4">
-                              <p className="text-sm text-gray-700">
-                                <span className="font-semibold">Pro Tip:</span> {restaurant.proTip}
-                              </p>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </div>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          ))}
+          <div className="mb-12 text-center">
+            <Badge className="mb-4 border-red-200 bg-red-100 text-red-800"><MapPin className="mr-2 h-4 w-4" />Explore by Region</Badge>
+            <h2 className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">Top Gluten-Free Destinations in Argentina</h2>
+            <p className="mx-auto max-w-2xl text-lg text-gray-600">Browse the country’s leading destinations for dedicated gluten-free food and celiac-aware dining.</p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            {cities.map((city) => (
+              <Card key={city.name} className="group overflow-hidden border-0 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
+                <a href="#restaurants" className="block">
+                  <div className="relative h-48 overflow-hidden">
+                    <img src={city.isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free dining in ${city.name}`} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" width={600} height={400} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                    <div className="absolute right-4 top-4 flex items-center rounded-full bg-white/90 px-3 py-1"><Star className="mr-1 h-4 w-4 fill-yellow-400 text-yellow-400" /><span className="text-sm font-semibold">{city.rating}</span></div>
+                    <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{city.name}</h3>
+                  </div>
+                </a>
+                <CardContent className="p-5">
+                  <p className="mb-3 text-sm text-gray-600">{city.description}</p>
+                  <div className="mb-3 flex items-center text-red-600"><MapPin className="mr-1 h-4 w-4" /><span className="text-sm font-semibold">{city.places} places</span></div>
+                  <div className="mb-4 flex flex-wrap gap-1">{city.highlights.map((highlight) => <Badge key={highlight} variant="secondary" className="bg-red-50 text-xs text-red-700">{highlight}</Badge>)}</div>
+                  <a href="#restaurants"><Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600">Explore {city.name}<ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
+
+      <ArgentinaRestaurantList />
+
+      <section className="bg-white/50 py-16">
+        <div className="container mx-auto px-4"><div className="mx-auto max-w-4xl">
+          <div className="mb-12 text-center"><Badge className="mb-4 border-red-200 bg-red-100 text-red-800"><Award className="mr-2 h-4 w-4" />About</Badge><h2 className="text-3xl font-bold text-gray-900">Gluten-Free Dining in Argentina</h2></div>
+          <div className="grid gap-8 md:grid-cols-2">
+            <div><h3 className="mb-3 text-xl font-semibold text-gray-900">Why Argentina?</h3><p className="mb-4 text-gray-600">Argentina has one of Latin America’s strongest gluten-free cultures. The familiar Sin TACC symbol helps travelers identify suitable food in restaurants and shops.</p><p className="text-gray-600">Buenos Aires leads with dedicated bakeries and restaurants, while Mendoza, Córdoba and Patagonia offer an expanding range of celiac-aware choices.</p></div>
+            <div><h3 className="mb-3 text-xl font-semibold text-gray-900">Celiac Tips</h3><ul className="space-y-3 text-gray-600">{["Look for the official Sin TACC symbol", "Say “Soy celíaco/a” when ordering", "Confirm that fryers and preparation surfaces are separate", "Carry a Spanish celiac dining card outside major cities"].map((tip) => <li key={tip} className="flex items-start gap-2"><Shield className="mt-0.5 h-5 w-5 shrink-0 text-red-600" /><span>{tip}</span></li>)}</ul></div>
+          </div>
+        </div></div>
+      </section>
+
+      <section className="bg-red-50/50 py-16"><div className="container mx-auto px-4"><div className="mx-auto max-w-4xl"><div className="mb-3 flex items-center gap-2"><Shield className="h-6 w-6 text-red-600" /><h2 className="text-lg font-semibold text-gray-900">Trust & Safety</h2></div><p className="text-gray-600">We prioritize dedicated gluten-free venues and restaurants with clear celiac protocols. Always confirm ingredients and cross-contamination procedures directly with staff.</p></div></div></section>
+
+      <section id="faq" className="py-16"><div className="container mx-auto px-4"><div className="mx-auto max-w-3xl"><div className="mb-8 text-center"><h2 className="text-3xl font-bold text-gray-900">Frequently Asked Questions</h2><p className="mt-2 text-gray-600">Everything you need to know about gluten-free dining in Argentina</p></div><Accordion type="single" collapsible className="w-full">{faqItems.map((faq, index) => <AccordionItem key={faq.question} value={`faq-${index}`}><AccordionTrigger className="text-left">{faq.question}</AccordionTrigger><AccordionContent className="text-gray-600">{faq.answer}</AccordionContent></AccordionItem>)}</Accordion></div></div></section>
+
+      <section className="bg-gradient-to-r from-red-600 to-red-800 py-16"><div className="container mx-auto px-4 text-center"><h2 className="mb-4 text-3xl font-bold text-white">Know a Great GF Spot in Argentina?</h2><p className="mx-auto mb-8 max-w-2xl text-white/90">Help fellow celiac travelers discover safe dining across Argentina by submitting a restaurant.</p><AddRestaurantDialog city="Argentina" triggerClassName="bg-white text-red-700 hover:bg-red-50 text-lg px-8 py-3" /></div></section>
     </div>
-    </>
-  );
-};
+  </>
+);
 
 export default Argentina;
