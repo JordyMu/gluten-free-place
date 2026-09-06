@@ -41,7 +41,8 @@ const cities = [
   },
   {
     name: "Cologne",
-    image: "photo-1551816230-ef5deaed4a26",
+    image: "/images/cologne-card.webp?v=2",
+    isLocal: true,
     rating: "4.6",
     description: "Cathedral city dining with riverside restaurants and reliable gluten-free choices",
     highlights: ["Global Cuisine", "Casual Dining", "Cafés"],
@@ -199,7 +200,7 @@ const Germany = () => {
                     <Link to={cityHref} className="block">
                       <div className="relative h-48 overflow-hidden">
                         <img
-                          src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                          src={city.isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                           alt={`Gluten-free restaurants in ${city.name}`}
                           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                           loading="lazy"
