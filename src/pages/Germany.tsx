@@ -41,7 +41,8 @@ const cities = [
   },
   {
     name: "Cologne",
-    image: "photo-1551816230-ef5deaed4a26",
+    image: "/images/cologne-card.webp?v=2",
+    isLocal: true,
     rating: "4.6",
     description: "Cathedral city dining with riverside restaurants and reliable gluten-free choices",
     highlights: ["Global Cuisine", "Casual Dining", "Cafés"],
