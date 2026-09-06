@@ -12,8 +12,8 @@ import argentinaHero from "/images/argentina-hero.webp";
 
 const cities = [
   { name: "Buenos Aires", image: "photo-1589909202802-8f4aadce1849", places: "40+", rating: 4.8, description: "The country’s largest collection of dedicated bakeries, cafés and restaurants", highlights: ["La Unión", "Sintaxis", "GOUT"] },
-  { name: "Mendoza", image: "photo-1589919461544-85345c61dd5f", places: "3+", rating: 4.7, description: "Wine-country dining with dedicated gluten-free cafés and bakeries", highlights: ["Enebro", "Enharinate", "Celiac-safe dining"] },
-  { name: "Córdoba", image: "photo-1605794971418-0b7b39c4dfb5", places: "3+", rating: 4.7, description: "Central Argentina’s growing destination for gluten-free comfort food", highlights: ["Antojitos", "Napoli Sin Tacc", "Gisela Mondino"] },
+  { name: "Mendoza", image: "/images/mendoza-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Wine-country dining with dedicated gluten-free cafés and bakeries", highlights: ["Enebro", "Enharinate", "Celiac-safe dining"] },
+  { name: "Córdoba", image: "/images/cordoba-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Central Argentina’s growing destination for gluten-free comfort food", highlights: ["Antojitos", "Napoli Sin Tacc", "Gisela Mondino"] },
   { name: "Patagonia", image: "photo-1531761535209-180857e963b9", places: "10+", rating: 4.8, description: "Celiac-friendly stops from Bariloche and El Calafate to Ushuaia", highlights: ["Celi Deli", "DELCELIACO", "Ruca Umel"] },
 ];
 
@@ -67,7 +67,7 @@ const Argentina = () => (
       </header>
 
       <section className="relative overflow-hidden py-12">
-        <img src={argentinaHero} alt="Buenos Aires skyline and the Obelisk" className="absolute inset-0 h-full w-full object-cover" width={1200} height={525} loading="eager" fetchPriority="high" />
+        <img src={argentinaHero} alt="Buenos Aires skyline and the Obelisk" className="absolute inset-0 h-full w-full object-cover" width={1200} height={525} loading="eager" />
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10 mx-auto px-4 text-center">
           <Link to="/countries" className="mb-4 inline-flex items-center text-white/80 transition-colors hover:text-white"><ArrowLeft className="mr-2 h-4 w-4" />Back to All Countries</Link>
@@ -94,7 +94,7 @@ const Argentina = () => (
               <Card key={city.name} className="group overflow-hidden border-0 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
                 <a href="#restaurants" className="block">
                   <div className="relative h-48 overflow-hidden">
-                    <img src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free dining in ${city.name}`} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" width={600} height={400} />
+                    <img src={city.isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`} alt={`Gluten-free dining in ${city.name}`} className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110" loading="lazy" width={600} height={400} />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute right-4 top-4 flex items-center rounded-full bg-white/90 px-3 py-1"><Star className="mr-1 h-4 w-4 fill-yellow-400 text-yellow-400" /><span className="text-sm font-semibold">{city.rating}</span></div>
                     <h3 className="absolute bottom-4 left-4 text-2xl font-bold text-white">{city.name}</h3>
