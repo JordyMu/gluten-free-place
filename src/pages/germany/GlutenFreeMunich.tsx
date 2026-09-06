@@ -18,6 +18,7 @@ const GlutenFreeMunich = () => (
     intro="Munich mixes dedicated gluten-free bakeries with a classic Bavarian food scene — celiac-safe cakes at Isabella Glutenfreie Pâtisserie, brunch at Not Guilty Pleasure, beer gardens with GF options and Italian pizzerias make the Bavarian capital easy for gluten-free travellers."
     faqItems={faqItems}
     heroTitle="Dedicated gluten-free restaurants in Munich"
+    heroImage="/images/munich-hero.webp?v=2"
   />
 );
 
