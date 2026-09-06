@@ -142,9 +142,77 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
           <div className="flex flex-wrap gap-1">
             {country.topCities.map((city) => {
               let cityLink = "#";
-              
-              // South Africa has nested city routes
-              if (country.name === "South Africa") {
+
+              // Cities with dedicated pages link directly
+              const dedicatedCityPages: Record<string, Record<string, string>> = {
+                "Germany": {
+                  "Berlin": "/gluten-free/germany/berlin",
+                  "Munich": "/gluten-free/germany/munich",
+                  "Hamburg": "/gluten-free/germany/hamburg",
+                  "Cologne": "/gluten-free/germany/cologne",
+                },
+                "New Zealand": {
+                  "Auckland": "/gluten-free/new-zealand/auckland",
+                  "Wellington": "/gluten-free/new-zealand/wellington",
+                  "Christchurch": "/gluten-free/new-zealand/christchurch",
+                  "Queenstown": "/gluten-free/new-zealand/queenstown-arrowtown",
+                },
+                "Australia": {
+                  "Sydney": "/gluten-free/australia/sydney",
+                  "Melbourne": "/gluten-free/australia/melbourne",
+                  "Brisbane": "/gluten-free/australia/brisbane",
+                  "Perth": "/gluten-free/australia/perth",
+                },
+                "Canada": {
+                  "Toronto": "/gluten-free/canada/toronto",
+                  "Vancouver": "/gluten-free/canada/vancouver",
+                  "Montreal": "/gluten-free/canada/montreal",
+                  "Calgary": "/gluten-free/canada/calgary",
+                },
+                "France": {
+                  "Paris": "/gluten-free/france/paris",
+                  "Lyon": "/gluten-free/france/lyon",
+                  "Nice": "/gluten-free/france/nice",
+                  "Bordeaux": "/gluten-free/france/bordeaux",
+                  "Marseille": "/gluten-free/france/marseille",
+                  "Strasbourg": "/gluten-free/france/strasbourg",
+                },
+                "United Kingdom": {
+                  "London": "/gluten-free/united-kingdom/london",
+                  "Edinburgh": "/gluten-free/united-kingdom/edinburgh",
+                  "Manchester": "/gluten-free/united-kingdom/manchester",
+                  "Birmingham": "/gluten-free/united-kingdom/birmingham",
+                },
+                "Ireland": {
+                  "Dublin": "/gluten-free/ireland/dublin",
+                  "Cork": "/gluten-free/ireland/cork",
+                  "Galway": "/gluten-free/ireland/galway",
+                  "Limerick": "/gluten-free/ireland/limerick",
+                },
+                "Italy": {
+                  "Rome": "/gluten-free/italy/rome",
+                  "Milan": "/gluten-free/italy/milan",
+                  "Florence": "/gluten-free/italy/florence",
+                  "Venice": "/gluten-free/italy/venice",
+                },
+                "Kenya": {
+                  "Nairobi": "/gluten-free/kenya/nairobi",
+                  "Mombasa": "/gluten-free/kenya/mombasa",
+                  "Kisumu": "/gluten-free/kenya/kisumu",
+                  "Nakuru": "/gluten-free/kenya/nakuru",
+                },
+                "Egypt": {
+                  "Cairo": "/gluten-free/egypt/cairo",
+                  "Alexandria": "/gluten-free/egypt/alexandria",
+                  "Giza": "/gluten-free/egypt/giza",
+                  "Sharm El Sheikh": "/gluten-free/egypt/sharm-el-sheikh",
+                },
+              };
+
+              const dedicated = dedicatedCityPages[country.name]?.[city];
+              if (dedicated) {
+                cityLink = dedicated;
+              } else if (country.name === "South Africa") {
                 const citySlug = city.toLowerCase().replace(/\s+/g, '-');
                 cityLink = `/gluten-free/south-africa/${citySlug}`;
               } else if (countryLink !== "#") {
