@@ -214,7 +214,18 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
                 cityLink = dedicated;
               } else if (country.name === "South Africa") {
                 const citySlug = city.toLowerCase().replace(/\s+/g, '-');
-                cityLink = `/gluten-free/south-africa/${citySlug}`;
+                cityLink = (citySlug === "stellenbosch" || citySlug === "franschhoek")
+                  ? `/gluten-free/south-africa/cape-town/${citySlug}`
+                  : `/gluten-free/south-africa/${citySlug}`;
+              } else if (country.name === "Mauritius" || country.name === "Morocco" || country.name === "Sweden") {
+                const base = country.name === "Sweden" ? "/gluten-free/sweden" : countryLink;
+                const citySlug = city
+                  .toLowerCase()
+                  .normalize("NFD")
+                  .replace(/[̀-ͯ]/g, "")
+                  .replace(/[^a-z0-9]+/g, "-")
+                  .replace(/^-+|-+$/g, "");
+                cityLink = `${base}/${citySlug}`;
               } else if (countryLink !== "#") {
                 cityLink = `${countryLink}?city=${encodeURIComponent(city)}`;
               }
