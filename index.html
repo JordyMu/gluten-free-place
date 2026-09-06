@@ -3,14 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3017224444327111" crossorigin="anonymous"></script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P1T49E92ZB"></script>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" />
+    <!-- Deferred third-party scripts: load after page load to keep main thread free -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-P1T49E92ZB');
+      function loadThirdParty() {
+        var ads = document.createElement('script');
+        ads.async = true;
+        ads.crossOrigin = 'anonymous';
+        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3017224444327111';
+        document.head.appendChild(ads);
+
+        var ga = document.createElement('script');
+        ga.async = true;
+        ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-P1T49E92ZB';
+        document.head.appendChild(ga);
+
+        gtag('js', new Date());
+        gtag('config', 'G-P1T49E92ZB');
+      }
+      function scheduleThirdParty() {
+        if ('requestIdleCallback' in window) {
+          window.requestIdleCallback(loadThirdParty, { timeout: 4000 });
+        } else {
+          setTimeout(loadThirdParty, 2500);
+        }
+      }
+      if (document.readyState === 'complete') {
+        scheduleThirdParty();
+      } else {
+        window.addEventListener('load', scheduleThirdParty);
+      }
     </script>
     <script>
       (function () {
