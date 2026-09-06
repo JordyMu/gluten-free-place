@@ -14,7 +14,7 @@ const cities = [
   { name: "Buenos Aires", image: "photo-1589909202802-8f4aadce1849", places: "40+", rating: 4.8, description: "The country’s largest collection of dedicated bakeries, cafés and restaurants", highlights: ["La Unión", "Sintaxis", "GOUT"] },
   { name: "Mendoza", image: "/images/mendoza-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Wine-country dining with dedicated gluten-free cafés and bakeries", highlights: ["Enebro", "Enharinate", "Celiac-safe dining"] },
   { name: "Córdoba", image: "/images/cordoba-card.jpg", isLocal: true, places: "3+", rating: 4.7, description: "Central Argentina’s growing destination for gluten-free comfort food", highlights: ["Antojitos", "Napoli Sin Tacc", "Gisela Mondino"] },
-  { name: "Patagonia", image: "photo-1531761535209-180857e963b9", places: "10+", rating: 4.8, description: "Celiac-friendly stops from Bariloche and El Calafate to Ushuaia", highlights: ["Celi Deli", "DELCELIACO", "Ruca Umel"] },
+  { name: "Bariloche", image: "photo-1518105779142-d975f22f1b0a", places: "10+", rating: 4.8, description: "Celiac-friendly stops in the Patagonian lake district and nearby mountain towns", highlights: ["Ruca Umel", "CHIMI DELI", "Celi Deli"] },
 ];
 
 const faqItems = [
@@ -30,7 +30,7 @@ const schemaJson = [
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Dedicated Gluten-Free Restaurants in Argentina",
-    description: "Find gluten-free restaurants, bakeries and cafés across Argentina, including Buenos Aires, Mendoza, Córdoba and Patagonia.",
+    description: "Find gluten-free restaurants, bakeries and cafés across Argentina, including Buenos Aires, Mendoza, Córdoba and Bariloche.",
     url: "https://glutenfreeplace.org/argentina",
   },
   {
@@ -44,7 +44,7 @@ const Argentina = () => (
   <>
     <SEOHead
       title="Gluten-Free Restaurants in Argentina | Celiac Guide"
-      description="Find dedicated gluten-free restaurants, bakeries and cafés across Argentina, from Buenos Aires and Mendoza to Patagonia."
+      description="Find dedicated gluten-free restaurants, bakeries and cafés across Argentina, from Buenos Aires and Mendoza to Bariloche."
       canonical="/argentina"
       schemaJson={schemaJson}
     />
@@ -74,7 +74,7 @@ const Argentina = () => (
           <span className="mb-4 block text-5xl" aria-hidden="true">🇦🇷</span>
           <Badge className="mb-4 border-white/30 bg-white/20 text-white"><MapPin className="mr-2 h-4 w-4" />60+ Gluten-Free Places</Badge>
           <h1 className="mb-4 text-3xl font-bold text-white md:text-5xl">Dedicated Gluten-Free Restaurants in Argentina</h1>
-          <p className="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-white/90">Discover Sin TACC bakeries, cafés and restaurants from Buenos Aires to Patagonia.</p>
+          <p className="mx-auto mb-6 max-w-2xl text-lg leading-relaxed text-white/90">Discover Sin TACC bakeries, cafés and restaurants from Buenos Aires to Bariloche.</p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
             <a href="#restaurants"><Button size="lg" className="bg-white text-red-700 hover:bg-red-50">Explore Restaurants<ArrowRight className="ml-2 h-5 w-5" /></Button></a>
             <AddRestaurantDialog city="Argentina" triggerClassName="border-white/70 bg-transparent !text-white hover:bg-white/10" />
@@ -118,7 +118,7 @@ const Argentina = () => (
         <div className="container mx-auto px-4"><div className="mx-auto max-w-4xl">
           <div className="mb-12 text-center"><Badge className="mb-4 border-red-200 bg-red-100 text-red-800"><Award className="mr-2 h-4 w-4" />About</Badge><h2 className="text-3xl font-bold text-gray-900">Gluten-Free Dining in Argentina</h2></div>
           <div className="grid gap-8 md:grid-cols-2">
-            <div><h3 className="mb-3 text-xl font-semibold text-gray-900">Why Argentina?</h3><p className="mb-4 text-gray-600">Argentina has one of Latin America’s strongest gluten-free cultures. The familiar Sin TACC symbol helps travelers identify suitable food in restaurants and shops.</p><p className="text-gray-600">Buenos Aires leads with dedicated bakeries and restaurants, while Mendoza, Córdoba and Patagonia offer an expanding range of celiac-aware choices.</p></div>
+            <div><h3 className="mb-3 text-xl font-semibold text-gray-900">Why Argentina?</h3><p className="mb-4 text-gray-600">Argentina has one of Latin America’s strongest gluten-free cultures. The familiar Sin TACC symbol helps travelers identify suitable food in restaurants and shops.</p><p className="text-gray-600">Buenos Aires leads with dedicated bakeries and restaurants, while Mendoza, Córdoba and Bariloche offer an expanding range of celiac-aware choices.</p></div>
             <div><h3 className="mb-3 text-xl font-semibold text-gray-900">Celiac Tips</h3><ul className="space-y-3 text-gray-600">{["Look for the official Sin TACC symbol", "Say “Soy celíaco/a” when ordering", "Confirm that fryers and preparation surfaces are separate", "Carry a Spanish celiac dining card outside major cities"].map((tip) => <li key={tip} className="flex items-start gap-2"><Shield className="mt-0.5 h-5 w-5 shrink-0 text-red-600" /><span>{tip}</span></li>)}</ul></div>
           </div>
         </div></div>
