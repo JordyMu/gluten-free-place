@@ -19,6 +19,7 @@ const GlutenFreeBuenosAires = () => (
     intro="Buenos Aires is Argentina's gluten-free capital — dedicated Sin TACC bakeries like La Unión and JANA, fully gluten-free kitchens such as Sintaxis, corn-based arepas and tacos in Palermo, and churros at El Topo make eating celiac-safe easy across the city."
     faqItems={faqItems}
     heroTitle="Dedicated gluten-free restaurants in Buenos Aires"
+    heroImage="/images/buenos-aires-hero.webp?v=1"
   />
 );
 
