@@ -34,7 +34,8 @@ const cities = [
   },
   {
     name: "Hamburg",
-    image: "photo-1515081774057-84dcf72d0cf1",
+    image: "/images/hamburg-card.webp?v=2",
+    isLocal: true,
     rating: "4.6",
     description: "Harbour dining, fresh seafood and an expanding gluten-free café scene",
     highlights: ["Seafood", "Brunch", "Bakeries"],
