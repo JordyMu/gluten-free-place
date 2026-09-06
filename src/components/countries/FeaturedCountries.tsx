@@ -181,7 +181,7 @@ const featuredCountries = [
     places: 40,
     rating: 4.5,
     description: "Tagines, couscous alternatives, and vibrant spice-rich dishes for gluten-free travelers",
-    topCities: ["Marrakech", "Casablanca", "Fes", "Chefchaouen"]
+    topCities: ["Marrakech", "Casablanca", "Rabat", "Tangier"]
   },
   {
     id: 19,
