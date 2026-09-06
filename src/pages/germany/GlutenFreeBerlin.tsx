@@ -18,6 +18,7 @@ const GlutenFreeBerlin = () => (
     intro="Berlin blends dedicated gluten-free kitchens with a creative food scene — fully gluten-free Italian at Trattoria Senza, cakes at Sinless Cakes Cafe, tapioca crêpes in Friedrichshain and corn-tortilla tacos in Mitte make the city an easy choice for celiac travellers."
     faqItems={faqItems}
     heroTitle="Dedicated gluten-free restaurants in Berlin"
+    heroImage="/images/berlin-hero.webp?v=2"
   />
 );
 
