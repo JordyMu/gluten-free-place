@@ -37,39 +37,68 @@ export const ArgentinaRestaurantList = () => {
           </select>
         </div>
 
-        <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2">
+        <div className="mx-auto max-w-3xl space-y-5">
           {restaurants.map((restaurant) => (
-            <Card key={`${restaurant.name}-${restaurant.address}`} className="overflow-hidden border border-red-100 transition-shadow hover:shadow-xl">
+            <Card key={`${restaurant.name}-${restaurant.address}`} className="overflow-hidden border border-border transition-all duration-200 hover:shadow-xl">
               <CardContent className="p-6">
-                <div className="mb-3 flex items-start gap-3">
-                  <span className="text-2xl" aria-hidden="true">{restaurant.icon}</span>
-                  <div className="min-w-0">
-                    <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
-                    <p className="text-sm text-gray-500">{restaurant.specialty}</p>
+                <div className="mb-3">
+                  <h3 className="flex items-center gap-2 text-xl font-bold text-foreground">
+                    <span className="text-2xl" aria-hidden="true">{restaurant.icon}</span>
+                    <span>{restaurant.name}</span>
+                  </h3>
+                  <p className="ml-9 mt-0.5 text-sm text-muted-foreground">{restaurant.specialty}</p>
+                </div>
+
+                <div className="mb-3 ml-9 flex items-center gap-2">
+                  <div className="flex items-center">
+                    {Array.from({ length: 5 }).map((_, index) => (
+                      <Star
+                        key={index}
+                        className={index < Math.floor(restaurant.rating)
+                          ? "h-4 w-4 fill-amber-400 text-amber-400"
+                          : index < restaurant.rating
+                            ? "h-4 w-4 fill-amber-200 text-amber-400"
+                            : "h-4 w-4 text-muted"}
+                      />
+                    ))}
                   </div>
+                  <span className="text-sm font-semibold text-foreground">{restaurant.rating}</span>
+                  <span className="text-sm text-muted-foreground">({restaurant.reviewCount} reviews)</span>
                 </div>
-                <div className="mb-3 flex items-center gap-2 pl-9">
-                  <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  <span className="text-sm font-semibold">{restaurant.rating}</span>
-                  <span className="text-sm text-gray-400">({restaurant.reviewCount} reviews)</span>
+
+                <div className="mb-3 ml-9 flex flex-wrap gap-1.5">
+                  {restaurant.cuisineTypes.map((cuisine) => (
+                    <Badge key={cuisine} variant="outline" className="bg-muted text-xs font-medium text-muted-foreground">
+                      🍴 {cuisine}
+                    </Badge>
+                  ))}
                 </div>
-                <div className="mb-4 flex flex-wrap gap-2 pl-9">
-                  <Badge variant="outline" className="border-gray-200 bg-gray-50 text-gray-600">{restaurant.cuisineTypes[0]}</Badge>
+
+                <div className="mb-3 ml-9 flex flex-wrap gap-2">
                   <Badge className="border-emerald-200 bg-emerald-100 text-emerald-800">
                     <ShieldCheck className="mr-1 h-3.5 w-3.5" />
-                    {restaurant.celiacSafe === "dedicated-facility" ? "Dedicated GF Facility" : "Celiac Protocols"}
+                    Celiac Protocols
                   </Badge>
                   <Badge className={restaurant.menuType === "fully-gluten-free" ? "border-emerald-200 bg-emerald-100 text-emerald-800" : "border-violet-200 bg-violet-100 text-violet-800"}>
-                    {restaurant.menuType === "fully-gluten-free" ? "Fully GF" : "Mixed Menu"}
+                    🍽️ {restaurant.menuType === "fully-gluten-free" ? "Fully GF" : "Mixed Menu"}
                   </Badge>
                 </div>
-                <div className="mb-4 flex items-start gap-2 pl-9 text-sm text-gray-600">
-                  <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-gray-400" />
+
+                <div className="mb-4 ml-9 flex items-center gap-2 rounded-lg border border-emerald-100 bg-emerald-50 px-4 py-2">
+                  <ShieldCheck className="h-4 w-4 shrink-0 text-emerald-600" />
+                  <span className="text-sm text-emerald-800">
+                    {restaurant.celiacSafe === "dedicated-facility" ? "Dedicated GF Facility" : "Celiac Protocols in Place"}
+                  </span>
+                </div>
+
+                <div className="ml-9 flex items-start gap-2 text-sm text-muted-foreground">
+                  <MapPin className="mt-0.5 h-4 w-4 shrink-0" />
                   <span>{restaurant.address}</span>
                 </div>
-                <div className="pl-9">
-                  <Button type="button" className="bg-red-700 hover:bg-red-800" onClick={() => openExternalLink(restaurant.directionsUrl)}>
-                    <ExternalLink className="mr-2 h-4 w-4" />Get Directions
+
+                <div className="ml-9 mt-4">
+                  <Button type="button" variant="link" className="h-auto p-0 text-sm font-medium" onClick={() => openExternalLink(restaurant.directionsUrl)}>
+                    <ExternalLink className="mr-1.5 h-3.5 w-3.5" />Get Directions
                   </Button>
                 </div>
               </CardContent>
