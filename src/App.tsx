@@ -107,6 +107,7 @@ const GlutenFreeMunich = lazyWithRetry(() => import("./pages/germany/GlutenFreeM
 const GlutenFreeHamburg = lazyWithRetry(() => import("./pages/germany/GlutenFreeHamburg"));
 const GlutenFreeCologne = lazyWithRetry(() => import("./pages/germany/GlutenFreeCologne"));
 const GermanyRestaurantPage = lazyWithRetry(() => import("./pages/germany/GermanyRestaurantPage"));
+const GlutenFreeBuenosAires = lazyWithRetry(() => import("./pages/argentina/GlutenFreeBuenosAires"));
 const NewZealand = lazyWithRetry(() => import("./pages/NewZealand"));
 const GlutenFreeAuckland = lazyWithRetry(() => import("./pages/new-zealand/GlutenFreeAuckland"));
 const GlutenFreeAucklandBest = lazyWithRetry(() => import("./pages/new-zealand/GlutenFreeAucklandBest"));
@@ -362,6 +363,7 @@ const App = () => (
               <Route path="/gluten-free/ireland/limerick" element={<GlutenFreeLimerick />} />
               <Route path="/gluten-free/ireland/limerick/:slug" element={<LimerickRestaurantPage />} />
               <Route path="/germany" element={<Germany />} />
+              <Route path="/gluten-free/argentina/buenos-aires" element={<GlutenFreeBuenosAires />} />
               <Route path="/gluten-free/germany/berlin" element={<GlutenFreeBerlin />} />
 <Route path="/gluten-free/germany/munich" element={<GlutenFreeMunich />} />
 <Route path="/gluten-free/germany/hamburg" element={<GlutenFreeHamburg />} />
