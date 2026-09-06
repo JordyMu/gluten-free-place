@@ -104,7 +104,7 @@ const Argentina = () => (
                   <p className="mb-3 text-sm text-gray-600">{city.description}</p>
                   <div className="mb-3 flex items-center text-red-600"><MapPin className="mr-1 h-4 w-4" /><span className="text-sm font-semibold">{city.places} places</span></div>
                   <div className="mb-4 flex flex-wrap gap-1">{city.highlights.map((highlight) => <Badge key={highlight} variant="secondary" className="bg-red-50 text-xs text-red-700">{highlight}</Badge>)}</div>
-                  <a href="#restaurants"><Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600">Explore {city.name}<ArrowRight className="ml-2 h-4 w-4" /></Button></a>
+                  <Link to={city.name === "Buenos Aires" ? "/gluten-free/argentina/buenos-aires" : "#restaurants"}><Button className="w-full bg-gradient-to-r from-orange-500 to-red-500 text-white hover:from-orange-600 hover:to-red-600">Explore {city.name}<ArrowRight className="ml-2 h-4 w-4" /></Button></Link>
                 </CardContent>
               </Card>
             ))}

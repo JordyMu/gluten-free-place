@@ -151,6 +151,9 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
                   "Hamburg": "/gluten-free/germany/hamburg",
                   "Cologne": "/gluten-free/germany/cologne",
                 },
+                "Argentina": {
+                  "Buenos Aires": "/gluten-free/argentina/buenos-aires",
+                },
                 "New Zealand": {
                   "Auckland": "/gluten-free/new-zealand/auckland",
                   "Wellington": "/gluten-free/new-zealand/wellington",
