@@ -217,7 +217,15 @@ export const CountryCard = ({ country, index }: CountryCardProps) => {
                 cityLink = (citySlug === "stellenbosch" || citySlug === "franschhoek")
                   ? `/gluten-free/south-africa/cape-town/${citySlug}`
                   : `/gluten-free/south-africa/${citySlug}`;
-              } else if (country.name === "Mauritius" || country.name === "Morocco" || country.name === "Sweden") {
+              } else if (country.name === "Morocco" && ["Marrakech", "Casablanca", "Rabat", "Tangier"].includes(city)) {
+                const slugMap: Record<string, string> = {
+                  Marrakech: "marrakesh",
+                  Casablanca: "casablanca",
+                  Rabat: "rabat",
+                  Tangier: "tangier",
+                };
+                cityLink = `/gluten-free/morocco/${slugMap[city]}`;
+              } else if (country.name === "Mauritius" || country.name === "Sweden") {
                 const base = country.name === "Sweden" ? "/gluten-free/sweden" : countryLink;
                 const citySlug = city
                   .toLowerCase()
