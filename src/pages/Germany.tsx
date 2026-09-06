@@ -200,7 +200,7 @@ const Germany = () => {
                     <Link to={cityHref} className="block">
                       <div className="relative h-48 overflow-hidden">
                         <img
-                          src={`https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
+                          src={city.isLocal ? city.image : `https://images.unsplash.com/${city.image}?auto=format&fit=crop&w=600&q=80`}
                           alt={`Gluten-free restaurants in ${city.name}`}
                           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
                           loading="lazy"
