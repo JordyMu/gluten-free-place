@@ -1,5 +1,6 @@
 import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import {
   ArrowLeft, Award, BookOpen, CheckCircle, Clock, Globe, MapPin, MessageCircle,
   Navigation, Phone, Search, Shield, Star,
@@ -150,6 +151,11 @@ const GermanyCityPage = ({ city, intro, emoji, faqItems, heroImage, heroTitle }:
         canonical={`/gluten-free/germany/${city.slug}`}
         schemaJson={schemaJson}
       />
+      {heroImage && (
+        <Helmet>
+          <link rel="preload" as="image" href={heroImage} fetchPriority="high" />
+        </Helmet>
+      )}
       <div className="min-h-screen bg-gradient-to-br from-red-50 via-white to-red-50">
         <header className="bg-white shadow-sm border-b">
           <div className="container mx-auto px-4 py-4">
@@ -161,9 +167,19 @@ const GermanyCityPage = ({ city, intro, emoji, faqItems, heroImage, heroTitle }:
         </header>
 
         <section
-          className={`relative text-white py-14 ${heroImage ? "" : "bg-gradient-to-r from-red-700 to-red-500"}`}
-          style={heroImage ? { backgroundImage: `url('${heroImage}')`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+          className={`relative text-white py-14 overflow-hidden ${heroImage ? "" : "bg-gradient-to-r from-red-700 to-red-500"}`}
         >
+          {heroImage && (
+            <img
+              src={heroImage}
+              alt=""
+              aria-hidden="true"
+              loading="eager"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover"
+            />
+          )}
           <div className="absolute inset-0 bg-black/50" />
           <div className="container mx-auto px-4 text-center relative z-10">
             <span className="text-5xl mb-4 block" aria-hidden="true">{emoji}</span>
