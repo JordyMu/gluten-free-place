@@ -2,7 +2,8 @@ import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import {
-  ArrowLeft, Award, CheckCircle, MapPin, Navigation, Search, Shield, Star,
+  ArrowLeft, Award, BookOpen, CheckCircle, Clock, Globe, MapPin, MessageCircle,
+  Navigation, Phone, Search, Shield, Star,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -225,13 +226,20 @@ const ArgentinaCityPage = ({ cityName, restaurants, intro, emoji, faqItems, hero
                 </h2>
                 <div className="grid gap-6">
                   {filtered.map((restaurant) => (
-                    <Card key={restaurant.name} className="overflow-hidden">
+                    <Card
+                      key={restaurant.name}
+                      className="overflow-hidden border-2 border-red-200 shadow-sm"
+                    >
                       <CardContent className="p-6">
                         <div className="mb-3">
                           <div className="flex items-center gap-2 mb-1 flex-wrap">
                             <span className="text-2xl" aria-hidden="true">{restaurant.icon}</span>
                             <h3 className="text-xl font-bold text-gray-900">{restaurant.name}</h3>
+                            {restaurant.featured && (
+                              <Badge className="bg-amber-100 text-amber-800 border-amber-300">Featured</Badge>
+                            )}
                           </div>
+                          <p className="text-sm text-gray-500">{restaurant.specialty}</p>
                         </div>
 
                         <div className="flex items-center gap-2 mb-3">
@@ -247,12 +255,47 @@ const ArgentinaCityPage = ({ cityName, restaurants, intro, emoji, faqItems, hero
                           {getMenuTypeBadge(restaurant.menuType)}
                         </div>
 
-                        <div className="space-y-2 text-sm text-gray-600 mb-4">
+                        <div className="space-y-2 text-sm text-gray-600 mb-5">
                           <div className="flex items-start gap-2">
                             <MapPin className="w-4 h-4 text-gray-400 mt-0.5 shrink-0" />
                             <span>{restaurant.address}</span>
                           </div>
+                          {restaurant.hours && (
+                            <div className="flex items-center gap-2">
+                              <Clock className="w-4 h-4 text-gray-400 shrink-0" />
+                              <span>{restaurant.hours}</span>
+                            </div>
+                          )}
+                          {restaurant.phone && (
+                            <div className="flex items-center gap-2">
+                              <Phone className="w-4 h-4 text-gray-400 shrink-0" />
+                              <a href={`tel:${restaurant.phone}`} className="hover:text-red-700">{restaurant.phone}</a>
+                            </div>
+                          )}
                         </div>
+
+                        {restaurant.menuHighlights && restaurant.menuHighlights.length > 0 && (
+                          <div className="mb-5">
+                            <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
+                            <div className="flex flex-wrap gap-2">
+                              {restaurant.menuHighlights.map((item) => (
+                                <Badge key={`${restaurant.name}-${item}`} variant="secondary" className="text-sm">
+                                  {item}
+                                </Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+
+                        {restaurant.proTip && (
+                          <div className="bg-amber-50 border border-amber-200 rounded-md p-3 mb-5">
+                            <div className="flex items-start gap-2">
+                              <MessageCircle className="w-4 h-4 text-amber-700 mt-0.5 shrink-0" />
+                              <span className="font-medium text-amber-800">Pro Tip:</span>
+                              <span className="text-amber-700">{restaurant.proTip}</span>
+                            </div>
+                          </div>
+                        )}
 
                         <div className="flex flex-wrap gap-3">
                           <Button
@@ -263,6 +306,26 @@ const ArgentinaCityPage = ({ cityName, restaurants, intro, emoji, faqItems, hero
                             <Navigation className="w-4 h-4 mr-2" />
                             Get Directions
                           </Button>
+                          {restaurant.website && (
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => openExternalLink(restaurant.website ?? "")}
+                            >
+                              <Globe className="w-4 h-4 mr-2" />
+                              Website
+                            </Button>
+                          )}
+                          {restaurant.website && (
+                            <Button
+                              type="button"
+                              variant="outline"
+                              onClick={() => openExternalLink(restaurant.website ?? "")}
+                            >
+                              <BookOpen className="w-4 h-4 mr-2" />
+                              View Menu
+                            </Button>
+                          )}
                         </div>
 
                       </CardContent>
