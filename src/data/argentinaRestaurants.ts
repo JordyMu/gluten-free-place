@@ -10,6 +10,12 @@ export interface ArgentinaRestaurant {
   menuType: "fully-gluten-free" | "mixed-menu";
   cuisineTypes: string[];
   directionsUrl: string;
+  featured?: boolean;
+  hours?: string;
+  phone?: string;
+  website?: string;
+  menuHighlights?: string[];
+  proTip?: string;
 }
 
 type RestaurantSeed = [name: string, address: string, city: string, specialty?: string];
@@ -99,5 +105,18 @@ export const argentinaRestaurants: ArgentinaRestaurant[] = seeds.map(([name, add
     menuType: dedicated ? "fully-gluten-free" : "mixed-menu",
     cuisineTypes: [specialty.replace(/^Dedicated /, "")],
     directionsUrl: `https://maps.google.com/?q=${encodeURIComponent(`${name}, ${address}`)}`,
+    featured: index === 0,
+    menuHighlights: [
+      specialty.includes("Bakery") || specialty.includes("Patisserie")
+        ? "🥐 GF Pastries"
+        : specialty.includes("Italian")
+          ? "🍝 Gluten-Free Italian"
+          : specialty.includes("Grill") || specialty.includes("Smokehouse")
+            ? "🥩 Argentine Grill"
+            : specialty.includes("Café")
+              ? "☕ Café Favourites"
+              : "🍽️ Gluten-Free Dishes",
+      dedicated ? "✅ Sin TACC" : "🛡️ Celiac Options",
+    ],
   };
 });
