@@ -316,16 +316,18 @@ const ArgentinaCityPage = ({ cityName, restaurants, intro, emoji, faqItems, hero
                               Website
                             </Button>
                           )}
-                          {restaurant.website && (
-                            <Button
-                              type="button"
-                              variant="outline"
-                              onClick={() => openExternalLink(restaurant.website ?? "")}
-                            >
-                              <BookOpen className="w-4 h-4 mr-2" />
-                              View Menu
-                            </Button>
-                          )}
+                          <Button
+                            type="button"
+                            variant="outline"
+                            onClick={() => openExternalLink(
+                              restaurant.website
+                                ? restaurant.website
+                                : `https://www.google.com/search?q=${encodeURIComponent(`${restaurant.name} Buenos Aires menu`)}`
+                            )}
+                          >
+                            <BookOpen className="w-4 h-4 mr-2" />
+                            View Menu
+                          </Button>
                         </div>
 
                       </CardContent>
