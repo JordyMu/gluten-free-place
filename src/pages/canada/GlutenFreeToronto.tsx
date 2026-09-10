@@ -23,6 +23,7 @@ const GlutenFreeToronto = () => (
     heading="Dedicated Gluten-Free Restaurants in Toronto"
     heroImage="/images/toronto-hero.webp?v=1"
     compactHero
+    hideOverview
     intro="Toronto is Canada's gluten-free capital with numerous dedicated bakeries, 100% GF restaurants like Riz and Pho Concept, and a thriving health-conscious food scene. Whether you're in the Annex or exploring Dundas West, celiac-safe options abound."
     restaurants={restaurantsForCityPage}
     faqItems={faqItems}
