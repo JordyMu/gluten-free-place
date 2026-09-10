@@ -98,6 +98,7 @@ const GlutenFreeVancouver = () => (
     restaurants={vancouverRestaurants}
     faqItems={faqItems}
     extraSection={<ExtraSections />}
+    hideOverview
   />
 );
 

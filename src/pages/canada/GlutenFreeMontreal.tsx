@@ -102,6 +102,7 @@ const GlutenFreeMontreal = () => (
     restaurants={montrealRestaurants}
     faqItems={faqItems}
     extraSection={<ExtraSections />}
+    hideOverview
   />
 );
 
