@@ -33,6 +33,7 @@ interface CanadaCityPageProps {
   countrySlug?: string;
   relatedCountry?: string;
   hideOverview?: boolean;
+  hideNearby?: boolean;
 }
 
 const getCeliacSafeBadge = (level: Restaurant["celiacSafe"]) => {
@@ -73,7 +74,7 @@ const openExternalLink = (url: string) => {
   window.open(normalizedUrl, "_blank", "noopener,noreferrer");
 };
 
-const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry, hideOverview }: CanadaCityPageProps) => {
+const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItems, extraSection, heading, heroImage, compactHero, countryName = "Canada", countrySlug = "canada", relatedCountry, hideOverview, hideNearby }: CanadaCityPageProps) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [menuFilters, setMenuFilters] = useState<string[]>([]);
   const [safetyFilters, setSafetyFilters] = useState<string[]>([]);
@@ -306,7 +307,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                   </div>
 
 
-                  {restaurant.nearby && restaurant.nearby.length > 0 && (
+                  {!hideNearby && restaurant.nearby && restaurant.nearby.length > 0 && (
                     <div className="mt-4">
                       <h4 className="font-semibold text-gray-900 mb-2">Nearby:</h4>
                       <ul className="space-y-1 text-gray-700">
