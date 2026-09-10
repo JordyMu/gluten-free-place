@@ -351,7 +351,6 @@ const GlutenFreeCurepipe = () => {
                         <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-gray-400" /><span>{restaurant.hours}</span></div>
                         {restaurant.phone && (<div className="flex items-center gap-2"><Phone className="w-4 h-4 text-gray-400" /><a href={`tel:${restaurant.phone}`} className="hover:text-purple-600">{restaurant.phone}</a></div>)}
                       </div>
-                      <p className="text-gray-700 mb-4">{restaurant.overview}</p>
                       <div className="mb-4">
                         <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
                         <div className="flex flex-wrap gap-2">{restaurant.menuHighlights.map((item, i) => (<Badge key={i} variant="secondary" className="text-sm">{item}</Badge>))}</div>

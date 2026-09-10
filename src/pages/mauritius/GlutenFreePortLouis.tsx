@@ -446,8 +446,6 @@ useEffect(() => {
                         )}
                       </div>
 
-                      <p className="text-gray-700 mb-4">{restaurant.overview}</p>
-
                       <div className="mb-4">
                         <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
                         <div className="flex flex-wrap gap-2">
