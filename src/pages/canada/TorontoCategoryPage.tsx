@@ -209,8 +209,6 @@ const TorontoCategoryPage = ({ category }: Props) => {
                       {getMenuTypeBadge(restaurant.menuType)}
                     </div>
 
-                    <p className="text-gray-700 mb-4">{restaurant.overview}</p>
-
                     {restaurant.menuHighlights?.length > 0 && (
                       <div className="mb-4">
                         <h4 className="font-semibold text-gray-900 mb-2">Menu Highlights</h4>
