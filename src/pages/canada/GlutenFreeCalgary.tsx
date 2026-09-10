@@ -36,6 +36,7 @@ const GlutenFreeCalgary = () => (
     restaurants={calgaryRestaurants}
     faqItems={faqItems}
     extraSection={<BestLink />}
+    hideOverview
   />
 );
 
