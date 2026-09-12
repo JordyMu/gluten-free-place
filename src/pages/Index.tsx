@@ -357,8 +357,7 @@ const Index = () => {
                       src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
                       alt={destination.name}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
-                       loading={index === 0 ? "eager" : "lazy"}
-                       fetchPriority={index === 0 ? "high" : "auto"}
+                       loading="lazy"
                       decoding="async"
                       width={400}
                       height={192}
