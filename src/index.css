@@ -101,3 +101,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Skip layout and paint work for homepage sections until they approach the viewport. */
+  .deferred-section {
+    content-visibility: auto;
+    contain-intrinsic-size: auto 720px;
+  }
+}

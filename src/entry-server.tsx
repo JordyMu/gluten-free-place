@@ -14,7 +14,10 @@ if (typeof globalThis.localStorage === 'undefined') {
 import ReactDOMServer from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 import { HelmetProvider } from 'react-helmet-async';
-import App from './App';
+// The server renders the complete route table for static generation. The
+// browser uses a smaller homepage shell and downloads this table only after
+// navigating away from the landing page.
+import App from './FullApp';
 
 export function render(url: string) {
   const helmetContext = {} as { helmet?: any };
