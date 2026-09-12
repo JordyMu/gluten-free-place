@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect, lazy, Suspense } from "react";
-import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, ShieldCheck, RefreshCw, Award, Facebook, Twitter, Instagram, Youtube, Linkedin } from "lucide-react";
+import { Search, MapPin, Star, Users, ArrowRight, Globe, Utensils, Shield, ShieldCheck, RefreshCw, Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
@@ -360,7 +360,8 @@ const Index = () => {
                       src={destination.isLocal ? destination.image : `https://images.unsplash.com/${destination.image}?auto=format&fit=crop&w=400&q=70`}
                       alt={destination.name}
                       className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300 cursor-pointer"
-                      loading="lazy"
+                       loading={index === 0 ? "eager" : "lazy"}
+                       fetchPriority={index === 0 ? "high" : "auto"}
                       decoding="async"
                       width={400}
                       height={192}
