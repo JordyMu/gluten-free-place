@@ -322,7 +322,7 @@ const Index = () => {
       </section>
 
       {/* Featured Destinations */}
-      <section id="destinations" className="py-16 bg-white/50">
+      <section id="destinations" className="deferred-section py-16 bg-white/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">
@@ -475,7 +475,7 @@ const Index = () => {
       </section>
 
       {/* Where Are You Located Section */}
-      <section id="location" className="py-16 bg-gradient-to-br from-orange-50 to-blue-50">
+      <section id="location" className="deferred-section py-16 bg-gradient-to-br from-orange-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto text-center">
             <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">
@@ -548,7 +548,7 @@ const Index = () => {
       </section>
 
       {/* Why We Are Different Section */}
-      <section className="py-16 bg-white">
+      <section className="deferred-section py-16 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-10 text-gray-900">
             Why GlutenFreePlace is different
@@ -618,7 +618,7 @@ const Index = () => {
 
 
       {/* Trust Section */}
-      <section id="about" className="py-16 bg-[#e6f1fb] text-[#0c447c]">
+      <section id="about" className="deferred-section py-16 bg-[#e6f1fb] text-[#0c447c]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-[#0c447c]/10 text-[#0c447c] border-[#0c447c]/20">
@@ -660,7 +660,7 @@ const Index = () => {
       </section>
 
       {/* Reviews Section */}
-      <section id="reviews" className="py-16 bg-white">
+      <section id="reviews" className="deferred-section py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">
@@ -702,7 +702,7 @@ const Index = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
+      <section className="deferred-section py-16 bg-gradient-to-r from-orange-600 to-red-600 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Explore?</h2>
           <p className="text-xl mb-8 opacity-90">Join our community and start discovering amazing gluten-free places today</p>
