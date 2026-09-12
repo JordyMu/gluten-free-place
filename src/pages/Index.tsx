@@ -9,7 +9,6 @@ import { SEOHead } from "@/components/SEOHead";
 // Lazy load heavy components not needed for initial paint
 const Card = lazy(() => import("@/components/ui/card").then(m => ({ default: m.Card })));
 const CardContent = lazy(() => import("@/components/ui/card").then(m => ({ default: m.CardContent })));
-const UserMenu = lazy(() => import("@/components/layout/UserMenu").then(m => ({ default: m.UserMenu })));
 const DropdownMenu = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenu })));
 const DropdownMenuContent = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuContent })));
 const DropdownMenuItem = lazy(() => import("@/components/ui/dropdown-menu").then(m => ({ default: m.DropdownMenuItem })));
@@ -243,9 +242,7 @@ const Index = () => {
             </Suspense>
             <Link to="#about" className="text-gray-700 hover:text-orange-600 transition-colors">About</Link>
             <Link to="#reviews" className="text-gray-700 hover:text-orange-600 transition-colors">Reviews</Link>
-            <Suspense fallback={null}>
-              <UserMenu />
-            </Suspense>
+            <Link to="/auth" className="text-gray-700 hover:text-orange-600 transition-colors">Sign in</Link>
           </div>
         </div>
       </header>
