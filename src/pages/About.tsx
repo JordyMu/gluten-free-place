@@ -95,7 +95,7 @@ const About = () => (
             <p>
               Have a restaurant to recommend, feedback, or a question? We'd love to hear from you. Reach us
               at{" "}
-              <a href="mailto:contact@glutenfreeplace.org" className="text-orange-600 hover:underline">contact@glutenfreeplace.org</a>{" "}
+              <a href="mailto:info@glutenfreeplace.org" className="text-orange-600 hover:underline">info@glutenfreeplace.org</a>{" "}
               or visit our <Link to="/contact" className="text-orange-600 hover:underline">contact page</Link>.
             </p>
           </section>

@@ -36,7 +36,7 @@ const Contact = () => (
             <Mail className="w-8 h-8 text-orange-600 mx-auto mb-3" />
             <h2 className="font-semibold text-gray-900 mb-1">Email</h2>
             <p className="text-sm text-gray-600">
-              <a href="mailto:contact@glutenfreeplace.org" className="text-orange-600 hover:underline">contact@glutenfreeplace.org</a>
+              <a href="mailto:info@glutenfreeplace.org" className="text-orange-600 hover:underline">info@glutenfreeplace.org</a>
             </p>
           </div>
           <div className="bg-white rounded-lg shadow-sm border p-6 text-center">
@@ -55,10 +55,10 @@ const Contact = () => (
           <h2 className="text-2xl font-semibold text-gray-900 mb-4">Send Us a Message</h2>
           <p className="text-gray-600 mb-6">
             Have a gluten-free restaurant to recommend or a correction to suggest? Email us directly at{" "}
-            <a href="mailto:contact@glutenfreeplace.org" className="text-orange-600 hover:underline">contact@glutenfreeplace.org</a>{" "}
+            <a href="mailto:info@glutenfreeplace.org" className="text-orange-600 hover:underline">info@glutenfreeplace.org</a>{" "}
             and we'll get back to you as soon as possible.
           </p>
-          <a href="mailto:contact@glutenfreeplace.org">
+          <a href="mailto:info@glutenfreeplace.org">
             <button className="bg-gradient-to-r from-orange-600 to-red-600 text-white font-semibold px-6 py-3 rounded-lg hover:from-orange-700 hover:to-red-700 transition-colors">
               Email Us
             </button>
