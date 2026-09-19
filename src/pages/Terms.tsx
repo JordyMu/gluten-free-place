@@ -116,7 +116,7 @@ const Terms = () => (
             <h2 className="text-2xl font-semibold text-gray-900 mb-3">11. Contact</h2>
             <p>
               Questions about these Terms? Contact us at{" "}
-              <a href="mailto:contact@glutenfreeplace.org" className="text-orange-600 hover:underline">contact@glutenfreeplace.org</a>.
+              <a href="mailto:info@glutenfreeplace.org" className="text-orange-600 hover:underline">info@glutenfreeplace.org</a>.
             </p>
           </section>
         </div>
