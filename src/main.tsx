@@ -18,13 +18,13 @@ const app = (
   </HelmetProvider>
 );
 
-// The pre-rendered HTML remains useful to crawlers, but some browser-only
-// providers produce different initial markup during SSR. Re-rendering avoids
-// unrecoverable hydration mismatches on static hosting.
+// The pre-rendered HTML stays on screen (and counts for FCP/LCP) until React is
+// ready: createRoot replaces the container content itself at mount time, so we
+// must NOT clear it up-front. Re-rendering (instead of hydrating) still avoids
+// hydration mismatches from browser-only providers.
 const prerendered = root.innerHTML;
 
 try {
-  root.innerHTML = '';
   createRoot(root).render(app);
 } catch (error) {
   // Never leave a blank white page on static hosting: restore the pre-rendered
