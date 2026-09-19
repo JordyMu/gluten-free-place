@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Keep third-party work out of the critical rendering window. -->
+    <!-- AdSense verification: must be present in the initial HTML so Google's crawler can find it. -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3017224444327111" crossorigin="anonymous"></script>
+    <!-- Keep analytics out of the critical rendering window. -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -11,17 +13,6 @@
       function loadThirdParty() {
         if (thirdPartyLoaded) return;
         thirdPartyLoaded = true;
-
-        var adsPreconnect = document.createElement('link');
-        adsPreconnect.rel = 'preconnect';
-        adsPreconnect.href = 'https://pagead2.googlesyndication.com';
-        document.head.appendChild(adsPreconnect);
-
-        var ads = document.createElement('script');
-        ads.async = true;
-        ads.crossOrigin = 'anonymous';
-        ads.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3017224444327111';
-        document.head.appendChild(ads);
 
         var ga = document.createElement('script');
         ga.async = true;
