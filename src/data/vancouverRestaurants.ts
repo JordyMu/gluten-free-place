@@ -13,7 +13,71 @@ export const vancouverRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/The+Gluten+Free+Epicurean+633+E+15th+Ave+Vancouver",
     specialty: "100% dedicated gluten-free bakery",
     overview: "The Gluten Free Epicurean is Vancouver's premier dedicated gluten-free bakery, producing artisan breads, pastries, and savoury items in a completely wheat-free facility.",
-    menuHighlights: ["🥖 GF Artisan Bread", "🥐 GF Pastries", "🥧 Savoury Pies", "🍰 Celebration Cakes"],
+    menuHighlights: ["🥐 Croissants & Scones", "🍕 GF Pizza by the Slice", "🥪 Breakfast Sandwiches", "🍩 Baked Donuts", "🥤 Fruit Smoothies", "🥧 Take & Bake Favourites"],
+    fullMenu: [
+      {
+        category: "Bakery & Sweet Treats",
+        note: "Selected highlights from the supplied menus; flavours rotate daily. Confirm current prices and availability with the bakery.",
+        items: [
+          { name: "Croissants & Danish", description: "Sweet Danish and savoury croissants, including ham & cheese" },
+          { name: "Vegan Scones & Muffins", description: "Rotating flavours such as apple cinnamon, blueberry ginger and lemon poppyseed" },
+          { name: "Baked Donuts", description: "Daily flavours such as chai coconut and orange poppyseed; ask about vegan and dairy-free options" },
+          { name: "Cookies, Bars & Brownies", description: "Vegan brownies, cookies and bars; nut-free options available on enquiry" },
+          { name: "Vegan Cinnamon & Sticky Buns", description: "Sweet bakery favourites" },
+        ],
+      },
+      {
+        category: "Savoury Bakes & Breakfast",
+        items: [
+          { name: "Sausage Roll & Veggie Roll", description: "Nut-free savoury rolls" },
+          { name: "Quiche", description: "Dairy-free and nut-free; rotating fillings including spinach, mushroom, artichoke and sundried tomato" },
+          { name: "Breakfast Sandwich", description: "Dairy-free and nut-free options listed on the menu" },
+          { name: "Vegan Pizza Bun", description: "A savoury vegan bake with nut-free options" },
+        ],
+      },
+      {
+        category: "Pizza by the Slice",
+        note: "Toppings change with the daily menu.",
+        items: [
+          { name: "Pepperoni Pizza", description: "Tomato sauce, pepperoni and mozzarella" },
+          { name: "Veggie Pizza", description: "Tomato sauce, red onion, mushroom, olive, artichoke and mozzarella" },
+          { name: "Vegan Pizza", description: "Tomato sauce, vegan pepperoni, red onion, pineapple and vegan mozzarella" },
+          { name: "Dairy-Free Meat Pizza", description: "Meat toppings with dairy-free mozzarella; daily combinations vary" },
+        ],
+      },
+      {
+        category: "Sandwiches",
+        note: "Daily fillings vary; some menus list sandwiches with chips or carrots.",
+        items: [
+          { name: "Turkey & Bacon Sandwich", description: "Apple chutney, greens and mayo" },
+          { name: "Chicken & Pesto Sandwich", description: "Sliced chicken, pesto, cheese and red onion" },
+          { name: "Vegan BLT", description: "Coconut bacon, tomato, greens and vegan mayo" },
+          { name: "Vegan Curry Tofu Sandwich", description: "Apple chutney, greens and vegan mayo; listed as soy-free mayo" },
+        ],
+      },
+      {
+        category: "Smoothies",
+        items: [
+          { name: "Golden Milkshake", description: "Banana, turmeric, pepper, vanilla, ginger, cinnamon and milk or coconut milk" },
+          { name: "Nut Butter Cup", description: "Banana, nut butter, cocoa, dates, milk or coconut milk and chaga" },
+          { name: "Berry Blast", description: "Blueberries, cranberries, cherries, raspberries, orange juice and banana" },
+          { name: "Hulk", description: "Spinach, hemp hearts, banana, maca, dates, milk or coconut milk and vanilla" },
+          { name: "Mahalo", description: "Banana, mango, pineapple, orange juice and turmeric" },
+        ],
+      },
+      {
+        category: "Freezer & Take + Bake",
+        note: "Prices shown are CAD from the supplied freezer menu and may change.",
+        items: [
+          { name: "Take & Bake Scones", price: "CA$25.00" },
+          { name: "Savoury Pie", price: "CA$17.50" },
+          { name: "Pizza Dough", price: "CA$13.00", description: "Vegan and nut-free" },
+          { name: "Sourdough Waffles", price: "CA$13.00", description: "Dairy-free" },
+          { name: "Cookie Dough", price: "CA$15.00" },
+          { name: "4-inch Cheesecake", price: "CA$18.50", description: "Vegan and refined-sugar-free" },
+        ],
+      },
+    ],
     proTip: "Their sourdough is legendary — arrive early!",
     icon: "🥖",
     featured: true,
