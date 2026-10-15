@@ -27,6 +27,7 @@ interface RestaurantDetailPageProps {
     menuHighlights?: string[];
     proTip: string;
     whyPeopleLoveIt?: string[];
+    whyTitle?: string;
     icon: string;
     celiacSafe: "dedicated-facility" | "protocols-in-place";
     menuType: "fully-gluten-free" | "mixed-menu";
@@ -418,7 +419,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
             {restaurant.whyPeopleLoveIt && restaurant.whyPeopleLoveIt.length > 0 && (
               <Card className="border-l-4 border-l-green-500">
                 <CardHeader>
-                  <CardTitle>Why people love it</CardTitle>
+                  <CardTitle>{restaurant.whyTitle ?? "Why people love it"}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-2">
