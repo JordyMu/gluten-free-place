@@ -100,6 +100,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cinnamon Roll and GF Double Chocolate Cookie" },
     ],
     celiacSafetyScore: 10,
+    services: {
+      dineIn: { available: false, note: "No seating area — this is a grab-and-go bakery" },
+      takeaway: { available: true, note: "Order at the counter · most items ready to go · dedicated GF packaging used" },
+      delivery: { available: true, note: "Available via local delivery partners · items packed separately to prevent cross-contamination" },
+      accessible: true,
+      gfPackaging: true,
+    },
     whyTitle: "Why people love us",
     whyPeopleLoveIt: [
       "100% gluten-free bakery",
