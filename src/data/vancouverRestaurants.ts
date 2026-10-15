@@ -100,6 +100,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cinnamon Roll and GF Double Chocolate Cookie" },
     ],
     celiacSafetyScore: 10,
+    whyTitle: "Why people love us",
+    whyPeopleLoveIt: [
+      "100% gluten-free bakery",
+      "Freshly baked donuts, breads, and pastries",
+      "Wide variety of sweet and savoury treats",
+      "Vegan and dairy-free options available",
+    ],
   },
   {
     name: "Saan Saan Cafe and Restaurant",

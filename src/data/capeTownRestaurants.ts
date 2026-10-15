@@ -38,6 +38,7 @@ export interface Restaurant {
   staffKnowledgeScore?: number;
   celiacSafetyScore?: number; // 1-10 score for "Is this place safe for celiac?"
   whyPeopleLoveIt?: string[];
+  whyTitle?: string;
   nearby?: { label: string; name: string; href?: string }[];
   temporarilyClosed?: boolean;
   services?: {
