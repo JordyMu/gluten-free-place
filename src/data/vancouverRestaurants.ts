@@ -247,6 +247,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/saan-saan-cafe-7.webp", caption: "Crab Cakes on GF Bread" },
       { url: "/images/vancouver/saan-saan-cafe-8.webp", caption: "Filipino Coffee" },
     ],
+    services: {
+      dineIn: { available: true, note: "Table service available · tell your server you need gluten-free and they will check the dish for you" },
+      takeaway: { available: true, note: "Order at the counter or by phone · dishes packed separately to limit cross-contact" },
+      delivery: { available: true, note: "Available through local delivery apps · order the rice-based dishes for the safest option" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
   {
     name: "Innocent Ice Cream Parlour",
