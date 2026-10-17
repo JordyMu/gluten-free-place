@@ -254,6 +254,14 @@ export const vancouverRestaurants: Restaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "100% gluten-free Hong Kong-style comfort food",
+      "Delicious curry puffs, crispy chicken wings, and prawn toast",
+      "Unique black sesame caramel and pineapple coconut cookies",
+      "Popular Hong Kong-style milk tea and specialty drinks",
+      "Friendly service and a cozy, welcoming atmosphere",
+      "Creative Cantonese-inspired dishes",
+    ],
   },
   {
     name: "Innocent Ice Cream Parlour",
