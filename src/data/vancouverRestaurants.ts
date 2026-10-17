@@ -123,11 +123,109 @@ export const vancouverRestaurants: Restaurant[] = [
     country: "Canada",
     hours: "Mon–Sun: 11:00AM – 9:00PM",
     phone: "+1 604-555-0002",
-    website: "",
+    website: "https://www.saansaan.ca/menu",
     directionsUrl: "https://www.google.com/maps/search/Saan+Saan+Cafe+227+Main+St+Vancouver",
     specialty: "Filipino cuisine with GF options",
     overview: "Saan Saan serves authentic Filipino cuisine with many naturally rice-based gluten-free dishes. A warm, welcoming spot in Gastown.",
-    menuHighlights: ["🍚 Rice Dishes", "🍗 Adobo (GF)", "🥘 Sinigang", "🍛 Kare-Kare"],
+    menuHighlights: ["🍗 Ginger Scallion Chicken Wings", "🍜 Satay Beef Noodle Soup", "🍚 XO Prawn Fried Rice", "🥐 Char Siu BBQ Pork Puffs", "🍪 Black Sesame Caramel Cookies", "☕ Hong Kong Milk Tea"],
+    fullMenu: [
+      {
+        category: "Snacks",
+        note: "Available 10:30am–5:30pm Friday–Sunday; 10:30am–3:30pm Thursday. Prices in CAD from the supplied menu; confirm current prices and availability with the cafe.",
+        items: [
+          { name: "Ginger Scallion Fried Chicken Wings", price: "CA$15.00" },
+          { name: "House Made Curry Fish Balls", price: "CA$17.00" },
+          { name: "Prawn Toast", price: "CA$17.00" },
+          { name: "Squash Salad", price: "CA$11.00", description: "Marked (v) on the menu" },
+          { name: "Bean Curd Noodle Salad", price: "CA$14.00", description: "Marked (v) on the menu" },
+        ],
+      },
+      {
+        category: "Features",
+        note: "Available 10:30am–5:30pm Friday–Sunday; 10:30am–3:30pm Thursday.",
+        items: [
+          { name: "Soy Sauce Chicken", price: "CA$18.00" },
+          { name: "Lemon Ginger Chicken", price: "CA$18.00" },
+          { name: "Satay Beef Noodle Soup", price: "CA$24.00" },
+          { name: "Sweet & Sour Pork", price: "CA$22.00" },
+        ],
+      },
+      {
+        category: "Wok Fried Rice",
+        note: "Available 10:30am–5:30pm Friday–Sunday; 10:30am–3:30pm Thursday.",
+        items: [
+          { name: "Mushroom and Egg", price: "CA$20.00" },
+          { name: "Saan Saan XO Prawn", price: "CA$26.00" },
+          { name: "Singaporean Chicken", price: "CA$20.00" },
+        ],
+      },
+      {
+        category: "Cookies & Mochi Brownies",
+        items: [
+          { name: "Black Sesame Caramel Cookie", price: "CA$5.25" },
+          { name: "Pineapple Coconut Cookie", price: "CA$5.25" },
+          { name: "Ginger Milk Burnt Sugar Cookie", price: "CA$5.25" },
+          { name: "HK Milk Tea Mochi Brownie", price: "CA$4.25" },
+          { name: "Yeen Yeung Mochi Brownie", price: "CA$4.25", description: "Coffee + tea" },
+        ],
+      },
+      {
+        category: "Puffs",
+        items: [
+          { name: "Char Siu BBQ Pork", price: "CA$6.75" },
+          { name: "Curry Beef", price: "CA$6.75" },
+          { name: "Mushroom", price: "CA$6.50", description: "Marked (v) on the menu" },
+          { name: "Apple", price: "CA$5.50", description: "Marked (v) on the menu" },
+        ],
+      },
+      {
+        category: "Coffee",
+        items: [
+          { name: "Espresso", price: "CA$3.50" },
+          { name: "Americano", price: "CA$3.75" },
+          { name: "Flat White", price: "CA$4.50", description: "6oz" },
+          { name: "Latte", price: "CA$5.00", description: "8oz" },
+          { name: "Matcha Latte", price: "CA$7.50", description: "8oz" },
+        ],
+      },
+      {
+        category: "Hong Kong-Style Hot Drinks",
+        note: "8oz servings.",
+        items: [
+          { name: "Hong Kong Milk Tea", price: "CA$4.75" },
+          { name: "Yeen Yeung", price: "CA$5.00", description: "Coffee, tea and evaporated milk" },
+          { name: "Lemon Tea", price: "CA$4.50" },
+        ],
+      },
+      {
+        category: "Seasonal Drinks",
+        items: [
+          { name: "Iced Strawberry HK Milk Tea", price: "CA$7.00" },
+          { name: "Iced Strawberry Matcha Latte", price: "CA$8.50", description: "With oat milk" },
+        ],
+      },
+      {
+        category: "Cold Drinks",
+        note: "12oz servings.",
+        items: [
+          { name: "Iced Hong Kong Milk Tea", price: "CA$5.75" },
+          { name: "Iced Yeen Yeung", price: "CA$6.00" },
+          { name: "Iced Lemon Tea", price: "CA$5.25" },
+          { name: "Lemon Coke", price: "CA$4.75" },
+          { name: "Ribena Lime Soda", price: "CA$5.75" },
+        ],
+      },
+      {
+        category: "Cocktails & Beer",
+        items: [
+          { name: "Yeen Yeung Martini", price: "CA$15.00", description: "2oz" },
+          { name: "Westminster Avenue", price: "CA$16.00", description: "2oz" },
+          { name: "Salted Lime Sprite", price: "CA$14.00", description: "1.5oz" },
+          { name: "Grey Fox Brewing Quick Witted Belgian Wit", price: "CA$7.25", description: "355ml" },
+          { name: "Grey Fox Brewing Agile IPA", price: "CA$7.25", description: "355ml" },
+        ],
+      },
+    ],
     proTip: "Many Filipino dishes are naturally rice-based and GF",
     icon: "🍚",
     featured: false,
