@@ -648,6 +648,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/innocent-ice-cream-7.webp", caption: "Chocolate Chip Cookie Ice Cream Sandwich" },
       { url: "/images/vancouver/innocent-ice-cream-8.webp", caption: "Mango Sorbet Cup" },
     ],
+    services: {
+      dineIn: { available: true, note: "Counter seating available · ask staff to confirm the flavour you choose is served GF" },
+      takeaway: { available: true, note: "Order at the counter · cups and sandwiches packed separately to limit cross-contact" },
+      delivery: { available: true, note: "Available through local delivery apps · gelato packs travel best in an insulated bag" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
   {
     name: "Lemonade Gluten Free Bakery",
