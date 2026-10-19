@@ -277,6 +277,357 @@ export const vancouverRestaurants: Restaurant[] = [
     overview: "Innocent Ice Cream Parlour serves delicious gluten-free and vegan ice cream in Vancouver's East Hastings area. All flavours are naturally celiac-safe.",
     menuHighlights: ["🍦 GF Ice Cream", "🍨 Sundaes", "🥤 Milkshakes (GF)", "🍪 GF Cones"],
     proTip: "All flavours are GF — cones too!",
+    fullMenu: [
+      {
+        "category": "Ice Cream Sandwiches",
+        "note": "Prices in CAD from the supplied menu; confirm current prices and availability with the parlour.",
+        "items": [
+          {
+            "name": "POMME-POMME (plant-based)",
+            "price": "CA$9.95",
+            "description": "Spiced Oatmeal Cookie & Caramel Apple Crisp Nice Cream"
+          },
+          {
+            "name": "PUMPKIN PIE (plant-based)",
+            "price": "CA$9.95",
+            "description": "Snickerdoodle Cookie & Pumpkin Pie Nice Cream"
+          },
+          {
+            "name": "DOUBLE DARK (plant-based)",
+            "price": "CA$9.95",
+            "description": "Double Chocolate Cookies & Chocolate Nice Cream"
+          },
+          {
+            "name": "CLASSIC (plant-based)",
+            "price": "CA$9.95",
+            "description": "Chocolate Chip Cookies & Vanilla Nice Cream"
+          },
+          {
+            "name": "SHORT CAKE (plant-based)",
+            "price": "CA$9.95",
+            "description": "Vanilla Sugar Cookies & Strawberry Shortcake Nice Cream"
+          },
+          {
+            "name": "MO-MINT (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Double Chocolate Cookies & Mint Chip Ice Cream"
+          },
+          {
+            "name": "BUTTERCUP (plant-based)",
+            "price": "CA$9.95",
+            "description": "Peanut Butter Cookies & Chocolate PB Fudge Nice Cream"
+          },
+          {
+            "name": "CANADIAN (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Oatmeal Cookies & Maple Walnut Ice Cream"
+          },
+          {
+            "name": "CHERRY BOMB (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Double Chocolate Cookies & Wild Cherry Ice Cream"
+          },
+          {
+            "name": "CLASSIC (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Chocolate Chip Cookies & Vanilla Bean Ice Cream"
+          },
+          {
+            "name": "DOUBLE DARK (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Double Chocolate Cookies & Chocolate Ice Cream"
+          },
+          {
+            "name": "ELECTRIC (plant-based)",
+            "price": "CA$9.95",
+            "description": "Chocolate Chip Cookies & Cappuccino Nice Cream"
+          },
+          {
+            "name": "ELVIS (plant-based)",
+            "price": "CA$9.95",
+            "description": "Peanut Butter Cookies & Banana Pudding Nice Cream"
+          },
+          {
+            "name": "FAIRYTALE (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Vanilla Sugar Cookies & Raspberry White Chocolate Ice Cream"
+          },
+          {
+            "name": "KONG (plant-based)",
+            "price": "CA$9.95",
+            "description": "Double Chocolate Cookies & Banana Pudding Nice Cream"
+          },
+          {
+            "name": "LIL TART (plant-based)",
+            "price": "CA$9.95",
+            "description": "Vanilla Sugar Cookies & Lemon Meringue Nice Cream"
+          },
+          {
+            "name": "SWEET TEA (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Vanilla Sugar Cookies & Matcha Ice Cream"
+          },
+          {
+            "name": "SALTY PEANUT (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Peanut Butter Cookies & Salted Caramel Ice Cream"
+          },
+          {
+            "name": "OLD FASHIONED (dairy-based)",
+            "price": "CA$9.95",
+            "description": "Oatmeal Cookies & Vanilla Bean Ice Cream"
+          }
+        ]
+      },
+      {
+        "category": "Mini Ice Cream Sandwich Boxes",
+        "items": [
+          {
+            "name": "Party Box of 20 Minis",
+            "price": "CA$88.35",
+            "description": "Mini ice cream sandwiches boxed up for your party — see Ice Cream Sandwiches for flavours"
+          },
+          {
+            "name": "Party Box of 6 Minis",
+            "price": "CA$26.25",
+            "description": "Mini ice cream sandwiches boxed up for your party — see Ice Cream Sandwiches for flavours"
+          }
+        ]
+      },
+      {
+        "category": "Ice Cream Cake",
+        "items": [
+          {
+            "name": "Bûche de Easter",
+            "price": "CA$45.95",
+            "description": "Lemon custard and vanilla ice cream with a sugar cookie crumble filling. Serves 8–10. Dairy-based, plant option available on request"
+          }
+        ]
+      },
+      {
+        "category": "Pints",
+        "items": [
+          {
+            "name": "Single Flavour Ice Cream Pint",
+            "price": "CA$16.95",
+            "description": "Pick any ONE flavour for your pint"
+          },
+          {
+            "name": "AFTER EIGHT (dairy-based)",
+            "price": "CA$18.95",
+            "description": "Mint chip & chocolate fudge ice cream with double chocolate cookies & dark chocolate fudge"
+          },
+          {
+            "name": "PUMPKIN SPICE (plant-based)",
+            "price": "CA$18.95",
+            "description": "Pumpkin pie ice cream and vanilla ice cream with snickerdoodle cookies & vanilla fudge"
+          },
+          {
+            "name": "BANANARAMA (dairy-based)",
+            "price": "CA$18.95",
+            "description": "Banana & chocolate fudge ice cream with chocolate chip cookies & dark chocolate fudge"
+          },
+          {
+            "name": "LEMON PIE (plant-based)",
+            "price": "CA$18.95",
+            "description": "Lemon meringue (coconut-based) and vanilla (chickpea-based) nice cream with vanilla sugar cookies & vegan white chocolate fudge"
+          },
+          {
+            "name": "BLACK FOREST (dairy-based)",
+            "price": "CA$18.95",
+            "description": "Wild cherry & vanilla ice cream with double chocolate cookies & dark chocolate fudge"
+          },
+          {
+            "name": "SHORTCAKE SUPREME (plant-based)",
+            "price": "CA$18.95",
+            "description": "Strawberry shortcake (coconut-based) & vanilla (chickpea-based) nice cream with vanilla sugar cookies & vegan white chocolate fudge"
+          },
+          {
+            "name": "COCOPUFF (plant-based)",
+            "price": "CA$18.95",
+            "description": "Chocolate peanut butter (coconut-based) and chocolate (chickpea-based) with peanut butter cookies & dark chocolate fudge"
+          },
+          {
+            "name": "ICED MOCHA (plant-based)",
+            "price": "CA$18.95",
+            "description": "Cappuccino (coconut-based) and chocolate (chickpea-based) nice cream with chocolate chip cookies & dark chocolate fudge"
+          },
+          {
+            "name": "DARK FAIRYTALE (dairy-based)",
+            "price": "CA$18.95",
+            "description": "Raspberry white chocolate & chocolate fudge ice cream with vanilla sugar cookies & white chocolate fudge"
+          }
+        ]
+      },
+      {
+        "category": "Take Home Kits",
+        "items": [
+          {
+            "name": "Ice Cream Cone Kit",
+            "price": "CA$22.95",
+            "description": "A pint of your favourite ice cream, 5 gluten-free waffle cones and sprinkles. Pre-order only — not available to order in store"
+          },
+          {
+            "name": "DIY Ice Cream Sandwich Kit",
+            "price": "CA$32.95",
+            "description": "Cookie dough for 10 cookies, a pint of your favourite ice cream, sandwich wrappers and stickers"
+          },
+          {
+            "name": "Take and Bake Cookies",
+            "price": "CA$19.95",
+            "description": "Pre-scooped, ready-to-bake cookie dough for 10 cookies — gluten-free and plant-based"
+          }
+        ]
+      },
+      {
+        "category": "Gift Cards",
+        "items": [
+          {
+            "name": "Treat Card: Ice Cream Sandwich",
+            "price": "CA$9.95 – CA$99.95",
+            "description": "One card, one treat: each card gets you a free regular-sized ice cream sandwich"
+          },
+          {
+            "name": "Treat Card: Kids Scoop Waffle Cone",
+            "price": "CA$6.00 – CA$60.00",
+            "description": "One card, one treat: each card gets you a free kids ice cream cone"
+          },
+          {
+            "name": "Treat Card: Single Scoop Waffle Cone",
+            "price": "CA$7.75 – CA$77.50",
+            "description": "One card, one treat: each card gets you a single scoop waffle cone"
+          },
+          {
+            "name": "Gift Cards",
+            "price": "CA$10.00 – CA$50.00",
+            "description": "Load up for endless ice cream possibilities. Pickup only — use the contact page to have them mailed"
+          }
+        ]
+      },
+      {
+        "category": "In-Store Menu: Plant-Based",
+        "note": "Seasonal and pop-up flavours rotate.",
+        "items": [
+          {
+            "name": "Strawberry Shortcake"
+          },
+          {
+            "name": "Chocolate Peanut Butter"
+          },
+          {
+            "name": "Blueberry Sorbet (summer seasonal)"
+          },
+          {
+            "name": "Cappuccino"
+          },
+          {
+            "name": "Raspberry Sorbet (summer seasonal)"
+          },
+          {
+            "name": "Caramel Apple Crisp (fall seasonal)"
+          },
+          {
+            "name": "Chocolate (chickpea-based)"
+          },
+          {
+            "name": "Vanilla (chickpea-based)"
+          },
+          {
+            "name": "S’mores (summer seasonal)"
+          },
+          {
+            "name": "Mango Sorbet (summer seasonal)"
+          },
+          {
+            "name": "Lemon Meringue"
+          },
+          {
+            "name": "Chocolate Candy Cane (winter seasonal)"
+          },
+          {
+            "name": "Cookie Monster (summer seasonal)"
+          },
+          {
+            "name": "Apple Cider (winter seasonal)"
+          },
+          {
+            "name": "Pumpkin Pie (fall seasonal)"
+          },
+          {
+            "name": "Cookies and Cream (surprise popup)"
+          },
+          {
+            "name": "Hot Cocoa (winter seasonal)"
+          },
+          {
+            "name": "Cookie Dough (surprise popup)"
+          },
+          {
+            "name": "Banana Pudding"
+          }
+        ]
+      },
+      {
+        "category": "In-Store Menu: Dairy-Based",
+        "items": [
+          {
+            "name": "Vanilla Bean (contains egg)"
+          },
+          {
+            "name": "Matcha"
+          },
+          {
+            "name": "Chocolate Fudge"
+          },
+          {
+            "name": "Mint Chip"
+          },
+          {
+            "name": "Maple Walnut"
+          },
+          {
+            "name": "Raspberry White Chocolate"
+          },
+          {
+            "name": "Salted Caramel"
+          },
+          {
+            "name": "Creamsicle (summer seasonal)"
+          },
+          {
+            "name": "Wild Cherry"
+          },
+          {
+            "name": "Mini Egg (spring seasonal)"
+          },
+          {
+            "name": "Lemon Custard (summer seasonal)"
+          },
+          {
+            "name": "Hazelnut (winter seasonal)"
+          }
+        ]
+      },
+      {
+        "category": "Drinks",
+        "items": [
+          {
+            "name": "Soda Floats",
+            "description": "Cream Soda, Root Beer, Orange Cream"
+          },
+          {
+            "name": "Affogato"
+          },
+          {
+            "name": "Milkshakes"
+          },
+          {
+            "name": "Kombucha Floats",
+            "description": "Orange Dreamsicle, Raspberry Mint, Blackberry Rosemary"
+          }
+        ]
+      }
+    ],
     icon: "🍦",
     featured: false,
     cuisineTypes: ["Desserts", "Ice Cream", "Vegan"],
