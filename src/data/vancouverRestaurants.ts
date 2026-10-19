@@ -862,6 +862,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/lemonade-gf-bakery-7.webp", caption: "GF Blackberry Galette" },
       { url: "/images/vancouver/lemonade-gf-bakery-8.webp", caption: "GF Chocolate Mousse Cakes" },
     ],
+    services: {
+      dineIn: { available: false, note: "No seating area — orders are collected at the counter" },
+      takeaway: { available: true, note: "Order at the counter · breads, cakes and pastries packed to go · dedicated GF packaging used" },
+      delivery: { available: true, note: "Available via local delivery partners · baked goods boxed separately to prevent cross-contact" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
   {
     name: "Iki Japanese Restaurant",
