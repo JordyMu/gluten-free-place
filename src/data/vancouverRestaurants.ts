@@ -869,6 +869,14 @@ export const vancouverRestaurants: Restaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "Dedicated Safe Environment",
+      "Texture and Taste",
+      "Fresh, Hand-Crafted Baking",
+      "Crowd-Favorite Menu Items",
+      "Inclusive Dietary Options",
+      "Charming Community Vibe",
+    ],
   },
   {
     name: "Iki Japanese Restaurant",
