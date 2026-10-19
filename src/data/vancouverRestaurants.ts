@@ -655,6 +655,14 @@ export const vancouverRestaurants: Restaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "100% Gluten-Free Safety",
+      "House-Made Gluten-Free Cookies",
+      "Vegan and Plant-Based Options",
+      "Creative Flavor Combinations",
+      "Aesthetic and Vibe",
+      "A great place to enjoy a sweet treat with friends and family",
+    ],
   },
   {
     name: "Lemonade Gluten Free Bakery",
