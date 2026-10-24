@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SEOHead } from "@/components/SEOHead";
-import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine } from "lucide-react";
+import { MapPin, Star, ArrowLeft, Phone, Clock, Globe, CheckCircle, Navigation, Shield, Camera, ChefHat, FileImage, Users, ShieldCheck, ScanLine, Croissant, Coffee, ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -55,6 +55,7 @@ interface RestaurantDetailPageProps {
       accessible?: boolean;
       gfPackaging?: boolean;
     };
+    nearby?: { label: string; name: string; address?: string; href?: string }[];
   };
   backLink: string;
   backLabel: string;
@@ -590,30 +591,98 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
             </div>
           )}
 
-          {/* Menu Scanner - Coming Soon */}
-          <Card className="mb-8 border-l-4 border-l-indigo-500 bg-gradient-to-r from-indigo-50 to-white">
-            <CardHeader>
-              <CardTitle className="flex items-center gap-2">
-                <ScanLine className="w-5 h-5 text-indigo-600" />
-                Menu Scanner
-                <Badge className="ml-2 bg-indigo-100 text-indigo-700 border-indigo-300">Coming Soon</Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center gap-4">
-                <div className="bg-indigo-100 rounded-full p-4">
-                  <ScanLine className="w-8 h-8 text-indigo-600" />
+          {/* Nearby gluten-free spots */}
+          {restaurant.nearby && restaurant.nearby.length > 0 ? (
+            <Card className="mb-8 border-l-4 border-l-red-600 bg-gradient-to-r from-red-50 to-white">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <MapPin className="w-5 h-5 text-red-600" />
+                  Nearby
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {restaurant.nearby.map((item) => (
+                    <div
+                      key={`${restaurant.slug}-nearby-${item.label}`}
+                      className="flex flex-col sm:flex-row sm:items-center gap-3 rounded-lg border border-red-100 bg-white p-4"
+                    >
+                      <div className="bg-red-100 rounded-full p-3 flex-shrink-0 self-start">
+                        {item.label.toLowerCase().includes("bakery") ? (
+                          <Croissant className="w-6 h-6 text-red-600" />
+                        ) : item.label.toLowerCase().includes("coffee") ? (
+                          <Coffee className="w-6 h-6 text-red-600" />
+                        ) : (
+                          <ShoppingCart className="w-6 h-6 text-red-600" />
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-xs font-semibold uppercase tracking-wide text-red-700">{item.label}</p>
+                        <p className="font-semibold text-gray-900">{item.name}</p>
+                        {item.address && (
+                          <p className="text-gray-600 text-sm flex items-start gap-1 mt-1">
+                            <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                            {item.address}
+                          </p>
+                        )}
+                      </div>
+                      {item.href ? (
+                        <Link
+                          to={item.href}
+                          className="inline-flex items-center justify-center gap-1 h-9 px-4 rounded-md border border-red-600 text-red-700 text-sm font-medium hover:bg-red-50 self-start sm:self-auto flex-shrink-0"
+                        >
+                          View Listing
+                        </Link>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-red-600 text-red-700 hover:bg-red-50 self-start sm:self-auto flex-shrink-0"
+                          onClick={() =>
+                            window.open(
+                              `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                                `${item.name} ${item.address ?? item.name}`
+                              )}`,
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                        >
+                          <Navigation className="w-3.5 h-3.5 mr-1" />
+                          Directions
+                        </Button>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <div>
-                  <p className="text-gray-700 font-medium">Scan any menu to identify gluten-free options instantly</p>
-                  <p className="text-gray-500 text-sm mt-1">
-                    Upload a photo of a menu and our AI will highlight safe dishes, flag potential risks, 
-                    and help you order with confidence.
-                  </p>
+              </CardContent>
+            </Card>
+          ) : (
+            /* Menu Scanner - Coming Soon */
+            <Card className="mb-8 border-l-4 border-l-indigo-500 bg-gradient-to-r from-indigo-50 to-white">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ScanLine className="w-5 h-5 text-indigo-600" />
+                  Menu Scanner
+                  <Badge className="ml-2 bg-indigo-100 text-indigo-700 border-indigo-300">Coming Soon</Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex items-center gap-4">
+                  <div className="bg-indigo-100 rounded-full p-4">
+                    <ScanLine className="w-8 h-8 text-indigo-600" />
+                  </div>
+                  <div>
+                    <p className="text-gray-700 font-medium">Scan any menu to identify gluten-free options instantly</p>
+                    <p className="text-gray-500 text-sm mt-1">
+                      Upload a photo of a menu and our AI will highlight safe dishes, flag potential risks,
+                      and help you order with confidence.
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          )}
 
           {/* AI Summary */}
           <Card className="mb-8 border-l-4 border-l-purple-500">

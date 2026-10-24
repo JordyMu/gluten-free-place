@@ -890,6 +890,23 @@ export const vancouverRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/Iki+Japanese+Restaurant+2756+W+Broadway+Vancouver",
     specialty: "Japanese with GF sushi & rice dishes",
     overview: "Iki Japanese Restaurant on West Broadway offers excellent gluten-free sushi and rice-based dishes with tamari soy sauce options.",
+    nearby: [
+      {
+        label: "Bakery",
+        name: "Virtue Natural Bakery",
+        address: "2245 W Broadway #102, Vancouver, BC V6K 2E4",
+      },
+      {
+        label: "Gluten-Free Coffee Shop",
+        name: "Dose Espresso Bar",
+        address: "1517 W Broadway, Vancouver, BC V6J 5K9",
+      },
+      {
+        label: "Gluten-Free Grocery Store",
+        name: "IGA Vancouver (West Broadway)",
+        address: "2286 West Broadway, Vancouver, BC V6K 3L1",
+      },
+    ],
     menuHighlights: ["🍣 GF Sushi", "🍱 Bento Boxes", "🍚 Rice Bowls", "🥢 Sashimi"],
     fullMenu: [
       {
