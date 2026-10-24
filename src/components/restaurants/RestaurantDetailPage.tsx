@@ -626,23 +626,32 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                           </p>
                         )}
                       </div>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="border-red-600 text-red-700 hover:bg-red-50 self-start sm:self-auto flex-shrink-0"
-                        onClick={() =>
-                          window.open(
-                            `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
-                              `${item.name} ${item.address ?? item.name}`
-                            )}`,
-                            "_blank",
-                            "noopener,noreferrer"
-                          )
-                        }
-                      >
-                        <Navigation className="w-3.5 h-3.5 mr-1" />
-                        Directions
-                      </Button>
+                      {item.href ? (
+                        <Link
+                          to={item.href}
+                          className="inline-flex items-center justify-center gap-1 h-9 px-4 rounded-md border border-red-600 text-red-700 text-sm font-medium hover:bg-red-50 self-start sm:self-auto flex-shrink-0"
+                        >
+                          View Listing
+                        </Link>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          className="border-red-600 text-red-700 hover:bg-red-50 self-start sm:self-auto flex-shrink-0"
+                          onClick={() =>
+                            window.open(
+                              `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+                                `${item.name} ${item.address ?? item.name}`
+                              )}`,
+                              "_blank",
+                              "noopener,noreferrer"
+                            )
+                          }
+                        >
+                          <Navigation className="w-3.5 h-3.5 mr-1" />
+                          Directions
+                        </Button>
+                      )}
                     </div>
                   ))}
                 </div>
