@@ -982,7 +982,15 @@ export const vancouverRestaurants: Restaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "100% Dedicated Gluten-Free Kitchen",
+      "Hard-to-Find Fried Comfort Foods",
+      "\"Fool Your Friends\" Flavor & Freshness",
+      "Deep Allergen Care & Warm Service",
+      "Vegan & Vegetarian Inclusivity",
+    ],
   },
+
 
   {
     name: "Gluten Free Epicurean",
