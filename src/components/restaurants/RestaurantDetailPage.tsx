@@ -348,14 +348,18 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                     <p className="font-medium">{restaurant.address}</p>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 text-gray-400" />
-                  <p>{restaurant.hours}</p>
-                </div>
-                <div className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 text-gray-400" />
-                  <a href={`tel:${restaurant.phone}`} className="text-orange-600 hover:underline">{restaurant.phone}</a>
-                </div>
+                {restaurant.hours ? (
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-5 h-5 text-gray-400" />
+                    <p>{restaurant.hours}</p>
+                  </div>
+                ) : null}
+                {restaurant.phone ? (
+                  <div className="flex items-center gap-3">
+                    <Phone className="w-5 h-5 text-gray-400" />
+                    <a href={`tel:${restaurant.phone}`} className="text-orange-600 hover:underline">{restaurant.phone}</a>
+                  </div>
+                ) : null}
                 <div className="grid grid-cols-2 gap-3 mt-4">
                   <Button
                     className="w-full bg-red-700 hover:bg-red-800 text-white"
@@ -364,14 +368,25 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                     <Navigation className="w-4 h-4 mr-2" />
                     Get Directions
                   </Button>
-                  <Button
-                    variant="outline"
-                    className="w-full border-gray-300 hover:bg-gray-50"
-                    onClick={() => window.open(restaurant.website.startsWith('http') ? restaurant.website : `https://${restaurant.website}`, '_blank')}
-                  >
-                    <Globe className="w-4 h-4 mr-2" />
-                    Website
-                  </Button>
+                  {restaurant.website ? (
+                    <Button
+                      variant="outline"
+                      className="w-full border-gray-300 hover:bg-gray-50"
+                      onClick={() => window.open(restaurant.website.startsWith('http') ? restaurant.website : `https://${restaurant.website}`, '_blank')}
+                    >
+                      <Globe className="w-4 h-4 mr-2" />
+                      Website
+                    </Button>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      className="w-full border-gray-300 hover:bg-gray-50 opacity-50 cursor-not-allowed"
+                      disabled
+                    >
+                      <Globe className="w-4 h-4 mr-2" />
+                      Website
+                    </Button>
+                  )}
                 </div>
               </CardContent>
             </Card>
@@ -437,7 +452,7 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
 
 
 
-            {!(restaurant.fullMenu && restaurant.fullMenu.length > 0) && (
+            {!(restaurant.fullMenu && restaurant.fullMenu.length > 0) && restaurant.menuHighlights && restaurant.menuHighlights.length > 0 && (
             <Card className="border-l-4 border-l-orange-500">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
