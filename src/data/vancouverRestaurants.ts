@@ -975,7 +975,15 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/iki-japanese-7.webp", caption: "Ebi Sashimi with Cucumber and Lemon" },
       { url: "/images/vancouver/iki-japanese-8.webp", caption: "Seaweed Salad with Sesame" },
     ],
+    services: {
+      dineIn: { available: true, note: "Table service available · tell your server you need gluten-free and they will check the dish for you" },
+      takeaway: { available: true, note: "Order by phone or in person · GF items packed separately to limit cross-contact" },
+      delivery: { available: true, note: "Available through local delivery apps · rice-based dishes are the safest option" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
+
   {
     name: "Gluten Free Epicurean",
     slug: "gluten-free-epicurean-street-food",
