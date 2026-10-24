@@ -315,7 +315,7 @@ const CanadaCityPage = ({ cityName, citySlug, emoji, intro, restaurants, faqItem
                           <li key={`${restaurant.slug}-nearby-${item.label}`}>
                             <span className="font-bold">{item.label}:</span>{" "}
                             {item.href ? (
-                              <Link to={item.href} className="text-red-700 hover:underline">
+                              <Link to={item.href} className="text-red-700 underline hover:text-red-900">
                                 {item.name}
                               </Link>
                             ) : (

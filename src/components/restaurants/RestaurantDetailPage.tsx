@@ -618,7 +618,13 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
                       </div>
                       <div className="flex-1 min-w-0">
                         <p className="text-xs font-semibold uppercase tracking-wide text-red-700">{item.label}</p>
-                        <p className="font-semibold text-gray-900">{item.name}</p>
+                        {item.href ? (
+                          <Link to={item.href} className="font-semibold text-red-700 underline hover:text-red-900">
+                            {item.name}
+                          </Link>
+                        ) : (
+                          <p className="font-semibold text-gray-900">{item.name}</p>
+                        )}
                         {item.address && (
                           <p className="text-gray-600 text-sm flex items-start gap-1 mt-1">
                             <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
