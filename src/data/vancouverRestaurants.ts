@@ -2078,6 +2078,11 @@ export const vancouverRestaurants: Restaurant[] = [
     lng: -123.1689,
     venueType: "bakery",
     photos: [],
+    menuHighlights: [],
+    menuNotes: [],
+    menuPhotos: [],
+    fullMenu: [],
+    whyPeopleLoveIt: [],
   },
 ];
 
