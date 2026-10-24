@@ -895,6 +895,7 @@ export const vancouverRestaurants: Restaurant[] = [
         label: "Bakery",
         name: "Virtue Natural Bakery",
         address: "2245 W Broadway #102, Vancouver, BC V6K 2E4",
+        href: "/gluten-free/canada/vancouver/virtue-natural-bakery",
       },
       {
         label: "Gluten-Free Coffee Shop",
@@ -2052,6 +2053,17 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/lemonade-grocery-8.webp", caption: "GF Flour and Mixes" },
     ],
     celiacSafetyScore: 10,
+  },
+  {
+    name: "Virtue Natural Bakery",
+    slug: "virtue-natural-bakery",
+    address: "2245 W Broadway #102, Vancouver, BC V6K 2E4",
+    city: "Vancouver",
+    country: "Canada",
+    directionsUrl: "https://www.google.com/maps/search/Virtue+Natural+Bakery+2245+W+Broadway+Vancouver",
+    specialty: "Natural bakery with gluten-free options",
+    overview: "Virtue Natural Bakery is a Kitsilano neighbourhood bakery on West Broadway offering baked goods with gluten-free options. Call ahead to confirm which items are baked gluten-free and celiac-safe.",
+    venueType: "bakery",
   },
 ];
 
