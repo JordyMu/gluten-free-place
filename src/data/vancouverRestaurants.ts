@@ -1022,6 +1022,25 @@ export const vancouverRestaurants: Restaurant[] = [
     directionsUrl: "https://www.google.com/maps/search/Gluten+Free+Epicurean+633+E+15th+Ave+Vancouver",
     specialty: "100% gluten-free baked goods & snacks",
     overview: "Gluten Free Epicurean offers a dedicated gluten-free facility with artisan breads, pastries and savoury grab-and-go items perfect for street-style eating.",
+    nearby: [
+      {
+        label: "Bakery",
+        name: "Bakery by Jany",
+        address: "250 W 3rd Ave, Vancouver, BC",
+        href: "/gluten-free/canada/vancouver/bakery-by-jany",
+      },
+      {
+        label: "Gluten-Free Coffee Shop",
+        name: "Be Cafe",
+        address: "639 E 15th Ave, Vancouver, BC",
+      },
+      {
+        label: "Gluten-Free Grocery Store",
+        name: "Whole Foods Market",
+        address: "510 W 8th Ave, Vancouver, BC",
+        href: "/gluten-free/canada/vancouver/whole-foods-market-vancouver",
+      },
+    ],
     menuHighlights: ["🥖 GF Artisan Bread", "🥐 GF Pastries", "🥧 Savoury Pies", "🍪 GF Cookies"],
     fullMenu: [
       {
