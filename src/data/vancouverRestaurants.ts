@@ -1159,6 +1159,13 @@ export const vancouverRestaurants: Restaurant[] = [
       accessible: true,
       gfPackaging: true,
     },
+    whyPeopleLoveIt: [
+      "100% dedicated gluten-free bakery",
+      "Delicious selection of freshly baked gluten-free cakes",
+      "Homemade treats prepared with quality ingredients",
+      "Convenient takeaway and delivery options",
+      "A popular destination in Vancouver for delicious gluten-free",
+    ],
   },
   {
     name: "Virtuous Pie",
