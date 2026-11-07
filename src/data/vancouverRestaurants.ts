@@ -1152,6 +1152,13 @@ export const vancouverRestaurants: Restaurant[] = [
       { url: "/images/vancouver/gluten-free-epicurean-8.webp", caption: "Cinnamon Roll & Double Chocolate Cookies" },
     ],
     celiacSafetyScore: 10,
+    services: {
+      dineIn: { available: true, note: "Limited seating · ask staff to confirm your order is gluten-free before you sit" },
+      takeaway: { available: true, note: "Order at the counter · breads, cakes and pastries packed to go · dedicated GF packaging used" },
+      delivery: { available: true, note: "Available via local delivery partners · baked goods boxed separately to prevent cross-contact" },
+      accessible: true,
+      gfPackaging: true,
+    },
   },
   {
     name: "Virtuous Pie",
