@@ -12,10 +12,32 @@ serve(async (req) => {
   }
 
   try {
+    const authHeader = req.headers.get("Authorization");
+    if (!authHeader?.startsWith("Bearer ")) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+    const authClient = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_ANON_KEY")!, {
+      global: { headers: { Authorization: authHeader } },
+    });
+    const { data: { user }, error: authError } = await authClient.auth.getUser();
+    if (authError || !user) {
+      return new Response(JSON.stringify({ error: "Unauthorized" }), {
+        status: 401,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
     const { restaurantName, restaurantCity, restaurantCountry } = await req.json();
 
     // Validate input
-    if (!restaurantName || !restaurantCountry) {
+    if (
+      typeof restaurantName !== "string" || !restaurantName || restaurantName.length > 200 ||
+      typeof restaurantCountry !== "string" || !restaurantCountry || restaurantCountry.length > 100 ||
+      (restaurantCity != null && (typeof restaurantCity !== "string" || restaurantCity.length > 200))
+    ) {
       throw new Error("Missing required fields: restaurantName and restaurantCountry");
     }
 
@@ -102,7 +124,7 @@ Respond with only the summary sentence, focusing on whether reviewers found this
     console.error("Error generating review summary:", error);
     return new Response(
       JSON.stringify({ 
-        error: error instanceof Error ? error.message : "Unknown error",
+        error: "Unable to generate summary",
         summary: "This restaurant has been reviewed by our community. Check the reviews below to learn about their experience."
       }),
       {

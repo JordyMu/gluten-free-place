@@ -197,6 +197,11 @@ export const RestaurantDetailPage = ({ restaurant, backLink, backLabel }: Restau
 
   useEffect(() => {
     const fetchAISummary = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      if (!session) {
+        setAiSummary("Sign in to see an AI summary of community reviews.");
+        return;
+      }
       setIsLoadingSummary(true);
       try {
         const { data, error } = await supabase.functions.invoke('generate-review-summary', {

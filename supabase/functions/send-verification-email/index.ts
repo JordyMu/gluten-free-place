@@ -78,6 +78,13 @@ const handler = async (req: Request): Promise<Response> => {
       return jsonResponse({ error: "Invalid verification request" }, 400);
     }
 
+    // Only send to the caller's own confirmed account email, so this endpoint
+    // cannot be used to email arbitrary third-party inboxes.
+    const accountEmail = user.email?.trim().toLowerCase();
+    if (!accountEmail || !user.email_confirmed_at || ownerEmail !== accountEmail) {
+      return jsonResponse({ error: "Please use the confirmed email address of your signed-in account" }, 400);
+    }
+
     const randomValues = new Uint32Array(1);
     crypto.getRandomValues(randomValues);
     const verificationCode = (100000 + (randomValues[0] % 900000)).toString();

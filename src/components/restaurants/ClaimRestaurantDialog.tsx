@@ -58,7 +58,12 @@ export const ClaimRestaurantDialog = ({
       });
 
       if (response.error) {
-        throw new Error(response.error.message);
+        let message = response.error.message;
+        try {
+          const body = await (response.error as any).context?.json?.();
+          if (body?.error) message = body.error;
+        } catch { /* ignore */ }
+        throw new Error(message);
       }
 
       toast.success("Verification email sent! Check your inbox.");
