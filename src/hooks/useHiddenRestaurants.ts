@@ -19,7 +19,7 @@ export const useHiddenRestaurants = () => {
 
   const fetchHidden = useCallback(async () => {
     setLoading(true);
-    const { data } = await supabase.from("hidden_restaurants").select("*");
+    const { data } = await supabase.from("public_hidden_restaurants").select("*");
     setHidden(data || []);
     setLoading(false);
   }, []);

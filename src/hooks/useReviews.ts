@@ -46,7 +46,7 @@ export const useReviews = (restaurantName?: string, country?: string) => {
       if (reviewsData && reviewsData.length > 0) {
         const userIds = [...new Set(reviewsData.map(r => r.user_id))];
         const { data: profilesData } = await supabase
-          .from("profiles")
+          .from("public_profiles")
           .select("id, display_name, avatar_url")
           .in("id", userIds);
 

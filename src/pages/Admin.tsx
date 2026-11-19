@@ -20,7 +20,7 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { Trash2, EyeOff, Eye, Loader2, ArrowLeft, Star, Shield } from "lucide-react";
+import { Trash2, EyeOff, Eye, Loader2, ArrowLeft, Star, Shield, CheckCircle } from "lucide-react";
 import { toast } from "sonner";
 import { SEOHead } from "@/components/SEOHead";
 
@@ -76,6 +76,17 @@ interface AdminPhoto {
   restaurant_country: string;
   created_at: string;
   uploaded_by: string;
+}
+
+interface AdminClaim {
+  id: string;
+  restaurant_name: string;
+  restaurant_slug: string;
+  restaurant_city: string;
+  restaurant_country: string;
+  verified: boolean;
+  email_verified_at: string | null;
+  created_at: string;
 }
 
 interface AdminRestaurantRow {
@@ -139,20 +150,25 @@ const Admin = () => {
 
   const [reviews, setReviews] = useState<AdminReview[]>([]);
   const [photos, setPhotos] = useState<AdminPhoto[]>([]);
+  const [claims, setClaims] = useState<AdminClaim[]>([]);
   const [loading, setLoading] = useState(true);
   const [restaurantSearch, setRestaurantSearch] = useState("");
 
   const loadData = async () => {
     setLoading(true);
-    const [reviewsRes, photosRes] = await Promise.all([
+    const [reviewsRes, photosRes, claimsRes] = await Promise.all([
       supabase.from("reviews").select("*").order("created_at", { ascending: false }),
       supabase.from("restaurant_photos").select("*").order("created_at", { ascending: false }),
+      supabase
+        .from("restaurant_claims")
+        .select("id, restaurant_name, restaurant_slug, restaurant_city, restaurant_country, verified, email_verified_at, created_at")
+        .order("created_at", { ascending: false }),
     ]);
 
     if (reviewsRes.data) {
       const userIds = [...new Set(reviewsRes.data.map((r) => r.user_id))];
       const { data: profiles } = await supabase
-        .from("profiles")
+        .from("public_profiles")
         .select("id, display_name")
         .in("id", userIds);
       const profMap = new Map(profiles?.map((p) => [p.id, p.display_name]) || []);
@@ -161,6 +177,7 @@ const Admin = () => {
       );
     }
     if (photosRes.data) setPhotos(photosRes.data);
+    if (claimsRes.data) setClaims(claimsRes.data);
     setLoading(false);
   };
 
@@ -196,6 +213,29 @@ const Admin = () => {
     }
     toast.success("Review deleted");
     setReviews((prev) => prev.filter((r) => r.id !== id));
+  };
+
+  const approveClaim = async (claim: AdminClaim) => {
+    const { error } = await supabase
+      .from("restaurant_claims")
+      .update({
+        verified: true,
+        verified_at: new Date().toISOString(),
+        approved_by: user.id,
+      })
+      .eq("id", claim.id)
+      .eq("verified", false)
+      .not("email_verified_at", "is", null);
+
+    if (error) {
+      toast.error("Failed to approve restaurant ownership");
+      return;
+    }
+
+    toast.success(`${claim.restaurant_name} ownership approved`);
+    setClaims((previous) => previous.map((item) =>
+      item.id === claim.id ? { ...item, verified: true } : item
+    ));
   };
 
   const deletePhoto = async (photo: AdminPhoto) => {
@@ -269,11 +309,50 @@ const Admin = () => {
 
       <div className="max-w-7xl mx-auto px-4 py-8">
         <Tabs defaultValue="reviews" className="w-full">
-          <TabsList className="grid w-full grid-cols-3 max-w-xl">
+          <TabsList className="grid w-full grid-cols-2 md:grid-cols-4 max-w-3xl">
+            <TabsTrigger value="claims">Claims ({claims.filter((claim) => !claim.verified).length})</TabsTrigger>
             <TabsTrigger value="reviews">Reviews ({reviews.length})</TabsTrigger>
             <TabsTrigger value="photos">Photos ({photos.length})</TabsTrigger>
             <TabsTrigger value="restaurants">Restaurants ({allRestaurants.length})</TabsTrigger>
           </TabsList>
+
+          <TabsContent value="claims" className="mt-6">
+            {loading ? (
+              <div className="flex justify-center py-12"><Loader2 className="h-6 w-6 animate-spin" /></div>
+            ) : claims.length === 0 ? (
+              <p className="text-gray-500 text-center py-12">No ownership claims yet.</p>
+            ) : (
+              <div className="space-y-3">
+                {claims.map((claim) => (
+                  <Card key={claim.id}>
+                    <CardContent className="pt-5 flex items-center justify-between gap-4">
+                      <div>
+                        <div className="flex items-center gap-2 flex-wrap">
+                          <span className="font-semibold">{claim.restaurant_name}</span>
+                          <Badge variant={claim.verified ? "default" : "outline"}>
+                            {claim.verified ? "Approved" : claim.email_verified_at ? "Email verified" : "Awaiting email verification"}
+                          </Badge>
+                        </div>
+                        <p className="text-sm text-gray-500 mt-1">
+                          {claim.restaurant_city}, {claim.restaurant_country} · Requested {new Date(claim.created_at).toLocaleDateString()}
+                        </p>
+                      </div>
+                      {!claim.verified && (
+                        <Button
+                          onClick={() => approveClaim(claim)}
+                          disabled={!claim.email_verified_at}
+                          title={!claim.email_verified_at ? "The owner must verify their email first" : undefined}
+                        >
+                          <CheckCircle className="h-4 w-4 mr-2" />
+                          Approve owner
+                        </Button>
+                      )}
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </TabsContent>
 
           <TabsContent value="reviews" className="mt-6">
             {loading ? (

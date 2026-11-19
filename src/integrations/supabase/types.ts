@@ -73,7 +73,9 @@ export type Database = {
       }
       restaurant_claims: {
         Row: {
+          approved_by: string | null
           created_at: string
+          email_verified_at: string | null
           id: string
           restaurant_city: string
           restaurant_country: string
@@ -85,7 +87,9 @@ export type Database = {
           verified_at: string | null
         }
         Insert: {
+          approved_by?: string | null
           created_at?: string
+          email_verified_at?: string | null
           id?: string
           restaurant_city: string
           restaurant_country: string
@@ -97,7 +101,9 @@ export type Database = {
           verified_at?: string | null
         }
         Update: {
+          approved_by?: string | null
           created_at?: string
+          email_verified_at?: string | null
           id?: string
           restaurant_city?: string
           restaurant_country?: string
@@ -265,9 +271,46 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      public_hidden_restaurants: {
+        Row: {
+          created_at: string | null
+          id: string | null
+          reason: string | null
+          restaurant_city: string | null
+          restaurant_country: string | null
+          restaurant_slug: string | null
+        }
+        Relationships: []
+      }
+      public_profiles: {
+        Row: {
+          avatar_url: string | null
+          display_name: string | null
+          id: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      get_public_hidden_restaurants: {
+        Args: never
+        Returns: {
+          created_at: string
+          id: string
+          reason: string
+          restaurant_city: string
+          restaurant_country: string
+          restaurant_slug: string
+        }[]
+      }
+      get_public_profiles: {
+        Args: never
+        Returns: {
+          avatar_url: string
+          display_name: string
+          id: string
+        }[]
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

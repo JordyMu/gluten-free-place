@@ -92,7 +92,7 @@ export const ClaimRestaurantDialog = ({
         throw new Error(response.error.message);
       }
 
-      toast.success("Restaurant ownership verified! You can now upload photos.");
+      toast.success("Email verified. Your claim is now waiting for administrator approval.");
       setOpen(false);
       onClaimSuccess();
     } catch (error: any) {

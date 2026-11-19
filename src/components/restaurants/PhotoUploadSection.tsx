@@ -47,8 +47,9 @@ export const PhotoUploadSection = ({
 
     setIsUploading(true);
     try {
-      const fileExt = selectedFile.name.split(".").pop();
-      const fileName = `${restaurantCountry}/${restaurantCity}/${restaurantSlug}/${Date.now()}.${fileExt}`;
+      const fileExt = selectedFile.name.split(".").pop()?.toLowerCase().replace(/[^a-z0-9]/g, "") || "jpg";
+      const pathSegment = (value: string) => value.replace(/\//g, "%2F");
+      const fileName = `${user.id}/${pathSegment(restaurantCountry)}/${pathSegment(restaurantCity)}/${pathSegment(restaurantSlug)}/${crypto.randomUUID()}.${fileExt}`;
 
       // Upload to storage
       const { error: uploadError } = await supabase.storage
